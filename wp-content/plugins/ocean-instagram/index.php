@@ -1,0 +1,1 @@
+<?php // Silence is golden but OceanWP is better... ?>

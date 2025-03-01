@@ -1,0 +1,28 @@
+.ogb-heading {
+	position: relative;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	div,
+	span,
+	p {
+		text-decoration: none;
+		padding: 5px 0;
+	}
+
+	&-left {
+		text-align: left;
+	}
+
+	&-right {
+		text-align: right;
+	}
+
+	&-center {
+		text-align: center;
+	}
+}

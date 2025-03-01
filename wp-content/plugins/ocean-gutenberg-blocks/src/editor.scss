@@ -1,0 +1,51 @@
+.ogb-block {
+	a {
+		text-decoration: none !important;
+	}
+}
+
+.components-button.components-tab-panel__tabs-item.ogb-device-select {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #ebebeb;
+    padding: 12px;
+    box-shadow: none;
+    margin-left: 5px;
+    justify-content: center;
+    align-items: center;
+
+    &.active-tab {
+        background-color: #007cba;
+        color: #fff;
+    }
+
+    span.dashicon {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+}
+
+.ogb-control-notice {
+    color: #474646;
+    background-color: #dadada;
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.ogb-component-unit-control .components-input-control__suffix select.components-unit-control__select {
+    width: 35px;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 5px;
+}
+
+.components-circular-option-picker {
+    margin-bottom: 24px;
+}
+
+.components-number-control {
+    margin-bottom: 24px;
+}

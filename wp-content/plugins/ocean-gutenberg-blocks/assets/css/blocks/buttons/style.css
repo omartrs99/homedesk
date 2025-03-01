@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+Buttons
+-------------------------------------------------------------------*/
+.ogb-buttons {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .ogb-buttons li {
+    display: inline-block;
+    margin-left: 12px; }
+    .ogb-buttons li:first-child {
+      margin-left: 0 !important; }
+    .ogb-buttons li a {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #13aff0;
+      color: #fff;
+      line-height: 1;
+      text-align: center;
+      border-radius: 3px; }
+      .ogb-buttons li a:hover {
+        background-color: #0b7cac; }
+    .ogb-buttons li .ogb-button-icon i, .ogb-buttons li .ogb-button-icon svg {
+      width: 1em;
+      height: 1em;
+      position: relative;
+      vertical-align: middle; }
+
+.rtl .ogb-buttons li {
+  margin-right: 12px;
+  margin-left: 0; }
+  .rtl .ogb-buttons li:first-child {
+    margin-right: 0 !important; }

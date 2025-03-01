@@ -1,0 +1,59 @@
+.ogb-vertically-aligned-top {
+	justify-content: flex-start;
+}
+
+.ogb-vertically-aligned-center {
+	justify-content: center;
+}
+
+.ogb-vertically-aligned-bottom {
+	justify-content: flex-end;
+}
+
+.ogb-horizontally-aligned-left {
+	align-items: flex-start;
+}
+
+.ogb-horizontally-aligned-center {
+	align-items: center;
+}
+
+.ogb-horizontally-aligned-right {
+	align-items: flex-end;
+}
+
+.ogb-section {
+	position: relative;
+}
+
+.ogb-section-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.4s;
+
+	.ogb-section-bg {
+		background-size: cover;
+		background-position: 50%;
+	}
+}
+
+.ogb-section-bg,
+.ogb-section-overlay {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.4s;
+}
+
+.ogb-section-overlay {
+	background: rgba(0,0,0,.5);
+}
+
+.ogb-section-container {
+    z-index: 2;
+}

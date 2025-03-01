@@ -1,0 +1,105 @@
+/*------------------------------------------------------------------
+Member
+-------------------------------------------------------------------*/
+.ogb-member-wrap {
+    position: relative;
+    width: 100%;
+
+    .ogb-member-image {
+        margin-bottom: 15px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .ogb-member-content {
+        margin-bottom: 15px;
+    }
+
+    .ogb-member-name {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .ogb-member-role {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 13px;
+    }
+
+    .ogb-member-icons {
+        margin: 0 -5px;
+
+        a {
+            display: inline-block;
+            font-size: 18px;
+            line-height: 1;
+            padding: 5px;
+            text-align: center;
+
+            i, svg {
+                width: 1em;
+                height: 1em;
+                text-align: center;
+                display: inline-block;
+            }
+        }
+    }
+
+    &.ogb-team-align-left {
+        text-align: left;
+    }
+
+    &.ogb-team-align-center {
+        text-align: center;
+    }
+
+    &.ogb-team-align-right {
+        text-align: right;
+    }
+}
+
+#powerTip.ogb-member-powertip {
+    padding: 4px 10px;
+}
+
+.ogb-member-wrap.ogb-team-align-center {
+
+    .ogb-member-image img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ogb-member-content {
+        text-align: center;
+    }
+}
+
+.ogb-member-wrap.ogb-team-align-left {
+
+    .ogb-member-image img {
+        display: block;
+        margin-right: auto;
+    }
+
+    .ogb-member-content {
+        text-align: left;
+    }
+}
+
+.ogb-member-wrap.ogb-team-align-right {
+
+    .ogb-member-image img {
+        display: block;
+        margin-left: auto;
+    }
+
+    .ogb-member-content {
+        text-align: right;
+    }
+}
+
+
+

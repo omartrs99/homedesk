@@ -1,0 +1,2218 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean Portfolio plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Portfolio 2.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-portfolio\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-10-16T06:22:29+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ocean-portfolio\n"
+
+#. Plugin Name of the plugin
+#: ocean-portfolio.php
+msgid "Ocean Portfolio"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: ocean-portfolio.php
+msgid "https://oceanwp.org/extension/ocean-portfolio/"
+msgstr ""
+
+#. Description of the plugin
+#: ocean-portfolio.php
+msgid "A complete solution to display your portfolio and work in a good-looking and an appealing way."
+msgstr ""
+
+#. Author of the plugin
+#: ocean-portfolio.php
+#: includes/update-message.php:84
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+#: ocean-portfolio.php
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:39
+#: includes/customizer/options.php:18
+#: includes/page-template.php:69
+#: ocean-portfolio.php:350
+#: ocean-portfolio.php:1022
+msgid "Portfolio"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:40
+msgid "Portfolio Item"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:41
+#: includes/admin/class-register-cpt.php:98
+#: includes/admin/class-register-cpt.php:143
+msgid "Add New"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:42
+#: includes/admin/class-register-cpt.php:44
+msgid "Add New Item"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:43
+msgid "Edit Item"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:45
+msgid "View Item"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:46
+msgid "Search Items"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:47
+msgid "No Items Found"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:48
+msgid "No Items Found In Trash"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:88
+msgid "Portfolio Categories"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:89
+msgid "Portfolio Category"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:90
+#: includes/admin/class-register-cpt.php:200
+#: includes/admin/class-shortcode-generator.php:454
+#: includes/admin/class-shortcode-generator.php:1101
+#: includes/customizer/options.php:800
+#: includes/customizer/options.php:801
+#: includes/customizer/options.php:3150
+#: includes/customizer/options.php:3731
+msgid "Categories"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:91
+#: includes/admin/class-register-cpt.php:136
+msgid "Search"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:92
+#: includes/admin/class-register-cpt.php:137
+msgid "Popular"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:93
+#: includes/admin/class-register-cpt.php:138
+#: includes/class-portfolio-shortcode.php:110
+#: templates/portfolio-archive.php:65
+msgid "All"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:94
+#: includes/admin/class-register-cpt.php:95
+#: includes/admin/class-register-cpt.php:139
+#: includes/admin/class-register-cpt.php:140
+#: includes/admin/class-shortcode-generator.php:1169
+#: includes/customizer/options.php:3244
+msgid "Parent"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:96
+#: includes/admin/class-register-cpt.php:141
+msgid "Edit"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:97
+#: includes/admin/class-register-cpt.php:142
+msgid "Update"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:99
+#: includes/admin/class-register-cpt.php:144
+msgid "New"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:100
+#: includes/admin/class-register-cpt.php:145
+msgid "Separate with commas"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:101
+#: includes/admin/class-register-cpt.php:146
+msgid "Add or remove"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:102
+#: includes/admin/class-register-cpt.php:147
+msgid "Choose from the most used"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:133
+msgid "Portfolio Tags"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:134
+msgid "Portfolio Tag"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:135
+#: includes/admin/class-register-cpt.php:203
+#: includes/admin/class-shortcode-generator.php:455
+#: includes/admin/class-shortcode-generator.php:1119
+#: includes/customizer/options.php:805
+#: includes/customizer/options.php:3172
+#: includes/helpers.php:87
+msgid "Tags"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:173
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/admin/class-register-cpt.php:174
+#: includes/admin/class-shortcode-generator.php:1896
+msgid "Shortcode"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:82
+msgid "Portfolio Settings"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:94
+#: includes/customizer/options.php:32
+msgid "General"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:104
+#: includes/customizer/options.php:267
+msgid "Posts Per Page"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:105
+msgid "Put -1 to display all portfolio items. Default is 12."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:124
+#: includes/customizer/options.php:302
+msgid "Columns"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:125
+msgid "Choose your columns number."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:147
+#: includes/customizer/options.php:353
+msgid "Masonry"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:148
+msgid "Enable or disable the masonry."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:150
+#: includes/admin/class-shortcode-generator.php:194
+#: includes/admin/class-shortcode-generator.php:216
+#: includes/admin/class-shortcode-generator.php:267
+#: includes/admin/class-shortcode-generator.php:289
+#: includes/admin/class-shortcode-generator.php:311
+#: includes/admin/class-shortcode-generator.php:364
+#: includes/admin/class-shortcode-generator.php:408
+#: includes/admin/class-shortcode-generator.php:785
+#: includes/admin/class-shortcode-generator.php:807
+#: includes/admin/class-shortcode-generator.php:829
+#: includes/customizer/options.php:364
+#: includes/customizer/options.php:365
+#: includes/customizer/options.php:430
+#: includes/customizer/options.php:431
+#: includes/customizer/options.php:463
+#: includes/customizer/options.php:464
+#: includes/customizer/options.php:529
+#: includes/customizer/options.php:530
+#: includes/customizer/options.php:562
+#: includes/customizer/options.php:563
+#: includes/customizer/options.php:650
+#: includes/customizer/options.php:651
+#: includes/customizer/options.php:720
+#: includes/customizer/options.php:721
+#: includes/customizer/options.php:2662
+#: includes/customizer/options.php:2663
+#: includes/customizer/options.php:2687
+#: includes/customizer/options.php:2688
+#: includes/customizer/options.php:2712
+#: includes/customizer/options.php:2713
+msgid "On"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:151
+#: includes/admin/class-shortcode-generator.php:195
+#: includes/admin/class-shortcode-generator.php:217
+#: includes/admin/class-shortcode-generator.php:268
+#: includes/admin/class-shortcode-generator.php:290
+#: includes/admin/class-shortcode-generator.php:312
+#: includes/admin/class-shortcode-generator.php:365
+#: includes/admin/class-shortcode-generator.php:409
+#: includes/admin/class-shortcode-generator.php:786
+#: includes/admin/class-shortcode-generator.php:808
+#: includes/admin/class-shortcode-generator.php:830
+#: includes/customizer/options.php:369
+#: includes/customizer/options.php:370
+#: includes/customizer/options.php:435
+#: includes/customizer/options.php:436
+#: includes/customizer/options.php:468
+#: includes/customizer/options.php:469
+#: includes/customizer/options.php:534
+#: includes/customizer/options.php:535
+#: includes/customizer/options.php:567
+#: includes/customizer/options.php:568
+#: includes/customizer/options.php:655
+#: includes/customizer/options.php:656
+#: includes/customizer/options.php:725
+#: includes/customizer/options.php:726
+#: includes/customizer/options.php:2667
+#: includes/customizer/options.php:2668
+#: includes/customizer/options.php:2692
+#: includes/customizer/options.php:2693
+#: includes/customizer/options.php:2717
+#: includes/customizer/options.php:2718
+msgid "Off"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:169
+msgid "Title/Category Position"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:170
+msgid "Choose the title and category position."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:172
+#: includes/customizer/options.php:397
+#: includes/customizer/options.php:398
+msgid "Inside"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:173
+#: includes/customizer/options.php:402
+#: includes/customizer/options.php:403
+msgid "Outside"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:191
+#: includes/admin/class-shortcode-generator.php:1164
+#: includes/customizer/options.php:3239
+#: includes/helpers.php:84
+msgid "Title"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:192
+msgid "Enable or disable the items title."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:213
+#: includes/customizer/options.php:452
+msgid "Add Title Link"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:214
+msgid "Enable or disable the link of the title."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:235
+#: includes/customizer/options.php:485
+#: includes/customizer/options.php:3675
+msgid "Title HTML Tag"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:236
+msgid "Select your heading tag."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:238
+#: includes/customizer/options.php:495
+#: includes/customizer/options.php:3684
+msgid "H1"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:239
+#: includes/customizer/options.php:496
+#: includes/customizer/options.php:3685
+msgid "H2"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:240
+#: includes/customizer/options.php:497
+#: includes/customizer/options.php:3686
+msgid "H3"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:241
+#: includes/customizer/options.php:498
+#: includes/customizer/options.php:3687
+msgid "H4"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:242
+#: includes/customizer/options.php:499
+#: includes/customizer/options.php:3688
+msgid "H5"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:243
+#: includes/customizer/options.php:500
+#: includes/customizer/options.php:3689
+msgid "H6"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:244
+#: includes/customizer/options.php:501
+#: includes/customizer/options.php:3690
+msgid "div"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:245
+#: includes/customizer/options.php:502
+#: includes/customizer/options.php:3691
+msgid "span"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:246
+#: includes/customizer/options.php:503
+#: includes/customizer/options.php:3692
+msgid "p"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:264
+msgid "Category"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:265
+msgid "Enable or disable the items category."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:286
+msgid "Pagination"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:287
+msgid "Enable or disable the pagination."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:308
+msgid "Load MagnificPopup"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:309
+msgid "Enable or disable the MagnificPopup lightbox script on the page for this particular Portfolio Shortcode item. Ocean Portfolio uses its own lightbox even if you disable the OceanWP themes default Lightbox (Customize > General Options > Performance)."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:330
+#: includes/customizer/options.php:584
+msgid "Pagination Position"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:331
+msgid "Choose the pagination position."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:333
+#: includes/admin/class-shortcode-generator.php:431
+#: includes/customizer/options.php:595
+#: includes/customizer/options.php:596
+#: includes/customizer/options.php:760
+#: includes/customizer/options.php:761
+#: includes/customizer/options.php:1137
+#: includes/customizer/options.php:1165
+#: includes/customizer/options.php:1193
+#: includes/customizer/options.php:1518
+#: includes/customizer/options.php:1546
+#: includes/customizer/options.php:1574
+#: includes/customizer/options.php:1876
+#: includes/customizer/options.php:1904
+#: includes/customizer/options.php:1932
+#: includes/customizer/options.php:2195
+#: includes/customizer/options.php:2223
+#: includes/customizer/options.php:2251
+msgid "Left"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:334
+#: includes/admin/class-shortcode-generator.php:432
+#: includes/customizer/options.php:600
+#: includes/customizer/options.php:601
+#: includes/customizer/options.php:765
+#: includes/customizer/options.php:766
+msgid "Center"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:335
+#: includes/admin/class-shortcode-generator.php:433
+#: includes/customizer/options.php:605
+#: includes/customizer/options.php:606
+#: includes/customizer/options.php:770
+#: includes/customizer/options.php:771
+#: includes/customizer/options.php:1123
+#: includes/customizer/options.php:1151
+#: includes/customizer/options.php:1179
+#: includes/customizer/options.php:1504
+#: includes/customizer/options.php:1532
+#: includes/customizer/options.php:1560
+#: includes/customizer/options.php:1862
+#: includes/customizer/options.php:1890
+#: includes/customizer/options.php:1918
+#: includes/customizer/options.php:2181
+#: includes/customizer/options.php:2209
+#: includes/customizer/options.php:2237
+msgid "Right"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:351
+#: includes/customizer/options.php:631
+msgid "Filter Bar"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:361
+#: includes/class-portfolio-shortcode.php:333
+#: templates/portfolio-archive.php:297
+msgid "Filter"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:362
+msgid "Enable or disable the filter bar."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:383
+#: includes/customizer/options.php:673
+msgid "Filter Type"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:384
+msgid "Choose filter type to display with this portfolo shortcode"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:386
+#: includes/customizer/options.php:685
+#: includes/customizer/options.php:686
+#: includes/customizer/options.php:3480
+#: includes/customizer/options.php:3511
+#: includes/customizer/options.php:3575
+#: includes/customizer/options.php:3906
+msgid "Default"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:387
+#: includes/customizer/options.php:690
+#: includes/customizer/options.php:691
+#: includes/customizer/options.php:1073
+msgid "Filter Button"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:405
+#: includes/customizer/options.php:708
+msgid "Display Link All"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:406
+msgid "Enable or disable the \"All\" link of the filter bar."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:427
+#: includes/customizer/options.php:743
+msgid "Filter Position"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:428
+msgid "Choose the filter position."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:430
+#: includes/customizer/options.php:755
+#: includes/customizer/options.php:756
+msgid "Full"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:451
+#: includes/customizer/options.php:788
+msgid "Taxonomy"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:452
+msgid "Display the filter by categories or tags."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:473
+#: includes/customizer/options.php:823
+msgid "Responsive Filter Links"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:474
+#: includes/customizer/options.php:824
+msgid "Choose the media query where you want the filter bar links to be full width."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:476
+#: includes/customizer/options.php:834
+msgid "From 1280px"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:477
+#: includes/customizer/options.php:835
+msgid "From 1080px"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:478
+#: includes/customizer/options.php:836
+msgid "From 959px"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:479
+#: includes/customizer/options.php:837
+msgid "From 767px"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:480
+#: includes/customizer/options.php:838
+msgid "From 480px"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:481
+#: includes/customizer/options.php:839
+msgid "From 320px"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:482
+#: includes/customizer/options.php:840
+msgid "Custom media query"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:500
+#: includes/customizer/options.php:855
+msgid "Custom Media Query"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:501
+#: includes/customizer/options.php:856
+msgid "Enter your custom media query where you want the filter bar links to be full width."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:521
+#: includes/customizer/options.php:891
+msgid "Filter Bar Margin"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:522
+msgid "Enter a custom margin for the filter bar. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:538
+#: includes/customizer/options.php:904
+msgid "Filter Links: Margin"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:539
+msgid "Enter a custom margin for the filter bar links. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:555
+#: includes/customizer/options.php:917
+msgid "Filter Links: Padding"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:556
+msgid "Enter a custom padding for the filter bar links. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:572
+#: includes/customizer/options.php:941
+msgid "Filter Links: Background Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:573
+#: includes/admin/class-shortcode-generator.php:1348
+msgid "Select a hex color code, ex: #f6f6f6"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:589
+#: includes/customizer/options.php:980
+msgid "Filter Links: Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:590
+msgid "Select a hex color code, ex: #444444"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:606
+msgid "Filter Active Link: Background Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:607
+#: includes/admin/class-shortcode-generator.php:641
+msgid "Select a hex color code, ex: #13aff0"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:623
+msgid "Filter Active Link: Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:624
+#: includes/admin/class-shortcode-generator.php:658
+#: includes/admin/class-shortcode-generator.php:949
+#: includes/admin/class-shortcode-generator.php:966
+#: includes/admin/class-shortcode-generator.php:1042
+#: includes/admin/class-shortcode-generator.php:1059
+msgid "Select a hex color code, ex: #ffffff"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:640
+msgid "Filter Hover Links: Background Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:657
+msgid "Filter Hover Links: Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:672
+msgid "Images"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:682
+#: includes/customizer/options.php:2500
+msgid "Image Target"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:683
+#: includes/customizer/options.php:2501
+msgid "Choose if you want to open your portfolio item or a lightbox to the image click."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:685
+msgid "Open the Portfolio Item"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:686
+msgid "Open a Lightbox"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:704
+#: includes/customizer/options.php:2534
+msgid "Image Size"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:705
+msgid "Select the size of your images."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:723
+msgid "Image Width (px)"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:724
+msgid "Enter your custom image width."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:744
+msgid "Image Height (px)"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:745
+msgid "Enter your custom image height."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:765
+#: includes/customizer/options.php:2616
+#: includes/customizer/options.php:3639
+msgid "Overlay Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:766
+msgid "Select a hex color code, ex: rgba(0,0,0,0.4)"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:782
+#: includes/customizer/options.php:2651
+msgid "Display Overlay Icons"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:783
+msgid "Display the overlay icons on image hover."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:804
+#: includes/customizer/options.php:2675
+msgid "Display Link Icon"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:805
+msgid "Display the link icon on image hover."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:826
+#: includes/customizer/options.php:2700
+msgid "Display Lightbox Icon"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:827
+msgid "Display the lightbox icon on image hover."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:848
+msgid "Overlay Icons Width"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:849
+msgid "Choose your overlay icons width."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:870
+msgid "Overlay Icons Height"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:871
+msgid "Choose your overlay icons height."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:892
+msgid "Overlay Icons Size"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:893
+msgid "Choose your overlay icons size."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:914
+msgid "Overlay Icons Background Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:915
+#: includes/admin/class-shortcode-generator.php:932
+msgid "Select a hex color code, ex: rgba(255,255,255,0.2)"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:931
+msgid "Overlay Icons Hover Background Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:948
+#: includes/customizer/options.php:2862
+msgid "Overlay Icons Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:965
+msgid "Overlay Icons Hover Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:982
+#: includes/customizer/options.php:2912
+msgid "Overlay Icons Border Radius"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:983
+msgid "Add a border radius for your overlay icons. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:999
+#: includes/customizer/options.php:2925
+msgid "Overlay Icons Border Width"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1000
+msgid "Add a border for your overlay icons. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1017
+#: includes/customizer/options.php:2939
+msgid "Overlay Icons Border Style"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1018
+msgid "Choose your border style for your overlay icons."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1020
+#: includes/admin/class-shortcode-generator.php:1309
+#: includes/customizer/options.php:2949
+#: includes/customizer/options.php:3910
+#: includes/customizer/options.php:4173
+msgid "None"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1021
+#: includes/admin/class-shortcode-generator.php:1310
+#: includes/customizer/options.php:2950
+#: includes/customizer/options.php:4174
+msgid "Solid"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1022
+#: includes/admin/class-shortcode-generator.php:1311
+#: includes/customizer/options.php:2951
+#: includes/customizer/options.php:4175
+msgid "Double"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1023
+#: includes/admin/class-shortcode-generator.php:1312
+#: includes/customizer/options.php:2952
+#: includes/customizer/options.php:4176
+msgid "Dashed"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1041
+msgid "Overlay Icons Border Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1058
+msgid "Overlay Icons Hover Border Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1073
+#: includes/customizer/options.php:3131
+msgid "Query"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1083
+#: includes/admin/class-shortcode-generator.php:1163
+#: includes/customizer/options.php:3139
+#: includes/customizer/options.php:3238
+#: includes/customizer/options.php:3729
+msgid "Author"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1084
+msgid "Display items by author."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1102
+msgid "Display items by categories."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1120
+msgid "Display items by tags."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1137
+#: includes/customizer/options.php:3191
+msgid "Offset"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1138
+#: includes/customizer/options.php:3192
+msgid "Number of item to displace (this setting breaks pagination)."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1158
+#: includes/customizer/options.php:3226
+msgid "Order By"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1159
+#: includes/customizer/options.php:3227
+msgid "Sort retrieved posts by parameter."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1161
+#: includes/customizer/options.php:3236
+msgid "No Order"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1162
+#: includes/customizer/options.php:3237
+msgid "ID"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1165
+#: includes/customizer/options.php:3240
+msgid "Slug"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1166
+#: includes/customizer/options.php:3241
+msgid "Post Type"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1167
+#: includes/customizer/options.php:3242
+#: includes/customizer/options.php:3730
+msgid "Date"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1168
+#: includes/customizer/options.php:3243
+msgid "Modified"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1170
+#: includes/customizer/options.php:3245
+msgid "Random"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1171
+#: includes/customizer/options.php:3246
+msgid "Comment Count"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1189
+#: includes/customizer/options.php:3261
+msgid "Order"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1190
+#: includes/customizer/options.php:3262
+#: includes/customizer/options.php:4164
+msgid "Designates the ascending or descending order."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1192
+#: includes/customizer/options.php:3273
+#: includes/customizer/options.php:3274
+msgid "Ascending Order"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1193
+#: includes/customizer/options.php:3278
+#: includes/customizer/options.php:3279
+msgid "Descending Order"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1211
+#: includes/customizer/options.php:3161
+msgid "Exclude Categories"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1212
+msgid "Choose the categories you want to exclude."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1227
+msgid "Style"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1237
+#: includes/admin/class-shortcode-generator.php:1590
+#: includes/admin/class-shortcode-generator.php:1755
+#: includes/customizer/options.php:3958
+#: includes/customizer/options.php:4025
+#: includes/customizer/options.php:4092
+msgid "Item Margin"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1238
+#: includes/admin/class-shortcode-generator.php:1591
+#: includes/admin/class-shortcode-generator.php:1756
+msgid "Enter a custom margin between your items. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1255
+#: includes/admin/class-shortcode-generator.php:1607
+#: includes/admin/class-shortcode-generator.php:1772
+#: includes/customizer/options.php:3970
+#: includes/customizer/options.php:4037
+#: includes/customizer/options.php:4104
+msgid "Item Padding"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1256
+#: includes/admin/class-shortcode-generator.php:1608
+#: includes/admin/class-shortcode-generator.php:1773
+msgid "Add a padding for your items. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1272
+#: includes/admin/class-shortcode-generator.php:1624
+#: includes/admin/class-shortcode-generator.php:1789
+#: includes/customizer/options.php:3982
+#: includes/customizer/options.php:4049
+#: includes/customizer/options.php:4116
+msgid "Item Border Radius"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1273
+#: includes/admin/class-shortcode-generator.php:1625
+#: includes/admin/class-shortcode-generator.php:1790
+msgid "Add a border radius for your items. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1289
+#: includes/admin/class-shortcode-generator.php:1641
+#: includes/admin/class-shortcode-generator.php:1806
+#: includes/customizer/options.php:3994
+#: includes/customizer/options.php:4061
+#: includes/customizer/options.php:4128
+msgid "Item Border Width"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1290
+#: includes/admin/class-shortcode-generator.php:1642
+#: includes/admin/class-shortcode-generator.php:1807
+msgid "Add a border for your items. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1306
+#: includes/customizer/options.php:4163
+msgid "Item Border Style"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1307
+msgid "Choose your border style for your items."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1330
+#: includes/customizer/options.php:4686
+msgid "Item Border Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1331
+msgid "Select a hex color code, ex: #eaeaea"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1347
+#: includes/customizer/options.php:4711
+msgid "Item Background Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1364
+#: includes/customizer/options.php:4149
+msgid "Outside Content Padding"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1365
+msgid "Add a custom padding for the outside content. Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1382
+#: includes/customizer/options.php:4736
+msgid "Outside Content Background"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1383
+msgid "Select a hex color code, ex: #f9f9f9"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1399
+#: includes/customizer/options.php:4764
+msgid "Title Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1400
+#: includes/admin/class-shortcode-generator.php:1434
+msgid "Select a hex color code, ex: #333333"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1416
+msgid "Title Hover Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1417
+#: includes/admin/class-shortcode-generator.php:1451
+msgid "Select a hex color code, ex: #666666"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1433
+#: includes/customizer/options.php:4803
+msgid "Category Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1450
+msgid "Category Hover Color"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1465
+msgid "Typography"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1475
+#: includes/admin/class-shortcode-generator.php:1658
+#: includes/admin/class-shortcode-generator.php:1823
+#: includes/customizer/options.php:4192
+msgid "Filter Typography"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1476
+#: includes/admin/class-shortcode-generator.php:1659
+#: includes/admin/class-shortcode-generator.php:1824
+msgid "Typography for the filter."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1503
+#: includes/admin/class-shortcode-generator.php:1680
+#: includes/admin/class-shortcode-generator.php:1845
+#: includes/customizer/options.php:4354
+msgid "Title Typography"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1504
+#: includes/admin/class-shortcode-generator.php:1681
+#: includes/admin/class-shortcode-generator.php:1846
+msgid "Typography for the title."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1531
+#: includes/admin/class-shortcode-generator.php:1702
+#: includes/admin/class-shortcode-generator.php:1867
+#: includes/customizer/options.php:4516
+msgid "Category Typography"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1532
+#: includes/admin/class-shortcode-generator.php:1703
+#: includes/admin/class-shortcode-generator.php:1868
+msgid "Typography for the category."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1557
+msgid "Tablet Device"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1567
+msgid "Tablet Columns"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1568
+msgid "Choose your columns number for tablet device."
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1722
+msgid "Mobile Device"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1732
+msgid "Mobile Columns"
+msgstr ""
+
+#: includes/admin/class-shortcode-generator.php:1733
+msgid "Choose your columns number for mobile device."
+msgstr ""
+
+#: includes/class-portfolio-shortcode.php:342
+#: includes/class-portfolio-shortcode.php:396
+#: templates/portfolio-archive.php:306
+#: templates/portfolio-archive.php:360
+msgid "Reset"
+msgstr ""
+
+#: includes/class-portfolio-shortcode.php:352
+#: templates/portfolio-archive.php:316
+msgid "Select Category"
+msgstr ""
+
+#: includes/class-portfolio-shortcode.php:367
+#: templates/portfolio-archive.php:331
+msgid "Select Tag"
+msgstr ""
+
+#: includes/class-portfolio-shortcode.php:384
+#: templates/portfolio-archive.php:348
+msgid "OR"
+msgstr ""
+
+#: includes/class-portfolio-shortcode.php:389
+#: templates/portfolio-archive.php:353
+msgid "Type in your query to search among portfolio"
+msgstr ""
+
+#: includes/class-portfolio-shortcode.php:390
+#: templates/portfolio-archive.php:354
+msgid "Search portfolio..."
+msgstr ""
+
+#: includes/class-portfolio-shortcode.php:395
+#: templates/portfolio-archive.php:359
+msgid "Apply"
+msgstr ""
+
+#: includes/customizer/options.php:40
+msgid "Portfolio Page"
+msgstr ""
+
+#: includes/customizer/options.php:41
+msgid "Select the main portfolio page. This page will be linked in breadcrumbs."
+msgstr ""
+
+#: includes/customizer/options.php:59
+msgid "Portfolio Item Slug"
+msgstr ""
+
+#: includes/customizer/options.php:60
+#: includes/customizer/options.php:79
+#: includes/customizer/options.php:98
+msgid "If you edit this field, you will need to update permalinks to avoid broken links."
+msgstr ""
+
+#: includes/customizer/options.php:78
+msgid "Portfolio Category Slug"
+msgstr ""
+
+#: includes/customizer/options.php:97
+msgid "Portfolio Tag Slug"
+msgstr ""
+
+#: includes/customizer/options.php:110
+#: includes/customizer/options.php:613
+#: includes/customizer/options.php:2473
+#: includes/customizer/options.php:3113
+#: includes/customizer/options.php:3286
+#: includes/customizer/options.php:3916
+#: includes/customizer/options.php:4842
+#: includes/customizer/options.php:4854
+msgid "%1$s Need Help? %2$s"
+msgstr ""
+
+#: includes/customizer/options.php:128
+msgid "Archive"
+msgstr ""
+
+#: includes/customizer/options.php:135
+#: includes/customizer/options.php:3312
+msgid "Layout"
+msgstr ""
+
+#: includes/customizer/options.php:144
+#: includes/customizer/options.php:3321
+msgid "Right Sidebar"
+msgstr ""
+
+#: includes/customizer/options.php:148
+#: includes/customizer/options.php:3325
+msgid "Left Sidebar"
+msgstr ""
+
+#: includes/customizer/options.php:152
+#: includes/customizer/options.php:3329
+msgid "Full Width"
+msgstr ""
+
+#: includes/customizer/options.php:156
+#: includes/customizer/options.php:3333
+msgid "100% Full Width"
+msgstr ""
+
+#: includes/customizer/options.php:160
+#: includes/customizer/options.php:3337
+msgid "Both Sidebar"
+msgstr ""
+
+#: includes/customizer/options.php:175
+#: includes/customizer/options.php:3354
+msgid "Both Sidebars: Style"
+msgstr ""
+
+#: includes/customizer/options.php:185
+#: includes/customizer/options.php:3364
+msgid "Sidebar / Sidebar / Content"
+msgstr ""
+
+#: includes/customizer/options.php:186
+#: includes/customizer/options.php:3365
+msgid "Sidebar / Content / Sidebar"
+msgstr ""
+
+#: includes/customizer/options.php:187
+#: includes/customizer/options.php:3366
+msgid "Content / Sidebar / Sidebar"
+msgstr ""
+
+#: includes/customizer/options.php:192
+#: includes/customizer/options.php:3371
+msgid "Both Sidebars: Content Width"
+msgstr ""
+
+#: includes/customizer/options.php:208
+#: includes/customizer/options.php:241
+#: includes/customizer/options.php:283
+#: includes/customizer/options.php:317
+#: includes/customizer/options.php:872
+#: includes/customizer/options.php:1234
+#: includes/customizer/options.php:1272
+#: includes/customizer/options.php:1615
+#: includes/customizer/options.php:1653
+#: includes/customizer/options.php:1973
+#: includes/customizer/options.php:2011
+#: includes/customizer/options.php:2292
+#: includes/customizer/options.php:2330
+#: includes/customizer/options.php:2571
+#: includes/customizer/options.php:2596
+#: includes/customizer/options.php:2750
+#: includes/customizer/options.php:2776
+#: includes/customizer/options.php:2802
+#: includes/customizer/options.php:3207
+#: includes/customizer/options.php:3387
+#: includes/customizer/options.php:3412
+#: includes/customizer/options.php:3458
+#: includes/customizer/options.php:3628
+#: includes/customizer/options.php:3762
+#: includes/customizer/options.php:3796
+#: includes/customizer/options.php:3830
+#: includes/customizer/options.php:3854
+msgid "Desktop"
+msgstr ""
+
+#: includes/customizer/options.php:215
+#: includes/customizer/options.php:248
+#: includes/customizer/options.php:1241
+#: includes/customizer/options.php:1279
+#: includes/customizer/options.php:1622
+#: includes/customizer/options.php:1660
+#: includes/customizer/options.php:1980
+#: includes/customizer/options.php:2018
+#: includes/customizer/options.php:2299
+#: includes/customizer/options.php:2337
+#: includes/customizer/options.php:4257
+#: includes/customizer/options.php:4286
+#: includes/customizer/options.php:4315
+#: includes/customizer/options.php:4419
+#: includes/customizer/options.php:4448
+#: includes/customizer/options.php:4477
+#: includes/customizer/options.php:4581
+#: includes/customizer/options.php:4610
+#: includes/customizer/options.php:4639
+msgid "Unit"
+msgstr ""
+
+#: includes/customizer/options.php:225
+#: includes/customizer/options.php:3396
+msgid "Both Sidebars: Each Sidebar Width"
+msgstr ""
+
+#: includes/customizer/options.php:268
+msgid "Insert -1 to display all portfolio items. Default number of items is 12."
+msgstr ""
+
+#: includes/customizer/options.php:325
+msgid "Tablet"
+msgstr ""
+
+#: includes/customizer/options.php:333
+msgid "Mobile"
+msgstr ""
+
+#: includes/customizer/options.php:386
+msgid "Title / Category Position"
+msgstr ""
+
+#: includes/customizer/options.php:419
+msgid "Display Title"
+msgstr ""
+
+#: includes/customizer/options.php:518
+msgid "Display Category"
+msgstr ""
+
+#: includes/customizer/options.php:551
+msgid "Display Pagination"
+msgstr ""
+
+#: includes/customizer/options.php:639
+msgid "Display Filter"
+msgstr ""
+
+#: includes/customizer/options.php:806
+msgid "tags"
+msgstr ""
+
+#: includes/customizer/options.php:892
+#: includes/customizer/options.php:905
+#: includes/customizer/options.php:918
+#: includes/customizer/options.php:2913
+#: includes/customizer/options.php:2926
+#: includes/customizer/options.php:3959
+#: includes/customizer/options.php:3971
+#: includes/customizer/options.php:3983
+#: includes/customizer/options.php:3995
+#: includes/customizer/options.php:4026
+#: includes/customizer/options.php:4038
+#: includes/customizer/options.php:4050
+#: includes/customizer/options.php:4062
+#: includes/customizer/options.php:4093
+#: includes/customizer/options.php:4105
+#: includes/customizer/options.php:4117
+#: includes/customizer/options.php:4129
+#: includes/customizer/options.php:4150
+msgid "Format: top/right/bottom/left."
+msgstr ""
+
+#: includes/customizer/options.php:954
+#: includes/customizer/options.php:993
+#: includes/customizer/options.php:1317
+#: includes/customizer/options.php:1354
+#: includes/customizer/options.php:1391
+#: includes/customizer/options.php:1430
+#: includes/customizer/options.php:1698
+#: includes/customizer/options.php:1735
+#: includes/customizer/options.php:1772
+#: includes/customizer/options.php:1811
+#: includes/customizer/options.php:2056
+#: includes/customizer/options.php:2093
+#: includes/customizer/options.php:2130
+#: includes/customizer/options.php:2375
+#: includes/customizer/options.php:2412
+#: includes/customizer/options.php:2449
+#: includes/customizer/options.php:2836
+#: includes/customizer/options.php:2875
+#: includes/customizer/options.php:2981
+#: includes/customizer/options.php:4777
+#: includes/customizer/options.php:4816
+msgid "Normal"
+msgstr ""
+
+#: includes/customizer/options.php:966
+#: includes/customizer/options.php:1005
+#: includes/customizer/options.php:1328
+#: includes/customizer/options.php:1365
+#: includes/customizer/options.php:1403
+#: includes/customizer/options.php:1441
+#: includes/customizer/options.php:1709
+#: includes/customizer/options.php:1746
+#: includes/customizer/options.php:1784
+#: includes/customizer/options.php:1822
+#: includes/customizer/options.php:2067
+#: includes/customizer/options.php:2104
+#: includes/customizer/options.php:2141
+#: includes/customizer/options.php:2386
+#: includes/customizer/options.php:2423
+#: includes/customizer/options.php:2460
+#: includes/customizer/options.php:2848
+#: includes/customizer/options.php:2888
+#: includes/customizer/options.php:2993
+#: includes/customizer/options.php:4789
+#: includes/customizer/options.php:4828
+msgid "Hover"
+msgstr ""
+
+#: includes/customizer/options.php:1019
+msgid "Filter Links: Active Background"
+msgstr ""
+
+#: includes/customizer/options.php:1032
+#: includes/customizer/options.php:1059
+#: includes/customizer/options.php:2628
+#: includes/customizer/options.php:3652
+#: includes/customizer/options.php:4698
+#: includes/customizer/options.php:4723
+#: includes/customizer/options.php:4749
+msgid "Select Color"
+msgstr ""
+
+#: includes/customizer/options.php:1046
+msgid "Filter Links: Active Color"
+msgstr ""
+
+#: includes/customizer/options.php:1081
+msgid "Filter Button Icon Class"
+msgstr ""
+
+#: includes/customizer/options.php:1082
+#: includes/customizer/options.php:1463
+msgid "Enter a full icon class to replace the default icon."
+msgstr ""
+
+#: includes/customizer/options.php:1105
+#: includes/customizer/options.php:1486
+#: includes/customizer/options.php:1844
+#: includes/customizer/options.php:2163
+msgid "Padding (px)"
+msgstr ""
+
+#: includes/customizer/options.php:1116
+#: includes/customizer/options.php:1144
+#: includes/customizer/options.php:1172
+#: includes/customizer/options.php:1497
+#: includes/customizer/options.php:1525
+#: includes/customizer/options.php:1553
+#: includes/customizer/options.php:1855
+#: includes/customizer/options.php:1883
+#: includes/customizer/options.php:1911
+#: includes/customizer/options.php:2174
+#: includes/customizer/options.php:2202
+#: includes/customizer/options.php:2230
+msgid "Top"
+msgstr ""
+
+#: includes/customizer/options.php:1130
+#: includes/customizer/options.php:1158
+#: includes/customizer/options.php:1186
+#: includes/customizer/options.php:1511
+#: includes/customizer/options.php:1539
+#: includes/customizer/options.php:1567
+#: includes/customizer/options.php:1869
+#: includes/customizer/options.php:1897
+#: includes/customizer/options.php:1925
+#: includes/customizer/options.php:2188
+#: includes/customizer/options.php:2216
+#: includes/customizer/options.php:2244
+msgid "Bottom"
+msgstr ""
+
+#: includes/customizer/options.php:1218
+#: includes/customizer/options.php:1599
+#: includes/customizer/options.php:1957
+#: includes/customizer/options.php:2276
+msgid "Border Width"
+msgstr ""
+
+#: includes/customizer/options.php:1256
+#: includes/customizer/options.php:1637
+#: includes/customizer/options.php:1995
+#: includes/customizer/options.php:2314
+msgid "Border Radius"
+msgstr ""
+
+#: includes/customizer/options.php:1304
+#: includes/customizer/options.php:1685
+#: includes/customizer/options.php:2043
+#: includes/customizer/options.php:2362
+msgid "Text Color"
+msgstr ""
+
+#: includes/customizer/options.php:1341
+#: includes/customizer/options.php:1722
+#: includes/customizer/options.php:2080
+#: includes/customizer/options.php:2399
+msgid "Background Color"
+msgstr ""
+
+#: includes/customizer/options.php:1378
+#: includes/customizer/options.php:1759
+msgid "Icon Color"
+msgstr ""
+
+#: includes/customizer/options.php:1417
+#: includes/customizer/options.php:1798
+#: includes/customizer/options.php:2117
+#: includes/customizer/options.php:2436
+msgid "Border Color"
+msgstr ""
+
+#: includes/customizer/options.php:1454
+msgid "Filter Reset Button"
+msgstr ""
+
+#: includes/customizer/options.php:1462
+msgid "Reset Button Icon Class"
+msgstr ""
+
+#: includes/customizer/options.php:1835
+msgid "Filter Apply Button"
+msgstr ""
+
+#: includes/customizer/options.php:2154
+msgid "Filter Inside Reset Button"
+msgstr ""
+
+#: includes/customizer/options.php:2492
+#: ocean-portfolio.php:363
+#: assets/dist/metabox.js:1
+msgid "Image"
+msgstr ""
+
+#: includes/customizer/options.php:2512
+#: includes/customizer/options.php:2513
+msgid "Open Portfolio Item"
+msgstr ""
+
+#: includes/customizer/options.php:2517
+#: includes/customizer/options.php:2518
+msgid "Open Lightbox"
+msgstr ""
+
+#: includes/customizer/options.php:2555
+#: includes/customizer/options.php:2580
+msgid "Image Width"
+msgstr ""
+
+#: includes/customizer/options.php:2734
+msgid "Overlay Icons Width (px)"
+msgstr ""
+
+#: includes/customizer/options.php:2760
+msgid "Overlay Icons Height (px)"
+msgstr ""
+
+#: includes/customizer/options.php:2786
+msgid "Overlay Icons Size (px)"
+msgstr ""
+
+#: includes/customizer/options.php:2823
+msgid "Overlay Icons Background"
+msgstr ""
+
+#: includes/customizer/options.php:2968
+msgid "Overlay Icons Border"
+msgstr ""
+
+#: includes/customizer/options.php:3006
+#: includes/customizer/options.php:3014
+msgid "Image Animation"
+msgstr ""
+
+#: includes/customizer/options.php:3034
+msgid "Animation Duration"
+msgstr ""
+
+#: includes/customizer/options.php:3035
+msgid "Edit animation duration as per your need."
+msgstr ""
+
+#: includes/customizer/options.php:3047
+msgid "Animation Delay"
+msgstr ""
+
+#: includes/customizer/options.php:3048
+msgid "Edit animation Delay as per your need."
+msgstr ""
+
+#: includes/customizer/options.php:3060
+msgid "Transform Origin ( Initial )"
+msgstr ""
+
+#: includes/customizer/options.php:3061
+msgid "Set initial transform origin."
+msgstr ""
+
+#: includes/customizer/options.php:3073
+msgid "Transform ( Initial )"
+msgstr ""
+
+#: includes/customizer/options.php:3074
+msgid "Set initial transform."
+msgstr ""
+
+#: includes/customizer/options.php:3086
+msgid "Transform Origin ( Final )"
+msgstr ""
+
+#: includes/customizer/options.php:3087
+msgid "Set final transform origin."
+msgstr ""
+
+#: includes/customizer/options.php:3099
+msgid "Transform ( Final )"
+msgstr ""
+
+#: includes/customizer/options.php:3100
+msgid "Set transform origin."
+msgstr ""
+
+#: includes/customizer/options.php:3305
+msgid "Single Portfolio Item"
+msgstr ""
+
+#: includes/customizer/options.php:3432
+msgid "Featured Image In Page Header"
+msgstr ""
+
+#: includes/customizer/options.php:3442
+msgid "Page Header Height (px)"
+msgstr ""
+
+#: includes/customizer/options.php:3470
+msgid "Position"
+msgstr ""
+
+#: includes/customizer/options.php:3481
+msgid "Top Left"
+msgstr ""
+
+#: includes/customizer/options.php:3482
+msgid "Top Center"
+msgstr ""
+
+#: includes/customizer/options.php:3483
+msgid "Top Right"
+msgstr ""
+
+#: includes/customizer/options.php:3484
+msgid "Center Left"
+msgstr ""
+
+#: includes/customizer/options.php:3485
+msgid "Center Center"
+msgstr ""
+
+#: includes/customizer/options.php:3486
+msgid "Center Right"
+msgstr ""
+
+#: includes/customizer/options.php:3487
+msgid "Bottom Left"
+msgstr ""
+
+#: includes/customizer/options.php:3488
+msgid "Bottom Center"
+msgstr ""
+
+#: includes/customizer/options.php:3489
+msgid "Bottom Right"
+msgstr ""
+
+#: includes/customizer/options.php:3501
+#: includes/customizer/options.php:3513
+msgid "Repeat"
+msgstr ""
+
+#: includes/customizer/options.php:3512
+msgid "No-repeat"
+msgstr ""
+
+#: includes/customizer/options.php:3514
+msgid "Repeat-x"
+msgstr ""
+
+#: includes/customizer/options.php:3515
+msgid "Repeat-y"
+msgstr ""
+
+#: includes/customizer/options.php:3527
+msgid "Attachment"
+msgstr ""
+
+#: includes/customizer/options.php:3539
+msgid "Initial"
+msgstr ""
+
+#: includes/customizer/options.php:3544
+msgid "Scroll"
+msgstr ""
+
+#: includes/customizer/options.php:3549
+msgid "Fixed"
+msgstr ""
+
+#: includes/customizer/options.php:3563
+msgid "Size"
+msgstr ""
+
+#: includes/customizer/options.php:3580
+msgid "Auto"
+msgstr ""
+
+#: includes/customizer/options.php:3585
+msgid "Cover"
+msgstr ""
+
+#: includes/customizer/options.php:3590
+msgid "Contain"
+msgstr ""
+
+#: includes/customizer/options.php:3612
+msgid "Overlay Opacity"
+msgstr ""
+
+#: includes/customizer/options.php:3705
+msgid "Elements Positioning"
+msgstr ""
+
+#: includes/customizer/options.php:3718
+msgid "Meta Positioning"
+msgstr ""
+
+#: includes/customizer/options.php:3732
+#: includes/helpers.php:91
+msgid "Comments"
+msgstr ""
+
+#: includes/customizer/options.php:3747
+msgid "Related Portfolio Count"
+msgstr ""
+
+#: includes/customizer/options.php:3781
+msgid "Related Posts Columns"
+msgstr ""
+
+#: includes/customizer/options.php:3815
+msgid "Related Posts Image Width (px)"
+msgstr ""
+
+#: includes/customizer/options.php:3839
+msgid "Related Posts Image Height (px)"
+msgstr ""
+
+#: includes/customizer/options.php:3873
+msgid "Meta Style"
+msgstr ""
+
+#: includes/customizer/options.php:3884
+#: includes/customizer/options.php:3885
+msgid "Minimal"
+msgstr ""
+
+#: includes/customizer/options.php:3889
+#: includes/customizer/options.php:3890
+#: includes/customizer/options.php:3908
+msgid "Stylish"
+msgstr ""
+
+#: includes/customizer/options.php:3897
+msgid "Meta Separator"
+msgstr ""
+
+#: includes/customizer/options.php:3907
+msgid "Classic"
+msgstr ""
+
+#: includes/customizer/options.php:3909
+msgid "Modern"
+msgstr ""
+
+#: includes/customizer/options.php:3934
+msgid "Styling and Typography"
+msgstr ""
+
+#: includes/customizer/options.php:3951
+msgid "General Style"
+msgstr ""
+
+#: includes/customizer/options.php:4018
+msgid "Tablet Style"
+msgstr ""
+
+#: includes/customizer/options.php:4085
+msgid "Mobile Style"
+msgstr ""
+
+#: includes/customizer/options.php:4201
+#: includes/customizer/options.php:4363
+#: includes/customizer/options.php:4525
+msgid "Font Family"
+msgstr ""
+
+#: includes/customizer/options.php:4208
+#: includes/customizer/options.php:4215
+#: includes/customizer/options.php:4222
+#: includes/customizer/options.php:4370
+#: includes/customizer/options.php:4377
+#: includes/customizer/options.php:4384
+#: includes/customizer/options.php:4532
+#: includes/customizer/options.php:4539
+#: includes/customizer/options.php:4546
+msgid "Font Weight"
+msgstr ""
+
+#: includes/customizer/options.php:4229
+#: includes/customizer/options.php:4391
+#: includes/customizer/options.php:4553
+msgid "Font Subset"
+msgstr ""
+
+#: includes/customizer/options.php:4236
+#: includes/customizer/options.php:4243
+#: includes/customizer/options.php:4250
+#: includes/customizer/options.php:4398
+#: includes/customizer/options.php:4405
+#: includes/customizer/options.php:4412
+#: includes/customizer/options.php:4560
+#: includes/customizer/options.php:4567
+#: includes/customizer/options.php:4574
+msgid "Font Size"
+msgstr ""
+
+#: includes/customizer/options.php:4265
+#: includes/customizer/options.php:4272
+#: includes/customizer/options.php:4279
+#: includes/customizer/options.php:4427
+#: includes/customizer/options.php:4434
+#: includes/customizer/options.php:4441
+#: includes/customizer/options.php:4589
+#: includes/customizer/options.php:4596
+#: includes/customizer/options.php:4603
+msgid "Letter Spacing"
+msgstr ""
+
+#: includes/customizer/options.php:4294
+#: includes/customizer/options.php:4301
+#: includes/customizer/options.php:4308
+#: includes/customizer/options.php:4456
+#: includes/customizer/options.php:4463
+#: includes/customizer/options.php:4470
+#: includes/customizer/options.php:4618
+#: includes/customizer/options.php:4625
+#: includes/customizer/options.php:4632
+msgid "Line Height"
+msgstr ""
+
+#: includes/customizer/options.php:4322
+#: includes/customizer/options.php:4329
+#: includes/customizer/options.php:4336
+#: includes/customizer/options.php:4484
+#: includes/customizer/options.php:4491
+#: includes/customizer/options.php:4498
+#: includes/customizer/options.php:4646
+#: includes/customizer/options.php:4653
+#: includes/customizer/options.php:4660
+msgid "Text Transform"
+msgstr ""
+
+#: includes/customizer/options.php:4343
+#: includes/customizer/options.php:4505
+#: includes/customizer/options.php:4667
+msgid "Text Decoration"
+msgstr ""
+
+#: includes/helpers.php:83
+msgid "Featured Image"
+msgstr ""
+
+#: includes/helpers.php:85
+msgid "Meta"
+msgstr ""
+
+#: includes/helpers.php:86
+msgid "Content"
+msgstr ""
+
+#: includes/helpers.php:88
+msgid "Social Share"
+msgstr ""
+
+#: includes/helpers.php:89
+msgid "Next/Prev Links"
+msgstr ""
+
+#: includes/helpers.php:90
+msgid "Related Portfolio"
+msgstr ""
+
+#: includes/helpers.php:293
+msgctxt "Image Size Control"
+msgid "Full"
+msgstr ""
+
+#: includes/helpers.php:294
+msgctxt "Image Size Control"
+msgid "Custom"
+msgstr ""
+
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
+msgstr ""
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr ""
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr ""
+
+#: includes/update-message.php:85
+msgid "4.0.0"
+msgstr ""
+
+#: includes/update-message.php:88
+msgid "Ocean Extra"
+msgstr ""
+
+#: includes/update-message.php:89
+msgid "2.4.0"
+msgstr ""
+
+#: ocean-portfolio.php:313
+#: assets/dist/metabox.js:1
+msgid "External URL"
+msgstr ""
+
+#: ocean-portfolio.php:314
+#: assets/dist/metabox.js:1
+msgid "Add your external URL for this portfolio item."
+msgstr ""
+
+#: ocean-portfolio.php:330
+msgid "External URL Target"
+msgstr ""
+
+#: ocean-portfolio.php:331
+#: assets/dist/metabox.js:1
+msgid "Choose your target for your external URL."
+msgstr ""
+
+#: ocean-portfolio.php:333
+#: assets/dist/metabox.js:1
+msgid "Self"
+msgstr ""
+
+#: ocean-portfolio.php:334
+#: assets/dist/metabox.js:1
+msgid "Blank"
+msgstr ""
+
+#: ocean-portfolio.php:360
+msgid "Thumbnail Type"
+msgstr ""
+
+#: ocean-portfolio.php:361
+#: assets/dist/metabox.js:1
+msgid "Choose your thumbnil type that will display in archive page."
+msgstr ""
+
+#: ocean-portfolio.php:364
+#: assets/dist/metabox.js:1
+msgid "Video"
+msgstr ""
+
+#: ocean-portfolio.php:382
+#: assets/dist/metabox.js:1
+msgid "oEmbed URL"
+msgstr ""
+
+#: ocean-portfolio.php:383
+msgid "Enter a URL that is compatible with WP's built-in oEmbed feature. This setting is used for your video and audio post formats."
+msgstr ""
+
+#: ocean-portfolio.php:383
+#: ocean-portfolio.php:400
+msgid "Learn More"
+msgstr ""
+
+#: ocean-portfolio.php:399
+#: assets/dist/metabox.js:1
+msgid "Self Hosted"
+msgstr ""
+
+#: ocean-portfolio.php:400
+msgid "Insert your self hosted video or audio url here."
+msgstr ""
+
+#: ocean-portfolio.php:416
+#: assets/dist/metabox.js:1
+msgid "Embed Code"
+msgstr ""
+
+#: ocean-portfolio.php:417
+#: assets/dist/metabox.js:1
+msgid "Insert your embed/iframe code. This setting is used for your video and audio post formats."
+msgstr ""
+
+#: ocean-portfolio.php:611
+msgid "Portfolio Sidebar"
+msgstr ""
+
+#: ocean-portfolio.php:613
+msgid "Widgets in this area are used in the portfolio."
+msgstr ""
+
+#: ocean-portfolio.php:973
+msgid "Share on Facebook"
+msgstr ""
+
+#: ocean-portfolio.php:974
+msgid "Tweet"
+msgstr ""
+
+#: ocean-portfolio.php:975
+msgid "Pin it"
+msgstr ""
+
+#: ocean-portfolio.php:976
+msgid "Download image"
+msgstr ""
+
+#: ocean-portfolio.php:1149
+#: ocean-portfolio.php:1256
+#: ocean-portfolio.php:1383
+#: templates/portfolio-archive.php:439
+#: templates/portfolio-taxonomy.php:110
+msgid "You have no portfolio items"
+msgstr ""
+
+#: templates/photoswipe.php:35
+msgid "Close (Esc)"
+msgstr ""
+
+#: templates/photoswipe.php:37
+msgid "Share"
+msgstr ""
+
+#: templates/photoswipe.php:39
+msgid "Toggle fullscreen"
+msgstr ""
+
+#: templates/photoswipe.php:41
+msgid "Zoom in/out"
+msgstr ""
+
+#: templates/photoswipe.php:58
+msgid "Previous (arrow left)"
+msgstr ""
+
+#: templates/photoswipe.php:61
+msgid "Next (arrow right)"
+msgstr ""
+
+#: templates/single-portfolio-content.php:15
+msgid "Pages:"
+msgstr ""
+
+#: templates/single-portfolio-meta.php:48
+#: templates/single-portfolio-meta.php:70
+msgid "0 Comments"
+msgstr ""
+
+#: templates/single-portfolio-meta.php:48
+#: templates/single-portfolio-meta.php:70
+msgid "1 Comment"
+msgstr ""
+
+#: templates/single-portfolio-meta.php:48
+#: templates/single-portfolio-meta.php:70
+msgid "% Comments"
+msgstr ""
+
+#: templates/single-portfolio-next-prev.php:18
+msgid "Previous Post"
+msgstr ""
+
+#: templates/single-portfolio-next-prev.php:19
+msgid "Next Post"
+msgstr ""
+
+#: templates/single-portfolio-next-prev.php:22
+msgid "Continue Reading"
+msgstr ""
+
+#: templates/single-portfolio-related.php:12
+msgid "You Might Also Like"
+msgstr ""
+
+#: assets/dist/metabox.js:1
+msgid "Enter a URL that is compatible with WP's built-in oEmbed feature. This setting is used for your video and audio post formats - "
+msgstr ""
+
+#: assets/dist/metabox.js:1
+msgid "learn more"
+msgstr ""
+
+#: assets/dist/metabox.js:1
+msgid "Insert your self hosted video or audio url here. - "
+msgstr ""
+
+#: assets/dist/metabox.js:1
+msgid "External Url Target"
+msgstr ""
+
+#: assets/dist/metabox.js:1
+msgid "Link Target"
+msgstr ""

@@ -1,0 +1,52 @@
+.ogb-icon-picker-container {
+
+    .ogb-reset-btn {
+
+        .reset-btn-text {
+            font-size: 14px;
+            line-height: 14px;
+            padding-right: 10px;
+        }
+    }
+
+	.ogb-icon-list {
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-between;
+
+		.svg-icon-btn {
+			svg {
+				width: 20px;
+				height: 20px;
+				color: #646970;
+			}
+		}
+	}
+
+	.ogb-panel-body-icon-picker {
+		max-height: 300px;
+		overflow: auto;
+		margin-bottom: 30px;
+
+		&::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		/* Track */
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 5px grey;
+  			border-radius: 10px;
+		}
+
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			background: #888;
+			border-radius: 10px;
+		}
+
+		/* Handle on hover */
+		&::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
+	}
+}

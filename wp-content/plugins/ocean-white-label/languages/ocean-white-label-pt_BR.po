@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean White Label\n"
+"POT-Creation-Date: 2023-10-19 01:14-0300\n"
+"PO-Revision-Date: 2023-12-05 01:52-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ocean-white-label.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: includes/themepanel/views/panes/white-label-settings.php:12
+#: ocean-white-label.php:278
+msgid "Theme Branding:"
+msgstr "Marca do tema:"
+
+#: includes/themepanel/views/panes/white-label-settings.php:16
+msgid ""
+"This option replaces OceanWP in the OceanWP Settings for metabox feature "
+"with the name of your theme."
+msgstr ""
+"Esta opção substitui OceanWP nas configurações do OceanWP para o recurso de "
+"metabox pelo nome do seu tema."
+
+#: includes/themepanel/views/panes/white-label-settings.php:22
+#: ocean-white-label.php:284
+msgid "Theme Name:"
+msgstr "Nome do tema:"
+
+#: includes/themepanel/views/panes/white-label-settings.php:26
+msgid "This option replaces OceanWP theme name in Appearance > Themes."
+msgstr "Esta opção substitui o nome do tema OceanWP em Aparência > Temas."
+
+#: includes/themepanel/views/panes/white-label-settings.php:33
+#: ocean-white-label.php:290
+msgid "Theme Author:"
+msgstr "Autor do tema:"
+
+#: includes/themepanel/views/panes/white-label-settings.php:37
+msgid "This option replaces theme author name in Appearance > Themes."
+msgstr "Esta opção substitui o nome do autor do tema em Aparência > Temas."
+
+#: includes/themepanel/views/panes/white-label-settings.php:43
+#: ocean-white-label.php:296
+msgid "Theme Author URL:"
+msgstr "URL do autor do tema:"
+
+#: includes/themepanel/views/panes/white-label-settings.php:47
+msgid "This option replaces theme author URL in Appearance > Themes."
+msgstr "Esta opção substitui o URL do autor do tema em Aparência > Temas."
+
+#: includes/themepanel/views/panes/white-label-settings.php:53
+#: ocean-white-label.php:302
+msgid "Theme Description:"
+msgstr "Descrição do tema:"
+
+#: includes/themepanel/views/panes/white-label-settings.php:57
+msgid "This option replaces theme description text in Appearance > Themes."
+msgstr ""
+"Esta opção substitui o texto de descrição do tema em Aparência > Temas."
+
+#: includes/themepanel/views/panes/white-label-settings.php:64
+#: ocean-white-label.php:308
+msgid "Theme Screenshot URL:"
+msgstr "URL da captura de tela do tema:"
+
+#: includes/themepanel/views/panes/white-label-settings.php:72
+#: includes/themepanel/views/panes/white-label-settings.php:100
+#: ocean-white-label.php:313
+msgid "Preview Image"
+msgstr "Pré-visualizar imagem"
+
+#: includes/themepanel/views/panes/white-label-settings.php:76
+#: includes/themepanel/views/panes/white-label-settings.php:104
+#: ocean-white-label.php:317
+msgid "Upload"
+msgstr "Enviar"
+
+#: includes/themepanel/views/panes/white-label-settings.php:77
+#: includes/themepanel/views/panes/white-label-settings.php:105
+#: ocean-white-label.php:318
+msgid "Remove Image"
+msgstr "Remover imagem"
+
+#: includes/themepanel/views/panes/white-label-settings.php:78
+#: ocean-white-label.php:319
+msgid ""
+"This option replace the theme screenshot in Appearance > Themes. Recommended "
+"size: 1200x900px"
+msgstr ""
+"Esta opção substitui a captura de tela do tema em Aparência > Temas. Tamanho "
+"recomendado: 1200x900px"
+
+#: includes/themepanel/views/panes/white-label-settings.php:84
+msgid "Whitelabel OceanWP Panel"
+msgstr "Painel OceanWP com rótulo branco"
+
+#: includes/themepanel/views/panes/white-label-settings.php:92
+msgid "Theme panel Custom Logo:"
+msgstr "Logo personalizado do Painel do tema:"
+
+#: includes/themepanel/views/panes/white-label-settings.php:106
+msgid ""
+"This option replaces our logo in the Theme Panel header. Recommended size: "
+"170x30px."
+msgstr ""
+"Esta opção substitui nosso logo no cabeçalho do \"Painel do tema\". Tamanho "
+"recomendado: 170x30px."
+
+#: includes/themepanel/views/panes/white-label-settings.php:111
+#: ocean-white-label.php:325
+msgid "Hide the OceanWP News & Updates in the Dashboard"
+msgstr "Ocultar as notícias e atualizações do OceanWP no painel"
+
+#: includes/themepanel/views/panes/white-label-settings.php:130
+#: ocean-white-label.php:333
+msgid "Hide The Themes Section in the Customizer"
+msgstr "Ocultar a seção \"Temas\" no personalizador"
+
+#: includes/themepanel/views/panes/white-label-settings.php:138
+msgid "Hide Changelog"
+msgstr "Ocultar registro de alterações"
+
+#: includes/themepanel/views/panes/white-label-settings.php:142
+msgid "Check this option to hide Changelog Section from Theme Panel."
+msgstr ""
+"Marque esta opção para ocultar a seção \"Registro de alterações\" no "
+"\"Painel do tema\"."
+
+#: includes/themepanel/views/panes/white-label-settings.php:147
+msgid "Hide Help Section"
+msgstr "Ocultar a seção \"Ajuda\""
+
+#: includes/themepanel/views/panes/white-label-settings.php:151
+msgid "Check this option to hide Help Section from Theme Panel."
+msgstr ""
+"Marque esta opção para ocultar a seção \"Ajuda\" no \"Painel do tema\"."
+
+#: includes/themepanel/views/panes/white-label-settings.php:156
+msgid "Hide Download Section on Home"
+msgstr "Ocultar a seção \"Baixar\" na página inicial"
+
+#: includes/themepanel/views/panes/white-label-settings.php:160
+msgid "Check this option to hide Download Section on Home from Theme Panel."
+msgstr ""
+"Marque esta opção para ocultar a seção \"Baixar\" na página inicial no "
+"\"Painel do tema\"."
+
+#: includes/themepanel/views/panes/white-label-settings.php:165
+msgid "Hide Love Corner Section on Home"
+msgstr "Ocultar a seção \"Cantinho do amor\" na página inicial"
+
+#: includes/themepanel/views/panes/white-label-settings.php:169
+msgid "Check this option to hide Love Corner Section on Home from Theme Panel."
+msgstr ""
+"Marque esta opção para ocultar a seção \"Cantinho do amor\" na página "
+"inicial no \"Painel do tema\"."
+
+#: includes/themepanel/views/panes/white-label-settings.php:174
+msgid "Hide Small Navigation Menu"
+msgstr "Ocultar o menu de navegação pequeno"
+
+#: includes/themepanel/views/panes/white-label-settings.php:178
+msgid "Check this option to hide Small Navigation Menu from Theme Panel."
+msgstr ""
+"Marque esta opção para ocultar o menu de navegação pequeno no \"Painel do "
+"tema\"."
+
+#: includes/themepanel/views/panes/white-label-settings.php:183
+#: ocean-white-label.php:337
+msgid "Hide This Box"
+msgstr "Ocultar esta caixa"
+
+#: includes/themepanel/views/panes/white-label-settings.php:187
+#: ocean-white-label.php:339
+msgid ""
+"Check this option to hide this box. Re-activate Ocean White Label to display "
+"this box again."
+msgstr ""
+"Marque esta opção para ocultar esta caixa. Reative o Ocean White Label para "
+"exibir esta caixa novamente."
+
+#: ocean-white-label.php:165 ocean-white-label.php:174
+msgid "Cheatin&#8217; huh?"
+msgstr "Trapaceando, hein?"
+
+#: ocean-white-label.php:272
+msgid "White Label"
+msgstr "White Label"
+
+#: ocean-white-label.php:280
+msgid ""
+"This option replace OceanWP in the admin as the OceanWP Settings metabox."
+msgstr ""
+"Esta opção substitui OceanWP no painel de administração como a caixa de "
+"configurações do OceanWP."
+
+#: ocean-white-label.php:286
+msgid "This option replace the theme name in Appearance > Themes."
+msgstr "Esta opção substitui o nome do tema em Aparência > Temas."
+
+#: ocean-white-label.php:292
+msgid "This option replace the theme author in Appearance > Themes."
+msgstr "Esta opção substitui o autor do tema em Aparência > Temas."
+
+#: ocean-white-label.php:298
+msgid "This option replace the theme autohr url in Appearance > Themes."
+msgstr "Esta opção substitui o URL do autor do tema em Aparência > Temas."
+
+#: ocean-white-label.php:304
+msgid "This option replace the theme description in Appearance > Themes."
+msgstr "Esta opção substitui a descrição do tema em Aparência > Temas."
+
+#: ocean-white-label.php:329
+msgid "Hide The Theme Panel Sidebar"
+msgstr "Ocultar a barra lateral do \"Painel do tema\""
+
+#: ocean-white-label.php:342
+msgid "Save Changes"
+msgstr "Salvar alterações"
+
+#. Plugin Name of the plugin/theme
+msgid "Ocean White Label"
+msgstr "Ocean White Label"
+
+#. Plugin URI of the plugin/theme
+msgid "https://oceanwp.org/extension/ocean-white-label/"
+msgstr "https://oceanwp.org/extension/ocean-white-label/"
+
+#. Description of the plugin/theme
+msgid ""
+"A plugin which add a new box in Theme Panel to allow you to replace the "
+"OceanWP name by your own branding name."
+msgstr ""
+"Um plugin que adiciona uma nova caixa no \"Painel do tema\" para permitir "
+"que você substitua o nome OceanWP pelo nome de sua própria marca."
+
+#. Author of the plugin/theme
+msgid "OceanWP"
+msgstr "OceanWP"
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"

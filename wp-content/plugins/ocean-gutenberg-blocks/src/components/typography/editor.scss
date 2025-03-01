@@ -1,0 +1,58 @@
+.react-select-container {
+    margin-bottom: 24px;
+}
+
+.ogb-device-control-inner {
+    position: relative;
+}
+
+.ogb-typography-range-control {
+    padding: 24px 0;
+
+    .components-range-control__root {
+        margin-top: 35px;
+    }
+}
+
+.components-button-group.components-tab-panel__tabs {
+    position: absolute;
+    right: 16px;
+    z-index: 99;
+}
+
+.components-button-group.ogb-unit-picker {
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
+
+.ogb-typography-control-container {
+    .ogb-reset-btn {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        padding: 1.5em 1em;
+        background-color: #ededed;
+        color: #007cba;
+        margin-bottom: 24px;
+    }
+
+    .ogb-enable-typograhpy-button,
+    .ogb-reset-btn {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        padding: 1.5em 1em;
+        background-color: #ededed;
+        margin-bottom: 10px;
+        color: #007cba;
+    }
+
+    .typo-btn-text,
+    .reset-btn-text {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}

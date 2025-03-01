@@ -1,0 +1,2600 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Gutenberg Blocks\n"
+"POT-Creation-Date: 2023-10-20 05:45-0300\n"
+"PO-Revision-Date: 2023-12-04 21:49-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ocean-gutenberg-blocks.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: includes/blocks/class-ogb-blocks.php:77 includes/class-ogb-setup.php:83
+#: includes/class-ogb-setup.php:84
+#: includes/customizer/class-ogb-customizer.php:52
+msgid "OceanWP Blocks"
+msgstr "Blocos OceanWP"
+
+#: includes/blocks/modules/alert/block-alert.php:40
+msgid "Alert"
+msgstr "Alerta"
+
+#: includes/blocks/modules/alert/block-alert.php:41
+msgid "Create beautiful alert notification."
+msgstr "Criar uma bela notificação de alerta."
+
+#: includes/blocks/modules/banner/block-banner.php:38
+msgid "Banner"
+msgstr "Banner"
+
+#: includes/blocks/modules/banner/block-banner.php:39
+msgid "Add beautiful banner to your site"
+msgstr "Adicionar um belo banner ao seu site"
+
+#: includes/blocks/modules/blog-grid/block-blog-grid.php:44
+#: src/blocks/blog-grid/edit.js:844
+msgid "Blog Grid"
+msgstr "Grade de blog"
+
+#: includes/blocks/modules/blog-grid/block-blog-grid.php:45
+msgid "Display posts as a beautiful grid style"
+msgstr "Exibir os posts em um estilo de grade bonito"
+
+#: includes/blocks/modules/blog-grid/blog-grid.php:208
+msgid "Visit Author Page"
+msgstr "Visitar página do autor"
+
+#: includes/blocks/modules/blog-grid/blog-grid.php:261
+#: includes/blocks/modules/blog-list/blog-list.php:219
+msgid "0 Comments"
+msgstr "0 Comentário"
+
+#: includes/blocks/modules/blog-grid/blog-grid.php:261
+#: includes/blocks/modules/blog-list/blog-list.php:219
+msgid "1 Comment"
+msgstr "1 Comentário"
+
+#: includes/blocks/modules/blog-grid/blog-grid.php:261
+#: includes/blocks/modules/blog-list/blog-list.php:219
+msgid "% Comments"
+msgstr "% Comentários"
+
+#: includes/blocks/modules/blog-list/block-blog-list.php:44
+#: src/blocks/blog-list/edit.js:765
+msgid "Blog List"
+msgstr "Lista de blog"
+
+#: includes/blocks/modules/blog-list/block-blog-list.php:45
+msgid "Display posts as a beautiful list style"
+msgstr "Exibir os posts em um estilo de lista bonito"
+
+#: includes/blocks/modules/business-hours/block-business-hours.php:38
+msgid "Business Hours"
+msgstr "Horário de funcionamento"
+
+#: includes/blocks/modules/business-hours/block-business-hours.php:39
+msgid "Display your business opening and closing time - best for shops"
+msgstr ""
+"Exibir o horário de abertura e fechamento da sua empresa - ideal para lojas"
+
+#: includes/blocks/modules/buttons/block-buttons.php:38
+msgid "Buttons"
+msgstr "Botões"
+
+#: includes/blocks/modules/buttons/block-buttons.php:39
+msgid "Add beautiful responsive buttons to your content"
+msgstr "Adicione belos botões responsivos ao seu conteúdo"
+
+#: includes/blocks/modules/call-to-action/block-call-to-action.php:40
+msgid "Call To Action"
+msgstr "Chamada para ação"
+
+#: includes/blocks/modules/call-to-action/block-call-to-action.php:41
+msgid "Add a beautiful call to action to boost user engagement."
+msgstr ""
+"Adicionar uma bela chamada para ação para aumentar o envolvimento do usuário."
+
+#: includes/blocks/modules/circle-progress/block-circle-progress.php:38
+msgid "Circle Progress"
+msgstr "Progresso em círculo"
+
+#: includes/blocks/modules/circle-progress/block-circle-progress.php:39
+msgid "Display data using beautiful circle progress"
+msgstr "Exibir dados usando um lindo progresso em círculo"
+
+#: includes/blocks/modules/columns/block-columns.php:40
+msgid "Columns"
+msgstr "Colunas"
+
+#: includes/blocks/modules/columns/block-columns.php:41
+#: includes/blocks/modules/section/block-section.php:41
+msgid "Use it to create beautiful layout."
+msgstr "Use-o para criar um layout bonito."
+
+#: includes/blocks/modules/divider/block-divider.php:38
+msgid "Divider"
+msgstr "Divisor"
+
+#: includes/blocks/modules/divider/block-divider.php:39
+msgid "Separate content or section using divider"
+msgstr "Separar o conteúdo ou a seção usando um divisor"
+
+#: includes/blocks/modules/heading/block-heading.php:38
+msgid "Heading"
+msgstr "Título"
+
+#: includes/blocks/modules/heading/block-heading.php:39
+msgid "Add responsive heading."
+msgstr "Adicionar um título responsivo."
+
+#: includes/blocks/modules/icon-list/block-icon-list.php:38
+msgid "Icon List"
+msgstr "Lista de ícones"
+
+#: includes/blocks/modules/icon-list/block-icon-list.php:39
+msgid "Add icon to your content"
+msgstr "Adicionar um ícone ao seu conteúdo"
+
+#: includes/blocks/modules/info-boxes/block-info-box.php:38
+msgid "Info Box"
+msgstr "Caixa de informações"
+
+#: includes/blocks/modules/info-boxes/block-info-box.php:39
+msgid "Info Box Description"
+msgstr "Descrição da caixa de informações"
+
+#: includes/blocks/modules/modal/block-modal.php:38
+msgid "Modal"
+msgstr "Modal"
+
+#: includes/blocks/modules/modal/block-modal.php:39
+msgid "Create beautiful modal window using this block"
+msgstr "Criar uma bela janela modal usando este bloco"
+
+#: includes/blocks/modules/newsletter/block-newsletter.php:40
+msgid "Newsletter"
+msgstr "Boletim informativo"
+
+#: includes/blocks/modules/newsletter/block-newsletter.php:41
+msgid "Add newsletter to your site."
+msgstr "Adicionar um boletim informativo ao seu site."
+
+#: includes/blocks/modules/pricing-menu/block-pricing-menu.php:39
+msgid "Pricing Menu"
+msgstr "Menu de preços"
+
+#: includes/blocks/modules/pricing-menu/block-pricing-menu.php:40
+msgid "Add beautiful pricing menu"
+msgstr "Adicionar um belo menu de preços"
+
+#: includes/blocks/modules/recipe/block-recipe.php:38
+msgid "Recipe"
+msgstr "Receita"
+
+#: includes/blocks/modules/recipe/block-recipe.php:39
+msgid "Add amazing cook recipe to your site"
+msgstr "Adicionar receitas de culinária incríveis ao seu site"
+
+#: includes/blocks/modules/section/block-section.php:40
+#: src/blocks/section/edit.js:363
+msgid "Section"
+msgstr "Seção"
+
+#: includes/blocks/modules/star-rating/block-star-rating.php:38
+#: src/blocks/star-rating/attributes.js:46
+msgid "Star Rating"
+msgstr "Classificação por estrelas"
+
+#: includes/blocks/modules/star-rating/block-star-rating.php:39
+msgid "Add star rating to the site content"
+msgstr "Adicionar classificação por estrelas ao conteúdo do site"
+
+#: includes/blocks/modules/team/block-team.php:38
+msgid "Team"
+msgstr "Equipe"
+
+#: includes/blocks/modules/team/block-team.php:39
+msgid "Create beautiful team member section."
+msgstr "Criar uma bela seção de membros da equipe."
+
+#: includes/blocks/modules/testimonial/block-testimonials.php:40
+msgid "Testimonial"
+msgstr "Depoimento"
+
+#: includes/blocks/modules/testimonial/block-testimonials.php:41
+msgid "Add testimonials to showcase work or product quality"
+msgstr ""
+"Adicionar depoimentos para mostrar o trabalho ou a qualidade do produto"
+
+#: includes/blocks/modules/timeline/block-timeline.php:44
+msgid "Timeline"
+msgstr "Linha do tempo"
+
+#: includes/blocks/modules/timeline/block-timeline.php:45
+msgid "Timeline Description"
+msgstr "Descrição da linha do tempo"
+
+#: includes/class-ogb-setup.php:75 includes/class-ogb-setup.php:76
+msgid "Gutenberg Blocks"
+msgstr "Blocos Gutenberg"
+
+#: includes/class-ogb-setup.php:94 includes/class-ogb-setup.php:95
+msgid "Getting Started"
+msgstr "Começando"
+
+#: includes/class-ogb-setup.php:103 includes/class-ogb-setup.php:104
+msgid "Settings"
+msgstr "Configurações"
+
+#: includes/class-ogb-setup.php:134
+msgid "Enable & Disable Blocks"
+msgstr "Ativar e desativar blocos"
+
+#: includes/class-ogb-setup.php:135
+msgid ""
+"We have a lot of awesome blocks. But if you're overwhelmed with awesomeness, "
+"you can hide some of them. (If your post contains a disabled block, it will "
+"still continue to work. You won't just be able to add the disabled blocks.)"
+msgstr ""
+"Temos muitos blocos incríveis. Mas se você estiver sobrecarregado com tanta "
+"maravilha, pode ocultar alguns deles. (Se o seu post contiver um bloco "
+"desativado, ele continuará funcionando. Você simplesmente não poderá "
+"adicionar os blocos desativados.)"
+
+#: includes/customizer/class-ogb-customizer.php:72
+msgid "Styling Options Location"
+msgstr "Localização das opções de estilo"
+
+#: includes/customizer/class-ogb-customizer.php:73
+msgid ""
+"If you choose Custom File, a CSS file will be created in your uploads folder."
+msgstr ""
+"Se você escolher arquivo personalizado, um arquivo CSS será criado na sua "
+"pasta de envios."
+
+#: includes/customizer/class-ogb-customizer.php:78
+msgid "WP Head"
+msgstr "Cabeçalho do WP"
+
+#: includes/customizer/class-ogb-customizer.php:79
+msgid "Custom File"
+msgstr "Arquivo personalizado"
+
+#: includes/customizer/class-ogb-customizer.php:101
+msgid "Mailchimp API Key"
+msgstr "Chave da API do Mailchimp"
+
+#: includes/customizer/class-ogb-customizer.php:127
+msgid "Mailchimp Audience Id"
+msgstr "ID do público-alvo do Mailchimp"
+
+#: includes/customizer/class-ogb-customizer.php:128
+msgid "Enter Mailchimp Audience Id"
+msgstr "Digite o ID do público-alvo do Mailchimp"
+
+#: ocean-gutenberg-blocks.php:151
+msgid "Cloning is forbidden."
+msgstr "A clonagem é proibida."
+
+#: ocean-gutenberg-blocks.php:161
+msgid "Unserializing instances of this class is forbidden."
+msgstr "A desserialização de instâncias desta classe é proibida."
+
+#. Plugin Name of the plugin/theme
+#: ocean-gutenberg-blocks.php:197
+msgid "Ocean Gutenberg Blocks"
+msgstr "Ocean Gutenberg Blocks"
+
+#: ocean-gutenberg-blocks.php:257
+msgid ""
+"Thank you for choosing Ocean Gutenberg Blocks plugin. It works best with "
+"OceanWP theme. Try it - "
+msgstr ""
+"Obrigado por escolher o plugin Ocean Gutenberg Blocks. Ele funciona melhor "
+"com o tema OceanWP. Experimente - "
+
+#: ocean-gutenberg-blocks.php:257
+msgid "Install OceanWP now"
+msgstr "Instalar OceanWP agora"
+
+#: src/blocks/alert/edit.js:158
+msgid "Notice"
+msgstr "Aviso"
+
+#: src/blocks/alert/edit.js:159
+msgid "Error"
+msgstr "Erro"
+
+#: src/blocks/alert/edit.js:160
+msgid "Warning"
+msgstr "Alerta"
+
+#: src/blocks/alert/edit.js:161
+msgid "Success"
+msgstr "Sucesso"
+
+#: src/blocks/alert/edit.js:162
+msgid "Info"
+msgstr "Informação"
+
+#: src/blocks/alert/edit.js:166
+msgid "Small"
+msgstr "Pequeno"
+
+#: src/blocks/alert/edit.js:167
+msgid "Big"
+msgstr "Grande"
+
+#: src/blocks/alert/edit.js:168
+msgid "Minimal"
+msgstr "Minimalista"
+
+#: src/blocks/alert/edit.js:236
+msgid "Alert Type"
+msgstr "Tipo de alerta"
+
+#: src/blocks/alert/edit.js:246 src/blocks/banner/edit.js:364
+#: src/blocks/business-hour/edit.js:286 src/blocks/button/edit.js:250
+#: src/blocks/column/edit.js:356 src/blocks/columns/edit.js:281
+#: src/blocks/heading/edit.js:197 src/blocks/icon-list/edit.js:146
+#: src/blocks/info-box/edit.js:612 src/blocks/info-box/edit.js:863
+#: src/blocks/modal/edit.js:369 src/blocks/pricing-menu/edit.js:502
+#: src/blocks/section/edit.js:378 src/blocks/team/edit.js:388
+#: src/blocks/testimonial/edit.js:509
+msgid "Padding"
+msgstr "Preenchimento"
+
+#: src/blocks/alert/edit.js:268 src/blocks/banner/edit.js:386
+#: src/blocks/business-hour/edit.js:308 src/blocks/button/edit.js:272
+#: src/blocks/column/edit.js:378 src/blocks/columns/edit.js:303
+#: src/blocks/heading/edit.js:219 src/blocks/icon-list/edit.js:168
+#: src/blocks/info-box/edit.js:634 src/blocks/info-box/edit.js:946
+#: src/blocks/modal/edit.js:391 src/blocks/pricing-menu/edit.js:524
+#: src/blocks/section/edit.js:400 src/blocks/team/edit.js:410
+#: src/blocks/testimonial/edit.js:531
+msgid "Margin"
+msgstr "Margem"
+
+#: src/blocks/alert/edit.js:287 src/blocks/button/edit.js:209
+#: src/blocks/call-to-action/edit.js:863 src/blocks/call-to-action/edit.js:1011
+#: src/blocks/icon-list/edit.js:191 src/blocks/info-box/edit.js:449
+#: src/blocks/info-box/edit.js:832 src/blocks/modal/edit.js:332
+#: src/blocks/star-rating/edit.js:227
+msgid "Icon Size"
+msgstr "Tamanho do ícone"
+
+#: src/blocks/alert/edit.js:295 src/blocks/button/edit.js:227
+#: src/blocks/divider/edit.js:230 src/blocks/icon-list/edit.js:214
+#: src/blocks/info-box/edit.js:457 src/blocks/modal/edit.js:350
+#: src/blocks/timeline/edit.js:522 src/blocks/timeline/edit.js:570
+#: src/blocks/timeline/edit.js:866
+msgid "Icon Color"
+msgstr "Cor do ícone"
+
+#: src/blocks/alert/edit.js:309
+msgid "Dismiss Button"
+msgstr "Botão de dispensar"
+
+#: src/blocks/alert/edit.js:316
+msgid "Dismiss Icon Size"
+msgstr "Tamanho do ícone Dispensar"
+
+#: src/blocks/alert/edit.js:324
+msgid "Dismiss Icon Color"
+msgstr "Cor do ícone Dispensar"
+
+#: src/blocks/alert/edit.js:342
+msgid "Alert Style"
+msgstr "Estilo do alerta"
+
+#: src/blocks/alert/edit.js:348 src/blocks/banner/edit.js:405
+#: src/blocks/blog-grid/edit.js:545 src/blocks/blog-grid/edit.js:737
+#: src/blocks/blog-grid/edit.js:797 src/blocks/blog-list/edit.js:468
+#: src/blocks/blog-list/edit.js:734 src/blocks/business-hour/edit.js:253
+#: src/blocks/business-hours/edit.js:142 src/blocks/business-hours/edit.js:172
+#: src/blocks/business-hours/edit.js:208 src/blocks/button/edit.js:413
+#: src/blocks/call-to-action/edit.js:938 src/blocks/call-to-action/edit.js:1086
+#: src/blocks/column/edit.js:414 src/blocks/columns/edit.js:339
+#: src/blocks/divider/edit.js:307 src/blocks/heading/edit.js:273
+#: src/blocks/icon-list/edit.js:200 src/blocks/info-box/edit.js:925
+#: src/blocks/modal/edit.js:270 src/blocks/modal/edit.js:532
+#: src/blocks/newsletter/edit.js:350 src/blocks/newsletter/edit.js:380
+#: src/blocks/newsletter/edit.js:487 src/blocks/newsletter/edit.js:517
+#: src/blocks/section/edit.js:436 src/blocks/team/edit.js:491
+#: src/blocks/testimonial/edit.js:642 src/blocks/timeline/edit.js:536
+#: src/blocks/timeline/edit.js:584 src/blocks/timeline/edit.js:835
+msgid "Background Color"
+msgstr "Cor de fundo"
+
+#: src/blocks/alert/edit.js:363 src/blocks/button/edit.js:292
+#: src/blocks/column/edit.js:429 src/blocks/divider/edit.js:336
+#: src/blocks/info-box/edit.js:654 src/blocks/modal/edit.js:411
+#: src/blocks/newsletter/edit.js:275 src/blocks/pricing-menu/edit.js:543
+#: src/blocks/section/edit.js:451 src/blocks/team/edit.js:442
+#: src/blocks/testimonial/edit.js:576
+msgid "Border Style"
+msgstr "Estilo da borda"
+
+#: src/blocks/alert/edit.js:367 src/blocks/business-hours/edit.js:61
+#: src/blocks/button/edit.js:296 src/blocks/call-to-action/edit.js:236
+#: src/blocks/call-to-action/edit.js:633 src/blocks/column/edit.js:433
+#: src/blocks/divider/edit.js:138 src/blocks/info-box/edit.js:306
+#: src/blocks/info-box/edit.js:658 src/blocks/info-box/edit.js:733
+#: src/blocks/info-box/edit.js:781 src/blocks/modal/edit.js:415
+#: src/blocks/newsletter/edit.js:159 src/blocks/pricing-menu/edit.js:547
+#: src/blocks/section/edit.js:455 src/blocks/team/edit.js:446
+#: src/blocks/testimonial/edit.js:580
+msgid "None"
+msgstr "Nenhum"
+
+#: src/blocks/alert/edit.js:368 src/blocks/business-hours/edit.js:62
+#: src/blocks/button/edit.js:297 src/blocks/column/edit.js:434
+#: src/blocks/divider/edit.js:139 src/blocks/info-box/edit.js:659
+#: src/blocks/info-box/edit.js:782 src/blocks/modal/edit.js:416
+#: src/blocks/newsletter/edit.js:160 src/blocks/pricing-menu/edit.js:548
+#: src/blocks/section/edit.js:456 src/blocks/team/edit.js:447
+#: src/blocks/testimonial/edit.js:581
+msgid "Solid"
+msgstr "Sólido"
+
+#: src/blocks/alert/edit.js:369 src/blocks/business-hours/edit.js:63
+#: src/blocks/button/edit.js:298 src/blocks/column/edit.js:435
+#: src/blocks/divider/edit.js:140 src/blocks/info-box/edit.js:660
+#: src/blocks/info-box/edit.js:783 src/blocks/modal/edit.js:417
+#: src/blocks/newsletter/edit.js:161 src/blocks/pricing-menu/edit.js:549
+#: src/blocks/section/edit.js:457 src/blocks/team/edit.js:449
+#: src/blocks/testimonial/edit.js:582
+msgid "Dashed"
+msgstr "Tracejado"
+
+#: src/blocks/alert/edit.js:370 src/blocks/business-hours/edit.js:64
+#: src/blocks/button/edit.js:300 src/blocks/column/edit.js:436
+#: src/blocks/divider/edit.js:142 src/blocks/info-box/edit.js:662
+#: src/blocks/info-box/edit.js:785 src/blocks/modal/edit.js:419
+#: src/blocks/newsletter/edit.js:162 src/blocks/pricing-menu/edit.js:551
+#: src/blocks/section/edit.js:458 src/blocks/team/edit.js:450
+#: src/blocks/testimonial/edit.js:583
+msgid "Dotted"
+msgstr "Pontilhado"
+
+#: src/blocks/alert/edit.js:371 src/blocks/button/edit.js:299
+#: src/blocks/column/edit.js:437 src/blocks/divider/edit.js:141
+#: src/blocks/info-box/edit.js:661 src/blocks/info-box/edit.js:784
+#: src/blocks/modal/edit.js:418 src/blocks/pricing-menu/edit.js:550
+#: src/blocks/section/edit.js:459 src/blocks/team/edit.js:448
+msgid "Double"
+msgstr "Duplo"
+
+#: src/blocks/alert/edit.js:372 src/blocks/business-hours/edit.js:65
+#: src/blocks/button/edit.js:301 src/blocks/column/edit.js:438
+#: src/blocks/divider/edit.js:143 src/blocks/info-box/edit.js:663
+#: src/blocks/info-box/edit.js:786 src/blocks/modal/edit.js:420
+#: src/blocks/newsletter/edit.js:163 src/blocks/pricing-menu/edit.js:552
+#: src/blocks/section/edit.js:460 src/blocks/team/edit.js:451
+#: src/blocks/testimonial/edit.js:584
+msgid "Groove"
+msgstr "Sulco"
+
+#: src/blocks/alert/edit.js:373 src/blocks/business-hours/edit.js:66
+#: src/blocks/button/edit.js:302 src/blocks/column/edit.js:439
+#: src/blocks/divider/edit.js:144 src/blocks/info-box/edit.js:664
+#: src/blocks/info-box/edit.js:787 src/blocks/modal/edit.js:421
+#: src/blocks/newsletter/edit.js:164 src/blocks/pricing-menu/edit.js:553
+#: src/blocks/section/edit.js:461 src/blocks/team/edit.js:452
+#: src/blocks/testimonial/edit.js:585
+msgid "Ridge"
+msgstr "Saliência"
+
+#: src/blocks/alert/edit.js:380 src/blocks/banner/edit.js:419
+#: src/blocks/button/edit.js:309 src/blocks/column/edit.js:446
+#: src/blocks/divider/edit.js:344 src/blocks/info-box/edit.js:671
+#: src/blocks/modal/edit.js:428 src/blocks/newsletter/edit.js:284
+#: src/blocks/newsletter/edit.js:394 src/blocks/pricing-menu/edit.js:560
+#: src/blocks/section/edit.js:468 src/blocks/team/edit.js:459
+#: src/blocks/testimonial/edit.js:592
+msgid "Border Color"
+msgstr "Cor da borda"
+
+#: src/blocks/alert/edit.js:415 src/blocks/alert/edit.js:459
+#: src/blocks/banner/edit.js:481 src/blocks/banner/edit.js:527
+#: src/blocks/blog-grid/edit.js:503 src/blocks/blog-grid/edit.js:648
+#: src/blocks/blog-grid/edit.js:695 src/blocks/blog-grid/edit.js:755
+#: src/blocks/blog-list/edit.js:426 src/blocks/blog-list/edit.js:599
+#: src/blocks/blog-list/edit.js:646 src/blocks/blog-list/edit.js:692
+#: src/blocks/button/edit.js:371 src/blocks/call-to-action/edit.js:726
+#: src/blocks/call-to-action/edit.js:773 src/blocks/call-to-action/edit.js:882
+#: src/blocks/call-to-action/edit.js:1030
+#: src/blocks/circle-progress/edit.js:339
+#: src/blocks/circle-progress/edit.js:383
+#: src/blocks/circle-progress/edit.js:427
+#: src/blocks/circle-progress/edit.js:471 src/blocks/info-box/edit.js:482
+#: src/blocks/info-box/edit.js:883 src/blocks/info-box/edit.js:966
+#: src/blocks/info-box/edit.js:1013 src/blocks/modal/edit.js:229
+#: src/blocks/newsletter/edit.js:246 src/blocks/newsletter/edit.js:417
+#: src/blocks/newsletter/edit.js:541 src/blocks/team/edit.js:524
+#: src/blocks/team/edit.js:571 src/blocks/team/edit.js:618
+#: src/blocks/testimonial/edit.js:657 src/blocks/testimonial/edit.js:704
+#: src/blocks/testimonial/edit.js:751 src/blocks/timeline/edit.js:460
+#: src/blocks/timeline/edit.js:700 src/blocks/timeline/edit.js:747
+#: src/blocks/timeline/edit.js:793
+msgid "Typography"
+msgstr "Tipografia"
+
+#: src/blocks/alert/edit.js:442 src/blocks/alert/edit.js:486
+#: src/blocks/banner/edit.js:509 src/blocks/banner/edit.js:555
+#: src/blocks/blog-grid/edit.js:531 src/blocks/blog-grid/edit.js:676
+#: src/blocks/blog-grid/edit.js:723 src/blocks/blog-list/edit.js:454
+#: src/blocks/blog-list/edit.js:627 src/blocks/blog-list/edit.js:674
+#: src/blocks/business-hour/edit.js:267 src/blocks/business-hours/edit.js:156
+#: src/blocks/business-hours/edit.js:186 src/blocks/business-hours/edit.js:236
+#: src/blocks/button/edit.js:399 src/blocks/call-to-action/edit.js:754
+#: src/blocks/call-to-action/edit.js:801 src/blocks/call-to-action/edit.js:910
+#: src/blocks/call-to-action/edit.js:1058 src/blocks/column/edit.js:400
+#: src/blocks/columns/edit.js:325 src/blocks/divider/edit.js:321
+#: src/blocks/heading/edit.js:287 src/blocks/info-box/edit.js:509
+#: src/blocks/info-box/edit.js:911 src/blocks/info-box/edit.js:994
+#: src/blocks/info-box/edit.js:1041 src/blocks/modal/edit.js:256
+#: src/blocks/modal/edit.js:500 src/blocks/newsletter/edit.js:336
+#: src/blocks/recipe/edit.js:785 src/blocks/section/edit.js:422
+#: src/blocks/timeline/edit.js:508 src/blocks/timeline/edit.js:556
+#: src/blocks/timeline/edit.js:728 src/blocks/timeline/edit.js:775
+msgid "Text Color"
+msgstr "Cor do texto"
+
+#: src/blocks/alert/edit.js:520
+msgid "Alert title text"
+msgstr "Texto do título do alerta"
+
+#: src/blocks/alert/edit.js:521 src/blocks/call-to-action/edit.js:689
+msgid "Add title"
+msgstr "Adicionar título"
+
+#: src/blocks/alert/edit.js:544
+msgid "Alert description text"
+msgstr "Texto de descrição do alerta"
+
+#: src/blocks/alert/edit.js:545 src/blocks/call-to-action/edit.js:695
+#: src/blocks/info-box/edit.js:714 src/blocks/recipe/edit.js:636
+msgid "Add description"
+msgstr "Adicionar descrição"
+
+#: src/blocks/alert/index.js:22
+msgid "This is alert block."
+msgstr "Este é um bloco de alerta."
+
+#: src/blocks/banner/attributes.js:31 src/blocks/button/attributes.js:21
+#: src/blocks/pricing-menu/attributes.js:10
+msgid "https://your-link.com"
+msgstr "https://seu-link.com"
+
+#: src/blocks/banner/edit.js:214 src/blocks/call-to-action/edit.js:371
+#: src/blocks/column/edit.js:216 src/blocks/columns/edit.js:215
+#: src/blocks/info-box/edit.js:297 src/blocks/pricing-menu/edit.js:225
+#: src/blocks/recipe/edit.js:339 src/blocks/section/edit.js:219
+#: src/blocks/team/edit.js:226 src/blocks/testimonial/edit.js:237
+msgid "Thumbnail - 150 x 150"
+msgstr "Miniatura - 150 x 150"
+
+#: src/blocks/banner/edit.js:215 src/blocks/call-to-action/edit.js:372
+#: src/blocks/column/edit.js:217 src/blocks/columns/edit.js:216
+#: src/blocks/info-box/edit.js:298 src/blocks/pricing-menu/edit.js:226
+#: src/blocks/recipe/edit.js:340 src/blocks/section/edit.js:220
+#: src/blocks/team/edit.js:227 src/blocks/testimonial/edit.js:238
+msgid "Medium - 300 x 300"
+msgstr "Médio - 300 x 300"
+
+#: src/blocks/banner/edit.js:216 src/blocks/call-to-action/edit.js:373
+#: src/blocks/column/edit.js:218 src/blocks/columns/edit.js:217
+#: src/blocks/info-box/edit.js:299 src/blocks/pricing-menu/edit.js:227
+#: src/blocks/recipe/edit.js:341 src/blocks/section/edit.js:221
+#: src/blocks/team/edit.js:228 src/blocks/testimonial/edit.js:239
+msgid "Medium Large - 768 x 768"
+msgstr "Médio grande - 768 x 768"
+
+#: src/blocks/banner/edit.js:217 src/blocks/call-to-action/edit.js:374
+#: src/blocks/column/edit.js:219 src/blocks/columns/edit.js:218
+#: src/blocks/info-box/edit.js:300 src/blocks/pricing-menu/edit.js:228
+#: src/blocks/recipe/edit.js:342 src/blocks/section/edit.js:222
+#: src/blocks/team/edit.js:229 src/blocks/testimonial/edit.js:240
+msgid "Large - 1024 x 1024"
+msgstr "Grande - 1024 x 1024"
+
+#: src/blocks/banner/edit.js:218 src/blocks/call-to-action/edit.js:375
+#: src/blocks/column/edit.js:220 src/blocks/columns/edit.js:219
+#: src/blocks/info-box/edit.js:301 src/blocks/pricing-menu/edit.js:229
+#: src/blocks/recipe/edit.js:343 src/blocks/section/edit.js:223
+#: src/blocks/team/edit.js:230 src/blocks/testimonial/edit.js:241
+msgid "1536x1536 - 1536 x 1536"
+msgstr "1536x1536 - 1536 x 1536"
+
+#: src/blocks/banner/edit.js:219 src/blocks/call-to-action/edit.js:376
+#: src/blocks/column/edit.js:221 src/blocks/columns/edit.js:220
+#: src/blocks/info-box/edit.js:302 src/blocks/pricing-menu/edit.js:230
+#: src/blocks/recipe/edit.js:344 src/blocks/section/edit.js:224
+#: src/blocks/team/edit.js:231 src/blocks/testimonial/edit.js:242
+msgid "2048x2048 - 2048 x 2048"
+msgstr "2048x2048 - 2048 x 2048"
+
+#: src/blocks/banner/edit.js:223
+msgid "Apolo"
+msgstr "Apolo"
+
+#: src/blocks/banner/edit.js:224
+msgid "Bubba"
+msgstr "Bubba"
+
+#: src/blocks/banner/edit.js:225
+msgid "Chico"
+msgstr "Chico"
+
+#: src/blocks/banner/edit.js:226
+msgid "Jazz"
+msgstr "Jazz"
+
+#: src/blocks/banner/edit.js:227
+msgid "Layla"
+msgstr "Layla"
+
+#: src/blocks/banner/edit.js:228
+msgid "Lily"
+msgstr "Lily"
+
+#: src/blocks/banner/edit.js:229
+msgid "Ming"
+msgstr "Ming"
+
+#: src/blocks/banner/edit.js:230
+msgid "Marley"
+msgstr "Marley"
+
+#: src/blocks/banner/edit.js:231
+msgid "Romeo"
+msgstr "Romeo"
+
+#: src/blocks/banner/edit.js:232
+msgid "Roxy"
+msgstr "Roxy"
+
+#: src/blocks/banner/edit.js:233
+msgid "Ruby"
+msgstr "Ruby"
+
+#: src/blocks/banner/edit.js:234
+msgid "Oscar"
+msgstr "Oscar"
+
+#: src/blocks/banner/edit.js:235
+msgid "Sadie"
+msgstr "Sadie"
+
+#: src/blocks/banner/edit.js:236
+msgid "Sarah"
+msgstr "Sarah"
+
+#: src/blocks/banner/edit.js:304 src/blocks/info-box/edit.js:424
+#: src/blocks/pricing-menu/edit.js:318
+msgid "Add Media"
+msgstr "Adicionar mídia"
+
+#: src/blocks/banner/edit.js:304 src/blocks/info-box/edit.js:424
+#: src/blocks/pricing-menu/edit.js:318
+msgid "Replace"
+msgstr "Substituir"
+
+#: src/blocks/banner/edit.js:311 src/blocks/call-to-action/edit.js:595
+#: src/blocks/call-to-action/edit.js:680 src/blocks/column/edit.js:585
+#: src/blocks/columns/edit.js:429 src/blocks/info-box/edit.js:566
+#: src/blocks/pricing-menu/edit.js:365 src/blocks/recipe/edit.js:686
+#: src/blocks/section/edit.js:607 src/blocks/team/edit.js:351
+#: src/blocks/testimonial/edit.js:440
+msgid "Image Size"
+msgstr "Tamanho da imagem"
+
+#: src/blocks/banner/edit.js:318 src/blocks/info-box/edit.js:707
+#: src/blocks/info-box/edit.js:735 src/blocks/pricing-menu/edit.js:381
+#: src/blocks/star-rating/edit.js:191
+msgid "Title"
+msgstr "Título"
+
+#: src/blocks/banner/edit.js:324 src/blocks/call-to-action/edit.js:694
+#: src/blocks/info-box/edit.js:713 src/blocks/recipe/edit.js:634
+#: src/blocks/recipe/edit.js:635 src/blocks/team/edit.js:374
+msgid "Description"
+msgstr "Descrição"
+
+#: src/blocks/banner/edit.js:331 src/blocks/button/edit.js:345
+#: src/blocks/call-to-action/edit.js:827 src/blocks/call-to-action/edit.js:985
+#: src/blocks/info-box/edit.js:574 src/blocks/info-box/edit.js:816
+#: src/blocks/pricing-menu/edit.js:395
+msgid "Link"
+msgstr "Link"
+
+#: src/blocks/banner/edit.js:336
+msgid "Animation Effect"
+msgstr "Efeito de animação"
+
+#: src/blocks/banner/edit.js:342 src/blocks/button/edit.js:350
+msgid "Open in new window"
+msgstr "Abrir em nova janela"
+
+#: src/blocks/banner/edit.js:347 src/blocks/button/edit.js:355
+msgid "Add nofollow"
+msgstr "Adicionar nofollow"
+
+#: src/blocks/banner/edit.js:352 src/blocks/button/edit.js:360
+msgid "Add sponsored"
+msgstr "Adicionar sponsored"
+
+#: src/blocks/banner/edit.js:438 src/blocks/call-to-action/edit.js:1155
+#: src/blocks/newsletter/edit.js:322 src/blocks/newsletter/edit.js:459
+#: src/blocks/timeline/edit.js:493 src/components/typography/font-control.js:42
+#: src/components/typography/font-control.js:60
+#: src/components/typography/font-control.js:65
+msgid "Normal"
+msgstr "Normal"
+
+#: src/blocks/banner/edit.js:443 src/blocks/call-to-action/edit.js:1160
+#: src/blocks/newsletter/edit.js:327 src/blocks/newsletter/edit.js:464
+#: src/blocks/timeline/edit.js:498
+msgid "Hover"
+msgstr "Ao passar o mouse"
+
+#: src/blocks/banner/edit.js:592
+msgid "Banner Image"
+msgstr "Imagem do banner"
+
+#: src/blocks/banner/index.js:31
+msgid "Add beautiful banner to your site."
+msgstr "Adicione um belo banner ao seu site."
+
+#: src/blocks/blog-grid/edit.js:344 src/blocks/blog-list/edit.js:339
+#: src/blocks/timeline/edit.js:351
+msgid "Post content settings"
+msgstr "Configurações de conteúdo do post"
+
+#: src/blocks/blog-grid/edit.js:346 src/blocks/blog-list/edit.js:341
+#: src/blocks/timeline/edit.js:353
+msgid "Post content"
+msgstr "Conteúdo do post"
+
+#: src/blocks/blog-grid/edit.js:354 src/blocks/blog-list/edit.js:349
+#: src/blocks/timeline/edit.js:361
+msgid "Show:"
+msgstr "Mostrar:"
+
+#: src/blocks/blog-grid/edit.js:357 src/blocks/blog-list/edit.js:352
+#: src/blocks/timeline/edit.js:364
+msgid "Excerpt"
+msgstr "Resumo"
+
+#: src/blocks/blog-grid/edit.js:359 src/blocks/blog-list/edit.js:354
+#: src/blocks/timeline/edit.js:366
+msgid "Full post"
+msgstr "Post completo"
+
+#: src/blocks/blog-grid/edit.js:373 src/blocks/blog-list/edit.js:368
+#: src/blocks/timeline/edit.js:380
+msgid "Max number of words in excerpt"
+msgstr "Número máximo de palavras no resumo"
+
+#: src/blocks/blog-grid/edit.js:385
+msgid "Layout"
+msgstr "Layout"
+
+#: src/blocks/blog-grid/edit.js:391
+msgid "Grid Columns"
+msgstr "Colunas da grade"
+
+#: src/blocks/blog-grid/edit.js:395 src/blocks/blog-grid/edit.js:411
+#: src/blocks/blog-grid/edit.js:427 src/blocks/testimonial/edit.js:493
+msgid "1"
+msgstr "1"
+
+#: src/blocks/blog-grid/edit.js:396 src/blocks/blog-grid/edit.js:412
+#: src/blocks/blog-grid/edit.js:428 src/blocks/testimonial/edit.js:494
+msgid "2"
+msgstr "2"
+
+#: src/blocks/blog-grid/edit.js:397 src/blocks/blog-grid/edit.js:413
+#: src/blocks/blog-grid/edit.js:429 src/blocks/testimonial/edit.js:495
+msgid "3"
+msgstr "3"
+
+#: src/blocks/blog-grid/edit.js:398 src/blocks/blog-grid/edit.js:414
+#: src/blocks/blog-grid/edit.js:430 src/blocks/testimonial/edit.js:496
+msgid "4"
+msgstr "4"
+
+#: src/blocks/blog-grid/edit.js:399 src/blocks/blog-grid/edit.js:415
+#: src/blocks/blog-grid/edit.js:431 src/blocks/testimonial/edit.js:497
+msgid "5"
+msgstr "5"
+
+#: src/blocks/blog-grid/edit.js:400 src/blocks/blog-grid/edit.js:416
+#: src/blocks/blog-grid/edit.js:432
+msgid "6"
+msgstr "6"
+
+#: src/blocks/blog-grid/edit.js:407
+msgid "Grid Columns ( Tablet )"
+msgstr "Colunas da grade (tablet)"
+
+#: src/blocks/blog-grid/edit.js:423
+msgid "Grid Columns ( Mobile )"
+msgstr "Colunas da grade (dispositivos móveis)"
+
+#: src/blocks/blog-grid/edit.js:438
+msgid "Grid Style"
+msgstr "Estilo da grade"
+
+#: src/blocks/blog-grid/edit.js:442
+msgid "Fit Rows"
+msgstr "Ajustar linhas"
+
+#: src/blocks/blog-grid/edit.js:443
+msgid "Masonry"
+msgstr "Alvenaria"
+
+#: src/blocks/blog-grid/edit.js:448
+msgid "Equal Heights"
+msgstr "Alturas iguais"
+
+#: src/blocks/blog-grid/edit.js:457 src/blocks/blog-list/edit.js:380
+#: src/blocks/timeline/edit.js:406
+msgid "Post settings"
+msgstr "Configurações de posts"
+
+#: src/blocks/blog-grid/edit.js:459 src/blocks/blog-list/edit.js:382
+#: src/blocks/timeline/edit.js:408
+msgid "Display post title"
+msgstr "Exibir título do post"
+
+#: src/blocks/blog-grid/edit.js:466 src/blocks/blog-list/edit.js:389
+#: src/blocks/timeline/edit.js:415
+msgid "Display post categories"
+msgstr "Exibir categorias de post"
+
+#: src/blocks/blog-grid/edit.js:473 src/blocks/blog-list/edit.js:396
+#: src/blocks/timeline/edit.js:429
+msgid "Display read more"
+msgstr "Exibir Leia mais"
+
+#: src/blocks/blog-grid/edit.js:480
+msgid "Show Author Avatar"
+msgstr "Mostrar avatar do autor"
+
+#: src/blocks/blog-grid/edit.js:487 src/blocks/blog-list/edit.js:403
+msgid "Display Comments"
+msgstr "Exibir comentários"
+
+#: src/blocks/blog-grid/edit.js:494 src/blocks/blog-list/edit.js:417
+#: src/blocks/timeline/edit.js:436
+msgid "Read more"
+msgstr "Leia mais"
+
+#: src/blocks/blog-grid/edit.js:559 src/blocks/blog-list/edit.js:510
+#: src/blocks/timeline/edit.js:604
+msgid "Featured image"
+msgstr "Imagem destacada"
+
+#: src/blocks/blog-grid/edit.js:561 src/blocks/blog-list/edit.js:512
+#: src/blocks/timeline/edit.js:606
+msgid "Display featured image"
+msgstr "Exibir imagem destacada"
+
+#: src/blocks/blog-grid/edit.js:600 src/blocks/blog-list/edit.js:551
+#: src/blocks/timeline/edit.js:669
+msgid "Query"
+msgstr "Consulta"
+
+#: src/blocks/blog-grid/edit.js:630 src/blocks/blog-list/edit.js:581
+#: src/blocks/info-box/edit.js:721 src/blocks/pricing-menu/edit.js:373
+msgid "Title Tag"
+msgstr "Tag de título"
+
+#: src/blocks/blog-grid/edit.js:634 src/blocks/blog-list/edit.js:585
+msgid "h1"
+msgstr "h1"
+
+#: src/blocks/blog-grid/edit.js:635 src/blocks/blog-list/edit.js:586
+msgid "h2"
+msgstr "h2"
+
+#: src/blocks/blog-grid/edit.js:636 src/blocks/blog-list/edit.js:587
+msgid "h3"
+msgstr "h3"
+
+#: src/blocks/blog-grid/edit.js:637 src/blocks/blog-list/edit.js:588
+msgid "h4"
+msgstr "h4"
+
+#: src/blocks/blog-grid/edit.js:638 src/blocks/blog-list/edit.js:589
+msgid "h5"
+msgstr "h5"
+
+#: src/blocks/blog-grid/edit.js:639 src/blocks/blog-list/edit.js:590
+msgid "h6"
+msgstr "h6"
+
+#: src/blocks/blog-grid/edit.js:640 src/blocks/blog-list/edit.js:591
+#: src/blocks/call-to-action/edit.js:266 src/blocks/divider/edit.js:126
+#: src/blocks/heading/edit.js:132 src/blocks/info-box/edit.js:319
+#: src/blocks/pricing-menu/edit.js:240 src/blocks/recipe/edit.js:354
+msgid "div"
+msgstr "div"
+
+#: src/blocks/blog-grid/edit.js:641 src/blocks/blog-list/edit.js:592
+#: src/blocks/call-to-action/edit.js:267 src/blocks/divider/edit.js:127
+#: src/blocks/heading/edit.js:133 src/blocks/info-box/edit.js:320
+#: src/blocks/pricing-menu/edit.js:241 src/blocks/recipe/edit.js:355
+msgid "span"
+msgstr "span"
+
+#: src/blocks/blog-grid/edit.js:642 src/blocks/blog-list/edit.js:593
+#: src/blocks/call-to-action/edit.js:268 src/blocks/divider/edit.js:128
+#: src/blocks/heading/edit.js:134 src/blocks/info-box/edit.js:321
+#: src/blocks/pricing-menu/edit.js:242 src/blocks/recipe/edit.js:356
+msgid "p"
+msgstr "p"
+
+#: src/blocks/blog-grid/edit.js:783 src/blocks/blog-list/edit.js:720
+#: src/blocks/call-to-action/edit.js:1250
+#: src/blocks/circle-progress/edit.js:366
+#: src/blocks/circle-progress/edit.js:410
+#: src/blocks/circle-progress/edit.js:454
+#: src/blocks/circle-progress/edit.js:498 src/blocks/newsletter/edit.js:366
+#: src/blocks/newsletter/edit.js:473 src/blocks/newsletter/edit.js:503
+#: src/blocks/star-rating/edit.js:245 src/blocks/team/edit.js:509
+#: src/blocks/testimonial/edit.js:628 src/blocks/timeline/edit.js:821
+msgid "Color"
+msgstr "Cor"
+
+#: src/blocks/blog-grid/edit.js:848 src/blocks/blog-list/edit.js:769
+#: src/blocks/timeline/edit.js:899
+msgid "No posts found."
+msgstr "Nenhum post encontrado."
+
+#. translators: excerpt truncation character, default …
+#: src/blocks/blog-grid/edit.js:951 src/blocks/blog-list/edit.js:874
+#: src/blocks/timeline/edit.js:1001
+msgid " … "
+msgstr " … "
+
+#: src/blocks/blog-list/edit.js:410 src/blocks/timeline/edit.js:422
+msgid "Display post date"
+msgstr "Exibir data do post"
+
+#: src/blocks/blog-list/edit.js:482 src/blocks/button/edit.js:427
+#: src/blocks/call-to-action/edit.js:924 src/blocks/call-to-action/edit.js:1072
+#: src/blocks/modal/edit.js:284 src/blocks/modal/edit.js:514
+msgid "Text Color (Hover)"
+msgstr "Cor do texto (ao passar o mouse)"
+
+#: src/blocks/blog-list/edit.js:496 src/blocks/button/edit.js:441
+#: src/blocks/call-to-action/edit.js:952 src/blocks/call-to-action/edit.js:1100
+#: src/blocks/modal/edit.js:298 src/blocks/modal/edit.js:546
+msgid "Background Color (Hover)"
+msgstr "Cor de fundo (ao passar o mouse)"
+
+#: src/blocks/business-hour/edit.js:106
+msgid "12:00 AM"
+msgstr "00:00"
+
+#: src/blocks/business-hour/edit.js:107
+msgid "12:30 AM"
+msgstr "00:30"
+
+#: src/blocks/business-hour/edit.js:108
+msgid "01:00 AM"
+msgstr "01:00"
+
+#: src/blocks/business-hour/edit.js:109
+msgid "01:30 AM"
+msgstr "01:30"
+
+#: src/blocks/business-hour/edit.js:110
+msgid "02:00 AM"
+msgstr "02:00"
+
+#: src/blocks/business-hour/edit.js:111
+msgid "02:30 AM"
+msgstr "02:30"
+
+#: src/blocks/business-hour/edit.js:112
+msgid "03:00 AM"
+msgstr "03:00"
+
+#: src/blocks/business-hour/edit.js:113
+msgid "03:30 AM"
+msgstr "03:30"
+
+#: src/blocks/business-hour/edit.js:114
+msgid "04:00 AM"
+msgstr "04:00"
+
+#: src/blocks/business-hour/edit.js:115
+msgid "04:30 AM"
+msgstr "04:30"
+
+#: src/blocks/business-hour/edit.js:116
+msgid "05:00 AM"
+msgstr "05:00"
+
+#: src/blocks/business-hour/edit.js:117
+msgid "05:30 AM"
+msgstr "05:30"
+
+#: src/blocks/business-hour/edit.js:118
+msgid "06:00 AM"
+msgstr "06:00"
+
+#: src/blocks/business-hour/edit.js:119
+msgid "06:30 AM"
+msgstr "06:30"
+
+#: src/blocks/business-hour/edit.js:120
+msgid "07:00 AM"
+msgstr "07:00"
+
+#: src/blocks/business-hour/edit.js:121
+msgid "07:30 AM"
+msgstr "07:30"
+
+#: src/blocks/business-hour/edit.js:122
+msgid "08:00 AM"
+msgstr "08:00"
+
+#: src/blocks/business-hour/edit.js:123
+msgid "08:30 AM"
+msgstr "08:30"
+
+#: src/blocks/business-hour/edit.js:124
+msgid "09:00 AM"
+msgstr "09:00"
+
+#: src/blocks/business-hour/edit.js:125
+msgid "09:30 AM"
+msgstr "09:30"
+
+#: src/blocks/business-hour/edit.js:126
+msgid "10:00 AM"
+msgstr "10:00"
+
+#: src/blocks/business-hour/edit.js:127
+msgid "10:30 AM"
+msgstr "10:30"
+
+#: src/blocks/business-hour/edit.js:128
+msgid "11:00 AM"
+msgstr "11:00"
+
+#: src/blocks/business-hour/edit.js:129
+msgid "11:30 AM"
+msgstr "11:30"
+
+#: src/blocks/business-hour/edit.js:130
+msgid "12:00 PM"
+msgstr "12:00"
+
+#: src/blocks/business-hour/edit.js:131
+msgid "12:30 PM"
+msgstr "12:30"
+
+#: src/blocks/business-hour/edit.js:132
+msgid "01:00 PM"
+msgstr "13:00"
+
+#: src/blocks/business-hour/edit.js:133
+msgid "01:30 PM"
+msgstr "13:30"
+
+#: src/blocks/business-hour/edit.js:134
+msgid "02:00 PM"
+msgstr "14:00"
+
+#: src/blocks/business-hour/edit.js:135
+msgid "02:30 PM"
+msgstr "14:30"
+
+#: src/blocks/business-hour/edit.js:136
+msgid "03:00 PM"
+msgstr "15:00"
+
+#: src/blocks/business-hour/edit.js:137
+msgid "03:30 PM"
+msgstr "15:30"
+
+#: src/blocks/business-hour/edit.js:138
+msgid "04:00 PM"
+msgstr "16:00"
+
+#: src/blocks/business-hour/edit.js:139
+msgid "04:30 PM"
+msgstr "16:30"
+
+#: src/blocks/business-hour/edit.js:140
+msgid "05:00 PM"
+msgstr "17:00"
+
+#: src/blocks/business-hour/edit.js:141
+msgid "05:30 PM"
+msgstr "17:30"
+
+#: src/blocks/business-hour/edit.js:142
+msgid "06:00 PM"
+msgstr "18:00"
+
+#: src/blocks/business-hour/edit.js:143
+msgid "06:30 PM"
+msgstr "18:30"
+
+#: src/blocks/business-hour/edit.js:144
+msgid "07:00 PM"
+msgstr "19:00"
+
+#: src/blocks/business-hour/edit.js:145
+msgid "07:30 PM"
+msgstr "19:30"
+
+#: src/blocks/business-hour/edit.js:146
+msgid "08:00 PM"
+msgstr "20:00"
+
+#: src/blocks/business-hour/edit.js:147
+msgid "08:30 PM"
+msgstr "20:30"
+
+#: src/blocks/business-hour/edit.js:148
+msgid "09:00 PM"
+msgstr "21:00"
+
+#: src/blocks/business-hour/edit.js:149
+msgid "09:30 PM"
+msgstr "21:30"
+
+#: src/blocks/business-hour/edit.js:150
+msgid "10:00 PM"
+msgstr "22:00"
+
+#: src/blocks/business-hour/edit.js:151
+msgid "10:30 PM"
+msgstr "22:30"
+
+#: src/blocks/business-hour/edit.js:152
+msgid "11:00 PM"
+msgstr "23:00"
+
+#: src/blocks/business-hour/edit.js:153
+msgid "11:30 PM"
+msgstr "23:30"
+
+#: src/blocks/business-hour/edit.js:157
+msgid "Long"
+msgstr "Longo"
+
+#: src/blocks/business-hour/edit.js:158
+msgid "Short"
+msgstr "Curto"
+
+#: src/blocks/business-hour/edit.js:213
+msgid "Closed?"
+msgstr "Fechado?"
+
+#: src/blocks/business-hour/edit.js:222
+msgid "Opening Time"
+msgstr "Horário de abertura"
+
+#: src/blocks/business-hour/edit.js:229
+msgid "Closing Time"
+msgstr "Horário de encerramento"
+
+#: src/blocks/business-hour/edit.js:238
+msgid "24 Hours Format?"
+msgstr "Formato de 24 horas?"
+
+#: src/blocks/business-hour/edit.js:244
+msgid "Days Format"
+msgstr "Formato de dias"
+
+#: src/blocks/business-hour/edit.js:330 src/blocks/call-to-action/edit.js:510
+#: src/blocks/column/edit.js:397 src/blocks/column/edit.js:517
+#: src/blocks/columns/edit.js:322 src/blocks/divider/edit.js:267
+#: src/blocks/heading/edit.js:242 src/blocks/info-box/edit.js:777
+#: src/blocks/modal/edit.js:472 src/blocks/pricing-menu/edit.js:406
+#: src/blocks/pricing-menu/edit.js:453 src/blocks/section/edit.js:419
+#: src/blocks/section/edit.js:539 src/blocks/testimonial/edit.js:363
+msgid "Style"
+msgstr "Estilo"
+
+#: src/blocks/business-hour/save.js:79
+msgid "Closed"
+msgstr "Fechado"
+
+#: src/blocks/business-hours/edit.js:117
+msgid "Striped Rows"
+msgstr "Linhas listradas"
+
+#: src/blocks/business-hours/edit.js:128
+msgid "Even Row"
+msgstr "Linha par"
+
+#: src/blocks/business-hours/edit.js:133
+msgid "Odd Row"
+msgstr "Linha ímpar"
+
+#: src/blocks/business-hours/edit.js:222
+msgid "Day Color"
+msgstr "Cor do dia"
+
+#: src/blocks/business-hours/edit.js:253
+msgid "Divider Style"
+msgstr "Estilo do divisor"
+
+#: src/blocks/business-hours/edit.js:261 src/blocks/divider/edit.js:377
+msgid "Divider Color"
+msgstr "Cor do divisor"
+
+#: src/blocks/business-hours/index.js:25
+msgid "Monday"
+msgstr "Segunda-feira"
+
+#: src/blocks/business-hours/index.js:33
+msgid "Tuesday"
+msgstr "Terça-feira"
+
+#: src/blocks/button/edit.js:183 src/blocks/divider/edit.js:116
+#: src/blocks/info-box/edit.js:309 src/blocks/info-box/edit.js:476
+#: src/blocks/modal/edit.js:223
+msgid "Text"
+msgstr "Texto"
+
+#: src/blocks/button/edit.js:193 src/blocks/call-to-action/edit.js:707
+#: src/blocks/call-to-action/edit.js:848 src/blocks/call-to-action/edit.js:996
+#: src/blocks/divider/edit.js:256 src/blocks/icon-list/edit.js:130
+#: src/blocks/info-box/edit.js:446 src/blocks/info-box/edit.js:855
+#: src/blocks/modal/edit.js:316 src/blocks/recipe/edit.js:859
+#: src/blocks/recipe/edit.js:897 src/blocks/recipe/edit.js:935
+#: src/blocks/recipe/edit.js:973 src/blocks/recipe/edit.js:1011
+msgid "Enter custom icon html or choose from below icon list"
+msgstr ""
+"Digite o HTML do ícone personalizado ou escolha na lista de ícones abaixo"
+
+#: src/blocks/button/edit.js:200 src/blocks/call-to-action/edit.js:853
+#: src/blocks/call-to-action/edit.js:1001 src/blocks/info-box/edit.js:822
+#: src/blocks/modal/edit.js:323
+msgid "Icon Position"
+msgstr "Posição do ícone"
+
+#: src/blocks/button/edit.js:204 src/blocks/call-to-action/edit.js:857
+#: src/blocks/call-to-action/edit.js:1005
+#: src/blocks/call-to-action/edit.js:1241 src/blocks/info-box/edit.js:826
+#: src/blocks/modal/edit.js:327 src/blocks/testimonial/edit.js:452
+msgid "Before"
+msgstr "Antes"
+
+#: src/blocks/button/edit.js:205 src/blocks/call-to-action/edit.js:858
+#: src/blocks/call-to-action/edit.js:1006 src/blocks/info-box/edit.js:827
+#: src/blocks/modal/edit.js:328 src/blocks/testimonial/edit.js:453
+msgid "After"
+msgstr "Depois"
+
+#: src/blocks/button/edit.js:218 src/blocks/call-to-action/edit.js:872
+#: src/blocks/call-to-action/edit.js:1020 src/blocks/info-box/edit.js:841
+#: src/blocks/modal/edit.js:341 src/blocks/star-rating/edit.js:236
+msgid "Icon Spacing"
+msgstr "Espaçamento do ícone"
+
+#: src/blocks/call-to-action/edit.js:224
+msgid "Basic"
+msgstr "Básico"
+
+#: src/blocks/call-to-action/edit.js:225
+msgid "Inside"
+msgstr "Interno"
+
+#: src/blocks/call-to-action/edit.js:226
+msgid "Outside"
+msgstr "Externo"
+
+#: src/blocks/call-to-action/edit.js:230 src/blocks/info-box/edit.js:326
+msgid "Top"
+msgstr "Superior"
+
+#: src/blocks/call-to-action/edit.js:231
+msgid "Middle"
+msgstr "Meio"
+
+#: src/blocks/call-to-action/edit.js:232
+msgid "Bottom"
+msgstr "Inferior"
+
+#: src/blocks/call-to-action/edit.js:237
+msgid "Slide In Right"
+msgstr "Deslizar para a direita"
+
+#: src/blocks/call-to-action/edit.js:238
+msgid "Slide In Left"
+msgstr "Deslizar para a esquerda"
+
+#: src/blocks/call-to-action/edit.js:239
+msgid "Slide In Up"
+msgstr "Deslizar para cima"
+
+#: src/blocks/call-to-action/edit.js:240
+msgid "Slide In In Down"
+msgstr "Deslizar para baixo"
+
+#: src/blocks/call-to-action/edit.js:241
+msgid "Enter Zoom In"
+msgstr "Aumentar o zoom ao entrar"
+
+#: src/blocks/call-to-action/edit.js:242
+msgid "Enter Zoom Out"
+msgstr "Diminuir o zoom ao entrar"
+
+#: src/blocks/call-to-action/edit.js:243
+msgid "Fade In"
+msgstr "Aparecimento gradual"
+
+#: src/blocks/call-to-action/edit.js:244
+msgid "Grow"
+msgstr "Crescer"
+
+#: src/blocks/call-to-action/edit.js:245
+msgid "Shrink"
+msgstr "Encolher"
+
+#: src/blocks/call-to-action/edit.js:246
+msgid "Move Right"
+msgstr "Mover para a direita"
+
+#: src/blocks/call-to-action/edit.js:247
+msgid "Move Left"
+msgstr "Mover para a esquerda"
+
+#: src/blocks/call-to-action/edit.js:248
+msgid "Move Up"
+msgstr "Mover para cima"
+
+#: src/blocks/call-to-action/edit.js:249
+msgid "Move Down"
+msgstr "Mover para baixo"
+
+#: src/blocks/call-to-action/edit.js:250
+msgid "Slide Out Right"
+msgstr "Deslizar para a direita"
+
+#: src/blocks/call-to-action/edit.js:251
+msgid "Slide Out Left"
+msgstr "Deslizar para a esquerda"
+
+#: src/blocks/call-to-action/edit.js:252
+msgid "Slide Out Up"
+msgstr "Deslizar para cima"
+
+#: src/blocks/call-to-action/edit.js:253
+msgid "Slide Out Down"
+msgstr "Deslizar para baixo"
+
+#: src/blocks/call-to-action/edit.js:254
+msgid "Exit Zoom In"
+msgstr "Aumentar o zoom ao sair"
+
+#: src/blocks/call-to-action/edit.js:255
+msgid "Exit Zoom Out"
+msgstr "Diminuir o zoom ao sair"
+
+#: src/blocks/call-to-action/edit.js:256
+msgid "Fade Out"
+msgstr "Desaparecer"
+
+#: src/blocks/call-to-action/edit.js:260 src/blocks/divider/edit.js:120
+#: src/blocks/heading/edit.js:126 src/blocks/info-box/edit.js:313
+#: src/blocks/pricing-menu/edit.js:234 src/blocks/recipe/edit.js:348
+msgid "H1"
+msgstr "H1"
+
+#: src/blocks/call-to-action/edit.js:261 src/blocks/divider/edit.js:121
+#: src/blocks/heading/edit.js:127 src/blocks/info-box/edit.js:314
+#: src/blocks/pricing-menu/edit.js:235 src/blocks/recipe/edit.js:349
+msgid "H2"
+msgstr "H2"
+
+#: src/blocks/call-to-action/edit.js:262 src/blocks/divider/edit.js:122
+#: src/blocks/heading/edit.js:128 src/blocks/info-box/edit.js:315
+#: src/blocks/pricing-menu/edit.js:236 src/blocks/recipe/edit.js:350
+msgid "H3"
+msgstr "H3"
+
+#: src/blocks/call-to-action/edit.js:263 src/blocks/divider/edit.js:123
+#: src/blocks/heading/edit.js:129 src/blocks/info-box/edit.js:316
+#: src/blocks/pricing-menu/edit.js:237 src/blocks/recipe/edit.js:351
+msgid "H4"
+msgstr "H4"
+
+#: src/blocks/call-to-action/edit.js:264 src/blocks/divider/edit.js:124
+#: src/blocks/heading/edit.js:130 src/blocks/info-box/edit.js:317
+#: src/blocks/pricing-menu/edit.js:238 src/blocks/recipe/edit.js:352
+msgid "H5"
+msgstr "H5"
+
+#: src/blocks/call-to-action/edit.js:265 src/blocks/divider/edit.js:125
+#: src/blocks/heading/edit.js:131 src/blocks/info-box/edit.js:318
+#: src/blocks/pricing-menu/edit.js:239 src/blocks/recipe/edit.js:353
+msgid "H6"
+msgstr "H6"
+
+#: src/blocks/call-to-action/edit.js:380 src/blocks/divider/edit.js:133
+#: src/blocks/heading/edit.js:139 src/blocks/icon-list/edit.js:104
+#: src/blocks/info-box/edit.js:325 src/blocks/info-box/edit.js:332
+msgid "Left"
+msgstr "Esquerda"
+
+#: src/blocks/call-to-action/edit.js:381
+msgid "Above"
+msgstr "Acima"
+
+#: src/blocks/call-to-action/edit.js:382 src/blocks/divider/edit.js:134
+#: src/blocks/heading/edit.js:140 src/blocks/icon-list/edit.js:105
+#: src/blocks/info-box/edit.js:327 src/blocks/info-box/edit.js:333
+msgid "Right"
+msgstr "Direita"
+
+#: src/blocks/call-to-action/edit.js:517 src/blocks/heading/edit.js:187
+#: src/blocks/icon-list/edit.js:136 src/blocks/info-box/edit.js:591
+#: src/blocks/modal/edit.js:203 src/blocks/newsletter/edit.js:227
+#: src/blocks/star-rating/edit.js:198 src/blocks/team/edit.js:299
+#: src/blocks/testimonial/edit.js:381 src/blocks/timeline/edit.js:391
+msgid "Alignment"
+msgstr "Alinhamento"
+
+#: src/blocks/call-to-action/edit.js:543 src/blocks/testimonial/edit.js:448
+msgid "Image Position"
+msgstr "Posição da imagem"
+
+#: src/blocks/call-to-action/edit.js:551
+msgid "Vertical Position"
+msgstr "Posição vertical"
+
+#: src/blocks/call-to-action/edit.js:569 src/blocks/call-to-action/edit.js:652
+#: src/blocks/column/edit.js:559 src/blocks/columns/edit.js:403
+#: src/blocks/info-box/edit.js:538 src/blocks/pricing-menu/edit.js:337
+#: src/blocks/recipe/edit.js:660 src/blocks/section/edit.js:581
+#: src/blocks/team/edit.js:325 src/blocks/testimonial/edit.js:414
+msgid "Choose an image"
+msgstr "Escolher uma imagem"
+
+#: src/blocks/call-to-action/edit.js:588 src/blocks/call-to-action/edit.js:671
+#: src/blocks/column/edit.js:578 src/blocks/columns/edit.js:422
+#: src/blocks/info-box/edit.js:559 src/blocks/pricing-menu/edit.js:358
+#: src/blocks/recipe/edit.js:679 src/blocks/section/edit.js:600
+#: src/blocks/team/edit.js:344 src/blocks/testimonial/edit.js:433
+msgid "Remove image"
+msgstr "Remover imagem"
+
+#: src/blocks/call-to-action/edit.js:601 src/blocks/column/edit.js:478
+#: src/blocks/columns/edit.js:353 src/blocks/section/edit.js:500
+msgid "Add overlay"
+msgstr "Adicionar sobreposição"
+
+#: src/blocks/call-to-action/edit.js:629
+msgid "Element"
+msgstr "Elemento"
+
+#: src/blocks/call-to-action/edit.js:634 src/blocks/info-box/edit.js:308
+msgid "Image"
+msgstr "Imagem"
+
+#: src/blocks/call-to-action/edit.js:635 src/blocks/divider/edit.js:115
+#: src/blocks/info-box/edit.js:307
+msgid "Icon"
+msgstr "Ícone"
+
+#: src/blocks/call-to-action/edit.js:688
+msgid "Title Text"
+msgstr "Texto do título"
+
+#: src/blocks/call-to-action/edit.js:718 src/blocks/divider/edit.js:200
+#: src/blocks/heading/edit.js:179 src/blocks/section/edit.js:358
+msgid "HTML Tag"
+msgstr "Tag HTML"
+
+#: src/blocks/call-to-action/edit.js:820 src/blocks/call-to-action/edit.js:978
+#: src/blocks/info-box/edit.js:809
+msgid "Button Text"
+msgstr "Texto do botão"
+
+#: src/blocks/call-to-action/edit.js:833
+msgid "Apply Link On"
+msgstr "Aplicar link em"
+
+#: src/blocks/call-to-action/edit.js:837
+msgid "Button Only"
+msgstr "Apenas o botão"
+
+#: src/blocks/call-to-action/edit.js:838
+msgid "Whole Box"
+msgstr "Toda a caixa"
+
+#: src/blocks/call-to-action/edit.js:966
+msgid "Enable Secondary Button"
+msgstr "Ativar botão secundário"
+
+#: src/blocks/call-to-action/edit.js:1119
+#: src/blocks/call-to-action/edit.js:1143
+msgid "Hover Animation"
+msgstr "Animação ao passar o mouse"
+
+#: src/blocks/call-to-action/edit.js:1126
+msgid "Animation Duration (ms)"
+msgstr "Duração da animação (ms)"
+
+#: src/blocks/call-to-action/edit.js:1135
+msgid "Sequenced Animation"
+msgstr "Animação sequenciada"
+
+#: src/blocks/call-to-action/edit.js:1169
+#: src/blocks/call-to-action/edit.js:1261 src/blocks/column/edit.js:486
+#: src/blocks/columns/edit.js:361 src/blocks/section/edit.js:508
+msgid "Overlay Color"
+msgstr "Cor da sobreposição"
+
+#: src/blocks/call-to-action/edit.js:1185
+#: src/blocks/call-to-action/edit.js:1277
+msgid "Blur"
+msgstr "Desfoque"
+
+#: src/blocks/call-to-action/edit.js:1195
+#: src/blocks/call-to-action/edit.js:1287
+msgid "Brightness"
+msgstr "Brilho"
+
+#: src/blocks/call-to-action/edit.js:1205
+#: src/blocks/call-to-action/edit.js:1297
+msgid "Contrast"
+msgstr "Contraste"
+
+#: src/blocks/call-to-action/edit.js:1215
+#: src/blocks/call-to-action/edit.js:1249
+#: src/blocks/call-to-action/edit.js:1307
+msgid "Saturation"
+msgstr "Saturação"
+
+#: src/blocks/call-to-action/edit.js:1225
+#: src/blocks/call-to-action/edit.js:1248
+#: src/blocks/call-to-action/edit.js:1317
+msgid "Hue"
+msgstr "Matiz"
+
+#: src/blocks/call-to-action/edit.js:1237
+msgid "Blend Mode"
+msgstr "Modo de mesclagem"
+
+#: src/blocks/call-to-action/edit.js:1242
+msgid "Screen"
+msgstr "Tela"
+
+#: src/blocks/call-to-action/edit.js:1243
+msgid "Overlay"
+msgstr "Sobrepor"
+
+#: src/blocks/call-to-action/edit.js:1244
+msgid "Darken"
+msgstr "Escurecer"
+
+#: src/blocks/call-to-action/edit.js:1245
+msgid "Lighten"
+msgstr "Iluminar"
+
+#: src/blocks/call-to-action/edit.js:1246
+msgid "Color Dodge"
+msgstr "Subexposição de cores"
+
+#: src/blocks/call-to-action/edit.js:1247
+msgid "Color Burn"
+msgstr "Superexposição de cores"
+
+#: src/blocks/call-to-action/edit.js:1251
+msgid "Exclusion"
+msgstr "Exclusão"
+
+#: src/blocks/call-to-action/edit.js:1252
+msgid "Luminosity"
+msgstr "Luminosidade"
+
+#: src/blocks/call-to-action/edit.js:1330
+msgid "Transition DurationHover"
+msgstr "Duração da transição ao passar o mouse"
+
+#: src/blocks/circle-progress/edit.js:224
+msgid "Percent"
+msgstr "Porcentagem"
+
+#: src/blocks/circle-progress/edit.js:233
+msgid "Speed"
+msgstr "Velocidade"
+
+#: src/blocks/circle-progress/edit.js:241
+msgid "Step"
+msgstr "Etapa"
+
+#: src/blocks/circle-progress/edit.js:249
+msgid "Delay"
+msgstr "Atraso"
+
+#: src/blocks/circle-progress/edit.js:258
+msgid "Text Before"
+msgstr "Antes do texto"
+
+#: src/blocks/circle-progress/edit.js:265
+msgid "Text Middle"
+msgstr "Meio do texto"
+
+#: src/blocks/circle-progress/edit.js:272
+msgid "Text After"
+msgstr "Depois do texto"
+
+#: src/blocks/circle-progress/edit.js:278
+#: src/blocks/circle-progress/edit.js:279 src/blocks/modal/edit.js:464
+#: src/blocks/testimonial/edit.js:396
+msgid "Content"
+msgstr "Conteúdo"
+
+#: src/blocks/circle-progress/edit.js:280
+msgid "Add Content"
+msgstr "Adicionar conteúdo"
+
+#: src/blocks/circle-progress/edit.js:289
+msgid "Bar Size"
+msgstr "Tamanho da barra"
+
+#: src/blocks/circle-progress/edit.js:297
+msgid "Bar Cap"
+msgstr "Extremidade da barra"
+
+#: src/blocks/circle-progress/edit.js:301
+msgid "Rounded"
+msgstr "Arredondado"
+
+#: src/blocks/circle-progress/edit.js:302
+msgid "Square"
+msgstr "Quadrado"
+
+#: src/blocks/circle-progress/edit.js:303
+msgid "Butt"
+msgstr "Plano"
+
+#: src/blocks/circle-progress/edit.js:308
+msgid "Circle Outside Color"
+msgstr "Cor externa do círculo"
+
+#: src/blocks/circle-progress/edit.js:322
+msgid "Circle Inside Color"
+msgstr "Cor interna do círculo"
+
+#: src/blocks/column/edit.js:273 src/blocks/columns/edit.js:275
+#: src/blocks/section/edit.js:277
+msgid "General"
+msgstr "Geral"
+
+#: src/blocks/column/edit.js:300 src/blocks/column/edit.js:316
+#: src/blocks/column/edit.js:332 src/blocks/newsletter/edit.js:204
+#: src/blocks/section/edit.js:304 src/blocks/section/edit.js:320
+#: src/blocks/section/edit.js:336
+msgid "Width"
+msgstr "Largura"
+
+#: src/blocks/column/edit.js:501 src/blocks/columns/edit.js:376
+#: src/blocks/section/edit.js:523
+msgid "Opacity"
+msgstr "Opacidade"
+
+#: src/blocks/column/edit.js:545 src/blocks/columns/edit.js:389
+#: src/blocks/section/edit.js:567
+msgid "Background Image"
+msgstr "Imagem de fundo"
+
+#: src/blocks/column/edit.js:608 src/blocks/columns/edit.js:452
+#: src/blocks/section/edit.js:630
+msgid "Background Size"
+msgstr "Tamanho do fundo"
+
+#: src/blocks/column/edit.js:612 src/blocks/columns/edit.js:456
+#: src/blocks/section/edit.js:634
+msgid "Auto"
+msgstr "Automático"
+
+#: src/blocks/column/edit.js:613 src/blocks/columns/edit.js:457
+#: src/blocks/section/edit.js:635
+msgid "Contain"
+msgstr "Conter"
+
+#: src/blocks/column/edit.js:614 src/blocks/columns/edit.js:458
+#: src/blocks/section/edit.js:636
+msgid "Cover"
+msgstr "Cobrir"
+
+#: src/blocks/column/edit.js:615 src/blocks/column/edit.js:632
+#: src/blocks/column/edit.js:653 src/blocks/columns/edit.js:459
+#: src/blocks/columns/edit.js:476 src/blocks/columns/edit.js:497
+#: src/blocks/section/edit.js:637 src/blocks/section/edit.js:654
+#: src/blocks/section/edit.js:675
+msgid "Inherit"
+msgstr "Herdar"
+
+#: src/blocks/column/edit.js:616 src/blocks/column/edit.js:633
+#: src/blocks/column/edit.js:654 src/blocks/columns/edit.js:460
+#: src/blocks/columns/edit.js:477 src/blocks/columns/edit.js:498
+#: src/blocks/section/edit.js:638 src/blocks/section/edit.js:655
+#: src/blocks/section/edit.js:676
+msgid "Initial"
+msgstr "Inicial"
+
+#: src/blocks/column/edit.js:617 src/blocks/column/edit.js:634
+#: src/blocks/column/edit.js:655 src/blocks/columns/edit.js:461
+#: src/blocks/columns/edit.js:478 src/blocks/columns/edit.js:499
+#: src/blocks/section/edit.js:639 src/blocks/section/edit.js:656
+#: src/blocks/section/edit.js:677
+msgid "Revert"
+msgstr "Reverter"
+
+#: src/blocks/column/edit.js:618 src/blocks/column/edit.js:635
+#: src/blocks/column/edit.js:652 src/blocks/column/edit.js:656
+#: src/blocks/columns/edit.js:462 src/blocks/columns/edit.js:479
+#: src/blocks/columns/edit.js:496 src/blocks/columns/edit.js:500
+#: src/blocks/section/edit.js:640 src/blocks/section/edit.js:657
+#: src/blocks/section/edit.js:674 src/blocks/section/edit.js:678
+msgid "Unset"
+msgstr "Não definido"
+
+#: src/blocks/column/edit.js:622 src/blocks/columns/edit.js:466
+#: src/blocks/section/edit.js:644
+msgid "Background Repeat"
+msgstr "Repetir o fundo"
+
+#: src/blocks/column/edit.js:626 src/blocks/columns/edit.js:470
+#: src/blocks/section/edit.js:648
+msgid "Repeat"
+msgstr "Repetir"
+
+#: src/blocks/column/edit.js:627 src/blocks/columns/edit.js:471
+#: src/blocks/section/edit.js:649
+msgid "Repeat-X"
+msgstr "Repetir X (horizontal)"
+
+#: src/blocks/column/edit.js:628 src/blocks/columns/edit.js:472
+#: src/blocks/section/edit.js:650
+msgid "Repeat-Y"
+msgstr "Repetir Y (vertical)"
+
+#: src/blocks/column/edit.js:629 src/blocks/columns/edit.js:473
+#: src/blocks/section/edit.js:651
+msgid "No repeat"
+msgstr "Não repetir"
+
+#: src/blocks/column/edit.js:630 src/blocks/columns/edit.js:474
+#: src/blocks/section/edit.js:652
+msgid "Space"
+msgstr "Espaço"
+
+#: src/blocks/column/edit.js:631 src/blocks/columns/edit.js:475
+#: src/blocks/section/edit.js:653
+msgid "Round"
+msgstr "Redondo"
+
+#: src/blocks/column/edit.js:639 src/blocks/columns/edit.js:483
+#: src/blocks/section/edit.js:661
+msgid "Background Position"
+msgstr "Posição do fundo"
+
+#: src/blocks/column/edit.js:643 src/blocks/columns/edit.js:487
+#: src/blocks/section/edit.js:665
+msgid "Left Top"
+msgstr "Superior à esquerda"
+
+#: src/blocks/column/edit.js:644 src/blocks/columns/edit.js:488
+#: src/blocks/section/edit.js:666
+msgid "Left Center"
+msgstr "Central à esquerda"
+
+#: src/blocks/column/edit.js:645 src/blocks/columns/edit.js:489
+#: src/blocks/section/edit.js:667
+msgid "Left Bottom"
+msgstr "Inferior à esquerda"
+
+#: src/blocks/column/edit.js:646 src/blocks/columns/edit.js:490
+#: src/blocks/section/edit.js:668
+msgid "Right Top"
+msgstr "Superior à direita"
+
+#: src/blocks/column/edit.js:647 src/blocks/columns/edit.js:491
+#: src/blocks/section/edit.js:669
+msgid "Right Center"
+msgstr "Central à direita"
+
+#: src/blocks/column/edit.js:648 src/blocks/columns/edit.js:492
+#: src/blocks/section/edit.js:670
+msgid "Right Bottom"
+msgstr "Inferior à direita"
+
+#: src/blocks/column/edit.js:649 src/blocks/columns/edit.js:493
+#: src/blocks/section/edit.js:671
+msgid "Center Top"
+msgstr "Superior ao centro"
+
+#: src/blocks/column/edit.js:650 src/blocks/columns/edit.js:494
+#: src/blocks/section/edit.js:672
+msgid "Center Center"
+msgstr "Centro ao centro"
+
+#: src/blocks/column/edit.js:651 src/blocks/columns/edit.js:495
+#: src/blocks/section/edit.js:673
+msgid "Center Bottom"
+msgstr "Inferior ao centro"
+
+#: src/blocks/columns/edit.js:235
+msgid "Select a variation to start with."
+msgstr "Selecione uma variação para iniciar."
+
+#: src/blocks/columns/variations.js:16
+msgid "One column"
+msgstr "Uma coluna"
+
+#: src/blocks/columns/variations.js:42
+msgid "Two columns; equal split"
+msgstr "Duas colunas; divisão igual"
+
+#: src/blocks/columns/variations.js:70
+msgid "Two columns; one-third, two-thirds split"
+msgstr "Duas colunas; divisão de um terço e dois terços"
+
+#: src/blocks/columns/variations.js:96
+msgid "Two columns; two-thirds, one-third split"
+msgstr "Duas colunas; divisão de dois terços e um terço"
+
+#: src/blocks/columns/variations.js:122 src/blocks/columns/variations.js:154
+msgid "Three columns; equal split"
+msgstr "Três colunas; divisão igual"
+
+#: src/blocks/columns/variations.js:180
+msgid "Three columns; wide center column"
+msgstr "Três colunas; coluna central larga"
+
+#: src/blocks/columns/variations.js:206
+msgid "Four columns; equal split"
+msgstr "Quatro colunas; divisão igual"
+
+#: src/blocks/divider/edit.js:132 src/blocks/heading/edit.js:138
+#: src/blocks/icon-list/edit.js:103 src/blocks/info-box/edit.js:331
+msgid "Center"
+msgstr "Centro"
+
+#: src/blocks/divider/edit.js:190
+msgid "Text or Icon"
+msgstr "Texto ou ícone"
+
+#: src/blocks/divider/edit.js:220
+msgid "Divider Alignment"
+msgstr "Alinhamento do divisor"
+
+#: src/blocks/divider/edit.js:428
+msgid "Add divider text"
+msgstr "Adicionar texto do divisor"
+
+#: src/blocks/divider/edit.js:429
+msgid "Text Divider"
+msgstr "Divisor de texto"
+
+#: src/blocks/heading/edit.js:316
+msgid "Add text"
+msgstr "Adicionar texto"
+
+#: src/blocks/heading/edit.js:317
+msgid "Text Heading"
+msgstr "Título do texto"
+
+#: src/blocks/info-box/edit.js:433
+msgid "Type"
+msgstr "Tipo"
+
+#: src/blocks/info-box/edit.js:584
+msgid "Position"
+msgstr "Posição"
+
+#: src/blocks/info-box/edit.js:729
+msgid "Link Type"
+msgstr "Tipo de link"
+
+#: src/blocks/info-box/edit.js:734
+msgid "Box"
+msgstr "Caixa"
+
+#: src/blocks/info-box/edit.js:736
+msgid "Button"
+msgstr "Botão"
+
+#: src/blocks/info-box/edit.js:745
+msgid "Title Separator"
+msgstr "Separador de títulos"
+
+#: src/blocks/info-box/edit.js:753
+msgid "Separator Color"
+msgstr "Cor do separador"
+
+#: src/blocks/modal/edit.js:465
+msgid "Add content"
+msgstr "Adicionar conteúdo"
+
+#: src/blocks/newsletter/attributes.js:10
+msgid "Go"
+msgstr "Ir"
+
+#: src/blocks/newsletter/attributes.js:14
+msgid "Enter your email address"
+msgstr "Digite seu endereço de e-mail"
+
+#: src/blocks/newsletter/attributes.js:18 src/blocks/newsletter/edit.js:221
+msgid "GDPR Checkbox Label"
+msgstr "Rótulo da caixa de seleção GDPR"
+
+#: src/blocks/newsletter/edit.js:193
+msgid "Placeholder Text"
+msgstr "Texto do espaço reservado"
+
+#: src/blocks/newsletter/edit.js:199
+msgid "Submit Button Text"
+msgstr "Texto do botão de envio"
+
+#: src/blocks/newsletter/edit.js:212
+msgid "Height"
+msgstr "Altura"
+
+#: src/blocks/newsletter/edit.js:569
+msgid "Label Color"
+msgstr "Cor do rótulo"
+
+#: src/blocks/newsletter/edit.js:583
+msgid "Checkbox Background Color"
+msgstr "Cor de fundo da caixa de seleção"
+
+#: src/blocks/newsletter/edit.js:597
+msgid "Checkbox Color"
+msgstr "Cor da caixa de seleção"
+
+#: src/blocks/newsletter/edit.js:611
+msgid "Checkbox Border Color"
+msgstr "Cor da borda da caixa de seleção"
+
+#: src/blocks/newsletter/edit.js:656 src/blocks/newsletter/save.js:108
+msgid "Email is required."
+msgstr "O e-mail é obrigatório."
+
+#: src/blocks/newsletter/edit.js:659 src/blocks/newsletter/save.js:111
+msgid "Email not valid."
+msgstr "E-mail inválido."
+
+#: src/blocks/newsletter/edit.js:668 src/blocks/newsletter/save.js:120
+msgid "This field is required"
+msgstr "Este campo é obrigatório"
+
+#: src/blocks/newsletter/edit.js:674 src/blocks/newsletter/save.js:126
+msgid "Thanks for your subscription."
+msgstr "Obrigado pela sua assinatura."
+
+#: src/blocks/newsletter/edit.js:677 src/blocks/newsletter/save.js:129
+msgid "Failed to subscribe, please contact admin."
+msgstr "Falha na assinatura, fale com o administrador."
+
+#: src/blocks/pricing-menu/attributes.js:46
+msgid "Cheese Pizza"
+msgstr "Pizza de queijo"
+
+#: src/blocks/pricing-menu/attributes.js:54
+msgid "$99"
+msgstr "R$99"
+
+#: src/blocks/pricing-menu/edit.js:388
+msgid "Price"
+msgstr "Preço"
+
+#: src/blocks/pricing-menu/edit.js:434 src/blocks/recipe/edit.js:742
+#: src/blocks/star-rating/edit.js:306
+msgid "Title Color"
+msgstr "Cor do título"
+
+#: src/blocks/pricing-menu/edit.js:481
+msgid "Price Color"
+msgstr "Cor do preço"
+
+#: src/blocks/recipe/attributes.js:31
+msgid "My amazing cook recipe"
+msgstr "Minha incrível receita de culinária"
+
+#: src/blocks/recipe/attributes.js:35
+msgid ""
+"I am text block. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut "
+"elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+"Eu sou um bloco de texto. Lorem ipsum dolor sit amet, consectetur adipiscing "
+"elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+
+#: src/blocks/recipe/edit.js:626 src/blocks/recipe/edit.js:627
+msgid "Recipe Name"
+msgstr "Nome da receita"
+
+#: src/blocks/recipe/edit.js:628
+msgid "Recipe name"
+msgstr "Nome da receita"
+
+#: src/blocks/recipe/edit.js:642
+msgid "Title HTML Tag"
+msgstr "Tag HTML do título"
+
+#: src/blocks/recipe/edit.js:693
+msgid "Show Author Meta"
+msgstr "Mostrar metadados do autor"
+
+#: src/blocks/recipe/edit.js:698
+msgid "Show Author Date"
+msgstr "Mostrar data do autor"
+
+#: src/blocks/recipe/edit.js:703
+msgid "Schema Markup"
+msgstr "Marcação de schema"
+
+#: src/blocks/recipe/edit.js:714 src/blocks/recipe/edit.js:1037
+#: src/blocks/recipe/edit.js:1127 src/blocks/recipe/edit.js:1225
+#: src/blocks/star-rating/edit.js:278
+msgid "Title Typography"
+msgstr "Tipografia do título"
+
+#: src/blocks/recipe/edit.js:757
+msgid "Description Typography"
+msgstr "Tipografia da descrição"
+
+#: src/blocks/recipe/edit.js:800
+msgid "Meta Typography"
+msgstr "Tipografia da meta"
+
+#: src/blocks/recipe/edit.js:828
+msgid "Meta Color"
+msgstr "Cor da meta"
+
+#: src/blocks/recipe/edit.js:846 src/blocks/recipe/edit.js:847
+msgid "Prep Time"
+msgstr "Tempo de preparação"
+
+#: src/blocks/recipe/edit.js:848
+msgid "Prep time"
+msgstr "Tempo de preparação"
+
+#: src/blocks/recipe/edit.js:864 src/blocks/recipe/edit.js:865
+msgid "Prep Text"
+msgstr "Texto de preparação"
+
+#: src/blocks/recipe/edit.js:866
+msgid "Add Prep Text"
+msgstr "Adicionar texto de preparação"
+
+#: src/blocks/recipe/edit.js:872 src/blocks/recipe/edit.js:873
+msgid "Prep Value"
+msgstr "Valor de preparação"
+
+#: src/blocks/recipe/edit.js:874
+msgid "Add Prep value"
+msgstr "Adicionar valor de preparação"
+
+#: src/blocks/recipe/edit.js:884 src/blocks/recipe/edit.js:885
+msgid "Cook Time"
+msgstr "Tempo de cozimento"
+
+#: src/blocks/recipe/edit.js:886
+msgid "Cook time"
+msgstr "Tempo de cozimento"
+
+#: src/blocks/recipe/edit.js:902 src/blocks/recipe/edit.js:903
+msgid "Cook Text"
+msgstr "Texto de cozimento"
+
+#: src/blocks/recipe/edit.js:904
+msgid "Add cook Text"
+msgstr "Adicionar texto de cozimento"
+
+#: src/blocks/recipe/edit.js:910 src/blocks/recipe/edit.js:911
+msgid "Cook Value"
+msgstr "Valor de cozimento"
+
+#: src/blocks/recipe/edit.js:912
+msgid "Add Cook value"
+msgstr "Adicionar valor de cozimento"
+
+#: src/blocks/recipe/edit.js:922 src/blocks/recipe/edit.js:923
+msgid "Total Time"
+msgstr "Tempo total"
+
+#: src/blocks/recipe/edit.js:924
+msgid "Total time"
+msgstr "Tempo total"
+
+#: src/blocks/recipe/edit.js:940 src/blocks/recipe/edit.js:941
+msgid "Total Text"
+msgstr "Texto do total"
+
+#: src/blocks/recipe/edit.js:942
+msgid "Add total Text"
+msgstr "Adicionar texto do total"
+
+#: src/blocks/recipe/edit.js:948 src/blocks/recipe/edit.js:949
+msgid "Total Value"
+msgstr "Valor total"
+
+#: src/blocks/recipe/edit.js:950
+msgid "Add Total value"
+msgstr "Adicionar valor total"
+
+#: src/blocks/recipe/edit.js:960 src/blocks/recipe/edit.js:961
+#: src/blocks/recipe/edit.js:962
+msgid "Servings"
+msgstr "Porções"
+
+#: src/blocks/recipe/edit.js:978 src/blocks/recipe/edit.js:979
+msgid "Servings Text"
+msgstr "Texto de porções"
+
+#: src/blocks/recipe/edit.js:980
+msgid "Add servings Text"
+msgstr "Adicionar texto de porções"
+
+#: src/blocks/recipe/edit.js:986 src/blocks/recipe/edit.js:987
+msgid "Servings Value"
+msgstr "Valor das porções"
+
+#: src/blocks/recipe/edit.js:988
+msgid "Add Servings value"
+msgstr "Adicionar valor das porções"
+
+#: src/blocks/recipe/edit.js:998 src/blocks/recipe/edit.js:999
+#: src/blocks/recipe/edit.js:1000
+msgid "Calories"
+msgstr "Calorias"
+
+#: src/blocks/recipe/edit.js:1016 src/blocks/recipe/edit.js:1017
+msgid "Calories Text"
+msgstr "Texto de calorias"
+
+#: src/blocks/recipe/edit.js:1018
+msgid "Add calories Text"
+msgstr "Adicionar texto de calorias"
+
+#: src/blocks/recipe/edit.js:1024 src/blocks/recipe/edit.js:1025
+msgid "Calories Value"
+msgstr "Valor calórico"
+
+#: src/blocks/recipe/edit.js:1026
+msgid "Add Calories value"
+msgstr "Adicionar valor calórico"
+
+#: src/blocks/recipe/edit.js:1065
+msgid "Ingredients Title Color"
+msgstr "Cor do título dos ingredientes"
+
+#: src/blocks/recipe/edit.js:1080
+msgid "Ingredients Typography"
+msgstr "Tipografia dos ingredientes"
+
+#: src/blocks/recipe/edit.js:1108
+msgid "Ingredients Color"
+msgstr "Cor dos ingredientes"
+
+#: src/blocks/recipe/edit.js:1155
+msgid "Instructions Title Color"
+msgstr "Cor do título das instruções"
+
+#: src/blocks/recipe/edit.js:1170
+msgid "Instructions Typography"
+msgstr "Tipografia das instruções"
+
+#: src/blocks/recipe/edit.js:1198
+msgid "Instructions Color"
+msgstr "Cor das instruções"
+
+#: src/blocks/recipe/edit.js:1216 src/blocks/recipe/edit.js:1217
+#: src/blocks/recipe/edit.js:1528 src/blocks/recipe/save.js:439
+msgid "Notes"
+msgstr "Notas"
+
+#: src/blocks/recipe/edit.js:1218
+msgid "Add Notes"
+msgstr "Adicionar notas"
+
+#: src/blocks/recipe/edit.js:1253
+msgid "Note Title Color"
+msgstr "Cor do título da nota"
+
+#: src/blocks/recipe/edit.js:1268
+msgid "Notes Typography"
+msgstr "Tipografia das notas"
+
+#: src/blocks/recipe/edit.js:1296
+msgid "Notes Color"
+msgstr "Cor das notas"
+
+#: src/blocks/recipe/edit.js:1477 src/blocks/recipe/save.js:420
+msgid "Ingredients"
+msgstr "Ingredientes"
+
+#: src/blocks/recipe/edit.js:1480 src/blocks/recipe/edit.js:1481
+msgid "Click here to add ingredients"
+msgstr "Clique aqui para adicionar ingredientes"
+
+#: src/blocks/recipe/edit.js:1502 src/blocks/recipe/save.js:429
+msgid "Instructions"
+msgstr "Instruções"
+
+#: src/blocks/recipe/edit.js:1505 src/blocks/recipe/edit.js:1506
+msgid "Click here to add instructions"
+msgstr "Clique aqui para adicionar instruções"
+
+#: src/blocks/section/edit.js:364
+msgid "Div"
+msgstr "Div"
+
+#: src/blocks/section/edit.js:365
+msgid "Aside"
+msgstr "À parte"
+
+#: src/blocks/section/edit.js:366
+msgid "Header"
+msgstr "Cabeçalho"
+
+#: src/blocks/section/edit.js:367
+msgid "Footer"
+msgstr "Rodapé"
+
+#: src/blocks/section/edit.js:368
+msgid "Main"
+msgstr "Principal"
+
+#: src/blocks/section/edit.js:369
+msgid "Article"
+msgstr "Artigo"
+
+#: src/blocks/section/edit.js:370
+msgid "Nav"
+msgstr "Navegação"
+
+#: src/blocks/star-rating/edit.js:171
+msgid "Rating Scale"
+msgstr "Escala de classificação"
+
+#: src/blocks/star-rating/edit.js:175
+msgid "0-5"
+msgstr "0 a 5"
+
+#: src/blocks/star-rating/edit.js:176
+msgid "0-10"
+msgstr "0 a 10"
+
+#: src/blocks/star-rating/edit.js:181
+msgid "Rating"
+msgstr "Classificação"
+
+#: src/blocks/star-rating/edit.js:217
+msgid "Icon Style"
+msgstr "Estilo do ícone"
+
+#: src/blocks/star-rating/edit.js:221
+msgid "Fill"
+msgstr "Preenchimento"
+
+#: src/blocks/star-rating/edit.js:222
+msgid "Outline"
+msgstr "Contorno"
+
+#: src/blocks/star-rating/edit.js:259
+msgid "Unmarked Color"
+msgstr "Cor não marcada"
+
+#: src/blocks/team/attributes.js:22 src/blocks/testimonial/attributes.js:26
+msgid ""
+"Aliquam dignissim lacinia tristique nulla lobortis nunc ac eros scelerisque "
+"varius suspendisse sit amet urna vitae urna semper quis at ligula."
+msgstr ""
+"Aliquam dignissim lacinia tristique nulla lobortis nunc ac eros scelerisque "
+"varius suspendisse sit amet urna vitae urna semper quis at ligula."
+
+#: src/blocks/team/edit.js:359 src/blocks/testimonial/edit.js:460
+msgid "Name"
+msgstr "Nome"
+
+#: src/blocks/team/edit.js:360 src/blocks/testimonial/edit.js:461
+msgid "Mark Wolf"
+msgstr "Marcos Lobo"
+
+#: src/blocks/team/edit.js:367
+msgid "Role"
+msgstr "Função"
+
+#: src/blocks/team/edit.js:368 src/blocks/testimonial/edit.js:469
+msgid "Web Designer"
+msgstr "Web designer"
+
+#: src/blocks/team/edit.js:430 src/blocks/testimonial/edit.js:551
+msgid "Image Width"
+msgstr "Largura da Imagem"
+
+#: src/blocks/team/edit.js:556 src/blocks/testimonial/edit.js:689
+msgid "Name Color"
+msgstr "Cor do nome"
+
+#: src/blocks/team/edit.js:603
+msgid "Role Color"
+msgstr "Cor da função"
+
+#: src/blocks/testimonial/edit.js:367
+msgid "Classic"
+msgstr "Clássico"
+
+#: src/blocks/testimonial/edit.js:368
+msgid "Inline"
+msgstr "Em linha"
+
+#: src/blocks/testimonial/edit.js:369
+msgid "Bubble"
+msgstr "Bolha"
+
+#: src/blocks/testimonial/edit.js:374
+msgid "Display Symbol"
+msgstr "Exibir símbolo"
+
+#: src/blocks/testimonial/edit.js:468 src/blocks/testimonial/edit.js:476
+msgid "Company"
+msgstr "Empresa"
+
+#: src/blocks/testimonial/edit.js:477
+msgid "https://www.example.com"
+msgstr "https://www.example.com"
+
+#: src/blocks/testimonial/edit.js:483
+msgid "Display Rating"
+msgstr "Exibir classificação"
+
+#: src/blocks/testimonial/edit.js:489
+msgid "Rating Number"
+msgstr "Número de classificação"
+
+#: src/blocks/testimonial/edit.js:561
+msgid "Quote Icon Color"
+msgstr "Cor do ícone de citação"
+
+#: src/blocks/testimonial/edit.js:736
+msgid "Company Color"
+msgstr "Cor da empresa"
+
+#: src/blocks/timeline/edit.js:439
+msgid "Icon Alignment"
+msgstr "Alinhamento do ícone"
+
+#: src/blocks/timeline/edit.js:643
+msgid "Image alignment"
+msgstr "Alinhamento da imagem"
+
+#: src/blocks/timeline/edit.js:657
+msgid "Add link to featured image"
+msgstr "Adicionar link para imagem destacada"
+
+#: src/blocks/timeline/edit.js:852
+msgid "Line Color"
+msgstr "Cor da linha"
+
+#: src/blocks/timeline/edit.js:895
+msgid "Latest Posts"
+msgstr "Últimos posts"
+
+#: src/blocks/timeline/edit.js:1097
+msgid "(no title)"
+msgstr "(sem título)"
+
+#: src/components/icon-picker/index.js:52
+msgid "Icon SVG code"
+msgstr "Código do ícone SVG"
+
+#: src/components/responsive-range-control/index.js:37
+#: src/components/responsive-range-control/index.js:38
+#: src/components/responsive-range-control/index.js:39
+msgid "Unit"
+msgstr "Unidade"
+
+#: src/components/responsive-range-control/range-control.js:63
+#: src/components/spacing/spacing.js:158
+#: src/components/typography/range-control.js:63
+msgid "px"
+msgstr "px"
+
+#: src/components/responsive-range-control/range-control.js:64
+#: src/components/spacing/spacing.js:159
+#: src/components/typography/range-control.js:64
+msgid "em"
+msgstr "em"
+
+#: src/components/responsive-range-control/range-control.js:65
+#: src/components/spacing/spacing.js:160
+#: src/components/typography/range-control.js:65
+msgid "%"
+msgstr "%"
+
+#: src/components/responsive-range-control/range-control.js:70
+#: src/components/spacing/spacing.js:165
+#: src/components/typography/range-control.js:70
+msgid "Select Unit"
+msgstr "Selecionar unidade"
+
+#: src/components/responsive-range-control/range-control.js:143
+#: src/components/spacing/spacing.js:629
+#: src/components/typography/range-control.js:142
+msgid "Device"
+msgstr "Dispositivo"
+
+#: src/components/spacing/spacing.js:375 src/components/spacing/spacing.js:465
+#: src/components/spacing/spacing.js:555
+#, javascript-format
+msgid "%s Top"
+msgstr "%s Superior"
+
+#: src/components/spacing/spacing.js:393 src/components/spacing/spacing.js:483
+#: src/components/spacing/spacing.js:573
+#, javascript-format
+msgid "%s Right"
+msgstr "%s Direita"
+
+#: src/components/spacing/spacing.js:411 src/components/spacing/spacing.js:501
+#: src/components/spacing/spacing.js:591
+#, javascript-format
+msgid "%s Bottom"
+msgstr "%s Inferior"
+
+#: src/components/spacing/spacing.js:429 src/components/spacing/spacing.js:519
+#: src/components/spacing/spacing.js:609
+#, javascript-format
+msgid "%s Left"
+msgstr "%s Esquerda"
+
+#: src/components/typography/font-control.js:15
+msgid "default"
+msgstr "padrão"
+
+#: src/components/typography/font-control.js:31
+msgid "latin"
+msgstr "latino"
+
+#: src/components/typography/font-control.js:32
+msgid "latin-ext"
+msgstr "latino estendido"
+
+#: src/components/typography/font-control.js:33
+msgid "cyrillic"
+msgstr "cirílico"
+
+#: src/components/typography/font-control.js:34
+msgid "cyrillic-ext"
+msgstr "cirílico estendido"
+
+#: src/components/typography/font-control.js:35
+msgid "greek"
+msgstr "grego"
+
+#: src/components/typography/font-control.js:36
+msgid "greek-ext"
+msgstr "grego estendido"
+
+#: src/components/typography/font-control.js:37
+msgid "vietnamese"
+msgstr "vietnamita"
+
+#: src/components/typography/font-control.js:41
+#: src/components/typography/font-control.js:56
+#: src/components/typography/font-control.js:64
+msgid "Default"
+msgstr "Padrão"
+
+#: src/components/typography/font-control.js:43
+msgid "Bold"
+msgstr "Negrito"
+
+#: src/components/typography/font-control.js:57
+msgid "Uppercase"
+msgstr "Maiúsculas"
+
+#: src/components/typography/font-control.js:58
+msgid "Lowercase"
+msgstr "Minúsculas"
+
+#: src/components/typography/font-control.js:59
+msgid "Capitalize"
+msgstr "Capitalizar"
+
+#: src/components/typography/font-control.js:66
+msgid "Italic"
+msgstr "Itálico"
+
+#: src/components/typography/font-control.js:67
+msgid "oblique"
+msgstr "oblíquo"
+
+#: src/components/typography/font-control.js:73
+msgid "Font Family"
+msgstr "Família da fonte"
+
+#: src/components/typography/font-control.js:84
+msgid "Font Subset"
+msgstr "Subconjunto de fontes"
+
+#: src/components/typography/font-control.js:90
+msgid "Font Weight"
+msgstr "Peso da fonte"
+
+#: src/components/typography/font-control.js:96
+msgid "Font Style"
+msgstr "Estilo da fonte"
+
+#: src/components/typography/font-control.js:102
+msgid "Text Transform"
+msgstr "Transformação de texto"
+
+#: src/components/typography/index.js:62
+msgid "Hide Advanced"
+msgstr "Ocultar avançado"
+
+#: src/components/typography/index.js:66
+msgid "Advanced"
+msgstr "Avançado"
+
+#: src/components/typography/index.js:114
+#: src/components/typography/index.js:115
+#: src/components/typography/index.js:116
+msgid "Font Size"
+msgstr "Tamanho da fonte"
+
+#: src/components/typography/index.js:134
+#: src/components/typography/index.js:135
+#: src/components/typography/index.js:136
+msgid "Line Height"
+msgstr "Altura da linha"
+
+#: src/components/typography/index.js:154
+#: src/components/typography/index.js:155
+#: src/components/typography/index.js:156
+msgid "Letter Spacing"
+msgstr "Espaçamento entre letras"
+
+#. Plugin URI of the plugin/theme
+msgid "https://oceanwp.org/extension/ocean-gutenberg-blocks/"
+msgstr "https://oceanwp.org/extension/ocean-gutenberg-blocks/"
+
+#. Description of the plugin/theme
+msgid ""
+"A premium plugin to add magnificent and various blocks to the WordPress "
+"default Gutenberg editor. Enrich your blog posts or build stunning pages."
+msgstr ""
+"Um plugin premium para adicionar blocos magníficos e diversos ao editor "
+"Gutenberg padrão do WordPress. Enriqueça os posts de seu blog ou crie "
+"páginas incríveis."
+
+#. Author of the plugin/theme
+msgid "OceanWP"
+msgstr "OceanWP"
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"

@@ -1,0 +1,139 @@
+/**
+ * Main SCSS file to hold all the css
+ */
+
+/*************************************
+ * Configuration
+ ************************************/
+@import "variables";
+
+@import "mixins";
+
+.clr:after{
+    content: '';
+    display: block;
+    visibility: hidden;
+    clear: both;
+    zoom: 1;
+    height: 0;
+	position: relative !important;
+}
+
+.ocean-gutenberg-blocks-setting-wrapper .settings-block {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+	margin-top: 50px;
+}
+
+.ogb-block-border {
+	position: relative;
+    background-color: #fff;
+	text-align: center;
+    border-radius: 3px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.100), 0 3px 10px 0 rgba(0, 0, 0, 0.100);
+
+	.blocks-icon {
+
+		.card-icon {
+			font-size: 35px;
+			color: #FFB100;
+			display: initial;
+		}
+	}
+
+	.switch {
+		width: 100%;
+		position: absolute;
+		margin: 0 -20px;
+		bottom: 0;
+		padding: 5px 0;
+	}
+
+	.switch input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: '\f530';
+		font-family: dashicons;
+		font-size: 20px;
+		color: #707070;
+		border-radius: 50%;
+		right: 10px;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	input:focus + .slider {
+		box-shadow: 0 0 1px #ffb100;
+	}
+
+	input:checked + .slider {
+		background-color: #ffb100;
+	}
+
+	input:checked + .slider:before {
+		content: '\f177';
+		color: #fff;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
+	}
+
+}
+
+.ogb-notice-dismiss {
+
+	position: absolute;
+    top: 0;
+    right: 1px;
+    border: none;
+    margin: 0;
+    padding: 17px;
+    background: 0 0;
+    color: #707070;
+    cursor: pointer;
+
+	span {
+		font-size: 17px;
+
+		&:hover {
+			color: #cc0000;
+		}
+	}
+}
+
+.ogb-editpr-panel-row {
+	display: block;
+	margin-bottom: 24px;
+}
+
+.ogb-editor-color-label {
+	display: flex;
+	vertical-align: middle;
+	margin: 1.5em 0;
+
+	.ogb-show-color {
+		padding-top: 1px;
+	}
+}

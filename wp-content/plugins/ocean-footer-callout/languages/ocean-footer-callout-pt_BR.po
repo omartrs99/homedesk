@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Footer Callout\n"
+"POT-Creation-Date: 2023-10-17 20:22-0300\n"
+"PO-Revision-Date: 2023-12-05 01:42-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ocean-footer-callout.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: ocean-footer-callout.php:158 ocean-footer-callout.php:167
+msgid "Cheatin&#8217; huh?"
+msgstr "Trapaceando, hein?"
+
+#: ocean-footer-callout.php:258 ocean-footer-callout.php:1485
+msgid "Footer Callout"
+msgstr "Chamada no rodapé"
+
+#: ocean-footer-callout.php:279
+msgid "Select Template"
+msgstr "Selecionar modelo"
+
+#: ocean-footer-callout.php:280
+msgid "Choose a template created in Theme Panel > My Library."
+msgstr "Escolha um modelo criado no Painel de temas > Minha biblioteca."
+
+#: ocean-footer-callout.php:307
+msgid "Content"
+msgstr "Conteúdo"
+
+#: ocean-footer-callout.php:374 ocean-footer-callout.php:633
+msgid "Typography"
+msgstr "Tipografia"
+
+#: ocean-footer-callout.php:406
+msgid "Button"
+msgstr "Botão"
+
+#: ocean-footer-callout.php:429
+msgid "Enable Button"
+msgstr "Ativar botão"
+
+#: ocean-footer-callout.php:454
+msgid "Button URL"
+msgstr "URL do botão"
+
+#: ocean-footer-callout.php:469
+msgid "Get In Touch"
+msgstr "Entrar em contato"
+
+#: ocean-footer-callout.php:480
+msgid "Button Text"
+msgstr "Texto do botão"
+
+#: ocean-footer-callout.php:506
+msgid "Button Target"
+msgstr "Destino do botão"
+
+#: ocean-footer-callout.php:511
+msgid "Blank"
+msgstr "Em nova"
+
+#: ocean-footer-callout.php:512
+msgid "Self"
+msgstr "Na mesma"
+
+#: ocean-footer-callout.php:536
+msgid "Button Rel"
+msgstr "Rel do botão"
+
+#: ocean-footer-callout.php:541
+msgid "None"
+msgstr "Nenhum"
+
+#: ocean-footer-callout.php:542
+msgid "Nofollow"
+msgstr "Nofollow"
+
+#: ocean-footer-callout.php:543
+msgid "Noopener Noreferrer"
+msgstr "Noopener Noreferrer"
+
+#: ocean-footer-callout.php:544
+msgid "Nofollow Noopener Noreferrer"
+msgstr "Nofollow Noopener Noreferrer"
+
+#: ocean-footer-callout.php:566
+msgid "Button Custom Classes"
+msgstr "Classes personalizadas do botão"
+
+#: ocean-footer-callout.php:665
+msgid "Styling"
+msgstr "Estilização"
+
+#: ocean-footer-callout.php:727
+msgid "Padding (px)"
+msgstr "Preenchimento (px)"
+
+#: ocean-footer-callout.php:764
+msgid "Background"
+msgstr "Plano de fundo"
+
+#: ocean-footer-callout.php:789
+msgid "Border Color"
+msgstr "Cor da borda"
+
+#: ocean-footer-callout.php:814
+msgid "Text Color"
+msgstr "Cor do texto"
+
+#: ocean-footer-callout.php:839
+msgid "Links"
+msgstr "Links"
+
+#: ocean-footer-callout.php:864
+msgid "Links: Hover"
+msgstr "Links: Ao passar o mouse"
+
+#: ocean-footer-callout.php:889
+msgid "Button Border Radius (px)"
+msgstr "Raio da borda do botão (px)"
+
+#: ocean-footer-callout.php:914
+msgid "Button Background"
+msgstr "Fundo do botão"
+
+#: ocean-footer-callout.php:939
+msgid "Button Color"
+msgstr "Cor do botão"
+
+#: ocean-footer-callout.php:964
+msgid "Button: Hover Background"
+msgstr "Botão: Fundo ao passar o mouse"
+
+#: ocean-footer-callout.php:989
+msgid "Button: Hover Color"
+msgstr "Botão: Cor ao passar o mouse"
+
+#: ocean-footer-callout.php:1069
+msgid "Callout"
+msgstr "Chamada"
+
+#: ocean-footer-callout.php:1079
+msgid "Display Callout"
+msgstr "Exibir chamada"
+
+#: ocean-footer-callout.php:1080
+msgid "Enable or disable the footer callout."
+msgstr "Ativar ou desativar a chamada no rodapé."
+
+#: ocean-footer-callout.php:1082
+msgid "Default"
+msgstr "Padrão"
+
+#: ocean-footer-callout.php:1083
+msgid "Enable"
+msgstr "Ativar"
+
+#: ocean-footer-callout.php:1084
+msgid "Disable"
+msgstr "Desativar"
+
+#: ocean-footer-callout.php:1101
+msgid "Callout Button Url"
+msgstr "URL do botão da chamada"
+
+#: ocean-footer-callout.php:1102
+msgid "Enter a valid link."
+msgstr "Digite um link válido."
+
+#: ocean-footer-callout.php:1118
+msgid "Callout Button Text"
+msgstr "Texto do botão da chamada"
+
+#: ocean-footer-callout.php:1119
+msgid "Enter your text."
+msgstr "Digite o seu texto."
+
+#: ocean-footer-callout.php:1135
+msgid "Callout Text"
+msgstr "Texto da chamada"
+
+#: ocean-footer-callout.php:1136
+msgid "Override the default callout text."
+msgstr "Substituir o texto de chamada padrão."
+
+#: template/footer-callout.php:177
+msgid "Opens in a new tab"
+msgstr "Abre em uma nova aba"
+
+#. Plugin Name of the plugin/theme
+msgid "Ocean Footer Callout"
+msgstr "Ocean Footer Callout"
+
+#. Plugin URI of the plugin/theme
+msgid "https://oceanwp.org/extension/ocean-footer-callout/"
+msgstr "https://oceanwp.org/extension/ocean-footer-callout/"
+
+#. Description of the plugin/theme
+msgid ""
+"Add some relevant/important information about your company or product in "
+"your footer."
+msgstr ""
+"Adicione informações relevantes/importantes sobre a sua empresa ou produto "
+"no rodapé."
+
+#. Author of the plugin/theme
+msgid "OceanWP"
+msgstr "OceanWP"
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"

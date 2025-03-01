@@ -1,0 +1,839 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean Popup Login plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Popup Login 2.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-popup-login\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-10-16T06:47:54+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ocean-popup-login\n"
+
+#. Plugin Name of the plugin
+#: ocean-popup-login.php
+msgid "Ocean Popup Login"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: ocean-popup-login.php
+msgid "https://oceanwp.org/extension/ocean-popup-login/"
+msgstr ""
+
+#. Description of the plugin
+#: ocean-popup-login.php
+msgid "Add user login, registration and lost password forms as a popup to your website. Simple, effective and out of the box solution."
+msgstr ""
+
+#. Author of the plugin
+#: ocean-popup-login.php
+#: includes/update-message.php:84
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+#: ocean-popup-login.php
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: includes/options.php:18
+#: ocean-popup-login.php:1785
+msgid "Popup Login"
+msgstr ""
+
+#: includes/options.php:24
+msgid "Position"
+msgstr ""
+
+#: includes/options.php:25
+msgid "Need help with the Manual position display method? Check out the documentation: %1$s how to display the popup login link %2$s"
+msgstr ""
+
+#: includes/options.php:36
+#: includes/options.php:37
+msgid "Menu"
+msgstr ""
+
+#: includes/options.php:41
+#: includes/options.php:42
+msgid "Manual"
+msgstr ""
+
+#: includes/options.php:49
+msgid "Logged In / Logged Out"
+msgstr ""
+
+#: includes/options.php:58
+msgid "Login Text"
+msgstr ""
+
+#: includes/options.php:62
+#: ocean-popup-login.php:383
+#: ocean-popup-login.php:432
+#: ocean-popup-login.php:1358
+msgid "Sign in / Join"
+msgstr ""
+
+#: includes/options.php:80
+msgid "Logged In"
+msgstr ""
+
+#: includes/options.php:81
+msgid "Display this content when the user is logged in."
+msgstr ""
+
+#: includes/options.php:90
+msgid "Display nothing"
+msgstr ""
+
+#: includes/options.php:91
+msgid "Logout link"
+msgstr ""
+
+#: includes/options.php:92
+msgid "Custom"
+msgstr ""
+
+#: includes/options.php:97
+msgid "Custom Text"
+msgstr ""
+
+#: includes/options.php:116
+msgid "Logout Text"
+msgstr ""
+
+#: includes/options.php:120
+#: ocean-popup-login.php:385
+#: ocean-popup-login.php:433
+#: ocean-popup-login.php:1359
+msgid "Logout"
+msgstr ""
+
+#: includes/options.php:134
+msgid "Logout URL"
+msgstr ""
+
+#: includes/options.php:146
+msgid "Forms"
+msgstr ""
+
+#: includes/options.php:156
+msgid "Login Form"
+msgstr ""
+
+#: includes/options.php:163
+#: includes/options.php:253
+#: includes/options.php:391
+#: includes/options.php:1236
+msgid "Title"
+msgstr ""
+
+#: includes/options.php:167
+#: ocean-popup-login.php:224
+#: ocean-popup-login.php:226
+#: ocean-popup-login.php:228
+#: template/popup.php:34
+msgid "Log in"
+msgstr ""
+
+#: includes/options.php:175
+#: includes/options.php:265
+#: includes/options.php:403
+#: includes/options.php:1262
+msgid "Content"
+msgstr ""
+
+#: includes/options.php:178
+#: ocean-popup-login.php:225
+#: ocean-popup-login.php:227
+#: ocean-popup-login.php:229
+#: template/popup.php:36
+msgid "Become a part of our community!"
+msgstr ""
+
+#: includes/options.php:194
+msgid "Redirect After Login"
+msgstr ""
+
+#: includes/options.php:195
+msgid "Add a desired URL if you want to redirect the user to a specific page after a successful login."
+msgstr ""
+
+#: includes/options.php:216
+msgid "Hide the Remember Me option?"
+msgstr ""
+
+#: includes/options.php:227
+#: includes/options.php:365
+#: includes/options.php:414
+#: includes/options.php:545
+#: includes/options.php:669
+#: includes/options.php:765
+#: includes/options.php:823
+#: includes/options.php:1694
+#: includes/options.php:1705
+msgid "%1$s Need Help? %2$s"
+msgstr ""
+
+#: includes/options.php:246
+msgid "Register Form"
+msgstr ""
+
+#: includes/options.php:257
+#: template/popup.php:38
+msgid "Create an account"
+msgstr ""
+
+#: includes/options.php:268
+#: template/popup.php:40
+msgid "Welcome! Register for an account"
+msgstr ""
+
+#: includes/options.php:285
+msgid "Require Agreement"
+msgstr ""
+
+#: includes/options.php:297
+msgid "User Agreement Prompt"
+msgstr ""
+
+#: includes/options.php:299
+msgid "If Require Agreement option is enabled, new users will be required to check an agreement box in order to complete their account registration. You must have a published Privacy Policy page for this feature to function. Add the user agreement text below."
+msgstr ""
+
+#: includes/options.php:300
+msgid "Publish the Privacy Policy (see Settings -> Privacy) to enable this feature."
+msgstr ""
+
+#: includes/options.php:303
+msgid "I have read and agree with the %1$s Privacy Policy/Terms and Conditions %2$s"
+msgstr ""
+
+#: includes/options.php:319
+msgid "Redirect After Registration"
+msgstr ""
+
+#: includes/options.php:320
+msgid "Add a desired URL if you want to redirect the user to a specific page after a successful account registration."
+msgstr ""
+
+#: includes/options.php:332
+msgid "MailChimp Subscribe"
+msgstr ""
+
+#: includes/options.php:342
+msgid "Enable Subscription"
+msgstr ""
+
+#: includes/options.php:352
+msgid "Subscription Text"
+msgstr ""
+
+#: includes/options.php:356
+#: template/popup.php:48
+msgid "Join our newsletter"
+msgstr ""
+
+#: includes/options.php:384
+msgid "Lost Password Form"
+msgstr ""
+
+#: includes/options.php:395
+#: template/popup.php:42
+msgid "Reset password"
+msgstr ""
+
+#: includes/options.php:406
+#: template/popup.php:44
+msgid "Recover your password"
+msgstr ""
+
+#: includes/options.php:425
+msgid "Security Options"
+msgstr ""
+
+#: includes/options.php:435
+msgid "Username Security"
+msgstr ""
+
+#: includes/options.php:443
+msgid "Limit Length of Usernames"
+msgstr ""
+
+#: includes/options.php:453
+msgid "Min Username Length"
+msgstr ""
+
+#: includes/options.php:468
+#: includes/options.php:493
+#: includes/options.php:729
+#: includes/options.php:754
+#: includes/options.php:874
+msgid "Desktop"
+msgstr ""
+
+#: includes/options.php:478
+msgid "Max Username Length"
+msgstr ""
+
+#: includes/options.php:513
+msgid "Usernames Cannot Contain Spaces"
+msgstr ""
+
+#: includes/options.php:532
+msgid "Forbidden Usernames"
+msgstr ""
+
+#: includes/options.php:533
+msgid "Separate with comma only. Do not use spaces. Example: admin,administrator,webmaster"
+msgstr ""
+
+#: includes/options.php:564
+msgid "Password Security"
+msgstr ""
+
+#: includes/options.php:572
+msgid "Require Secure Passwords"
+msgstr ""
+
+#: includes/options.php:573
+msgid "Password length must be between 8 and 50 characters."
+msgstr ""
+
+#: includes/options.php:584
+msgid "Password Content"
+msgstr ""
+
+#: includes/options.php:594
+msgid "Must Contain Numbers"
+msgstr ""
+
+#: includes/options.php:595
+msgid "Require at least one number in password."
+msgstr ""
+
+#: includes/options.php:615
+msgid "Must Contain Small Letters"
+msgstr ""
+
+#: includes/options.php:616
+msgid "Require at least one small letter in password."
+msgstr ""
+
+#: includes/options.php:636
+msgid "Must Contain Capital Letters"
+msgstr ""
+
+#: includes/options.php:637
+msgid "Require at least one capital letter in password."
+msgstr ""
+
+#: includes/options.php:657
+msgid "Must Contain Symbols"
+msgstr ""
+
+#: includes/options.php:658
+msgid "Require at least one special character in password."
+msgstr ""
+
+#: includes/options.php:688
+msgid "Blocking Options"
+msgstr ""
+
+#: includes/options.php:696
+msgid "Block on Invalid Login Attempts"
+msgstr ""
+
+#: includes/options.php:697
+msgid "Block users after multiple failed login attempts."
+msgstr ""
+
+#: includes/options.php:714
+msgid "Number of Invalid Attempts"
+msgstr ""
+
+#: includes/options.php:739
+msgid "Block Duration (minutes)"
+msgstr ""
+
+#: includes/options.php:784
+msgid "Validation Method"
+msgstr ""
+
+#: includes/options.php:792
+msgid "For optimal protection, we recommend using nonce security. This is the default method and is usually sufficient. If you encounter issues with nonce security (like session token expiration) due to your website caching options, switch to Google reCAPTCHA instead."
+msgstr ""
+
+#: includes/options.php:801
+msgid "Use Nonce for Validation"
+msgstr ""
+
+#: includes/options.php:812
+msgid "Use reCAPTCHA for Validation"
+msgstr ""
+
+#: includes/options.php:834
+#: includes/options.php:844
+msgid "Styling"
+msgstr ""
+
+#: includes/options.php:859
+msgid "Width (px)"
+msgstr ""
+
+#: includes/options.php:882
+msgid "Tablet"
+msgstr ""
+
+#: includes/options.php:889
+msgid "Mobile"
+msgstr ""
+
+#: includes/options.php:910
+msgid "Padding (px)"
+msgstr ""
+
+#: includes/options.php:920
+#: includes/options.php:952
+#: includes/options.php:984
+#: includes/options.php:1041
+#: includes/options.php:1073
+#: includes/options.php:1105
+msgid "Top"
+msgstr ""
+
+#: includes/options.php:928
+#: includes/options.php:960
+#: includes/options.php:992
+#: includes/options.php:1049
+#: includes/options.php:1081
+#: includes/options.php:1113
+msgid "Right"
+msgstr ""
+
+#: includes/options.php:936
+#: includes/options.php:968
+#: includes/options.php:1000
+#: includes/options.php:1057
+#: includes/options.php:1089
+#: includes/options.php:1121
+msgid "Bottom"
+msgstr ""
+
+#: includes/options.php:944
+#: includes/options.php:976
+#: includes/options.php:1008
+#: includes/options.php:1065
+#: includes/options.php:1097
+#: includes/options.php:1129
+msgid "Left"
+msgstr ""
+
+#: includes/options.php:1031
+msgid "Border Radius (px)"
+msgstr ""
+
+#: includes/options.php:1153
+msgid "Background Image"
+msgstr ""
+
+#: includes/options.php:1175
+msgid "Site Overlay"
+msgstr ""
+
+#: includes/options.php:1187
+#: includes/options.php:1222
+#: includes/options.php:1248
+#: includes/options.php:1274
+#: includes/options.php:1309
+#: includes/options.php:1335
+#: includes/options.php:1361
+#: includes/options.php:1395
+#: includes/options.php:1466
+#: includes/options.php:1501
+#: includes/options.php:1535
+#: includes/options.php:1561
+msgid "Select Color"
+msgstr ""
+
+#: includes/options.php:1210
+msgid "Form Background"
+msgstr ""
+
+#: includes/options.php:1297
+msgid "Input Label"
+msgstr ""
+
+#: includes/options.php:1323
+msgid "Input Box Border"
+msgstr ""
+
+#: includes/options.php:1349
+msgid "Input Box Border: Focus"
+msgstr ""
+
+#: includes/options.php:1383
+#: template/popup.php:99
+msgid "Remember Me"
+msgstr ""
+
+#: includes/options.php:1418
+msgid "Button Background"
+msgstr ""
+
+#: includes/options.php:1430
+#: includes/options.php:1587
+#: includes/options.php:1624
+#: includes/options.php:1670
+msgid "Normal"
+msgstr ""
+
+#: includes/options.php:1441
+#: includes/options.php:1599
+#: includes/options.php:1636
+#: includes/options.php:1681
+msgid "Hover"
+msgstr ""
+
+#: includes/options.php:1454
+msgid "Button Text"
+msgstr ""
+
+#: includes/options.php:1489
+msgid "Forgot Password"
+msgstr ""
+
+#: includes/options.php:1523
+msgid "Bottom Background"
+msgstr ""
+
+#: includes/options.php:1549
+msgid "Bottom Text"
+msgstr ""
+
+#: includes/options.php:1575
+msgid "Bottom Button Background"
+msgstr ""
+
+#: includes/options.php:1612
+msgid "Bottom Button Text"
+msgstr ""
+
+#: includes/options.php:1658
+msgid "Privacy Link"
+msgstr ""
+
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
+msgstr ""
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr ""
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr ""
+
+#: includes/update-message.php:85
+msgid "4.0.0"
+msgstr ""
+
+#: includes/update-message.php:88
+msgid "Ocean Extra"
+msgstr ""
+
+#: includes/update-message.php:89
+msgid "2.4.0"
+msgstr ""
+
+#: ocean-popup-login.php:502
+#: ocean-popup-login.php:640
+#: ocean-popup-login.php:1019
+msgid "Session token has expired, please reload the page and try again"
+msgstr ""
+
+#: ocean-popup-login.php:518
+#: ocean-popup-login.php:657
+msgid "Invalid reCAPTCHA secret key."
+msgstr ""
+
+#: ocean-popup-login.php:522
+#: ocean-popup-login.php:661
+msgid "Please check the box to prove that you are not a robot."
+msgstr ""
+
+#: ocean-popup-login.php:526
+#: ocean-popup-login.php:665
+msgid "Unable to reach the reCAPTCHA server."
+msgstr ""
+
+#: ocean-popup-login.php:543
+#: ocean-popup-login.php:1033
+msgid "Please fill all form fields"
+msgstr ""
+
+#: ocean-popup-login.php:576
+msgid "ERROR: Username or password incorrect!"
+msgstr ""
+
+#: ocean-popup-login.php:587
+msgid "Login successful, reloading page..."
+msgstr ""
+
+#: ocean-popup-login.php:683
+#: ocean-popup-login.php:711
+msgid "Invalid username"
+msgstr ""
+
+#: ocean-popup-login.php:697
+msgid "Username already taken"
+msgstr ""
+
+#: ocean-popup-login.php:740
+msgid "Invalid email"
+msgstr ""
+
+#: ocean-popup-login.php:754
+msgid "Email address already taken"
+msgstr ""
+
+#: ocean-popup-login.php:768
+msgid "Please enter a password"
+msgstr ""
+
+#: ocean-popup-login.php:782
+msgid "Passwords do not match"
+msgstr ""
+
+#: ocean-popup-login.php:796
+msgid "Password must be between 8 and 50 characters long."
+msgstr ""
+
+#: ocean-popup-login.php:810
+msgid "Password must contain at least one digit."
+msgstr ""
+
+#: ocean-popup-login.php:824
+msgid "Password must contain at least one small letter."
+msgstr ""
+
+#: ocean-popup-login.php:838
+msgid "Password must contain at least one capital letter."
+msgstr ""
+
+#: ocean-popup-login.php:852
+msgid "Password must contain at least one special character."
+msgstr ""
+
+#: ocean-popup-login.php:866
+msgid "Please check the agreement box to continue"
+msgstr ""
+
+#: ocean-popup-login.php:899
+msgid "Error on user creation."
+msgstr ""
+
+#: ocean-popup-login.php:910
+msgid "Hi there,"
+msgstr ""
+
+#: ocean-popup-login.php:911
+msgid "Welcome to %s! Here's how to log in:"
+msgstr ""
+
+#: ocean-popup-login.php:913
+#: ocean-popup-login.php:1138
+msgid "Username: %s"
+msgstr ""
+
+#: ocean-popup-login.php:914
+msgid "Email: %s"
+msgstr ""
+
+#: ocean-popup-login.php:915
+msgid "Password: The one you entered in the registration form. (For security reason, we save encripted password)"
+msgstr ""
+
+#: ocean-popup-login.php:916
+msgid "If you have any problems, please contact me at %s."
+msgstr ""
+
+#: ocean-popup-login.php:917
+msgid "Thank you!"
+msgstr ""
+
+#: ocean-popup-login.php:919
+msgid "[%s] Your username and password"
+msgstr ""
+
+#: ocean-popup-login.php:924
+msgid "Registration complete, reloading page..."
+msgstr ""
+
+#: ocean-popup-login.php:1065
+msgid "Password Reset. Please check your email."
+msgstr ""
+
+#: ocean-popup-login.php:1090
+msgid "Please enter a username or e-mail address."
+msgstr ""
+
+#: ocean-popup-login.php:1094
+msgid "There is no user registered with that email address."
+msgstr ""
+
+#: ocean-popup-login.php:1106
+msgid "Invalid username or e-mail."
+msgstr ""
+
+#: ocean-popup-login.php:1118
+msgid "Password reset is not allowed for this user"
+msgstr ""
+
+#: ocean-popup-login.php:1136
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+
+#: ocean-popup-login.php:1139
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: ocean-popup-login.php:1140
+msgid "To reset your password, visit the following address:"
+msgstr ""
+
+#: ocean-popup-login.php:1149
+msgid "[%s] Password Reset"
+msgstr ""
+
+#: ocean-popup-login.php:1154
+msgid "The e-mail could not be sent. Possible reason: your host may have disabled the mail() function."
+msgstr ""
+
+#: ocean-popup-login.php:1255
+msgid "This Username is forbidden. Choose a different one."
+msgstr ""
+
+#: ocean-popup-login.php:1261
+msgid "Username can not contain spaces"
+msgstr ""
+
+#: ocean-popup-login.php:1268
+msgid "Username should be min %1$s and max %2$s symbols"
+msgstr ""
+
+#: template/popup.php:83
+msgid "Enter your username to log in"
+msgstr ""
+
+#: template/popup.php:84
+msgid "Username"
+msgstr ""
+
+#: template/popup.php:90
+msgid "Enter your password to log in"
+msgstr ""
+
+#: template/popup.php:91
+#: template/popup.php:209
+msgid "Password"
+msgstr ""
+
+#: template/popup.php:117
+#: template/popup.php:250
+msgid "Loading..."
+msgstr ""
+
+#: template/popup.php:117
+#: template/popup.php:346
+msgid "Login"
+msgstr ""
+
+#: template/popup.php:124
+msgid "Forgot your password? Get help"
+msgstr ""
+
+#: template/popup.php:141
+#: template/popup.php:150
+msgid "Or log in with"
+msgstr ""
+
+#: template/popup.php:161
+msgid "Not a member?"
+msgstr ""
+
+#: template/popup.php:162
+msgid "Sign up"
+msgstr ""
+
+#: template/popup.php:195
+msgid "Your username"
+msgstr ""
+
+#: template/popup.php:202
+msgid "Your email"
+msgstr ""
+
+#: template/popup.php:216
+msgid "Confirm Password"
+msgstr ""
+
+#: template/popup.php:250
+msgid "Register"
+msgstr ""
+
+#: template/popup.php:266
+#: template/popup.php:275
+msgid "Or register with"
+msgstr ""
+
+#: template/popup.php:287
+msgid "Already a member?"
+msgstr ""
+
+#: template/popup.php:288
+msgid "Sign in"
+msgstr ""
+
+#: template/popup.php:316
+msgid "Enter your username or email for password recovery"
+msgstr ""
+
+#: template/popup.php:317
+msgid "Username or E-mail"
+msgstr ""
+
+#: template/popup.php:324
+msgid "Sending..."
+msgstr ""
+
+#: template/popup.php:324
+msgid "Request Reset Password Link"
+msgstr ""
+
+#: template/popup.php:331
+msgid "A password reset link will be e-mailed to you."
+msgstr ""
+
+#: template/popup.php:345
+msgid "Back to"
+msgstr ""

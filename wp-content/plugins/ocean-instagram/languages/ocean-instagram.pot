@@ -1,0 +1,283 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean Instagram plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Instagram 1.2.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-instagram\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-05-20T07:06:08+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: ocean-instagram\n"
+
+#. Plugin Name of the plugin
+#: C:/laragon/www/rc-owp/wp-content/plugins/ocean-instagram/ocean-instagram.php
+msgid "Ocean Instagram"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: C:/laragon/www/rc-owp/wp-content/plugins/ocean-instagram/ocean-instagram.php
+msgid "https://oceanwp.org/extension/ocean-instagram/"
+msgstr ""
+
+#. Description of the plugin
+#: C:/laragon/www/rc-owp/wp-content/plugins/ocean-instagram/ocean-instagram.php
+msgid "Display Instagram feed anywhere on your website in a magnificent way."
+msgstr ""
+
+#. Author of the plugin
+#: C:/laragon/www/rc-owp/wp-content/plugins/ocean-instagram/ocean-instagram.php
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+#: C:/laragon/www/rc-owp/wp-content/plugins/ocean-instagram/ocean-instagram.php
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: admin/class-instagram-settings.php:31
+#: admin/class-instagram-settings.php:42
+#: admin/class-instagram-settings.php:107
+#: admin/class-shortcode-generator.php:81
+msgid "Instagram Settings"
+msgstr ""
+
+#: admin/class-instagram-settings.php:32
+msgid "Instagram"
+msgstr ""
+
+#: admin/class-instagram-settings.php:43
+msgid "Settings"
+msgstr ""
+
+#: admin/class-instagram-settings.php:77
+msgid "Access Token"
+msgstr ""
+
+#: admin/class-instagram-settings.php:113
+msgid "Connect Instagram"
+msgstr ""
+
+#: admin/class-instagram-settings.php:115
+msgid "Before getting started, please %1$sfollow this article%2$s to get your Access Token."
+msgstr ""
+
+#: admin/class-instagram-settings.php:120
+msgid "Update Settings"
+msgstr ""
+
+#: admin/class-register-cpt.php:36
+#: admin/class-register-cpt.php:69
+#: admin/class-register-cpt.php:70
+msgid "Shortcodes"
+msgstr ""
+
+#: admin/class-register-cpt.php:37
+#: admin/class-shortcode-generator.php:645
+msgid "Shortcode"
+msgstr ""
+
+#: admin/class-register-cpt.php:38
+msgid "Add New Shortcode"
+msgstr ""
+
+#: admin/class-register-cpt.php:39
+msgid "No shortcodes found."
+msgstr ""
+
+#: admin/class-register-cpt.php:40
+msgid "No shortcodes found in trash"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:93
+msgid "General"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:103
+msgid "Data Cache Time"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:104
+msgid "Cache expiration time (Minutes)"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:124
+msgid "Number of images"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:125
+msgid "The number of images you want to show"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:145
+#: admin/class-shortcode-generator.php:531
+#: admin/class-shortcode-generator.php:584
+msgid "Number of columns"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:146
+#: admin/class-shortcode-generator.php:532
+#: admin/class-shortcode-generator.php:585
+msgid "The number of columns you want. Maximum 10."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:168
+msgid "Force Square Image?"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:169
+msgid "Display Images at same size."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:171
+#: admin/class-shortcode-generator.php:214
+#: admin/class-shortcode-generator.php:236
+#: admin/class-shortcode-generator.php:257
+#: admin/class-shortcode-generator.php:287
+#: admin/class-shortcode-generator.php:361
+#: admin/class-shortcode-generator.php:400
+msgid "On"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:172
+#: admin/class-shortcode-generator.php:215
+#: admin/class-shortcode-generator.php:237
+#: admin/class-shortcode-generator.php:258
+#: admin/class-shortcode-generator.php:288
+#: admin/class-shortcode-generator.php:362
+#: admin/class-shortcode-generator.php:401
+msgid "Off"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:190
+msgid "Image Dimension (px)"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:191
+msgid "If \"Force Square Image?\" is enable"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:211
+msgid "Enable Overlay"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:212
+msgid "Display images overlay."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:233
+msgid "Enable Link"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:234
+msgid "Enable images link."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:255
+#: admin/class-shortcode-generator.php:398
+msgid "Open in new window?"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:274
+msgid "Header"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:284
+msgid "Display Header"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:285
+msgid "Display your Instagram avatar."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:306
+msgid "Choose avatar"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:307
+msgid "If display header is enabled."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:323
+msgid "Username"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:324
+msgid "Override your username"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:340
+msgid "Biography"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:341
+msgid "Add a biography."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:358
+msgid "Enable Button"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:359
+msgid "Add a follow button."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:417
+msgid "Styling"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:427
+#: admin/class-shortcode-generator.php:554
+#: admin/class-shortcode-generator.php:607
+msgid "Space between images (px)"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:428
+#: admin/class-shortcode-generator.php:555
+#: admin/class-shortcode-generator.php:608
+msgid "Space between each images."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:449
+msgid "Border Radius"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:450
+msgid "Enter your custom border radius for the images.  ex: 2px 1px 2px 1px (Top Right Bottom Left)."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:466
+msgid "Overlay Background"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:467
+msgid "Select a hex color code for the overlay, ex: #2196f3"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:483
+msgid "Overlay Opacity"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:484
+msgid "Enter your custom opacity for the overlay. Default is 0.9."
+msgstr ""
+
+#: admin/class-shortcode-generator.php:506
+msgid "Overlay Icon Color"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:507
+msgid "Select a hex color code for the overlay icon color, ex: #fff"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:521
+msgid "Tablet Device"
+msgstr ""
+
+#: admin/class-shortcode-generator.php:574
+msgid "Mobile Device"
+msgstr ""

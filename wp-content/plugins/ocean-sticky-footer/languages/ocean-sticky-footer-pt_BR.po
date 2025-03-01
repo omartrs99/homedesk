@@ -1,0 +1,122 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Sticky Footer\n"
+"POT-Creation-Date: 2023-10-18 23:54-0300\n"
+"PO-Revision-Date: 2023-12-05 01:45-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ocean-sticky-footer.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: ocean-sticky-footer.php:159 ocean-sticky-footer.php:168
+msgid "Cheatin&#8217; huh?"
+msgstr "Trapaceando, hein?"
+
+#: ocean-sticky-footer.php:266 ocean-sticky-footer.php:309
+#: ocean-sticky-footer.php:1252
+msgid "Sticky Footer"
+msgstr "Rodapé fixo"
+
+#: ocean-sticky-footer.php:330
+msgid "Hide Navigation On Mobile"
+msgstr "Ocultar navegação em dispositivos móveis"
+
+#: ocean-sticky-footer.php:355
+msgid "Hide Text On Mobile"
+msgstr "Ocultar texto em dispositivos móveis"
+
+#: ocean-sticky-footer.php:380
+msgid "Opening Icon"
+msgstr "Ícone de abertura"
+
+#: ocean-sticky-footer.php:381
+msgid "Enter your full icon class"
+msgstr "Digite sua classe de ícone completa"
+
+#: ocean-sticky-footer.php:407
+msgid "Footer Opacity"
+msgstr "Opacidade do rodapé"
+
+#: ocean-sticky-footer.php:437
+msgid "Text"
+msgstr "Texto"
+
+#: ocean-sticky-footer.php:438
+msgid "Enter your custom text."
+msgstr "Digite seu texto personalizado."
+
+#: ocean-sticky-footer.php:462 ocean-sticky-footer.php:527
+msgid "Typography"
+msgstr "Tipografia"
+
+#: ocean-sticky-footer.php:559
+msgid "Styling"
+msgstr "Estilização"
+
+#: ocean-sticky-footer.php:583 ocean-sticky-footer.php:629
+#: ocean-sticky-footer.php:750 ocean-sticky-footer.php:918
+msgid "Background Color"
+msgstr "Cor de fundo"
+
+#: ocean-sticky-footer.php:606
+msgid "Opening Button Styling"
+msgstr "Estilo do botão de abertura"
+
+#: ocean-sticky-footer.php:654 ocean-sticky-footer.php:775
+#: ocean-sticky-footer.php:943
+msgid "Hover Background Color"
+msgstr "Cor de fundo ao passar o mouse"
+
+#: ocean-sticky-footer.php:679 ocean-sticky-footer.php:800
+#: ocean-sticky-footer.php:872 ocean-sticky-footer.php:968
+msgid "Color"
+msgstr "Cor"
+
+#: ocean-sticky-footer.php:704 ocean-sticky-footer.php:825
+#: ocean-sticky-footer.php:993
+msgid "Hover Color"
+msgstr "Cor ao passar o mouse"
+
+#: ocean-sticky-footer.php:727
+msgid "Menu Items Styling"
+msgstr "Estilo dos itens do menu"
+
+#: ocean-sticky-footer.php:848
+msgid "Text Styling"
+msgstr "Estilo do texto"
+
+#: ocean-sticky-footer.php:895
+msgid "Scroll Top Styling"
+msgstr "Estilo da rolagem até o topo"
+
+#. Plugin Name of the plugin/theme
+msgid "Ocean Sticky Footer"
+msgstr "Ocean Sticky Footer"
+
+#. Plugin URI of the plugin/theme
+msgid "https://oceanwp.org/extension/ocean-sticky-footer/"
+msgstr "https://oceanwp.org/extension/ocean-sticky-footer/"
+
+#. Description of the plugin/theme
+msgid "A simple extension to attach the footer at the bottom of your screen."
+msgstr "Uma extensão simples para fixar o rodapé na parte inferior da tela."
+
+#. Author of the plugin/theme
+msgid "OceanWP"
+msgstr "OceanWP"
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"

@@ -1,0 +1,196 @@
+/**
+* Filter
+*/
+.portfolio__filter-style-button {
+    position: relative;
+    margin-bottom: 40px;
+
+    .filter-buttons-wrap {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &.left {
+            justify-content: flex-start;
+        }
+        &.center {
+            justify-content: center;
+        }
+        &.right {
+            justify-content: flex-end;
+        }
+        &.full {
+            .filter-button {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+            justify-content: space-between;
+        }
+    }
+
+    .filter-button {
+
+        svg, i {
+            margin-right: 10px;
+        }
+
+        &.reset {
+            visibility: hidden;
+            opacity: 0;
+            transition: all .25s ease-in-out;
+            position: absolute;
+
+            &.show {
+                visibility: visible;
+                opacity: 1;
+                position: relative;
+            }
+        }
+
+
+        @media screen and (max-width: 580px) {
+            max-width: 100%;
+        }
+    }
+
+    .portfolio-filter-area {
+        visibility: hidden;
+        opacity: 0;
+        padding: 40px;
+        margin-top: 11px;
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        border-radius: 3px;
+        z-index: 100;
+        transition: all .25s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+
+            .has-arrow {
+                position: absolute;
+                left: 0;
+                top: -10px;
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid #ffffff;
+            }
+        }
+    }
+}
+
+.filter--form-wrap {
+    .filter-fields {
+
+        &.type-change {
+            display: flex;
+            justify-content: space-between;
+            gap: 2.5em;
+            align-items: center;
+            flex-flow: row wrap;
+
+            select {
+                width: calc(100% / 2 - 2.5em);
+            }
+
+            @media screen and (max-width: 959px) {
+                gap: 1.5em;
+
+                select {
+                    width: calc(100% / 2 - 1.5em );
+                }
+            }
+
+            @media screen and (max-width: 580px) {
+                flex-direction: column;
+                gap: 1.5em;
+
+                select {
+                    width: 100%;
+                }
+            }
+        }
+
+        select,
+        input[type="text"] {
+            display: inline-block;
+            min-height: 32px;
+            width: 100%;
+            font-size: 14px;
+            line-height: 1.8;
+            padding: 0 12px;
+            vertical-align: middle;
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 1px;
+            transition: all 0.3s ease;
+        }
+
+        select {
+            &::after {
+                content: "▼";
+                font-size: 1rem;
+                top: 6px;
+                right: 10px;
+                position: absolute;
+            }
+        }
+
+        .label-portfolio-search {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+
+            @media screen and (max-width: 580px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .filter-divider {
+        margin: 40px 0;
+        text-align: center;
+        color: #a3a3a3;
+
+        .divider {
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                border-top: 1px solid #a3a3a3;
+                width: 40px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                left: -50px;
+            }
+
+            &::after {
+                right: -50px;
+            }
+        }
+    }
+
+    .filter-action {
+        margin-top: 30px;
+        text-align: center;
+
+        .reset-button {
+            margin-left: 20px;
+        }
+    }
+}

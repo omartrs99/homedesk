@@ -1,0 +1,44 @@
+// Transition
+@mixin transition( $args ) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+/*------------------------------------------------------------------
+Business Hours
+-------------------------------------------------------------------*/
+.ogb-business-hours {
+    .ogb-business-day {
+        display: flex;
+        align-items: center;
+    }
+
+    .ogb-business-day,
+    .ogb-business-timing {
+        float: left;
+        width: 50%;
+        @include transition( all .3s ease-in-out );
+    }
+
+    .ogb-business-timing {
+        text-align: right;
+    }
+
+	.fa {
+		margin-right: 6px;
+    }
+
+    .ogb-business-day {
+
+        i, svg {
+            width: 1em;
+            height: 1em;
+            position: relative;
+            vertical-align: middle;
+        }
+
+    }
+}

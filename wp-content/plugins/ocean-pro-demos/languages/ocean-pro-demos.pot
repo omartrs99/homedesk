@@ -1,0 +1,626 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean Pro Demos plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Pro Demos 1.5.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-pro-demos\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-11-13T07:28:52+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ocean-pro-demos\n"
+
+#. Plugin Name of the plugin
+#: ocean-pro-demos.php
+msgid "Ocean Pro Demos"
+msgstr ""
+
+#. Description of the plugin
+#: ocean-pro-demos.php
+msgid "A premium plugin with powerful and complete options for web designers: import OceanWP Full website templates with all pages and styling; Elementor Sections Library templates; import images and icons from Freepik; build Popups; create Custom Post Types; add Google tag, Facebook pixel and other tracking options."
+msgstr ""
+
+#. Author of the plugin
+#: ocean-pro-demos.php
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+#: ocean-pro-demos.php
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: api-images.php:84
+#: classes/integration.php:49
+#: classes/integration.php:50
+#: classes/integration.php:74
+msgid "Ocean Images"
+msgstr ""
+
+#: api-images.php:92
+msgid "Downloading image..."
+msgstr ""
+
+#: api-images.php:93
+msgid "Loading..."
+msgstr ""
+
+#: api-images.php:94
+msgid "Image was added to media library"
+msgstr ""
+
+#: api-images.php:95
+msgid "Error"
+msgstr ""
+
+#: api-images.php:96
+msgid "Load more"
+msgstr ""
+
+#: api-images.php:102
+msgid "There was no response while attempting to the download image to your server. Check your server permission and max file upload size or try again"
+msgstr ""
+
+#: classes/integration.php:80
+#: includes/themepanel/views/panes/ocean-images-settings.php:11
+msgid "Enable Ocean Images Module"
+msgstr ""
+
+#: classes/integration.php:85
+#: classes/integration.php:119
+#: classes/integration.php:168
+#: includes/themepanel/views/panes/ocean-images-settings.php:16
+#: includes/themepanel/views/panes/ocean-images-settings.php:50
+#: includes/themepanel/views/panes/ocean-images-settings.php:99
+msgid "Disable"
+msgstr ""
+
+#: classes/integration.php:88
+#: classes/integration.php:122
+#: classes/integration.php:171
+#: includes/themepanel/views/panes/ocean-images-settings.php:19
+#: includes/themepanel/views/panes/ocean-images-settings.php:53
+#: includes/themepanel/views/panes/ocean-images-settings.php:102
+msgid "Enable"
+msgstr ""
+
+#: classes/integration.php:95
+#: includes/themepanel/views/panes/ocean-images-settings.php:26
+msgid "Server"
+msgstr ""
+
+#: classes/integration.php:100
+#: includes/themepanel/views/panes/ocean-images-settings.php:31
+msgid "Main"
+msgstr ""
+
+#: classes/integration.php:103
+#: includes/themepanel/views/panes/ocean-images-settings.php:34
+msgid "Alternative"
+msgstr ""
+
+#: classes/integration.php:114
+#: includes/themepanel/views/panes/ocean-images-settings.php:45
+msgid "Enable Flaticon"
+msgstr ""
+
+#: classes/integration.php:129
+#: includes/themepanel/views/panes/ocean-images-settings.php:60
+msgid "Flaticon Image Width"
+msgstr ""
+
+#: classes/integration.php:134
+#: includes/themepanel/views/panes/ocean-images-settings.php:65
+msgid "16px"
+msgstr ""
+
+#: classes/integration.php:137
+#: includes/themepanel/views/panes/ocean-images-settings.php:68
+msgid "24px"
+msgstr ""
+
+#: classes/integration.php:140
+#: includes/themepanel/views/panes/ocean-images-settings.php:71
+msgid "32px"
+msgstr ""
+
+#: classes/integration.php:143
+#: includes/themepanel/views/panes/ocean-images-settings.php:74
+msgid "64px"
+msgstr ""
+
+#: classes/integration.php:146
+#: includes/themepanel/views/panes/ocean-images-settings.php:77
+msgid "128px"
+msgstr ""
+
+#: classes/integration.php:149
+#: includes/themepanel/views/panes/ocean-images-settings.php:80
+msgid "256px"
+msgstr ""
+
+#: classes/integration.php:152
+#: includes/themepanel/views/panes/ocean-images-settings.php:83
+msgid "512px"
+msgstr ""
+
+#: classes/integration.php:163
+#: includes/themepanel/views/panes/ocean-images-settings.php:94
+msgid "Enable Freepik"
+msgstr ""
+
+#: classes/integration.php:178
+#: includes/themepanel/views/panes/ocean-images-settings.php:109
+msgid "Freepik Image Width"
+msgstr ""
+
+#: classes/integration.php:183
+#: includes/themepanel/views/panes/ocean-images-settings.php:114
+msgid "Normal"
+msgstr ""
+
+#: classes/integration.php:186
+#: includes/themepanel/views/panes/ocean-images-settings.php:117
+msgid "HD"
+msgstr ""
+
+#: classes/routes.php:133
+msgid "Image successfully uploaded to the media library!"
+msgstr ""
+
+#: classes/routes.php:150
+msgid "There was an error getting image details from the request, please try again."
+msgstr ""
+
+#: classes/routes.php:207
+msgid "You do not have sufficient access to upload images with API Images."
+msgstr ""
+
+#: elementor-library/classes/class-lib-mngr.php:96
+msgid "No Templates Found"
+msgstr ""
+
+#: elementor-library/classes/class-lib-mngr.php:97
+msgid "Try a different category or sync for new templates."
+msgstr ""
+
+#: elementor-library/classes/class-lib-mngr.php:98
+msgid "No Results Found"
+msgstr ""
+
+#: elementor-library/classes/class-lib-mngr.php:99
+msgid "Please make sure your search is spelled correctly or try different words."
+msgstr ""
+
+#: elementor-library/classes/class-lib-mngr.php:141
+msgid "Post not found."
+msgstr ""
+
+#: elementor-library/classes/class-lib-mngr.php:164
+msgid "Post not found"
+msgstr ""
+
+#: elementor-library/classes/class-lib-mngr.php:171
+msgid "Template ID missing"
+msgstr ""
+
+#: elementor-library/classes/class-lib-src.php:37
+msgid "Ocean Library"
+msgstr ""
+
+#: elementor-library/classes/class-lib-src.php:275
+msgid "Template does not have any content"
+msgstr ""
+
+#: elementor-library/templates.php:17
+msgid "Back to Library"
+msgstr ""
+
+#: elementor-library/templates.php:28
+#: elementor-library/templates.php:29
+msgid "Desktop view"
+msgstr ""
+
+#: elementor-library/templates.php:32
+#: elementor-library/templates.php:33
+msgid "Tab view"
+msgstr ""
+
+#: elementor-library/templates.php:36
+#: elementor-library/templates.php:37
+msgid "Mobile view"
+msgstr ""
+
+#: elementor-library/templates.php:43
+#: elementor-library/templates.php:44
+msgid "Sync Library"
+msgstr ""
+
+#: elementor-library/templates.php:61
+msgid "Insert"
+msgstr ""
+
+#: elementor-library/templates.php:68
+msgid "Get Plus"
+msgstr ""
+
+#: elementor-library/templates.php:82
+msgid "Loading"
+msgstr ""
+
+#: elementor-library/templates.php:87
+msgid "You can use it to filter through categories faster or easier"
+msgstr ""
+
+#: elementor-library/templates.php:94
+msgid "Filter"
+msgstr ""
+
+#: elementor-library/templates.php:108
+msgid "Search Templates:"
+msgstr ""
+
+#: elementor-library/templates.php:109
+msgid "Search"
+msgstr ""
+
+#: elementor-library/templates.php:126
+msgid "Plus"
+msgstr ""
+
+#: elementor-library/templates.php:133
+msgid "Preview"
+msgstr ""
+
+#: elementor-library/templates.php:145
+msgid "Want to learn more about the Ocean Elementor Library?"
+msgstr ""
+
+#: elementor-library/templates.php:146
+msgid "Click here"
+msgstr ""
+
+#: includes/themepanel/theme-panel.php:75
+msgid "Misc Pro Features"
+msgstr ""
+
+#: includes/themepanel/theme-panel.php:82
+msgid "Pixel Tracker"
+msgstr ""
+
+#: includes/themepanel/views/panes/opd-blocks-settings.php:23
+msgid "Enable Popup Builder"
+msgstr ""
+
+#: includes/themepanel/views/panes/opd-blocks-settings.php:38
+msgid "Hi there! We noticed you have the Ocean eComm Treasure Box installed and active. To simplify things for you and keep your user-experience at the highest level, we are encouraging you to access this feature through the Ocean eComm Treasure Box dashboard. Find more information about "
+msgstr ""
+
+#: includes/themepanel/views/panes/opd-blocks-settings.php:38
+msgid "how to use the Popup Builder within our documentation."
+msgstr ""
+
+#: includes/themepanel/views/panes/opd-blocks-settings.php:49
+msgid "Enable CPT Manager"
+msgstr ""
+
+#: includes/themepanel/views/panes/opd-pixel-tracker-settings.php:95
+msgid "Hi there! We noticed you have enabled Pixel Tracker in the Ocean eComm Treasure Box plugin. To simplify things for you and keep your user-experience at the highest level, we are encouraging you to access this feature through the Ocean eComm Treasure Box dashboard. Find more information about "
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:21
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:22
+msgid "My O-CPT"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:32
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:33
+msgid "CPT Create"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:69
+msgid "CPT created successfully."
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:73
+msgid "A CPT with this slug already exists. Please choose a different slug."
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:82
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:33
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:69
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:34
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:88
+msgid "Custom Post Type Creator"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:110
+msgid "Create CPT"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:132
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:149
+msgid "Post Layout Options"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:137
+msgid "Arhive"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:140
+msgid "Post Arhive Layout"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:143
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:173
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:160
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:189
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:114
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:145
+msgid "Full Width"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:144
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:174
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:161
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:190
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:115
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:146
+msgid "100% Full Width"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:145
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:175
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:162
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:191
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:116
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:147
+msgid "Left Sidebar"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:146
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:176
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:163
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:192
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:117
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:148
+msgid "Right Sidebar"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:147
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:177
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:164
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:193
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:118
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:149
+msgid "Both Sidebars"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:152
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:168
+msgid "Post Archive Style"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:155
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:171
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:129
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:159
+msgid "Grid Entry"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:156
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:172
+msgid "List Entry"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:161
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:177
+msgid "Post Archive Columns"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:167
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:183
+msgid "Single Post"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:170
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:186
+msgid "Post Layout"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:182
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:198
+msgid "Single Post Header Style"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:185
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:201
+msgid "Default"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:186
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:202
+msgid "Intro"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:187
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:203
+msgid "Cover"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:188
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:204
+msgid "Card"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:189
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:205
+msgid "Card Invert"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:190
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:206
+msgid "Screen"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:191
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:207
+msgid "Screen Invert"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-creator.php:196
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:212
+msgid "Enable Related Posts"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-helper.php:72
+msgid "(WP Core)"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:18
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:77
+msgid "Manage Custom Post Types"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:19
+msgid "CPT Manage"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:45
+msgid "Custom Post Type deleted."
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:66
+msgid "Custom Post Type updated."
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:89
+msgid "Select CPT:"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:120
+msgid "Save Post Type"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:122
+msgid "No Custom Post Type selected for editing."
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:131
+msgid "No Custom Post Types registered yet."
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:154
+msgid "Archive"
+msgstr ""
+
+#: modules/cpt-manager/includes/cpt/class-cpt-manager.php:157
+msgid "Post Archive Layout"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:20
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:21
+msgid "Taxonomy Create"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:56
+msgid "Taxonomy created successfully."
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:60
+msgid "A taxonomy with this slug already exists. Please choose a different slug."
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:75
+msgid "Custom Taxonomy Creator"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:87
+msgid "Create Taxonomy"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:106
+msgid "Archive Layout Options"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:111
+msgid "Archive Layout"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:125
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:155
+msgid "Taxonomy Archive Style"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:128
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:158
+msgid "Large Image"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:135
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:165
+msgid "Taxonomy Archive Columns"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:138
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:168
+msgid "2 Columns"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:139
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:169
+msgid "3 Columns"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-creator.php:140
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:170
+msgid "4 Columns"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:19
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:20
+msgid "Taxonomy Manage"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:46
+msgid "Custom Taxonomy deleted."
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:67
+msgid "Custom Taxonomy updated."
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:78
+msgid "Manage Custom Taxonomies"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:90
+msgid "Select Taxonomy:"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:111
+msgid "Save Taxonomy"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:113
+msgid "No Custom Taxonomy selected for editing."
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:122
+msgid "No Custom Taxonomies registered yet."
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:137
+msgid "Taxonomy Archive Layout Options"
+msgstr ""
+
+#: modules/cpt-manager/includes/taxonomy/class-taxonomy-manager.php:142
+msgid "Taxonomy Archive Layout"
+msgstr ""

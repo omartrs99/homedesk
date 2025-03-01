@@ -1,0 +1,331 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean Woo Popup plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Woo Popup 2.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-woo-popup\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-10-16T07:00:19+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ocean-woo-popup\n"
+
+#. Plugin Name of the plugin
+#: ocean-woo-popup.php
+msgid "Ocean Woo Popup"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: ocean-woo-popup.php
+msgid "https://oceanwp.org/extension/ocean-woo-popup/"
+msgstr ""
+
+#. Description of the plugin
+#: ocean-woo-popup.php
+msgid "A simple extension to display a popup when you click on the Add To Cart button of your products."
+msgstr ""
+
+#. Author of the plugin
+#: ocean-woo-popup.php
+#: includes/update-message.php:84
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+#: ocean-woo-popup.php
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: includes/helpers.php:17
+#: includes/options.php:649
+msgid "Title"
+msgstr ""
+
+#: includes/helpers.php:18
+#: includes/options.php:98
+#: includes/options.php:675
+msgid "Content"
+msgstr ""
+
+#: includes/helpers.php:19
+msgid "Buttons"
+msgstr ""
+
+#: includes/helpers.php:20
+#: includes/options.php:154
+#: includes/options.php:948
+msgid "Bottom Text"
+msgstr ""
+
+#: includes/options.php:18
+#: ocean-woo-popup.php:672
+msgid "Woo Popup"
+msgstr ""
+
+#: includes/options.php:24
+msgid "Display Popup While Customizing"
+msgstr ""
+
+#: includes/options.php:25
+msgid "This option enables you to display and preview the popup while customizing."
+msgstr ""
+
+#: includes/options.php:36
+#: includes/options.php:37
+msgid "Show Preview"
+msgstr ""
+
+#: includes/options.php:41
+#: includes/options.php:42
+msgid "Close"
+msgstr ""
+
+#: includes/options.php:49
+msgid "Default Popup Content"
+msgstr ""
+
+#: includes/options.php:58
+msgid "Content Builder"
+msgstr ""
+
+#: includes/options.php:79
+msgid "Title Text"
+msgstr ""
+
+#: includes/options.php:83
+#: ocean-woo-popup.php:219
+#: template/woo-popup.php:45
+msgid "Item successfully added to your cart"
+msgstr ""
+
+#: includes/options.php:99
+msgid "Shortcodes allowed, %1$ssee the list%2$s."
+msgstr ""
+
+#: includes/options.php:103
+#: ocean-woo-popup.php:220
+#: template/woo-popup.php:47
+msgid "[oceanwp_woo_cart_items] items in your cart ([oceanwp_woo_total_cart])"
+msgstr ""
+
+#: includes/options.php:117
+#: includes/options.php:745
+msgid "Continue Button Text"
+msgstr ""
+
+#: includes/options.php:121
+#: ocean-woo-popup.php:221
+#: template/woo-popup.php:49
+msgid "Continue Shopping"
+msgstr ""
+
+#: includes/options.php:135
+msgid "Go Cart Button Text"
+msgstr ""
+
+#: includes/options.php:139
+#: ocean-woo-popup.php:222
+#: template/woo-popup.php:51
+msgid "View Cart"
+msgstr ""
+
+#: includes/options.php:158
+msgid "[oceanwp_woo_free_shipping_left]"
+msgstr ""
+
+#: includes/options.php:166
+msgid "Custom Popup Content"
+msgstr ""
+
+#: includes/options.php:176
+msgid "Custom Template Select"
+msgstr ""
+
+#: includes/options.php:177
+msgid "Select a custom template you created in OceanWP > My Library."
+msgstr ""
+
+#: includes/options.php:190
+msgid "Styling and Colors"
+msgstr ""
+
+#: includes/options.php:200
+msgid "Width (px)"
+msgstr ""
+
+#: includes/options.php:215
+#: includes/options.php:266
+msgid "Desktop"
+msgstr ""
+
+#: includes/options.php:223
+#: includes/options.php:274
+msgid "Tablet"
+msgstr ""
+
+#: includes/options.php:230
+#: includes/options.php:281
+msgid "Mobile"
+msgstr ""
+
+#: includes/options.php:251
+msgid "Height (px)"
+msgstr ""
+
+#: includes/options.php:304
+msgid "Padding (px)"
+msgstr ""
+
+#: includes/options.php:314
+#: includes/options.php:346
+#: includes/options.php:378
+#: includes/options.php:431
+#: includes/options.php:463
+#: includes/options.php:491
+msgid "Top"
+msgstr ""
+
+#: includes/options.php:322
+#: includes/options.php:354
+#: includes/options.php:385
+#: includes/options.php:439
+#: includes/options.php:470
+#: includes/options.php:498
+msgid "Right"
+msgstr ""
+
+#: includes/options.php:330
+#: includes/options.php:362
+#: includes/options.php:392
+#: includes/options.php:447
+#: includes/options.php:477
+#: includes/options.php:505
+msgid "Bottom"
+msgstr ""
+
+#: includes/options.php:338
+#: includes/options.php:370
+#: includes/options.php:399
+#: includes/options.php:455
+#: includes/options.php:484
+#: includes/options.php:512
+msgid "Left"
+msgstr ""
+
+#: includes/options.php:421
+msgid "Border Radius (px)"
+msgstr ""
+
+#: includes/options.php:534
+msgid "Popup Background"
+msgstr ""
+
+#: includes/options.php:546
+#: includes/options.php:572
+#: includes/options.php:605
+#: includes/options.php:628
+#: includes/options.php:661
+#: includes/options.php:687
+#: includes/options.php:960
+msgid "Select Color"
+msgstr ""
+
+#: includes/options.php:560
+msgid "Background Overlay"
+msgstr ""
+
+#: includes/options.php:593
+msgid "Check Mark Background"
+msgstr ""
+
+#: includes/options.php:616
+msgid "Check Mark Icon"
+msgstr ""
+
+#: includes/options.php:708
+msgid "Continue Button Background"
+msgstr ""
+
+#: includes/options.php:720
+#: includes/options.php:757
+#: includes/options.php:795
+#: includes/options.php:840
+#: includes/options.php:877
+#: includes/options.php:915
+msgid "Normal"
+msgstr ""
+
+#: includes/options.php:731
+#: includes/options.php:769
+#: includes/options.php:807
+#: includes/options.php:851
+#: includes/options.php:889
+#: includes/options.php:927
+msgid "Hover"
+msgstr ""
+
+#: includes/options.php:783
+msgid "Continue Button Border"
+msgstr ""
+
+#: includes/options.php:828
+msgid "Cart Button Background"
+msgstr ""
+
+#: includes/options.php:865
+msgid "Cart Button Text"
+msgstr ""
+
+#: includes/options.php:903
+msgid "Cart Button Border"
+msgstr ""
+
+#: includes/options.php:974
+msgid "%1$s Need Help? %2$s"
+msgstr ""
+
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
+msgstr ""
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr ""
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr ""
+
+#: includes/update-message.php:85
+msgid "4.0.0"
+msgstr ""
+
+#: includes/update-message.php:88
+msgid "Ocean Extra"
+msgstr ""
+
+#: includes/update-message.php:89
+msgid "2.4.0"
+msgstr ""
+
+#: ocean-woo-popup.php:364
+msgid "Default"
+msgstr ""

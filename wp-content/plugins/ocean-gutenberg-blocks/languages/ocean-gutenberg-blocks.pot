@@ -1,0 +1,2011 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean Gutenberg Blocks plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Gutenberg Blocks 1.1.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-gutenberg-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-08-05T07:27:25+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: ocean-gutenberg-blocks\n"
+
+#. Plugin Name of the plugin
+#: ocean-gutenberg-blocks.php:221
+msgid "Ocean Gutenberg Blocks"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://oceanwp.org/extension/ocean-gutenberg-blocks/"
+msgstr ""
+
+#. Description of the plugin
+msgid "A premium plugin to add magnificent and various blocks to the WordPress default Gutenberg editor. Enrich your blog posts or build stunning pages."
+msgstr ""
+
+#. Author of the plugin
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: includes/blocks/class-ogb-blocks.php:77
+#: includes/class-ogb-setup.php:84
+#: includes/class-ogb-setup.php:85
+#: includes/customizer/class-ogb-customizer.php:52
+msgid "OceanWP Blocks"
+msgstr ""
+
+#: includes/blocks/modules/acf/block-acf.php:42
+msgid "ACF"
+msgstr ""
+
+#: includes/blocks/modules/acf/block-acf.php:43
+msgid "Display ACF field."
+msgstr ""
+
+#: includes/blocks/modules/alert/block-alert.php:38
+msgid "Alert"
+msgstr ""
+
+#: includes/blocks/modules/alert/block-alert.php:39
+msgid "Create beautiful alert notification."
+msgstr ""
+
+#: includes/blocks/modules/banner/block-banner.php:38
+msgid "Banner"
+msgstr ""
+
+#: includes/blocks/modules/banner/block-banner.php:39
+msgid "Add beautiful banner to your site"
+msgstr ""
+
+#: includes/blocks/modules/blog-grid/block-blog-grid.php:44
+#: dist/index.js:1
+msgid "Blog Grid"
+msgstr ""
+
+#: includes/blocks/modules/blog-grid/block-blog-grid.php:45
+msgid "Display posts as a beautiful grid style"
+msgstr ""
+
+#: includes/blocks/modules/blog-grid/blog-grid.php:206
+#: dist/index.js:1
+msgid "Visit Author Page"
+msgstr ""
+
+#: includes/blocks/modules/blog-grid/blog-grid.php:256
+#: includes/blocks/modules/blog-list/blog-list.php:214
+msgid "0 Comments"
+msgstr ""
+
+#: includes/blocks/modules/blog-grid/blog-grid.php:256
+#: includes/blocks/modules/blog-list/blog-list.php:214
+msgid "1 Comment"
+msgstr ""
+
+#: includes/blocks/modules/blog-grid/blog-grid.php:256
+#: includes/blocks/modules/blog-list/blog-list.php:214
+msgid "% Comments"
+msgstr ""
+
+#: includes/blocks/modules/blog-list/block-blog-list.php:44
+#: dist/index.js:1
+msgid "Blog List"
+msgstr ""
+
+#: includes/blocks/modules/blog-list/block-blog-list.php:45
+msgid "Display posts as a beautiful list style"
+msgstr ""
+
+#: includes/blocks/modules/business-hours/block-business-hours.php:38
+msgid "Business Hours"
+msgstr ""
+
+#: includes/blocks/modules/business-hours/block-business-hours.php:39
+msgid "Display your business opening and closing time - best for shops"
+msgstr ""
+
+#: includes/blocks/modules/buttons/block-buttons.php:38
+msgid "Buttons"
+msgstr ""
+
+#: includes/blocks/modules/buttons/block-buttons.php:39
+msgid "Add beautiful responsive buttons to your content"
+msgstr ""
+
+#: includes/blocks/modules/call-to-action/block-call-to-action.php:40
+msgid "Call To Action"
+msgstr ""
+
+#: includes/blocks/modules/call-to-action/block-call-to-action.php:41
+msgid "Add a beautiful call to action to boost user engagement."
+msgstr ""
+
+#: includes/blocks/modules/circle-progress/block-circle-progress.php:38
+msgid "Circle Progress"
+msgstr ""
+
+#: includes/blocks/modules/circle-progress/block-circle-progress.php:39
+msgid "Display data using beautiful circle progress"
+msgstr ""
+
+#: includes/blocks/modules/clipboard/block-clipboard.php:38
+msgid "Clipboard"
+msgstr ""
+
+#: includes/blocks/modules/clipboard/block-clipboard.php:39
+msgid "Copy to Clipboard Block."
+msgstr ""
+
+#: includes/blocks/modules/columns/block-columns.php:40
+msgid "Columns"
+msgstr ""
+
+#: includes/blocks/modules/columns/block-columns.php:41
+#: includes/blocks/modules/section/block-section.php:41
+msgid "Use it to create beautiful layout."
+msgstr ""
+
+#: includes/blocks/modules/divider/block-divider.php:38
+msgid "Divider"
+msgstr ""
+
+#: includes/blocks/modules/divider/block-divider.php:39
+msgid "Separate content or section using divider"
+msgstr ""
+
+#: includes/blocks/modules/heading/block-heading.php:38
+msgid "Heading"
+msgstr ""
+
+#: includes/blocks/modules/heading/block-heading.php:39
+msgid "Add responsive heading."
+msgstr ""
+
+#: includes/blocks/modules/icon-list/block-icon-list.php:38
+msgid "Icon List"
+msgstr ""
+
+#: includes/blocks/modules/icon-list/block-icon-list.php:39
+msgid "Add icon to your content"
+msgstr ""
+
+#: includes/blocks/modules/info-boxes/block-info-box.php:38
+msgid "Info Box"
+msgstr ""
+
+#: includes/blocks/modules/info-boxes/block-info-box.php:39
+msgid "Info Box Description"
+msgstr ""
+
+#: includes/blocks/modules/modal/block-modal.php:38
+msgid "Modal"
+msgstr ""
+
+#: includes/blocks/modules/modal/block-modal.php:39
+msgid "Create beautiful modal window using this block"
+msgstr ""
+
+#: includes/blocks/modules/newsletter/block-newsletter.php:40
+msgid "Newsletter"
+msgstr ""
+
+#: includes/blocks/modules/newsletter/block-newsletter.php:41
+msgid "Add newsletter to your site."
+msgstr ""
+
+#: includes/blocks/modules/pricing-menu/block-pricing-menu.php:39
+msgid "Pricing Menu"
+msgstr ""
+
+#: includes/blocks/modules/pricing-menu/block-pricing-menu.php:40
+msgid "Add beautiful pricing menu"
+msgstr ""
+
+#: includes/blocks/modules/recipe/block-recipe.php:38
+msgid "Recipe"
+msgstr ""
+
+#: includes/blocks/modules/recipe/block-recipe.php:39
+msgid "Add amazing cook recipe to your site"
+msgstr ""
+
+#: includes/blocks/modules/section/block-section.php:40
+#: dist/index.js:1
+msgid "Section"
+msgstr ""
+
+#: includes/blocks/modules/star-rating/block-star-rating.php:38
+#: dist/index.js:1
+msgid "Star Rating"
+msgstr ""
+
+#: includes/blocks/modules/star-rating/block-star-rating.php:39
+msgid "Add star rating to the site content"
+msgstr ""
+
+#: includes/blocks/modules/team/block-team.php:38
+msgid "Team"
+msgstr ""
+
+#: includes/blocks/modules/team/block-team.php:39
+msgid "Create beautiful team member section."
+msgstr ""
+
+#: includes/blocks/modules/testimonial/block-testimonials.php:40
+msgid "Testimonial"
+msgstr ""
+
+#: includes/blocks/modules/testimonial/block-testimonials.php:41
+msgid "Add testimonials to showcase work or product quality"
+msgstr ""
+
+#: includes/blocks/modules/timeline/block-timeline.php:44
+msgid "Timeline"
+msgstr ""
+
+#: includes/blocks/modules/timeline/block-timeline.php:45
+msgid "Timeline Description"
+msgstr ""
+
+#: includes/class-ogb-setup.php:76
+#: includes/class-ogb-setup.php:77
+msgid "Gutenberg Blocks"
+msgstr ""
+
+#: includes/class-ogb-setup.php:95
+#: includes/class-ogb-setup.php:96
+msgid "Getting Started"
+msgstr ""
+
+#: includes/class-ogb-setup.php:104
+#: includes/class-ogb-setup.php:105
+msgid "Settings"
+msgstr ""
+
+#: includes/customizer/class-ogb-customizer.php:72
+msgid "Styling Options Location"
+msgstr ""
+
+#: includes/customizer/class-ogb-customizer.php:73
+msgid "If you choose Custom File, a CSS file will be created in your uploads folder."
+msgstr ""
+
+#: includes/customizer/class-ogb-customizer.php:78
+msgid "WP Head"
+msgstr ""
+
+#: includes/customizer/class-ogb-customizer.php:79
+msgid "Custom File"
+msgstr ""
+
+#: includes/customizer/class-ogb-customizer.php:101
+msgid "Mailchimp API Key"
+msgstr ""
+
+#: includes/customizer/class-ogb-customizer.php:127
+msgid "Mailchimp Audience Id"
+msgstr ""
+
+#: includes/customizer/class-ogb-customizer.php:128
+msgid "Enter Mailchimp Audience Id"
+msgstr ""
+
+#: ocean-gutenberg-blocks.php:177
+msgid "Cloning is forbidden."
+msgstr ""
+
+#: ocean-gutenberg-blocks.php:186
+msgid "Unserializing instances of this class is forbidden."
+msgstr ""
+
+#: ocean-gutenberg-blocks.php:277
+msgid "Thank you for choosing Ocean Gutenberg Blocks plugin. It works best with OceanWP theme. Try it - "
+msgstr ""
+
+#: ocean-gutenberg-blocks.php:277
+msgid "Install OceanWP now"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Field Name"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Field Type"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Text"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Link"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Label"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Link Text"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Link Target"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Self"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Blank"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Add Nofollow"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Enter custom icon html or choose from below icon list"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Icon Size"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Icon Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Icon Position"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Before"
+msgstr ""
+
+#: dist/index.js:1
+msgid "After"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Icon Spacing"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Typography"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Text Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Notice"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Error"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Warning"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Success"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Info"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Small"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Big"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Minimal"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Alert Type"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Padding"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Margin"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Dismiss Button"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Dismiss Icon Size"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Dismiss Icon Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Alert Style"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Background Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Border Style"
+msgstr ""
+
+#: dist/index.js:1
+msgid "None"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Solid"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Dashed"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Dotted"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Double"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Groove"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Ridge"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Border Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Thumbnail - 150 x 150"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Medium - 300 x 300"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Medium Large - 768 x 768"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Large - 1024 x 1024"
+msgstr ""
+
+#: dist/index.js:1
+msgid "1536x1536 - 1536 x 1536"
+msgstr ""
+
+#: dist/index.js:1
+msgid "2048x2048 - 2048 x 2048"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Apolo"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Bubba"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Chico"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Jazz"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Layla"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Lily"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Ming"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Marley"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Romeo"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Roxy"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Ruby"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Oscar"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Sadie"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Sarah"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Image Size"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Title"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Description"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Animation Effect"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Open in new window"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Add nofollow"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Add sponsored"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Normal"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Hover"
+msgstr ""
+
+#: dist/index.js:1
+msgid "https://your-link.com"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Add beautiful banner to your site."
+msgstr ""
+
+#: dist/index.js:1
+msgid "Grid Columns"
+msgstr ""
+
+#: dist/index.js:1
+msgid "1"
+msgstr ""
+
+#: dist/index.js:1
+msgid "2"
+msgstr ""
+
+#: dist/index.js:1
+msgid "3"
+msgstr ""
+
+#: dist/index.js:1
+msgid "4"
+msgstr ""
+
+#: dist/index.js:1
+msgid "5"
+msgstr ""
+
+#: dist/index.js:1
+msgid "6"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Grid Columns ( Tablet )"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Grid Columns ( Mobile )"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Grid Style"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Fit Rows"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Masonry"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Equal Heights"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Post settings"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Display post categories"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Display read more"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Show Author Avatar"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Display Comments"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Read more"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Title Tag"
+msgstr ""
+
+#: dist/index.js:1
+msgid "h1"
+msgstr ""
+
+#: dist/index.js:1
+msgid "h2"
+msgstr ""
+
+#: dist/index.js:1
+msgid "h3"
+msgstr ""
+
+#: dist/index.js:1
+msgid "h4"
+msgstr ""
+
+#: dist/index.js:1
+msgid "h5"
+msgstr ""
+
+#: dist/index.js:1
+msgid "h6"
+msgstr ""
+
+#: dist/index.js:1
+msgid "div"
+msgstr ""
+
+#: dist/index.js:1
+msgid "span"
+msgstr ""
+
+#: dist/index.js:1
+msgid "p"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "No posts found."
+msgstr ""
+
+#: dist/index.js:1
+msgid "(no title)"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Display post date"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Text Color (Hover)"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Background Color (Hover)"
+msgstr ""
+
+#: dist/index.js:1
+msgid "12:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "12:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "01:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "01:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "02:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "02:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "03:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "03:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "04:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "04:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "05:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "05:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "06:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "06:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "07:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "07:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "08:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "08:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "09:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "09:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "10:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "10:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "11:00 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "11:30 AM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "12:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "12:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "01:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "01:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "02:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "02:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "03:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "03:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "04:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "04:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "05:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "05:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "06:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "06:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "07:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "07:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "08:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "08:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "09:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "09:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "10:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "10:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "11:00 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "11:30 PM"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Long"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Short"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Closed?"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Opening Time"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Closing Time"
+msgstr ""
+
+#: dist/index.js:1
+msgid "24 Hours Format?"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Days Format"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Style"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Closed"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Striped Rows"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Even Row"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Odd Row"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Day Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Divider Style"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Divider Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Basic"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Inside"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Outside"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Top"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Middle"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Bottom"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Slide In Right"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Slide In Left"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Slide In Up"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Slide In In Down"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Enter Zoom In"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Enter Zoom Out"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Fade In"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Grow"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Shrink"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Move Right"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Move Left"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Move Up"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Move Down"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Slide Out Right"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Slide Out Left"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Slide Out Up"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Slide Out Down"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Exit Zoom In"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Exit Zoom Out"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Fade Out"
+msgstr ""
+
+#: dist/index.js:1
+msgid "H1"
+msgstr ""
+
+#: dist/index.js:1
+msgid "H2"
+msgstr ""
+
+#: dist/index.js:1
+msgid "H3"
+msgstr ""
+
+#: dist/index.js:1
+msgid "H4"
+msgstr ""
+
+#: dist/index.js:1
+msgid "H5"
+msgstr ""
+
+#: dist/index.js:1
+msgid "H6"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Left"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Above"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Right"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Image Position"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Vertical Position"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Choose an image"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Remove image"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Add overlay"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Element"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Image"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Icon"
+msgstr ""
+
+#: dist/index.js:1
+msgid "HTML Tag"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Button Text"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Apply Link On"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Button Only"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Whole Box"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Enable Secondary Button"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Hover Animation"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Animation Duration (ms)"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Sequenced Animation"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Overlay Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Blur"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Brightness"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Contrast"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Saturation"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Hue"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Blend Mode"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Screen"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Overlay"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Darken"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Lighten"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Color Dodge"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Color Burn"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Exclusion"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Luminosity"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Transition DurationHover"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Percent"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Speed"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Step"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Delay"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Text Before"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Text Middle"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Text After"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Content"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Bar Size"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Bar Cap"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Rounded"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Square"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Butt"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Circle Outside Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Circle Inside Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Copy value to clipboard"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Button Position"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Size"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Medium"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Large"
+msgstr ""
+
+#: dist/index.js:1
+msgid "btnText"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Height"
+msgstr ""
+
+#: dist/index.js:1
+msgid "I am the content. Copy me."
+msgstr ""
+
+#: dist/index.js:1
+msgid "Copy the content"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Width"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Opacity"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Background Size"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Auto"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Contain"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Cover"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Inherit"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Initial"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Revert"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Unset"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Background Repeat"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Repeat"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Repeat-X"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Repeat-Y"
+msgstr ""
+
+#: dist/index.js:1
+msgid "No repeat"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Space"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Round"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Background Position"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Left Top"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Left Center"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Left Bottom"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Right Top"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Right Center"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Right Bottom"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Center Top"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Center Center"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Center Bottom"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Select a variation to start with."
+msgstr ""
+
+#: dist/index.js:1
+msgid "One column"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Two columns; equal split"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Two columns; one-third, two-thirds split"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Two columns; two-thirds, one-third split"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Three columns; equal split"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Three columns; wide center column"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Four columns; equal split"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Center"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Text or Icon"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Divider Alignment"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Alignment"
+msgstr ""
+
+#: dist/index.js:1
+msgid "center"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Type"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Position"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Link Type"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Box"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Button"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Title Separator"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Separator Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Placeholder Text"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Submit Button Text"
+msgstr ""
+
+#: dist/index.js:1
+msgid "GDPR Checkbox Label"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Label Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Checkbox Background Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Checkbox Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Checkbox Border Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Email is required."
+msgstr ""
+
+#: dist/index.js:1
+msgid "Email not valid."
+msgstr ""
+
+#: dist/index.js:1
+msgid "This field is required"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Thanks for your subscription."
+msgstr ""
+
+#: dist/index.js:1
+msgid "Failed to subscribe, please contact admin."
+msgstr ""
+
+#: dist/index.js:1
+msgid "Go"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Enter your email address"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Price"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Title Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Price Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Cheese Pizza"
+msgstr ""
+
+#: dist/index.js:1
+msgid "$99"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Recipe Name"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Title HTML Tag"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Show Author Meta"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Show Author Date"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Schema Markup"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Title Typography"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Description Typography"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Meta Typography"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Meta Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Prep Time"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Prep Text"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Prep Value"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Cook Time"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Cook Text"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Ingredients Title Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Ingredients Typography"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Ingredients Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Instructions Title Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Instructions Typography"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Instructions Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Note Title Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Notes Typography"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Notes Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Ingredients"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Instructions"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Notes"
+msgstr ""
+
+#: dist/index.js:1
+msgid "My amazing cook recipe"
+msgstr ""
+
+#: dist/index.js:1
+msgid "I am text block. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+
+#: dist/index.js:1
+msgid "Div"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Aside"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Header"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Footer"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Main"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Article"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Nav"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Rating Scale"
+msgstr ""
+
+#: dist/index.js:1
+msgid "0-5"
+msgstr ""
+
+#: dist/index.js:1
+msgid "0-10"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Rating"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Icon Style"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Fill"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Outline"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Unmarked Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Name"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Role"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Image Width"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Name Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Role Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Classic"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Inline"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Bubble"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Display Symbol"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Company"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Display Rating"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Rating Number"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Quote Icon Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Company Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Line Color"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Icon SVG code"
+msgstr ""
+
+#: dist/index.js:1
+msgid "px"
+msgstr ""
+
+#: dist/index.js:1
+msgid "em"
+msgstr ""
+
+#: dist/index.js:1
+msgid "%"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Select Unit"
+msgstr ""
+
+#: dist/index.js:1
+msgid "%s Top"
+msgstr ""
+
+#: dist/index.js:1
+msgid "%s Right"
+msgstr ""
+
+#: dist/index.js:1
+msgid "%s Bottom"
+msgstr ""
+
+#: dist/index.js:1
+msgid "%s Left"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Device"
+msgstr ""
+
+#: dist/index.js:1
+msgid "default"
+msgstr ""
+
+#: dist/index.js:1
+msgid "latin"
+msgstr ""
+
+#: dist/index.js:1
+msgid "latin-ext"
+msgstr ""
+
+#: dist/index.js:1
+msgid "cyrillic"
+msgstr ""
+
+#: dist/index.js:1
+msgid "cyrillic-ext"
+msgstr ""
+
+#: dist/index.js:1
+msgid "greek"
+msgstr ""
+
+#: dist/index.js:1
+msgid "greek-ext"
+msgstr ""
+
+#: dist/index.js:1
+msgid "vietnamese"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Default"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Bold"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Uppercase"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Lowercase"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Capitalize"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Italic"
+msgstr ""
+
+#: dist/index.js:1
+msgid "oblique"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Font Family"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Font Subset"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Font Weight"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Font Style"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Text Transform"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Hide Advanced"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Advanced"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Font Size"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Line Height"
+msgstr ""
+
+#: dist/index.js:1
+msgid "Letter Spacing"
+msgstr ""

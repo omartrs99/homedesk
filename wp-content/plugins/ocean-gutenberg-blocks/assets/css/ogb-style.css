@@ -1,0 +1,11 @@
+/*************************************
+ * Configuration
+ ************************************/
+.clr:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+  height: 0;
+}

@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Full Screen\n"
+"POT-Creation-Date: 2023-10-20 04:46-0300\n"
+"PO-Revision-Date: 2023-12-04 21:46-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ocean-full-screen.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: ocean-full-screen.php:161 ocean-full-screen.php:170
+msgid "Cheatin&#8217; huh?"
+msgstr "Trapaceando, hein?"
+
+#: ocean-full-screen.php:307
+msgid "Full Screen"
+msgstr "Tela cheia"
+
+#: ocean-full-screen.php:317
+msgid "Make This Page Full Screen"
+msgstr "Tornar esta página em tela cheia"
+
+#: ocean-full-screen.php:318
+msgid ""
+"Enable or disable the full screen effect on this page. The title and footer "
+"will be disabled by activating this setting."
+msgstr ""
+"Ativar ou desativar o efeito de tela cheia nesta página. O título e o "
+"rodapé serão desativados ao ativar esta configuração."
+
+#: ocean-full-screen.php:320 ocean-full-screen.php:363
+msgid "Enable"
+msgstr "Ativar"
+
+#: ocean-full-screen.php:321 ocean-full-screen.php:364
+msgid "Disable"
+msgstr "Desativar"
+
+#: ocean-full-screen.php:339
+msgid "Scrolling Speed (ms)"
+msgstr "Velocidade de rolagem (ms)"
+
+#: ocean-full-screen.php:340
+msgid "It is the scrolling speed between each sections"
+msgstr "É a velocidade de rolagem entre cada seção"
+
+#: ocean-full-screen.php:360
+msgid "Add Navigation"
+msgstr "Adicionar navegação"
+
+#: ocean-full-screen.php:361
+msgid "Display a dot navigation on the side."
+msgstr "Exibe uma navegação por pontos na lateral."
+
+#: ocean-full-screen.php:382
+msgid "Navigation: Position"
+msgstr "Navegação: Posição"
+
+#: ocean-full-screen.php:383
+msgid "Choose your navigation position."
+msgstr "Escolha a posição da sua navegação."
+
+#: ocean-full-screen.php:385
+msgid "Left"
+msgstr "Esquerda"
+
+#: ocean-full-screen.php:386
+msgid "Right"
+msgstr "Direita"
+
+#: ocean-full-screen.php:404
+msgid "Navigation: Color"
+msgstr "Navegação: Cor"
+
+#: ocean-full-screen.php:405 ocean-full-screen.php:422
+msgid "Select a color. Hex code, ex: #555"
+msgstr "Selecione uma cor. Código hexadecimal, ex: #555"
+
+#: ocean-full-screen.php:421
+msgid "Navigation: Tooltip Color"
+msgstr "Navegação: Cor da caixa de informação (tooltip)"
+
+#: ocean-full-screen.php:438
+msgid "Disable on Responsive"
+msgstr "Desativar no modo responsivo"
+
+#: ocean-full-screen.php:439
+msgid "Enter a screen width from where you want to disable the slide effect."
+msgstr ""
+"Digite a largura da tela a partir da qual deseja desativar o efeito de "
+"deslizamento."
+
+#. Plugin Name of the plugin/theme
+msgid "Ocean Full Screen"
+msgstr "Ocean Full Screen"
+
+#. Plugin URI of the plugin/theme
+msgid "https://oceanwp.org/extension/ocean-full-screen/"
+msgstr "https://oceanwp.org/extension/ocean-full-screen/"
+
+#. Description of the plugin/theme
+msgid "A simple and easy way to create a fullscreen scrolling website."
+msgstr ""
+"Uma maneira simples e fácil de criar um site com rolagem em tela cheia."
+
+#. Author of the plugin/theme
+msgid "OceanWP"
+msgstr "OceanWP"
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"

@@ -1,0 +1,127 @@
+.ogb-columns-container {
+    position: relative;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+
+    > .block-editor-inner-blocks > .block-editor-block-list__layout {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-right: -15px;
+        margin-left: -15px;
+
+        .block-editor-block-list__block {
+            max-width: none;
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+}
+
+.block-editor-block-list__block {
+    .ogb-columns-horizontal-center {
+        .ogb-columns-container {
+            > .block-editor-inner-blocks > .block-editor-block-list__layout {
+                justify-content: center;
+            }
+        }
+    }
+
+    .ogb-columns-horizontal-right {
+        .ogb-columns-container {
+            > .block-editor-inner-blocks > .block-editor-block-list__layout {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .ogb-columns-vertical-center {
+        .ogb-columns-container {
+            > .block-editor-inner-blocks > .block-editor-block-list__layout {
+                align-items: center;
+            }
+        }
+    }
+
+    .ogb-columns-vertical-bottom {
+        .ogb-columns-container {
+            > .block-editor-inner-blocks > .block-editor-block-list__layout {
+                align-items: flex-end;
+            }
+        }
+    }
+
+    .ogb-columns-vertical-top {
+        .ogb-columns-container {
+            > .block-editor-inner-blocks > .block-editor-block-list__layout {
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+
+.ogb-columns-horizontal-center {
+    .ogb-columns-container {
+        justify-content: center;
+    }
+}
+
+.ogb-columns-horizontal-right {
+    .ogb-columns-container {
+        justify-content: flex-end;
+    }
+}
+
+[data-type="ogb/columns"] {
+
+	.components-placeholder.components-placeholder {
+		align-items: center;
+	}
+
+	.components-placeholder__label .dashicon {
+		margin-right: 10px;
+	}
+
+	.block-editor-block-variation-picker.has-many-variations .components-placeholder__fieldset {
+		max-width: 500px;
+
+		.block-editor-block-variation-picker__variations {
+			justify-content: center;
+		}
+
+		.block-editor-block-variation-picker__skip {
+			text-align: center;
+		}
+	}
+}
+
+.ogb-columns-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.4s;
+
+	.ogb-columns-bg {
+		background-size: cover;
+		background-position: 50%;
+	}
+}
+
+.ogb-columns-bg,
+.ogb-columns-overlay {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.4s;
+}
+
+.ogb-columns-overlay {
+	background: rgba(0,0,0,.5);
+}

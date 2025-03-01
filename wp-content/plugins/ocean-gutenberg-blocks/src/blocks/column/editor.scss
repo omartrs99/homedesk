@@ -1,0 +1,73 @@
+.ogb-tab-responsive-column-width  {
+
+	.components-tab-panel__tabs {
+		position: absolute;
+		right: 16px;
+		z-index: 99;
+	}
+
+	.components-unit-control-wrapper {
+		padding-top: 30px;
+	}
+}
+
+.ogb-vertically-aligned-top {
+	justify-content: flex-start;
+}
+
+.ogb-vertically-aligned-center {
+	justify-content: center;
+}
+
+.ogb-vertically-aligned-bottom {
+	justify-content: flex-end;
+}
+
+.ogb-horizontally-aligned-left {
+	align-items: flex-start;
+}
+
+.ogb-horizontally-aligned-center {
+	align-items: center;
+}
+
+.ogb-horizontally-aligned-right {
+	align-items: flex-end;
+}
+
+.ogb-column-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.4s;
+
+	.ogb-column-bg {
+		background-size: cover;
+		background-position: 50%;
+	}
+}
+
+.ogb-column-bg,
+.ogb-column-overlay {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.4s;
+}
+
+.ogb-column-overlay {
+	background: rgba(0,0,0,.5);
+    z-index: 1;
+}
+
+.ogb-column-container {
+    z-index: 2;
+}
+
+.editor-styles-wrapper .ogb-column .block-editor-block-list__layout {
+		z-index: 2;
+}

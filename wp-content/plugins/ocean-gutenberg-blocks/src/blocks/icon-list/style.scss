@@ -1,0 +1,22 @@
+.ogb-icon-list {
+	position: relative;
+
+	.ogb-icon-list-inner {
+		display: block;
+		text-decoration: none;
+		font-size: 30px;
+		color: #414141;
+	}
+
+	&-left {
+		text-align: left;
+	}
+
+	&-right {
+		text-align: right;
+	}
+
+	&-center {
+		text-align: center;
+	}
+}

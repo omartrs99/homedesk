@@ -1,0 +1,80 @@
+.ogb-rating-icons {
+	color:#ccd6df;
+	font-family:'Font Awesome 5 Free';
+	display:inline-block;
+
+	i {
+		display:inline-block;
+		position:relative;
+		font-style:normal;
+		font-weight: 400;
+		cursor:default;
+
+		&:before {
+			content:"\f005";
+			display:block;
+			font-size:inherit;
+			font-family:inherit;
+			position:absolute;
+			overflow:hidden;
+			color:#f0ad4e;
+			top:0;
+			left:0;
+		}
+	}
+
+	&.icon-fill {
+		i {
+			font-weight: 900;
+		}
+	}
+
+	.ogb-star-icon-full {
+		font-weight: 900;
+	}
+
+	.ogb-star-icon-empty {
+		&:before {
+			content: none;
+		}
+	}
+
+	@for $i from 1 through 9 {
+		.ogb-star-icon-#{$i} {
+			&:before {
+				width: ( $i * 10% );
+				font-weight: 900;
+			}
+		}
+	}
+}
+
+.ogb-star-rating-content {
+    display: flex;
+    align-items: center;
+}
+
+.rating-align-left {
+	text-align: left;
+    justify-content: flex-start;
+}
+
+.rating-align-center {
+	text-align: center;
+    justify-content: center;
+}
+
+.rating-align-right {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.rating-align-full {
+	.ogb-star-rating-title {
+		margin-right: auto;
+	}
+}
+
+.ogb-star-rating-title {
+	margin-right: 10px;
+}

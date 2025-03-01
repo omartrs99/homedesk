@@ -1,0 +1,382 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean Side Panel plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Side Panel 2.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-side-panel\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-10-16T06:30:39+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ocean-side-panel\n"
+
+#. Plugin Name of the plugin
+#: ocean-side-panel.php
+msgid "Ocean Side Panel"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: ocean-side-panel.php
+msgid "https://oceanwp.org/extension/ocean-side-panel/"
+msgstr ""
+
+#. Description of the plugin
+#: ocean-side-panel.php
+msgid "Add a responsive side panel with your preferred widgets inside."
+msgstr ""
+
+#. Author of the plugin
+#: ocean-side-panel.php
+#: includes/update-message.php:84
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+#: ocean-side-panel.php
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: includes/customizer-helpers.php:9
+msgid "Select"
+msgstr ""
+
+#: includes/options.php:18
+#: ocean-side-panel.php:346
+#: ocean-side-panel.php:946
+#: assets/dist/metabox.js:1
+msgid "Side Panel"
+msgstr ""
+
+#: includes/options.php:24
+msgid "Breakpoints"
+msgstr ""
+
+#: includes/options.php:25
+msgid "Set the screen width at which your website will stop displaying the Side Panel."
+msgstr ""
+
+#: includes/options.php:34
+msgid "Never Hide the Side Panel"
+msgstr ""
+
+#: includes/options.php:35
+msgid "From 1280px"
+msgstr ""
+
+#: includes/options.php:36
+msgid "From 1080px"
+msgstr ""
+
+#: includes/options.php:37
+msgid "From 959px"
+msgstr ""
+
+#: includes/options.php:38
+msgid "From 767px"
+msgstr ""
+
+#: includes/options.php:39
+msgid "From 480px"
+msgstr ""
+
+#: includes/options.php:40
+msgid "From 320px"
+msgstr ""
+
+#: includes/options.php:41
+#: includes/options.php:46
+msgid "Custom Media Query"
+msgstr ""
+
+#: includes/options.php:47
+msgid "Add your custom media query width. (px)"
+msgstr ""
+
+#: includes/options.php:63
+#: includes/options.php:247
+#: includes/options.php:505
+msgid "Desktop"
+msgstr ""
+
+#: includes/options.php:73
+msgid "Opening Button"
+msgstr ""
+
+#: includes/options.php:84
+msgid "Opening Button Position"
+msgstr ""
+
+#: includes/options.php:93
+msgid "Inside the Main Menu"
+msgstr ""
+
+#: includes/options.php:94
+msgid "Beside the Panel"
+msgstr ""
+
+#: includes/options.php:95
+msgid "Disabled"
+msgstr ""
+
+#: includes/options.php:108
+#: includes/options.php:608
+msgid "Opening Button Icon"
+msgstr ""
+
+#: includes/options.php:122
+msgid "Opening Button Animation"
+msgstr ""
+
+#: includes/options.php:145
+msgid "Opening Button Text"
+msgstr ""
+
+#: includes/options.php:166
+msgid "Text Position"
+msgstr ""
+
+#: includes/options.php:178
+#: includes/options.php:179
+msgid "Before"
+msgstr ""
+
+#: includes/options.php:183
+#: includes/options.php:184
+msgid "After"
+msgstr ""
+
+#: includes/options.php:191
+msgid "Side Panel Content"
+msgstr ""
+
+#: includes/options.php:202
+msgid "Panel Position"
+msgstr ""
+
+#: includes/options.php:213
+#: includes/options.php:214
+#: includes/options.php:299
+#: includes/options.php:330
+#: includes/options.php:358
+msgid "Right"
+msgstr ""
+
+#: includes/options.php:218
+#: includes/options.php:219
+#: includes/options.php:315
+#: includes/options.php:344
+#: includes/options.php:372
+msgid "Left"
+msgstr ""
+
+#: includes/options.php:232
+msgid "Panel Width (px)"
+msgstr ""
+
+#: includes/options.php:255
+msgid "Tablet"
+msgstr ""
+
+#: includes/options.php:262
+msgid "Mobile"
+msgstr ""
+
+#: includes/options.php:281
+msgid "Content Padding (px)"
+msgstr ""
+
+#: includes/options.php:291
+#: includes/options.php:323
+#: includes/options.php:351
+msgid "Top"
+msgstr ""
+
+#: includes/options.php:307
+#: includes/options.php:337
+#: includes/options.php:365
+msgid "Bottom"
+msgstr ""
+
+#: includes/options.php:396
+msgid "Custom Side Panel Content"
+msgstr ""
+
+#: includes/options.php:397
+msgid "Choose a template created in OceanWP > My Library to replace the content."
+msgstr ""
+
+#: includes/options.php:410
+msgid "Side Panel Effects"
+msgstr ""
+
+#: includes/options.php:420
+msgid "Displace"
+msgstr ""
+
+#: includes/options.php:431
+#: includes/options.php:684
+msgid "Color Overlay"
+msgstr ""
+
+#: includes/options.php:442
+msgid "Close Button"
+msgstr ""
+
+#: includes/options.php:452
+msgid "Display Close Button"
+msgstr ""
+
+#: includes/options.php:468
+msgid "Close Button Text"
+msgstr ""
+
+#: includes/options.php:472
+#: template/side-panel.php:19
+msgid "Close Panel"
+msgstr ""
+
+#: includes/options.php:480
+msgid "Typography and Colors"
+msgstr ""
+
+#: includes/options.php:489
+msgid "Icon Size (px)"
+msgstr ""
+
+#: includes/options.php:526
+msgid "Button Background"
+msgstr ""
+
+#: includes/options.php:539
+#: includes/options.php:566
+#: includes/options.php:594
+#: includes/options.php:661
+#: includes/options.php:697
+#: includes/options.php:733
+#: includes/options.php:852
+#: includes/options.php:878
+#: includes/options.php:939
+msgid "Select Color"
+msgstr ""
+
+#: includes/options.php:553
+msgid "Button Icon"
+msgstr ""
+
+#: includes/options.php:581
+msgid "Button Border"
+msgstr ""
+
+#: includes/options.php:621
+#: includes/options.php:768
+#: includes/options.php:803
+#: includes/options.php:904
+msgid "Normal"
+msgstr ""
+
+#: includes/options.php:634
+#: includes/options.php:780
+#: includes/options.php:816
+#: includes/options.php:916
+msgid "Hover"
+msgstr ""
+
+#: includes/options.php:648
+msgid "Custom Open Button Color"
+msgstr ""
+
+#: includes/options.php:721
+msgid "Panel Background"
+msgstr ""
+
+#: includes/options.php:756
+msgid "Close Button Background"
+msgstr ""
+
+#: includes/options.php:791
+msgid "Close Button Text / Icon"
+msgstr ""
+
+#: includes/options.php:840
+msgid "Headings"
+msgstr ""
+
+#: includes/options.php:866
+msgid "Text"
+msgstr ""
+
+#: includes/options.php:892
+msgid "Links"
+msgstr ""
+
+#: includes/options.php:927
+msgid "Widget Dividers"
+msgstr ""
+
+#: includes/options.php:953
+msgid "%1$s Need Help? %2$s"
+msgstr ""
+
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
+msgstr ""
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr ""
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr ""
+
+#: includes/update-message.php:85
+msgid "4.0.0"
+msgstr ""
+
+#: includes/update-message.php:88
+msgid "Ocean Extra"
+msgstr ""
+
+#: includes/update-message.php:89
+msgid "2.4.0"
+msgstr ""
+
+#: ocean-side-panel.php:283
+msgid "Side Panel Sidebar"
+msgstr ""
+
+#: ocean-side-panel.php:285
+msgid "Widgets in this area are used in the side panel."
+msgstr ""
+
+#: ocean-side-panel.php:347
+msgid "Disable the side panel on this page/post."
+msgstr ""
+
+#: ocean-side-panel.php:349
+#: assets/dist/metabox.js:1
+msgid "Default"
+msgstr ""
+
+#: ocean-side-panel.php:350
+#: assets/dist/metabox.js:1
+msgid "Disable"
+msgstr ""

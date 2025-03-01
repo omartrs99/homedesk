@@ -1,0 +1,171 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean White Label plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean White Label 2.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-white-label\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-10-16T08:11:03+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ocean-white-label\n"
+
+#. Plugin Name of the plugin
+#: ocean-white-label.php
+msgid "Ocean White Label"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: ocean-white-label.php
+msgid "https://oceanwp.org/extension/ocean-white-label/"
+msgstr ""
+
+#. Description of the plugin
+#: ocean-white-label.php
+msgid "A plugin which add a new box in Theme Panel to allow you to replace the OceanWP name by your own branding name."
+msgstr ""
+
+#. Author of the plugin
+#: ocean-white-label.php
+#: includes/update-message.php:84
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+#: ocean-white-label.php
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
+msgstr ""
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr ""
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr ""
+
+#: includes/update-message.php:85
+msgid "4.0.0"
+msgstr ""
+
+#: includes/update-message.php:88
+msgid "Ocean Extra"
+msgstr ""
+
+#: includes/update-message.php:89
+msgid "2.4.0"
+msgstr ""
+
+#: ocean-white-label.php:319
+msgid "White Label"
+msgstr ""
+
+#: ocean-white-label.php:325
+msgid "Theme Branding:"
+msgstr ""
+
+#: ocean-white-label.php:327
+msgid "This option replace OceanWP in the admin as the OceanWP Settings metabox."
+msgstr ""
+
+#: ocean-white-label.php:331
+msgid "Theme Name:"
+msgstr ""
+
+#: ocean-white-label.php:333
+msgid "This option replace the theme name in Appearance > Themes."
+msgstr ""
+
+#: ocean-white-label.php:337
+msgid "Theme Author:"
+msgstr ""
+
+#: ocean-white-label.php:339
+msgid "This option replace the theme author in Appearance > Themes."
+msgstr ""
+
+#: ocean-white-label.php:343
+msgid "Theme Author URL:"
+msgstr ""
+
+#: ocean-white-label.php:345
+msgid "This option replace the theme autohr url in Appearance > Themes."
+msgstr ""
+
+#: ocean-white-label.php:349
+msgid "Theme Description:"
+msgstr ""
+
+#: ocean-white-label.php:351
+msgid "This option replace the theme description in Appearance > Themes."
+msgstr ""
+
+#: ocean-white-label.php:355
+msgid "Theme Screenshot URL:"
+msgstr ""
+
+#: ocean-white-label.php:360
+msgid "Preview Image"
+msgstr ""
+
+#: ocean-white-label.php:364
+msgid "Upload"
+msgstr ""
+
+#: ocean-white-label.php:365
+msgid "Remove Image"
+msgstr ""
+
+#: ocean-white-label.php:366
+msgid "This option replace the theme screenshot in Appearance > Themes. Recommended size: 1200x900px"
+msgstr ""
+
+#: ocean-white-label.php:372
+msgid "Hide the OceanWP News & Updates in the Dashboard"
+msgstr ""
+
+#: ocean-white-label.php:376
+msgid "Hide The Theme Panel Sidebar"
+msgstr ""
+
+#: ocean-white-label.php:380
+msgid "Hide The Themes Section in the Customizer"
+msgstr ""
+
+#: ocean-white-label.php:384
+msgid "Hide The Info Section in the Customizer"
+msgstr ""
+
+#: ocean-white-label.php:388
+msgid "Hide This Box"
+msgstr ""
+
+#: ocean-white-label.php:390
+msgid "Check this option to hide this box. Re-activate Ocean White Label to display this box again."
+msgstr ""
+
+#: ocean-white-label.php:393
+msgid "Save Changes"
+msgstr ""

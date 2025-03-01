@@ -1,0 +1,359 @@
+# Copyright (C) 2024 OceanWP
+# This file is distributed under the same license as the Ocean Footer Callout plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Footer Callout 2.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-footer-callout\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-10-16T06:38:49+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ocean-footer-callout\n"
+
+#. Plugin Name of the plugin
+#: ocean-footer-callout.php
+msgid "Ocean Footer Callout"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: ocean-footer-callout.php
+msgid "https://oceanwp.org/extension/ocean-footer-callout/"
+msgstr ""
+
+#. Description of the plugin
+#: ocean-footer-callout.php
+msgid "Add some relevant/important information about your company or product in your footer."
+msgstr ""
+
+#. Author of the plugin
+#: ocean-footer-callout.php
+#: includes/update-message.php:84
+msgid "OceanWP"
+msgstr ""
+
+#. Author URI of the plugin
+#: ocean-footer-callout.php
+msgid "https://oceanwp.org/"
+msgstr ""
+
+#: includes/options.php:18
+#: ocean-footer-callout.php:816
+msgid "Footer Callout"
+msgstr ""
+
+#: includes/options.php:33
+msgid "Content"
+msgstr ""
+
+#: includes/options.php:37
+msgid "Find what you are looking for and experience the difference."
+msgstr ""
+
+#: includes/options.php:52
+msgid "Button"
+msgstr ""
+
+#: includes/options.php:60
+msgid "Display Button"
+msgstr ""
+
+#: includes/options.php:79
+#: includes/options.php:225
+#: includes/options.php:431
+msgid "Button Text"
+msgstr ""
+
+#: includes/options.php:83
+msgid "Get In Touch"
+msgstr ""
+
+#: includes/options.php:99
+msgid "Button URL"
+msgstr ""
+
+#: includes/options.php:113
+msgid "Button Target"
+msgstr ""
+
+#: includes/options.php:124
+#: includes/options.php:125
+msgid "New Tab"
+msgstr ""
+
+#: includes/options.php:129
+#: includes/options.php:130
+msgid "Same Tab"
+msgstr ""
+
+#: includes/options.php:138
+msgid "Button Rel"
+msgstr ""
+
+#: includes/options.php:147
+msgid "None"
+msgstr ""
+
+#: includes/options.php:148
+msgid "Nofollow"
+msgstr ""
+
+#: includes/options.php:149
+msgid "Noopener Noreferrer"
+msgstr ""
+
+#: includes/options.php:150
+msgid "Nofollow Noopener Noreferrer"
+msgstr ""
+
+#: includes/options.php:164
+msgid "Button Custom Classes"
+msgstr ""
+
+#: includes/options.php:185
+msgid "Button Border Radius (px)"
+msgstr ""
+
+#: includes/options.php:200
+msgid "Desktop"
+msgstr ""
+
+#: includes/options.php:234
+#: includes/options.php:596
+msgid "Font Family"
+msgstr ""
+
+#: includes/options.php:241
+#: includes/options.php:248
+#: includes/options.php:255
+#: includes/options.php:603
+#: includes/options.php:610
+#: includes/options.php:617
+msgid "Font Weight"
+msgstr ""
+
+#: includes/options.php:262
+#: includes/options.php:624
+msgid "Font Subset"
+msgstr ""
+
+#: includes/options.php:269
+#: includes/options.php:277
+#: includes/options.php:284
+#: includes/options.php:631
+#: includes/options.php:639
+#: includes/options.php:646
+msgid "Font Size"
+msgstr ""
+
+#: includes/options.php:291
+#: includes/options.php:320
+#: includes/options.php:349
+#: includes/options.php:653
+#: includes/options.php:682
+#: includes/options.php:711
+msgid "Unit"
+msgstr ""
+
+#: includes/options.php:299
+#: includes/options.php:306
+#: includes/options.php:313
+#: includes/options.php:661
+#: includes/options.php:668
+#: includes/options.php:675
+msgid "Letter Spacing"
+msgstr ""
+
+#: includes/options.php:328
+#: includes/options.php:335
+#: includes/options.php:342
+#: includes/options.php:690
+#: includes/options.php:697
+#: includes/options.php:704
+msgid "Line Height"
+msgstr ""
+
+#: includes/options.php:356
+#: includes/options.php:363
+#: includes/options.php:370
+#: includes/options.php:718
+#: includes/options.php:725
+#: includes/options.php:732
+msgid "Text Transform"
+msgstr ""
+
+#: includes/options.php:377
+#: includes/options.php:739
+msgid "Text Decoration"
+msgstr ""
+
+#: includes/options.php:396
+msgid "Button Background"
+msgstr ""
+
+#: includes/options.php:408
+#: includes/options.php:443
+#: includes/options.php:848
+msgid "Normal"
+msgstr ""
+
+#: includes/options.php:420
+#: includes/options.php:455
+#: includes/options.php:860
+msgid "Hover"
+msgstr ""
+
+#: includes/options.php:487
+msgid "Select Template"
+msgstr ""
+
+#: includes/options.php:488
+msgid "Select a custom template you created in OceanWP > My Library."
+msgstr ""
+
+#: includes/options.php:511
+msgid "Padding (px)"
+msgstr ""
+
+#: includes/options.php:523
+#: includes/options.php:539
+#: includes/options.php:555
+msgid "Top"
+msgstr ""
+
+#: includes/options.php:531
+#: includes/options.php:547
+#: includes/options.php:562
+msgid "Bottom"
+msgstr ""
+
+#: includes/options.php:587
+msgid "CTA Content"
+msgstr ""
+
+#: includes/options.php:758
+msgid "CTA Background"
+msgstr ""
+
+#: includes/options.php:770
+#: includes/options.php:796
+#: includes/options.php:822
+msgid "Select Color"
+msgstr ""
+
+#: includes/options.php:784
+msgid "CTA Top Border"
+msgstr ""
+
+#: includes/options.php:810
+msgid "CTA Text"
+msgstr ""
+
+#: includes/options.php:836
+msgid "CTA Links"
+msgstr ""
+
+#: includes/options.php:871
+msgid "%1$s Need Help? %2$s"
+msgstr ""
+
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
+msgstr ""
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr ""
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr ""
+
+#: includes/update-message.php:85
+msgid "4.0.0"
+msgstr ""
+
+#: includes/update-message.php:88
+msgid "Ocean Extra"
+msgstr ""
+
+#: includes/update-message.php:89
+msgid "2.4.0"
+msgstr ""
+
+#: ocean-footer-callout.php:396
+msgid "Callout"
+msgstr ""
+
+#: ocean-footer-callout.php:406
+#: assets/dist/metabox.js:1
+msgid "Display Callout"
+msgstr ""
+
+#: ocean-footer-callout.php:407
+msgid "Enable or disable the footer callout."
+msgstr ""
+
+#: ocean-footer-callout.php:409
+#: assets/dist/metabox.js:1
+msgid "Default"
+msgstr ""
+
+#: ocean-footer-callout.php:410
+#: assets/dist/metabox.js:1
+msgid "Enable"
+msgstr ""
+
+#: ocean-footer-callout.php:411
+#: assets/dist/metabox.js:1
+msgid "Disable"
+msgstr ""
+
+#: ocean-footer-callout.php:428
+#: assets/dist/metabox.js:1
+msgid "Callout Button Url"
+msgstr ""
+
+#: ocean-footer-callout.php:429
+msgid "Enter a valid link."
+msgstr ""
+
+#: ocean-footer-callout.php:445
+#: assets/dist/metabox.js:1
+msgid "Callout Button Text"
+msgstr ""
+
+#: ocean-footer-callout.php:446
+msgid "Enter your text."
+msgstr ""
+
+#: ocean-footer-callout.php:462
+#: assets/dist/metabox.js:1
+msgid "Callout Text"
+msgstr ""
+
+#: ocean-footer-callout.php:463
+#: assets/dist/metabox.js:1
+msgid "Override the default callout text."
+msgstr ""
+
+#: template/footer-callout.php:177
+msgid "Opens in a new tab"
+msgstr ""

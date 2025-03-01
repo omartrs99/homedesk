@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Woo Popup\n"
+"POT-Creation-Date: 2023-10-19 00:18-0300\n"
+"PO-Revision-Date: 2023-12-05 01:55-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ocean-woo-popup.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: includes/helpers.php:17
+msgid "Title"
+msgstr "Título"
+
+#: includes/helpers.php:18 ocean-woo-popup.php:423
+msgid "Content"
+msgstr "Conteúdo"
+
+#: includes/helpers.php:19
+msgid "Buttons"
+msgstr "Botões"
+
+#: includes/helpers.php:20 ocean-woo-popup.php:501
+msgid "Bottom Text"
+msgstr "Texto inferior"
+
+#: ocean-woo-popup.php:167 ocean-woo-popup.php:176
+msgid "Cheatin&#8217; huh?"
+msgstr "Trapaceando, hein?"
+
+#: ocean-woo-popup.php:208 ocean-woo-popup.php:360 ocean-woo-popup.php:386
+#: template/woo-popup.php:45
+msgid "Item added to your cart"
+msgstr "Item adicionado ao seu carrinho"
+
+#: ocean-woo-popup.php:209 ocean-woo-popup.php:412 template/woo-popup.php:47
+msgid "[oceanwp_woo_cart_items] items in the cart ([oceanwp_woo_total_cart])"
+msgstr ""
+"[oceanwp_woo_cart_items] itens no carrinho ([oceanwp_woo_total_cart])"
+
+#: ocean-woo-popup.php:210 ocean-woo-popup.php:438 template/woo-popup.php:49
+msgid "Continue Shopping"
+msgstr "Continuar comprando"
+
+#: ocean-woo-popup.php:211 ocean-woo-popup.php:464 template/woo-popup.php:51
+msgid "Go To The Cart"
+msgstr "Ir para o carrinho"
+
+#: ocean-woo-popup.php:267 ocean-woo-popup.php:1671
+msgid "Woo Popup"
+msgstr "Pop-up do Woo"
+
+#: ocean-woo-popup.php:289
+msgid "Display Popup"
+msgstr "Exibir pop-up"
+
+#: ocean-woo-popup.php:290
+msgid ""
+"This field is just to allow you to display the popup in the customizer "
+"preview"
+msgstr ""
+"Este campo serve apenas para permitir que você exiba o pop-up na pré-"
+"visualização do personalizador"
+
+#: ocean-woo-popup.php:295 ocean-woo-popup.php:296
+msgid "Show"
+msgstr "Mostrar"
+
+#: ocean-woo-popup.php:318
+msgid "Select Template"
+msgstr "Selecionar modelo"
+
+#: ocean-woo-popup.php:319
+msgid "Choose a template created in Theme Panel > My Library."
+msgstr "Escolha um modelo criado no Painel de temas > Minha biblioteca."
+
+#: ocean-woo-popup.php:345
+msgid "Elements Positioning"
+msgstr "Posicionamento dos elementos"
+
+#: ocean-woo-popup.php:371 ocean-woo-popup.php:397
+msgid "Title Text"
+msgstr "Texto do título"
+
+#: ocean-woo-popup.php:424
+#, php-format
+msgid "Shortcodes allowed, %1$ssee the list%2$s."
+msgstr "Shortcodes permitidos, %1$sveja a lista%2$s."
+
+#: ocean-woo-popup.php:449
+msgid "Continue Button Text"
+msgstr "Texto do botão \"Continuar\""
+
+#: ocean-woo-popup.php:475
+msgid "Go Cart Button Text"
+msgstr "Texto do botão \"Ir para o carrinho\""
+
+#: ocean-woo-popup.php:490
+msgid "[oceanwp_woo_free_shipping_left]"
+msgstr "[oceanwp_woo_free_shipping_left]"
+
+#: ocean-woo-popup.php:525
+msgid "Styling"
+msgstr "Estilização"
+
+#: ocean-woo-popup.php:564
+msgid "Width (px)"
+msgstr "Largura (px)"
+
+#: ocean-woo-popup.php:613
+msgid "Height (px)"
+msgstr "Altura (px)"
+
+#: ocean-woo-popup.php:733
+msgid "Padding (px)"
+msgstr "Preenchimento (px)"
+
+#: ocean-woo-popup.php:857
+msgid "Border Radius (px)"
+msgstr "Raio da borda (px)"
+
+#: ocean-woo-popup.php:899
+msgid "Popup Background"
+msgstr "Fundo do pop-up"
+
+#: ocean-woo-popup.php:924
+msgid "Overlay Color"
+msgstr "Cor da sobreposição"
+
+#: ocean-woo-popup.php:949
+msgid "Check Mark Background"
+msgstr "Fundo da marca de verificação"
+
+#: ocean-woo-popup.php:974
+msgid "Check Mark Color"
+msgstr "Cor da marca de verificação"
+
+#: ocean-woo-popup.php:999
+msgid "Title Color"
+msgstr "Cor do título"
+
+#: ocean-woo-popup.php:1024
+msgid "Content Color"
+msgstr "Cor do conteúdo"
+
+#: ocean-woo-popup.php:1048
+msgid "Continue Button Background"
+msgstr "Fundo do botão \"Continuar\""
+
+#: ocean-woo-popup.php:1073
+msgid "Continue Button Color"
+msgstr "Cor do botão \"Continuar\""
+
+#: ocean-woo-popup.php:1098
+msgid "Continue Button Border Color"
+msgstr "Cor da borda do botão \"Continuar\""
+
+#: ocean-woo-popup.php:1123
+msgid "Continue Button Background: Hover"
+msgstr "Fundo do botão \"Continuar\": Ao passar o mouse"
+
+#: ocean-woo-popup.php:1148
+msgid "Continue Button Color: Hover"
+msgstr "Cor do botão \"Continuar\": Ao passar o mouse"
+
+#: ocean-woo-popup.php:1173
+msgid "Continue Button Border Color: Hover"
+msgstr "Cor da borda do botão \"Continuar\": Ao passar o mouse"
+
+#: ocean-woo-popup.php:1197
+msgid "Cart Button Background"
+msgstr "Fundo do botão do carrinho"
+
+#: ocean-woo-popup.php:1222
+msgid "Cart Button Color"
+msgstr "Cor do botão do carrinho"
+
+#: ocean-woo-popup.php:1247
+msgid "Cart Button Border Color"
+msgstr "Cor da borda do botão do carrinho"
+
+#: ocean-woo-popup.php:1272
+msgid "Cart Button Background: Hover"
+msgstr "Fundo do botão do carrinho: Ao passar o mouse"
+
+#: ocean-woo-popup.php:1297
+msgid "Cart Button Color: Hover"
+msgstr "Cor do botão do carrinho: Ao passar o mouse"
+
+#: ocean-woo-popup.php:1322
+msgid "Cart Button Border Color: Hover"
+msgstr "Cor da borda do botão do carrinho: Ao passar o mouse"
+
+#: ocean-woo-popup.php:1346
+msgid "Bottom Text Color"
+msgstr "Cor do texto inferior"
+
+#: ocean-woo-popup.php:1363
+msgid "Default"
+msgstr "Padrão"
+
+#. Plugin Name of the plugin/theme
+msgid "Ocean Woo Popup"
+msgstr "Ocean Woo Popup"
+
+#. Plugin URI of the plugin/theme
+msgid "https://oceanwp.org/extension/ocean-woo-popup/"
+msgstr "https://oceanwp.org/extension/ocean-woo-popup/"
+
+#. Description of the plugin/theme
+msgid ""
+"A simple extension to display a popup when you click on the Add To Cart "
+"button of your products."
+msgstr ""
+"Uma extensão simples para exibir um pop-up quando você clica no botão "
+"\"Adicionar ao carrinho\" dos seus produtos."
+
+#. Author of the plugin/theme
+msgid "OceanWP"
+msgstr "OceanWP"
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"

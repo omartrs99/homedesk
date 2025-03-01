@@ -1,0 +1,347 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Side Panel\n"
+"POT-Creation-Date: 2024-10-12 01:10-0300\n"
+"PO-Revision-Date: 2024-10-12 01:12-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ocean-side-panel.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: includes/customizer-helpers.php:9
+msgid "Select"
+msgstr "Selecionar"
+
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr "É recomendável fazer backup antes da atualização do plugin."
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+#, php-format
+msgid ""
+"The latest update introduces significant improvements and changes to various "
+"plugin features.  For a smooth update process, it's crucial to %1$s backup "
+"your website beforehand  %2$s and test the update in a staging or test "
+"environment if available."
+msgstr ""
+"A atualização mais recente introduz melhorias e alterações significativas em "
+"vários recursos do plugin.  Para que o processo de atualização seja "
+"tranquilo, é fundamental %1$s fazer o backup do seu site com antecedência "
+"%2$s e testar a atualização em um ambiente de preparação ou de teste, se "
+"disponível."
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr "O que há de novo?"
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+#, php-format
+msgid ""
+"Revamped Customizer for enhanced experience! This update delivers a "
+"completely redesigned Customizer with a focus on improved user interface "
+"(UI), user experience (UX), and performance. Enjoy a faster and more "
+"intuitive way to personalize your website with a wider range of options at "
+"your fingertips. Learn %1$s how to properly update your websites and "
+"transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details "
+"%4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+"O personalizador foi reformulado para proporcionar uma experiência "
+"otimizada! Esta atualização oferece um personalizador totalmente reprojetado "
+"com foco na melhoria da interface do usuário (UI), da experiência do usuário "
+"(UX) e do desempenho. Desfrute de uma maneira mais rápida e intuitiva de "
+"personalizar seu site com uma variedade maior de opções na ponta dos seus "
+"dedos. Saiba %1$s como atualizar corretamente seus sites e fazer a transição "
+"para o OceanWP 4 %4$s, veja %2$s detalhes do novo personalizador do OceanWP "
+"4 %4$s ou consulte a %3$s documentação do personalizador do OceanWP 4 %4$s."
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr "Itens"
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr "Versão necessária"
+
+#. Author of the plugin/theme
+#: includes/update-message.php:84
+msgid "OceanWP"
+msgstr "OceanWP"
+
+#: includes/update-message.php:85
+msgid "4.0.0"
+msgstr "4.0.0"
+
+#: includes/update-message.php:88
+msgid "Ocean Extra"
+msgstr "Ocean Extra"
+
+#: includes/update-message.php:89
+msgid "2.4.0"
+msgstr "2.4.0"
+
+#: ocean-side-panel.php:176 ocean-side-panel.php:186
+msgid "Cheatin&#8217; huh?"
+msgstr "Trapaceando, hein?"
+
+#: ocean-side-panel.php:283
+msgid "Side Panel Sidebar"
+msgstr "Barra lateral do painel lateral"
+
+#: ocean-side-panel.php:285
+msgid "Widgets in this area are used in the side panel."
+msgstr "Os widgets nesta área são usados no painel lateral."
+
+#: ocean-side-panel.php:325 ocean-side-panel.php:1342
+msgid "Side Panel"
+msgstr "Painel lateral"
+
+#: ocean-side-panel.php:346
+msgid "Opening Button Position"
+msgstr "Posição do botão de abertura"
+
+#: ocean-side-panel.php:352
+msgid "Inside the main menu"
+msgstr "Dentro do menu principal"
+
+#: ocean-side-panel.php:353
+msgid "Beside the panel"
+msgstr "Ao lado do painel"
+
+#: ocean-side-panel.php:354
+msgid "Manual Position"
+msgstr "Posição manual"
+
+#: ocean-side-panel.php:377
+msgid "Icon Size"
+msgstr "Tamanho do ícone"
+
+#: ocean-side-panel.php:408
+msgid "Button: Background Color"
+msgstr "Botão: Cor de fundo"
+
+#: ocean-side-panel.php:434
+msgid "Button: Color"
+msgstr "Botão: Cor"
+
+#: ocean-side-panel.php:460
+msgid "Button: Border Color"
+msgstr "Botão: Cor da borda"
+
+#: ocean-side-panel.php:485 ocean-side-panel.php:643
+msgid "Opening Button: Color"
+msgstr "Botão de abertura: Cor"
+
+#: ocean-side-panel.php:510
+msgid "Opening Button: Hover Color"
+msgstr "Botão de abertura: Cor ao passar o mouse"
+
+#: ocean-side-panel.php:535
+msgid "Opening Button Icon"
+msgstr "Ícone do botão de abertura"
+
+#: ocean-side-panel.php:561
+msgid "Opening Button Text"
+msgstr "Texto do botão de abertura"
+
+#: ocean-side-panel.php:587
+msgid "Text Position"
+msgstr "Posição do texto"
+
+#: ocean-side-panel.php:593
+msgid "Before Icon"
+msgstr "Antes do ícone"
+
+#: ocean-side-panel.php:594
+msgid "After Icon"
+msgstr "Após o ícone"
+
+#: ocean-side-panel.php:616
+msgid "Custom Opening Button"
+msgstr "Botão de abertura personalizado"
+
+#: ocean-side-panel.php:668
+msgid "Breakpoints"
+msgstr "Pontos de interrupção"
+
+#: ocean-side-panel.php:669
+msgid "Choose the media query where you want to hide the side panel."
+msgstr "Escolha a consulta de mídia onde deseja ocultar o painel lateral."
+
+#: ocean-side-panel.php:675
+msgid "Never hide the side panel"
+msgstr "Nunca ocultar o painel lateral"
+
+#: ocean-side-panel.php:676
+msgid "From 1280px"
+msgstr "A partir de 1280px"
+
+#: ocean-side-panel.php:677
+msgid "From 1080px"
+msgstr "A partir de 1080px"
+
+#: ocean-side-panel.php:678
+msgid "From 959px"
+msgstr "A partir de 959px"
+
+#: ocean-side-panel.php:679
+msgid "From 767px"
+msgstr "A partir de 767px"
+
+#: ocean-side-panel.php:680
+msgid "From 480px"
+msgstr "A partir de 480px"
+
+#: ocean-side-panel.php:681
+msgid "From 320px"
+msgstr "A partir de 320px"
+
+#: ocean-side-panel.php:682
+msgid "Custom media query"
+msgstr "Consulta de mídia personalizada"
+
+#: ocean-side-panel.php:703
+msgid "Custom Media Query"
+msgstr "Consulta de mídia personalizada"
+
+#: ocean-side-panel.php:704
+msgid "Enter your custom media query where you want to hide the side panel."
+msgstr ""
+"Digite sua consulta de mídia personalizada onde deseja ocultar o painel "
+"lateral."
+
+#: ocean-side-panel.php:734
+msgid "Display Close Button"
+msgstr "Exibir botão \"Fechar\""
+
+#: ocean-side-panel.php:760
+msgid "Displace"
+msgstr "Deslocar"
+
+#: ocean-side-panel.php:785
+msgid "Add Overlay"
+msgstr "Adicionar sobreposição"
+
+#: ocean-side-panel.php:810
+msgid "Panel Position"
+msgstr "Posição do painel"
+
+#: ocean-side-panel.php:815
+msgid "Right"
+msgstr "Direita"
+
+#: ocean-side-panel.php:816
+msgid "Left"
+msgstr "Esquerda"
+
+#: ocean-side-panel.php:854
+msgid "Panel Width (px)"
+msgstr "Largura do painel (px)"
+
+#: ocean-side-panel.php:877 template/side-panel.php:19
+msgid "Close Panel"
+msgstr "Fechar painel"
+
+#: ocean-side-panel.php:888
+msgid "Close Button Text"
+msgstr "Texto do botão \"Fechar\""
+
+#: ocean-side-panel.php:913
+msgid "Select Template"
+msgstr "Selecionar modelo"
+
+#: ocean-side-panel.php:914
+msgid ""
+"Choose a template created in Theme Panel > My Library to replace the content."
+msgstr ""
+"Escolha um modelo criado no Painel de tema > Minha biblioteca para "
+"substituir o conteúdo."
+
+#: ocean-side-panel.php:1023
+msgid "Padding (px)"
+msgstr "Preenchimento (px)"
+
+#: ocean-side-panel.php:1065
+msgid "Overlay Color"
+msgstr "Cor da sobreposição"
+
+#: ocean-side-panel.php:1091
+msgid "Background Color"
+msgstr "Cor de fundo"
+
+#: ocean-side-panel.php:1116
+msgid "Close Button Background"
+msgstr "Fundo do botão \"Fechar\""
+
+#: ocean-side-panel.php:1141
+msgid "Close Button Background: Hover"
+msgstr "Fundo do botão \"Fechar\": Ao passar o mouse"
+
+#: ocean-side-panel.php:1166
+msgid "Close Button Color"
+msgstr "Cor do botão \"Fechar\""
+
+#: ocean-side-panel.php:1191
+msgid "Close Button Color: Hover"
+msgstr "Cor do botão \"Fechar\": Ao passar o mouse"
+
+#: ocean-side-panel.php:1216
+msgid "Text Color"
+msgstr "Cor do texto"
+
+#: ocean-side-panel.php:1241
+msgid "Headings Color"
+msgstr "Cor dos títulos"
+
+#: ocean-side-panel.php:1266
+msgid "Links Color"
+msgstr "Cor dos links"
+
+#: ocean-side-panel.php:1291
+msgid "Links Color: Hover"
+msgstr "Cor dos links: Ao passar o mouse"
+
+#: ocean-side-panel.php:1316
+msgid "Widgets List Borders Color"
+msgstr "Cor das bordas da lista de widgets"
+
+#: ocean-side-panel.php:1343
+msgid "Disable the side panel on this page/post."
+msgstr "Desative o painel lateral nesta página/post."
+
+#: ocean-side-panel.php:1345
+msgid "Default"
+msgstr "Padrão"
+
+#: ocean-side-panel.php:1346
+msgid "Disable"
+msgstr "Desativar"
+
+#. Plugin Name of the plugin/theme
+msgid "Ocean Side Panel"
+msgstr "Ocean Side Panel"
+
+#. Plugin URI of the plugin/theme
+msgid "https://oceanwp.org/extension/ocean-side-panel/"
+msgstr "https://oceanwp.org/extension/ocean-side-panel/"
+
+#. Description of the plugin/theme
+msgid "Add a responsive side panel with your preferred widgets inside."
+msgstr "Adicione um painel lateral responsivo com seus widgets preferidos."
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"

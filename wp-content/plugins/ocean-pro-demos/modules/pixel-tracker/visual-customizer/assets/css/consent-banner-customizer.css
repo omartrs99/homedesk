@@ -1,0 +1,133 @@
+.consent-banner-settings-flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.consent-banner-settings-flex-wrapper h2:not(.live-preview-heading) {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.consent-banner-settings-flex-wrapper h2:not(.live-preview-heading):after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 80%;
+    border-bottom: 1px solid grey;
+}
+
+.consent-banner-settings-flex-wrapper table.form-table tr {
+    padding: 0;
+    margin: 0;
+}
+
+.consent-banner-settings-flex-wrapper table.form-table td,
+.consent-banner-settings-flex-wrapper table.form-table th {
+    padding: 5px 10px;
+}
+
+.consent-banner-settings-flex-wrapper h2 {
+    margin-bottom: 10px;
+}
+
+.consent-banner-settings-flex-wrapper .consent-banner-preview-column h2 {
+    text-align: left;
+}
+
+.consent-banner-settings-column {
+    flex: 0 0 35%;
+    box-sizing: border-box;
+}
+
+.consent-banner-preview-column {
+    flex: 0 0 40%;
+    box-sizing: border-box;
+    margin-right: 15%;
+}
+
+#consent-banner-preview-wrapper {
+    width: max-content;
+    margin-top: 16px;
+    /* perspective: 1000px; */
+    text-align: center;
+    position: fixed;
+}
+
+.consent-banner {
+    border-radius: 0 4px 0 0;
+    padding: 30px;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 20px 150px rgba(0, 0, 0, .1);
+    padding: 30px 20px;
+    bottom: 0;
+    /* background-color: #2e3243; */
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    height: max-content;
+    text-align: left;
+    line-height: 23.8px;
+}
+
+.consent-banner p {
+    line-height: 23.8px;
+    font-weight: 400;
+}
+
+.consent-button-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.consent-button-wrapper button.button {
+    margin: 5px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 150px;
+    background-color: #135af4;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: .1em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.consent-button-wrapper button.deny {
+    background-color: #dc3545;
+}
+
+.consent-banner p {
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+@media screen and (max-width: 782px) {
+    .consent-banner-settings-flex-wrapper {
+        flex-direction: column;
+    }
+
+    .consent-banner-settings-column {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+    }
+
+    .consent-banner-preview-column {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        margin-right: 0%;
+    }
+
+    #consent-banner-preview-wrapper {
+        width: auto;
+        perspective: unset;
+        text-align: center;
+        position: relative;
+    }
+}
