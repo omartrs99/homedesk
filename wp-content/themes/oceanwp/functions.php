@@ -461,6 +461,12 @@ final class OCEANWP_Theme_Class {
 		// Enqueue Main style.
 		wp_enqueue_style( 'oceanwp-style', $dir . 'style.min.css', false, $theme_version );
 
+		// Enqueue Custom style.
+		wp_enqueue_style( 'oceanwp-custom-style', $dir . 'custom.css', false, $theme_version );
+
+		// Enqueue Custom style.
+		wp_enqueue_style( 'oceanwp-bootstrap-style', $dir . 'bootstrap.css', false, $theme_version );
+
 		// Blog Header styles.
 		if ( 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' )
 			&& is_single() && 'post' === get_post_type() ) {
@@ -555,6 +561,15 @@ final class OCEANWP_Theme_Class {
 		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.min.js', $main_script_dependencies, $theme_version, true );
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
 		array_push( $main_script_dependencies, 'oceanwp-main' );
+		
+		// Enqueue Swiper JS
+		wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+		wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
+		
+		
+		// Custom script
+		wp_enqueue_script( 'oceanwp-custom', $dir . 'custom.js', $main_script_dependencies, $theme_version, true );
+		
 
 		// Blog Masonry script.
 		if ( 'masonry' === oceanwp_blog_grid_style() ) {
@@ -656,6 +671,8 @@ final class OCEANWP_Theme_Class {
 
 		// Register scripts for old addons.
 		wp_register_script( 'nicescroll', $dir . 'vendors/support-old-oceanwp-addons/jquery.nicescroll.min.js', array( 'jquery' ), $theme_version, true );
+
+		
 	}
 
 	/**

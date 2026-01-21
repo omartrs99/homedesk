@@ -1,0 +1,204 @@
+.text-with-white-shadow{
+    text-shadow: 0px 0px 7px #ffffff;
+}
+.text-with-black-shadow{
+    text-shadow: 0px 0px 2px #000000;
+}
+.ogb-testimonial-details a {
+    text-decoration: none !important;
+}
+.ogb-testimonial-content{
+    min-height: 100px;
+}
+.ogb-testimonial-symbol-inner svg{
+    width: 20px;
+}
+.ogb-testimonial-wrapper .ogb-testimonial-symbol{
+    margin-bottom: 0px;
+}
+.ogb-testimonial-wrapper .ogb-testimonial-content-inner {
+    padding: 0 1.5em;
+}
+body:not(.home) #main #content-wrap {
+    padding-top: 70px !important;
+}
+.video-container {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+#custom-img-popup-img {
+  max-width: 500px;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    #custom-img-popup-img {
+        max-width: 100% !important;
+    }
+    
+    /* Réduction de la taille des boutons en mobile */
+    #custom-img-popup-bg > button {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 12px !important;
+    }
+}
+
+.gal1 img, .gal2 img {
+  animation: fadeInZoom 1.5s ease-in-out;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+  
+
+/*swiper css*/
+/* Swiper Cards Effect Styles */
+.mySwiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mySwiper .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+    overflow: hidden;
+    /*box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);*/
+    transition: all 0.3s ease;
+}
+
+.mySwiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation Buttons */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.mySwiper .swiper-button-next:after,
+.mySwiper .swiper-button-prev:after {
+    font-size: 20px;
+}
+
+.mySwiper .swiper-button-next:hover,
+.mySwiper .swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+/* Pagination */
+.mySwiper .swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+}
+
+.mySwiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #000;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #000;
+    transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .mySwiper {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .mySwiper .swiper-slide {
+        width: 250px;
+        height: 250px;
+    }
+
+    .mySwiper .swiper-button-next,
+    .mySwiper .swiper-button-prev {
+        width: 35px;
+        height: 35px;
+    }
+
+    .mySwiper .swiper-button-next:after,
+    .mySwiper .swiper-button-prev:after {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .mySwiper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 70%;
+    }
+
+}
+@media (max-width: 480px) {
+    .mySwiper .swiper-slide {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mySwiper .swiper-button-next,
+    .mySwiper .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+    }
+
+    .mySwiper .swiper-button-next:after,
+    .mySwiper .swiper-button-prev:after {
+        font-size: 16px;
+    }
+}
+
+.wpforms-submit-btn{
+    background: #318b82 !important;
+}
+.wpforms-submit-btn:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, .wp-block-button__link:hover{
+   background: #22766c !important;
+}
+.wp-block-button a.wp-block-button__link.has-background:hover, .is-style-outline--2 a:hover, .is-style-outline--1 a:hover{
+    color:white !important;
+}
