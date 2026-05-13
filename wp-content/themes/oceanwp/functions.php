@@ -27,6 +27,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'OCEANWP_THEME_DIR', get_template_directory() );
 define( 'OCEANWP_THEME_URI', get_template_directory_uri() );
 
+
+
+
 /**
  * OceanWP theme class
  */
@@ -56,6 +59,8 @@ final class OCEANWP_Theme_Class {
 		// register sidebar widget areas.
 		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'register_sidebars' ) );
 
+		
+
 		// Registers theme_mod strings into Polylang.
 		if ( class_exists( 'Polylang' ) ) {
 			add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'polylang_register_string' ) );
@@ -69,6 +74,8 @@ final class OCEANWP_Theme_Class {
 
 			// Outputs custom CSS for the admin.
 			add_action( 'admin_head', array( 'OCEANWP_Theme_Class', 'admin_inline_css' ) );
+
+			add_filter('use_block_editor_for_post_type', 'enable_gutenberg_for_products', 10, 2);
 
 			/** Non Admin actions */
 		} else {
@@ -848,6 +855,8 @@ final class OCEANWP_Theme_Class {
 
 	}
 
+	
+
 	/**
 	 * All theme functions hook into the oceanwp_head_css filter for this function.
 	 *
@@ -1175,4 +1184,6 @@ if ( ! function_exists( 'owp_fs' ) ) {
 // endregion
 
 new OCEANWP_Theme_Class();
+
+require_once get_template_directory() . '/custom-functions.php';
 

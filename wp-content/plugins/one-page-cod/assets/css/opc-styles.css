@@ -1,0 +1,399 @@
+/* 
+ * One Page COD - Styles
+ * Version: 1.0.0
+ */
+
+/* Container principal */
+.opc-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.opc-form-title {
+    margin: 0 0 25px 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 15px;
+}
+
+/* Formulaire */
+.opc-order-form {
+    margin: 0;
+}
+
+.opc-form-row {
+    margin-bottom: 20px;
+}
+
+.opc-form-row-2cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    .opc-form-row-2cols {
+        grid-template-columns: 1fr;
+    }
+    /* Garder quantité et prix sur la même ligne en mobile */
+    .opc-form-row-2cols.opc-quantity-price-row {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px;
+    }
+}
+
+.opc-form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.opc-form-field label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.opc-form-field label .required {
+    color: #dc3232;
+    font-weight: bold;
+}
+
+.opc-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.opc-input:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 1px #0073aa;
+}
+
+.opc-input::placeholder {
+    color: #999;
+}
+
+textarea.opc-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Section informations client */
+.opc-customer-info {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.opc-customer-info h4 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Section variations */
+.opc-variations-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.opc-variation-field {
+    margin-bottom: 15px;
+}
+
+.opc-variation-field:last-child {
+    margin-bottom: 0;
+}
+
+.opc-variation-select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Bouton de soumission */
+.opc-submit-row {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.opc-submit-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 30px;
+    background: #0073aa;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.opc-submit-btn:hover {
+    background: #005a87;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 115, 170, 0.3);
+}
+
+.opc-submit-btn:active {
+    transform: translateY(0);
+}
+
+.opc-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.opc-submit-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.opc-submit-btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: opc-spin 0.8s linear infinite;
+}
+
+@keyframes opc-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Messages */
+.opc-form-messages {
+    margin-top: 20px;
+}
+
+.opc-message {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.opc-message-success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.opc-message-error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.opc-message-info {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}
+
+/* Erreurs de validation */
+.opc-input.error {
+    border-color: #dc3232;
+}
+
+.opc-field-error {
+    color: #dc3232;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Messages d'erreur */
+.opc-error {
+    padding: 15px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    color: #721c24;
+    margin: 20px 0;
+}
+
+/* Shortcode form */
+.opc-shortcode-form {
+    margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .opc-form-container {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    .opc-form-title {
+        font-size: 20px;
+    }
+    
+    .opc-customer-info h4 {
+        font-size: 16px;
+    }
+    
+    .opc-submit-btn {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+}
+
+/* Loading overlay */
+.opc-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.opc-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: opc-spin 1s linear infinite;
+}
+
+/* Personnalisation du formulaire */
+.opc-form-container.custom-style {
+    /* Classes personnalisables */
+}
+
+/* Prix de la variation sélectionnée */
+.opc-variation-price {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f1;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Stock status */
+.opc-stock-status {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.opc-stock-status.in-stock {
+    color: #46b450;
+}
+
+.opc-stock-status.out-of-stock {
+    color: #dc3232;
+}
+
+/* Accessibilité */
+.opc-form-field label:focus-within {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+}
+
+/* Animation d'apparition */
+@keyframes opc-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.opc-form-container {
+    animation: opc-fadeIn 0.5s ease-out;
+}
+
+/* Print styles */
+@media print {
+    .opc-form-container {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .opc-submit-btn {
+        display: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .opc-input {
+        border: 2px solid #000;
+    }
+    
+    .opc-submit-btn {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Prix du produit */
+.opc-product-price {
+    
+}
+
+.opc-product-price del {
+    color: #999;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.opc-product-price ins {
+    text-decoration: none;
+    color: #46b450;
+}
+.opc-product-price .amount{
+    font-size: 2rem;
+    font-weight: 500;
+}

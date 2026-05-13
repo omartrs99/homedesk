@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "wordpress": {
+      "command": "npx",
+      "args": ["-y", "@automattic/wordpress-mcp"],
+      "env": {
+        "WORDPRESS_SITE_URL": "http://localhost/homedesk",
+        "WORDPRESS_USERNAME": "homedesk_admin",
+        "WORDPRESS_APP_PASSWORD": "B1Rs xuxp e0mp 6UGU jfTi 4r4T"
+      }
+    }
+  }
+}

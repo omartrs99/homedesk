@@ -1,0 +1,179 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+// Permet les mots de passe d'application en HTTP (environnement local uniquement)
+add_filter( 'wp_is_application_passwords_available', '__return_true' );
+
+
+// =============================================================================
+// GUTENBERG — PRODUITS WOOCOMMERCE
+// =============================================================================
+
+// Retirer les filtres WooCommerce qui bloquent Gutenberg sur les produits
+add_action( 'init', function () {
+	remove_filter( 'use_block_editor_for_post_type', [ 'WC_Post_Types', 'gutenberg_can_edit_post_type' ], 10 );
+	remove_filter( 'gutenberg_can_edit_post_type',   [ 'WC_Post_Types', 'gutenberg_can_edit_post_type' ], 10 );
+}, 20 );
+
+// Callback du filtre déjà hookée dans functions.php:78
+function enable_gutenberg_for_products( $can_edit, $post_type ) {
+	return ( 'product' === $post_type ) ? true : $can_edit;
+}
+
+// Sécurité : hook supplémentaire à priorité haute pour garantir l'override
+add_filter( 'use_block_editor_for_post_type', 'enable_gutenberg_for_products', 100, 2 );
+
+// Réactiver le support editor sur le CPT product (WooCommerce peut le retirer)
+add_action( 'init', function () {
+	add_post_type_support( 'product', 'editor' );
+}, 25 );
+
+
+// =============================================================================
+// CHAMP PERSONNALISÉ — HOOK PRODUIT
+// =============================================================================
+
+// Enregistrer le meta field _hook_produit (show_in_rest requis pour Gutenberg)
+add_action( 'init', function () {
+	register_post_meta( 'product', '_hook_produit', [
+		'show_in_rest'  => true,
+		'single'        => true,
+		'type'          => 'string',
+		'default'       => '',
+		'auth_callback' => function () {
+			return current_user_can( 'edit_posts' );
+		},
+	] );
+} );
+
+// Meta box — container div pour le block editor React
+add_action( 'add_meta_boxes', function () {
+	add_meta_box(
+		'hook-produit',
+		'Hook Produit',
+		function () {
+			echo '<div id="hook-produit-editor-container" style="min-height:250px;"></div>';
+		},
+		'product',
+		'normal',
+		'high'
+	);
+} );
+
+// Enqueue JS du block editor uniquement sur la page d'édition produit
+add_action( 'enqueue_block_editor_assets', function () {
+	global $post;
+	if ( ! $post || 'product' !== $post->post_type ) {
+		return;
+	}
+	wp_enqueue_script(
+		'homedesk-hook-produit',
+		get_template_directory_uri() . '/assets/js/hook-produit-editor.js',
+		[ 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-block-editor',
+		  'wp-blocks', 'wp-components', 'wp-data', 'wp-dom-ready' ],
+		'1.0.0',
+		true
+	);
+} );
+
+
+// =============================================================================
+// FRONTEND — AFFICHAGE DU HOOK PRODUIT
+// =============================================================================
+
+// Afficher _hook_produit avant la description courte  sur la page produit
+add_action( 'woocommerce_single_product_summary', function () {
+	global $post;
+	$content = get_post_meta( $post->ID, '_hook_produit', true );
+	if ( ! $content ) {
+		return;
+	}
+	echo '<div class="hook-produit">';
+	echo apply_filters( 'the_content', $content );
+	echo '</div>';
+}, 1 );
+
+
+// =============================================================================
+// TEMPLATE PRODUIT EMPILÉ (stacked)
+// =============================================================================
+
+// Enregistrer la meta _product_template
+add_action( 'init', function () {
+	register_post_meta( 'product', '_product_template', [
+		'type'          => 'string',
+		'single'        => true,
+		'show_in_rest'  => false,
+		'default'       => '',
+		'auth_callback' => function () {
+			return current_user_can( 'edit_posts' );
+		},
+	] );
+} );
+
+// Meta box — sélecteur de mise en page dans l'éditeur produit
+add_action( 'add_meta_boxes', function () {
+	add_meta_box(
+		'product_template_selector',
+		'Mise en page du produit',
+		function ( $post ) {
+			$val = get_post_meta( $post->ID, '_product_template', true );
+			wp_nonce_field( 'save_product_template', '_pt_nonce' );
+			?>
+			<select name="product_template" style="width:100%">
+				<option value=""        <?php selected( $val, '' );        ?>>Défaut (galerie + summary côte à côte)</option>
+				<option value="stacked" <?php selected( $val, 'stacked' ); ?>>Empilé (hook_produit → galerie → description → tabs)</option>
+			</select>
+			<?php
+		},
+		'product', 'side', 'high'
+	);
+} );
+
+// Sauvegarder la meta _product_template
+add_action( 'save_post_product', function ( $post_id ) {
+	if ( ! isset( $_POST['_pt_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_pt_nonce'] ) ), 'save_product_template' ) ) {
+		return;
+	}
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+	$val = isset( $_POST['product_template'] ) ? sanitize_key( $_POST['product_template'] ) : '';
+	if ( $val ) {
+		update_post_meta( $post_id, '_product_template', $val );
+	} else {
+		delete_post_meta( $post_id, '_product_template' );
+	}
+} );
+
+// Charger le template empilé pour les produits qui l'ont sélectionné
+add_filter( 'wc_get_template_part', function ( $template, $slug, $name ) {
+	if ( 'content' === $slug && 'single-product' === $name && is_product() ) {
+		$post_id = get_the_ID();
+		if ( $post_id && 'stacked' === get_post_meta( $post_id, '_product_template', true ) ) {
+			$custom = get_template_directory() . '/woocommerce/content-single-product-stacked.php';
+			if ( file_exists( $custom ) ) {
+				return $custom;
+			}
+		}
+	}
+	return $template;
+}, 10, 3 );
+
+
+// Badge de réduction dynamique sur les pages produit
+add_filter( 'woocommerce_get_price_html', function( $price_html, $product ) {
+    if ( ! is_product() || ! $product->is_on_sale() ) {
+        return $price_html;
+    }
+    $regular = (float) $product->get_regular_price();
+    $sale    = (float) $product->get_sale_price();
+    if ( $regular <= 0 || $sale <= 0 ) {
+        return $price_html;
+    }
+    $pct = round( ( 1 - $sale / $regular ) * 100 );
+    return $price_html . '<span class="opc-discount-badge">-' . $pct . '%</span>';
+}, 10, 2 );

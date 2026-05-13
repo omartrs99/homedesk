@@ -1,0 +1,178 @@
+# Copyright (C) 2024 One Page COD
+# This file is distributed under the same license as the One Page COD package.
+msgid ""
+msgstr ""
+"Project-Id-Version: One Page COD 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/one-page-cod\n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: one-page-cod.php
+msgid "One Page COD nécessite WooCommerce pour fonctionner. Veuillez installer et activer WooCommerce."
+msgstr ""
+
+#: one-page-cod.php
+msgid "Traitement en cours..."
+msgstr ""
+
+#: one-page-cod.php
+msgid "Une erreur est survenue. Veuillez réessayer."
+msgstr ""
+
+#: one-page-cod.php
+msgid "Commande créée avec succès !"
+msgstr ""
+
+#: one-page-cod.php
+msgid "Ce champ est requis."
+msgstr ""
+
+#: one-page-cod.php
+msgid "Adresse email invalide."
+msgstr ""
+
+#: one-page-cod.php
+msgid "Numéro de téléphone invalide."
+msgstr ""
+
+#: one-page-cod.php
+msgid "Commander maintenant"
+msgstr ""
+
+#: one-page-cod.php
+msgid "Votre commande a été enregistrée avec succès !"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Commandez directement"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Quantité"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Informations de livraison"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Nom complet"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Prénom et Nom"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Téléphone"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Email"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Adresse"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Rue, numéro, etc."
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Ville"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Code postal"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Notes (optionnel)"
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Instructions de livraison, commentaires..."
+msgstr ""
+
+#: includes/class-opc-form.php
+msgid "Choisir %s"
+msgstr ""
+
+#: includes/class-opc-order.php
+msgid "Paiement à la livraison"
+msgstr ""
+
+#: includes/class-opc-order.php
+msgid "Commande créée via One Page COD"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Paramètres généraux"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Auto-détection du produit"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Support des produits variables"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Position du formulaire"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Après le bouton \"Ajouter au panier\""
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Avant le bouton \"Ajouter au panier\""
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Shortcode uniquement (désactiver l'affichage automatique)"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Paramètres de commande"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Méthode de paiement"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Statut de commande par défaut"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Notifications email"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Paramètres du formulaire"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Texte du bouton"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Message de succès"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Redirection après commande"
+msgstr ""
+
+#: includes/class-opc-settings.php
+msgid "Champs requis"
+msgstr ""

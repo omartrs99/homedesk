@@ -1,0 +1,13 @@
+{
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "Read(wp-content/themes/oceanwp/**)",
+      "Edit(wp-content/themes/oceanwp/**)",
+      "Read(wp-content/plugins/one-page-cod/**)",
+      "Edit(wp-content/plugins/one-page-cod/**)",
+      "Read(wp-content/plugins/onepage-cod-secure/**)",
+      "Edit(wp-content/plugins/onepage-cod-secure/**)"
+    ]
+  }
+}

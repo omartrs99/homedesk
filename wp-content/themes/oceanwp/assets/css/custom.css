@@ -202,3 +202,417 @@ body:not(.home) #main #content-wrap {
 .wp-block-button a.wp-block-button__link.has-background:hover, .is-style-outline--2 a:hover, .is-style-outline--1 a:hover{
     color:white !important;
 }
+.product_meta .posted_in, form.cart{
+    display: none;
+}
+/*.single-product .summary.entry-summary .price, .single-product .summary.entry-summary .single-post-title{
+    display: none;
+}*/
+
+/* =========================================================
+   Template produit empilé (stacked)
+   ========================================================= */
+
+/* Ligne 1 : hook_produit + galerie côte à côte */
+.product-stacked-layout .product-row-1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+}
+
+.product-stacked-layout .product-row-1 .hook-produit-stacked,
+.product-stacked-layout .product-row-1 .product-gallery-stacked {
+    flex: 1 1 45%;
+    min-width: 280px;
+}
+
+.product-stacked-layout .product-row-1 .product-gallery-stacked .woocommerce-product-gallery {
+    width: 100%;
+    max-width: 100%;
+    float: none;
+}
+
+/* Bandeau features — pleine largeur d'écran */
+.product-stacked-layout .product-features-banner {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background-color: #318b82;
+    padding: 14px 20px;
+    box-sizing: border-box;
+}
+
+.product-stacked-layout .product-features-banner .product-features-banner__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-stacked-layout .product-features-banner .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.product-stacked-layout .product-features-banner .feature-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* Bloc transformations — pleine largeur d'écran */
+.product-stacked-layout .product-transformations-block {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background-color: #f4f4f0;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.product-stacked-layout .product-transformations-block .product-transformations-block__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.product-stacked-layout .product-transformations-block .transformations-subtitle {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #318b82;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.product-stacked-layout .product-transformations-block .transformations-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #111;
+    margin: 0 0 40px;
+    line-height: 1.1;
+}
+
+.product-stacked-layout .product-transformations-block .transformations-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-stacked-layout .product-transformations-block .transformation-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px 20px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+}
+
+.product-stacked-layout .product-transformations-block .transformation-card__icon {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #318b82;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    background: #E1F5EE;
+}
+
+.product-stacked-layout .product-transformations-block .transformation-card__icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.product-stacked-layout .product-transformations-block .transformation-card__title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #111;
+    margin: 0 0 10px;
+}
+
+.product-stacked-layout .product-transformations-block .transformation-card__desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.55;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .product-stacked-layout .product-transformations-block .transformations-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-stacked-layout .product-transformations-block .transformations-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ligne 2 : short description — pleine largeur */
+.product-stacked-layout .product-short-desc-stacked {
+    width: 100%;
+    clear: both;
+}
+
+/* Ligne 3 : tabs — pleine largeur */
+.product-stacked-layout .woocommerce-tabs {
+    width: 100%;
+    clear: both;
+}
+
+
+/* ===== OPC Hero — Produit 1482 ===== */
+
+/* Fond sombre — toute la colonne summary */
+body.postid-1482 .entry-summary,
+body.postid-1482 .entry-summary-wrap {
+    padding: 0 !important;
+}
+
+/* --- Bloc hero (hook_produit) --- */
+.opc-hero {
+    padding: 36px 24px 28px;
+}
+
+.opc-hero__subtitle {
+    font-size:1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #318b82;
+    margin: 10px 0px;
+    font-weight: 600;
+}
+
+.opc-hero__title {
+    font-size: clamp(4.4rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.0;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 20px;
+}
+
+.opc-hero__title--accent {
+    color: #318b82;
+    display: block;
+}
+
+.opc-hero__desc {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    color: #bbb;
+    margin: 0 0 24px;
+}
+
+.opc-hero__social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px 0px;
+}
+
+.opc-hero__avatars {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.opc-hero__avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #fff;
+    margin-left: -8px;
+}
+
+.opc-hero__avatars .opc-hero__avatar:first-child {
+    margin-left: 0;
+}
+
+.opc-hero__ratings {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #bbb;
+}
+
+.opc-hero__ratings strong {
+    display: block;
+    color: #000;
+    font-size: 0.88rem;
+}
+
+/* --- Prix WooCommerce dynamique --- */
+body.postid-1482 .entry-summary .price {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px 24px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    border: none !important;
+    border-top: 1px solid rgba(255,255,255,0.08) !important;
+    box-shadow: none !important;
+}
+
+/* Sans promo : prix seul */
+body.postid-1482 .entry-summary .price .woocommerce-Price-amount {
+    color: #000000 !important;
+    font-size: 1.9rem;
+    font-weight: 900;
+}
+
+/* Avec promo : prix barré */
+body.postid-1482 .entry-summary .price del {
+    opacity: 1;
+}
+body.postid-1482 .entry-summary .price del .woocommerce-Price-amount {
+    color: #666 !important;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+/* Avec promo : prix soldé */
+body.postid-1482 .entry-summary .price ins {
+    text-decoration: none;
+    background: transparent !important;
+}
+body.postid-1482 .entry-summary .price ins .woocommerce-Price-amount {
+    color: #000000 !important;
+    font-size: 1.9rem;
+    font-weight: 900;
+}
+
+/* Badge -XX% injecté par PHP */
+body.postid-1482 .entry-summary .price .opc-discount-badge {
+    display: inline-block;
+    background: #e74c3c !important;
+    color: #000000 !important;
+    border-radius: 5px;
+    padding: 3px 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    align-self: center;
+}
+
+/* --- Formulaire OPC — écraser le CSS du plugin --- */
+body.postid-1482 .opc-form-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 24px 8px !important;
+    margin: 0 !important;
+    animation: none !important;
+}
+
+body.postid-1482 .opc-form-title {
+    color: #ccc !important;
+    border-bottom-color: rgba(255,255,255,0.1) !important;
+}
+
+body.postid-1482 .opc-customer-info {
+    border-top-color: rgba(255,255,255,0.08) !important;
+}
+
+body.postid-1482 .opc-customer-info h4 {
+    color: #ccc !important;
+}
+
+body.postid-1482 .opc-form-field label {
+    color: #ccc !important;
+}
+
+body.postid-1482 .opc-input {
+    background: #1a1a1a !important;
+    color: #000000 !important;
+    border: 1px solid #333 !important;
+}
+
+body.postid-1482 .opc-input::placeholder {
+    color: #555 !important;
+}
+
+body.postid-1482 .opc-input:focus {
+    border-color: #00c896 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+body.postid-1482 .opc-submit-row {
+    margin-top: 16px;
+}
+
+/* Bouton CTA vert */
+body.postid-1482 .opc-submit-btn {
+    display: block !important;
+    width: 100% !important;
+    padding: 18px 24px !important;
+    background: #318b82 !important;
+    color: #fff !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: background 0.2s !important;
+}
+
+body.postid-1482 .opc-submit-btn:hover {
+    background: #00b386 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+body.postid-1482 .opc-submit-btn::before {
+    content: "✓  ";
+}
+
+/* Ligne de confiance */
+body.postid-1482 .opc-submit-row::after {
+    content: "🔒  Paiement à la livraison · Retour 7 jours offert";
+    display: block;
+    text-align: center;
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Variations sur fond sombre */
+body.postid-1482 .opc-variations-section {
+    background: #1a1a1a !important;
+    border-color: #333 !important;
+}
+
+body.postid-1482 .opc-variation-select {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border-color: #333 !important;
+}
+.woocommerce.content-full-width div.product div.images{
+    width: 100% !important;
+}
+
+.woocommerce span.onsale{
+    left: 24px !important;
+}

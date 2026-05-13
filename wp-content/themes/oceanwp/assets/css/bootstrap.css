@@ -83,3 +83,12 @@
         width: 75% !important;
     }
 }
+.w-sm-25{
+    width: 25%;
+}
+.d-flex{
+    display: flex;
+}
+.align-items-center{
+        align-items: center;
+}
