@@ -84,19 +84,14 @@ class OPC_Order {
                 'phone' => $customer_data['phone'],
                 'address_1' => $customer_data['address'],
                 'address_2' => '',
-                'city' => $customer_data['city'],
-                'postcode' => $customer_data['postcode'],
+                'city' => '',
+                'postcode' => '',
                 'country' => $this->get_default_country(),
                 'state' => '',
             );
             
             $order->set_address($address_data, 'billing');
             $order->set_address($address_data, 'shipping');
-            
-            // Ajouter les notes de commande
-            if (!empty($customer_data['notes'])) {
-                $order->set_customer_note($customer_data['notes']);
-            }
             
             // Définir le mode de paiement
             $settings = get_option('opc_settings', array());

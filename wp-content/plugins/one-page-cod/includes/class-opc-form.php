@@ -129,7 +129,7 @@ class OPC_Form {
                                    name="phone" 
                                    required 
                                    class="opc-input" 
-                                   placeholder="<?php esc_attr_e('06 12 34 56 78', 'one-page-cod'); ?>">
+                                   placeholder="<?php esc_attr_e('06 12 34 56 79', 'one-page-cod'); ?>">
                         </div>
                         
                         <div class="opc-form-field">
@@ -146,47 +146,15 @@ class OPC_Form {
                     <div class="opc-form-row">
                         <div class="opc-form-field">
                             <label for="opc_address"><?php _e('Adresse', 'one-page-cod'); ?> <span class="required">*</span></label>
-                            <input type="text" 
-                                   id="opc_address" 
-                                   name="address" 
-                                   required 
-                                   class="opc-input" 
+                            <input type="text"
+                                   id="opc_address"
+                                   name="address"
+                                   required
+                                   class="opc-input"
                                    placeholder="<?php esc_attr_e('Rue, numéro, etc.', 'one-page-cod'); ?>">
                         </div>
                     </div>
-                    
-                    <div class="opc-form-row opc-form-row-2cols opc-quantity-price-row">
-                        <div class="opc-form-field">
-                            <label for="opc_city"><?php _e('Ville', 'one-page-cod'); ?> <span class="required">*</span></label>
-                            <input type="text" 
-                                   id="opc_city" 
-                                   name="city" 
-                                   required 
-                                   class="opc-input" 
-                                   placeholder="<?php esc_attr_e('Ville', 'one-page-cod'); ?>">
-                        </div>
-                        
-                        <div class="opc-form-field">
-                            <label for="opc_postcode"><?php _e('Code postal', 'one-page-cod'); ?> <?php echo in_array('postcode', $required_fields) ? '<span class="required">*</span>' : ''; ?></label>
-                            <input type="text" 
-                                   id="opc_postcode" 
-                                   name="postcode" 
-                                   <?php echo in_array('postcode', $required_fields) ? 'required' : ''; ?> 
-                                   class="opc-input" 
-                                   placeholder="<?php esc_attr_e('75001', 'one-page-cod'); ?>">
-                        </div>
-                    </div>
-                    
-                    <div class="opc-form-row">
-                        <div class="opc-form-field">
-                            <label for="opc_notes"><?php _e('Notes (optionnel)', 'one-page-cod'); ?></label>
-                            <textarea id="opc_notes" 
-                                      name="notes" 
-                                      rows="3" 
-                                      class="opc-input" 
-                                      placeholder="<?php esc_attr_e('Instructions de livraison, commentaires...', 'one-page-cod'); ?>"></textarea>
-                        </div>
-                    </div>
+
                 </div>
                 
                 <div class="opc-form-row opc-submit-row">
@@ -240,7 +208,9 @@ class OPC_Form {
         check_ajax_referer('opc_nonce', 'nonce');
         
         $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
-        $attributes = isset($_POST['attributes']) ? $_POST['attributes'] : array();
+        $attributes = isset($_POST['attributes']) && is_array($_POST['attributes'])
+            ? array_map('sanitize_text_field', $_POST['attributes'])
+            : array();
         
         if (!$product_id) {
             wp_send_json_error(array('message' => __('ID produit invalide', 'one-page-cod')));
@@ -272,11 +242,21 @@ class OPC_Form {
     
     public function handle_ajax_submit() {
         check_ajax_referer('opc_nonce', 'nonce');
-        
+
+        // Rate limiting par IP : 5 tentatives max par minute
+        $ip_key   = 'opc_rate_' . md5($_SERVER['REMOTE_ADDR'] ?? '');
+        $attempts = (int) get_transient($ip_key);
+        if ($attempts >= 5) {
+            wp_send_json_error(['message' => __('Trop de tentatives. Veuillez patienter quelques instants.', 'one-page-cod')]);
+            return;
+        }
+        set_transient($ip_key, $attempts + 1, 60);
+
         // Récupérer et valider les données du formulaire
         $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
         $product_type = isset($_POST['product_type']) ? sanitize_text_field($_POST['product_type']) : '';
         $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 1;
+        $quantity = max(1, min($quantity, apply_filters('opc_max_quantity', 20)));
         
         // Données client
         $customer_data = array(
@@ -285,8 +265,8 @@ class OPC_Form {
             'email' => isset($_POST['email']) ? sanitize_email($_POST['email']) : '',
             'address' => isset($_POST['address']) ? sanitize_text_field($_POST['address']) : '',
             'city' => isset($_POST['city']) ? sanitize_text_field($_POST['city']) : '',
-            'postcode' => isset($_POST['postcode']) ? sanitize_text_field($_POST['postcode']) : '',
-            'notes' => isset($_POST['notes']) ? sanitize_textarea_field($_POST['notes']) : '',
+            'postcode' => '',
+            'notes' => '',
         );
         
         // Variation pour produits variables
@@ -295,7 +275,9 @@ class OPC_Form {
         
         if ($product_type === 'variable') {
             $variation_id = isset($_POST['variation_id']) ? intval($_POST['variation_id']) : 0;
-            $variation_data = isset($_POST['variation']) ? $_POST['variation'] : array();
+            $variation_data = isset($_POST['variation']) && is_array($_POST['variation'])
+                ? array_map('sanitize_text_field', $_POST['variation'])
+                : array();
         }
         
         // Validation
@@ -354,10 +336,6 @@ class OPC_Form {
         
         if (empty($customer_data['address'])) {
             $errors[] = __('L\'adresse est requise.', 'one-page-cod');
-        }
-        
-        if (empty($customer_data['city'])) {
-            $errors[] = __('La ville est requise.', 'one-page-cod');
         }
         
         // Valider l'email si fourni

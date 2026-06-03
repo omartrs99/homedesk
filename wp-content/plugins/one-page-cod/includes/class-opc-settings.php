@@ -198,8 +198,6 @@ class OPC_Settings {
                     'phone' => __('Téléphone (toujours requis)', 'one-page-cod'),
                     'email' => __('Email', 'one-page-cod'),
                     'address' => __('Adresse (toujours requis)', 'one-page-cod'),
-                    'city' => __('Ville (toujours requis)', 'one-page-cod'),
-                    'postcode' => __('Code postal', 'one-page-cod'),
                 )
             )
         );
@@ -310,7 +308,7 @@ class OPC_Settings {
         
         foreach ($args['options'] as $option_value => $option_label) {
             $checked = in_array($option_value, $values);
-            $disabled = in_array($option_value, array('name', 'phone', 'address', 'city'));
+            $disabled = in_array($option_value, array('name', 'phone', 'address'));
             ?>
             <label style="display: block; margin-bottom: 5px;">
                 <input type="checkbox" 
@@ -373,7 +371,7 @@ class OPC_Settings {
         
         // Required fields (toujours inclure les champs essentiels)
         $required_fields = isset($input['required_fields']) ? $input['required_fields'] : array();
-        $essential_fields = array('name', 'phone', 'address', 'city');
+        $essential_fields = array('name', 'phone', 'address');
         $sanitized['required_fields'] = array_unique(array_merge($essential_fields, $required_fields));
         
         return $sanitized;

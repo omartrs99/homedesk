@@ -1,4 +1,6 @@
 <?php
+define( 'WP_CACHE', true );
+
 /**
  * The base configuration for WordPress
  *
@@ -85,9 +87,20 @@ $table_prefix = 'wp_db54_home_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 
 /* Add any custom values between this line and the "stop editing" line. */
+
+// --- Sécurité ---
+// Empêche l'édition de thèmes/plugins via l'interface d'administration
+define( 'DISALLOW_FILE_EDIT', true );
+
+// Journalise les erreurs PHP dans wp-content/debug.log sans les afficher aux visiteurs
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', false );
+
+// À activer en production uniquement (nécessite un certificat SSL)
+// define( 'FORCE_SSL_ADMIN', true );
 
 
 

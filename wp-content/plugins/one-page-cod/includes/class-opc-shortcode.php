@@ -137,7 +137,7 @@ class OPC_Shortcode {
                                    name="phone" 
                                    required 
                                    class="opc-input" 
-                                   placeholder="<?php esc_attr_e('06 12 34 56 78', 'one-page-cod'); ?>">
+                                   placeholder="<?php esc_attr_e('XX XXX XXX', 'one-page-cod'); ?>">
                         </div>
                         
                         <div class="opc-form-field">
@@ -154,47 +154,15 @@ class OPC_Shortcode {
                     <div class="opc-form-row">
                         <div class="opc-form-field">
                             <label for="opc_address"><?php _e('Adresse', 'one-page-cod'); ?> <span class="required">*</span></label>
-                            <input type="text" 
-                                   id="opc_address" 
-                                   name="address" 
-                                   required 
-                                   class="opc-input" 
+                            <input type="text"
+                                   id="opc_address"
+                                   name="address"
+                                   required
+                                   class="opc-input"
                                    placeholder="<?php esc_attr_e('Rue, numéro, etc.', 'one-page-cod'); ?>">
                         </div>
                     </div>
-                    
-                    <div class="opc-form-row opc-form-row-2cols">
-                        <div class="opc-form-field">
-                            <label for="opc_city"><?php _e('Ville', 'one-page-cod'); ?> <span class="required">*</span></label>
-                            <input type="text" 
-                                   id="opc_city" 
-                                   name="city" 
-                                   required 
-                                   class="opc-input" 
-                                   placeholder="<?php esc_attr_e('Ville', 'one-page-cod'); ?>">
-                        </div>
-                        
-                        <div class="opc-form-field">
-                            <label for="opc_postcode"><?php _e('Code postal', 'one-page-cod'); ?> <?php echo in_array('postcode', $required_fields) ? '<span class="required">*</span>' : ''; ?></label>
-                            <input type="text" 
-                                   id="opc_postcode" 
-                                   name="postcode" 
-                                   <?php echo in_array('postcode', $required_fields) ? 'required' : ''; ?> 
-                                   class="opc-input" 
-                                   placeholder="<?php esc_attr_e('75001', 'one-page-cod'); ?>">
-                        </div>
-                    </div>
-                    
-                    <div class="opc-form-row">
-                        <div class="opc-form-field">
-                            <label for="opc_notes"><?php _e('Notes (optionnel)', 'one-page-cod'); ?></label>
-                            <textarea id="opc_notes" 
-                                      name="notes" 
-                                      rows="3" 
-                                      class="opc-input" 
-                                      placeholder="<?php esc_attr_e('Instructions de livraison, commentaires...', 'one-page-cod'); ?>"></textarea>
-                        </div>
-                    </div>
+
                 </div>
                 
                 <div class="opc-form-row opc-submit-row">

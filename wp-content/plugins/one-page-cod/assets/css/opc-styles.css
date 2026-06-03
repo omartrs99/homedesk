@@ -1,170 +1,275 @@
-/* 
+/*
  * One Page COD - Styles
- * Version: 1.0.0
+ * Charte : #318b82 (vert teal), #22766c (hover), #f4f4f0 (fond clair)
  */
 
-/* Container principal */
+/* ── Container ─────────────────────────────────────────────── */
 .opc-form-container {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 30px;
+    max-width: 560px;
+    margin: 32px auto;
+    padding: 32px;
     background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8e7;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(49, 139, 130, 0.08);
+    animation: opc-fadeIn 0.4s ease-out;
 }
 
 .opc-form-title {
-    margin: 0 0 25px 0;
-    padding: 0;
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
+    margin: 0 0 28px;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #111;
     text-align: center;
-    border-bottom: 2px solid #0073aa;
-    padding-bottom: 15px;
+    position: relative;
+    padding-bottom: 16px;
 }
 
-/* Formulaire */
-.opc-order-form {
-    margin: 0;
+.opc-form-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 3px;
+    background: #318b82;
+    border-radius: 2px;
 }
 
-.opc-form-row {
-    margin-bottom: 20px;
-}
+/* ── Layout ─────────────────────────────────────────────────── */
+.opc-order-form { margin: 0; }
+
+.opc-form-row { margin-bottom: 16px; }
 
 .opc-form-row-2cols {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 12px;
 }
 
 @media (max-width: 600px) {
-    .opc-form-row-2cols {
-        grid-template-columns: 1fr;
-    }
-    /* Garder quantité et prix sur la même ligne en mobile */
+    .opc-form-row-2cols { grid-template-columns: 1fr; }
     .opc-form-row-2cols.opc-quantity-price-row {
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: auto 1fr !important;
+        align-items: end;
         gap: 10px;
     }
 }
 
-.opc-form-field {
-    display: flex;
-    flex-direction: column;
-}
+.opc-form-field { display: flex; flex-direction: column; }
 
 .opc-form-field label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #333;
-    font-size: 14px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.opc-form-field label .required {
-    color: #dc3232;
-    font-weight: bold;
-}
+.opc-form-field label .required { color: #e74c3c; }
 
+/* ── Inputs ──────────────────────────────────────────────────── */
 .opc-input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 11px 14px;
+    border: 1.5px solid #d8e2e1;
+    border-radius: 8px;
     font-size: 15px;
-    transition: border-color 0.3s ease;
+    color: #222;
+    background: #f9fbfb;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
     box-sizing: border-box;
 }
 
 .opc-input:focus {
     outline: none;
-    border-color: #0073aa;
-    box-shadow: 0 0 0 1px #0073aa;
+    border-color: #318b82;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(49, 139, 130, 0.13);
 }
 
-.opc-input::placeholder {
-    color: #999;
-}
+.opc-input::placeholder { color: #aab5b4; }
 
-textarea.opc-input {
-    resize: vertical;
-    min-height: 80px;
-}
-
-/* Section informations client */
-.opc-customer-info {
-    margin-top: 25px;
-    padding-top: 25px;
-    border-top: 1px solid #e0e0e0;
-}
-
-.opc-customer-info h4 {
-    margin: 0 0 20px 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-}
-
-/* Section variations */
-.opc-variations-section {
-    margin-bottom: 25px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 6px;
-    border: 1px solid #e0e0e0;
-}
-
-.opc-variation-field {
-    margin-bottom: 15px;
-}
-
-.opc-variation-field:last-child {
-    margin-bottom: 0;
-}
-
-.opc-variation-select {
-    background-color: #fff;
-    cursor: pointer;
-}
-
-/* Bouton de soumission */
-.opc-submit-row {
-    margin-top: 30px;
+input[type="number"].opc-input {
+    max-width: 88px;
     text-align: center;
 }
 
+/* ── Prix produit — ligne unique ─────────────────────────────── */
+.opc-quantity-price-row .opc-form-field:last-child { justify-content: center; }
+
+/* Conteneur prix — grid 2 lignes */
+.opc-product-price {
+    display: grid;
+    grid-template-areas:
+        "price price"
+        "del   badge";
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 2px 8px;
+    background: none;
+    border: none;
+    padding: 4px 0;
+}
+
+.opc-product-price ins                 { grid-area: price; order: unset; }
+.opc-product-price del                 { grid-area: del;   order: unset; }
+.opc-product-price .opc-discount-badge { grid-area: badge; order: unset; align-self: center; }
+
+/* screen-reader-text : masqué visuellement */
+.opc-product-price .screen-reader-text {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Prix actuel (ins) — dominant, affiché en premier via order */
+.opc-product-price ins {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    order: 1;
+}
+
+.opc-product-price ins .woocommerce-Price-amount {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #318b82;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+/* Prix simple sans promo */
+.opc-product-price > .woocommerce-Price-amount {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #318b82;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.opc-product-price .amount {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #318b82;
+    line-height: 1;
+}
+
+/* Ancien prix (del) — discret, après le prix actuel */
+.opc-product-price del {
+    display: inline-flex;
+    align-items: center;
+    order: 2;
+}
+
+.opc-product-price del .woocommerce-Price-amount {
+    color: #6e6e6e;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+/* Badge remise — accent rouge, en dernier */
+.opc-product-price .opc-discount-badge {
+    order: 3;
+    display: inline-flex;
+    align-items: center;
+    background: #E1F5EE;
+    color: #318b82 !important;
+    border-radius: 5px;
+    padding: 3px 9px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    flex-shrink: 0;
+    width: 40px;
+}
+
+/* ── Section infos client ────────────────────────────────────── */
+.opc-customer-info {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #edf1f1;
+}
+
+.opc-customer-info h4 {
+    margin: 0 0 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #318b82;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ── Variations ──────────────────────────────────────────────── */
+.opc-variations-section {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #f4f4f0;
+    border-radius: 10px;
+    border: 1px solid #e4e8e7;
+}
+
+.opc-variation-field { margin-bottom: 12px; }
+.opc-variation-field:last-child { margin-bottom: 0; }
+.opc-variation-select { background-color: #fff; cursor: pointer; }
+
+.opc-variation-price {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: #ddf0ee;
+    border-radius: 6px;
+    font-weight: 700;
+    color: #1a6b63;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* ── Bouton submit ───────────────────────────────────────────── */
+.opc-submit-row { margin-top: 24px; }
+
 .opc-submit-btn {
-    display: inline-block;
+    display: block;
     width: 100%;
-    padding: 15px 30px;
-    background: #0073aa;
+    padding: 16px 24px;
+    background: #318b82;
     color: #ffffff;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.07em;
+    box-shadow: 0 4px 16px rgba(49, 139, 130, 0.28);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 
 .opc-submit-btn:hover {
-    background: #005a87;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 115, 170, 0.3);
+    background: #22766c;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(49, 139, 130, 0.36);
 }
 
 .opc-submit-btn:active {
     transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(49, 139, 130, 0.22);
 }
 
 .opc-submit-btn:disabled {
-    background: #ccc;
+    background: #b0c9c7;
     cursor: not-allowed;
     transform: none;
+    box-shadow: none;
 }
 
 .opc-submit-btn.loading {
@@ -179,107 +284,88 @@ textarea.opc-input {
     height: 20px;
     top: 50%;
     left: 50%;
-    margin-left: -10px;
-    margin-top: -10px;
-    border: 3px solid #ffffff;
+    margin: -10px 0 0 -10px;
+    border: 3px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #fff;
     border-radius: 50%;
-    border-top-color: transparent;
     animation: opc-spin 0.8s linear infinite;
 }
 
-@keyframes opc-spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Messages */
-.opc-form-messages {
-    margin-top: 20px;
-}
+/* ── Messages ────────────────────────────────────────────────── */
+.opc-form-messages { margin-top: 16px; }
 
 .opc-message {
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    font-size: 14px;
+    padding: 13px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
     line-height: 1.5;
 }
 
 .opc-message-success {
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
-    color: #155724;
+    background: #e8f7f4;
+    border: 1px solid #9fd0c9;
+    color: #1a6b63;
 }
 
 .opc-message-error {
-    background: #f8d7da;
-    border: 1px solid #f5c6cb;
-    color: #721c24;
+    background: #fdf0f0;
+    border: 1px solid #f2b8b8;
+    color: #b52b2b;
 }
 
 .opc-message-info {
-    background: #d1ecf1;
-    border: 1px solid #bee5eb;
+    background: #e8f4fd;
+    border: 1px solid #abd3ee;
     color: #0c5460;
 }
 
-/* Erreurs de validation */
+/* ── Validation erreurs ──────────────────────────────────────── */
 .opc-input.error {
-    border-color: #dc3232;
+    border-color: #e74c3c;
+    background: #fff8f8;
 }
 
 .opc-field-error {
-    color: #dc3232;
-    font-size: 13px;
-    margin-top: 5px;
+    color: #e74c3c;
+    font-size: 0.78rem;
+    margin-top: 4px;
     display: block;
 }
 
-/* Messages d'erreur */
 .opc-error {
-    padding: 15px;
-    background: #f8d7da;
-    border: 1px solid #f5c6cb;
-    border-radius: 6px;
-    color: #721c24;
-    margin: 20px 0;
+    padding: 13px 16px;
+    background: #fdf0f0;
+    border: 1px solid #f2b8b8;
+    border-radius: 8px;
+    color: #b52b2b;
+    margin: 16px 0;
+    font-size: 0.9rem;
 }
 
-/* Shortcode form */
-.opc-shortcode-form {
-    margin: 20px 0;
-}
+/* ── Stock ───────────────────────────────────────────────────── */
+.opc-stock-status { margin-top: 8px; font-size: 0.8rem; font-weight: 600; }
+.opc-stock-status.in-stock { color: #318b82; }
+.opc-stock-status.out-of-stock { color: #e74c3c; }
 
-/* Responsive */
+/* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
     .opc-form-container {
-        padding: 20px;
-        margin: 20px 10px;
+        padding: 24px 18px;
+        margin: 20px 12px;
+        border-radius: 12px;
     }
-    
-    .opc-form-title {
-        font-size: 20px;
-    }
-    
-    .opc-customer-info h4 {
-        font-size: 16px;
-    }
-    
-    .opc-submit-btn {
-        padding: 12px 25px;
-        font-size: 15px;
-    }
+
+    .opc-form-title { font-size: 1.1rem; }
+    .opc-customer-info h4 { font-size: 0.75rem; }
+    .opc-submit-btn { padding: 14px 20px; font-size: 0.95rem; }
 }
 
-/* Loading overlay */
+/* ── Loading overlay ─────────────────────────────────────────── */
 .opc-loading-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -287,113 +373,43 @@ textarea.opc-input {
 }
 
 .opc-loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #ffffff;
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
     border-radius: 50%;
-    border-top-color: transparent;
     animation: opc-spin 1s linear infinite;
 }
 
-/* Personnalisation du formulaire */
-.opc-form-container.custom-style {
-    /* Classes personnalisables */
+/* ── Shortcode ───────────────────────────────────────────────── */
+.opc-shortcode-form { margin: 20px 0; }
+
+/* ── Keyframes ───────────────────────────────────────────────── */
+@keyframes opc-spin {
+    to { transform: rotate(360deg); }
 }
 
-/* Prix de la variation sélectionnée */
-.opc-variation-price {
-    margin-top: 10px;
-    padding: 10px;
-    background: #f0f0f1;
-    border-radius: 4px;
-    font-weight: 600;
-    text-align: center;
-}
-
-/* Stock status */
-.opc-stock-status {
-    margin-top: 10px;
-    font-size: 13px;
-}
-
-.opc-stock-status.in-stock {
-    color: #46b450;
-}
-
-.opc-stock-status.out-of-stock {
-    color: #dc3232;
-}
-
-/* Accessibilité */
-.opc-form-field label:focus-within {
-    outline: 2px solid #0073aa;
-    outline-offset: 2px;
-}
-
-/* Animation d'apparition */
 @keyframes opc-fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-.opc-form-container {
-    animation: opc-fadeIn 0.5s ease-out;
-}
-
-/* Print styles */
+/* ── Print ───────────────────────────────────────────────────── */
 @media print {
-    .opc-form-container {
-        box-shadow: none;
-        border: 1px solid #000;
-    }
-    
-    .opc-submit-btn {
-        display: none;
-    }
+    .opc-form-container { box-shadow: none; border: 1px solid #ccc; }
+    .opc-submit-btn { display: none; }
 }
 
-/* High contrast mode */
+/* ── Accessibilité ───────────────────────────────────────────── */
 @media (prefers-contrast: high) {
-    .opc-input {
-        border: 2px solid #000;
-    }
-    
-    .opc-submit-btn {
-        border: 2px solid #000;
-    }
+    .opc-input { border: 2px solid #000; }
+    .opc-submit-btn { border: 2px solid #000; }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-}
-
-/* Prix du produit */
-.opc-product-price {
-    
-}
-
-.opc-product-price del {
-    color: #999;
-    font-size: 14px;
-    margin-right: 8px;
-}
-
-.opc-product-price ins {
-    text-decoration: none;
-    color: #46b450;
-}
-.opc-product-price .amount{
-    font-size: 2rem;
-    font-weight: 500;
 }

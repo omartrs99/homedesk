@@ -89,7 +89,7 @@ add_action( 'woocommerce_single_product_summary', function () {
 		return;
 	}
 	echo '<div class="hook-produit">';
-	echo apply_filters( 'the_content', $content );
+	echo wp_kses_post( apply_filters( 'the_content', $content ) );
 	echo '</div>';
 }, 1 );
 
@@ -164,6 +164,56 @@ add_filter( 'wc_get_template_part', function ( $template, $slug, $name ) {
 }, 10, 3 );
 
 
+// =============================================================================
+// SHORTCODE — CAROUSEL CLIENTS [homedesk_carousel]
+// =============================================================================
+
+add_shortcode( 'homedesk_carousel', function () {
+    $dir_path = get_template_directory()     . '/assets/img/carousel-clients-homedesk/';
+    $dir_url  = get_template_directory_uri() . '/assets/img/carousel-clients-homedesk/';
+
+    if ( ! is_dir( $dir_path ) ) return '';
+
+    $images = [];
+    foreach ( scandir( $dir_path ) as $file ) {
+        if ( in_array( strtolower( pathinfo( $file, PATHINFO_EXTENSION ) ), [ 'jpg', 'jpeg', 'png', 'webp' ], true ) ) {
+            $images[] = $dir_url . $file;
+        }
+    }
+
+    if ( empty( $images ) ) return '';
+
+    ob_start(); ?>
+    <div class="hd-carousel-block">
+        <div class="hd-carousel-block__inner">
+            <div class="swiper hd-carousel-swiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ( $images as $src ) : ?>
+                    <div class="swiper-slide">
+                        <div class="hd-carousel-slide">
+                            <img src="<?php echo esc_url( $src ); ?>" alt="Avis client HomeDesk" loading="lazy">
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="swiper-pagination hd-carousel-pagination"></div>
+                <div class="swiper-button-prev hd-carousel-prev"></div>
+                <div class="swiper-button-next hd-carousel-next"></div>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+} );
+
+
+// Désactiver l'onglet avis clients
+add_filter( 'woocommerce_product_tabs', function( $tabs ) {
+    unset( $tabs['reviews'] );
+    return $tabs;
+} );
+
+
 // Badge de réduction dynamique sur les pages produit
 add_filter( 'woocommerce_get_price_html', function( $price_html, $product ) {
     if ( ! is_product() || ! $product->is_on_sale() ) {
@@ -176,4 +226,117 @@ add_filter( 'woocommerce_get_price_html', function( $price_html, $product ) {
     }
     $pct = round( ( 1 - $sale / $regular ) * 100 );
     return $price_html . '<span class="opc-discount-badge">-' . $pct . '%</span>';
+}, 10, 2 );
+
+
+// =============================================================================
+// SÉCURITÉ — VERSION & ÉNUMÉRATION
+// =============================================================================
+
+// Supprimer la version WordPress du <head>, des flux RSS et des URLs de scripts/styles
+remove_action( 'wp_head', 'wp_generator' );
+add_filter( 'the_generator', '__return_empty_string' );
+add_filter( 'style_loader_src', function ( $src ) {
+	return $src ? remove_query_arg( 'ver', $src ) : $src;
+} );
+
+// Bloquer l'énumération des utilisateurs via /?author=1
+add_action( 'template_redirect', function () {
+	if ( is_author() ) {
+		wp_redirect( home_url(), 301 );
+		exit;
+	}
+} );
+
+
+// =============================================================================
+// PERFORMANCE — PRELOAD LCP (ogb-columns-bg)
+// =============================================================================
+
+// render_block capture l'URL du ogb-columns-bg et la stocke en transient (chemin relatif).
+// wp_head la lit au prochain chargement et injecte le preload — sans output buffering.
+add_filter( 'render_block', function ( $content, $block ) {
+	if ( get_transient( 'homedesk_lcp_url' ) ) return $content;
+	if ( ! is_front_page() ) return $content;
+	if ( strpos( $content, 'ogb-columns-bg' ) === false ) return $content;
+	if ( preg_match( '#style="background-image:url\(([^)]+)\)#', $content, $m ) ) {
+		$full_url = trim( $m[1], "\"' " );
+		$relative = str_replace( home_url(), '', $full_url );
+		set_transient( 'homedesk_lcp_url', $relative, WEEK_IN_SECONDS );
+	}
+	return $content;
+}, 10, 2 );
+
+add_action( 'wp_head', function () {
+	if ( ! is_front_page() ) return;
+	$lcp_path = get_transient( 'homedesk_lcp_url' );
+	if ( $lcp_path ) {
+		echo '<link rel="preload" as="image" fetchpriority="high" href="' . esc_url( home_url( $lcp_path ) ) . '">' . "\n";
+	}
+}, 1 );
+
+add_action( 'wp_enqueue_scripts', function () {
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'wc-blocks-style' );
+}, 100 );
+
+add_filter( 'style_loader_tag', function ( $tag, $handle ) {
+    $async_styles = [ 'font-awesome', 'simple-line-icons' ];
+    if ( in_array( $handle, $async_styles, true ) ) {
+        $tag = str_replace(
+            "rel='stylesheet'",
+            "rel='preload' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"",
+            $tag
+        );
+        $tag .= '<noscript>' . str_replace(
+            "rel='preload' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"",
+            "rel='stylesheet'",
+            $tag
+        ) . '</noscript>';
+    }
+    return $tag;
+}, 10, 2 );
+
+add_filter( 'script_loader_tag', function ( $tag, $handle ) {
+    $defer_scripts = [ 'oceanwp-custom', 'swiper-js' ];
+    if ( in_array( $handle, $defer_scripts, true ) ) {
+        return str_replace( ' src=', ' defer src=', $tag );
+    }
+    return $tag;
+}, 10, 2 );
+
+add_action( 'wp_head', function () {
+    if ( is_product() ) {
+        $hero = get_template_directory_uri() . '/assets/img/homedesk-bureau-assis-debout-pc-hero-1.jpg';
+        echo '<link rel="preload" as="image" href="' . esc_url( $hero ) . '" fetchpriority="high">' . "\n";
+    }
+}, 1 );
+
+
+// =============================================================================
+// ACCESSIBILITÉ — ALT IMAGES TESTIMONIALS
+// =============================================================================
+
+add_filter( 'render_block', function ( $block_content, $block ) {
+    if ( 'ocean-gutenberg-blocks/testimonial' !== $block['blockName'] ) {
+        return $block_content;
+    }
+
+    $person_name = ! empty( $block['attrs']['personName'] ) ? esc_attr( $block['attrs']['personName'] ) : '';
+    $alt         = $person_name ? 'Photo de ' . $person_name : 'Témoignage client';
+
+    $block_content = preg_replace_callback(
+        '/<img\b([^>]*)>/i',
+        function ( $matches ) use ( $alt ) {
+            $attrs = $matches[1];
+            if ( false === strpos( $attrs, 'alt=' ) ) {
+                $attrs .= ' alt="' . $alt . '"';
+            }
+            return '<img' . $attrs . '>';
+        },
+        $block_content
+    );
+
+    return $block_content;
 }, 10, 2 );

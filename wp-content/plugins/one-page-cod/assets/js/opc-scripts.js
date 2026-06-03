@@ -183,10 +183,15 @@
                 // Défiler vers le message
                 this.scrollToMessages();
                 
-                // Redirection si définie
+                // Redirection si définie (validation same-origin pour éviter open redirect)
                 if (response.data.redirect_url) {
                     setTimeout(function() {
-                        window.location.href = response.data.redirect_url;
+                        try {
+                            var url = new URL(response.data.redirect_url, window.location.origin);
+                            if (url.origin === window.location.origin) {
+                                window.location.href = url.href;
+                            }
+                        } catch (e) {}
                     }, 2000);
                 }
             } else {
@@ -260,10 +265,8 @@
         },
 
         isValidPhone: function(phone) {
-            // Supprimer tous les caractères non numériques sauf le +
-            const cleanPhone = phone.replace(/[^0-9+]/g, '');
-            // Au moins 10 chiffres
-            return /^[+]?[0-9]{10,}$/.test(cleanPhone);
+            const cleanPhone = phone.replace(/[^0-9]/g, '');
+            return cleanPhone.length >= 8;
         },
 
         showMessage: function(type, message) {
