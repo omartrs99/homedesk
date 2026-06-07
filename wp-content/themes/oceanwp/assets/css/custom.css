@@ -1812,3 +1812,11 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
     margin-left: 5px !important;
     opacity: 0.7;
 }
+
+/* Masquer le panier WooCommerce dans le menu */
+.toggle-cart-widget {
+    display: none !important;
+}
+.has-text-align-center{
+    text-align: center !important;
+}

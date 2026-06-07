@@ -232,20 +232,20 @@ if (post_password_required()) {
 				<!-- Grande image active -->
 				<div class="pgf-main-view" id="pgf-main-view">
 					<span class="pgf-badge">La posture idéale pour travailler</span>
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal1.jpg" alt="Détail produit 1" class="pgf-main-slide">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal2.jpg" alt="Détail produit 2" class="pgf-main-slide">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal3.jpg" alt="Détail produit 3" class="pgf-main-slide">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal4.jpg" alt="Détail produit 4" class="pgf-main-slide">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal5.jpg" alt="Détail produit 5" class="pgf-main-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal1.jpg.webp" alt="Détail produit 1" class="pgf-main-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal2.jpg.webp" alt="Détail produit 2" class="pgf-main-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal3.jpg.webp" alt="Détail produit 3" class="pgf-main-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal4.jpg.webp" alt="Détail produit 4" class="pgf-main-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal5.jpg.webp" alt="Détail produit 5" class="pgf-main-slide">
 				</div>
 
 				<!-- Strip thumbnails -->
 				<div class="pgf-thumbnails" id="pgf-carousel">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal1.jpg" alt="Détail produit 1" class="pgf-thumb-slide">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal2.jpg" alt="Détail produit 2" class="pgf-thumb-slide">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal3.jpg" alt="Détail produit 3" class="pgf-thumb-slide">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal4.jpg" alt="Détail produit 4" class="pgf-thumb-slide">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal5.jpg" alt="Détail produit 5" class="pgf-thumb-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal1.jpg.webp" alt="Détail produit 1" class="pgf-thumb-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal2.jpg.webp" alt="Détail produit 2" class="pgf-thumb-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal3.jpg.webp" alt="Détail produit 3" class="pgf-thumb-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal4.jpg.webp" alt="Détail produit 4" class="pgf-thumb-slide">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/homedesk-bureau-assis-debout-gal5.jpg.webp" alt="Détail produit 5" class="pgf-thumb-slide">
 				</div>
 				<div class="pgf-carousel-dots" id="pgf-carousel-dots"></div>
 			</div>
