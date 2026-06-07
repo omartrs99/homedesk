@@ -442,6 +442,8 @@ class ExactDN extends Page_Parser {
 		if ( $this->get_option( 'exactdn_all_the_things' ) ) {
 			\add_filter( 'style_loader_src', array( $this, 'parse_enqueue' ), 9999 );
 			\add_filter( 'script_loader_src', array( $this, 'parse_enqueue' ), 9999 );
+			\add_filter( 'rocket_css_url', array( $this, 'parse_enqueue' ) );
+			\add_filter( 'rocket_js_url', array( $this, 'parse_enqueue' ) );
 		}
 		if ( ! $this->get_option( 'exactdn_prevent_db_queries' ) ) {
 			$this->set_option( 'exactdn_prevent_db_queries', true );
@@ -455,6 +457,8 @@ class ExactDN extends Page_Parser {
 
 		// Configure Autoptimize with our CDN domain.
 		\add_filter( 'autoptimize_filter_cssjs_multidomain', array( $this, 'add_cdn_domain' ) );
+		// Inform WP Rocket of the CDN domain also.
+		\add_filter( 'rocket_cdn_hosts', array( $this, 'add_cdn_domain' ) );
 
 		\add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 
@@ -599,7 +603,7 @@ class ExactDN extends Page_Parser {
 		}
 		$site_url = $this->content_url();
 
-		$url = 'http://optimize.exactlywww.com/exactdn/activate.php';
+		$url = 'http://api.exactlywww.net/exactdn/activate.php';
 		$ssl = \wp_http_supports( array( 'ssl' ) );
 		if ( $ssl ) {
 			$url = \set_url_scheme( $url, 'https' );
@@ -691,7 +695,7 @@ class ExactDN extends Page_Parser {
 		global $exactdn_activate_error;
 		$exactdn_activate_error = 'zone not verified';
 		// Primary check sends the test URL to the API for full verification.
-		$api_url = 'http://optimize.exactlywww.com/exactdn/verify.php';
+		$api_url = 'http://api.exactlywww.net/exactdn/verify.php';
 		$ssl     = \wp_http_supports( array( 'ssl' ) );
 		if ( $ssl ) {
 			$api_url = \set_url_scheme( $api_url, 'https' );
@@ -4292,7 +4296,7 @@ class ExactDN extends Page_Parser {
 		global $wp_version;
 		// If a resource doesn't have a version string, we add one to help with cache-busting.
 		if (
-			false !== \strpos( $url, $this->content_path . '/themes/' ) &&
+			\str_contains( $url, $this->content_path . '/themes/' ) &&
 			( empty( $parsed_url['query'] ) || 'ver=' . $wp_version === $parsed_url['query'] )
 		) {
 			$modified = $this->function_exists( '\filemtime' ) ? \filemtime( \get_template_directory() ) : '';
@@ -4307,7 +4311,7 @@ class ExactDN extends Page_Parser {
 			 */
 			$parsed_url['query'] = \apply_filters( 'exactdn_version_string', $modified );
 		} elseif (
-			false !== \strpos( $url, $this->content_path . '/plugins/' ) &&
+			\str_contains( $url, $this->content_path . '/plugins/' ) &&
 			( empty( $parsed_url['query'] ) || 'ver=' . $wp_version === $parsed_url['query'] )
 		) {
 			$parsed_url['query'] = '';
@@ -4588,9 +4592,9 @@ class ExactDN extends Page_Parser {
 	}
 
 	/**
-	 * Adds the ExactDN domain to the list of 'local' domains for Autoptimize.
+	 * Adds the ExactDN domain to the list of 'local' domains for other plugins.
 	 *
-	 * @param array $domains A list of domains considered 'local' by Autoptimize.
+	 * @param array $domains A list of domains considered 'local'.
 	 * @return array The same list, with the ExactDN domain appended.
 	 */
 	public function add_cdn_domain( $domains ) {
@@ -4609,7 +4613,7 @@ class ExactDN extends Page_Parser {
 	 */
 	public function savings() {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
-		$url = 'http://optimize.exactlywww.com/exactdn/savings.php';
+		$url = 'http://api.exactlywww.net/exactdn/savings.php';
 		$ssl = \wp_http_supports( array( 'ssl' ) );
 		if ( $ssl ) {
 			$url = \set_url_scheme( $url, 'https' );
