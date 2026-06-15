@@ -261,8 +261,7 @@ add_filter( 'render_block', function ( $content, $block ) {
 	if ( strpos( $content, 'ogb-columns-bg' ) === false ) return $content;
 	if ( preg_match( '#style="background-image:url\(([^)]+)\)#', $content, $m ) ) {
 		$full_url = trim( $m[1], "\"' " );
-		$relative = str_replace( home_url(), '', $full_url );
-		set_transient( 'homedesk_lcp_url', $relative, WEEK_IN_SECONDS );
+		set_transient( 'homedesk_lcp_url', $full_url, WEEK_IN_SECONDS );
 	}
 	return $content;
 }, 10, 2 );
@@ -271,7 +270,7 @@ add_action( 'wp_head', function () {
 	if ( ! is_front_page() ) return;
 	$lcp_path = get_transient( 'homedesk_lcp_url' );
 	if ( $lcp_path ) {
-		echo '<link rel="preload" as="image" fetchpriority="high" href="' . esc_url( home_url( $lcp_path ) ) . '">' . "\n";
+		echo '<link rel="preload" as="image" fetchpriority="high" href="' . esc_url( $lcp_path ) . '">' . "\n";
 	}
 }, 1 );
 
