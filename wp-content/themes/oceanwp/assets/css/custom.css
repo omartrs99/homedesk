@@ -1820,3 +1820,11 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
 .has-text-align-center{
     text-align: center !important;
 }
+
+#site-navigation a:focus,
+#site-navigation a:focus-visible {
+    outline: none !important;
+}
+#site-navigation li.current-menu-item a{
+    color: #318b82 !important;
+}

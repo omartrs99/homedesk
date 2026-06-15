@@ -201,7 +201,7 @@ q {
 }
 
 a:focus {
-  outline: solid 1px !important;
+  outline: none !important;
 }
 
 a:hover,
