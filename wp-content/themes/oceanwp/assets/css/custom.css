@@ -1815,7 +1815,7 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
 
 /* Masquer le panier WooCommerce dans le menu */
 .toggle-cart-widget {
-    display: none !important;
+   
 }
 .has-text-align-center{
     text-align: center !important;
@@ -1872,4 +1872,9 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
         font-size: 16px !important;
         padding: 0 10px !important;
     }
+}
+
+#billing_state_field .required,
+#billing_postcode_field .required {
+    display: none;
 }

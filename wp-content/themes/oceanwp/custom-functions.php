@@ -340,6 +340,14 @@ add_filter( 'render_block', function ( $block_content, $block ) {
     return $block_content;
 }, 10, 2 );
 
+// Téléphone obligatoire — Région et Code postal facultatifs
+add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
+	$fields['billing']['billing_phone']['required']    = true;
+	$fields['billing']['billing_state']['required']    = false;
+	$fields['billing']['billing_postcode']['required'] = false;
+	return $fields;
+} );
+
 // Bouton "Retour à la boutique" → redirige vers la page d'accueil
 add_filter( 'woocommerce_return_to_shop_redirect', function() {
     return home_url( '/' );
