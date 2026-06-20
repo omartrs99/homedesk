@@ -347,3 +347,21 @@ add_filter( 'woocommerce_return_to_shop_redirect', function() {
 add_filter( 'woocommerce_return_to_shop_text', function() {
     return __( 'Retour à la page d\'accueil', 'woocommerce' );
 } );
+
+
+// =============================================================================
+// RÉSEAUX SOCIAUX — FOOTER MOBILE
+// =============================================================================
+
+// Réinjecte le bloc social du topbar dans le footer (après #copyright),
+// uniquement visible en mobile via CSS. L'id est renommé en "footer-social"
+// pour ne pas avoir deux éléments avec le même id sur la page.
+add_action( 'ocean_after_footer_bottom_inner', function () {
+	ob_start();
+	get_template_part( 'partials/topbar/social' );
+	$html = ob_get_clean();
+	if ( ! $html ) return;
+	$html = str_replace( 'id="top-bar-social"', 'id="footer-social"', $html );
+	$html = preg_replace( '/\b(top-bar-left|top-bar-right|top-bar-centered)\b/', '', $html );
+	echo '<div class="footer-social-wrap container clr">' . $html . '</div>';
+} );

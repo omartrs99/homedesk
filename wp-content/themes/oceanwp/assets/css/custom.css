@@ -1806,7 +1806,7 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
 }
 
 .qlwapp__button{
-        margin: 45px auto !important;
+        margin: 60px auto !important;
 }
 .qlwapp__container.qlwapp__container--bottom-left .qlwapp__button {
     margin-left: 5px !important;
@@ -1827,4 +1827,49 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
 }
 #site-navigation li.current-menu-item a{
     color: #318b82 !important;
+}
+
+
+/* =========================================================
+   Réseaux sociaux — footer mobile
+   ========================================================= */
+
+/* Caché par défaut (desktop : reste dans le topbar) */
+.footer-social-wrap {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    /* Masquer dans le topbar */
+    #top-bar-social {
+        display: none !important;
+    }
+
+    /* Afficher dans le footer */
+    .footer-social-wrap {
+        display: block;
+        text-align: center;
+        padding: 6px 0 4px;
+    }
+
+    /* Remettre les icônes en ligne (annuler le positionnement topbar) */
+    #footer-social {
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        text-align: center;
+    }
+
+    #footer-social li {
+        display: inline-block;
+        float: none;
+    }
+
+    #footer-social li a {
+        color: #fff !important;
+        font-size: 16px !important;
+        padding: 0 10px !important;
+    }
 }
