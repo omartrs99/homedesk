@@ -7,6 +7,8 @@
 
 		var el                  = wp.element.createElement;
 		var useState            = wp.element.useState;
+		var useEffect           = wp.element.useEffect;
+		var useRef              = wp.element.useRef;
 		var useSelect           = wp.data.useSelect;
 		var useDispatch         = wp.data.useDispatch;
 		var BlockEditorProvider = wp.blockEditor.BlockEditorProvider;
@@ -21,11 +23,20 @@
 			} );
 			var editPost = useDispatch( 'core/editor' ).editPost;
 
-			var state     = useState( function () {
-				return wp.blocks.parse( meta._hook_produit || '' );
-			} );
-			var blocks    = state[ 0 ];
-			var setBlocks = state[ 1 ];
+			var state       = useState( [] );
+			var blocks      = state[ 0 ];
+			var setBlocks   = state[ 1 ];
+			var initialized = useRef( false );
+
+			// Initialise les blocs depuis le meta dès qu'il est disponible.
+			// useState lazy-initializer ne fonctionne pas ici car le store
+			// core/editor n'a pas encore chargé le meta au premier rendu.
+			useEffect( function () {
+				if ( ! initialized.current && meta._hook_produit ) {
+					initialized.current = true;
+					setBlocks( wp.blocks.parse( meta._hook_produit ) );
+				}
+			}, [ meta._hook_produit ] );
 
 			function onBlocksChange( newBlocks ) {
 				setBlocks( newBlocks );

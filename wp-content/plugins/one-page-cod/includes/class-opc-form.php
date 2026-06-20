@@ -60,16 +60,17 @@ class OPC_Form {
         $this->render_form($product);
     }
     
-    private function render_form($product) {
+    public function render_form($product, $extra_class = '') {
         $settings = get_option('opc_settings', array());
         $required_fields = isset($settings['required_fields']) ? $settings['required_fields'] : array();
         $button_text = isset($settings['button_text']) ? $settings['button_text'] : __('Commander maintenant', 'one-page-cod');
-        
+
         $product_id = $product->get_id();
         $product_type = $product->get_type();
-        
+        $wrapper_class = 'opc-form-container' . ($extra_class ? ' ' . esc_attr($extra_class) : '');
+
         ?>
-        <div class="opc-form-container" id="opc-form-container">
+        <div class="<?php echo $wrapper_class; ?>" id="opc-form-container">
             <h3 class="opc-form-title"><?php echo apply_filters('opc_form_title', __('Commandez directement', 'one-page-cod')); ?></h3>
             
             <form id="opc-order-form" class="opc-order-form" data-product-id="<?php echo esc_attr($product_id); ?>" data-product-type="<?php echo esc_attr($product_type); ?>">
@@ -169,7 +170,7 @@ class OPC_Form {
         <?php
     }
     
-    private function render_variations($product) {
+    public function render_variations($product) {
         $attributes = $product->get_variation_attributes();
         
         if (empty($attributes)) {
