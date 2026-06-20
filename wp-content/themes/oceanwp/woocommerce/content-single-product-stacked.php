@@ -130,7 +130,7 @@ if (post_password_required()) {
 				</h2>
 				<p class="pgb-offer__desc">Transportez votre bureau assis-debout<br>partout, facilement et en toute sécurité.</p>
 				<div class="pgb-offer__value">
-					<span class="pgb-offer__value-old">45 DT</span>
+					<span class="pgb-offer__value-old">70 DT</span>
 					<span class="pgb-offer__value-free">
 						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
 						GRATUIT
