@@ -610,8 +610,8 @@ body:not(.home) #main #content-wrap {
 }
 
 .product-stacked-layout .pgb-offer__value-old {
-    font-size: 1.3rem;
-    color: #bbb;
+    font-size: 1.5rem;
+    color: #318b82;
     text-decoration: line-through;
     font-weight: 500;
 }
