@@ -43,7 +43,8 @@ wp-config.php
 /wp-content/uploads/
 /wp-config.php
 
-
+/screenshots/*
+/.playwright-mcp
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
