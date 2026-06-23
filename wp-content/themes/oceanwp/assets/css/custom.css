@@ -1833,7 +1833,8 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
     .product-cta-block { padding: 52px 20px; }
     .pcta-guarantee { gap: 12px 20px; }
     .pcta-guarantee__item { font-size: 0.82rem; }
-    .pcta-btn { font-size: 0.88rem; padding: 14px 28px; }
+    .pcta-btn { font-size: 1rem;
+        letter-spacing: .1rem; padding: 14px 28px; }
 }
 
 @media (max-width: 480px) {
