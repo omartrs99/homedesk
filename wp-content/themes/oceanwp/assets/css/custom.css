@@ -2196,7 +2196,7 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
     .opc-hero__title{
         padding-top: 40px !important;
     }
-    .woocommerce span.onsale {
+    .woocommerce  .product-gallery-stacked  span.onsale {
         left: 50% !important;
         transform: translateX(-50%);
         text-align: center;

@@ -38,9 +38,9 @@ if (post_password_required()) {
 				<span class="feature-icon">💳</span>
 				<span class="feature-text">Paiement à la livraison</span>
 			</div>
-			<div class="feature-item">
+			<div class="feature-item pulse-text">
 				<span class="feature-icon">↩️</span>
-				<span class="feature-text pulse-text">Convaincu ou remboursé en 3 jours</span>
+				<span class="feature-text ">Convaincu ou remboursé en 3 jours</span>
 			</div>
 			<div class="feature-item">
 				<span class="feature-icon">🛡️</span>
@@ -245,7 +245,7 @@ if (post_password_required()) {
 				</div>
 				<div class="demo-stat">
 					<span class="demo-stat__value">Jour 1</span>
-					<span class="demo-stat__label">Fini les DOULEURs</span>
+					<span class="demo-stat__label">Votre dos vous remercie</span>
 				</div>
 			</div>
 
