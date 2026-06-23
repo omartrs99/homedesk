@@ -2022,3 +2022,91 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
         grid-template-columns: 1fr;
     }
 }
+
+/* =============================================================================
+   RESPONSIVE MOBILE — Header sticky
+   ============================================================================= */
+
+@media (max-width: 768px) {
+    #top-bar-wrap {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 10000 !important;
+    }
+
+    #site-header {
+        position: fixed !important;
+        top: 41px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background: #fff !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10) !important;
+        z-index: 9999 !important;
+    }
+}
+
+/* =============================================================================
+   RESPONSIVE MOBILE — Titres & boutons
+   ============================================================================= */
+
+@media (max-width: 768px) {
+
+    /* Titres OGB trop grands sur mobile */
+    h1.ogb-heading-text {
+        font-size: 28px !important;
+        line-height: 1.25 !important;
+    }
+
+    h2.ogb-heading-text {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+    }
+
+    h3.ogb-heading-text {
+        font-size: 20px !important;
+        line-height: 1.35 !important;
+    }
+
+    /* Boutons Gutenberg — taille et padding réduits */
+    .wp-block-button__link {
+        font-size: 13px !important;
+        padding: 11px 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1.ogb-heading-text {
+        font-size: 24px !important;
+    }
+
+    h2.ogb-heading-text {
+        font-size: 20px !important;
+    }
+
+    .wp-block-button__link {
+        font-size: 12px !important;
+        padding: 10px 18px !important;
+    }
+    .ogb-columns-54ebc456 .ogb-columns-containe{
+        display: block !important;
+    }
+    .ogb-heading.ogb-heading-4dc0447b h1{
+        margin-top:140px !important;
+        font-size: 17px !important;
+    }
+    .ogb-columns-54ebc456 .ogb-columns-container{
+        margin: 0px !important;
+        display: block !important;
+    }
+    .ogb-column.ogb-column-89ad3702{
+        margin: 0px !important;
+    }
+    #mobile-dropdown{
+            margin-top: -2px !important;
+    }
+}
