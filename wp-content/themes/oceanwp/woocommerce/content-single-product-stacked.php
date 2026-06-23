@@ -408,9 +408,9 @@ if (post_password_required()) {
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
 					Paiement à la livraison — aucun risque
 				</span>
-				<span class="pcta-guarantee__item">
+				<span class="pcta-guarantee__item pulse-text">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-					<span class="pulse-text">Pas satisfait ? Remboursé sous 3 jours</span>
+					<span class="">Pas satisfait ? Remboursé sous 3 jours</span>
 				</span>
 			</p>
 

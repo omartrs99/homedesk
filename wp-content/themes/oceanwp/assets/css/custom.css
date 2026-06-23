@@ -2195,6 +2195,7 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
     }
     .opc-hero__title{
         padding-top: 40px !important;
+        text-align: center !important;
     }
     .woocommerce  .product-gallery-stacked  span.onsale {
         left: 50% !important;
@@ -2205,6 +2206,9 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
     }
     .opc-hero__subtitle{
        text-align: center !important;
+    }
+    .pcta-guarantee__item{
+        font-size: 1.2rem !important;
     }
 
 }
