@@ -81,7 +81,7 @@ if (post_password_required()) {
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
 					</div>
 					<h3 class="transformation-card__title">ULTRA ROBUSTE</h3>
-					<p class="transformation-card__desc">Contreplaqué CNC haute densité. Construit pour durer des années.</p>
+					<p class="transformation-card__desc">Découpé en CNC haute densité. Construit pour durer des années.</p>
 				</div>
 			</div>
 		</div>
@@ -159,9 +159,41 @@ if (post_password_required()) {
 	<div class="product-demo-block">
 		<div class="product-demo-block__inner">
 			<p class="demo-subtitle">DÉMONSTRATION</p>
-			<h2 class="demo-title">3 VIDÉOS — VOYEZ-LE EN ACTION</h2>
+			<!--<h2 class="demo-title">3 VIDÉOS — VOYEZ-LE EN ACTION</h2>-->
+			<h2 class="demo-title">VOYEZ-LE EN ACTION</h2>
+			
+			<div class="demo-section">
+				<div class="demo-story-layout">
 
-			<div class="demo-videos-grid">
+					<!-- Vidéo gauche -->
+					<div class="demo-story-video">
+						<div class="demo-story-wrap">
+							<iframe src="https://www.youtube.com/embed/S6rd8xwxWzg?rel=0&modestbranding=1"
+								frameborder="0"
+								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen loading="lazy"></iframe>
+						</div>
+					</div>
+
+					<!-- Texte centre -->
+					<div class="demo-story-text">
+						<h3 class="demo-story-title">ASSIS. DEBOUT. TOUJOURS CONFORTABLE.</h3>
+						<p class="demo-story-desc">Passez d'une position à l'autre en 5 secondes. Votre colonne retrouve son alignement naturel. Votre énergie, elle, ne retombe plus.</p>
+					</div>
+
+					<!-- Vidéo droite -->
+					<div class="demo-story-video">
+						<div class="demo-story-wrap">
+							<iframe src="https://www.youtube.com/embed/S6rd8xwxWzg?rel=0&modestbranding=1"
+								frameborder="0"
+								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen loading="lazy"></iframe>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!--<div class="demo-videos-grid">
 
 				<div class="demo-video-card demo-video-card--active">
 					<span class="demo-video-badge">ACTIF</span>
@@ -194,17 +226,17 @@ if (post_password_required()) {
 					</div>
 				</div>
 
-			</div><!-- .demo-videos-grid -->
+			</div> -->
 
-			<p class="demo-swipe-hint">
+			<!--<p class="demo-swipe-hint">
 				<span class="demo-swipe-hint__arrow demo-swipe-hint__arrow--left">&#8592;</span>
 				GLISSER
 				<span class="demo-swipe-hint__arrow demo-swipe-hint__arrow--right">&#8594;</span>
-			</p>
+			</p>-->
 
 			<div class="demo-stats-row">
 				<div class="demo-stat">
-					<span class="demo-stat__value">5 min</span>
+					<span class="demo-stat__value">5 sec</span>
 					<span class="demo-stat__label">MONTAGE SANS OUTIL</span>
 				</div>
 				<div class="demo-stat">
@@ -263,7 +295,7 @@ if (post_password_required()) {
 		<div class="product-before-after-block__inner">
 
 			<p class="bab-subtitle">— TRANSFORMATION RÉELLE —</p>
-			<h2 class="bab-title">AVANT / APRÈS HOME DESK</h2>
+			<h2 class="bab-title">AVANT / APRÈS HOMEDESK</h2>
 			<p class="bab-desc">Transformation immédiate</p>
 
 			<?php
@@ -294,7 +326,7 @@ if (post_password_required()) {
 					<div class="bab-static__overlay bab-static__overlay--apres"></div>
 					<div class="bab-content">
 						<span class="bab-emoji">😊</span>
-						<h3 class="bab-panel-title">AVEC HOME DESK</h3>
+						<h3 class="bab-panel-title">AVEC HOMEDESK</h3>
 						<ul class="bab-list bab-list--good">
 							<li>Posture parfaite</li>
 							<li>Énergie durable</li>
@@ -327,7 +359,7 @@ if (post_password_required()) {
 					<span class="bab-badge bab-badge--apres">APRÈS</span>
 					<div class="bab-content">
 						<span class="bab-emoji">😊</span>
-						<h3 class="bab-panel-title">AVEC HOME DESK</h3>
+						<h3 class="bab-panel-title">AVEC HOMEDESK</h3>
 						<ul class="bab-list bab-list--good">
 							<li>Posture parfaite</li>
 							<li>Énergie durable</li>
