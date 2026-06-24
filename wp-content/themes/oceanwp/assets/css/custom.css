@@ -1194,6 +1194,19 @@ body:not(.home) #main #content-wrap {
 }
 
 
+/* ===== OPC — Champ quantité ===== */
+
+/* .woocommerce form input[type="number"] { max-width: 58px } écrase opc-styles.css (max-width: 88px)
+   → avec padding: 12px 15px (30px) sur 58px il ne reste que 28px pour texte + flèches = spinners clippés */
+.woocommerce #opc_quantity {
+    max-width: 120px;
+}
+
+#opc_quantity::-webkit-outer-spin-button,
+#opc_quantity::-webkit-inner-spin-button {
+    opacity: 1;
+}
+
 /* ===== OPC Hero — Produit 1482 ===== */
 
 /* Fond sombre — toute la colonne summary */
@@ -2150,7 +2163,7 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
     }
 
     h2.ogb-heading-text {
-        font-size: 20px !important;
+        font-size: 32px !important;
     }
 
     .wp-block-button__link {
@@ -2161,8 +2174,9 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
         display: block !important;
     }
     .ogb-heading.ogb-heading-4dc0447b h1{
-        margin-top:140px !important;
-        font-size: 17px !important;
+               margin-top: 80px !important;
+        margin-bottom: 100px !important;
+        font-size: 16px !important;
     }
     .ogb-columns-54ebc456 .ogb-columns-container{
         margin: 0px !important;
@@ -2191,12 +2205,13 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
     h2.wp-block-heading{
         font-size: 18px !important;
     }
-    .big-text{
+    h2.big-text{
         font-size: 25px !important;
     }
     .opc-hero__title{
         padding-top: 40px !important;
         text-align: center !important;
+        font-size: 30px;
     }
     .woocommerce  .product-gallery-stacked  span.onsale {
         left: 50% !important;
@@ -2211,9 +2226,33 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
     .pcta-guarantee__item{
         font-size: 1.2rem !important;
     }
-
+    body.page.content-max-width .entry .alignwide {
+        max-width: 100%;
+        width: 100% !important;
+        padding: 0px  15px !important;
+                margin-left: 0px !important;
+    }
+    .has-text-align-left {
+        text-align: justify !important  ;
+    }
+    .alignleft {
+            margin-right: 0rem;
+    }
+    
+   
+}
+@media screen and (max-width: 1024px) {
+     .owp-floating-bar button.button{
+        padding: 0 20px !important;
+        font-size: 13px !important;
+                letter-spacing: 0.4px;
+    }
 }
 
 .woocommerce span.onsale:nth-child(2){
     display: none !important;
+}
+
+a:focus {
+    outline: none !important;
 }

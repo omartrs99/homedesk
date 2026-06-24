@@ -57,31 +57,50 @@ if (post_password_required()) {
 			<div class="transformations-cards">
 				<div class="transformation-card">
 					<div class="transformation-card__icon">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><rect x="9" y="2.5" width="6" height="2.5" rx="1"/><rect x="8.5" y="6.5" width="7" height="2.5" rx="1"/><rect x="9" y="10.5" width="6" height="2.5" rx="1"/><rect x="8.5" y="14.5" width="7" height="2.5" rx="1"/><rect x="9" y="18.5" width="6" height="2.5" rx="1"/></svg>
-					</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2 C14 5 10 9 12 13 C14 17 12 21 12 22"/>
+    <line x1="9.5" y1="4.5" x2="14.5" y2="4.5"/>
+    <line x1="9" y1="8.5" x2="14" y2="8.5"/>
+    <line x1="10" y1="12.5" x2="14" y2="12.5"/>
+    <line x1="10" y1="16.5" x2="13.5" y2="16.5"/>
+    <line x1="10.5" y1="20" x2="13.5" y2="20"/>
+  </svg>					</div>
 					<h3 class="transformation-card__title">POSTURE PARFAITE</h3>
 					<p class="transformation-card__desc">Dos droit, nuque libre, épaules détendues. Tout naturellement.</p>
 				</div>
 				<div class="transformation-card">
 					<div class="transformation-card__icon">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-					</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="7" width="16" height="10" rx="2"/>
+    <line x1="20" y1="11" x2="20" y2="13" stroke-width="3"/>
+    <line x1="6" y1="10" x2="6" y2="14"/>
+    <line x1="9" y1="10" x2="9" y2="14"/>
+    <line x1="12" y1="10" x2="12" y2="14"/>
+    <line x1="15" y1="10" x2="15" y2="14"/>
+  </svg>					</div>
 					<h3 class="transformation-card__title">+40% PRODUCTIVITÉ</h3>
 					<p class="transformation-card__desc">Alterner assis/debout booste la concentration et l'énergie tout au long de la journée.</p>
 				</div>
 				<div class="transformation-card">
 					<div class="transformation-card__icon">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-					</div>
-					<h3 class="transformation-card__title">DESIGN ÉLÉGANT</h3>
-					<p class="transformation-card__desc">Esthétique minimaliste qui s'intègre parfaitement dans votre espace de travail.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="4" r="2"/>
+    <line x1="12" y1="6" x2="12" y2="14"/>
+    <polyline points="9 9 12 11 15 9"/>
+    <line x1="9" y1="20" x2="12" y2="14"/>
+    <line x1="15" y1="20" x2="12" y2="14"/>
+  </svg>					</div>
+					<h3 class="transformation-card__title"> VOTRE CORPS RETROUVE SON SENS</h3>
+					<p class="transformation-card__desc">Plus de craquements au lever. Plus de "ça tire" à midi. Juste le silence d'un corps bien posé.</p>
 				</div>
 				<div class="transformation-card">
 					<div class="transformation-card__icon">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-					</div>
-					<h3 class="transformation-card__title">ULTRA ROBUSTE</h3>
-					<p class="transformation-card__desc">Découpé en CNC haute densité. Construit pour durer des années.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+    <polyline points="16 7 22 7 22 13"/>
+  </svg>					</div>
+					<h3 class="transformation-card__title">PRODUCTIF JUSQU'À 17H</h3>
+					<p class="transformation-card__desc">Pas de scrolling inutile, pas de regard dans le vide. L'énergie suit quand la posture est bonne.</p>
 				</div>
 			</div>
 		</div>
