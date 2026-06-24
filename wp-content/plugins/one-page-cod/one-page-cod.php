@@ -123,15 +123,20 @@ class One_Page_COD {
         
         // Localisation du script
         wp_localize_script('opc-scripts', 'opcData', array(
-            'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('opc_nonce'),
+            'ajax_url'           => admin_url('admin-ajax.php'),
+            'nonce'              => wp_create_nonce('opc_nonce'),
+            'price_decimals'     => wc_get_price_decimals(),
+            'decimal_separator'  => wc_get_price_decimal_separator(),
+            'thousand_separator' => wc_get_price_thousand_separator(),
+            'currency_symbol'    => get_woocommerce_currency_symbol(),
+            'currency_pos'       => get_option('woocommerce_currency_pos', 'right_space'),
             'messages' => array(
-                'loading' => __('Traitement en cours...', 'one-page-cod'),
-                'error' => __('Une erreur est survenue. Veuillez réessayer.', 'one-page-cod'),
-                'success' => __('Commande créée avec succès !', 'one-page-cod'),
-                'required' => __('Ce champ est requis.', 'one-page-cod'),
-                'invalid_email' => __('Adresse email invalide.', 'one-page-cod'),
-                'invalid_phone' => __('Numéro de téléphone invalide.', 'one-page-cod'),
+                'loading'        => __('Traitement en cours...', 'one-page-cod'),
+                'error'          => __('Une erreur est survenue. Veuillez réessayer.', 'one-page-cod'),
+                'success'        => __('Commande créée avec succès !', 'one-page-cod'),
+                'required'       => __('Ce champ est requis.', 'one-page-cod'),
+                'invalid_email'  => __('Adresse email invalide.', 'one-page-cod'),
+                'invalid_phone'  => __('Numéro de téléphone invalide.', 'one-page-cod'),
             )
         ));
     }

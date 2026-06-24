@@ -89,19 +89,25 @@ class OPC_Form {
                 <div class="opc-form-row opc-form-row-2cols">
                     <div class="opc-form-field">
                         <label for="opc_quantity"><?php _e('Quantité', 'one-page-cod'); ?> <span class="required">*</span></label>
-                        <input type="number" 
-                               id="opc_quantity" 
-                               name="quantity" 
-                               value="1" 
-                               min="1" 
-                               step="1" 
-                               required 
-                               class="opc-input">
+                        <div class="opc-qty-wrap">
+                            <button type="button" class="opc-qty-btn opc-qty-minus" aria-label="Diminuer la quantité">−</button>
+                            <input type="number"
+                                   id="opc_quantity"
+                                   name="quantity"
+                                   value="1"
+                                   min="1"
+                                   step="1"
+                                   required
+                                   class="opc-input">
+                            <button type="button" class="opc-qty-btn opc-qty-plus" aria-label="Augmenter la quantité">+</button>
+                        </div>
                     </div>
                     
                     <div class="opc-form-field">
-                        <label><?php _e('Prix', 'one-page-cod'); ?></label>
-                        <div class="opc-product-price">
+                        <label><?php _e('Total', 'one-page-cod'); ?></label>
+                        <div class="opc-product-price"
+                             data-unit-price="<?php echo esc_attr( wc_get_price_to_display( $product ) ); ?>"
+                             data-regular-price="<?php echo esc_attr( wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price() ) ) ); ?>">
                             <?php echo $product->get_price_html(); ?>
                         </div>
                     </div>
@@ -130,7 +136,7 @@ class OPC_Form {
                                    name="phone" 
                                    required 
                                    class="opc-input" 
-                                   placeholder="<?php esc_attr_e('06 12 34 56 79', 'one-page-cod'); ?>">
+                                   placeholder="<?php esc_attr_e('55 11 22 33 44', 'one-page-cod'); ?>">
                         </div>
                         
                         <div class="opc-form-field">

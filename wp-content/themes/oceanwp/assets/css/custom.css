@@ -1194,18 +1194,6 @@ body:not(.home) #main #content-wrap {
 }
 
 
-/* ===== OPC — Champ quantité ===== */
-
-/* .woocommerce form input[type="number"] { max-width: 58px } écrase opc-styles.css (max-width: 88px)
-   → avec padding: 12px 15px (30px) sur 58px il ne reste que 28px pour texte + flèches = spinners clippés */
-.woocommerce #opc_quantity {
-    max-width: 120px;
-}
-
-#opc_quantity::-webkit-outer-spin-button,
-#opc_quantity::-webkit-inner-spin-button {
-    opacity: 1;
-}
 
 /* ===== OPC Hero — Produit 1482 ===== */
 

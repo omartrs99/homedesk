@@ -92,9 +92,77 @@
 
 .opc-input::placeholder { color: #aab5b4; }
 
-input[type="number"].opc-input {
-    max-width: 88px;
+/* Wrapper +/− quantité */
+.opc-qty-wrap {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid #d8e2e1;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f9fbfb;
+    width: fit-content;
+}
+
+.opc-qty-wrap input[type="number"].opc-input {
+    width: 52px;
+    max-width: 52px;
     text-align: center;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    padding: 11px 4px;
+    -moz-appearance: textfield;
+}
+
+.opc-qty-wrap input[type="number"].opc-input:focus {
+    box-shadow: none;
+    border-color: transparent;
+    background: transparent;
+}
+
+.opc-qty-wrap:focus-within {
+    border-color: #318b82;
+    box-shadow: 0 0 0 3px rgba(49, 139, 130, 0.13);
+    background: #fff;
+}
+
+.opc-qty-wrap input[type="number"].opc-input::-webkit-outer-spin-button,
+.opc-qty-wrap input[type="number"].opc-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.opc-qty-btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 100%;
+    min-height: 46px;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #318b82;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opc-qty-btn:hover {
+    background: #e8f4f2;
+    color: #22766c;
+}
+
+.opc-qty-btn:active {
+    background: #cde8e4;
+}
+
+.opc-qty-btn:disabled {
+    color: #b0c9c7;
+    cursor: not-allowed;
 }
 
 /* ── Prix produit — ligne unique ─────────────────────────────── */

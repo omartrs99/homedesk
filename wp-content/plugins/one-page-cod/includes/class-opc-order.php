@@ -113,7 +113,11 @@ class OPC_Order {
             // Ajouter une meta pour identifier les commandes One Page COD
             $order->add_meta_data('_opc_order', 'yes', true);
             $order->add_meta_data('_opc_order_date', current_time('mysql'), true);
-            
+
+            // Attribution de commande WooCommerce — identifie l'origine comme "Form COD"
+            $order->add_meta_data('_wc_order_attribution_source_type', 'utm', true);
+            $order->add_meta_data('_wc_order_attribution_utm_source',  'Form COD', true);
+
             // Sauvegarder la commande
             $order->save();
             

@@ -373,3 +373,12 @@ add_action( 'ocean_after_footer_bottom_inner', function () {
 	$html = preg_replace( '/\b(top-bar-left|top-bar-right|top-bar-centered)\b/', '', $html );
 	echo '<div class="footer-social-wrap container clr">' . $html . '</div>';
 } );
+
+// Attribution de commande OPC — affiche "Form COD" au lieu de "Inconnu"
+add_filter( 'wc_order_attribution_origin_label', function( $label, $source_type, $source ) {
+	if ( 'Form COD' === $source ) {
+		return ''; // Pas de préfixe "Source: " → WooCommerce affiche directement la source
+	}
+	return $label;
+}, 10, 3 );
+

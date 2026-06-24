@@ -15,12 +15,35 @@
         bindEvents: function() {
             // Soumission du formulaire
             $(document).on('submit', '#opc-order-form', this.handleSubmit.bind(this));
-            
+
             // Changement de variation
             $(document).on('change', '.opc-variation-select', this.handleVariationChange.bind(this));
-            
+
             // Validation en temps réel
             $(document).on('blur', '.opc-input', this.validateField.bind(this));
+
+            // Boutons +/− quantité
+            $(document).on('click', '.opc-qty-minus', function() {
+                var $input = $(this).siblings('#opc_quantity');
+                var val = parseInt($input.val(), 10) || 1;
+                var min = parseInt($input.attr('min'), 10) || 1;
+                if (val > min) {
+                    $input.val(val - 1).trigger('change');
+                    OPC.updateTotalPrice(val - 1);
+                }
+                $(this).prop('disabled', parseInt($input.val(), 10) <= min);
+            });
+
+            $(document).on('click', '.opc-qty-plus', function() {
+                var $input = $(this).siblings('#opc_quantity');
+                var val = parseInt($input.val(), 10) || 1;
+                var max = parseInt($input.attr('max'), 10);
+                if (!max || val < max) {
+                    $input.val(val + 1).trigger('change');
+                    OPC.updateTotalPrice(val + 1);
+                }
+                $(this).closest('.opc-qty-wrap').find('.opc-qty-minus').prop('disabled', false);
+            });
         },
 
         initVariations: function() {
@@ -295,6 +318,52 @@
             $('.opc-form-messages').empty();
             $('.opc-field-error').remove();
             $('.opc-input').removeClass('error');
+        },
+
+        formatPrice: function(amount) {
+            var decimals    = parseInt(opcData.price_decimals, 10) || 0;
+            var decSep      = opcData.decimal_separator  || ',';
+            var thouSep     = opcData.thousand_separator || '.';
+            var symbol      = opcData.currency_symbol    || 'DT';
+            var pos         = opcData.currency_pos       || 'right_space';
+
+            var fixed   = parseFloat(amount).toFixed(decimals);
+            var parts   = fixed.split('.');
+            parts[0]    = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thouSep);
+            var number  = parts.join(decSep);
+
+            switch (pos) {
+                case 'left':       return symbol + number;
+                case 'left_space': return symbol + ' ' + number;
+                case 'right':      return number + symbol;
+                default:           return number + ' ' + symbol; // right_space
+            }
+        },
+
+        updateTotalPrice: function(qty) {
+            var $priceBox    = $('.opc-product-price');
+            var unitPrice    = parseFloat($priceBox.data('unit-price'))    || 0;
+            var regularPrice = parseFloat($priceBox.data('regular-price')) || 0;
+
+            var updateBdi = function($bdi, total) {
+                var $symbol = $bdi.find('.woocommerce-Price-currencySymbol').detach();
+                $bdi.text(OPC.formatPrice(total).replace(' ' + opcData.currency_symbol, '').replace(opcData.currency_symbol + ' ', '') + ' ');
+                $bdi.append($symbol);
+            };
+
+            // Prix soldé (ins) ou prix simple
+            var $ins = $priceBox.find('ins .woocommerce-Price-amount bdi');
+            if ($ins.length) {
+                updateBdi($ins, unitPrice * qty);
+            } else {
+                updateBdi($priceBox.find('.woocommerce-Price-amount bdi').first(), unitPrice * qty);
+            }
+
+            // Prix barré (del)
+            var $del = $priceBox.find('del .woocommerce-Price-amount bdi');
+            if ($del.length && regularPrice) {
+                updateBdi($del, regularPrice * qty);
+            }
         },
 
         scrollToMessages: function() {
