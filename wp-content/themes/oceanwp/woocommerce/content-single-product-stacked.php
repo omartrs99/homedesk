@@ -83,23 +83,24 @@ if (post_password_required()) {
 				</div>
 				<div class="transformation-card">
 					<div class="transformation-card__icon">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="4" r="2"/>
-    <line x1="12" y1="6" x2="12" y2="14"/>
-    <polyline points="9 9 12 11 15 9"/>
-    <line x1="9" y1="20" x2="12" y2="14"/>
-    <line x1="15" y1="20" x2="12" y2="14"/>
-  </svg>					</div>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="4" r="2"/>
+							<line x1="12" y1="6" x2="12" y2="14"/>
+							<polyline points="9 9 12 11 15 9"/>
+							<line x1="9" y1="20" x2="12" y2="14"/>
+							<line x1="15" y1="20" x2="12" y2="14"/>
+						</svg>					</div>
 					<h3 class="transformation-card__title"> VOTRE CORPS RETROUVE SON SENS</h3>
 					<p class="transformation-card__desc">Plus de craquements au lever. Plus de "ça tire" à midi. Juste le silence d'un corps bien posé.</p>
 				</div>
 				<div class="transformation-card">
 					<div class="transformation-card__icon">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-    <polyline points="16 7 22 7 22 13"/>
-  </svg>					</div>
-					<h3 class="transformation-card__title">FOCUS TOUTE LA JOURNE</h3>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#318b82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+							<polyline points="16 7 22 7 22 13"/>
+						</svg>					
+					</div>
+					<h3 class="transformation-card__title">FOCUS TOUTE LA JOURNÉE</h3>
 					<p class="transformation-card__desc">Pas de scrolling inutile, pas de regard dans le vide. L'énergie suit quand la posture est bonne.</p>
 				</div>
 			</div>
