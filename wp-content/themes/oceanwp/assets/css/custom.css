@@ -1865,7 +1865,7 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
 
 .pulse-text {
     animation: pulse-glow 2s ease-in-out infinite;
-    display: inline-block;
+    display: flex;
 }
 .qlwapp__button--button {
     padding: 5px 10px !important;
