@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-Four package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-05-04 12:26:11+0000\n"
+"PO-Revision-Date: 2025-02-28 10:38:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.3\n"
 "Language: fr\n"
 "Project-Id-Version: Themes - Twenty Twenty-Four\n"
 
@@ -56,11 +56,11 @@ msgctxt "Pattern title"
 msgid "List of posts without images, 1 column"
 msgstr "Liste des publications sans images, 1 colonne"
 
-#: functions.php:200
+#: functions.php:188
 msgid "A collection of full page layouts."
 msgstr "Une collection de mises en pages pleine page."
 
-#: functions.php:199
+#: functions.php:187
 msgctxt "Block pattern category"
 msgid "Pages"
 msgstr "Pages"
@@ -116,28 +116,28 @@ msgctxt "Space size name"
 msgid "6"
 msgstr "6"
 
-#: styles/fossil.json styles/ice.json theme.json
+#: theme.json styles/fossil.json styles/ice.json
 msgctxt "Font family name"
 msgid "Inter"
 msgstr "Inter"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Medium"
 msgstr "Moyenne"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Large"
 msgstr "Grande"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Extra Large"
 msgstr "Très grande"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json styles/onyx.json styles/rust.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json styles/onyx.json styles/rust.json
 msgctxt "Color name"
 msgid "Contrast"
 msgstr "Contraste"
@@ -147,8 +147,8 @@ msgctxt "Template part name"
 msgid "Post Meta"
 msgstr "Métas de la publication"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json styles/onyx.json styles/rust.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json styles/onyx.json styles/rust.json
 msgctxt "Color name"
 msgid "Base"
 msgstr "Base"
@@ -253,11 +253,6 @@ msgstr "Commentaires"
 msgctxt "Pattern title"
 msgid "No results"
 msgstr "Aucun résultat"
-
-#: patterns/text-title-left-image-right.php:35
-msgctxt "Call to Action button text"
-msgid "About us"
-msgstr "A propos de nous"
 
 #: patterns/text-title-left-image-right.php:28
 msgctxt "Description for the About pattern"
@@ -367,12 +362,12 @@ msgctxt "Pattern title"
 msgid "Project details"
 msgstr "Détails du projet"
 
-#: styles/fossil.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/maelstrom.json
 msgctxt "Font family name"
 msgid "Cardo"
 msgstr "Cardo"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Small"
 msgstr "Petite"
@@ -397,14 +392,14 @@ msgctxt "Heading of the features"
 msgid "A passion for creating spaces"
 msgstr "Une passion pour la création d’espaces"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json
 msgctxt "Font family name"
 msgid "System Serif"
 msgstr "System Serif"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json
 msgctxt "Font family name"
 msgid "System Sans-serif"
 msgstr "System Sans-serif"
@@ -419,8 +414,8 @@ msgctxt "Font family name"
 msgid "Instrument Sans"
 msgstr "Instrument Sans"
 
-#: styles/ember.json styles/fossil.json styles/ice.json styles/maelstrom.json
-#: styles/mint.json styles/onyx.json theme.json
+#: theme.json styles/ember.json styles/fossil.json styles/ice.json
+#: styles/maelstrom.json styles/mint.json styles/onyx.json
 msgctxt "Color name"
 msgid "Base / Two"
 msgstr "Base / Deux"
@@ -435,7 +430,7 @@ msgctxt "Color name"
 msgid "Base / 2"
 msgstr "Base / 2"
 
-#: functions.php:28
+#: functions.php:24
 msgid "Arrow icon"
 msgstr "Icône flèche"
 
@@ -453,19 +448,19 @@ msgctxt "Pattern title"
 msgid "Hero"
 msgstr "Bannière d’accroche"
 
-#: functions.php:93
+#: functions.php:89
 msgid "With arrow"
 msgstr "Avec flèche"
 
-#: functions.php:74
+#: functions.php:70
 msgid "Checkmark"
 msgstr "Coche"
 
-#: functions.php:51
+#: functions.php:47
 msgid "Pill"
 msgstr "Arrondi"
 
-#: functions.php:111
+#: functions.php:107
 msgid "With asterisk"
 msgstr "Avec astérisque"
 
@@ -574,14 +569,14 @@ msgctxt "Duotone name"
 msgid "Dark gray and cinnamon"
 msgstr "Gris foncé et cannelle"
 
-#: styles/fossil.json styles/ice.json styles/mint.json styles/onyx.json
-#: theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/mint.json
+#: styles/onyx.json
 msgctxt "Color name"
 msgid "Contrast / Three"
 msgstr "Contraste / Trois"
 
-#: styles/fossil.json styles/ice.json styles/mint.json styles/onyx.json
-#: theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/mint.json
+#: styles/onyx.json
 msgctxt "Color name"
 msgid "Contrast / Two"
 msgstr "Contraste / Deux"
@@ -601,27 +596,27 @@ msgctxt "Style variation name"
 msgid "Rust"
 msgstr "Rouille"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent / Five"
 msgstr "Accent / Cinq"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent / Four"
 msgstr "Accent / Quatre"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent / Three"
 msgstr "Accent / Trois"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent / Two"
 msgstr "Accent / Deux"
 
-#: styles/onyx.json theme.json
+#: theme.json styles/onyx.json
 msgctxt "Color name"
 msgid "Accent"
 msgstr "Accent"
@@ -1476,7 +1471,7 @@ msgctxt "Gradient name"
 msgid "Vertical hard rust to beige"
 msgstr "Vertical net du rouille au beige"
 
-#: styles/fossil.json styles/ice.json styles/maelstrom.json theme.json
+#: theme.json styles/fossil.json styles/ice.json styles/maelstrom.json
 msgctxt "Font size name"
 msgid "Extra Extra Large"
 msgstr "Très très grande"
@@ -1535,6 +1530,11 @@ msgstr "Atterrissage RSVP"
 msgctxt "Prefix for the post category block: in category name"
 msgid "in "
 msgstr "dans "
+
+#: patterns/text-title-left-image-right.php:35
+msgctxt "Call to Action button text"
+msgid "About us"
+msgstr "À propos de nous"
 
 #. Author of the theme
 #: style.css
