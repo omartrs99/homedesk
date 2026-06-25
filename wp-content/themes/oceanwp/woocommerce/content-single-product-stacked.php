@@ -187,7 +187,7 @@ if (post_password_required()) {
 					<!-- Vidéo gauche -->
 					<div class="demo-story-video">
 						<div class="demo-story-wrap">
-							<iframe src="https://www.youtube.com/embed/26D9zZJHets?rel=0&modestbranding=1"
+							<iframe src="https://www.youtube.com/embed/P67QyB4iyoc?rel=0&modestbranding=1"
 								frameborder="0"
 								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowfullscreen loading="lazy"></iframe>
