@@ -318,19 +318,30 @@ add_action( 'wp_head', function () {
 // =============================================================================
 
 add_filter( 'render_block', function ( $block_content, $block ) {
-    if ( 'ocean-gutenberg-blocks/testimonial' !== $block['blockName'] ) {
+    if ( 'ogb/testimonial' !== $block['blockName'] ) {
         return $block_content;
     }
 
-    $person_name = ! empty( $block['attrs']['personName'] ) ? esc_attr( $block['attrs']['personName'] ) : '';
-    $alt         = $person_name ? 'Photo de ' . $person_name : 'Témoignage client';
+    // Priorité 1 : alt défini dans la médiathèque WP (champ "Texte alternatif")
+    $media_id = ! empty( $block['attrs']['mediaId'] ) ? (int) $block['attrs']['mediaId'] : 0;
+    $alt      = $media_id ? trim( get_post_meta( $media_id, '_wp_attachment_image_alt', true ) ) : '';
+
+    // Priorité 2 : prénom de la personne
+    if ( '' === $alt && ! empty( $block['attrs']['personName'] ) ) {
+        $alt = 'Photo de ' . esc_attr( $block['attrs']['personName'] );
+    }
+
+    // Priorité 3 : valeur générique
+    if ( '' === $alt ) {
+        $alt = 'Témoignage client';
+    }
 
     $block_content = preg_replace_callback(
         '/<img\b([^>]*)>/i',
         function ( $matches ) use ( $alt ) {
             $attrs = $matches[1];
             if ( false === strpos( $attrs, 'alt=' ) ) {
-                $attrs .= ' alt="' . $alt . '"';
+                $attrs .= ' alt="' . esc_attr( $alt ) . '"';
             }
             return '<img' . $attrs . '>';
         },
