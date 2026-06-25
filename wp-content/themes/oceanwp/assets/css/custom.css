@@ -2244,3 +2244,7 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
 a:focus {
     outline: none !important;
 }
+
+.responsive-video-wrap iframe{
+    border-radius: 12px;
+}
