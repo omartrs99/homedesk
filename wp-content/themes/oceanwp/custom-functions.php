@@ -393,3 +393,10 @@ add_filter( 'wc_order_attribution_origin_label', function( $label, $source_type,
 	return $label;
 }, 10, 3 );
 
+add_filter( 'rest_endpoints', function( $endpoints ) {
+    if ( ! is_user_logged_in() ) {
+        unset( $endpoints['/wp/v2/users'] );
+        unset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] );
+    }
+    return $endpoints;
+} );
