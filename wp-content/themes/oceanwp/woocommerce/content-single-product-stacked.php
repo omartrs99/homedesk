@@ -99,7 +99,7 @@ if (post_password_required()) {
     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
     <polyline points="16 7 22 7 22 13"/>
   </svg>					</div>
-					<h3 class="transformation-card__title">PRODUCTIF JUSQU'À 17H</h3>
+					<h3 class="transformation-card__title">FOCUS TOUTE LA JOURNE</h3>
 					<p class="transformation-card__desc">Pas de scrolling inutile, pas de regard dans le vide. L'énergie suit quand la posture est bonne.</p>
 				</div>
 			</div>
@@ -187,7 +187,7 @@ if (post_password_required()) {
 					<!-- Vidéo gauche -->
 					<div class="demo-story-video">
 						<div class="demo-story-wrap">
-							<iframe src="https://www.youtube.com/embed/S6rd8xwxWzg?rel=0&modestbranding=1"
+							<iframe src="https://www.youtube.com/embed/26D9zZJHets?rel=0&modestbranding=1"
 								frameborder="0"
 								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowfullscreen loading="lazy"></iframe>
@@ -203,7 +203,7 @@ if (post_password_required()) {
 					<!-- Vidéo droite -->
 					<div class="demo-story-video">
 						<div class="demo-story-wrap">
-							<iframe src="https://www.youtube.com/embed/S6rd8xwxWzg?rel=0&modestbranding=1"
+							<iframe src="https://www.youtube.com/embed/1AwHX6zVICs?rel=0&modestbranding=1"
 								frameborder="0"
 								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowfullscreen loading="lazy"></iframe>
