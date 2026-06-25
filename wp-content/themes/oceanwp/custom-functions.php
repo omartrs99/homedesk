@@ -256,21 +256,24 @@ add_action( 'template_redirect', function () {
 // render_block capture l'URL du ogb-columns-bg et la stocke en transient (chemin relatif).
 // wp_head la lit au prochain chargement et injecte le preload — sans output buffering.
 add_filter( 'render_block', function ( $content, $block ) {
-	if ( get_transient( 'homedesk_lcp_url' ) ) return $content;
+	if ( get_transient( 'homedesk_lcp_url_v2' ) ) return $content;
 	if ( ! is_front_page() ) return $content;
 	if ( strpos( $content, 'ogb-columns-bg' ) === false ) return $content;
-	if ( preg_match( '#style="background-image:url\(([^)]+)\)#', $content, $m ) ) {
-		$full_url = trim( $m[1], "\"' " );
-		set_transient( 'homedesk_lcp_url', $full_url, WEEK_IN_SECONDS );
+	// Le HTML encode les guillemets en &quot; et peut avoir un espace après ':'.
+	if ( preg_match( '#background-image:\s*url\(["\']?([^)"\']+)["\']?\)#', html_entity_decode( $content ), $m ) ) {
+		$full_url = trim( $m[1] );
+		if ( filter_var( $full_url, FILTER_VALIDATE_URL ) ) {
+			set_transient( 'homedesk_lcp_url_v2', $full_url, WEEK_IN_SECONDS );
+		}
 	}
 	return $content;
 }, 10, 2 );
 
 add_action( 'wp_head', function () {
 	if ( ! is_front_page() ) return;
-	$lcp_path = get_transient( 'homedesk_lcp_url' );
-	if ( $lcp_path ) {
-		echo '<link rel="preload" as="image" fetchpriority="high" href="' . esc_url( $lcp_path ) . '">' . "\n";
+	$lcp_url = get_transient( 'homedesk_lcp_url_v2' );
+	if ( $lcp_url ) {
+		echo '<link rel="preload" as="image" fetchpriority="high" href="' . esc_url( $lcp_url ) . '">' . "\n";
 	}
 }, 1 );
 
@@ -298,7 +301,7 @@ add_filter( 'style_loader_tag', function ( $tag, $handle ) {
 }, 10, 2 );
 
 add_filter( 'script_loader_tag', function ( $tag, $handle ) {
-    $defer_scripts = [ 'oceanwp-custom', 'swiper-js' ];
+    $defer_scripts = [ 'oceanwp-custom', 'swiper-js', 'cookieyes', 'cky-header', 'cookie-law-info' ];
     if ( in_array( $handle, $defer_scripts, true ) ) {
         return str_replace( ' src=', ' defer src=', $tag );
     }
@@ -350,6 +353,13 @@ add_filter( 'render_block', function ( $block_content, $block ) {
 
     return $block_content;
 }, 10, 2 );
+
+// Déqueue la copie OGB de Font Awesome (même version que le thème — évite le double chargement)
+add_action( 'wp_enqueue_scripts', function () {
+    wp_dequeue_style( 'fontawesome' );
+    wp_deregister_style( 'fontawesome' );
+}, 1000 );
+
 
 // Téléphone obligatoire — Région et Code postal facultatifs
 add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
