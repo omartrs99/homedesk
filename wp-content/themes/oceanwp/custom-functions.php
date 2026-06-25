@@ -351,6 +351,15 @@ add_filter( 'render_block', function ( $block_content, $block ) {
         $block_content
     );
 
+    // Liens décoratifs href="#" → spans (délimiteur ~ pour éviter conflit avec # dans l'URL)
+    foreach ( [ 'ogb-testimonial-name', 'ogb-testimonial-company' ] as $cls ) {
+        $block_content = preg_replace(
+            '~<a\s[^>]*class="' . $cls . '"[^>]*href="#">(.*?)</a>~is',
+            '<span class="' . $cls . '">$1</span>',
+            $block_content
+        );
+    }
+
     return $block_content;
 }, 10, 2 );
 
@@ -359,6 +368,26 @@ add_action( 'wp_enqueue_scripts', function () {
     wp_dequeue_style( 'fontawesome' );
     wp_deregister_style( 'fontawesome' );
 }, 1000 );
+
+
+// =============================================================================
+// ACCESSIBILITÉ — WHATSAPP BUTTON ARIA-LABEL
+// =============================================================================
+
+// Le plugin qlwapp (wp-whatsapp-chat) génère un bouton sans texte ni aria-label.
+// Ce snippet inline s'exécute après le rendu pour corriger l'attribut manquant.
+add_action( 'wp_footer', function () {
+    ?>
+    <script>
+    (function(){
+        var btn = document.querySelector('.qlwapp__button');
+        if (btn && !btn.getAttribute('aria-label')) {
+            btn.setAttribute('aria-label', 'Ouvrir le chat WhatsApp');
+        }
+    })();
+    </script>
+    <?php
+} );
 
 
 // Téléphone obligatoire — Région et Code postal facultatifs
