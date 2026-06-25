@@ -2235,6 +2235,12 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
         font-size: 13px !important;
                 letter-spacing: 0.4px;
     }
+    .opc-hero{
+        padding: 0px;
+    }
+    .product-stacked-layout .product-row-1{
+            gap: 0px;
+    }
 }
 
 .woocommerce span.onsale:nth-child(2){
