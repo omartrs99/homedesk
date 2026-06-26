@@ -1,6 +1,21 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+// =============================================================================
+// GOOGLE ANALYTICS (GA4)
+// =============================================================================
+add_action( 'wp_head', function () { ?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BPRL7Z3YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BPRL7Z3YL');
+</script>
+<?php }, 1 );
+
 // Permet les mots de passe d'application en HTTP (environnement local uniquement)
 add_filter( 'wp_is_application_passwords_available', '__return_true' );
 
