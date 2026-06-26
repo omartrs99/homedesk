@@ -6,13 +6,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // =============================================================================
 add_action( 'wp_head', function () { ?>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BPRL7Z3YL"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T7VFMV5V4J"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-0BPRL7Z3YL');
+  gtag('config', 'G-T7VFMV5V4J');
 </script>
 <?php }, 1 );
 
