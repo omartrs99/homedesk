@@ -53,9 +53,9 @@ wp-config.php_BACKUP
 .user.ini
 
 wp-config.php
-wp-config.php_BACKUP
+/wp-config.php_BACKUP
 *.log
-wp-content/plugins/akismet/
+/wp-content/plugins/akismet
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
