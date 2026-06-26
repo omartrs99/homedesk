@@ -56,6 +56,7 @@ wp-config.php
 /wp-config.php_BACKUP
 *.log
 /wp-content/plugins/akismet
+/wp-content/plugins/wordpress-seo
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
