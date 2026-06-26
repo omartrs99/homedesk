@@ -16,7 +16,8 @@
 /readme.html
 /wp-*.php
 /xmlrpc.php
-
+/wp-content/plugins/woocommerce
+/wp-content/plugins/wordpress-seo
 # Configuration
 wp-config.php
 
