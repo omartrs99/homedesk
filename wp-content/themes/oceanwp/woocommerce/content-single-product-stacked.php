@@ -156,6 +156,14 @@ if (post_password_required()) {
 						GRATUIT
 					</span>
 				</div>
+				<div class="team-offer">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="team-offer__link">
+                        <span class="team-offer__text">
+                          <span class="text-big">Le mal de dos ralentit-il vos équipes ?</span>  Offrez-leur un vrai confort de travail et demandez votre devis personnalisé. 
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="team-offer__icon" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </a>
+                </div>
 			</div>
 
 			<!-- Col 3 : Mini-galerie slider -->

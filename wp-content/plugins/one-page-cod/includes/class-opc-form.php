@@ -170,7 +170,14 @@ class OPC_Form {
                     </button>
                     <span class="pulse-text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="18" height="18" style="margin-right:6px;vertical-align:middle;fill:currentColor;transform:scaleX(-1);"><path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>Livré chez vous sans frais</span>
                 </div>
-                
+                <div class="team-offer">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="team-offer__link">
+                        <span class="team-offer__text" style="text-align:center">
+                           <span class="text-big"> Vos équipes souffrent-elles de maux de dos ?</span> Obtenez une offre entreprise sur mesure
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="team-offer__icon" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </a>
+                </div>
                 <div class="opc-form-messages"></div>
             </form>
         </div>
