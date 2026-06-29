@@ -1866,6 +1866,9 @@ body.postid-1482 .entry-summary .price .opc-discount-badge {
 .pulse-text {
     animation: pulse-glow 2s ease-in-out infinite;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
 }
 .qlwapp__button--button {
     padding: 5px 10px !important;
@@ -2253,4 +2256,13 @@ a:focus {
 
 .responsive-video-wrap iframe{
     border-radius: 12px;
+}
+ul#shipping_method{
+        
+        margin: 0px !important;
+        padding-bottom: 0px !important;
+}
+
+ul#shipping_method li{
+        padding-bottom: 0px !important;
 }

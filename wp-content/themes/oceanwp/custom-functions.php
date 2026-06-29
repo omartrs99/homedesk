@@ -454,3 +454,19 @@ add_filter( 'rest_endpoints', function( $endpoints ) {
     }
     return $endpoints;
 } );
+
+
+add_filter('gettext', function($translated, $text, $domain) {
+
+    if ($domain === 'woocommerce') {
+        if (
+            strpos($text, 'Shipping options') !== false ||
+            strpos($text, 'updated during checkout') !== false
+        ) {
+            return '';
+        }
+    }
+
+    return $translated;
+
+}, 10, 3);
