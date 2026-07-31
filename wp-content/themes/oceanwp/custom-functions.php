@@ -470,3 +470,142 @@ add_filter('gettext', function($translated, $text, $domain) {
     return $translated;
 
 }, 10, 3);
+
+/* ── Shortcode [homedesk_comparatif] ───────────────────────── */
+add_shortcode( 'homedesk_comparatif', function () {
+    $img_base = plugins_url( 'one-page-cod/assets/images/' );
+    $img_m    = $img_base . 'homedesk-bureau-assis-debout-pc-hero-medium.jpg';
+    $img_l    = $img_base . 'homedesk-bureau-assis-debout-pc-hero-large.jpg';
+
+    $check = '<svg class="hd-comp__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#318b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+    $bag   = '🧳';
+
+    ob_start(); ?>
+    <div class="hd-comp">
+      <table class="hd-comp__table">
+        <thead>
+          <tr>
+            <th class="hd-comp__th-feat">Caractéristique</th>
+            <th class="hd-comp__th">Modèle<br><strong>MÉDIUM</strong></th>
+            <th class="hd-comp__th hd-comp__th--large">Modèle<br><strong>LARGE</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Images -->
+          <tr class="hd-comp__img-row">
+            <td class="hd-comp__feat-cell"></td>
+            <td class="hd-comp__td">
+              <img src="<?php echo esc_url($img_m); ?>" alt="HomeDesk Médium" class="hd-comp__product-img img-popup">
+            </td>
+            <td class="hd-comp__td hd-comp__td--large">
+              <img src="<?php echo esc_url($img_l); ?>" alt="HomeDesk Large" class="hd-comp__product-img img-popup">
+            </td>
+          </tr>
+
+          <!-- Largeur / Profondeur -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+                <span>Largeur /<br>Profondeur</span>
+              </div>
+            </td>
+            <td class="hd-comp__td">40cm / 30cm</td>
+            <td class="hd-comp__td hd-comp__td--large">45cm / 34cm</td>
+          </tr>
+
+          <!-- Hauteur -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="4"/><polyline points="6 10 12 4 18 10"/><polyline points="6 14 12 20 18 14"/></svg></span>
+                <span>Hauteur</span>
+              </div>
+            </td>
+            <td class="hd-comp__td">50cm</td>
+            <td class="hd-comp__td hd-comp__td--large">64cm</td>
+          </tr>
+
+          <!-- Étagère supérieure -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="3" rx="1"/><rect x="2" y="10" width="20" height="3" rx="1"/><line x1="6" y1="6" x2="6" y2="10"/><line x1="18" y1="6" x2="18" y2="10"/></svg></span>
+                <span>Étagère<br>supérieure</span>
+              </div>
+            </td>
+            <td class="hd-comp__td">40 cm × 27 cm</td>
+            <td class="hd-comp__td hd-comp__td--large">40 cm × 27 cm</td>
+          </tr>
+
+          <!-- Étagère inférieure -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="11" width="20" height="3" rx="1"/><rect x="2" y="18" width="20" height="3" rx="1"/><line x1="6" y1="14" x2="6" y2="18"/><line x1="18" y1="14" x2="18" y2="18"/></svg></span>
+                <span>Étagère<br>inférieure</span>
+              </div>
+            </td>
+            <td class="hd-comp__td">54 cm × 27 cm</td>
+            <td class="hd-comp__td hd-comp__td--large">54 cm × 27 cm</td>
+          </tr>
+
+          <!-- Poids -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+                <span>Poids</span>
+              </div>
+            </td>
+            <td class="hd-comp__td">10 kg</td>
+            <td class="hd-comp__td hd-comp__td--large">10 kg</td>
+          </tr>
+
+          <!-- Max PC -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+                <span>Max PC</span>
+              </div>
+            </td>
+            <td class="hd-comp__td"><?php /* echo $check; */ ?> 17 pouces</td>
+            <td class="hd-comp__td hd-comp__td--large"><?php /* echo $check; */ ?> 17 pouces</td>
+          </tr>
+
+          <!-- Sac offer -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+                <span>Sac offert</span>
+              </div>
+            </td>
+            <td class="hd-comp__td"><?php echo $check; ?> <?php echo 'Inclus' //$bag; ?></td>
+            <td class="hd-comp__td hd-comp__td--large"><?php echo $check; ?> <?php echo 'Inclus' //$bag; ?></td>
+          </tr>
+
+          <!-- Prix -->
+          <tr class="hd-comp__prix-row">
+            <td class="hd-comp__feat-cell">Prix</td>
+            <td class="hd-comp__td hd-comp__prix-medium">
+              <span class="hd-comp__prix-amount">169 TND</span>
+              <!--<small>(Normal)</small>-->
+            </td>
+            <td class="hd-comp__td hd-comp__td--large hd-comp__prix-large">
+              <span class="hd-comp__prix-amount">199 TND</span>
+              <!--<small>(Normal)</small>-->
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <div class="hd-comp__cta-wrap">
+        <a href="#opc-form-container" class="hd-comp__cta-btn">Commander maintenant</a>
+      </div>
+    </div>
+    <?php
+    return ob_get_clean();
+} );

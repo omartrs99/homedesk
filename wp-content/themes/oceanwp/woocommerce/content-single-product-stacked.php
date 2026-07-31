@@ -118,15 +118,15 @@ if (post_password_required()) {
 				<div class="pgb-hero__wrap">
 					<span class="pgb-hero__badge">Améliorez votre posture</span>
 					<div class="pgb-hero__track" id="pgb-hero-track">
-						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-1.jpg" alt="HomeDesk vue 1" class="pgb-hero__slide">
-						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-2.jpg" alt="HomeDesk vue 2" class="pgb-hero__slide">
-						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-3.jpg" alt="HomeDesk vue 3" class="pgb-hero__slide">
+						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-5.jpg" alt="HomeDesk vue 1" class="pgb-hero__slide">
+						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-6.jpg" alt="HomeDesk vue 2" class="pgb-hero__slide">
+						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-7.jpg" alt="HomeDesk vue 3" class="pgb-hero__slide">
 					</div>
 				</div>
 				<div class="pgb-hero__thumbs">
-					<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-1.jpg" alt="" class="pgb-thumb pgb-thumb--active" data-pgb-hero="0">
-					<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-2.jpg" alt="" class="pgb-thumb" data-pgb-hero="1">
-					<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-3.jpg" alt="" class="pgb-thumb" data-pgb-hero="2">
+					<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-5.jpg" alt="" class="pgb-thumb pgb-thumb--active" data-pgb-hero="0">
+					<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-6.jpg" alt="" class="pgb-thumb" data-pgb-hero="1">
+					<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-7.jpg" alt="" class="pgb-thumb" data-pgb-hero="2">
 				</div>
 			</div>
 

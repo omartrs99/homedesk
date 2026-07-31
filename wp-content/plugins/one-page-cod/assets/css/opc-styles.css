@@ -289,7 +289,54 @@
 
 .opc-variation-field { margin-bottom: 12px; }
 .opc-variation-field:last-child { margin-bottom: 0; }
-.opc-variation-select { background-color: #fff; cursor: pointer; }
+
+.opc-variation-label {
+    display: block;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+}
+
+.opc-variation-radios {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.opc-radio-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    border: 2px solid #d8e2e1;
+    border-radius: 8px;
+    padding: 9px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #444;
+    background: #fff;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+    user-select: none;
+}
+
+.opc-radio-option input[type="radio"] {
+    display: none;
+}
+
+.opc-radio-option:has(input:checked),
+.opc-radio-option.is-checked {
+    border-color: #318b82;
+    background: #eaf5f4;
+    color: #318b82;
+}
+
+.opc-radio-option:hover {
+    border-color: #318b82;
+    background: #f4fbfa;
+}
 
 .opc-variation-price {
     margin-top: 10px;
@@ -301,6 +348,28 @@
     text-align: center;
     font-size: 1.1rem;
 }
+
+.opc-variation-desc {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 3px solid #318b82;
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.65;
+}
+
+.opc-variation-desc ul,
+.opc-variation-desc ol {
+    margin: 6px 0 0;
+    padding-left: 18px;
+}
+
+.opc-variation-desc li { margin-bottom: 4px; }
+
+.opc-variation-desc p { margin: 0 0 6px; }
+.opc-variation-desc p:last-child { margin-bottom: 0; }
 
 /* ── Bouton submit ───────────────────────────────────────────── */
 .opc-submit-row { margin-top: 24px; }
@@ -483,6 +552,11 @@
 }
 
 /* ── Team offer banner ───────────────────────────────────────── */
+@keyframes team-offer-scale {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.025); }
+}
+
 .team-offer {
     margin-top: 14px;
     border-radius: 10px;
@@ -490,12 +564,13 @@
     border: 1.5px solid #318b82;
     border-left: 4px solid #318b82;
     padding: 12px 16px;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    animation: team-offer-scale 2.4s ease-in-out infinite;
 }
 
 .team-offer:hover {
-    box-shadow: 0 4px 18px rgba(49, 139, 130, 0.18);
-    transform: translateY(-2px);
+    animation-play-state: paused;
+    transform: scale(1.03);
+    box-shadow: 0 6px 22px rgba(49, 139, 130, 0.28);
 }
 
 .team-offer__link {

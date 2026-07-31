@@ -69,23 +69,61 @@ class OPC_Form {
         $product_type = $product->get_type();
         $wrapper_class = 'opc-form-container' . ($extra_class ? ' ' . esc_attr($extra_class) : '');
 
+        // Pour un produit variable, afficher le prix de la première variation (pas la plage de prix)
+        if ($product_type === 'variable') {
+            $variations = $product->get_available_variations();
+            if (!empty($variations)) {
+                $first_var = wc_get_product($variations[0]['variation_id']);
+                $initial_unit_price    = wc_get_price_to_display($first_var);
+                $initial_regular_price = wc_get_price_to_display($first_var, array('price' => $first_var->get_regular_price()));
+                $initial_price_html    = $first_var->get_price_html();
+            } else {
+                $initial_unit_price    = wc_get_price_to_display($product);
+                $initial_regular_price = wc_get_price_to_display($product, array('price' => $product->get_regular_price()));
+                $initial_price_html    = $product->get_price_html();
+            }
+        } else {
+            $initial_unit_price    = wc_get_price_to_display($product);
+            $initial_regular_price = wc_get_price_to_display($product, array('price' => $product->get_regular_price()));
+            $initial_price_html    = $product->get_price_html();
+        }
+
         ?>
         <div class="<?php echo $wrapper_class; ?>" id="opc-form-container">
             <h3 class="opc-form-title"><?php echo apply_filters('opc_form_title', __('Commandez directement', 'one-page-cod')); ?></h3>
-            
+
             <form id="opc-order-form" class="opc-order-form" data-product-id="<?php echo esc_attr($product_id); ?>" data-product-type="<?php echo esc_attr($product_type); ?>">
-                
+
                 <?php wp_nonce_field('opc_submit_order', 'opc_nonce'); ?>
-                
+
                 <input type="hidden" name="product_id" value="<?php echo esc_attr($product_id); ?>">
                 <input type="hidden" name="product_type" value="<?php echo esc_attr($product_type); ?>">
-                
-                <?php if ($product_type === 'variable') : ?>
-                    <div class="opc-variations-section">
+
+                <?php if ($product_type === 'variable') :
+                    // Pré-charger toutes les variations pour un lookup instantané côté JS (pas d'AJAX au switch)
+                    $variations_cache = array();
+                    foreach ($product->get_available_variations() as $var_data) {
+                        $var = wc_get_product($var_data['variation_id']);
+                        if (!$var) continue;
+                        $normalized_attrs = array();
+                        foreach ($var->get_attributes() as $k => $v) {
+                            $normalized_attrs[preg_replace('/^attribute_/', '', $k)] = $v;
+                        }
+                        $variations_cache[] = array(
+                            'variation_id' => $var_data['variation_id'],
+                            'attributes'   => $normalized_attrs,
+                            'price'        => $var->get_price(),
+                            'price_html'   => $var->get_price_html(),
+                            'is_in_stock'  => $var->is_in_stock(),
+                            'description'  => wp_kses_post($var->get_description()),
+                        );
+                    }
+                ?>
+                    <div class="opc-variations-section" data-opc-variations="<?php echo esc_attr(wp_json_encode($variations_cache)); ?>">
                         <?php $this->render_variations($product); ?>
                     </div>
                 <?php endif; ?>
-                
+
                 <div class="opc-form-row opc-form-row-2cols">
                     <div class="opc-form-field">
                         <label for="opc_quantity"><?php _e('Quantité', 'one-page-cod'); ?> <span class="required">*</span></label>
@@ -102,13 +140,13 @@ class OPC_Form {
                             <button type="button" class="opc-qty-btn opc-qty-plus" aria-label="Augmenter la quantité">+</button>
                         </div>
                     </div>
-                    
+
                     <div class="opc-form-field">
                         <label><?php _e('Total', 'one-page-cod'); ?></label>
                         <div class="opc-product-price"
-                             data-unit-price="<?php echo esc_attr( wc_get_price_to_display( $product ) ); ?>"
-                             data-regular-price="<?php echo esc_attr( wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price() ) ) ); ?>">
-                            <?php echo $product->get_price_html(); ?>
+                             data-unit-price="<?php echo esc_attr($initial_unit_price); ?>"
+                             data-regular-price="<?php echo esc_attr($initial_regular_price); ?>">
+                            <?php echo $initial_price_html; ?>
                         </div>
                     </div>
                 </div>
@@ -186,36 +224,35 @@ class OPC_Form {
     
     public function render_variations($product) {
         $attributes = $product->get_variation_attributes();
-        
+
         if (empty($attributes)) {
             return;
         }
-        
+
         foreach ($attributes as $attribute_name => $options) {
             $attribute_label = wc_attribute_label($attribute_name);
-            $sanitized_name = sanitize_title($attribute_name);
-            
+            $options = array_values($options);
             ?>
             <div class="opc-variation-field">
-                <label for="opc_<?php echo esc_attr($sanitized_name); ?>">
+                <label class="opc-variation-label">
                     <?php echo esc_html($attribute_label); ?> <span class="required">*</span>
                 </label>
-                <select id="opc_<?php echo esc_attr($sanitized_name); ?>" 
-                        name="variation[<?php echo esc_attr($attribute_name); ?>]" 
-                        class="opc-variation-select opc-input" 
-                        data-attribute="<?php echo esc_attr($attribute_name); ?>"
-                        required>
-                    <option value=""><?php printf(__('Choisir %s', 'one-page-cod'), esc_html($attribute_label)); ?></option>
-                    <?php foreach ($options as $option) : ?>
-                        <option value="<?php echo esc_attr($option); ?>">
-                            <?php echo esc_html(apply_filters('woocommerce_variation_option_name', $option)); ?>
-                        </option>
+                <div class="opc-variation-radios" data-attribute="<?php echo esc_attr($attribute_name); ?>">
+                    <?php foreach ($options as $index => $option) : ?>
+                        <label class="opc-radio-option<?php echo $index === 0 ? ' is-checked' : ''; ?>">
+                            <input type="radio"
+                                   class="opc-variation-radio"
+                                   name="variation[<?php echo esc_attr($attribute_name); ?>]"
+                                   value="<?php echo esc_attr($option); ?>"
+                                   <?php echo $index === 0 ? 'checked' : ''; ?>>
+                            <span><?php echo esc_html(apply_filters('woocommerce_variation_option_name', $option)); ?></span>
+                        </label>
                     <?php endforeach; ?>
-                </select>
+                </div>
             </div>
             <?php
         }
-        
+
         echo '<input type="hidden" name="variation_id" id="opc_variation_id" value="">';
     }
     
@@ -237,18 +274,27 @@ class OPC_Form {
             wp_send_json_error(array('message' => __('Produit invalide', 'one-page-cod')));
         }
         
+        // find_matching_product_variation attend des clés préfixées "attribute_"
+        // et des valeurs en slug (sanitize_title) pour les attributs globaux (pa_*)
+        $normalized = array();
+        foreach ($attributes as $key => $value) {
+            $attr_key = strpos($key, 'attribute_') === 0 ? $key : 'attribute_' . sanitize_title($key);
+            $normalized[$attr_key] = sanitize_title($value);
+        }
+
         $data_store = WC_Data_Store::load('product');
-        $variation_id = $data_store->find_matching_product_variation($product, $attributes);
-        
+        $variation_id = $data_store->find_matching_product_variation($product, $normalized);
+
         if ($variation_id) {
             $variation = wc_get_product($variation_id);
-            
+
             wp_send_json_success(array(
-                'variation_id' => $variation_id,
-                'price' => $variation->get_price(),
-                'price_html' => $variation->get_price_html(),
-                'is_in_stock' => $variation->is_in_stock(),
+                'variation_id'   => $variation_id,
+                'price'          => $variation->get_price(),
+                'price_html'     => $variation->get_price_html(),
+                'is_in_stock'    => $variation->is_in_stock(),
                 'stock_quantity' => $variation->get_stock_quantity(),
+                'description'    => wp_kses_post($variation->get_description()),
             ));
         } else {
             wp_send_json_error(array('message' => __('Variation introuvable', 'one-page-cod')));

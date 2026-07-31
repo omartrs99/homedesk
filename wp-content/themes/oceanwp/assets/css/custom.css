@@ -539,7 +539,7 @@ body:not(.home) #main #content-wrap {
 .product-stacked-layout .pgb-hero__badge {
     position: absolute;
     top: 7px;
-    left: 14px;
+    right: 5px;
     background: #318b82;
     color: #fff;
     font-size: 0.9rem;
@@ -2265,4 +2265,250 @@ ul#shipping_method{
 
 ul#shipping_method li{
         padding-bottom: 0px !important;
+}
+
+/* ── [homedesk_comparatif] ──────────────────────────────────── */
+.hd-comp { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+
+.hd-comp__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #333;
+    min-width: 340px;
+}
+
+/* ── En-têtes ── */
+.hd-comp__th-feat,
+.hd-comp__th {
+    background: #2a7a72;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 12px;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+}
+.hd-comp__th-feat {
+    text-align: center;
+    padding-left: 16px;
+    border-radius: 10px 0 0 0;
+        vertical-align: middle;
+        border-right: 2.5px solid #318b82;
+}
+/* Colonne LARGE : card teal qui commence ici */
+.hd-comp__th--large {
+    background: #2a7a72;
+    border-top:   2.5px solid #318b82;
+    border-left:  2.5px solid #318b82;
+    border-right: 2.5px solid #318b82;
+    border-radius: 0px 10px 0 0;
+}
+
+/* ── Cellules feature (colonne gauche) ── */
+.hd-comp__feat-cell {
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #444;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    background: #fff;
+    border-left: 2.5px solid #318b82;
+    border-right: 2.5px solid #318b82;
+}
+/* Wrapper flex à l'intérieur du td (plus fiable que flex sur td) */
+.hd-comp__feat-inner {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 1.2rem;
+}
+
+/* ── Cellules données ── */
+.hd-comp__td {
+    text-align: center;
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    line-height: 1.45;
+    background: #fff;
+}
+/* Card LARGE : bordures latérales sur toutes les cellules de la colonne */
+.hd-comp__td--large {
+    border-left:  2.5px solid #318b82;
+    border-right: 2.5px solid #318b82;
+    background: rgba(49, 139, 130, 0.04);
+}
+
+/* ── Icônes ── */
+.hd-comp__icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #318b82;
+}
+.hd-comp__icon svg { display: block; }
+
+/* ── Ligne images ── */
+.hd-comp__img-row td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+}
+.hd-comp__product-img {
+    width: 110px;
+    height: auto;
+    border-radius: 8px;
+    cursor: zoom-in;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+}
+.hd-comp__product-img:hover { transform: scale(1.05); }
+
+/* ── Checkmark ── */
+.hd-comp__check { vertical-align: -4px; margin-right: 2px; }
+
+/* ── Ligne prix : fond teal foncé, texte blanc ── */
+.hd-comp__prix-row td {
+    background: #2a7a72;
+    border-bottom: none;
+}
+.hd-comp__prix-row .hd-comp__feat-cell {
+    background: #2a7a72;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-bottom: none;
+    border-radius: 0 0 0 10px; /* coin bas-gauche du tableau */
+}
+.hd-comp__prix-medium { background: #2a7a72; }
+
+/* Card LARGE : coin bas du card + bordure inférieure (plus spécifique pour l'override) */
+.hd-comp__prix-row .hd-comp__prix-large {
+    background: #2a7a72;
+    border-left:   2.5px solid #318b82;
+    border-right:  2.5px solid #318b82;
+    border-bottom: 2.5px solid #318b82;
+    border-radius: 0 0 10px 0px;
+}
+.hd-comp__prix-amount {
+    display: block;
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.1;
+}
+.hd-comp__prix-row small { color: rgba(255,255,255,0.72); font-size: 0.78rem; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .hd-comp__table    {  }
+    .hd-comp__product-img { width: 78px; }
+    .hd-comp__prix-amount { font-size: 1.3rem; }
+    .hd-comp__feat-cell   { white-space: normal; font-size: 0.78rem; padding: 10px 10px; }
+}
+
+.hd-comp__cta-wrap { text-align: center; margin-top: 20px; }
+.hd-comp__cta-btn {
+    display: inline-block;
+    background-color: #318b82;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+.hd-comp__cta-btn:hover,
+.hd-comp__cta-btn:focus { background-color: #22766c; color: #fff; }
+
+/* ── Floating bar fix — highlight sélecteur version ────────── */
+@keyframes opc-highlight-pulse {
+    0%   { box-shadow: 0 0 0 0    rgba(49, 139, 130, 0.55); }
+    50%  { box-shadow: 0 0 0 10px rgba(49, 139, 130, 0.16); }
+    100% { box-shadow: 0 0 0 0    rgba(49, 139, 130, 0); }
+}
+.opc-variation--highlight {
+    animation: opc-highlight-pulse 1.4s ease-out;
+    border-radius: 8px;
+}
+
+/* ── img-popup lightbox ─────────────────────────────────────── */
+.img-popup { border: 1px solid #348d84;
+    cursor: zoom-in;
+    border-radius: 10px; }
+.img-popup:hover { transform: scale(1.2); transition: transform 0.2s ease; }
+body.img-popup-open { overflow: hidden; }
+
+.img-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: zoom-out;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.img-popup-overlay.img-popup-visible { opacity: 1; }
+
+.img-popup-inner {
+    position: relative;
+    transform: scale(0.8) translateY(24px);
+    transition: transform 0.35s cubic-bezier(0.34, 1.42, 0.64, 1);
+}
+
+.img-popup-overlay.img-popup-visible .img-popup-inner {
+    transform: scale(1) translateY(0);
+}
+
+.img-popup-full {
+    display: block;
+    max-width: min(92vw, 1100px);
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 32px 96px rgba(0, 0, 0, 0.7);
+    cursor: default;
+}
+
+.img-popup-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease;
+    color: #222;
+    padding: 0;
+    z-index: 1;
+}
+
+.img-popup-close:hover {
+    transform: scale(1.15) rotate(90deg);
+    background: #f0f0f0;
 }

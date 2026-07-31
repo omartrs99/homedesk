@@ -489,7 +489,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var target = document.querySelector('.opc-form-container');
     if (!target) return;
 
-    document.querySelectorAll('.hook-produit-stacked .opc-submit-btn, .product-cta-block__inner .pcta-btn').forEach(function (btn) {
+    document.querySelectorAll('.hook-produit-stacked .opc-submit-btn, .product-cta-block__inner .pcta-btn, .hd-comp__cta-btn').forEach(function (btn) {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
             var offset = 80;
@@ -533,4 +533,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+
 });
+
+/* ── Fix floating bar "Sélectionner les options" → scroll OPC ── */
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.owp-floating-bar .button.top, .owp-floating-bar button.top');
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation(); // bloque le handler OceanWP (bubble phase)
+
+    var form = document.querySelector('.opc-form-container');
+    if (!form) return;
+
+    var top = form.getBoundingClientRect().top + window.scrollY - 90;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+
+    // Pulse sur le sélecteur de version après le scroll
+    setTimeout(function () {
+        var radios = form.querySelector('.opc-variation-radios');
+        if (radios) {
+            radios.classList.add('opc-variation--highlight');
+            setTimeout(function () {
+                radios.classList.remove('opc-variation--highlight');
+            }, 1400);
+        }
+    }, 600);
+}, true); // capture: true → s'exécute avant le handler OceanWP

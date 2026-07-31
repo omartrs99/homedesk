@@ -7,6 +7,8 @@
     'use strict';
 
     const OPC = {
+        variationsCache: [],
+
         init: function() {
             this.bindEvents();
             this.initVariations();
@@ -16,8 +18,8 @@
             // Soumission du formulaire
             $(document).on('submit', '#opc-order-form', this.handleSubmit.bind(this));
 
-            // Changement de variation
-            $(document).on('change', '.opc-variation-select', this.handleVariationChange.bind(this));
+            // Changement de variation (radio buttons)
+            $(document).on('change', '.opc-variation-radio', this.handleVariationChange.bind(this));
 
             // Validation en temps réel
             $(document).on('blur', '.opc-input', this.validateField.bind(this));
@@ -48,39 +50,50 @@
 
         initVariations: function() {
             const $form = $('#opc-order-form');
-            
-            if ($form.length && $form.data('product-type') === 'variable') {
-                // Vérifier si toutes les variations sont sélectionnées
-                this.checkVariations();
+
+            if (!$form.length || $form.data('product-type') !== 'variable') {
+                return;
+            }
+
+            // Charger le cache depuis le DOM (pré-rendu PHP, pas d'AJAX)
+            this.variationsCache = $form.find('.opc-variations-section').data('opc-variations') || [];
+
+            // Appliquer la variation pré-sélectionnée (premier radio)
+            this.resolveVariation($form);
+        },
+
+        resolveVariation: function($form) {
+            const selected = {};
+            $form.find('.opc-variation-radios').each(function() {
+                const attrName = $(this).data('attribute');
+                const val = $(this).find('input[type="radio"]:checked').val();
+                if (val) selected[attrName] = val;
+            });
+
+            const match = this.variationsCache.find(function(v) {
+                return Object.keys(selected).every(function(k) {
+                    return v.attributes[k] === selected[k];
+                });
+            });
+
+            if (match) {
+                $('#opc_variation_id').val(match.variation_id);
+                OPC.displayVariationPrice(match, $form);
+            } else {
+                $('#opc_variation_id').val('');
             }
         },
 
         handleVariationChange: function(e) {
-            const $select = $(e.currentTarget);
-            const $form = $select.closest('form');
-            const productId = $form.data('product-id');
-            
-            // Récupérer toutes les sélections de variations
-            const attributes = {};
-            let allSelected = true;
-            
-            $form.find('.opc-variation-select').each(function() {
-                const $this = $(this);
-                const value = $this.val();
-                
-                if (value) {
-                    attributes[$this.data('attribute')] = value;
-                } else {
-                    allSelected = false;
-                }
-            });
-            
-            // Si toutes les variations sont sélectionnées, récupérer les données
-            if (allSelected) {
-                this.getVariationData(productId, attributes, $form);
-            } else {
-                $('#opc_variation_id').val('');
-            }
+            const $radio = $(e.currentTarget);
+            const $form = $radio.closest('form');
+
+            // Mettre à jour l'état visuel
+            $radio.closest('.opc-variation-radios').find('.opc-radio-option').removeClass('is-checked');
+            $radio.closest('.opc-radio-option').addClass('is-checked');
+
+            // Lookup instantané dans le cache — pas d'AJAX
+            this.resolveVariation($form);
         },
 
         getVariationData: function(productId, attributes, $form) {
@@ -110,42 +123,39 @@
         },
 
         displayVariationPrice: function(data, $form) {
-            // Supprimer l'ancien affichage de prix
-            $form.find('.opc-variation-price').remove();
-            
-            // Créer un nouvel affichage
-            const $priceDiv = $('<div class="opc-variation-price"></div>');
-            $priceDiv.html(data.price_html);
-            
-            // Ajouter l'info de stock
-            if (data.is_in_stock) {
-                if (data.stock_quantity !== null) {
-                    $priceDiv.append('<div class="opc-stock-status in-stock">Stock: ' + data.stock_quantity + '</div>');
-                } else {
-                    $priceDiv.append('<div class="opc-stock-status in-stock">En stock</div>');
-                }
-            } else {
-                $priceDiv.append('<div class="opc-stock-status out-of-stock">Rupture de stock</div>');
+            // Mettre à jour la boîte de prix principale avec la variation sélectionnée
+            var $priceBox = $form.find('.opc-product-price');
+            $priceBox
+                .data('unit-price', data.price)
+                .attr('data-unit-price', data.price)
+                .html(data.price_html);
+
+            // Afficher / mettre à jour la description de la variation
+            $form.find('.opc-variation-desc').remove();
+            if (data.description) {
+                var $desc = $('<div class="opc-variation-desc"></div>').html(data.description);
+                $form.find('.opc-variations-section').append($desc);
             }
-            
-            $form.find('.opc-variations-section').append($priceDiv);
+
+            // Activer/désactiver le bouton selon la disponibilité
+            $form.find('.opc-submit-btn').prop('disabled', !data.is_in_stock);
         },
 
         checkVariations: function() {
             const $form = $('#opc-order-form');
-            
+
             if (!$form.length || $form.data('product-type') !== 'variable') {
                 return true;
             }
-            
+
             let allSelected = true;
-            
-            $form.find('.opc-variation-select').each(function() {
-                if (!$(this).val()) {
+
+            $form.find('.opc-variation-radios').each(function() {
+                if (!$(this).find('input[type="radio"]:checked').val()) {
                     allSelected = false;
                 }
             });
-            
+
             return allSelected;
         },
 
@@ -201,7 +211,14 @@
                 // Réinitialiser le formulaire
                 $('#opc-order-form')[0].reset();
                 $('#opc_variation_id').val('');
-                $('.opc-variation-price').remove();
+
+                // Rétablir l'état visuel des radios et recharger la variation par défaut
+                var $resetForm = $('#opc-order-form');
+                $resetForm.find('.opc-variation-radios').each(function() {
+                    $(this).find('.opc-radio-option').removeClass('is-checked');
+                    $(this).find('.opc-radio-option:first').addClass('is-checked');
+                });
+                OPC.initVariations();
                 
                 // Défiler vers le message
                 this.scrollToMessages();
@@ -386,3 +403,47 @@
     window.OPC = OPC;
 
 })(jQuery);
+
+/* ── img-popup lightbox (JS natif) ─────────────────────────── */
+document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('.img-popup');
+    if (!trigger) return;
+
+    var img = trigger.matches('img') ? trigger : trigger.querySelector('img');
+    var src = img ? img.getAttribute('src') : null;
+    var alt = img ? (img.getAttribute('alt') || '') : '';
+    if (!src) return;
+
+    var overlay = document.createElement('div');
+    overlay.className = 'img-popup-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.innerHTML =
+        '<div class="img-popup-inner">' +
+            '<img class="img-popup-full" src="' + src + '" alt="' + alt + '">' +
+            '<button class="img-popup-close" aria-label="Fermer">&times;</button>' +
+        '</div>';
+
+    document.body.appendChild(overlay);
+    document.body.classList.add('img-popup-open');
+
+    requestAnimationFrame(function () {
+        overlay.classList.add('img-popup-visible');
+    });
+
+    function closePopup() {
+        overlay.classList.remove('img-popup-visible');
+        document.body.classList.remove('img-popup-open');
+        setTimeout(function () { overlay.remove(); }, 320);
+        document.removeEventListener('keydown', onKeyDown);
+    }
+
+    overlay.addEventListener('click', function (e) {
+        if (!e.target.closest('.img-popup-inner img')) closePopup();
+    });
+
+    function onKeyDown(e) {
+        if (e.key === 'Escape') closePopup();
+    }
+    document.addEventListener('keydown', onKeyDown);
+});
