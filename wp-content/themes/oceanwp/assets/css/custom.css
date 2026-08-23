@@ -2396,6 +2396,15 @@ ul#shipping_method li{
     border-bottom: 2.5px solid #318b82;
     border-radius: 0 0 10px 0px;
 }
+.hd-comp__prix-old {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.1;
+    margin-bottom: 2px;
+}
+.hd-comp__prix-old del { text-decoration: line-through;     font-size: 1.5rem; }
 .hd-comp__prix-amount {
     display: block;
     font-size: 1.65rem;
@@ -2410,6 +2419,7 @@ ul#shipping_method li{
     .hd-comp__table    {  }
     .hd-comp__product-img { width: 78px; }
     .hd-comp__prix-amount { font-size: 1.3rem; }
+    .hd-comp__prix-old { font-size: 0.82rem; }
     .hd-comp__feat-cell   { white-space: normal; font-size: 0.78rem; padding: 10px 10px; }
 }
 

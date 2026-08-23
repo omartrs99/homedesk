@@ -503,6 +503,18 @@ add_shortcode( 'homedesk_comparatif', function () {
             </td>
           </tr>
 
+          <!-- Recommandé si vous mesurez -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M5 5l7-3 7 3"/><path d="M5 19l7 3 7-3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
+                <span>Recommandé<br>si vous mesurez</span>
+              </div>
+            </td>
+            <td class="hd-comp__td"><b>Taille max : 1,87 m</b></td>
+            <td class="hd-comp__td hd-comp__td--large"><b>Plus de 1,87 m</b></td>
+          </tr>
+
           <!-- Largeur / Profondeur -->
           <tr>
             <td class="hd-comp__feat-cell">
@@ -511,7 +523,7 @@ add_shortcode( 'homedesk_comparatif', function () {
                 <span>Largeur /<br>Profondeur</span>
               </div>
             </td>
-            <td class="hd-comp__td">40cm / 30cm</td>
+            <td class="hd-comp__td">36cm / 22cm</td>
             <td class="hd-comp__td hd-comp__td--large">45cm / 34cm</td>
           </tr>
 
@@ -523,8 +535,8 @@ add_shortcode( 'homedesk_comparatif', function () {
                 <span>Hauteur</span>
               </div>
             </td>
-            <td class="hd-comp__td">50cm</td>
-            <td class="hd-comp__td hd-comp__td--large">64cm</td>
+            <td class="hd-comp__td">55cm</td>
+            <td class="hd-comp__td hd-comp__td--large">68cm</td>
           </tr>
 
           <!-- Étagère supérieure -->
@@ -551,6 +563,18 @@ add_shortcode( 'homedesk_comparatif', function () {
             <td class="hd-comp__td hd-comp__td--large">54 cm × 27 cm</td>
           </tr>
 
+          <!-- Étagère pour PC / Tablette -->
+          <tr>
+            <td class="hd-comp__feat-cell">
+              <div class="hd-comp__feat-inner">
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span>
+                <span>Étagère pour<br>PC / Tablette</span>
+              </div>
+            </td>
+            <td class="hd-comp__td"><?php echo $check; ?> <b>Inclus</b></td>
+            <td class="hd-comp__td hd-comp__td--large"><?php echo $check; ?> <b>Inclus</b></td>
+          </tr>
+
           <!-- Poids -->
           <tr>
             <td class="hd-comp__feat-cell">
@@ -559,8 +583,8 @@ add_shortcode( 'homedesk_comparatif', function () {
                 <span>Poids</span>
               </div>
             </td>
-            <td class="hd-comp__td">10 kg</td>
-            <td class="hd-comp__td hd-comp__td--large">10 kg</td>
+            <td class="hd-comp__td">7,5 kg</td>
+            <td class="hd-comp__td hd-comp__td--large">5 kg</td>
           </tr>
 
           <!-- Max PC -->
@@ -583,19 +607,21 @@ add_shortcode( 'homedesk_comparatif', function () {
                 <span>Sac offert</span>
               </div>
             </td>
-            <td class="hd-comp__td"><?php echo $check; ?> <?php echo 'Inclus' //$bag; ?></td>
-            <td class="hd-comp__td hd-comp__td--large"><?php echo $check; ?> <?php echo 'Inclus' //$bag; ?></td>
+            <td class="hd-comp__td"><?php echo $check; ?> <?php echo '<b>Inclus</b>' //$bag; ?></td>
+            <td class="hd-comp__td hd-comp__td--large"><?php echo $check; ?> <?php echo '<b>Inclus</b>' //$bag; ?></td>
           </tr>
 
           <!-- Prix -->
           <tr class="hd-comp__prix-row">
             <td class="hd-comp__feat-cell">Prix</td>
             <td class="hd-comp__td hd-comp__prix-medium">
-              <span class="hd-comp__prix-amount">169 TND</span>
+              <span class="hd-comp__prix-old"><del>219 TND</del></span>
+              <span class="hd-comp__prix-amount">199 TND</span>
               <!--<small>(Normal)</small>-->
             </td>
             <td class="hd-comp__td hd-comp__td--large hd-comp__prix-large">
-              <span class="hd-comp__prix-amount">199 TND</span>
+              <span class="hd-comp__prix-old"><del>229 TND</del></span>
+              <span class="hd-comp__prix-amount">209 TND</span>
               <!--<small>(Normal)</small>-->
             </td>
           </tr>
