@@ -101,6 +101,10 @@ class OPC_Form {
         ?>
         <div class="<?php echo $wrapper_class; ?>" id="opc-form-container">
             <h3 class="opc-form-title"><?php echo apply_filters('opc_form_title', __('Commandez directement', 'one-page-cod')); ?></h3>
+            <p class="opc-form-subtitle">
+                <span class="opc-form-subtitle__icon">📏</span>
+                Vous mesurez plus de <strong>1,87&nbsp;m</strong>? <br> La version <strong>Large</strong> est faite pour vous
+            </p>
 
             <form id="opc-order-form" class="opc-order-form" data-product-id="<?php echo esc_attr($product_id); ?>" data-product-type="<?php echo esc_attr($product_type); ?>">
 

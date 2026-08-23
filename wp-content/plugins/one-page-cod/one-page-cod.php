@@ -58,7 +58,7 @@ function opc_woocommerce_missing_notice() {
 }
 
 // Constantes du plugin
-define('OPC_VERSION', '1.0.3');
+define('OPC_VERSION', '1.0.4');
 define('OPC_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('OPC_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('OPC_PLUGIN_BASENAME', plugin_basename(__FILE__));

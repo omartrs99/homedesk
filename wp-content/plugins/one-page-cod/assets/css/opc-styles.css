@@ -38,6 +38,57 @@
     border-radius: 2px;
 }
 
+/* ── Sous-titre accrocheur ──────────────────────────────────── */
+.opc-form-subtitle {
+    margin: -14px auto 26px;
+    max-width: 460px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1a6b63;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #eafaf7 0%, #d7f1ec 100%);
+    border: 1px solid #b8e4dc;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(49, 139, 130, 0.14);
+    animation: opc-subtitle-in 0.6s ease-out both, opc-subtitle-pulse 2.6s ease-in-out 0.6s infinite;
+}
+
+.opc-form-subtitle strong { color: #14584f; font-weight: 800; }
+
+.opc-form-subtitle__icon {
+    flex-shrink: 0;
+    font-size: 1.25em;
+    line-height: 1;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes opc-subtitle-in {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes opc-subtitle-pulse {
+    0%, 100% { box-shadow: 0 4px 14px rgba(49, 139, 130, 0.14); }
+    50%      { box-shadow: 0 4px 22px rgba(49, 139, 130, 0.30); }
+}
+
+@media (max-width: 600px) {
+    .opc-form-subtitle {
+        border-radius: 14px;
+        padding: 11px 16px;
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .opc-form-subtitle { animation: opc-subtitle-in 0.4s ease-out both; }
+}
+
 /* ── Layout ─────────────────────────────────────────────────── */
 .opc-order-form { margin: 0; }
 
