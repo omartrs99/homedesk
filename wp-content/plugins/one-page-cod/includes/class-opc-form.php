@@ -73,7 +73,17 @@ class OPC_Form {
         if ($product_type === 'variable') {
             $variations = $product->get_available_variations();
             if (!empty($variations)) {
-                $first_var = wc_get_product($variations[0]['variation_id']);
+                // Sélectionner par défaut la variation "medium" si elle existe
+                $default_var_data = $variations[0];
+                foreach ($variations as $vd) {
+                    foreach ($vd['attributes'] as $av) {
+                        if ($av !== '' && stripos($av, 'med') !== false) {
+                            $default_var_data = $vd;
+                            break 2;
+                        }
+                    }
+                }
+                $first_var = wc_get_product($default_var_data['variation_id']);
                 $initial_unit_price    = wc_get_price_to_display($first_var);
                 $initial_regular_price = wc_get_price_to_display($first_var, array('price' => $first_var->get_regular_price()));
                 $initial_price_html    = $first_var->get_price_html();
@@ -232,6 +242,12 @@ class OPC_Form {
         foreach ($attributes as $attribute_name => $options) {
             $attribute_label = wc_attribute_label($attribute_name);
             $options = array_values($options);
+            // Placer la variation "medium" en premier pour qu'elle soit sélectionnée par défaut
+            usort($options, function ($a, $b) {
+                $a_med = (stripos($a, 'med') !== false) ? 0 : 1;
+                $b_med = (stripos($b, 'med') !== false) ? 0 : 1;
+                return $a_med - $b_med;
+            });
             ?>
             <div class="opc-variation-field">
                 <label class="opc-variation-label">

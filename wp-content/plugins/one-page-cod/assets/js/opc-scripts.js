@@ -58,6 +58,15 @@
             // Charger le cache depuis le DOM (pré-rendu PHP, pas d'AJAX)
             this.variationsCache = $form.find('.opc-variations-section').data('opc-variations') || [];
 
+            // Synchroniser l'état visuel .is-checked avec le radio réellement coché
+            // (indispensable car le style ne repose plus sur :has() pour la compat mobile)
+            $form.find('.opc-variation-radios').each(function() {
+                var $radios = $(this);
+                $radios.find('.opc-radio-option').removeClass('is-checked');
+                $radios.find('input[type="radio"]:checked')
+                       .closest('.opc-radio-option').addClass('is-checked');
+            });
+
             // Appliquer la variation pré-sélectionnée (premier radio)
             this.resolveVariation($form);
         },

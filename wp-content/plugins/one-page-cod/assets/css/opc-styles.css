@@ -326,7 +326,6 @@
     display: none;
 }
 
-.opc-radio-option:has(input:checked),
 .opc-radio-option.is-checked {
     border-color: #318b82;
     background: #eaf5f4;
@@ -370,6 +369,31 @@
 
 .opc-variation-desc p { margin: 0 0 6px; }
 .opc-variation-desc p:last-child { margin-bottom: 0; }
+
+/* Mobile : forcer une seule colonne (titre / ul / image empilés) */
+@media (max-width: 600px) {
+    /* Le contenu utilise un <table> 2 colonnes (td 50%) : on l'empile */
+    .opc-variation-desc table,
+    .opc-variation-desc tbody,
+    .opc-variation-desc tr,
+    .opc-variation-desc td {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        box-sizing: border-box;
+    }
+    .opc-variation-desc td { text-align: left !important; }
+    .opc-variation-desc td + td { margin-top: 12px; }
+    /* Image en pleine largeur, empilée sous le texte */
+    .opc-variation-desc img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 10px auto 0;
+    }
+}
 
 /* ── Bouton submit ───────────────────────────────────────────── */
 .opc-submit-row { margin-top: 24px; }
