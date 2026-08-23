@@ -536,8 +536,8 @@ add_shortcode( 'homedesk_comparatif', function () {
                 <span>Hauteur</span>
               </div>
             </td>
-            <td class="hd-comp__td">55cm</td>
-            <td class="hd-comp__td hd-comp__td--large">68cm</td>
+            <td class="hd-comp__td"><b>55cm</b></td>
+            <td class="hd-comp__td hd-comp__td--large"><b>68cm</b></td>
           </tr>
 
           <!-- Étagère supérieure -->
@@ -560,8 +560,8 @@ add_shortcode( 'homedesk_comparatif', function () {
                 <span>Étagère<br>inférieure (Clavier, Souris)</span>
               </div>
             </td>
-            <td class="hd-comp__td">54 cm × 27 cm</td>
-            <td class="hd-comp__td hd-comp__td--large">54 cm × 27 cm</td>
+            <td class="hd-comp__td"><b>54 cm × 22 cm</b></td>
+            <td class="hd-comp__td hd-comp__td--large"><b>54 cm × 27 cm</b></td>
           </tr>
 
           <!-- Étagère pour Tél / Tablette -->
@@ -584,8 +584,8 @@ add_shortcode( 'homedesk_comparatif', function () {
                 <span>Poids du support</span>
               </div>
             </td>
-            <td class="hd-comp__td">7,5 kg</td>
-            <td class="hd-comp__td hd-comp__td--large">5 kg</td>
+            <td class="hd-comp__td"><b>7,5 kg</b></td>
+            <td class="hd-comp__td hd-comp__td--large"><b>5 kg</b></td>
           </tr>
 
           <!-- Max PC -->
