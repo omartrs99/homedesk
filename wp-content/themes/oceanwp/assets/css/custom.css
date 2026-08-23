@@ -2372,6 +2372,7 @@ ul#shipping_method li{
 
 /* ── Checkmark ── */
 .hd-comp__check { vertical-align: -4px; margin-right: 2px; }
+.hd-comp__cross { vertical-align: -4px; margin-right: 2px; }
 
 /* ── Ligne prix : fond teal foncé, texte blanc ── */
 .hd-comp__prix-row td {

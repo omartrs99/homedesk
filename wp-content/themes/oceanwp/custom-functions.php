@@ -478,6 +478,7 @@ add_shortcode( 'homedesk_comparatif', function () {
     $img_l    = $img_base . 'homedesk-bureau-assis-debout-pc-hero-large.jpg';
 
     $check = '<svg class="hd-comp__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#318b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+    $cross = '<svg class="hd-comp__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
     $bag   = '🧳';
 
     ob_start(); ?>
@@ -544,7 +545,7 @@ add_shortcode( 'homedesk_comparatif', function () {
             <td class="hd-comp__feat-cell">
               <div class="hd-comp__feat-inner">
                 <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="3" rx="1"/><rect x="2" y="10" width="20" height="3" rx="1"/><line x1="6" y1="6" x2="6" y2="10"/><line x1="18" y1="6" x2="18" y2="10"/></svg></span>
-                <span>Étagère<br>supérieure</span>
+                <span>Étagère<br>supérieure (PC / Écran)</span>
               </div>
             </td>
             <td class="hd-comp__td">40 cm × 27 cm</td>
@@ -556,22 +557,22 @@ add_shortcode( 'homedesk_comparatif', function () {
             <td class="hd-comp__feat-cell">
               <div class="hd-comp__feat-inner">
                 <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="11" width="20" height="3" rx="1"/><rect x="2" y="18" width="20" height="3" rx="1"/><line x1="6" y1="14" x2="6" y2="18"/><line x1="18" y1="14" x2="18" y2="18"/></svg></span>
-                <span>Étagère<br>inférieure</span>
+                <span>Étagère<br>inférieure (Clavier, Souris)</span>
               </div>
             </td>
             <td class="hd-comp__td">54 cm × 27 cm</td>
             <td class="hd-comp__td hd-comp__td--large">54 cm × 27 cm</td>
           </tr>
 
-          <!-- Étagère pour PC / Tablette -->
+          <!-- Étagère pour Tél / Tablette -->
           <tr>
             <td class="hd-comp__feat-cell">
               <div class="hd-comp__feat-inner">
-                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span>
-                <span>Étagère pour<br>PC / Tablette</span>
+                <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></span>
+                <span>Étagère pour<br>Tél / Tablette</span>
               </div>
             </td>
-            <td class="hd-comp__td"><?php echo $check; ?> <b>Inclus</b></td>
+            <td class="hd-comp__td"><?php echo $cross; ?> <b>Non inclus</b></td>
             <td class="hd-comp__td hd-comp__td--large"><?php echo $check; ?> <b>Inclus</b></td>
           </tr>
 
@@ -580,7 +581,7 @@ add_shortcode( 'homedesk_comparatif', function () {
             <td class="hd-comp__feat-cell">
               <div class="hd-comp__feat-inner">
                 <span class="hd-comp__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
-                <span>Poids</span>
+                <span>Poids du support</span>
               </div>
             </td>
             <td class="hd-comp__td">7,5 kg</td>
