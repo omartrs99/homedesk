@@ -69,11 +69,14 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 			?>
 
 			<div id="copyright" class="clr" role="contentinfo">
-				<?php
-				if ( ! empty($copy) ) {
-					echo wp_kses_post( do_shortcode( $copy ) );
-				}
-				?>
+				<a class="copyright-legal" href="https://www.homedesk.tn/politique-de-confidentialite/">Mentions Légales</a>
+				<span class="copyright-text">
+					<?php
+					if ( ! empty($copy) ) {
+						echo wp_kses_post( do_shortcode( $copy ) );
+					}
+					?>
+				</span>
 			</div><!-- #copyright -->
 
 			<?php
