@@ -118,9 +118,9 @@ if (post_password_required()) {
 				<div class="pgb-hero__wrap">
 					<span class="pgb-hero__badge">Améliorez votre posture</span>
 					<div class="pgb-hero__track" id="pgb-hero-track">
-						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-5.jpg" alt="HomeDesk vue 1" class="pgb-hero__slide">
-						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-6.jpg" alt="HomeDesk vue 2" class="pgb-hero__slide">
-						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-7.jpg" alt="HomeDesk vue 3" class="pgb-hero__slide">
+						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-5.jpg" alt="HomeDesk vue 1" class="pgb-hero__slide img-popup">
+						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-6.jpg" alt="HomeDesk vue 2" class="pgb-hero__slide img-popup">
+						<img src="<?php echo $img_base; ?>homedesk-bureau-assis-debout-pc-hero-7.jpg" alt="HomeDesk vue 3" class="pgb-hero__slide img-popup">
 					</div>
 				</div>
 				<div class="pgb-hero__thumbs">
@@ -169,9 +169,9 @@ if (post_password_required()) {
 			<!-- Col 3 : Mini-galerie slider -->
 			<div class="pgb-gallery">
 				<div class="pgb-gallery__track" id="pgb-track">
-					<img src="<?php echo $img_base; ?>homedesk-sac-1.jpg" alt="Sac vue 1" class="pgb-slide ">
-					<img src="<?php echo $img_base; ?>homedesk-sac-2.jpg" alt="Sac vue 2" class="pgb-slide">
-					<img src="<?php echo $img_base; ?>homedesk-sac-3.jpg" alt="Sac vue 3" class="pgb-slide">
+					<img src="<?php echo $img_base; ?>homedesk-sac-1.jpg" alt="Sac vue 1" class="pgb-slide img-popup">
+					<img src="<?php echo $img_base; ?>homedesk-sac-2.jpg" alt="Sac vue 2" class="pgb-slide img-popup">
+					<img src="<?php echo $img_base; ?>homedesk-sac-3.jpg" alt="Sac vue 3" class="pgb-slide img-popup">
 				</div>
 				<div class="pgb-gallery__thumbs">
 					<img src="<?php echo $img_base; ?>homedesk-sac-1.jpg" alt="" class="pgb-thumb " data-pgb="0">

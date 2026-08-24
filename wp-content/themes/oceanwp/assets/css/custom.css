@@ -659,11 +659,28 @@ body:not(.home) #main #content-wrap {
     height: 100%;
     object-fit: cover;
     opacity: 0;
+    z-index: 0;
     transition: opacity 0.6s ease;
 }
 
 .product-stacked-layout .pgb-slide--active {
     opacity: 1;
+    z-index: 1;
+}
+
+/* Slides pgb & pgb-hero cliquables (lightbox img-popup) :
+   on conserve la classe .img-popup pour ouvrir la popup au clic,
+   mais on neutralise sa bordure/zoom qui déformeraient ces images plein cadre */
+.product-stacked-layout .pgb-slide.img-popup,
+.product-stacked-layout .pgb-hero__slide.img-popup {
+    border: none;
+    border-radius: 0;
+    cursor: zoom-in;
+}
+
+.product-stacked-layout .pgb-slide.img-popup:hover,
+.product-stacked-layout .pgb-hero__slide.img-popup:hover {
+    transform: none;
 }
 
 .product-stacked-layout .pgb-gallery__thumbs {
