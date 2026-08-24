@@ -2580,3 +2580,6 @@ body.img-popup-open { overflow: hidden; }
 .woo-product-info .category{
     display: none !important;
 }
+.woo-product-info .title h2{
+    margin-bottom: 0px !important;
+}
