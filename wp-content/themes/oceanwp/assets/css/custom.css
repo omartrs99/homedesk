@@ -2571,3 +2571,9 @@ body.img-popup-open { overflow: hidden; }
         text-align: center;
     }
 }
+
+/* ── Masquer l'icône Quick View sur les blocs produits (page shop / archives) ── */
+.woocommerce .products .owp-quick-view,
+.woo-entry-image .owp-quick-view {
+    display: none !important;
+}
