@@ -2577,3 +2577,6 @@ body.img-popup-open { overflow: hidden; }
 .woo-entry-image .owp-quick-view {
     display: none !important;
 }
+.woo-product-info .category{
+    display: none !important;
+}
