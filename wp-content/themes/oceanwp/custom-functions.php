@@ -584,8 +584,8 @@ add_shortcode( 'homedesk_comparatif', function () {
                 <span>Poids du support</span>
               </div>
             </td>
-            <td class="hd-comp__td"><b>7,5 kg</b></td>
-            <td class="hd-comp__td hd-comp__td--large"><b>5 kg</b></td>
+            <td class="hd-comp__td"><b>5 kg</b></td>
+            <td class="hd-comp__td hd-comp__td--large"><b>7 kg</b></td>
           </tr>
 
           <!-- Max PC -->

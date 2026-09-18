@@ -8,6 +8,7 @@
 
     const OPC = {
         variationsCache: [],
+        noBag: false,
 
         init: function() {
             this.bindEvents();
@@ -23,6 +24,14 @@
 
             // Validation en temps réel
             $(document).on('blur', '.opc-input', this.validateField.bind(this));
+
+            // Bascule "sans sac" / "avec sac"
+            $(document).on('click', '.opc-nobag__toggle', this.handleNoBagToggle.bind(this));
+
+            // Saisie manuelle de la quantité
+            $(document).on('input change', '#opc_quantity', function() {
+                OPC.updateTotalPrice();
+            });
 
             // Boutons +/− quantité
             $(document).on('click', '.opc-qty-minus', function() {
@@ -134,9 +143,14 @@
         displayVariationPrice: function(data, $form) {
             // Mettre à jour la boîte de prix principale avec la variation sélectionnée
             var $priceBox = $form.find('.opc-product-price');
+            var regularPrice = (typeof data.regular_price !== 'undefined' && data.regular_price !== '')
+                ? data.regular_price
+                : data.price;
             $priceBox
                 .data('unit-price', data.price)
                 .attr('data-unit-price', data.price)
+                .data('regular-price', regularPrice)
+                .attr('data-regular-price', regularPrice)
                 .html(data.price_html);
 
             // Afficher / mettre à jour la description de la variation
@@ -148,6 +162,33 @@
 
             // Activer/désactiver le bouton selon la disponibilité
             $form.find('.opc-submit-btn').prop('disabled', !data.is_in_stock);
+
+            // Réappliquer la quantité et l'éventuelle remise "sans sac"
+            OPC.updateTotalPrice();
+        },
+
+        getNoBagDiscount: function() {
+            if (!this.noBag) {
+                return 0;
+            }
+            var attr = parseFloat($('.opc-nobag').data('nobag-discount'));
+            if (!isNaN(attr)) {
+                return attr;
+            }
+            return parseFloat(opcData.nobag_discount) || 0;
+        },
+
+        handleNoBagToggle: function(e) {
+            e.preventDefault();
+
+            this.noBag = !this.noBag;
+
+            var $block = $(e.currentTarget).closest('.opc-nobag');
+            $block.toggleClass('opc-nobag--active', this.noBag);
+            $(e.currentTarget).attr('aria-pressed', this.noBag ? 'true' : 'false');
+            $('#opc_no_bag').val(this.noBag ? '1' : '0');
+
+            this.updateTotalPrice();
         },
 
         checkVariations: function() {
@@ -220,6 +261,12 @@
                 // Réinitialiser le formulaire
                 $('#opc-order-form')[0].reset();
                 $('#opc_variation_id').val('');
+
+                // Réinitialiser l'option "sans sac" (retour à "avec le sac")
+                OPC.noBag = false;
+                $('#opc_no_bag').val('0');
+                $('.opc-nobag').removeClass('opc-nobag--active')
+                    .find('.opc-nobag__toggle').attr('aria-pressed', 'false');
 
                 // Rétablir l'état visuel des radios et recharger la variation par défaut
                 var $resetForm = $('#opc-order-form');
@@ -368,8 +415,21 @@
 
         updateTotalPrice: function(qty) {
             var $priceBox    = $('.opc-product-price');
+            if (!$priceBox.length) {
+                return;
+            }
+
+            if (typeof qty === 'undefined' || qty === null) {
+                qty = parseInt($('#opc_quantity').val(), 10) || 1;
+            }
+
             var unitPrice    = parseFloat($priceBox.data('unit-price'))    || 0;
             var regularPrice = parseFloat($priceBox.data('regular-price')) || 0;
+
+            // Remise "sans sac" deduite par article (jamais en dessous de 0)
+            var discount     = this.getNoBagDiscount();
+            var effUnit      = Math.max(0, unitPrice - discount);
+            var effRegular   = regularPrice ? Math.max(0, regularPrice - discount) : 0;
 
             var updateBdi = function($bdi, total) {
                 var $symbol = $bdi.find('.woocommerce-Price-currencySymbol').detach();
@@ -380,15 +440,15 @@
             // Prix soldé (ins) ou prix simple
             var $ins = $priceBox.find('ins .woocommerce-Price-amount bdi');
             if ($ins.length) {
-                updateBdi($ins, unitPrice * qty);
+                updateBdi($ins, effUnit * qty);
             } else {
-                updateBdi($priceBox.find('.woocommerce-Price-amount bdi').first(), unitPrice * qty);
+                updateBdi($priceBox.find('.woocommerce-Price-amount bdi').first(), effUnit * qty);
             }
 
             // Prix barré (del)
             var $del = $priceBox.find('del .woocommerce-Price-amount bdi');
-            if ($del.length && regularPrice) {
-                updateBdi($del, regularPrice * qty);
+            if ($del.length && effRegular) {
+                updateBdi($del, effRegular * qty);
             }
         },
 

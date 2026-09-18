@@ -1,0 +1,269 @@
+Je veux que tu réalises un audit complet de l'indexation et de l'indexabilité SEO de mon site.
+
+Informations
+
+URL du site :
+https://www.homedesk.tn/
+
+J'ai également joint un fichier exporté depuis Google Search Console :
+homedesk.tn-Coverage-Valid-2026-09-09.xlsx
+
+
+Ce fichier contient les données réelles fournies par Google Search Console concernant les pages de mon site.
+
+IMPORTANT :
+
+Ne te limite pas à analyser le code du site.
+Utilise le fichier Google Search Console comme source de données principale pour déterminer ce que Google connaît et indexe réellement.
+Croise les données du fichier avec une analyse technique du site accessible à l'URL indiquée.
+Ne considère jamais qu'une page est indexée simplement parce qu'elle est techniquement indexable.
+Fais clairement la distinction entre "indexable techniquement" et "réellement indexée par Google".
+1. ANALYSE DU FICHIER GOOGLE SEARCH CONSOLE
+
+Commence par examiner attentivement le fichier fourni.
+
+Identifie :
+
+toutes les URLs présentes ;
+leur statut ;
+les raisons de non-indexation lorsqu'elles sont disponibles ;
+les éventuelles catégories d'exclusion ;
+les erreurs ;
+les pages indexées ;
+les pages non indexées ;
+les éventuelles tendances ou anomalies.
+
+Donne-moi les chiffres exacts présents dans le fichier.
+
+Ne fais pas d'estimation lorsque l'information est disponible dans le fichier.
+
+2. INVENTAIRE RÉEL DU SITE
+
+Explore le site à l'URL indiquée et détermine autant que possible :
+
+le nombre de pages accessibles ;
+les différentes catégories/types de pages ;
+les URLs importantes ;
+les URLs générées dynamiquement ;
+les pages qui semblent exister mais qui ne sont pas présentes dans Google Search Console ;
+les pages présentes dans Search Console mais qui ne semblent plus exister sur le site.
+
+Si certaines informations ne peuvent pas être déterminées avec certitude, indique-le clairement au lieu de les inventer.
+
+3. CROISEMENT GOOGLE SEARCH CONSOLE ↔ SITE
+
+C'est une partie essentielle de l'analyse.
+
+Compare :
+
+A. Les URLs présentes dans le fichier Google Search Console
+B. Les URLs réellement présentes/accessibles sur mon site
+C. Les URLs présentes dans le sitemap
+D. Les URLs découvertes via le maillage interne
+
+Cherche notamment :
+
+pages du site absentes de Search Console ;
+pages du site non indexées par Google ;
+pages importantes exclues de l'index ;
+pages indexées qui ne devraient peut-être pas l'être ;
+URLs présentes dans Search Console mais inexistantes sur le site ;
+URLs dupliquées ;
+URLs avec paramètres ;
+anciennes URLs ;
+redirections ;
+erreurs 404/410 ;
+pages orphelines ;
+incohérences entre les différentes sources.
+4. ROBOTS.TXT
+
+Vérifie :
+
+robots.txt ;
+les directives Disallow ;
+les éventuelles pages importantes bloquées ;
+les ressources nécessaires au rendu ;
+la présence et la cohérence du sitemap dans robots.txt.
+
+Signale toute règle pouvant empêcher inutilement Googlebot d'explorer des pages importantes.
+
+5. SITEMAP
+
+Analyse le ou les sitemap(s).
+
+Vérifie :
+
+quelles URLs sont présentes ;
+quelles URLs importantes sont absentes ;
+les URLs 404 dans le sitemap ;
+les URLs redirigées ;
+les URLs noindex ;
+les doublons ;
+les canonical incohérentes ;
+les URLs qui ne correspondent pas aux URLs finales ;
+la cohérence entre sitemap et Search Console.
+6. INDEXABILITÉ TECHNIQUE
+
+Pour les pages importantes, vérifie notamment :
+
+HTTP status ;
+meta robots ;
+noindex ;
+nofollow ;
+canonical ;
+disponibilité de la page ;
+contenu HTML ;
+rendu JavaScript ;
+liens internes ;
+éventuels blocages.
+
+Classe chaque problème :
+
+🔴 CRITIQUE
+🟠 IMPORTANT
+🟡 MINEUR
+🟢 OK
+
+7. CANONICAL
+
+Analyse les canonical et recherche :
+
+canonical vers une autre URL ;
+canonical vers une URL 404 ;
+canonical vers une URL redirigée ;
+canonical incohérente ;
+plusieurs URLs avec le même contenu ;
+problèmes de duplication ;
+différence entre URL déclarée par le site et URL choisie par Google si cette information est disponible dans le fichier Search Console.
+8. MAILLAGE INTERNE
+
+Analyse les liens internes.
+
+Identifie :
+
+pages orphelines ;
+pages importantes avec trop peu de liens internes ;
+pages accessibles uniquement après plusieurs niveaux ;
+liens vers des 404 ;
+liens vers des redirections ;
+problèmes d'architecture ;
+pages importantes difficiles à découvrir par Google.
+9. JAVASCRIPT / RENDU
+
+Si le site utilise un framework JavaScript :
+
+Détermine si les pages sont :
+
+SSR ;
+SSG ;
+ISR ;
+CSR.
+
+Vérifie si le contenu principal est disponible dans le HTML initial.
+
+Signale les pages dont le contenu dépend entièrement du JavaScript côté client et qui pourraient poser des problèmes de crawl ou de rendu.
+
+10. SEO TECHNIQUE DES PAGES
+
+Pour les différents types de pages, vérifie :
+
+title ;
+meta description ;
+H1 ;
+canonical ;
+robots ;
+hreflang si pertinent ;
+données structurées ;
+Open Graph ;
+contenu principal.
+11. PAGES NON INDEXÉES
+
+Pour chaque catégorie de pages non indexées identifiée dans Google Search Console, explique :
+
+Ce que signifie le statut.
+Si c'est normal ou problématique.
+Pourquoi Google pourrait ne pas indexer la page.
+Si une action est nécessaire.
+Quelle action précise effectuer.
+
+Ne considère pas toutes les pages non indexées comme des erreurs.
+
+Certaines exclusions peuvent être parfaitement normales.
+
+12. PAGES INDEXÉES
+
+Vérifie également les pages qui sont déjà indexées.
+
+Cherche :
+
+pages de faible qualité ;
+pages dupliquées ;
+pages inutiles ;
+pages de paramètres ;
+pages qui devraient être noindex ;
+pages qui pourraient consommer inutilement le crawl budget ;
+pages indexées mais avec un mauvais canonical.
+13. DÉTECTION DES PAGES MANQUANTES
+
+Une priorité de cet audit est de détecter les pages importantes qui devraient être indexées mais qui ne le sont pas.
+
+Construis si possible une liste :
+
+URL | Existe sur le site | Dans sitemap | Dans Search Console | Indexée | Indexable | Problème | Action recommandée
+
+14. RAPPORT FINAL
+
+À la fin, donne-moi un rapport clair avec :
+
+A. Résumé exécutif
+Nombre de pages détectées sur le site
+Nombre d'URLs dans le fichier Search Console
+Nombre de pages indexées
+Nombre de pages non indexées
+Nombre de problèmes critiques
+Nombre de problèmes importants
+Nombre de problèmes mineurs
+B. Les problèmes les plus importants
+
+Classe-les par priorité.
+
+C. Tableau des URLs problématiques
+
+Pour chaque URL importante :
+
+URL	Google	Indexable	Sitemap	Canonical	Problème	Action
+D. Pages qui ne nécessitent aucune action
+
+Identifie également les exclusions normales afin que je ne corrige pas des choses qui ne sont pas des problèmes.
+
+E. Plan d'action
+
+Donne-moi les corrections à effectuer dans l'ordre :
+
+Priorité critique
+Priorité importante
+Optimisations secondaires
+
+Pour chaque correction, explique concrètement ce qu'il faut modifier.
+
+RÈGLES IMPORTANTES
+Ne modifie aucun fichier.
+Ne lance aucune commande destructive.
+Ne fais aucune modification automatique.
+Commence uniquement par l'audit.
+Ne présente aucune supposition comme un fait.
+Si une donnée n'est pas disponible dans le fichier Search Console ou sur le site, indique "non déterminable".
+Distingue toujours les données provenant de Google Search Console des conclusions issues de ton analyse technique.
+Utilise les données du fichier exporté comme référence pour l'état d'indexation connu par Google.
+Si tu détectes une incohérence entre Search Console, sitemap et site réel, signale-la explicitement.
+
+Objectif final :
+
+Je veux savoir précisément :
+
+Quelles pages de mon site sont réellement indexées par Google.
+Quelles pages importantes ne sont pas indexées.
+Pourquoi elles ne sont pas indexées.
+Si cette non-indexation est normale ou problématique.
+Quels problèmes techniques empêchent éventuellement leur indexation.
+Quelles corrections je dois faire en priorité.

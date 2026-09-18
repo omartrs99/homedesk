@@ -139,6 +139,21 @@ class OPC_Settings {
                 'label' => __('Envoyer les emails de notification de commande', 'one-page-cod')
             )
         );
+
+        add_settings_field(
+            'nobag_discount',
+            __('Remise "sans sac"', 'one-page-cod'),
+            array($this, 'number_field_callback'),
+            'one-page-cod-settings',
+            'opc_order_section',
+            array(
+                'id' => 'nobag_discount',
+                'placeholder' => '30',
+                'step' => '0.01',
+                'min' => '0',
+                'description' => __('Montant déduit par article lorsque le client choisit l\'option "Basic HomeDesk (Sans sac)". Mettre 0 pour masquer complètement l\'option.', 'one-page-cod')
+            )
+        );
         
         // Section formulaire
         add_settings_section(
@@ -272,6 +287,26 @@ class OPC_Settings {
         }
     }
     
+    public function number_field_callback($args) {
+        $settings = get_option('opc_settings', array());
+        $value = isset($settings[$args['id']]) ? $settings[$args['id']] : '';
+        $placeholder = isset($args['placeholder']) ? $args['placeholder'] : '';
+        $step = isset($args['step']) ? $args['step'] : 'any';
+        $min = isset($args['min']) ? $args['min'] : '';
+        ?>
+        <input type="number"
+               name="opc_settings[<?php echo esc_attr($args['id']); ?>]"
+               value="<?php echo esc_attr($value); ?>"
+               placeholder="<?php echo esc_attr($placeholder); ?>"
+               step="<?php echo esc_attr($step); ?>"
+               <?php echo $min !== '' ? 'min="' . esc_attr($min) . '"' : ''; ?>
+               class="small-text">
+        <?php
+        if (isset($args['description'])) {
+            echo '<p class="description">' . esc_html($args['description']) . '</p>';
+        }
+    }
+
     public function textarea_field_callback($args) {
         $settings = get_option('opc_settings', array());
         $value = isset($settings[$args['id']]) ? $settings[$args['id']] : '';
@@ -355,6 +390,9 @@ class OPC_Settings {
         if (isset($input['redirect_after_order'])) {
             $sanitized['redirect_after_order'] = esc_url_raw($input['redirect_after_order']);
         }
+
+        // Remise "sans sac" (montant déduit par article) — 0 = option masquée
+        $sanitized['nobag_discount'] = isset($input['nobag_discount']) ? max(0, floatval($input['nobag_discount'])) : 30;
         
         // Select fields
         if (isset($input['payment_method'])) {

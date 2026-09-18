@@ -26,7 +26,7 @@ class OPC_Order {
     /**
      * Créer une commande WooCommerce
      */
-    public function create_order($product_id, $quantity, $customer_data, $variation_id = 0, $variation_data = array()) {
+    public function create_order($product_id, $quantity, $customer_data, $variation_id = 0, $variation_data = array(), $no_bag = false) {
         try {
             // Récupérer le produit
             if ($variation_id) {
@@ -55,24 +55,58 @@ class OPC_Order {
                 return $order;
             }
             
+            // Option "sans sac" (Basic HomeDesk) — remise réelle par article.
+            // On applique la réduction directement sur le prix de la ligne via les
+            // arguments de add_product() : l'objet en mémoire porte alors le bon prix
+            // et calculate_totals() calcule un total de commande correct.
+            $nobag_discount = function_exists('opc_get_nobag_discount') ? opc_get_nobag_discount() : 0;
+            $apply_nobag    = ($no_bag && $nobag_discount > 0);
+            $total_discount = $apply_nobag ? ($nobag_discount * $quantity) : 0;
+
+            $add_args = array();
+            if ($apply_nobag) {
+                $base_price = (float) wc_get_price_excluding_tax($product, array('qty' => $quantity));
+                $discounted = max(0, $base_price - $total_discount);
+                $add_args['subtotal'] = $discounted;
+                $add_args['total']    = $discounted;
+            }
+
             // Ajouter le produit à la commande
-            $item_id = $order->add_product($product, $quantity);
-            
+            $item_id = $order->add_product($product, $quantity, $add_args);
+
             if (!$item_id) {
                 return new WP_Error('add_product_failed', __('Impossible d\'ajouter le produit à la commande.', 'one-page-cod'));
             }
-            
-            // Ajouter les métadonnées de variation
-            if ($variation_id && !empty($variation_data)) {
-                $item = $order->get_item($item_id);
-                if ($item) {
+
+            // Métadonnées de la ligne (variation + option "sans sac")
+            $item = $order->get_item($item_id);
+            if ($item) {
+                if ($variation_id && !empty($variation_data)) {
                     foreach ($variation_data as $key => $value) {
                         $item->add_meta_data($key, $value, true);
                     }
-                    $item->save();
                 }
+
+                if ($apply_nobag) {
+                    // Libellé visible sur la commande, les emails et l'admin
+                    $label = function_exists('opc_get_nobag_label') ? opc_get_nobag_label() : __('Sans sac', 'one-page-cod');
+                    $item->add_meta_data(__('Option', 'one-page-cod'), $label, true);
+                    $item->add_meta_data(
+                        __('Remise sans sac', 'one-page-cod'),
+                        '-' . wp_strip_all_tags(wc_price($total_discount)),
+                        true
+                    );
+                }
+
+                $item->save();
             }
-            
+
+            if ($apply_nobag) {
+                // Marqueur pour le reporting
+                $order->add_meta_data('_opc_no_bag', 'yes', true);
+                $order->add_meta_data('_opc_no_bag_discount', $total_discount, true);
+            }
+
             // Séparer le nom en prénom et nom
             $name_parts = $this->split_name($customer_data['name']);
             

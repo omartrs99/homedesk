@@ -23,6 +23,27 @@ function opc_get_option($key, $default = '') {
 }
 
 /**
+ * Obtenir le montant de la remise "sans sac" (déduit par article).
+ * Retourne 0 si l'option est désactivée.
+ *
+ * @return float
+ */
+function opc_get_nobag_discount() {
+    $settings = opc_get_settings();
+    $discount = isset($settings['nobag_discount']) ? floatval($settings['nobag_discount']) : 30;
+    return (float) apply_filters('opc_nobag_discount', max(0, $discount));
+}
+
+/**
+ * Libellé de l'option "sans sac" (affiché sur la commande).
+ *
+ * @return string
+ */
+function opc_get_nobag_label() {
+    return (string) apply_filters('opc_nobag_label', __('Basic HomeDesk (Sans sac)', 'one-page-cod'));
+}
+
+/**
  * Vérifier si l'auto-détection est activée
  */
 function opc_is_auto_detection_enabled() {

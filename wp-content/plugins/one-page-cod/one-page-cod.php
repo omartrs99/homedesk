@@ -130,6 +130,7 @@ class One_Page_COD {
             'thousand_separator' => wc_get_price_thousand_separator(),
             'currency_symbol'    => get_woocommerce_currency_symbol(),
             'currency_pos'       => get_option('woocommerce_currency_pos', 'right_space'),
+            'nobag_discount'     => opc_get_nobag_discount(),
             'messages' => array(
                 'loading'        => __('Traitement en cours...', 'one-page-cod'),
                 'error'          => __('Une erreur est survenue. Veuillez réessayer.', 'one-page-cod'),

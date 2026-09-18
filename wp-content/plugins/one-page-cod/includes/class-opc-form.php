@@ -124,12 +124,13 @@ class OPC_Form {
                             $normalized_attrs[preg_replace('/^attribute_/', '', $k)] = $v;
                         }
                         $variations_cache[] = array(
-                            'variation_id' => $var_data['variation_id'],
-                            'attributes'   => $normalized_attrs,
-                            'price'        => $var->get_price(),
-                            'price_html'   => $var->get_price_html(),
-                            'is_in_stock'  => $var->is_in_stock(),
-                            'description'  => wp_kses_post($var->get_description()),
+                            'variation_id'   => $var_data['variation_id'],
+                            'attributes'     => $normalized_attrs,
+                            'price'          => $var->get_price(),
+                            'regular_price'  => $var->get_regular_price(),
+                            'price_html'     => $var->get_price_html(),
+                            'is_in_stock'    => $var->is_in_stock(),
+                            'description'    => wp_kses_post($var->get_description()),
                         );
                     }
                 ?>
@@ -216,11 +217,54 @@ class OPC_Form {
 
                 </div>
                 
+                <?php
+                $nobag_discount = opc_get_nobag_discount();
+                if ($nobag_discount > 0) :
+                    $nobag_amount_display = wp_strip_all_tags(wc_price($nobag_discount));
+                ?>
+                <input type="hidden" name="no_bag" id="opc_no_bag" value="0">
+                <div class="opc-nobag" data-nobag-discount="<?php echo esc_attr($nobag_discount); ?>">
+                    <div class="opc-nobag__body">
+                        <span class="opc-nobag__icon" aria-hidden="true">
+                            <img class="opc-nobag__img opc-nobag__img--with-bag"
+                                 src="<?php echo esc_url(OPC_PLUGIN_URL . 'assets/images/with-bag-homedesk.jpg'); ?>"
+                                 alt="" loading="lazy">
+                            <img class="opc-nobag__img opc-nobag__img--no-bag"
+                                 src="<?php echo esc_url(OPC_PLUGIN_URL . 'assets/images/no-bag-homedesk.png'); ?>"
+                                 alt="" loading="lazy">
+                        </span>
+                        <div class="opc-nobag__content">
+                            <p class="opc-nobag__text">
+                                <?php
+                                printf(
+                                    /* translators: %1$s: nom de l'option, %2$s: montant de la remise */
+                                    wp_kses_post(__('Vous n\'avez pas besoin du sac ? Choisissez <strong>%1$s</strong> et économisez <strong class="opc-nobag__amount">%2$s</strong>.', 'one-page-cod')),
+                                    esc_html(opc_get_nobag_label()),
+                                    esc_html($nobag_amount_display)
+                                );
+                                ?>
+                            </p>
+                            <button type="button" class="opc-nobag__toggle" aria-pressed="false">
+                                <span class="opc-nobag__toggle-label opc-nobag__toggle-label--off">
+                                    <?php
+                                    /* translators: %s: montant de la remise */
+                                    printf(esc_html__('Retirer le sac et économiser %s', 'one-page-cod'), esc_html($nobag_amount_display));
+                                    ?>
+                                </span>
+                                <span class="opc-nobag__toggle-label opc-nobag__toggle-label--on">
+                                    <?php esc_html_e('Ajouter le sac', 'one-page-cod'); ?>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
+
                 <div class="opc-form-row opc-submit-row">
                     <button type="submit" class="opc-submit-btn">
                         <?php echo esc_html($button_text); ?>
                     </button>
-                    <span class="pulse-text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="18" height="18" style="margin-right:6px;vertical-align:middle;fill:currentColor;transform:scaleX(-1);"><path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>Livré chez vous sans frais</span>
+                    <span class="pulse-text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="18" height="18" style="margin-right:6px;vertical-align:middle;fill:currentColor;transform:scaleX(-1);"><path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>Livré chez vous gratuitement</span>
                 </div>
                 <div class="team-offer">
                     <a href="<?php echo esc_url(home_url('/contact')); ?>" class="team-offer__link">
@@ -311,6 +355,7 @@ class OPC_Form {
             wp_send_json_success(array(
                 'variation_id'   => $variation_id,
                 'price'          => $variation->get_price(),
+                'regular_price'  => $variation->get_regular_price(),
                 'price_html'     => $variation->get_price_html(),
                 'is_in_stock'    => $variation->is_in_stock(),
                 'stock_quantity' => $variation->get_stock_quantity(),
@@ -338,6 +383,9 @@ class OPC_Form {
         $product_type = isset($_POST['product_type']) ? sanitize_text_field($_POST['product_type']) : '';
         $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 1;
         $quantity = max(1, min($quantity, apply_filters('opc_max_quantity', 20)));
+
+        // Option "sans sac" (Basic HomeDesk) — remise appliquée côté serveur
+        $no_bag = (isset($_POST['no_bag']) && $_POST['no_bag'] === '1');
         
         // Données client
         $customer_data = array(
@@ -372,7 +420,7 @@ class OPC_Form {
         
         // Créer la commande
         $order_handler = OPC_Order::get_instance();
-        $order_id = $order_handler->create_order($product_id, $quantity, $customer_data, $variation_id, $variation_data);
+        $order_id = $order_handler->create_order($product_id, $quantity, $customer_data, $variation_id, $variation_data, $no_bag);
         
         if (is_wp_error($order_id)) {
             wp_send_json_error(array(

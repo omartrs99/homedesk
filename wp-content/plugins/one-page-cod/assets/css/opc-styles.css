@@ -686,3 +686,108 @@
     margin-bottom: 0px;
     letter-spacing: .01em;
 }
+
+/* ── Option "sans sac" (Basic HomeDesk) ─────────────────────── */
+.opc-nobag {
+    margin: 16px 0 12px;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1.5px dashed #cdb98a;
+    border-radius: 10px;
+    transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.opc-nobag--active {
+    background: #fbf7ee;
+    border-style: solid;
+    border-color: #c79a3b;
+    box-shadow: 0 4px 16px rgba(199, 154, 59, 0.18);
+}
+
+.opc-nobag__body {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.opc-nobag__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.opc-nobag__icon {
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.opc-nobag__img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Par défaut (avec le sac) : image "avec sac" (validée) */
+.opc-nobag__img--no-bag { display: none; }
+.opc-nobag__img--with-bag { display: block; }
+
+/* Option "sans sac" active : image "sans sac" (barrée) */
+.opc-nobag--active .opc-nobag__img--with-bag { display: none; }
+.opc-nobag--active .opc-nobag__img--no-bag { display: block; }
+
+@media (max-width: 600px) {
+    .opc-nobag__img { width: 60px; height: 60px; }
+}
+
+.opc-nobag__text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    color: #4a4a45;
+}
+
+.opc-nobag__amount {
+    color: #c79a3b;
+    white-space: nowrap;
+}
+
+.opc-nobag__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: transparent;
+    color: #c79a3b;
+    border: 1.5px solid #c79a3b;
+    border-radius: 999px;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.opc-nobag__toggle:hover {
+    background: #c79a3b;
+    color: #fff;
+}
+
+/* Bascule des libellés selon l'état */
+.opc-nobag__toggle-label--on { display: none; }
+.opc-nobag__toggle-label--off { display: inline; }
+
+.opc-nobag--active .opc-nobag__toggle {
+    border-color: #c79a3b;
+    color: #a97d1f;
+}
+
+.opc-nobag--active .opc-nobag__toggle:hover {
+    background: #c79a3b;
+    color: #fff;
+}
+
+.opc-nobag--active .opc-nobag__toggle-label--on { display: inline; }
+.opc-nobag--active .opc-nobag__toggle-label--off { display: none; }

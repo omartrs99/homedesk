@@ -2434,11 +2434,17 @@ ul#shipping_method li{
 
 /* ── Responsive ── */
 @media (max-width: 480px) {
-    .hd-comp__table    {  }
+    .hd-comp__table    { min-width: auto; }
     .hd-comp__product-img { width: 78px; }
     .hd-comp__prix-amount { font-size: 1.3rem; }
     .hd-comp__prix-old { font-size: 0.82rem; }
     .hd-comp__feat-cell   { white-space: normal; font-size: 0.78rem; padding: 10px 10px; }
+     .hd-comp__feat-cell  span { font-size: 1.1rem; }
+     .hd-comp__td { font-size: 1.2rem; }
+     #copyright .copyright-text {
+        margin-left: inherit;
+        text-align: center;
+    }
 }
 
 .hd-comp__cta-wrap { text-align: center; margin-top: 20px; }
