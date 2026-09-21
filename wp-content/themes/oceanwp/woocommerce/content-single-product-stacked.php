@@ -157,7 +157,7 @@ if (post_password_required()) {
 					</span>
 				</div>
 				<div class="team-offer">
-                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="team-offer__link">
+                    <a href="<?php echo esc_url(home_url('/contactez-nous')); ?>" class="team-offer__link">
                         <span class="team-offer__text">
                           <span class="text-big">Le mal de dos ralentit-il vos équipes ?</span>  Offrez-leur un vrai confort de travail et demandez votre devis personnalisé. 
                         </span>
@@ -438,7 +438,7 @@ if (post_password_required()) {
 				</span>
 				<span class="pcta-guarantee__item pulse-text">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-					<span class="">Pas satisfait ? Remboursé sous 3 jours</span>
+					<span class="">3 jours d'essai offerts, satisfait ou remboursé</span>
 				</span>
 			</p>
 

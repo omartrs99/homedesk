@@ -2399,7 +2399,7 @@ ul#shipping_method li{
 .hd-comp__prix-row .hd-comp__feat-cell {
     background: #2a7a72;
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.5rem;
     border-bottom: none;
     border-radius: 0 0 0 10px; /* coin bas-gauche du tableau */
@@ -2588,4 +2588,74 @@ body.img-popup-open { overflow: hidden; }
 }
 .woo-product-info .title h2{
     margin-bottom: 0px !important;
+}
+
+/* ── Bannière hero page boutique ─────────────────────────────── */
+.shop-hero{
+    position:relative;
+    width:100vw;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+    margin-bottom:40px;
+    min-height:380px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+.shop-hero__overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:0;
+}
+.shop-hero__inner{
+    position:relative;
+    z-index:1;
+    max-width:900px;
+    padding:64px 20px;
+}
+/* Titre H1 : même style que le banner "Notre Solution" (blanc, centré, capitales) */
+.shop-hero__title{
+    margin:0;
+    color:#fff;
+    font-size:clamp(2rem,4.5vw,2.9rem);
+    font-weight:600;
+    line-height:1.2;
+    text-transform:uppercase;
+}
+/* Bouton : style "outline" du banner Notre Solution (pilule, bordure blanche) */
+.shop-hero__btn{
+    display:inline-block;
+    margin-top:24px;
+    padding:18px 38px;
+    color:#fff;
+    background:#00000057;
+    border:2px solid #fff;
+    border-radius:50px;
+    font-size:20px;
+    font-weight:600;
+    line-height:1.2;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    text-decoration:none;
+    transition:background .25s ease,color .25s ease;
+}
+.shop-hero__btn:hover,
+.shop-hero__btn:focus{
+    background:#22766c;
+    color:#fff;
+    text-decoration:none;
+}
+@media (max-width:600px){
+    .shop-hero{ min-height:260px; margin-bottom:28px; }
+    .shop-hero__inner{ padding:44px 16px; }
+    .shop-hero__title{ font-size:clamp(1.6rem,7vw,2.1rem); }
+    .shop-hero__btn{ margin-top:18px; padding:15px 28px; font-size:17px; }
 }

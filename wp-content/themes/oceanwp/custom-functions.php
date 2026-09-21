@@ -636,3 +636,37 @@ add_shortcode( 'homedesk_comparatif', function () {
     <?php
     return ob_get_clean();
 } );
+
+/**
+ * Bannière hero sur la page boutique (fournit le H1 SEO manquant).
+ * Reproduit le style du banner "Notre Solution" (image de fond + voile noir + titre blanc).
+ */
+add_action( 'woocommerce_before_main_content', function () {
+    if ( ! is_shop() ) {
+        return;
+    }
+
+    // Image de fond de la bannière boutique
+    $bg = get_template_directory_uri() . '/assets/img/banner-bootique-homedesk-standing-desk.jpg';
+    ?>
+    <section class="shop-hero" style="background-image:url('<?php echo esc_url( $bg ); ?>');">
+        <span class="shop-hero__overlay" aria-hidden="true"></span>
+        <div class="shop-hero__inner">
+            <h1 class="shop-hero__title">Tout pour un bureau ergonomique qui soulage votre dos</h1>
+            <a href="#content-wrap" class="shop-hero__btn">Prenez soin de votre posture <span aria-hidden="true">👇</span></a>
+        </div>
+    </section>
+    <?php
+}, 5 );
+
+/**
+ * Sur la page boutique : désactiver le header transparent (style "center").
+ * Le header reste blanc/solide et la bannière .shop-hero s'affiche dessous,
+ * au lieu que le menu se superpose à l'image (comme la page Notre Solution).
+ */
+add_filter( 'theme_mod_ocean_center_header_transparent', function ( $value ) {
+    if ( function_exists( 'is_shop' ) && is_shop() ) {
+        return false;
+    }
+    return $value;
+} );
