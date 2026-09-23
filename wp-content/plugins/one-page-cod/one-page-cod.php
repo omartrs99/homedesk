@@ -68,6 +68,7 @@ require_once OPC_PLUGIN_DIR . 'includes/class-opc-form.php';
 require_once OPC_PLUGIN_DIR . 'includes/class-opc-order.php';
 require_once OPC_PLUGIN_DIR . 'includes/class-opc-settings.php';
 require_once OPC_PLUGIN_DIR . 'includes/class-opc-shortcode.php';
+require_once OPC_PLUGIN_DIR . 'includes/class-opc-leads.php';
 require_once OPC_PLUGIN_DIR . 'includes/opc-functions.php';
 
 // Initialisation du plugin
@@ -155,6 +156,7 @@ class One_Page_COD {
         OPC_Order::get_instance();
         OPC_Settings::get_instance();
         OPC_Shortcode::get_instance();
+        OPC_Leads::get_instance();
     }
     
     public function activate() {

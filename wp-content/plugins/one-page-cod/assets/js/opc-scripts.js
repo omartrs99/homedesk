@@ -257,7 +257,14 @@
         handleSuccess: function(response) {
             if (response.success) {
                 this.showMessage('success', response.data.message);
-                
+
+                // Émettre un événement découplé pour le tracking (Meta Pixel, GA, etc.)
+                if (response.data.tracking) {
+                    document.dispatchEvent(new CustomEvent('opc:purchase', {
+                        detail: response.data.tracking
+                    }));
+                }
+
                 // Réinitialiser le formulaire
                 $('#opc-order-form')[0].reset();
                 $('#opc_variation_id').val('');

@@ -16,6 +16,118 @@ add_action( 'wp_head', function () { ?>
 </script>
 <?php }, 1 );
 
+// =============================================================================
+// META PIXEL (Facebook) — ID + code de base
+// =============================================================================
+// Funnel HomeDesk : PageView (base) → ViewContent → InitiateCheckout → Lead → Purchase
+// Étape 4 : code de base + PageView uniquement. Les autres events sont branchés séparément.
+
+if ( ! defined( 'HOMEDESK_META_PIXEL_ID' ) ) {
+	define( 'HOMEDESK_META_PIXEL_ID', '2278544406271252' );
+}
+
+add_action( 'wp_head', function () { ?>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '<?php echo esc_js( HOMEDESK_META_PIXEL_ID ); ?>');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=<?php echo esc_attr( HOMEDESK_META_PIXEL_ID ); ?>&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<?php }, 1 );
+
+// -----------------------------------------------------------------------------
+// META PIXEL — Données produit (réutilisées par ViewContent + events JS)
+// -----------------------------------------------------------------------------
+/**
+ * Renvoie les données produit normalisées pour le tracking Meta.
+ * Pour un produit variable, on prend la variation "Medium" par défaut,
+ * afin que le prix corresponde à ce qu'affiche le formulaire COD au chargement.
+ *
+ * @param WC_Product $product
+ * @return array
+ */
+function homedesk_get_product_pixel_data( $product ) {
+	if ( ! $product instanceof WC_Product ) {
+		return array();
+	}
+
+	$price = wc_get_price_to_display( $product );
+
+	if ( 'variable' === $product->get_type() ) {
+		$variations = $product->get_available_variations();
+		if ( ! empty( $variations ) ) {
+			$default = $variations[0];
+			foreach ( $variations as $vd ) {
+				foreach ( $vd['attributes'] as $av ) {
+					if ( '' !== $av && false !== stripos( $av, 'med' ) ) {
+						$default = $vd;
+						break 2;
+					}
+				}
+			}
+			$var = wc_get_product( $default['variation_id'] );
+			if ( $var ) {
+				$price = wc_get_price_to_display( $var );
+			}
+		}
+	}
+
+	return array(
+		'content_ids'  => array( (string) $product->get_id() ),
+		'content_name' => $product->get_name(),
+		'content_type' => 'product',
+		'value'        => round( (float) $price, 2 ),
+		'currency'     => get_woocommerce_currency(),
+	);
+}
+
+// META PIXEL — ViewContent sur les fiches produit
+add_action( 'wp_head', function () {
+	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+		return;
+	}
+
+	$product = wc_get_product( get_queried_object_id() );
+	$data    = homedesk_get_product_pixel_data( $product );
+
+	if ( empty( $data ) ) {
+		return;
+	}
+	?>
+<!-- Meta Pixel — ViewContent -->
+<script>
+window.HD_PIXEL = <?php echo wp_json_encode( $data ); ?>;
+fbq('track', 'ViewContent', window.HD_PIXEL);
+</script>
+<!-- End Meta Pixel — ViewContent -->
+	<?php
+}, 5 );
+
+// META PIXEL — Charger le JS des events formulaire (InitiateCheckout, Lead, Purchase) sur les fiches produit
+add_action( 'wp_enqueue_scripts', function () {
+	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+		return;
+	}
+	wp_enqueue_script(
+		'hd-pixel-events',
+		get_template_directory_uri() . '/assets/js/hd-pixel-events.js',
+		array(),
+		'1.0.0',
+		true
+	);
+} );
+
 // Permet les mots de passe d'application en HTTP (environnement local uniquement)
 add_filter( 'wp_is_application_passwords_available', '__return_true' );
 

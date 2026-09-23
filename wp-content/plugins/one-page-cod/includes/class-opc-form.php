@@ -112,6 +112,7 @@ class OPC_Form {
 
                 <input type="hidden" name="product_id" value="<?php echo esc_attr($product_id); ?>">
                 <input type="hidden" name="product_type" value="<?php echo esc_attr($product_type); ?>">
+                <input type="hidden" name="session_id" id="opc_session_id" value=""><?php // rempli par opc-leads.js (capture des abandons) ?>
 
                 <?php if ($product_type === 'variable') :
                     // Pré-charger toutes les variations pour un lookup instantané côté JS (pas d'AJAX au switch)
@@ -427,15 +428,34 @@ class OPC_Form {
                 'message' => $order_id->get_error_message()
             ));
         }
-        
+
+        // Marquer le lead correspondant comme converti (capture des abandons)
+        $session_id = isset($_POST['session_id']) ? sanitize_text_field(wp_unslash($_POST['session_id'])) : '';
+        if ($session_id && class_exists('OPC_Leads')) {
+            OPC_Leads::mark_ordered_by_session($session_id, $order_id);
+        }
+
         $settings = get_option('opc_settings', array());
         $success_message = isset($settings['success_message']) ? $settings['success_message'] : __('Votre commande a été enregistrée avec succès !', 'one-page-cod');
         $redirect_url = isset($settings['redirect_after_order']) ? $settings['redirect_after_order'] : '';
-        
+
+        // Données de tracking pour le Meta Pixel (value = total réel, remise incluse).
+        // content_ids reste au niveau produit pour rester cohérent avec ViewContent.
+        $order = wc_get_order($order_id);
+        $tracking = array(
+            'content_ids'  => array((string) $product_id),
+            'content_type' => 'product',
+            'value'        => $order ? round((float) $order->get_total(), 2) : 0,
+            'currency'     => get_woocommerce_currency(),
+            'num_items'    => $quantity,
+            'order_id'     => $order_id,
+        );
+
         wp_send_json_success(array(
             'message' => $success_message,
             'order_id' => $order_id,
-            'redirect_url' => $redirect_url
+            'redirect_url' => $redirect_url,
+            'tracking' => $tracking,
         ));
     }
     

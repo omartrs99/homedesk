@@ -8,6 +8,10 @@
         "WORDPRESS_USERNAME": "homedesk_admin",
         "WORDPRESS_APP_PASSWORD": "B1Rs xuxp e0mp 6UGU jfTi 4r4T"
       }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
     }
   }
 }

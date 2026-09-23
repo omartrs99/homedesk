@@ -49,6 +49,9 @@ wp-config.php_BACKUP
 /screenshots/*
 /.playwright-mcp
 
+# Dossier de travail des agents (non versionné)
+/agents/
+
 /.user.ini
 .user.ini
 
