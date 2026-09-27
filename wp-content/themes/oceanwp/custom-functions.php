@@ -38,7 +38,45 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '<?php echo esc_js( HOMEDESK_META_PIXEL_ID ); ?>');
-fbq('track', 'PageView');
+
+// Helper : déclenche l'event côté navigateur ET le relaie en CAPI serveur.
+// Le même event_id est utilisé des deux côtés → Meta déduplique automatiquement.
+window.hdCapi = {
+	ajax: '<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>',
+	nonce: '<?php echo esc_js( wp_create_nonce( 'hd_capi' ) ); ?>'
+};
+window.hdTrack = function (name, custom, user) {
+	custom = custom || {};
+	var eid = (window.crypto && crypto.randomUUID)
+		? crypto.randomUUID()
+		: (name + '-' + Date.now() + '-' + Math.random().toString(36).slice(2));
+	fbq('track', name, custom, { eventID: eid });
+	try {
+		var cookie = function (k) {
+			var r = document.cookie.match(new RegExp('(^| )' + k + '=([^;]+)'));
+			return r ? r[2] : '';
+		};
+		var body = new URLSearchParams();
+		body.append('action', 'opc_capi');
+		body.append('nonce', window.hdCapi.nonce);
+		body.append('event_name', name);
+		body.append('event_id', eid);
+		body.append('event_source_url', location.href);
+		body.append('custom_data', JSON.stringify(custom));
+		body.append('fbp', cookie('_fbp'));
+		body.append('fbc', cookie('_fbc'));
+		if (user) { body.append('user_data', JSON.stringify(user)); }
+		fetch(window.hdCapi.ajax, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: body.toString(),
+			keepalive: true
+		}).catch(function () {});
+	} catch (e) {}
+	return eid;
+};
+
+fbq('track', 'PageView'); // PageView = navigateur uniquement (pas de relais CAPI)
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=<?php echo esc_attr( HOMEDESK_META_PIXEL_ID ); ?>&ev=PageView&noscript=1"
@@ -108,7 +146,7 @@ add_action( 'wp_head', function () {
 <!-- Meta Pixel — ViewContent -->
 <script>
 window.HD_PIXEL = <?php echo wp_json_encode( $data ); ?>;
-fbq('track', 'ViewContent', window.HD_PIXEL);
+hdTrack('ViewContent', window.HD_PIXEL);
 </script>
 <!-- End Meta Pixel — ViewContent -->
 	<?php
@@ -127,6 +165,110 @@ add_action( 'wp_enqueue_scripts', function () {
 		true
 	);
 } );
+
+// =============================================================================
+// META CAPI (Conversions API) — envoi serveur + déduplication via event_id
+// =============================================================================
+// Le token doit être défini dans wp-config.php :
+//     define( 'HOMEDESK_CAPI_TOKEN', 'EAA...votre_token' );
+// Optionnel, pour valider dans Events Manager > Tester les événements :
+//     define( 'HOMEDESK_CAPI_TEST_CODE', 'TESTxxxxx' );
+
+/**
+ * Envoie un événement à la Conversions API de Meta (Graph API).
+ * Sans token défini, la fonction ne fait rien (aucune erreur).
+ */
+function homedesk_send_capi_event( $event_name, $event_id, $custom_data = array(), $user_data = array(), $event_source_url = '', $fbp = '', $fbc = '' ) {
+	if ( ! defined( 'HOMEDESK_CAPI_TOKEN' ) || ! HOMEDESK_CAPI_TOKEN ) {
+		return; // CAPI désactivée tant qu'aucun token n'est configuré
+	}
+	if ( ! defined( 'HOMEDESK_META_PIXEL_ID' ) || ! HOMEDESK_META_PIXEL_ID ) {
+		return;
+	}
+
+	$sha = function ( $v ) {
+		$v = trim( strtolower( (string) $v ) );
+		return '' !== $v ? hash( 'sha256', $v ) : null;
+	};
+
+	$ud = array();
+	if ( ! empty( $user_data['email'] ) && is_email( $user_data['email'] ) ) {
+		$ud['em'] = array( $sha( $user_data['email'] ) );
+	}
+	if ( ! empty( $user_data['phone'] ) ) {
+		$digits = preg_replace( '/[^0-9]/', '', $user_data['phone'] );
+		if ( $digits ) {
+			$ud['ph'] = array( hash( 'sha256', $digits ) );
+		}
+	}
+	if ( ! empty( $user_data['first_name'] ) ) { $ud['fn'] = array( $sha( $user_data['first_name'] ) ); }
+	if ( ! empty( $user_data['last_name'] ) )  { $ud['ln'] = array( $sha( $user_data['last_name'] ) ); }
+	if ( ! empty( $user_data['city'] ) )       { $ud['ct'] = array( $sha( $user_data['city'] ) ); }
+	if ( $fbp ) { $ud['fbp'] = $fbp; }
+	if ( $fbc ) { $ud['fbc'] = $fbc; }
+	$ud['client_ip_address'] = $_SERVER['REMOTE_ADDR'] ?? '';
+	$ud['client_user_agent'] = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+	$event = array(
+		'event_name'       => $event_name,
+		'event_time'       => time(),
+		'event_id'         => $event_id,
+		'action_source'    => 'website',
+		'event_source_url' => $event_source_url ? $event_source_url : home_url(),
+		'user_data'        => $ud,
+	);
+	if ( ! empty( $custom_data ) ) {
+		$event['custom_data'] = $custom_data;
+	}
+
+	$payload = array( 'data' => array( $event ) );
+	if ( defined( 'HOMEDESK_CAPI_TEST_CODE' ) && HOMEDESK_CAPI_TEST_CODE ) {
+		$payload['test_event_code'] = HOMEDESK_CAPI_TEST_CODE;
+	}
+
+	$endpoint = 'https://graph.facebook.com/v21.0/' . HOMEDESK_META_PIXEL_ID . '/events?access_token=' . urlencode( HOMEDESK_CAPI_TOKEN );
+
+	wp_remote_post( $endpoint, array(
+		'headers'  => array( 'Content-Type' => 'application/json' ),
+		'body'     => wp_json_encode( $payload ),
+		'timeout'  => 5,
+		'blocking' => false, // fire-and-forget : ne ralentit pas le rendu
+	) );
+}
+
+// Relais AJAX : le navigateur envoie ici PageView / ViewContent / InitiateCheckout / Lead
+add_action( 'wp_ajax_opc_capi', 'homedesk_capi_relay' );
+add_action( 'wp_ajax_nopriv_opc_capi', 'homedesk_capi_relay' );
+function homedesk_capi_relay() {
+	check_ajax_referer( 'hd_capi', 'nonce' );
+
+	// PageView reste navigateur uniquement ; Purchase est envoyé directement côté serveur → tous deux exclus du relais
+	$whitelist = array( 'ViewContent', 'InitiateCheckout', 'Lead' );
+	$name = isset( $_POST['event_name'] ) ? sanitize_text_field( wp_unslash( $_POST['event_name'] ) ) : '';
+	if ( ! in_array( $name, $whitelist, true ) ) {
+		wp_send_json_error();
+	}
+
+	// Rate limiting léger par IP
+	$ip_key   = 'hd_capi_rate_' . md5( $_SERVER['REMOTE_ADDR'] ?? '' );
+	$attempts = (int) get_transient( $ip_key );
+	if ( $attempts >= 60 ) {
+		wp_send_json_error();
+	}
+	set_transient( $ip_key, $attempts + 1, 60 );
+
+	$event_id = isset( $_POST['event_id'] ) ? sanitize_text_field( wp_unslash( $_POST['event_id'] ) ) : '';
+	$url      = isset( $_POST['event_source_url'] ) ? esc_url_raw( wp_unslash( $_POST['event_source_url'] ) ) : '';
+	$fbp      = isset( $_POST['fbp'] ) ? sanitize_text_field( wp_unslash( $_POST['fbp'] ) ) : '';
+	$fbc      = isset( $_POST['fbc'] ) ? sanitize_text_field( wp_unslash( $_POST['fbc'] ) ) : '';
+	$custom   = isset( $_POST['custom_data'] ) ? json_decode( wp_unslash( $_POST['custom_data'] ), true ) : array();
+	$user     = isset( $_POST['user_data'] ) ? json_decode( wp_unslash( $_POST['user_data'] ), true ) : array();
+	if ( ! is_array( $custom ) ) { $custom = array(); }
+	if ( ! is_array( $user ) )   { $user = array(); }
+
+	homedesk_send_capi_event( $name, $event_id, $custom, $user, $url, $fbp, $fbc );
+	wp_send_json_success();
+}
 
 // Permet les mots de passe d'application en HTTP (environnement local uniquement)
 add_filter( 'wp_is_application_passwords_available', '__return_true' );

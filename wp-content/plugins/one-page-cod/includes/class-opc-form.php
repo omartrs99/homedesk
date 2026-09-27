@@ -451,6 +451,29 @@ class OPC_Form {
             'order_id'     => $order_id,
         );
 
+        // Envoi CAPI (serveur) du Purchase — même event_id 'opc_<order_id>' que le
+        // navigateur → Meta déduplique. Ne fait rien si le token CAPI n'est pas défini.
+        if (function_exists('homedesk_send_capi_event')) {
+            $name_parts = preg_split('/\s+/', trim($customer_data['name']), 2);
+            $capi_user = array(
+                'email'      => $customer_data['email'],
+                'phone'      => $customer_data['phone'],
+                'first_name' => isset($name_parts[0]) ? $name_parts[0] : '',
+                'last_name'  => isset($name_parts[1]) ? $name_parts[1] : '',
+                'city'       => $customer_data['city'],
+            );
+            $capi_custom = array(
+                'content_ids'  => array((string) $product_id),
+                'content_type' => 'product',
+                'value'        => $tracking['value'],
+                'currency'     => $tracking['currency'],
+                'num_items'    => $quantity,
+            );
+            $fbp = isset($_COOKIE['_fbp']) ? sanitize_text_field(wp_unslash($_COOKIE['_fbp'])) : '';
+            $fbc = isset($_COOKIE['_fbc']) ? sanitize_text_field(wp_unslash($_COOKIE['_fbc'])) : '';
+            homedesk_send_capi_event('Purchase', 'opc_' . $order_id, $capi_custom, $capi_user, get_permalink($product_id), $fbp, $fbc);
+        }
+
         wp_send_json_success(array(
             'message' => $success_message,
             'order_id' => $order_id,

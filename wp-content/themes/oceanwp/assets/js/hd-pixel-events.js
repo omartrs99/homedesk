@@ -28,7 +28,11 @@
 			return;
 		}
 		initiateCheckoutFired = true;
-		fbq('track', 'InitiateCheckout', data);
+		if (typeof window.hdTrack === 'function') {
+			window.hdTrack('InitiateCheckout', data);
+		} else {
+			fbq('track', 'InitiateCheckout', data);
+		}
 	}
 
 	// focusin couvre les clics/tab dans les champs ; change couvre radios & quantité
@@ -61,7 +65,18 @@
 		// Nom rempli + au moins un moyen de contact valide (téléphone OU email)
 		if (name.trim() && (isPhoneValid(phone) || isEmailValid(email))) {
 			leadFired = true;
-			fbq('track', 'Lead', data);
+			// Données client (pour la correspondance CAPI ; hachées côté serveur)
+			var ud = {};
+			if (isEmailValid(email)) { ud.email = email.trim(); }
+			if (isPhoneValid(phone)) { ud.phone = phone; }
+			var parts = name.trim().split(/\s+/);
+			ud.first_name = parts[0];
+			if (parts.length > 1) { ud.last_name = parts.slice(1).join(' '); }
+			if (typeof window.hdTrack === 'function') {
+				window.hdTrack('Lead', data, ud);
+			} else {
+				fbq('track', 'Lead', data);
+			}
 		}
 	}
 
