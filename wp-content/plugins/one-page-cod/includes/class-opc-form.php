@@ -204,6 +204,21 @@ class OPC_Form {
                         </div>
                     </div>
                     
+                    <?php $profil_options = function_exists('opc_get_profil_options') ? opc_get_profil_options() : array(); ?>
+                    <?php if (!empty($profil_options)) : ?>
+                    <div class="opc-form-row">
+                        <div class="opc-form-field">
+                            <label for="opc_profil"><?php _e('Profil', 'one-page-cod'); ?></label>
+                            <select id="opc_profil" name="profil" class="opc-input">
+                                <option value=""><?php esc_html_e('Sélectionnez votre profil', 'one-page-cod'); ?></option>
+                                <?php foreach ($profil_options as $profil_option) : ?>
+                                    <option value="<?php echo esc_attr($profil_option); ?>"><?php echo esc_html($profil_option); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+
                     <div class="opc-form-row">
                         <div class="opc-form-field">
                             <label for="opc_address"><?php _e('Adresse', 'one-page-cod'); ?> <span class="required">*</span></label>
@@ -388,6 +403,12 @@ class OPC_Form {
         // Option "sans sac" (Basic HomeDesk) — remise appliquée côté serveur
         $no_bag = (isset($_POST['no_bag']) && $_POST['no_bag'] === '1');
         
+        // Profil client (facultatif) — whitelist stricte contre la liste autorisée
+        $profil = isset($_POST['profil']) ? sanitize_text_field(wp_unslash($_POST['profil'])) : '';
+        if ($profil !== '' && function_exists('opc_get_profil_options') && !in_array($profil, opc_get_profil_options(), true)) {
+            $profil = '';
+        }
+
         // Données client
         $customer_data = array(
             'name' => isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '',
@@ -395,6 +416,7 @@ class OPC_Form {
             'email' => isset($_POST['email']) ? sanitize_email($_POST['email']) : '',
             'address' => isset($_POST['address']) ? sanitize_text_field($_POST['address']) : '',
             'city' => isset($_POST['city']) ? sanitize_text_field($_POST['city']) : '',
+            'profil' => $profil,
             'postcode' => '',
             'notes' => '',
         );

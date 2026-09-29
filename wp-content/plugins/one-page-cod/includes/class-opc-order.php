@@ -148,6 +148,11 @@ class OPC_Order {
             $order->add_meta_data('_opc_order', 'yes', true);
             $order->add_meta_data('_opc_order_date', current_time('mysql'), true);
 
+            // Profil du client (facultatif) — segmentation des leads / parrainage
+            if (!empty($customer_data['profil'])) {
+                $order->add_meta_data('_opc_profil', $customer_data['profil'], true);
+            }
+
             // Attribution de commande WooCommerce — identifie l'origine comme "Form COD"
             $order->add_meta_data('_wc_order_attribution_source_type', 'utm', true);
             $order->add_meta_data('_wc_order_attribution_utm_source',  'Form COD', true);

@@ -60,6 +60,7 @@
             phone:      val('#opc_phone'),
             email:      val('#opc_email'),
             address:    val('#opc_address'),
+            profil:     val('#opc_profil'),
             product_id: (form.querySelector('input[name="product_id"]') || {}).value || '',
             variation:  variation.join(', '),
             quantity:   val('#opc_quantity') || '1'

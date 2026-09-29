@@ -44,6 +44,28 @@ function opc_get_nobag_label() {
 }
 
 /**
+ * Liste des profils client proposés dans le formulaire de commande.
+ * Champ non obligatoire, utilisé pour segmenter les leads et personnaliser
+ * les messages de relance / parrainage.
+ *
+ * Les libellés sont stockés tels quels dans la meta commande `_opc_profil`
+ * (lisibles directement dans l'admin et les exports CSV).
+ *
+ * @return string[]
+ */
+function opc_get_profil_options() {
+    return (array) apply_filters('opc_profil_options', array(
+        __('Développeur IT', 'one-page-cod'),
+        __('Freelance', 'one-page-cod'),
+        __('Télétravailleur salarié', 'one-page-cod'),
+        __('Chef d\'entreprise', 'one-page-cod'),
+        __('Designer', 'one-page-cod'),
+        __('Étudiant', 'one-page-cod'),
+        __('Autre', 'one-page-cod'),
+    ));
+}
+
+/**
  * Vérifier si l'auto-détection est activée
  */
 function opc_is_auto_detection_enabled() {
@@ -193,6 +215,7 @@ add_action('woocommerce_admin_order_data_after_order_details', 'opc_display_orde
 function opc_display_order_meta($order) {
     if (opc_is_opc_order($order->get_id())) {
         $order_date = $order->get_meta('_opc_order_date');
+        $profil     = $order->get_meta('_opc_profil');
         ?>
         <div class="order_data_column" style="clear:both; padding-top:12px;">
             <h3><?php _e('Informations One Page COD', 'one-page-cod'); ?></h3>
@@ -200,6 +223,12 @@ function opc_display_order_meta($order) {
                 <strong><?php _e('Type de commande:', 'one-page-cod'); ?></strong><br>
                 <?php _e('Commande One Page COD', 'one-page-cod'); ?>
             </p>
+            <?php if ($profil) : ?>
+            <p>
+                <strong><?php _e('Profil du client:', 'one-page-cod'); ?></strong><br>
+                <?php echo esc_html($profil); ?>
+            </p>
+            <?php endif; ?>
             <?php if ($order_date) : ?>
             <p>
                 <strong><?php _e('Date de création OPC:', 'one-page-cod'); ?></strong><br>
