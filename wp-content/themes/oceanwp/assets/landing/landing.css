@@ -368,7 +368,7 @@ p { margin: 0 0 1em; }
   .hl { color: var(--teal); }
 
   /* Hero : galerie produit (remplace le carrousel pgf du site, sans auto-rotation) */
-  .hero { background: linear-gradient(180deg, #fff 0%, var(--cream) 100%); }
+  .hd-landing--generale .hero { background: linear-gradient(180deg, #fff 0%, var(--cream) 100%); } /* les autres audiences gardent le fond de leur thème */
   .hero h1 { font-size: clamp(32px, 7.6vw, 50px); }
   .hero h1 .hl { display: block; }
   @media (min-width: 900px) { .hero { padding: 48px 0 64px; } }

@@ -14,4 +14,11 @@ return array(
 		'Démontable, avec sac de transport offert (valeur 85 DT)',
 	),
 	'cta'     => 'Je passe en mode debout →',
+	'hero'    => array(
+		'src' => 'hero-homme-pc.webp',
+		'w'   => 1100,
+		'h'   => 1100,
+		'alt' => 'Développeur travaillant debout sur son laptop posé sur un HomeDesk blanc',
+	),
+	'fonts'   => 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap',
 );

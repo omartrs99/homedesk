@@ -5,8 +5,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 return array(
-	'eyebrow' => 'Pour les designers',
-	'h1'      => 'Créez debout.<span class="hl">Votre bureau reste le même.</span>',
+	'eyebrow' => '— Pour les designers —',
+	'h1'      => 'Créez debout.<br><em>Votre bureau</em> reste le même.',
 	'sub'     => 'HomeDesk est un objet minimaliste qui se pose sur votre bureau et en fait un poste <strong>assis-debout</strong>. Votre écran monte à hauteur des yeux, votre flow créatif ne s\'interrompt plus.',
 	'bullets' => array(
 		'Écran à hauteur des yeux, assis comme debout',
@@ -20,4 +20,5 @@ return array(
 		'h'   => 1100,
 		'alt' => 'Espace de travail créatif avec un HomeDesk blanc posé sur le bureau, laptop et clavier',
 	),
+	'fonts'   => 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap',
 );

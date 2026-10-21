@@ -1,0 +1,104 @@
+/* ==========================================================================
+   HomeDesk — landing Développeurs (/lp/developpeurs/) : thème « IDE dark ».
+   Source : product-page/lp-developpeurs.html (bloc <style>). Police : JetBrains Mono.
+   Tout est limité à body.hd-landing--developpeurs.
+   ========================================================================== */
+
+.hd-landing--developpeurs {
+  --bg: #0d1412;
+  --bg-alt: #111c19;
+  --surface: #152320;
+  --text: #e6eeec;
+  --muted: #9db1ac;
+  --line: #22352f;
+  --accent: #318b82;
+  --accent-hover: #3aa196;
+  --code: #5fd3c5;
+  --code-2: #e3c98f;
+  --code-3: #ff7b72;
+  --font-accent: "JetBrains Mono", ui-monospace, monospace;
+  --header-bg: rgba(13, 20, 18, .92);
+  --sticky-bg: #101a17;
+  --footer-bg: #080d0c;
+  --final-bg: linear-gradient(135deg, #1b4f4a, #0d1412 70%);
+  --shadow: 0 16px 40px rgba(0, 0, 0, .35);
+}
+.hd-landing--developpeurs .eyebrow { color: var(--code); text-transform: none; letter-spacing: .02em; font-size: 13px; }
+.hd-landing--developpeurs .eyebrow::before { content: "// "; opacity: .6; }
+.hd-landing--developpeurs .header__logo img { filter: invert(1) brightness(2); }
+.hd-landing--developpeurs .mono { font-family: var(--font-accent); }
+.hd-landing--developpeurs .hl { color: var(--code); }
+.hd-landing--developpeurs .hero h1 .hl { display: block; }
+.hd-landing--developpeurs .card__icon { background: rgba(95, 211, 197, .1); color: var(--code); font-family: var(--font-accent); font-size: 15px; font-weight: 700; }
+.hd-landing--developpeurs .hero__bullets li::before { background: rgba(95, 211, 197, .12); color: var(--code); }
+
+/* Journal de la journée */
+.hd-landing--developpeurs .log { background: #080d0c; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px; font-family: var(--font-accent); font-size: 14px; line-height: 1.9; overflow-x: auto; }
+.hd-landing--developpeurs .log div { white-space: nowrap; }
+.hd-landing--developpeurs .log time { color: #6b817b; margin-right: 10px; }
+.hd-landing--developpeurs .log .w { color: var(--code-2); }
+.hd-landing--developpeurs .log .e { color: var(--code-3); }
+.hd-landing--developpeurs .problem { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 900px) { .hd-landing--developpeurs .problem { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.hd-landing--developpeurs .problem img { border-radius: var(--radius); box-shadow: var(--shadow); }
+.hd-landing--developpeurs .pivot { margin-top: 22px; padding-left: 16px; border-left: 3px solid var(--code); font-size: 18px; font-weight: 600; text-align: left; }
+
+.hd-landing--developpeurs .steps li::before { font-family: var(--font-accent); }
+.hd-landing--developpeurs .steps code { display: inline-block; font-family: var(--font-accent); font-size: 12px; color: var(--code); background: rgba(95, 211, 197, .08); padding: 2px 8px; border-radius: 6px; margin-bottom: 6px; }
+
+/* Changelog des bénéfices */
+.hd-landing--developpeurs .tag { display: inline-block; font-family: var(--font-accent); font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 6px; margin-bottom: 12px; }
+.hd-landing--developpeurs .tag--feat { background: rgba(39, 201, 63, .12); color: #4ddc6a; }
+.hd-landing--developpeurs .tag--perf { background: rgba(227, 201, 143, .14); color: var(--code-2); }
+.hd-landing--developpeurs .tag--fix  { background: rgba(255, 123, 114, .12); color: var(--code-3); }
+
+/* Objection stabilité */
+.hd-landing--developpeurs .objection { display: grid; gap: 24px; align-items: center; }
+@media (min-width: 900px) { .hd-landing--developpeurs .objection { grid-template-columns: .9fr 1.1fr; gap: 56px; } }
+.hd-landing--developpeurs .objection__imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hd-landing--developpeurs .objection__imgs img { border-radius: var(--radius-sm); aspect-ratio: 1 / 1; object-fit: cover; }
+.hd-landing--developpeurs .objection__imgs img:first-child { grid-column: span 2; aspect-ratio: 4 / 5; }
+.hd-landing--developpeurs .spec { font-family: var(--font-accent); font-size: 13px; background: #080d0c; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px; margin-top: 20px; line-height: 1.8; overflow-x: auto; color: var(--text); }
+.hd-landing--developpeurs .spec .k { color: var(--code); }
+.hd-landing--developpeurs .spec .s { color: var(--code-2); }
+.hd-landing--developpeurs .spec .c { color: #6b817b; }
+.hd-landing--developpeurs .spec-link a { color: var(--code); }
+
+.hd-landing--developpeurs .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-accent); font-weight: 700; font-size: 14px; background: rgba(95, 211, 197, .14); color: var(--code); flex: none; }
+.hd-landing--developpeurs .review__role { font-family: var(--font-accent); font-size: 11px; color: var(--code); }
+.hd-landing--developpeurs .version__row img { background: #fff; }
+.hd-landing--developpeurs .ba-legend h4 { color: var(--text); }
+.hd-landing--developpeurs .final .h2 .mono { font-size: .6em; display: block; color: var(--code); margin-bottom: 10px; font-weight: 500; }
+.hd-landing--developpeurs .final .btn { color: #0d1412; }
+
+/* Blocs communs à fond blanc codé en dur : passés en surface sombre pour rester lisibles */
+.hd-landing--developpeurs .featured,
+.hd-landing--developpeurs .size-q span,
+.hd-landing--developpeurs .essentiel,
+.hd-landing--developpeurs .g-steps li { background: var(--surface); border-color: var(--line); color: var(--text); }
+
+/* Terminal posé sur la photo du hero (dans .gallery__main) */
+.hd-landing--developpeurs .gallery__main { position: relative; }
+.hd-landing--developpeurs .term {
+  position: absolute; left: 12px; bottom: 12px; width: min(88%, 360px); z-index: 2;
+  background: rgba(8, 13, 12, .94); border: 1px solid #2a3f3a; border-radius: 12px;
+  font-family: var(--font-accent); font-size: 12.5px; line-height: 1.7; color: #cfe0dc;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .5); pointer-events: none;
+}
+.hd-landing--developpeurs .term__bar { display: flex; gap: 6px; padding: 10px 12px; border-bottom: 1px solid #22352f; }
+.hd-landing--developpeurs .term__bar i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f56; }
+.hd-landing--developpeurs .term__bar i:nth-child(2) { background: #ffbd2e; }
+.hd-landing--developpeurs .term__bar i:nth-child(3) { background: #27c93f; }
+.hd-landing--developpeurs .term pre { margin: 0; padding: 12px 14px 14px; white-space: pre-wrap; font: inherit; color: inherit; background: none; border: 0; }
+.hd-landing--developpeurs .term .p { color: var(--code-2); }
+.hd-landing--developpeurs .term .ok { color: #27c93f; }
+.hd-landing--developpeurs .caret { display: inline-block; width: 8px; height: 14px; background: var(--code); vertical-align: -2px; animation: hd-blink 1s steps(1) infinite; }
+@keyframes hd-blink { 50% { opacity: 0; } }
+@media (max-width: 599px) { .hd-landing--developpeurs .term { font-size: 11px; left: 8px; bottom: 8px; } }
+@media (prefers-reduced-motion: reduce) { .hd-landing--developpeurs .caret { animation: none; } }
+
+/* Bloc garantie : fond sombre au lieu du dégradé clair de la page générale */
+.hd-landing--developpeurs .guarantee--pro { background: linear-gradient(135deg, var(--surface) 0%, var(--bg-alt) 100%); border-color: var(--accent); }
+.hd-landing--developpeurs .guarantee--pro h3 { color: var(--text); }
+.hd-landing--developpeurs .guarantee--pro p { color: var(--muted); }
+.hd-landing--developpeurs .guarantee--pro .g-link { color: var(--code); }

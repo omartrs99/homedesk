@@ -21,4 +21,5 @@ return array(
 		'h'   => 900,
 		'alt' => 'Freelance qui travaille sur son laptop au bord d\'une piscine avec HomeDesk',
 	),
+	'fonts'   => 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap',
 );

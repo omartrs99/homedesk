@@ -1,0 +1,39 @@
+<?php
+/**
+ * Landing produit, audience « Designers » : section « solution ».
+ * Source : product-page/lp-designers.html
+ */
+if ( ! defined( 'ABSPATH' ) ) exit;
+?>
+<!-- SOLUTION + DÉMO -->
+<section class="section section--alt">
+	<div class="container">
+		<div class="num reveal"><b>02</b>La solution</div>
+		<div class="section-head reveal">
+			<h2 class="h2">Un objet. <em>Deux positions.</em><br>Zéro compromis esthétique.</h2>
+			<p class="lead">HomeDesk ne remplace pas votre bureau : il lui ajoute une hauteur. Assis le matin pour esquisser, debout l'après-midi pour itérer.</p>
+		</div>
+		<div class="mood reveal" aria-label="Moodboard HomeDesk">
+			<figure class="m-a"><img src="<?php echo esc_url( $hd_img . 'gal-2.webp' ); ?>" alt="Créatrice travaillant debout sur son laptop posé sur HomeDesk" width="500" height="500" loading="lazy"><figcaption>Debout</figcaption></figure>
+			<figure class="m-b"><img src="<?php echo esc_url( $hd_img . 'detail-angle.webp' ); ?>" alt="Détail de la structure en MDF blanc de HomeDesk" width="500" height="500" loading="lazy"><figcaption>Découpe CNC</figcaption></figure>
+			<figure class="m-c"><img src="<?php echo esc_url( $hd_img . 'femme-assise.webp' ); ?>" alt="Femme travaillant assise avec HomeDesk sur son bureau" width="900" height="900" loading="lazy"><figcaption>Assis</figcaption></figure>
+			<figure class="m-d"><img src="<?php echo esc_url( $hd_img . 'detail-laptop.webp' ); ?>" alt="Laptop posé sur l'étagère supérieure de HomeDesk" width="500" height="500" loading="lazy"><figcaption>Écran</figcaption></figure>
+			<figure class="m-e"><img src="<?php echo esc_url( $hd_img . 'detail-clavier.webp' ); ?>" alt="Clavier posé sur l'étagère inférieure de HomeDesk" width="500" height="500" loading="lazy"><figcaption>Clavier</figcaption></figure>
+		</div>
+		<ol class="steps reveal" style="margin-top:48px">
+			<li><strong>Posez</strong><span>Sur votre bureau actuel. Assemblage sans outil, en quelques minutes.</span></li>
+			<li><strong>Composez</strong><span>Laptop en haut, clavier et souris en dessous, chacun à sa hauteur.</span></li>
+			<li><strong>Alternez</strong><span>Assis ou debout en 5 secondes, au rythme de vos sessions.</span></li>
+		</ol>
+		<div class="reveal" style="margin-top:40px">
+			<div class="video">
+				<video src="<?php echo esc_url( $hd_video . 'homedesk-demo.mp4' ); ?>" poster="<?php echo esc_url( $hd_img . 'video-poster.webp' ); ?>" muted loop playsinline controls preload="none" aria-label="Démonstration HomeDesk : passage de la position assise à debout"></video>
+			</div>
+			<div class="stats">
+				<div class="stat"><b>5 sec</b><small>pour changer</small></div>
+				<div class="stat"><b>18 mm</b><small>MDF stratifié</small></div>
+				<div class="stat"><b>17"</b><small>PC max</small></div>
+			</div>
+		</div>
+	</div>
+</section>

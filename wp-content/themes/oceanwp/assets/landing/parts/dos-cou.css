@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Landing « Dos et cou » (templates/landing/dos-cou/*.php)
+   Thème apaisant + composants propres à l'audience. Source : product-page/lp-dos-cou.html
+   ========================================================================== */
+.hd-landing--dos-cou {
+  --bg-alt: #f4f9f8;
+  --mint: #e3f1ef;
+  --mint-2: #cfe7e3;
+  --text: #22312f;
+  --muted: #566663;
+  --line: #e1ecea;
+  --radius: 28px;
+  --radius-sm: 18px;
+  --shadow: 0 14px 40px rgba(49, 139, 130, .10);
+}
+.hd-landing--dos-cou .soft { color: var(--teal); }
+.hd-landing--dos-cou .hero { background: radial-gradient(120% 80% at 100% 0%, var(--mint) 0%, #fff 60%); }
+.hd-landing--dos-cou .trust { background: var(--mint); color: var(--text); }
+.hd-landing--dos-cou .trust__list li { font-weight: 600; }
+
+/* Empathie : citation intérieure */
+.hd-landing--dos-cou .empathy { max-width: 760px; margin: 0 auto; text-align: center; }
+.hd-landing--dos-cou .empathy__quote { font-family: var(--font-display); font-weight: 800; font-size: clamp(22px, 4.6vw, 34px); line-height: 1.25; color: var(--text); margin: 0 0 18px; }
+.hd-landing--dos-cou .empathy__quote span { color: var(--teal); }
+
+/* Timeline de la journée */
+.hd-landing--dos-cou .day { list-style: none; padding: 0; margin: 36px auto 0; max-width: 760px; position: relative; display: grid; gap: 18px; }
+.hd-landing--dos-cou .day::before { content: ""; position: absolute; left: 31px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(var(--mint-2), #f0c9c4); }
+.hd-landing--dos-cou .day li { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: start; }
+.hd-landing--dos-cou .day time {
+  width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; position: relative; z-index: 1;
+  font-family: var(--font-display); font-weight: 800; font-size: 17px; background: #fff; border: 2px solid var(--mint-2); color: var(--teal);
+}
+.hd-landing--dos-cou .day li:nth-child(2) time { border-color: #f2d9b8; color: #a7792f; }
+.hd-landing--dos-cou .day li:nth-child(3) time { border-color: #f0c9c4; color: #c0544a; }
+.hd-landing--dos-cou .day div { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; }
+.hd-landing--dos-cou .day b { display: block; font-family: var(--font-display); font-size: 17px; margin-bottom: 2px; }
+.hd-landing--dos-cou .day p { margin: 0; color: var(--muted); font-size: 16px; }
+.hd-landing--dos-cou .pivot-soft { max-width: 760px; margin: 28px auto 0; text-align: center; background: var(--mint); border-radius: var(--radius); padding: 22px 24px; font-weight: 600; font-size: 18px; }
+
+/* Carte du corps */
+.hd-landing--dos-cou .body-map { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 900px) { .hd-landing--dos-cou .body-map { grid-template-columns: .8fr 1.2fr; gap: 56px; } }
+.hd-landing--dos-cou .body-map__fig { background: #fff; border-radius: var(--radius); padding: 24px; max-width: 360px; margin: 0 auto; width: 100%; }
+.hd-landing--dos-cou .body-map__fig svg { width: 100%; height: auto; display: block; }
+.hd-landing--dos-cou .zones { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+@media (min-width: 700px) { .hd-landing--dos-cou .zones { grid-template-columns: 1fr 1fr; } }
+.hd-landing--dos-cou .zone { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px; box-shadow: var(--shadow); }
+.hd-landing--dos-cou .zone h3 { display: flex; align-items: center; gap: 10px; font-size: 17px; margin-bottom: 10px; }
+.hd-landing--dos-cou .zone h3 i { font-style: normal; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #fbe3df; color: #c0544a; font-size: 13px; font-weight: 800; }
+.hd-landing--dos-cou .zone p { margin: 0 0 6px; font-size: 15px; color: var(--muted); }
+.hd-landing--dos-cou .zone p.after { color: var(--teal-hover); font-weight: 600; margin: 0; }
+.hd-landing--dos-cou .zone p.after::before { content: "→ "; }
+
+/* Bouger plus souvent */
+.hd-landing--dos-cou .habit { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 900px) { .hd-landing--dos-cou .habit { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.hd-landing--dos-cou .habit img { border-radius: var(--radius); box-shadow: var(--shadow); }
+.hd-landing--dos-cou .rhythm { display: flex; gap: 8px; margin: 22px 0 8px; }
+.hd-landing--dos-cou .rhythm span { flex: 1; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.hd-landing--dos-cou .rhythm .s { background: var(--mint); color: var(--teal-hover); }
+.hd-landing--dos-cou .rhythm .d { background: var(--teal); color: #fff; }
+.hd-landing--dos-cou .rhythm-caption { font-size: 14px; color: var(--muted); margin: 0; }
+
+.hd-landing--dos-cou .steps li { border-radius: var(--radius); }
+.hd-landing--dos-cou .card { border-radius: var(--radius); box-shadow: none; }
+.hd-landing--dos-cou .card__icon { border-radius: 50%; }
+
+/* Objection honnête */
+.hd-landing--dos-cou .honest { background: #fff; border-radius: var(--radius); padding: 28px 22px; box-shadow: var(--shadow); display: grid; gap: 24px; align-items: center; }
+@media (min-width: 900px) { .hd-landing--dos-cou .honest { grid-template-columns: 1.1fr .9fr; padding: 48px; gap: 48px; } }
+.hd-landing--dos-cou .honest img { border-radius: var(--radius-sm); }
+.hd-landing--dos-cou .honest__list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+.hd-landing--dos-cou .honest__list li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; font-size: 16px; }
+.hd-landing--dos-cou .honest__list b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; }
+.hd-landing--dos-cou .honest__list .yes b { background: var(--mint); color: var(--teal); }
+.hd-landing--dos-cou .honest__list .no b { background: #f3f3f1; color: #8a8f8d; }
+
+.hd-landing--dos-cou .avatar { background: var(--mint); color: var(--teal-hover); }
+.hd-landing--dos-cou .review { box-shadow: none; }
+.hd-landing--dos-cou .faq details { border-radius: var(--radius-sm); }
+.hd-landing--dos-cou .disclaimer { max-width: 780px; margin: 22px auto 0; font-size: 14px; color: var(--muted); text-align: center; }

@@ -1,0 +1,157 @@
+/* ==========================================================================
+   HomeDesk — landing « Étudiants » (/lp/etudiants/) : thème « sticker / néo-brutaliste doux ».
+   Source : product-page/lp-etudiants.html (bloc <style>). Tout est limité à .hd-landing--etudiants.
+   ========================================================================== */
+
+.hd-landing--etudiants {
+	--sun: #ffd166;
+	--sun-soft: #fff4d6;
+	--bg: #fffdf7;
+	--bg-alt: #fff4d6;
+	--surface: #ffffff;
+	--text: #1a1a1a;
+	--muted: #4f5755;
+	--line: #1a1a1a;
+	--accent: #318b82;
+	--accent-hover: #22766c;
+	--font-display: "Fredoka", "Montserrat", system-ui, sans-serif;
+	--font-accent: "Fredoka", system-ui, sans-serif;
+	--font-hand: "Caveat", cursive;
+	--radius: 20px;
+	--shadow: 5px 5px 0 #1a1a1a;
+	--shadow-cta: 4px 4px 0 #1a1a1a;
+	--sticky-bg: #fffdf7;
+}
+.hd-landing--etudiants h1, .hd-landing--etudiants h2, .hd-landing--etudiants h3 { letter-spacing: 0; }
+.hd-landing--etudiants .h2 { font-weight: 700; }
+.hd-landing--etudiants .eyebrow { letter-spacing: .08em; font-size: 13px; color: var(--text); background: var(--sun); padding: 4px 12px; border: 2px solid #1a1a1a; border-radius: 999px; transform: rotate(-2deg); }
+.hd-landing--etudiants .hand { font-family: var(--font-hand); font-weight: 700; color: var(--accent); }
+.hd-landing--etudiants .btn { border: 3px solid #1a1a1a; font-family: "Montserrat", sans-serif; }
+.hd-landing--etudiants .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1a1a1a; }
+.hd-landing--etudiants .header { border-bottom: 3px solid #1a1a1a; }
+.hd-landing--etudiants .header__cta { border: 2px solid #1a1a1a; }
+.hd-landing--etudiants .card,
+.hd-landing--etudiants .review,
+.hd-landing--etudiants .steps li,
+.hd-landing--etudiants .stat,
+.hd-landing--etudiants .version,
+.hd-landing--etudiants .faq details,
+.hd-landing--etudiants .guarantee { border: 3px solid #1a1a1a; box-shadow: var(--shadow); }
+.hd-landing--etudiants .card__icon { background: var(--sun); color: #1a1a1a; border: 2px solid #1a1a1a; }
+.hd-landing--etudiants .card__spec { color: var(--accent-hover); }
+.hd-landing--etudiants .trust { border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; }
+
+/* Hero */
+.hd-landing--etudiants .hero h1 { font-weight: 700; font-size: clamp(36px, 9vw, 66px); }
+.hd-landing--etudiants .hero h1 .hl { background: linear-gradient(transparent 55%, var(--sun) 55%); color: inherit; padding: 0 4px; display: inline; }
+.hd-landing--etudiants .hero__bullets li::before { background: var(--sun); color: #1a1a1a; border: 2px solid #1a1a1a; }
+.hd-landing--etudiants .polaroid { position: relative; background: #fff; padding: 12px 12px 54px; border: 3px solid #1a1a1a; border-radius: 6px; box-shadow: 8px 8px 0 #1a1a1a; transform: rotate(2deg); max-width: 460px; margin: 10px auto 0; }
+.hd-landing--etudiants .polaroid img { border-radius: 2px; box-shadow: none; aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+.hd-landing--etudiants .polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-family: var(--font-hand); font-size: 26px; font-weight: 700; }
+.hd-landing--etudiants .sticker { position: absolute; z-index: 2; display: grid; place-items: center; text-align: center; font-family: var(--font-display); font-weight: 700; line-height: 1.05; border: 3px solid #1a1a1a; box-shadow: 3px 3px 0 #1a1a1a; }
+.hd-landing--etudiants .sticker--price { top: -18px; right: 6px; width: 104px; height: 104px; border-radius: 50%; background: var(--sun); transform: rotate(12deg); font-size: 14px; }
+.hd-landing--etudiants .sticker--price b { display: block; font-size: 30px; }
+.hd-landing--etudiants .sticker--cod { bottom: 66px; left: 6px; padding: 8px 14px; border-radius: 12px; background: var(--accent); color: #fff; transform: rotate(-6deg); font-size: 14px; }
+.hd-landing--etudiants .hero .rating { background: #fff; border: 2px solid #1a1a1a; border-radius: 999px; padding: 6px 14px; display: inline-flex; }
+
+/* Problème : « où tu révises vraiment ? » */
+.hd-landing--etudiants .spots { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+@media (min-width: 800px) { .hd-landing--etudiants .spots { grid-template-columns: repeat(4, 1fr); } }
+.hd-landing--etudiants .spot { background: #fff; border: 3px solid #1a1a1a; border-radius: 16px; padding: 16px 14px; text-align: center; box-shadow: 4px 4px 0 #1a1a1a; }
+.hd-landing--etudiants .spot:nth-child(odd) { transform: rotate(-1.5deg); }
+.hd-landing--etudiants .spot:nth-child(even) { transform: rotate(1.5deg); }
+.hd-landing--etudiants .spot__emoji { font-size: 34px; line-height: 1; }
+.hd-landing--etudiants .spot h3 { font-size: 17px; margin: 8px 0 4px; }
+.hd-landing--etudiants .spot p { margin: 0; font-size: 13px; color: var(--muted); }
+.hd-landing--etudiants .spot__score { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #ffe1dd; color: #b8382a; border: 2px solid #1a1a1a; }
+.hd-landing--etudiants .spot--win { background: var(--accent); color: #fff; }
+.hd-landing--etudiants .spot--win p { color: rgba(255, 255, 255, .9); }
+.hd-landing--etudiants .spot--win .spot__score { background: var(--sun); color: #1a1a1a; }
+.hd-landing--etudiants .problem-media { display: grid; gap: 28px; align-items: center; margin-top: 40px; }
+@media (min-width: 900px) { .hd-landing--etudiants .problem-media { grid-template-columns: .9fr 1.1fr; gap: 56px; } }
+.hd-landing--etudiants .problem-media img { border: 3px solid #1a1a1a; border-radius: var(--radius); box-shadow: 8px 8px 0 #1a1a1a; transform: rotate(-1.5deg); }
+.hd-landing--etudiants .quote-big { font-family: var(--font-hand); font-size: clamp(30px, 6vw, 44px); line-height: 1.1; color: var(--accent-hover); margin: 0 0 14px; }
+
+/* Solution : Fenny + post-it */
+.hd-landing--etudiants .fenny { display: grid; gap: 24px; align-items: center; margin-bottom: 36px; }
+@media (min-width: 900px) { .hd-landing--etudiants .fenny { grid-template-columns: .8fr 1.2fr; gap: 48px; } }
+.hd-landing--etudiants .fenny img { border: 3px solid #1a1a1a; border-radius: var(--radius); box-shadow: var(--shadow); }
+.hd-landing--etudiants .bubble { position: relative; background: #fff; border: 3px solid #1a1a1a; border-radius: 22px; padding: 20px 22px; box-shadow: var(--shadow); font-size: 17px; }
+.hd-landing--etudiants .bubble b { font-family: var(--font-display); }
+.hd-landing--etudiants .steps li { background: var(--sun-soft); border-radius: 6px; padding-top: 26px; }
+.hd-landing--etudiants .steps li:nth-child(1) { transform: rotate(-1.2deg); background: #fff1c2; }
+.hd-landing--etudiants .steps li:nth-child(2) { transform: rotate(1deg); background: #dff2ef; }
+.hd-landing--etudiants .steps li:nth-child(3) { transform: rotate(-.6deg); background: #ffe1dd; }
+.hd-landing--etudiants .steps li::before { background: #1a1a1a; color: var(--sun); font-family: var(--font-display); }
+.hd-landing--etudiants .video { border: 3px solid #1a1a1a; box-shadow: 8px 8px 0 #1a1a1a; }
+.hd-landing--etudiants .stat { background: #fff; }
+.hd-landing--etudiants .stat b { color: #1a1a1a; }
+
+/* Bénéfices */
+.hd-landing--etudiants .benef { display: grid; gap: 28px; align-items: start; }
+@media (min-width: 1000px) { .hd-landing--etudiants .benef { grid-template-columns: 1fr 340px; } }
+.hd-landing--etudiants .benef aside img { border: 3px solid #1a1a1a; border-radius: var(--radius); box-shadow: var(--shadow); transform: rotate(1.5deg); }
+.hd-landing--etudiants .benef aside p { text-align: center; margin-top: 16px; }
+.hd-landing--etudiants .benef .grid--2 .card:nth-child(3n+1) { background: #fffaf0; }
+
+/* Avant / après */
+.hd-landing--etudiants .ba { border: 3px solid #1a1a1a; box-shadow: 8px 8px 0 #1a1a1a; }
+
+/* Avis façon post-it */
+.hd-landing--etudiants .review { border-radius: 4px; }
+.hd-landing--etudiants .review:nth-child(1) { background: #fff1c2; transform: rotate(-1.2deg); }
+.hd-landing--etudiants .review:nth-child(2) { background: #dff2ef; transform: rotate(.8deg); }
+.hd-landing--etudiants .review:nth-child(3) { background: #ffe1dd; transform: rotate(-.6deg); }
+.hd-landing--etudiants .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; background: #1a1a1a; color: var(--sun); flex: none; }
+.hd-landing--etudiants .ugc img { border: 3px solid #1a1a1a; }
+
+/* Objection prix : ticket de caisse */
+.hd-landing--etudiants .objection { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 900px) { .hd-landing--etudiants .objection { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.hd-landing--etudiants .ticket {
+	background: #fff; border: 3px solid #1a1a1a; box-shadow: 8px 8px 0 #1a1a1a; padding: 26px 22px 30px; max-width: 400px; margin: 0 auto; width: 100%;
+	font-family: ui-monospace, "Courier New", monospace; font-size: 14px; transform: rotate(-1.5deg);
+	-webkit-mask: radial-gradient(8px at 50% 100%, #0000 98%, #000) 50% / 22px 100%;
+	        mask: radial-gradient(8px at 50% 100%, #0000 98%, #000) 50% / 22px 100%;
+}
+.hd-landing--etudiants .ticket h3 { font-family: var(--font-display); text-align: center; font-size: 20px; margin-bottom: 4px; }
+.hd-landing--etudiants .ticket small { display: block; text-align: center; color: var(--muted); margin-bottom: 16px; }
+.hd-landing--etudiants .ticket .row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px dashed #bbb; }
+.hd-landing--etudiants .ticket .row--total { border-bottom: 0; border-top: 2px solid #1a1a1a; margin-top: 8px; padding-top: 12px; font-weight: 700; font-size: 16px; }
+.hd-landing--etudiants .ticket .big { text-align: center; margin-top: 18px; padding: 12px; background: var(--sun); border: 2px solid #1a1a1a; border-radius: 10px; font-family: var(--font-display); font-size: 18px; }
+.hd-landing--etudiants .ticket .big b { font-size: 28px; display: block; }
+.hd-landing--etudiants .checks { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+.hd-landing--etudiants .checks li { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; }
+.hd-landing--etudiants .checks li::before { content: "✓"; flex: none; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 800; border: 2px solid #1a1a1a; }
+
+/* Versions */
+.hd-landing--etudiants .version.is-selected { box-shadow: 6px 6px 0 var(--accent); border-color: #1a1a1a; }
+.hd-landing--etudiants .version__badge { background: var(--sun); color: #1a1a1a; border: 2px solid #1a1a1a; transform: rotate(-3deg); }
+.hd-landing--etudiants .version__row img { border: 2px solid #1a1a1a; }
+.hd-landing--etudiants .version__price { color: #1a1a1a; }
+
+/* Formulaire (one-page-cod) */
+.hd-landing--etudiants .order__media img { border: 3px solid #1a1a1a; box-shadow: 8px 8px 0 #1a1a1a; }
+.hd-landing--etudiants .lp-order .opc-radio-option.is-checked > span { border-color: #1a1a1a; background: var(--sun); color: #1a1a1a; box-shadow: 3px 3px 0 #1a1a1a; }
+
+/* Garantie */
+.hd-landing--etudiants .guarantee { border-style: solid; background: #fff; }
+
+/* CTA final jaune */
+.hd-landing--etudiants .final { background: var(--sun); color: #1a1a1a; border-top: 3px solid #1a1a1a; }
+.hd-landing--etudiants .final .h2 { color: #1a1a1a; }
+.hd-landing--etudiants .final p, .hd-landing--etudiants .final .cta-note { color: #3a3a3a; }
+.hd-landing--etudiants .final .btn { background: var(--accent); color: #fff; box-shadow: var(--shadow-cta); }
+.hd-landing--etudiants .final .hand { display: block; font-size: clamp(26px, 5vw, 34px); color: var(--accent-hover); margin-bottom: 6px; transform: rotate(-2deg); }
+.hd-landing--etudiants .sticky-cta { border-top: 3px solid #1a1a1a; }
+
+@media (prefers-reduced-motion: reduce) {
+	.hd-landing--etudiants .polaroid,
+	.hd-landing--etudiants .sticker,
+	.hd-landing--etudiants .spot,
+	.hd-landing--etudiants .steps li,
+	.hd-landing--etudiants .review,
+	.hd-landing--etudiants .ticket,
+	.hd-landing--etudiants .problem-media img,
+	.hd-landing--etudiants .benef aside img { transform: none !important; }
+}

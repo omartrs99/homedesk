@@ -1,0 +1,112 @@
+/* ==========================================================================
+   HomeDesk — landing « Freelances » (/lp/freelances/)
+   Thème « nomade » : clair + blocs noirs, accents sable. Source : product-page/lp-freelances.html
+   Toutes les règles sont limitées à body.hd-landing--freelances.
+   ========================================================================== */
+
+.hd-landing--freelances {
+	--bg: #ffffff;
+	--bg-alt: #f6f3ec;
+	--text: #141414;
+	--muted: #5b5f5d;
+	--line: #e6e1d6;
+	--accent: #318b82;
+	--accent-hover: #22766c;
+	--accent-2: #b09b70;
+	--black: #121212;
+	--font-accent: "Space Grotesk", system-ui, sans-serif;
+	--final-bg: #121212;
+	--footer-bg: #121212;
+}
+.hd-landing--freelances .eyebrow { font-family: var(--font-accent); color: var(--accent-2); letter-spacing: .14em; }
+.hd-landing--freelances .sand { color: var(--accent-2); }
+.hd-landing--freelances .tealtxt { color: var(--accent); }
+.hd-landing--freelances .section--dark { background: var(--black); color: #f2efe8; }
+.hd-landing--freelances .section--dark .lead,
+.hd-landing--freelances .section--dark p { color: #b9b4a8; }
+.hd-landing--freelances .section--dark .h2 { color: #fff; }
+.hd-landing--freelances .section--dark .cta-note { color: #b9b4a8; }
+.hd-landing--freelances .section--dark .cta-note strong { color: #fff; }
+
+/* Hero */
+.hd-landing--freelances .hero { background: linear-gradient(180deg, #f6f3ec 0%, #fff 100%); }
+
+/* Problème : 3 « mauvais postes » */
+.hd-landing--freelances .bad-spots { display: grid; gap: 14px; margin-top: 8px; }
+@media (min-width: 800px) { .hd-landing--freelances .bad-spots { grid-template-columns: repeat(3, 1fr); } }
+.hd-landing--freelances .bad-spot { background: #1d1d1d; border: 1px solid #2c2c2c; border-radius: var(--radius); padding: 22px; }
+.hd-landing--freelances .bad-spot b { display: block; font-family: var(--font-accent); font-size: 19px; color: #fff; margin-bottom: 6px; }
+.hd-landing--freelances .bad-spot b::before { content: "✗ "; color: #e74c3c; }
+.hd-landing--freelances .bad-spot p { margin: 0; font-size: 15px; }
+.hd-landing--freelances .problem-split { display: grid; gap: 28px; align-items: center; margin-top: 36px; }
+@media (min-width: 900px) { .hd-landing--freelances .problem-split { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.hd-landing--freelances .problem-split img { border-radius: var(--radius); }
+.hd-landing--freelances .problem-split .pivot { margin: 0; max-width: none; text-align: left; font-family: var(--font-accent); font-size: clamp(20px, 3.4vw, 26px); font-weight: 700; color: #fff; border-left: 4px solid var(--accent-2); padding-left: 16px; }
+
+/* Itinéraire Maison → Coworking → Café → Client */
+.hd-landing--freelances .route { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 2px 20px; position: relative; }
+.hd-landing--freelances .stop { flex: none; width: 76%; max-width: 300px; scroll-snap-align: start; position: relative; }
+@media (min-width: 1000px) { .hd-landing--freelances .route { overflow: visible; } .hd-landing--freelances .stop { flex: 1; width: auto; } }
+.hd-landing--freelances .stop img { border-radius: var(--radius); aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+.hd-landing--freelances .stop__n { position: absolute; top: 12px; left: 12px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--black); color: #fff; font-family: var(--font-accent); font-weight: 700; }
+.hd-landing--freelances .stop h3 { font-family: var(--font-accent); font-size: 20px; margin: 14px 0 4px; }
+.hd-landing--freelances .stop p { color: var(--muted); font-size: 14px; margin: 0; }
+.hd-landing--freelances .stop:not(:last-child) h3::after { content: " →"; color: var(--accent-2); }
+.hd-landing--freelances .route-line { height: 0; border-top: 3px dashed var(--accent-2); margin: 0 0 22px; opacity: .6; }
+
+/* Bénéfices : liste numérotée en 2 colonnes (remplace la grille image + cartes) */
+.hd-landing--freelances .benefits--list { display: grid; gap: 0; border-top: 1px solid var(--line); align-items: stretch; }
+@media (min-width: 800px) { .hd-landing--freelances .benefits--list { grid-template-columns: 1fr 1fr; column-gap: 48px; } }
+.hd-landing--freelances .benefit { display: grid; grid-template-columns: 48px 1fr; gap: 14px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.hd-landing--freelances .benefit__n { font-family: var(--font-accent); font-weight: 700; font-size: 26px; color: var(--accent-2); line-height: 1; }
+.hd-landing--freelances .benefit h3 { font-size: 18px; margin-bottom: 4px; }
+.hd-landing--freelances .benefit p { margin: 0; color: var(--muted); font-size: 15px; }
+.hd-landing--freelances .benefit small { display: block; margin-top: 6px; font-size: 12px; color: var(--accent); font-weight: 600; }
+
+/* Sac en vedette */
+.hd-landing--freelances .bag { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 900px) { .hd-landing--freelances .bag { grid-template-columns: 1.1fr .9fr; gap: 56px; } }
+.hd-landing--freelances .bag-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.hd-landing--freelances .bag-gallery img { border-radius: var(--radius-sm); aspect-ratio: 1 / 1; object-fit: cover; background: #fff; }
+.hd-landing--freelances .bag-math { margin-top: 22px; background: #1d1d1d; border: 1px solid #2c2c2c; border-radius: var(--radius); padding: 20px 22px; font-family: var(--font-accent); }
+.hd-landing--freelances .bag-math div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; color: #d8d3c7; font-size: 15px; }
+.hd-landing--freelances .bag-math div + div { border-top: 1px dashed #3a3a3a; }
+.hd-landing--freelances .bag-math .total-line { color: #fff; font-weight: 700; font-size: 17px; }
+.hd-landing--freelances .bag-math .total-line b { color: var(--accent-2); }
+
+/* Démontage + fiche voyage */
+.hd-landing--freelances .objection { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 900px) { .hd-landing--freelances .objection { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.hd-landing--freelances .pack-steps { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 14px; }
+.hd-landing--freelances .pack-steps li { display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: center; }
+.hd-landing--freelances .pack-steps i { font-style: normal; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: var(--bg-alt); border: 1px solid var(--line); font-size: 24px; }
+.hd-landing--freelances .pack-steps b { display: block; font-family: var(--font-accent); font-size: 17px; }
+.hd-landing--freelances .pack-steps span { color: var(--muted); font-size: 14px; }
+.hd-landing--freelances .ticket { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.hd-landing--freelances .ticket__head { background: var(--accent); color: #fff; padding: 16px 22px; font-family: var(--font-accent); font-weight: 700; letter-spacing: .06em; display: flex; justify-content: space-between; gap: 10px; }
+.hd-landing--freelances .ticket table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 0; }
+.hd-landing--freelances .ticket th,
+.hd-landing--freelances .ticket td { padding: 12px 16px; text-align: left; border-bottom: 1px dashed var(--line); }
+.hd-landing--freelances .ticket th { font-weight: 600; color: var(--muted); width: 38%; }
+.hd-landing--freelances .ticket td { font-weight: 600; }
+.hd-landing--freelances .ticket tr:last-child th,
+.hd-landing--freelances .ticket tr:last-child td { border-bottom: 0; }
+
+/* Avis */
+.hd-landing--freelances .avatar { font-family: var(--font-accent); background: #efe8d9; color: #7d6a42; }
+.hd-landing--freelances .review__place { display: inline-block; font-family: var(--font-accent); font-size: 11px; font-weight: 700; color: var(--accent); background: var(--teal-soft); padding: 3px 9px; border-radius: 999px; margin-bottom: 10px; align-self: flex-start; }
+
+.hd-landing--freelances .version__badge { background: var(--black); }
+.hd-landing--freelances .final { background: var(--black); }
+.hd-landing--freelances .final .h2 em { font-style: normal; color: var(--accent-2); }
+
+/* Hero : pastille des lieux + étiquette « sac offert » sur la photo */
+.hd-landing--freelances .places-pill { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.hd-landing--freelances .places-pill span { font-family: var(--font-accent); font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; background: #fff; border: 1px solid var(--line); }
+.hd-landing--freelances .gallery__main { position: relative; }
+.hd-landing--freelances .bag-tag { position: absolute; right: -6px; bottom: 22px; display: flex; align-items: center; gap: 12px; background: var(--black); color: #fff; padding: 10px 16px 10px 10px; border-radius: 16px; box-shadow: 0 16px 34px rgba(0, 0, 0, .28); max-width: 250px; z-index: 2; }
+.hd-landing--freelances .bag-tag img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; background: #fff; }
+.hd-landing--freelances .bag-tag b { display: block; font-family: var(--font-accent); font-size: 15px; }
+.hd-landing--freelances .bag-tag s { color: #9d978a; font-size: 13px; margin-right: 6px; }
+.hd-landing--freelances .bag-tag span { color: var(--accent-2); font-weight: 700; font-size: 13px; }
+@media (max-width: 599px) { .hd-landing--freelances .bag-tag { right: 8px; bottom: 12px; } }

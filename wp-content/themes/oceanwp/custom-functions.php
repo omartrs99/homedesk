@@ -1006,6 +1006,16 @@ function homedesk_landing_settings( $post_id = 0 ) {
 	);
 }
 
+/**
+ * Fichier d'une section de landing : la version de l'audience (templates/landing/{audience}/{section}.php)
+ * si elle existe, sinon la version commune (templates/landing/sections/{section}.php).
+ */
+function homedesk_landing_section( $audience, $section ) {
+	$dir = get_template_directory() . '/templates/landing/';
+	$own = $dir . sanitize_key( $audience ) . '/' . sanitize_key( $section ) . '.php';
+	return file_exists( $own ) ? $own : $dir . 'sections/' . sanitize_key( $section ) . '.php';
+}
+
 // Boîte « Landing HomeDesk » dans l'éditeur de page (même pattern que _product_template)
 add_action( 'init', function () {
 	foreach ( array( '_lp_audience', '_lp_profil' ) as $key ) {
@@ -1092,6 +1102,11 @@ add_action( 'wp_enqueue_scripts', function () {
 	// Polices : <link> écrit dans le template (WordPress fusionne les deux paramètres family=)
 	wp_enqueue_style( 'homedesk-landing', $dir . 'landing.css', array( 'opc-styles' ), filemtime( $path . 'landing.css' ) );
 	wp_enqueue_script( 'homedesk-landing', $dir . 'landing.js', array(), filemtime( $path . 'landing.js' ), true );
+	// Styles propres à l'audience (thème, sections remplacées) : assets/landing/parts/{audience}.css
+	$part = 'parts/' . homedesk_landing_settings()['audience'] . '.css';
+	if ( file_exists( $path . $part ) ) {
+		wp_enqueue_style( 'homedesk-landing-audience', $dir . $part, array( 'homedesk-landing' ), filemtime( $path . $part ) );
+	}
 }, 100 );
 
 /**
@@ -1105,7 +1120,7 @@ function homedesk_landing_dequeue_styles() {
 		return;
 	}
 	global $wp_styles, $wp_scripts;
-	$keep_styles = array( 'homedesk-landing', 'opc-styles', 'admin-bar', 'dashicons' );
+	$keep_styles = array( 'homedesk-landing', 'homedesk-landing-audience', 'opc-styles', 'admin-bar', 'dashicons' );
 	foreach ( (array) $wp_styles->queue as $handle ) {
 		if ( ! in_array( $handle, $keep_styles, true ) && 0 !== strpos( $handle, 'qlwapp' ) ) {
 			wp_dequeue_style( $handle );
