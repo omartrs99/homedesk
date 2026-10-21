@@ -16,16 +16,21 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				<div class="bubble"><b>Salut, moi c'est Fenny 🦊</b><br>HomeDesk se pose sur n'importe quelle table : ton bureau, la table de la chambre, celle de la coloc. Tu poses ton laptop dessus et tu alternes assis ↔ debout quand l'énergie baisse. Simple.</div>
 			</div>
 		</div>
-		<ol class="steps reveal">
-			<li><strong>Tu le poses</strong><span>Sur ta table ou ton bureau. Il s'assemble sans outil, en quelques minutes.</span></li>
-			<li><strong>Tu installes ton laptop</strong><span>Écran en haut, clavier et souris en dessous. PC jusqu'à 17 pouces.</span></li>
-			<li><strong>Tu alternes</strong><span>Assis pour les fiches, debout pour relire : 5 secondes pour changer.</span></li>
-		</ol>
-		<div class="reveal" style="margin-top:36px">
-			<div class="video">
-				<video src="<?php echo esc_url( $hd_video . 'homedesk-demo.mp4' ); ?>" poster="<?php echo esc_url( $hd_img . 'video-poster.webp' ); ?>" muted loop playsinline controls preload="none" aria-label="Démonstration HomeDesk : passage de la position assise à debout"></video>
+		<!-- Vidéo verticale : à gauche des étapes sur ordinateur, entre les étapes et les chiffres sur mobile -->
+		<div class="demo">
+			<div class="demo__media reveal">
+				<div class="video video--vertical">
+					<video muted loop playsinline controls preload="none" data-autoplay poster="<?php echo esc_url( $hd_video . 'homedesk-landing-farah-vertical-poster.webp' ); ?>" width="720" height="1280" aria-label="Démonstration HomeDesk : passage de la position assise à debout">
+						<source src="<?php echo esc_url( $hd_video . 'homedesk-landing-farah-vertical-web.mp4' ); ?>" type="video/mp4">
+					</video>
+				</div>
 			</div>
-			<div class="stats">
+			<ol class="steps reveal">
+				<li><strong>Tu le poses</strong><span>Sur ta table ou ton bureau. Il s'assemble sans outil, en quelques minutes.</span></li>
+				<li><strong>Tu installes ton laptop</strong><span>Écran en haut, clavier et souris en dessous. PC jusqu'à 17 pouces.</span></li>
+				<li><strong>Tu alternes</strong><span>Assis pour les fiches, debout pour relire : 5 secondes pour changer.</span></li>
+			</ol>
+			<div class="stats reveal">
 				<div class="stat"><b>5 sec</b><small>pour changer</small></div>
 				<div class="stat"><b>0</b><small>outil</small></div>
 				<div class="stat"><b>36×22</b><small>cm au sol</small></div>

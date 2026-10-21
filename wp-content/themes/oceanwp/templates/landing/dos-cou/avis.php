@@ -31,17 +31,17 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		<!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
 		<div class="reviews">
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Je finissais mes journées avec la nuque raide. Maintenant je passe debout l'après-midi, et je me sens nettement moins tendue le soir. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">SH</span><div><b>Salma H.</b><span>Comptable en télétravail · Tunis</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Ce qui m'a convaincu, c'est la simplicité : je change de position en quelques secondes, sans y réfléchir. Mon écran est enfin à la bonne hauteur. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">KM</span><div><b>Karim M.</b><span>Chargé de clientèle · Ariana</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« J'hésitais, alors j'ai profité des 3 jours d'essai. Je l'ai gardé : alterner assis et debout est devenu un réflexe, et mes fins de journée sont plus confortables. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">NB</span><div><b>Nour B.</b><span>Assistante de direction · Nabeul</span></div></figcaption>

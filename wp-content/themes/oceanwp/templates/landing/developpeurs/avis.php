@@ -31,17 +31,17 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		<!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
 		<div class="reviews">
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Je l'ai posé sur mon bureau d'open space. Je passe debout pour les longues sessions de debug, et le laptop est enfin à hauteur des yeux. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">YB</span><div><b>Yassine B.</b><span class="review__role">Full-stack · Tunis</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« J'avais peur que ça bouge quand je tape. Le clavier est sur sa propre étagère, en dessous de l'écran, et ça reste stable. Monté en quelques minutes. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">MK</span><div><b>Mariem K.</b><span class="review__role">Data engineer · Sfax</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Je bosse en remote et parfois au coworking. Je le démonte, je le mets dans le sac et je retrouve mon setup partout. Payé à la livraison, aucun stress. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">AT</span><div><b>Ahmed T.</b><span class="review__role">Dev mobile · Sousse</span></div></figcaption>

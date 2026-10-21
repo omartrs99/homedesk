@@ -16,10 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		<div class="reveal">
 			<span class="eyebrow">La question qu'on nous pose le plus</span>
 			<h2 class="h2">«&nbsp;Ça reste stable quand je tape&nbsp;?&nbsp;»</h2>
-			<p class="lead">Oui. Votre écran reste en place pendant que vous tapez, assis comme debout. HomeDesk n'a rien d'un support pliant qui tangue : c'est une structure en bois qui pose bien à plat sur votre bureau.</p>
+			<p class="lead">Oui. Votre PC reste en place pendant que vous tapez, assis comme debout. HomeDesk n'a rien d'un support pliant qui tangue : c'est une structure en bois qui pose bien à plat sur votre bureau.</p>
 			<ul class="facts">
-				<li><span><strong>Une étagère séparée pour le clavier</strong> et la souris : vous tapez en bas, l'écran reste immobile en haut.</span></li>
-				<li><span><strong>Des pièces de 18 mm qui s'emboîtent au millimètre</strong>, découpées à la CNC pour un assemblage bien ajusté.</span></li>
+				<li><span><strong>Une étagère séparée pour le clavier et la souris </strong>: vous tapez en bas, le PC reste immobile en haut.</span></li>
+				<li><span><strong>Des pièces de 18 mm qui s'emboîtent au millimètre</strong>, découpées à la CNC pour un assemblage bien ajusté et équilibtré.</span></li>
 				<li><span><strong>Une base large et un vrai poids</strong> : 36 × 22 cm et 5 kg (Medium), 45 × 34 cm et 7 kg (Large).</span></li>
 			</ul>
 			<img class="solid__plan" src="<?php echo esc_url( $hd_img . 'hero-6.webp' ); ?>" alt="Dimensions des HomeDesk Large et Medium : base 45 et 36 cm, étagère clavier 54 cm, étagère haute 40 × 27 cm" width="1024" height="1024" loading="lazy">

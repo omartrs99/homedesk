@@ -162,6 +162,23 @@
     reveals.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  // Vidéo démo : lecture automatique (muette) seulement quand elle est à l'écran, pour ne pas la
+  // télécharger avant ; pause quand elle sort de l'écran. Les contrôles permettent d'activer le son.
+  // Mouvement réduit demandé : pas d'autoplay, le visiteur lance la vidéo lui-même.
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    document.querySelectorAll('video[data-autoplay]').forEach(function (v) {
+      new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {}); // lecture bloquée par le navigateur : bouton lecture
+        } else {
+          v.pause();
+        }
+      }, { threshold: 0.35 }).observe(v);
+    });
+  }
+
   fillAttribution();
   syncCards();
 })();

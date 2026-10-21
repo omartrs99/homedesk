@@ -145,7 +145,6 @@ get_header();
 					<a class="hd-story__btn" href="<?php echo esc_url( home_url( '/' ) ); ?>">Découvrir HomeDesk →</a>
 					<a class="hd-story__btn hd-story__btn--ghost" href="<?php echo esc_url( $hd_product_url ); ?>">Voir la fiche produit</a>
 				</div>
-				<p class="hd-story__note">HomeDesk n'est pas un dispositif médical. En cas de douleur persistante, consultez un professionnel de santé. Certaines images de cette page sont des illustrations.</p>
 			</div>
 		</div>
 	</section>

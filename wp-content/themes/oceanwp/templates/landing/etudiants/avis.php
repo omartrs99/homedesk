@@ -31,17 +31,17 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		<!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
 		<div class="reviews">
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« J'ai fait tout mon semestre d'exams avec. Je relis mes fiches debout et je tiens beaucoup plus longtemps qu'avant sur mon lit. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">IS</span><div><b>Ines S.</b><span>Étudiante en médecine · Monastir</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Ma chambre est minuscule, j'avais peur que ça prenne trop de place. Il tient sur mon petit bureau, et il est monté en quelques minutes. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">OM</span><div><b>Omar M.</b><span>Prépa ingénieur · Tunis</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« J'ai pris le Solo<?php echo $hd_solo > 0 ? ' à ' . $hd_dt( $hd_prices['medium']['price'] - $hd_solo ) : ''; ?>, payé à la livraison. Parfait pour mon PFE, mes colocs veulent tous le même maintenant. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">SB</span><div><b>Sarra B.</b><span>Master informatique · Sfax</span></div></figcaption>

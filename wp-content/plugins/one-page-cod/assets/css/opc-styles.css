@@ -718,3 +718,8 @@ select.opc-input {
     margin-bottom: 0px;
     letter-spacing: .01em;
 }
+
+.opc-form-row.opc-submit-row .pulse-text {
+    text-align: center !important;
+    display: block;
+}

@@ -91,3 +91,8 @@
 .hd-contact__form .wpcf7-response-output { margin: 16px 0 0 !important; border-radius: 12px; padding: 12px 14px !important; font-size: 14px; }
 /* Champs côte à côte du formulaire d'origine (Nom / Prénom) */
 .hd-contact__form .wpcf7-form > * { max-width: 100%; }
+/* Texte d'introduction d'une section + grille de cartes dans le flux (sans le chevauchement du hero) */
+.hd-retours__intro { margin: 0 0 20px; color: var(--muted); }
+.hd-retours__intro--after { margin: 0; }
+.hd-retours .hd-retours__keys--inline { margin: 0 0 20px; }
+@media (min-width: 760px) { .hd-retours__keys--4 { grid-template-columns: repeat(2, 1fr); } }

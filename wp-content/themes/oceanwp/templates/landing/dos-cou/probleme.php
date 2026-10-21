@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		<div class="empathy reveal">
 			<span class="eyebrow">Vous vous reconnaissez ?</span>
 			<p class="empathy__quote">« Le matin ça va. <span>Le soir, j'ai la nuque raide et le dos qui tire.</span> »</p>
-			<p class="lead" style="margin:0 auto">Vous n'êtes pas seul. Quand on travaille des heures devant un écran, le corps reste dans la même position du matin au soir. Et c'est souvent là que l'inconfort s'installe.</p>
+			<p class="lead" style="margin:0 auto">Vous n'êtes pas seul. Quand on travaille des heures devant un écran, le corps reste dans la même position toute la journée. Et c'est souvent là que l'inconfort s'installe.</p>
 		</div>
 		<ol class="day">
 			<li class="reveal"><time>9h</time><div><b>Vous démarrez bien installé</b><p>Le dos est droit, l'énergie est là. Tout va bien… pour l'instant.</p></div></li>

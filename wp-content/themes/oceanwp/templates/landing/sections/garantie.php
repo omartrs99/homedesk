@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			<div>
 				<span class="eyebrow">Garantie satisfait ou remboursé</span>
 				<h3>Essayez-le chez vous, sans engagement</h3>
-				<p>Vous ne payez qu'à la réception, après avoir vu le produit. Ensuite, vous avez 3 jours pour l'essayer dans vos vraies journées de travail. Pas convaincu ? Vous êtes remboursé.</p>
+				<p>Vous payez à la livraison. Ensuite, vous avez 3 jours pour l'essayer dans vos vraies journées de travail. Pas convaincu ? Vous êtes remboursé.</p>
 				<ol class="g-steps">
 					<li><span>📦</span><div><b>Vous recevez</b> et payez à la livraison</div></li>
 					<li><span>🧑‍💻</span><div><b>Vous l'essayez</b> 3 jours chez vous</div></li>

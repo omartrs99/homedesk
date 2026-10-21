@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	<div class="container">
 		<div class="section-head center reveal">
 			<span class="eyebrow">Vous vous reconnaissez ?</span>
-			<h2 class="h2">Assis du matin au soir, sans jamais changer de position</h2>
+			<h2 class="h2">Assis toute la journée, sans jamais changer de position</h2>
 			<p class="lead">Télétravail, bureau, révisions : on passe des heures devant un écran, dans la même posture. Et on le sent en fin de journée.</p>
 		</div>
 		<div class="pains">

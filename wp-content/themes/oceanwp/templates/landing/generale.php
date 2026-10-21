@@ -9,10 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 return array(
 	'eyebrow'  => 'Support assis-debout · Fabriqué en Tunisie',
 	'h1'       => 'Arrêtez de rester assis toute la journée.<span class="hl">Changez de position quand vous voulez.</span>',
-	'sub'      => 'HomeDesk se pose sur votre bureau actuel, sans rien changer chez vous. Vous passez <strong>d\'assis à debout en 5 secondes</strong>, l\'écran à hauteur des yeux, à la maison comme au bureau.',
+	'sub'      => 'HomeDesk se pose sur votre bureau actuel, sans rien changer chez vous. Vous passez <strong>d\'assis à debout en 5 secondes</strong>, l\'écran à hauteur des yeux, à la maison comme au bureau, co-working space.',
 	'bullets'  => array(
 		'Rien à brancher, aucun réglage compliqué',
-		'Montage sans outil, prêt en quelques minutes',
+		'Montage sans outil, prêt en quelques secondes',
 		'Démontable, avec son sac de transport offert',
 	),
 	'cta'      => 'Je commande mon HomeDesk →',

@@ -31,17 +31,17 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		<!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
 		<div class="reviews">
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Je l'ai posé sur mon bureau habituel, monté en quelques secondes. Maintenant je peux basculer d'une position à une autre. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">YK</span><div><b>Yassine K.</b><span>Développeur · Tunis</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« J'avais peur que ça bouge quand je tape. Au final c'est stable, et l'écran est enfin à la bonne hauteur. Je l'emporte même au coworking dans son sac. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">MS</span><div><b>Mariem S.</b><span>Freelance · Sousse</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Au début, j'ai voulu le testé pendant 3 jours. J'ai fini maintenant par le garder : alterner assis et debout est devenu un réflexe pour moi. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">AB</span><div><b>Amine B.</b><span>Télétravailleur · Sfax</span></div></figcaption>

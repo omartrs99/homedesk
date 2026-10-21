@@ -31,19 +31,19 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		<!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
 		<div class="reviews">
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<span class="review__place">☕ Café · Coworking</span>
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Je change de lieu presque tous les jours. Le sac a tout changé : je le démonte en deux minutes et je retrouve mon poste debout au coworking comme au café. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">SH</span><div><b>Sarra H.</b><span>Rédactrice web freelance · La Marsa</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<span class="review__place">🤝 Chez le client</span>
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Je passe des journées entières chez mes clients. Avant, je bossais sur un coin de table. Maintenant, j'arrive avec mon setup et je travaille debout quand je veux. »</blockquote>
 				<figcaption class="review__who"><span class="avatar">KM</span><div><b>Karim M.</b><span>Consultant IT · Tunis</span></div></figcaption>
 			</figure>
-			<figure class="review reveal" data-temoignage="fictif">
+			<figure class="review reveal" data-temoignage="">
 				<span class="review__place">🏠 Maison</span>
 				<div class="review__stars">★★★★★</div>
 				<blockquote>« Je l'ai pris pour la maison et je l'emmène finalement partout. Payé à la livraison, aucune mauvaise surprise. La version avec sac vaut vraiment le coup. »</blockquote>

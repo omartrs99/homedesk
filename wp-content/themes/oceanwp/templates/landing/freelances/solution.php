@@ -21,16 +21,21 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			<article class="stop reveal"><span class="stop__n">4</span><img src="<?php echo esc_url( $hd_img . 'homme-debout.webp' ); ?>" alt="Professionnel debout devant son laptop sur HomeDesk au bureau" width="900" height="900" loading="lazy"><h3>Chez le client</h3><p>Ton propre setup, sur la table qu'on te prête.</p></article>
 		</div>
 
-		<ol class="steps reveal" style="margin-top:36px">
-			<li><strong>Sors-le du sac</strong><span>Les pièces s'assemblent sans outil, en quelques minutes.</span></li>
-			<li><strong>Pose-le sur la table</strong><span>Laptop en haut, clavier et souris en dessous.</span></li>
-			<li><strong>Alterne assis ↔ debout</strong><span>5 secondes pour changer de position.</span></li>
-		</ol>
-		<div class="reveal" style="margin-top:32px">
-			<div class="video">
-				<video src="<?php echo esc_url( $hd_video . 'homedesk-demo.mp4' ); ?>" poster="<?php echo esc_url( $hd_img . 'video-poster.webp' ); ?>" muted loop playsinline controls preload="none" aria-label="Démonstration HomeDesk : passage de la position assise à debout"></video>
+		<!-- Vidéo verticale : à gauche des étapes sur ordinateur, entre les étapes et les chiffres sur mobile -->
+		<div class="demo">
+			<div class="demo__media reveal">
+				<div class="video video--vertical">
+					<video muted loop playsinline controls preload="none" data-autoplay poster="<?php echo esc_url( $hd_video . 'homedesk-landing-farah-vertical-poster.webp' ); ?>" width="720" height="1280" aria-label="Démonstration HomeDesk : passage de la position assise à debout">
+						<source src="<?php echo esc_url( $hd_video . 'homedesk-landing-farah-vertical-web.mp4' ); ?>" type="video/mp4">
+					</video>
+				</div>
 			</div>
-			<div class="stats">
+			<ol class="steps reveal">
+				<li><strong>Sors-le du sac</strong><span>Les pièces s'assemblent sans outil, en quelques minutes.</span></li>
+				<li><strong>Pose-le sur la table</strong><span>Laptop en haut, clavier et souris en dessous.</span></li>
+				<li><strong>Alterne assis ↔ debout</strong><span>5 secondes pour changer de position.</span></li>
+			</ol>
+			<div class="stats reveal">
 				<div class="stat"><b>5 sec</b><small>assis ↔ debout</small></div>
 				<div class="stat"><b>0</b><small>outil requis</small></div>
 				<div class="stat"><b>5 kg</b><small>poids (Medium)</small></div>

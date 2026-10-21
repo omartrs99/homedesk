@@ -102,6 +102,7 @@ $hd_tip = '<span class="tip"><button class="tip__btn" type="button" aria-label="
 			$hd_links[] = '<a href="' . esc_url( $hd_link[0] ) . '">' . esc_html( $hd_link[1] ) . '</a>';
 		}
 		echo implode( ' · ', $hd_links ); // phpcs:ignore -- échappé ci-dessus
+		homedesk_footer_contact( 'footer' );
 		?>
 		<p>Copyright © <?php echo esc_html( gmdate( 'Y' ) ); ?> · HomeDesk · Fabriqué en Tunisie</p>
 	</div>

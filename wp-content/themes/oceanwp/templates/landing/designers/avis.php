@@ -31,15 +31,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		<!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
 		<div class="quotes">
-			<figure class="quote reveal" data-temoignage="fictif">
+			<figure class="quote reveal" data-temoignage="">
 				<blockquote>Je cherchais un standing desk qui ne casse pas l'esthétique de mon studio. Il est blanc, épuré, et je fais mes revues de maquettes debout.</blockquote>
 				<figcaption><span class="mono-av">S</span><div><b>Sarra M.</b><span>UI designer · Tunis</span></div></figcaption>
 			</figure>
-			<figure class="quote reveal" data-temoignage="fictif">
+			<figure class="quote reveal" data-temoignage="">
 				<blockquote>Mon laptop est enfin à hauteur des yeux. Je garde ma tablette graphique sur le bureau et je passe debout l'après-midi.</blockquote>
 				<figcaption><span class="mono-av">K</span><div><b>Karim H.</b><span>Directeur artistique · La Marsa</span></div></figcaption>
 			</figure>
-			<figure class="quote reveal" data-temoignage="fictif">
+			<figure class="quote reveal" data-temoignage="">
 				<blockquote>Monté sans outil en quelques minutes. Je l'emporte chez mes clients dans son sac. On me demande toujours où je l'ai trouvé.</blockquote>
 				<figcaption><span class="mono-av">I</span><div><b>Ines B.</b><span>Architecte d'intérieur · Sousse</span></div></figcaption>
 			</figure>

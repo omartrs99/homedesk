@@ -1366,6 +1366,40 @@ function homedesk_light_header() {
 	<?php
 }
 
+/** Coordonnées HomeDesk (pages Contact, Retours, footers). */
+function homedesk_contact_info() {
+	return array(
+		'email'        => 'contact@homedesk.tn',
+		'whatsapp'     => '+216 56 923 420',
+		'whatsapp_url' => 'https://wa.me/21656923420',
+	);
+}
+
+/** Réseaux sociaux : [ url, nom, icône SVG ]. */
+function homedesk_social_links() {
+	return array(
+		array( 'https://www.facebook.com/homedesktn', 'Facebook', '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></svg>' ),
+		array( 'https://www.instagram.com/homedesktn/', 'Instagram', '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM12 4.6c2.4 0 2.7 0 3.7.1 2.4.1 3.5 1.2 3.6 3.6.1.9.1 1.2.1 3.7s0 2.8-.1 3.7c-.1 2.4-1.2 3.5-3.6 3.6-.9.1-1.2.1-3.7.1s-2.8 0-3.7-.1c-2.4-.1-3.5-1.2-3.6-3.6-.1-.9-.1-1.2-.1-3.7s0-2.8.1-3.7C4.8 5.9 5.9 4.8 8.3 4.7c.9-.1 1.2-.1 3.7-.1zM12 3c-2.4 0-2.8 0-3.7.1C5 3.2 3.2 5 3.1 8.3 3 9.2 3 9.6 3 12s0 2.8.1 3.7c.1 3.3 1.9 5.1 5.2 5.2.9.1 1.3.1 3.7.1s2.8 0 3.7-.1c3.3-.1 5.1-1.9 5.2-5.2.1-.9.1-1.3.1-3.7s0-2.8-.1-3.7C20.8 5 19 3.2 15.7 3.1 14.8 3 14.4 3 12 3z"/></svg>' ),
+		array( 'https://www.tiktok.com/@homedesk_tn', 'TikTok', '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 3c.4 2.3 1.8 3.8 4.2 4v3.3c-1.5.1-2.9-.4-4.2-1.2v6.2c0 3.4-2.6 5.7-5.7 5.7a5.6 5.6 0 0 1-5.7-5.6c0-3.6 3-6.2 6.6-5.7V13c-1.7-.4-3.3.8-3.3 2.5 0 1.4 1.1 2.4 2.4 2.4 1.4 0 2.5-1 2.5-2.6V3h3.2z"/></svg>' ),
+	);
+}
+
+/** Bloc footer : WhatsApp + e-mail, puis icônes des réseaux sociaux. $class = préfixe BEM du footer. */
+function homedesk_footer_contact( $class ) {
+	$c = homedesk_contact_info();
+	?>
+	<p class="<?php echo esc_attr( $class ); ?>__contact">
+		<a href="<?php echo esc_url( $c['whatsapp_url'] ); ?>" target="_blank" rel="noopener">WhatsApp <?php echo esc_html( $c['whatsapp'] ); ?></a>
+		· <a href="mailto:<?php echo esc_attr( $c['email'] ); ?>"><?php echo esc_html( $c['email'] ); ?></a>
+	</p>
+	<ul class="<?php echo esc_attr( $class ); ?>__social" aria-label="HomeDesk sur les réseaux sociaux">
+		<?php foreach ( homedesk_social_links() as $s ) : ?>
+			<li><a href="<?php echo esc_url( $s[0] ); ?>" target="_blank" rel="noopener" aria-label="HomeDesk sur <?php echo esc_attr( $s[1] ); ?>"><?php echo $s[2]; // phpcs:ignore -- SVG statique ?></a></li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+}
+
 function homedesk_light_footer() {
 	?>
 	<footer class="hd-chrome-footer">
@@ -1374,6 +1408,7 @@ function homedesk_light_footer() {
 				<li><a href="<?php echo esc_url( $link[0] ); ?>"><?php echo esc_html( $link[1] ); ?></a></li>
 			<?php endforeach; ?>
 		</ul>
+		<?php homedesk_footer_contact( 'hd-chrome-footer' ); ?>
 		<p>Copyright © <?php echo esc_html( gmdate( 'Y' ) ); ?> · HomeDesk · Fabriqué en Tunisie</p>
 	</footer>
 	<?php

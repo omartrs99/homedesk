@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $hd_product_id  = function_exists( 'homedesk_default_product_id' ) ? homedesk_default_product_id() : 0;
 $hd_product_url = $hd_product_id ? get_permalink( $hd_product_id ) : home_url( '/' );
 $hd_retours_url = home_url( '/' . HOMEDESK_RETOURS_SLUG . '/' );
+$hd_contact     = homedesk_contact_info();
 
 // Formulaire : premier shortcode [contact-form-7 …] trouvé dans le contenu de la page
 $hd_form = '';
@@ -36,7 +37,8 @@ get_header();
 	</header>
 
 	<section class="hd-retours__wrap" aria-label="Comment nous joindre">
-		<ul class="hd-retours__keys">
+		<ul class="hd-retours__keys hd-retours__keys--4">
+			<li><span aria-hidden="true">💬</span><b>Par WhatsApp</b>La réponse la plus rapide. <a href="<?php echo esc_url( $hd_contact['whatsapp_url'] ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $hd_contact['whatsapp'] ); ?></a></li>
 			<li><span aria-hidden="true">✉️</span><b>Par e-mail</b><a href="mailto:contact@homedesk.tn">contact@homedesk.tn</a></li>
 			<li><span aria-hidden="true">🏢</span><b>Offre entreprise</b>Un devis personnalisé pour équiper vos équipes. <a href="#formulaire">Demander un devis</a></li>
 			<li><span aria-hidden="true">↩️</span><b>Retour ou remboursement</b>3 jours pour essayer après la réception. <a href="<?php echo esc_url( $hd_retours_url ); ?>">Voir les conditions</a></li>
@@ -66,7 +68,7 @@ get_header();
 			</details>
 			<details>
 				<summary>Comment demander un retour ?</summary>
-				<p>Dans les 3 jours qui suivent la réception, écrivez-nous à <a href="mailto:contact@homedesk.tn">contact@homedesk.tn</a>. Les étapes et les conditions sont détaillées sur la page <a href="<?php echo esc_url( $hd_retours_url ); ?>">Retours et remboursement</a>.</p>
+				<p>Dans les 3 jours qui suivent la réception, écrivez-nous sur <a href="<?php echo esc_url( $hd_contact['whatsapp_url'] ); ?>" target="_blank" rel="noopener">WhatsApp au <?php echo esc_html( $hd_contact['whatsapp'] ); ?></a> ou à <a href="mailto:contact@homedesk.tn">contact@homedesk.tn</a>. Les étapes et les conditions sont détaillées sur la page <a href="<?php echo esc_url( $hd_retours_url ); ?>">Retours et remboursement</a>.</p>
 			</details>
 			<details>
 				<summary>D'autres questions sur HomeDesk ?</summary>
