@@ -46,7 +46,7 @@
     justify-content: center;
     gap: 10px;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     line-height: 1.4;
     color: #1a6b63;
@@ -278,7 +278,7 @@ select.opc-input {
 }
 
 .opc-product-price ins .woocommerce-Price-amount {
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 900;
     color: #318b82;
     line-height: 1;
@@ -348,63 +348,76 @@ select.opc-input {
     letter-spacing: 0.1em;
 }
 
-/* ── Variations ──────────────────────────────────────────────── */
-.opc-variations-section {
-    margin-bottom: 20px;
-    padding: 16px;
-    background: #f4f4f0;
-    border-radius: 10px;
-    border: 1px solid #e4e8e7;
-}
+/* ── Variations + Version (avec / sans sac) ─────────────────────
+   Même structure que .seg de la maquette product-page.html :
+   <label class="opc-radio-option"><input><span>Nom<small>détail</small></span></label> */
+.opc-variations-section { margin-bottom: 4px; }
 
-.opc-variation-field { margin-bottom: 12px; }
-.opc-variation-field:last-child { margin-bottom: 0; }
+.opc-variation-field { margin-bottom: 16px; }
 
 .opc-variation-label {
     display: block;
     font-weight: 700;
-    color: #555;
+    color: #333;
     margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    font-size: 12px;
 }
 
-.opc-variation-radios {
-    display: flex;
+.opc-seg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
-    flex-wrap: wrap;
 }
 
 .opc-radio-option {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    position: relative;
+    display: block;
     cursor: pointer;
-    border: 2px solid #d8e2e1;
-    border-radius: 8px;
-    padding: 9px 20px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #444;
-    background: #fff;
-    transition: border-color 0.2s, background 0.2s, color 0.2s;
     user-select: none;
 }
 
+/* Radio masqué mais focusable au clavier */
 .opc-radio-option input[type="radio"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.opc-radio-option.is-checked {
-    border-color: #318b82;
-    background: #eaf5f4;
-    color: #318b82;
+.opc-radio-option > span {
+    display: block;
+    text-align: center;
+    padding: 12px 8px;
+    border: 2px solid #dfe3e1;
+    border-radius: 12px;
+    background: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #333;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
 
-.opc-radio-option:hover {
+.opc-radio-option > span small {
+    display: block;
+    margin-top: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #777;
+}
+
+.opc-radio-option:hover > span { border-color: #318b82; }
+
+.opc-radio-option.is-checked > span {
     border-color: #318b82;
-    background: #f4fbfa;
+    background: #e3f1ef;
+    color: #22766c;
+}
+
+.opc-radio-option input[type="radio"]:focus-visible + span {
+    outline: 3px solid #318b82;
+    outline-offset: 2px;
 }
 
 .opc-variation-price {
@@ -705,108 +718,3 @@ select.opc-input {
     margin-bottom: 0px;
     letter-spacing: .01em;
 }
-
-/* ── Option "sans sac" (Basic HomeDesk) ─────────────────────── */
-.opc-nobag {
-    margin: 16px 0 12px;
-    padding: 14px 16px;
-    background: #fff;
-    border: 1.5px dashed #cdb98a;
-    border-radius: 10px;
-    transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
-}
-
-.opc-nobag--active {
-    background: #fbf7ee;
-    border-style: solid;
-    border-color: #c79a3b;
-    box-shadow: 0 4px 16px rgba(199, 154, 59, 0.18);
-}
-
-.opc-nobag__body {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.opc-nobag__content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.opc-nobag__icon {
-    flex-shrink: 0;
-    line-height: 0;
-}
-
-.opc-nobag__img {
-    width: 72px;
-    height: 72px;
-    object-fit: contain;
-    border-radius: 8px;
-    display: block;
-}
-
-/* Par défaut (avec le sac) : image "avec sac" (validée) */
-.opc-nobag__img--no-bag { display: none; }
-.opc-nobag__img--with-bag { display: block; }
-
-/* Option "sans sac" active : image "sans sac" (barrée) */
-.opc-nobag--active .opc-nobag__img--with-bag { display: none; }
-.opc-nobag--active .opc-nobag__img--no-bag { display: block; }
-
-@media (max-width: 600px) {
-    .opc-nobag__img { width: 60px; height: 60px; }
-}
-
-.opc-nobag__text {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.45;
-    color: #4a4a45;
-}
-
-.opc-nobag__amount {
-    color: #c79a3b;
-    white-space: nowrap;
-}
-
-.opc-nobag__toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    background: transparent;
-    color: #c79a3b;
-    border: 1.5px solid #c79a3b;
-    border-radius: 999px;
-    font-size: .95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background .2s ease, color .2s ease, border-color .2s ease;
-}
-
-.opc-nobag__toggle:hover {
-    background: #c79a3b;
-    color: #fff;
-}
-
-/* Bascule des libellés selon l'état */
-.opc-nobag__toggle-label--on { display: none; }
-.opc-nobag__toggle-label--off { display: inline; }
-
-.opc-nobag--active .opc-nobag__toggle {
-    border-color: #c79a3b;
-    color: #a97d1f;
-}
-
-.opc-nobag--active .opc-nobag__toggle:hover {
-    background: #c79a3b;
-    color: #fff;
-}
-
-.opc-nobag--active .opc-nobag__toggle-label--on { display: inline; }
-.opc-nobag--active .opc-nobag__toggle-label--off { display: none; }

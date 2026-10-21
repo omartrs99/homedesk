@@ -25,8 +25,8 @@
             // Validation en temps réel
             $(document).on('blur', '.opc-input', this.validateField.bind(this));
 
-            // Bascule "sans sac" / "avec sac"
-            $(document).on('click', '.opc-nobag__toggle', this.handleNoBagToggle.bind(this));
+            // Choix "Version" : avec sac / sans sac
+            $(document).on('change', '.opc-bag-radio', this.handleBagChange.bind(this));
 
             // Saisie manuelle de la quantité
             $(document).on('input change', '#opc_quantity', function() {
@@ -156,8 +156,14 @@
             // Afficher / mettre à jour la description de la variation
             $form.find('.opc-variation-desc').remove();
             if (data.description) {
+                // Après le choix « Version » s'il existe : Taille et Version restent côte à côte
                 var $desc = $('<div class="opc-variation-desc"></div>').html(data.description);
-                $form.find('.opc-variations-section').append($desc);
+                var $bag = $form.find('.opc-bag-field');
+                if ($bag.length) {
+                    $bag.after($desc);
+                } else {
+                    $form.find('.opc-variations-section').append($desc);
+                }
             }
 
             // Activer/désactiver le bouton selon la disponibilité
@@ -171,21 +177,20 @@
             if (!this.noBag) {
                 return 0;
             }
-            var attr = parseFloat($('.opc-nobag').data('nobag-discount'));
+            var attr = parseFloat($('.opc-bag-field').data('nobag-discount'));
             if (!isNaN(attr)) {
                 return attr;
             }
             return parseFloat(opcData.nobag_discount) || 0;
         },
 
-        handleNoBagToggle: function(e) {
-            e.preventDefault();
+        handleBagChange: function(e) {
+            var $radio = $(e.currentTarget);
 
-            this.noBag = !this.noBag;
+            this.noBag = $radio.val() === '1';
 
-            var $block = $(e.currentTarget).closest('.opc-nobag');
-            $block.toggleClass('opc-nobag--active', this.noBag);
-            $(e.currentTarget).attr('aria-pressed', this.noBag ? 'true' : 'false');
+            $radio.closest('.opc-bag-radios').find('.opc-radio-option').removeClass('is-checked');
+            $radio.closest('.opc-radio-option').addClass('is-checked');
             $('#opc_no_bag').val(this.noBag ? '1' : '0');
 
             this.updateTotalPrice();
@@ -269,15 +274,13 @@
                 $('#opc-order-form')[0].reset();
                 $('#opc_variation_id').val('');
 
-                // Réinitialiser l'option "sans sac" (retour à "avec le sac")
+                // Réinitialiser la version (retour à "avec sac", coché par défaut)
                 OPC.noBag = false;
                 $('#opc_no_bag').val('0');
-                $('.opc-nobag').removeClass('opc-nobag--active')
-                    .find('.opc-nobag__toggle').attr('aria-pressed', 'false');
 
                 // Rétablir l'état visuel des radios et recharger la variation par défaut
                 var $resetForm = $('#opc-order-form');
-                $resetForm.find('.opc-variation-radios').each(function() {
+                $resetForm.find('.opc-variation-radios, .opc-bag-radios').each(function() {
                     $(this).find('.opc-radio-option').removeClass('is-checked');
                     $(this).find('.opc-radio-option:first').addClass('is-checked');
                 });

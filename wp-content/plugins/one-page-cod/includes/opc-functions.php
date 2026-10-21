@@ -164,6 +164,33 @@ function opc_order_column_content($column, $post_id) {
 }
 
 /**
+ * Colonne « Landing » : page d'où vient la commande (posts + HPOS)
+ */
+function opc_add_landing_column($columns) {
+    $new_columns = array();
+    foreach ($columns as $key => $column) {
+        $new_columns[$key] = $column;
+        if ($key === 'order_number') {
+            $new_columns['opc_landing'] = __('Landing', 'one-page-cod');
+        }
+    }
+    return $new_columns;
+}
+add_filter('manage_edit-shop_order_columns', 'opc_add_landing_column', 20);
+add_filter('manage_woocommerce_page_wc-orders_columns', 'opc_add_landing_column', 20);
+
+function opc_landing_column_content($column, $order) {
+    if ($column !== 'opc_landing') {
+        return;
+    }
+    $order = is_a($order, 'WC_Order') ? $order : wc_get_order($order);
+    $landing = $order ? $order->get_meta('_opc_landing') : '';
+    echo $landing ? esc_html($landing) : '<span aria-hidden="true">—</span>';
+}
+add_action('manage_shop_order_posts_custom_column', 'opc_landing_column_content', 10, 2);
+add_action('manage_woocommerce_page_wc-orders_custom_column', 'opc_landing_column_content', 10, 2);
+
+/**
  * Ajouter un filtre pour les commandes OPC dans l'admin
  */
 add_action('restrict_manage_posts', 'opc_add_order_filter');
@@ -227,6 +254,23 @@ function opc_display_order_meta($order) {
             <p>
                 <strong><?php _e('Profil du client:', 'one-page-cod'); ?></strong><br>
                 <?php echo esc_html($profil); ?>
+            </p>
+            <?php endif; ?>
+            <?php
+            $landing    = $order->get_meta('_opc_landing');
+            $utm_source = $order->get_meta('_wc_order_attribution_utm_source');
+            $utm_term   = $order->get_meta('_wc_order_attribution_utm_term');
+            ?>
+            <?php if ($landing) : ?>
+            <p>
+                <strong><?php _e('Landing:', 'one-page-cod'); ?></strong><br>
+                <?php echo esc_html($landing); ?>
+            </p>
+            <?php endif; ?>
+            <?php if ($utm_source && $utm_source !== 'Form COD') : ?>
+            <p>
+                <strong><?php _e('Source (UTM):', 'one-page-cod'); ?></strong><br>
+                <?php echo esc_html($utm_source . ($utm_term ? ' · ' . $utm_term : '')); ?>
             </p>
             <?php endif; ?>
             <?php if ($order_date) : ?>

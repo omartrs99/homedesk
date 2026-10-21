@@ -104,7 +104,9 @@ class OPC_Leads {
     // Front — enqueue
     // -------------------------------------------------------------------------
     public function enqueue_scripts() {
-        if (!function_exists('is_product') || !is_product()) {
+        // Fiches produit + toute page qui déclare un formulaire de commande (ex. landings du thème)
+        $is_order_page = function_exists('is_product') && is_product();
+        if (!apply_filters('opc_is_order_page', $is_order_page)) {
             return;
         }
         // Dépend de opc-scripts pour réutiliser l'objet localisé opcData (ajax_url + nonce)

@@ -153,9 +153,20 @@ class OPC_Order {
                 $order->add_meta_data('_opc_profil', $customer_data['profil'], true);
             }
 
-            // Attribution de commande WooCommerce — identifie l'origine comme "Form COD"
+            // Page d'où vient la commande (slug de la landing, ex. "developpeurs")
+            if (!empty($customer_data['landing'])) {
+                $order->add_meta_data('_opc_landing', $customer_data['landing'], true);
+            }
+
+            // Attribution de commande WooCommerce : UTM réels si présents, sinon "Form COD"
+            $utm = !empty($customer_data['utm']) && is_array($customer_data['utm']) ? $customer_data['utm'] : array();
             $order->add_meta_data('_wc_order_attribution_source_type', 'utm', true);
-            $order->add_meta_data('_wc_order_attribution_utm_source',  'Form COD', true);
+            $order->add_meta_data('_wc_order_attribution_utm_source', !empty($utm['utm_source']) ? $utm['utm_source'] : 'Form COD', true);
+            foreach (array('utm_medium', 'utm_campaign', 'utm_term', 'utm_content') as $key) {
+                if (!empty($utm[$key])) {
+                    $order->add_meta_data('_wc_order_attribution_' . $key, $utm[$key], true);
+                }
+            }
 
             // Sauvegarder la commande
             $order->save();

@@ -140,6 +140,8 @@ class OPC_Form {
                     </div>
                 <?php endif; ?>
 
+                <?php $this->render_bag_choice(); ?>
+
                 <div class="opc-form-row opc-form-row-2cols">
                     <div class="opc-form-field">
                         <label for="opc_quantity"><?php _e('Quantité', 'one-page-cod'); ?> <span class="required">*</span></label>
@@ -233,48 +235,6 @@ class OPC_Form {
 
                 </div>
                 
-                <?php
-                $nobag_discount = opc_get_nobag_discount();
-                if ($nobag_discount > 0) :
-                    $nobag_amount_display = wp_strip_all_tags(wc_price($nobag_discount));
-                ?>
-                <input type="hidden" name="no_bag" id="opc_no_bag" value="0">
-                <div class="opc-nobag" data-nobag-discount="<?php echo esc_attr($nobag_discount); ?>">
-                    <div class="opc-nobag__body">
-                        <span class="opc-nobag__icon" aria-hidden="true">
-                            <img class="opc-nobag__img opc-nobag__img--with-bag"
-                                 src="<?php echo esc_url(OPC_PLUGIN_URL . 'assets/images/with-bag-homedesk.jpg'); ?>"
-                                 alt="" loading="lazy">
-                            <img class="opc-nobag__img opc-nobag__img--no-bag"
-                                 src="<?php echo esc_url(OPC_PLUGIN_URL . 'assets/images/no-bag-homedesk.png'); ?>"
-                                 alt="" loading="lazy">
-                        </span>
-                        <div class="opc-nobag__content">
-                            <p class="opc-nobag__text">
-                                <?php
-                                printf(
-                                    /* translators: %1$s: nom de l'option, %2$s: montant de la remise */
-                                    wp_kses_post(__('Vous n\'avez pas besoin du sac ? Choisissez <strong>%1$s</strong> et économisez <strong class="opc-nobag__amount">%2$s</strong>.', 'one-page-cod')),
-                                    esc_html(opc_get_nobag_label()),
-                                    esc_html($nobag_amount_display)
-                                );
-                                ?>
-                            </p>
-                            <button type="button" class="opc-nobag__toggle" aria-pressed="false">
-                                <span class="opc-nobag__toggle-label opc-nobag__toggle-label--off">
-                                    <?php
-                                    /* translators: %s: montant de la remise */
-                                    printf(esc_html__('Retirer le sac et économiser %s', 'one-page-cod'), esc_html($nobag_amount_display));
-                                    ?>
-                                </span>
-                                <span class="opc-nobag__toggle-label opc-nobag__toggle-label--on">
-                                    <?php esc_html_e('Ajouter le sac', 'one-page-cod'); ?>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <?php endif; ?>
 
                 <div class="opc-form-row opc-submit-row">
                     <button type="submit" class="opc-submit-btn">
@@ -304,7 +264,7 @@ class OPC_Form {
         }
 
         foreach ($attributes as $attribute_name => $options) {
-            $attribute_label = wc_attribute_label($attribute_name);
+            $attribute_label = apply_filters('opc_variation_label', wc_attribute_label($attribute_name), $attribute_name, $product);
             $options = array_values($options);
             // Placer la variation "medium" en premier pour qu'elle soit sélectionnée par défaut
             usort($options, function ($a, $b) {
@@ -314,18 +274,28 @@ class OPC_Form {
             });
             ?>
             <div class="opc-variation-field">
-                <label class="opc-variation-label">
+                <span class="opc-variation-label">
                     <?php echo esc_html($attribute_label); ?> <span class="required">*</span>
-                </label>
-                <div class="opc-variation-radios" data-attribute="<?php echo esc_attr($attribute_name); ?>">
-                    <?php foreach ($options as $index => $option) : ?>
+                </span>
+                <div class="opc-variation-radios opc-seg" data-attribute="<?php echo esc_attr($attribute_name); ?>">
+                    <?php foreach ($options as $index => $option) :
+                        $name = $option;
+                        if (taxonomy_exists($attribute_name)) {
+                            $term = get_term_by('slug', $option, $attribute_name);
+                            if ($term && !is_wp_error($term)) {
+                                $name = $term->name;
+                            }
+                        }
+                        $name = apply_filters('woocommerce_variation_option_name', $name);
+                        $hint = apply_filters('opc_variation_option_hint', '', $option, $attribute_name, $product);
+                        ?>
                         <label class="opc-radio-option<?php echo $index === 0 ? ' is-checked' : ''; ?>">
                             <input type="radio"
                                    class="opc-variation-radio"
                                    name="variation[<?php echo esc_attr($attribute_name); ?>]"
                                    value="<?php echo esc_attr($option); ?>"
                                    <?php echo $index === 0 ? 'checked' : ''; ?>>
-                            <span><?php echo esc_html(apply_filters('woocommerce_variation_option_name', $option)); ?></span>
+                            <span><?php echo esc_html(function_exists('mb_convert_case') ? mb_convert_case($name, MB_CASE_TITLE, 'UTF-8') : ucfirst($name)); ?><?php if ($hint) : ?><small><?php echo esc_html($hint); ?></small><?php endif; ?></span>
                         </label>
                     <?php endforeach; ?>
                 </div>
@@ -335,7 +305,38 @@ class OPC_Form {
 
         echo '<input type="hidden" name="variation_id" id="opc_variation_id" value="">';
     }
-    
+
+    /**
+     * Choix « Version » : avec le sac / sans le sac (remise opc_get_nobag_discount()).
+     * Même structure que les tailles. La valeur envoyée reste le champ caché no_bag (0/1).
+     */
+    public function render_bag_choice() {
+        $nobag_discount = opc_get_nobag_discount();
+        if ($nobag_discount <= 0) {
+            return;
+        }
+        $amount = wp_strip_all_tags(wc_price($nobag_discount));
+        $with_bag_hint = apply_filters('opc_bag_option_hint', __('sac de transport inclus', 'one-page-cod'));
+        /* translators: %s: montant de la remise */
+        $no_bag_hint = sprintf(__('sans sac · −%s', 'one-page-cod'), $amount);
+        ?>
+        <input type="hidden" name="no_bag" id="opc_no_bag" value="0">
+        <div class="opc-variation-field opc-bag-field" data-nobag-discount="<?php echo esc_attr($nobag_discount); ?>">
+            <span class="opc-variation-label"><?php echo esc_html(apply_filters('opc_bag_choice_label', __('Version', 'one-page-cod'))); ?></span>
+            <div class="opc-bag-radios opc-seg">
+                <label class="opc-radio-option is-checked">
+                    <input type="radio" class="opc-bag-radio" name="opc_bag" value="0" checked>
+                    <span><?php esc_html_e('Avec sac', 'one-page-cod'); ?><small><?php echo esc_html($with_bag_hint); ?></small></span>
+                </label>
+                <label class="opc-radio-option">
+                    <input type="radio" class="opc-bag-radio" name="opc_bag" value="1">
+                    <span><?php echo esc_html(apply_filters('opc_nobag_short_label', __('Sans sac', 'one-page-cod'))); ?><small><?php echo esc_html($no_bag_hint); ?></small></span>
+                </label>
+            </div>
+        </div>
+        <?php
+    }
+
     public function get_variation_data() {
         check_ajax_referer('opc_nonce', 'nonce');
         
@@ -417,6 +418,8 @@ class OPC_Form {
             'address' => isset($_POST['address']) ? sanitize_text_field($_POST['address']) : '',
             'city' => isset($_POST['city']) ? sanitize_text_field($_POST['city']) : '',
             'profil' => $profil,
+            'landing' => isset($_POST['opc_landing']) ? sanitize_title(wp_unslash($_POST['opc_landing'])) : '',
+            'utm' => $this->sanitize_utm(isset($_POST['opc_utm']) ? wp_unslash($_POST['opc_utm']) : ''),
             'postcode' => '',
             'notes' => '',
         );
@@ -493,7 +496,12 @@ class OPC_Form {
             );
             $fbp = isset($_COOKIE['_fbp']) ? sanitize_text_field(wp_unslash($_COOKIE['_fbp'])) : '';
             $fbc = isset($_COOKIE['_fbc']) ? sanitize_text_field(wp_unslash($_COOKIE['_fbc'])) : '';
-            homedesk_send_capi_event('Purchase', 'opc_' . $order_id, $capi_custom, $capi_user, get_permalink($product_id), $fbp, $fbc);
+            // URL source = page d'où vient la commande (landing ou fiche produit), sinon la fiche produit
+            $source_url = wp_get_referer();
+            if (!$source_url || strpos($source_url, home_url()) !== 0) {
+                $source_url = get_permalink($product_id);
+            }
+            homedesk_send_capi_event('Purchase', 'opc_' . $order_id, $capi_custom, $capi_user, $source_url, $fbp, $fbc);
         }
 
         wp_send_json_success(array(
@@ -504,6 +512,23 @@ class OPC_Form {
         ));
     }
     
+    /**
+     * UTM transmis par le formulaire (JSON) → tableau limité aux 5 clés UTM.
+     */
+    private function sanitize_utm($raw) {
+        $data = is_string($raw) && $raw !== '' ? json_decode($raw, true) : array();
+        $utm  = array();
+        if (!is_array($data)) {
+            return $utm;
+        }
+        foreach (array('utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content') as $key) {
+            if (!empty($data[$key]) && is_string($data[$key])) {
+                $utm[$key] = substr(sanitize_text_field($data[$key]), 0, 150);
+            }
+        }
+        return $utm;
+    }
+
     private function validate_form_data($customer_data, $product_id, $product_type, $variation_id = 0) {
         $errors = array();
         
