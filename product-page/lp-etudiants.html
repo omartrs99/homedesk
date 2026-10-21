@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeDesk Étudiants</title>
+<meta name="description" content="Révise assis ou debout, sans changer de bureau. HomeDesk Essentiel dès 169 DT, paiement à la livraison partout en Tunisie, 3 jours pour essayer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;600;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/femme-sourire.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/lp-base.css">
+<style>
+  /* ---- Thème « sticker / néo-brutaliste doux » pour les étudiants ---- */
+  :root {
+    --sun: #ffd166;
+    --sun-soft: #fff4d6;
+    --bg: #fffdf7;
+    --bg-alt: #fff4d6;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #4f5755;
+    --line: #1a1a1a;
+    --accent: #318b82;
+    --accent-hover: #22766c;
+    --font-display: "Fredoka", "Montserrat", system-ui, sans-serif;
+    --font-accent: "Fredoka", system-ui, sans-serif;
+    --font-hand: "Caveat", cursive;
+    --radius: 20px;
+    --shadow: 5px 5px 0 #1a1a1a;
+    --shadow-cta: 4px 4px 0 #1a1a1a;
+    --sticky-bg: #fffdf7;
+  }
+  h1, h2, h3 { letter-spacing: 0; }
+  .h2 { font-weight: 700; }
+  .eyebrow { letter-spacing: .08em; font-size: 13px; color: var(--text); background: var(--sun); padding: 4px 12px; border: 2px solid #1a1a1a; border-radius: 999px; transform: rotate(-2deg); }
+  .hand { font-family: var(--font-hand); font-weight: 700; color: var(--accent); }
+  .btn { border: 3px solid #1a1a1a; font-family: "Montserrat", sans-serif; }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1a1a1a; }
+  .header { border-bottom: 3px solid #1a1a1a; }
+  .header__cta { border: 2px solid #1a1a1a; }
+  .card, .review, .steps li, .stat, .version, .faq details, .guarantee, .form { border: 3px solid #1a1a1a; box-shadow: var(--shadow); }
+  .card__icon { background: var(--sun); color: #1a1a1a; border: 2px solid #1a1a1a; }
+  .card__spec { color: var(--accent-hover); }
+  .trust { border-top: 3px solid #1a1a1a; border-bottom: 3px solid #1a1a1a; }
+
+  /* Hero */
+  .hero h1 { font-weight: 700; font-size: clamp(36px, 9vw, 66px); }
+  .hero h1 mark { background: linear-gradient(transparent 55%, var(--sun) 55%); color: inherit; padding: 0 4px; }
+  .hero__bullets li::before { background: var(--sun); color: #1a1a1a; border: 2px solid #1a1a1a; }
+  .polaroid { position: relative; background: #fff; padding: 12px 12px 54px; border: 3px solid #1a1a1a; border-radius: 6px; box-shadow: 8px 8px 0 #1a1a1a; transform: rotate(2deg); max-width: 460px; margin: 10px auto 0; }
+  .polaroid img { border-radius: 2px; box-shadow: none; aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+  .polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-family: var(--font-hand); font-size: 26px; font-weight: 700; }
+  .sticker {
+    position: absolute; z-index: 2; display: grid; place-items: center; text-align: center;
+    font-family: var(--font-display); font-weight: 700; line-height: 1.05; border: 3px solid #1a1a1a; box-shadow: 3px 3px 0 #1a1a1a;
+  }
+  .sticker--price { top: -18px; right: 6px; width: 104px; height: 104px; border-radius: 50%; background: var(--sun); transform: rotate(12deg); font-size: 14px; }
+  .sticker--price b { display: block; font-size: 30px; }
+  .sticker--cod { bottom: 66px; left: 6px; padding: 8px 14px; border-radius: 12px; background: var(--accent); color: #fff; transform: rotate(-6deg); font-size: 14px; }
+  .hero .rating { background: #fff; border: 2px solid #1a1a1a; border-radius: 999px; padding: 6px 14px; display: inline-flex; }
+
+  /* Problème : « où tu révises vraiment ? » */
+  .spots { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+  @media (min-width: 800px) { .spots { grid-template-columns: repeat(4, 1fr); } }
+  .spot { background: #fff; border: 3px solid #1a1a1a; border-radius: 16px; padding: 16px 14px; text-align: center; box-shadow: 4px 4px 0 #1a1a1a; }
+  .spot:nth-child(odd) { transform: rotate(-1.5deg); }
+  .spot:nth-child(even) { transform: rotate(1.5deg); }
+  .spot__emoji { font-size: 34px; line-height: 1; }
+  .spot h3 { font-size: 17px; margin: 8px 0 4px; }
+  .spot p { margin: 0; font-size: 13px; color: var(--muted); }
+  .spot__score { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #ffe1dd; color: #b8382a; border: 2px solid #1a1a1a; }
+  .spot--win { background: var(--accent); color: #fff; }
+  .spot--win p { color: rgba(255,255,255,.9); }
+  .spot--win .spot__score { background: var(--sun); color: #1a1a1a; }
+  .problem-media { display: grid; gap: 28px; align-items: center; margin-top: 40px; }
+  @media (min-width: 900px) { .problem-media { grid-template-columns: .9fr 1.1fr; gap: 56px; } }
+  .problem-media img { border: 3px solid #1a1a1a; border-radius: var(--radius); box-shadow: 8px 8px 0 #1a1a1a; transform: rotate(-1.5deg); }
+  .quote-big { font-family: var(--font-hand); font-size: clamp(30px, 6vw, 44px); line-height: 1.1; color: var(--accent-hover); margin: 0 0 14px; }
+
+  /* Solution : Fenny + post-it */
+  .fenny { display: grid; gap: 24px; align-items: center; margin-bottom: 36px; }
+  @media (min-width: 900px) { .fenny { grid-template-columns: .8fr 1.2fr; gap: 48px; } }
+  .fenny img { border: 3px solid #1a1a1a; border-radius: var(--radius); box-shadow: var(--shadow); }
+  .bubble { position: relative; background: #fff; border: 3px solid #1a1a1a; border-radius: 22px; padding: 20px 22px; box-shadow: var(--shadow); font-size: 17px; }
+  .bubble b { font-family: var(--font-display); }
+  .steps li { background: var(--sun-soft); border-radius: 6px; padding-top: 26px; }
+  .steps li:nth-child(1) { transform: rotate(-1.2deg); background: #fff1c2; }
+  .steps li:nth-child(2) { transform: rotate(1deg); background: #dff2ef; }
+  .steps li:nth-child(3) { transform: rotate(-.6deg); background: #ffe1dd; }
+  .steps li::before { background: #1a1a1a; color: var(--sun); font-family: var(--font-display); }
+  .video { border: 3px solid #1a1a1a; box-shadow: 8px 8px 0 #1a1a1a; }
+  .stat { background: #fff; }
+  .stat b { color: #1a1a1a; }
+
+  /* Bénéfices */
+  .benef { display: grid; gap: 28px; align-items: start; }
+  @media (min-width: 1000px) { .benef { grid-template-columns: 1fr 340px; } }
+  .benef aside img { border: 3px solid #1a1a1a; border-radius: var(--radius); box-shadow: var(--shadow); transform: rotate(1.5deg); }
+  .benef aside p { text-align: center; margin-top: 16px; }
+  .benef .grid--2 .card:nth-child(3n+1) { background: #fffaf0; }
+
+  /* Avant / après */
+  .ba { border: 3px solid #1a1a1a; box-shadow: 8px 8px 0 #1a1a1a; }
+
+  /* Avis façon post-it */
+  .review { border-radius: 4px; }
+  .review:nth-child(1) { background: #fff1c2; transform: rotate(-1.2deg); }
+  .review:nth-child(2) { background: #dff2ef; transform: rotate(.8deg); }
+  .review:nth-child(3) { background: #ffe1dd; transform: rotate(-.6deg); }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; background: #1a1a1a; color: var(--sun); flex: none; }
+  .ugc img { border: 3px solid #1a1a1a; }
+
+  /* Objection prix : ticket de caisse */
+  .objection { display: grid; gap: 32px; align-items: center; }
+  @media (min-width: 900px) { .objection { grid-template-columns: 1fr 1fr; gap: 56px; } }
+  .ticket {
+    background: #fff; border: 3px solid #1a1a1a; box-shadow: 8px 8px 0 #1a1a1a; padding: 26px 22px 30px; max-width: 400px; margin: 0 auto; width: 100%;
+    font-family: ui-monospace, "Courier New", monospace; font-size: 14px; transform: rotate(-1.5deg);
+    -webkit-mask: radial-gradient(8px at 50% 100%, #0000 98%, #000) 50% / 22px 100%;
+            mask: radial-gradient(8px at 50% 100%, #0000 98%, #000) 50% / 22px 100%;
+  }
+  .ticket h3 { font-family: var(--font-display); text-align: center; font-size: 20px; margin-bottom: 4px; }
+  .ticket small { display: block; text-align: center; color: var(--muted); margin-bottom: 16px; }
+  .ticket .row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px dashed #bbb; }
+  .ticket .row--total { border-bottom: 0; border-top: 2px solid #1a1a1a; margin-top: 8px; padding-top: 12px; font-weight: 700; font-size: 16px; }
+  .ticket .big { text-align: center; margin-top: 18px; padding: 12px; background: var(--sun); border: 2px solid #1a1a1a; border-radius: 10px; font-family: var(--font-display); font-size: 18px; }
+  .ticket .big b { font-size: 28px; display: block; }
+  .checks { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+  .checks li { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; }
+  .checks li::before { content: "✓"; flex: none; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 800; border: 2px solid #1a1a1a; }
+
+  /* Versions */
+  .version.is-selected { box-shadow: 6px 6px 0 var(--accent); border-color: #1a1a1a; }
+  .version__badge { background: var(--sun); color: #1a1a1a; border: 2px solid #1a1a1a; transform: rotate(-3deg); }
+  .version__row img { border: 2px solid #1a1a1a; }
+  .version__price { color: #1a1a1a; }
+
+  /* Formulaire */
+  .order__media img { border: 3px solid #1a1a1a; box-shadow: 8px 8px 0 #1a1a1a; }
+  .form h3 { font-family: var(--font-display); font-size: 24px; }
+  .form__help { background: var(--sun-soft); color: #1a1a1a; border: 2px dashed #1a1a1a; }
+  .seg input:checked + span { border-color: #1a1a1a; background: var(--sun); color: #1a1a1a; box-shadow: 3px 3px 0 #1a1a1a; }
+  .total b { color: #1a1a1a; }
+
+  /* Garantie */
+  .guarantee { border-style: solid; background: #fff; }
+  .guarantee__badge { background: var(--sun); color: #1a1a1a; border: 3px solid #1a1a1a; box-shadow: 4px 4px 0 #1a1a1a; transform: rotate(-8deg); }
+
+  /* CTA final jaune */
+  .final { background: var(--sun); color: #1a1a1a; border-top: 3px solid #1a1a1a; }
+  .final .h2 { color: #1a1a1a; }
+  .final p, .final .cta-note { color: #3a3a3a; }
+  .final .btn { background: var(--accent); color: #fff; box-shadow: var(--shadow-cta); }
+  .final .hand { display: block; font-size: clamp(26px, 5vw, 34px); color: var(--accent-hover); margin-bottom: 6px; transform: rotate(-2deg); }
+  .sticky-cta { border-top: 3px solid #1a1a1a; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .polaroid, .sticker, .spot, .steps li, .review, .ticket, .problem-media img, .benef aside img, .guarantee__badge { transform: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 0. BARRE D'ANNONCE -->
+<div class="topbar">🎁 Testez-le 3 jours · Satisfait ou 100 % remboursé</div>
+
+<!-- 1. HEADER -->
+<header class="header">
+  <div class="container">
+    <a class="header__logo" href="#top" aria-label="HomeDesk"><img src="assets/img/logo.webp" alt="HomeDesk" width="160" height="22"></a>
+    <a class="header__cta" href="#commander">Commander · 169 DT</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 2. HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">📚 Spécial étudiants</span>
+        <h1>Le canapé n'a jamais été <mark>un bureau.</mark></h1>
+        <p class="hero__sub">HomeDesk transforme ta table ou ton bureau en poste <strong>assis-debout</strong> en 5 secondes. Pour réviser autrement que plié en deux sur ton lit.</p>
+        <ul class="hero__bullets">
+          <li>Dès 169 DT, payé à la livraison : pas besoin de carte bancaire</li>
+          <li>Compact : 36 × 22 cm au sol, parfait pour une petite chambre</li>
+          <li>Écran à hauteur des yeux, assis comme debout</li>
+        </ul>
+        <div class="rating"><span class="rating__stars">★★★★★</span><span><strong>4,9/5</strong> · +200 clients équipés</span></div>
+        <div class="cta-wrap">
+          <a class="btn" href="#commander" data-pick-taille="medium" data-pick-sac="non">Je prends le mien à 169 DT →</a>
+          <p class="cta-note">💳 Paiement à la livraison · 🚚 Livraison gratuite · ↩️ 3 jours pour essayer</p>
+        </div>
+      </div>
+      <div class="hero__media">
+        <figure class="polaroid">
+          <span class="sticker sticker--price"><span>dès<b>169</b>DT</span></span>
+          <img src="assets/img/femme-sourire.webp" alt="Étudiante souriante qui travaille debout sur son laptop posé sur un HomeDesk" width="900" height="900" fetchpriority="high">
+          <span class="sticker sticker--cod">💳 Tu paies à la livraison</span>
+          <figcaption>révisions, mode debout ✌️</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. RÉASSURANCE -->
+  <div class="trust">
+    <ul class="container trust__list">
+      <li><span>🚚</span>Livraison gratuite partout en Tunisie (72h)</li>
+      <li><span>💳</span>Paiement à la livraison</li>
+      <li><span>↩️</span>3 jours pour essayer, satisfait ou remboursé</li>
+      <li><span>📍</span>Fabriqué en Tunisie</li>
+    </ul>
+  </div>
+
+  <!-- 4. PROBLÈME -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Semaine d'exams</span>
+        <h2 class="h2">Avoue : tu révises où, vraiment ?</h2>
+        <p class="lead">Les fiches sur le lit, le laptop sur les genoux, la nuit blanche sur le canapé de la coloc… On a tous testé. Et on a tous fini la journée tout raide.</p>
+      </div>
+      <div class="spots reveal">
+        <div class="spot"><div class="spot__emoji">🛏️</div><h3>Le lit</h3><p>Le dos en virgule, et tu t'endors au 3ᵉ chapitre.</p><span class="spot__score">0/10 concentration</span></div>
+        <div class="spot"><div class="spot__emoji">🛋️</div><h3>Le canapé</h3><p>Laptop sur les genoux, tête penchée pendant des heures.</p><span class="spot__score">Nuque en PLS</span></div>
+        <div class="spot"><div class="spot__emoji">🍽️</div><h3>La table de cuisine</h3><p>Écran trop bas, et toute la coloc qui passe.</p><span class="spot__score">Bof</span></div>
+        <div class="spot spot--win"><div class="spot__emoji">✨</div><h3>Avec HomeDesk</h3><p>Écran à hauteur des yeux, assis ou debout quand tu veux.</p><span class="spot__score">Mode exams ON</span></div>
+      </div>
+      <div class="problem-media">
+        <img class="reveal" src="assets/img/post-canape.webp" alt="Étudiant inconfortable avec son laptop sur le canapé, la mascotte Fenny lui dit que le canapé n'a jamais été un bureau" width="800" height="993" loading="lazy">
+        <div class="reveal">
+          <p class="quote-big">« Le canapé, c'est pour Netflix. »</p>
+          <p class="lead">Rester assis des heures dans la même position, ça fatigue le corps et ça vide l'énergie. Ce n'est pas toi le problème : c'est ton coin de révision qui ne te laisse jamais bouger.</p>
+          <p class="lead"><strong>La bonne nouvelle ?</strong> Pas besoin d'acheter un nouveau bureau pour régler ça.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SOLUTION + DÉMO -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="fenny reveal">
+        <img src="assets/img/post-fenny.webp" alt="Fenny, la mascotte fennec de HomeDesk, coach ergonomique" width="800" height="993" loading="lazy">
+        <div>
+          <span class="eyebrow">Le plan de Fenny</span>
+          <h2 class="h2">Ta table devient un vrai poste de révision</h2>
+          <div class="bubble"><b>Salut, moi c'est Fenny 🦊</b><br>HomeDesk se pose sur n'importe quelle table : ton bureau, la table de la chambre, celle de la coloc. Tu poses ton laptop dessus et tu alternes assis ↔ debout quand l'énergie baisse. Simple.</div>
+        </div>
+      </div>
+      <ol class="steps reveal">
+        <li><strong>Tu le poses</strong><span>Sur ta table ou ton bureau. Il s'assemble sans outil, en quelques minutes.</span></li>
+        <li><strong>Tu installes ton laptop</strong><span>Écran en haut, clavier et souris en dessous. PC jusqu'à 17 pouces.</span></li>
+        <li><strong>Tu alternes</strong><span>Assis pour les fiches, debout pour relire : 5 secondes pour changer.</span></li>
+      </ol>
+      <div class="reveal" style="margin-top:36px">
+        <div class="video">
+          <video src="assets/video/homedesk-demo.mp4" poster="assets/img/video-poster.webp" muted loop playsinline controls preload="none" aria-label="Démonstration HomeDesk : passage de la position assise à debout"></video>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>5 sec</b><small>pour changer</small></div>
+          <div class="stat"><b>0</b><small>outil</small></div>
+          <div class="stat"><b>36×22</b><small>cm au sol</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BÉNÉFICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Pourquoi c'est malin</span>
+        <h2 class="h2">Petit budget, grosse différence</h2>
+      </div>
+      <div class="benef">
+        <div class="grid grid--2">
+          <article class="card reveal"><div class="card__icon">👀</div><h3>L'écran à la bonne hauteur</h3><p>Fini la tête penchée vers le laptop pendant tes sessions de révision.</p><span class="card__spec">Plusieurs niveaux de hauteur</span></article>
+          <article class="card reveal"><div class="card__icon">⚡</div><h3>Debout quand ça décroche</h3><p>Coup de fatigue à 16h ? Lève-toi et continue, sans rien déplacer.</p><span class="card__spec">Assis ↔ debout en 5 sec</span></article>
+          <article class="card reveal"><div class="card__icon">🏠</div><h3>Pensé pour les petites chambres</h3><p>Il tient sur ton bureau actuel et ne mange pas ta place.</p><span class="card__spec">36 × 22 cm au sol · 55 cm de haut</span></article>
+          <article class="card reveal"><div class="card__icon">🔧</div><h3>Zéro galère de montage</h3><p>Pas de vis, pas d'outil, pas besoin d'appeler ton oncle bricoleur.</p><span class="card__spec">Montage sans outil</span></article>
+          <article class="card reveal"><div class="card__icon">💪</div><h3>Solide pour toutes tes années de fac</h3><p>Du PFE au master, il tient le coup. Et il est beau sur ton bureau.</p><span class="card__spec">MDF stratifié blanc 18 mm · découpe CNC</span></article>
+          <article class="card reveal"><div class="card__icon">🎒</div><h3>Option bibliothèque</h3><p>Tu bosses aussi à la fac ? La version avec sac se démonte et se transporte.</p><span class="card__spec">Sac offert · valeur 85 DT</span></article>
+        </div>
+        <aside class="reveal">
+          <img src="assets/img/post-varier.webp" alt="Étudiant qui travaille sur son laptop posé sur HomeDesk avec la mascotte Fenny" width="800" height="993" loading="lazy">
+          <p class="hand" style="font-size:26px">Varie tes positions, garde ton énergie ✏️</p>
+        </aside>
+      </div>
+      <div class="cta-wrap center">
+        <a class="btn" href="#commander" data-pick-taille="medium" data-pick-sac="non">Je m'équipe pour les exams →</a>
+        <p class="cta-note">Tu ne paies <strong>qu'à la réception</strong> · 3 jours pour essayer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. AVANT / APRÈS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Le avant / après</span>
+        <h2 class="h2">Ta révision, version upgrade</h2>
+        <p class="lead">Glisse pour comparer 👇</p>
+      </div>
+      <div class="ba reveal">
+        <img src="assets/img/avant-mobile.webp" alt="Avant : travail assis, posture courbée devant le laptop" width="800" height="800" loading="lazy">
+        <img class="ba__after" src="assets/img/apres-mobile.webp" alt="Après : travail debout avec HomeDesk, écran à hauteur des yeux" width="800" height="800" loading="lazy">
+        <span class="ba__tag ba__tag--before">AVANT</span><span class="ba__tag ba__tag--after">APRÈS</span>
+        <div class="ba__line"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+      </div>
+      <div class="ba-legend">
+        <div class="is-before"><h4>Avant</h4><ul><li>Plié sur le lit ou le canapé</li><li>Tête penchée vers l'écran</li><li>Énergie à plat dès midi</li></ul></div>
+        <div class="is-after"><h4>Après</h4><ul><li>Un vrai coin de révision</li><li>Écran à hauteur des yeux</li><li>Tu bouges quand tu veux</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PREUVES SOCIALES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Ils ont validé</span>
+        <h2 class="h2">La note de la promo : 4,9/5</h2>
+        <p class="lead"><span class="rating__stars">★★★★★</span> +200 clients équipés en Tunisie</p>
+      </div>
+      <!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
+      <div class="reviews">
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« J'ai fait tout mon semestre d'exams avec. Je relis mes fiches debout et je tiens beaucoup plus longtemps qu'avant sur mon lit. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">IS</span><div><b>Ines S.</b><span>Étudiante en médecine · Monastir</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Ma chambre est minuscule, j'avais peur que ça prenne trop de place. Il tient sur mon petit bureau, et il est monté en quelques minutes. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">OM</span><div><b>Omar M.</b><span>Prépa ingénieur · Tunis</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« J'ai pris l'Essentiel à 169 DT, payé à la livraison. Parfait pour mon PFE, mes colocs veulent tous le même maintenant. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">SB</span><div><b>Sarra B.</b><span>Master informatique · Sfax</span></div></figcaption>
+        </figure>
+      </div>
+      <div class="ugc" aria-label="Photos de clients HomeDesk">
+        <img src="assets/img/client-2.webp" alt="Cliente HomeDesk à son bureau" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-4.webp" alt="Client HomeDesk travaillant debout" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-6.webp" alt="HomeDesk installé sur un bureau" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-8.webp" alt="Cliente HomeDesk debout devant son laptop" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-1.webp" alt="Client HomeDesk au travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-10.webp" alt="Laptop posé sur HomeDesk" width="480" height="853" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. OBJECTION PRINCIPALE : le prix -->
+  <section class="section section--alt">
+    <div class="container objection">
+      <div class="reveal">
+        <span class="eyebrow">On en parle ?</span>
+        <h2 class="h2">« C'est trop cher pour moi. »</h2>
+        <p class="lead">On comprend, le budget étudiant, c'est sacré. C'est pour ça qu'on a créé <strong>HomeDesk Essentiel</strong> : le même support, sans le sac, à <strong>169 DT</strong>.</p>
+        <ul class="checks">
+          <li>Aucun acompte, aucune carte bancaire : tu paies en espèces à la livraison</li>
+          <li>Livraison gratuite, même dans ta ville universitaire</li>
+          <li>3 jours pour l'essayer dans ta chambre, sinon remboursé</li>
+          <li>Tu vas aussi à la bibliothèque ? Version avec sac à 199 DT (sac d'une valeur de 85 DT offert)</li>
+        </ul>
+        <div class="cta-wrap">
+          <a class="btn" href="#commander" data-pick-taille="medium" data-pick-sac="non">Je choisis l'Essentiel →</a>
+        </div>
+      </div>
+      <div class="ticket reveal" role="img" aria-label="Calcul : 169 DT répartis sur un an, soit moins de 0,50 DT par jour">
+        <h3>🧾 Le calcul malin</h3>
+        <small>HomeDesk Essentiel · Medium</small>
+        <div class="row"><span>HomeDesk Essentiel</span><span>169 DT</span></div>
+        <div class="row"><span>Livraison</span><span>0 DT</span></div>
+        <div class="row"><span>Acompte</span><span>0 DT</span></div>
+        <div class="row row--total"><span>Total à la livraison</span><span>169 DT</span></div>
+        <div class="big">÷ 365 jours de révisions<b>&lt; 0,50 DT / jour</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CHOISIR SA VERSION -->
+  <section class="section" id="versions">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">À toi de choisir</span>
+        <h2 class="h2">Quelle version pour toi ?</h2>
+        <p class="lead">Tu le laisses dans ta chambre → <strong>Essentiel</strong>. Tu l'emmènes à la fac → <strong>avec sac</strong>. Tu mesures plus de 1,87 m → <strong>Large</strong>.</p>
+      </div>
+      <div class="versions">
+        <div class="version is-selected reveal" data-pick-taille="medium" data-pick-sac="non">
+          <span class="version__badge">Le choix malin</span>
+          <div class="version__row">
+            <img src="assets/img/taille-medium.webp" alt="HomeDesk Essentiel version Medium" width="700" height="700" loading="lazy">
+            <div><h3>Essentiel · Medium</h3><p>Jusqu'à 1,87 m · le support seul, sans sac</p><div class="version__price">169 DT</div></div>
+          </div>
+        </div>
+        <div class="version reveal" data-pick-taille="medium" data-pick-sac="oui">
+          <div class="version__row">
+            <img src="assets/img/sac-1.webp" alt="Sac de transport HomeDesk" width="600" height="600" loading="lazy">
+            <div><h3>Medium + sac offert</h3><p>Pour la fac et la bibliothèque · sac + porte-clés</p><div class="version__price">199 DT<s>219 DT</s></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="center cta-note" style="margin-top:22px">📏 Plus de 1,87 m ? <a href="#commander" data-pick-taille="large" data-pick-sac="non"><strong>Large Essentiel à 179 DT</strong></a> ou <a href="#commander" data-pick-taille="large" data-pick-sac="oui"><strong>Large + sac à 209 DT</strong></a>.</p>
+    </div>
+  </section>
+
+  <!-- 11. OFFRE + FORMULAIRE COD -->
+  <section class="section section--alt" id="commander">
+    <div class="container order">
+      <div class="order__media">
+        <span class="eyebrow">Dernière étape</span>
+        <h2 class="h2">Commande maintenant, paie à la réception</h2>
+        <img src="assets/img/femme-assise-2.webp" alt="Étudiante qui travaille assise à son bureau avec HomeDesk" width="900" height="845" loading="lazy">
+        <ul class="order__includes">
+          <li>Support HomeDesk en MDF stratifié blanc</li>
+          <li>Porte-clés HomeDesk</li>
+          <li>+ sac de transport offert (valeur 85 DT) avec la version avec sac</li>
+          <li>Livraison gratuite partout en Tunisie</li>
+        </ul>
+      </div>
+
+      <form class="form" id="commander-form" novalidate>
+        <div class="form__fields">
+          <h3>Ta commande ✌️</h3>
+          <p class="form__help">📏 Tu mesures plus de 1,87 m ? Choisis <strong>Large</strong>.</p>
+
+          <span class="form__label">Taille <em>*</em></span>
+          <div class="seg">
+            <label><input type="radio" name="taille" value="medium" checked><span>Medium<small>jusqu'à 1,87 m</small></span></label>
+            <label><input type="radio" name="taille" value="large"><span>Large<small>plus de 1,87 m</small></span></label>
+          </div>
+
+          <span class="form__label">Version</span>
+          <div class="seg">
+            <label><input type="radio" name="sac" value="non" checked><span>Essentiel<small>sans sac · le moins cher</small></span></label>
+            <label><input type="radio" name="sac" value="oui"><span>Avec sac<small>+30 DT · sac offert (85 DT)</small></span></label>
+          </div>
+
+          <span class="form__label">Quantité</span>
+          <div class="qty"><button type="button" data-qty="-1" aria-label="Diminuer">−</button><output data-qty-out>1</output><button type="button" data-qty="1" aria-label="Augmenter">+</button></div>
+
+          <div class="total"><span data-version-label>HomeDesk Medium Essentiel (sans sac)</span><div><s data-total-old></s><b data-total>169 DT</b></div></div>
+
+          <label class="form__label" for="f-nom">Nom complet <em>*</em></label>
+          <input class="input" id="f-nom" name="nom" autocomplete="name" placeholder="Prénom et nom" required>
+          <span class="field-error">Indique ton nom complet.</span>
+
+          <label class="form__label" for="f-tel">Téléphone <em>*</em></label>
+          <input class="input" id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 11 22 33" required>
+          <span class="field-error">Numéro tunisien à 8 chiffres.</span>
+
+          <label class="form__label" for="f-adr">Adresse et ville <em>*</em></label>
+          <input class="input" id="f-adr" name="adresse" autocomplete="street-address" placeholder="Rue, numéro, ville (foyer, résidence…)" required>
+          <span class="field-error">Indique ton adresse de livraison.</span>
+
+          <label class="form__label" for="f-mail">Email <small>(optionnel)</small></label>
+          <input class="input" id="f-mail" name="email" type="email" autocomplete="email" placeholder="email@exemple.com">
+
+          <label class="form__label" for="f-profil">Profil</label>
+          <select class="input" id="f-profil" name="profil">
+            <option>Développeur IT</option><option>Freelance</option><option>Télétravailleur salarié</option><option>Chef d'entreprise</option><option>Designer</option><option selected>Étudiant</option><option>Autre</option>
+          </select>
+
+          <button class="btn btn--block" type="submit" style="margin-top:24px"><span>Confirmer ma commande · <span data-total>169 DT</span></span></button>
+          <ul class="form__reassure">
+            <li>💳 Tu ne paies rien maintenant, seulement à la réception</li>
+            <li>🚚 Livraison gratuite sous 72h · ↩️ 3 jours pour essayer</li>
+          </ul>
+        </div>
+        <div class="form__success" role="status">
+          <b>✓ Commande enregistrée !</b>
+          <p>Notre équipe t'appelle très vite pour confirmer la livraison. Bon courage pour tes exams 💪</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 12. GARANTIE -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="guarantee reveal">
+        <div class="guarantee__badge"><div><b>3</b><small>jours<br>d'essai</small></div></div>
+        <div>
+          <h3>Zéro risque, même pour ton budget</h3>
+          <p>Tu paies seulement quand tu reçois ton HomeDesk. Ensuite, tu as 3 jours pour l'essayer pendant tes révisions. Pas convaincu ? Tu es remboursé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="h2">Tes questions, nos réponses</h2>
+      </div>
+      <div class="faq">
+        <details><summary>C'est quoi la différence entre Essentiel et la version avec sac ?</summary><p>C'est exactement le même support. La version avec sac (199 DT au lieu de 169 DT pour la Medium) ajoute un sac de transport d'une valeur de 85 DT, pratique si tu l'emmènes à la fac ou à la bibliothèque.</p></details>
+        <details><summary>Ça rentre dans une petite chambre ?</summary><p>Oui. La version Medium fait 36 × 22 cm au sol pour 55 cm de haut. Elle se pose directement sur ton bureau ou ta table, sans prendre de place en plus.</p></details>
+        <details><summary>Quelle taille choisir ?</summary><p>Medium si tu mesures jusqu'à 1,87 m. Large au-delà de 1,87 m (68 cm de haut, avec une étagère pour téléphone ou tablette en plus).</p></details>
+        <details><summary>Je n'ai pas de carte bancaire, je peux commander ?</summary><p>Oui. Tu paies en espèces à la livraison, sans acompte. La livraison est gratuite partout en Tunisie.</p></details>
+        <details><summary>C'est compliqué à monter ?</summary><p>Non. Les pièces s'assemblent sans outil, en quelques minutes. Ensuite, passer d'assis à debout prend 5 secondes.</p></details>
+        <details><summary>Mon laptop va tenir dessus ?</summary><p>Oui, l'étagère haute (40 × 27 cm) accueille un PC portable jusqu'à 17 pouces, et l'étagère du dessous reçoit le clavier et la souris. Le support est en MDF stratifié de 18 mm, découpé à la CNC.</p></details>
+        <details><summary>Et si ça ne me plaît pas ?</summary><p>Tu as 3 jours pour l'essayer chez toi. Pas convaincu ? Tu es remboursé.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. CTA FINAL -->
+  <section class="section final">
+    <div class="container">
+      <span class="hand">Prochaine session d'exams…</span>
+      <h2 class="h2">Tu la passes sur le canapé ou sur HomeDesk ?</h2>
+      <p>Un vrai coin de révision pour moins de 0,50 DT par jour. Et tu ne paies qu'à la livraison.</p>
+      <div class="cta-wrap">
+        <a class="btn" href="#commander" data-pick-taille="medium" data-pick-sac="non">Je commande mon HomeDesk →</a>
+        <p class="cta-note">Dès 169 DT · Livraison gratuite · 3 jours pour essayer</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 15. FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <a href="https://www.homedesk.tn/mentions-legales/">Mentions légales</a> ·
+    <a href="#commander">Commander</a> ·
+    <a href="https://www.homedesk.tn/contactez-nous/">Offre entreprise : demandez un devis</a>
+    <p>Copyright © 2026 · HomeDesk · Fabriqué en Tunisie</p>
+  </div>
+</footer>
+
+<!-- CTA collant mobile -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta__price">Dès<b>169 DT</b></div>
+  <a class="btn" href="#commander">Je commande</a>
+</div>
+
+<!-- WhatsApp : remplacer 216XXXXXXXX par le numéro HomeDesk [À COMPLÉTER] -->
+<a class="wa" href="https://wa.me/216XXXXXXXX?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20HomeDesk" target="_blank" rel="noopener" aria-label="Poser une question sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script src="assets/js/lp-base.js" defer></script>
+</body>
+</html>

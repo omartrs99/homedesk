@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeDesk Développeurs</title>
+<meta name="description" content="HomeDesk transforme ton bureau en poste assis-debout. Laptop à hauteur des yeux, switch en 5 secondes, paiement à la livraison partout en Tunisie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-homme-pc.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/lp-base.css">
+<style>
+  /* ---- Thème « IDE dark » pour les développeurs ---- */
+  :root {
+    --bg: #0d1412;
+    --bg-alt: #111c19;
+    --surface: #152320;
+    --text: #e6eeec;
+    --muted: #9db1ac;
+    --line: #22352f;
+    --accent: #318b82;
+    --accent-hover: #3aa196;
+    --code: #5fd3c5;
+    --code-2: #e3c98f;
+    --code-3: #ff7b72;
+    --font-accent: "JetBrains Mono", ui-monospace, monospace;
+    --header-bg: rgba(13, 20, 18, .92);
+    --sticky-bg: #101a17;
+    --footer-bg: #080d0c;
+    --final-bg: linear-gradient(135deg, #1b4f4a, #0d1412 70%);
+    --shadow: 0 16px 40px rgba(0, 0, 0, .35);
+  }
+  .eyebrow { color: var(--code); text-transform: none; letter-spacing: .02em; font-size: 13px; }
+  .eyebrow::before { content: "// "; opacity: .6; }
+  .header__logo img { filter: invert(1) brightness(2); }
+  .mono { font-family: var(--font-accent); }
+  .hl { color: var(--code); }
+  .hero h1 .hl { display: block; }
+  .card__icon { background: rgba(95, 211, 197, .1); color: var(--code); font-family: var(--font-accent); font-size: 15px; font-weight: 700; }
+  .hero__bullets li::before { background: rgba(95, 211, 197, .12); color: var(--code); }
+
+  /* Terminal posé sur la photo du hero */
+  .term {
+    position: absolute; left: -12px; bottom: -22px; width: min(92%, 360px);
+    background: rgba(8, 13, 12, .94); border: 1px solid #2a3f3a; border-radius: 12px;
+    font-family: var(--font-accent); font-size: 12.5px; line-height: 1.7; color: #cfe0dc;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .5);
+  }
+  .term__bar { display: flex; gap: 6px; padding: 10px 12px; border-bottom: 1px solid #22352f; }
+  .term__bar i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f56; }
+  .term__bar i:nth-child(2) { background: #ffbd2e; }
+  .term__bar i:nth-child(3) { background: #27c93f; }
+  .term pre { margin: 0; padding: 12px 14px 14px; white-space: pre-wrap; font: inherit; }
+  .term .p { color: var(--code-2); }
+  .term .ok { color: #27c93f; }
+  .caret { display: inline-block; width: 8px; height: 14px; background: var(--code); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (min-width: 900px) { .term { left: -40px; bottom: -30px; } }
+
+  /* Journal de la journée */
+  .log { background: #080d0c; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px; font-family: var(--font-accent); font-size: 14px; line-height: 1.9; overflow-x: auto; }
+  .log div { white-space: nowrap; }
+  .log time { color: #6b817b; margin-right: 10px; }
+  .log .w { color: var(--code-2); }
+  .log .e { color: var(--code-3); }
+  .problem { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 900px) { .problem { grid-template-columns: 1fr 1fr; gap: 56px; } }
+  .problem img { border-radius: var(--radius); box-shadow: var(--shadow); }
+  .pivot { margin-top: 22px; padding-left: 16px; border-left: 3px solid var(--code); font-size: 18px; font-weight: 600; }
+
+  .steps li::before { font-family: var(--font-accent); }
+  .steps code { display: inline-block; font-family: var(--font-accent); font-size: 12px; color: var(--code); background: rgba(95, 211, 197, .08); padding: 2px 8px; border-radius: 6px; margin-bottom: 6px; }
+
+  /* Changelog des bénéfices */
+  .tag { display: inline-block; font-family: var(--font-accent); font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 6px; margin-bottom: 12px; }
+  .tag--feat { background: rgba(39, 201, 63, .12); color: #4ddc6a; }
+  .tag--perf { background: rgba(227, 201, 143, .14); color: var(--code-2); }
+  .tag--fix  { background: rgba(255, 123, 114, .12); color: var(--code-3); }
+
+  /* Objection stabilité */
+  .objection { display: grid; gap: 24px; align-items: center; }
+  @media (min-width: 900px) { .objection { grid-template-columns: .9fr 1.1fr; gap: 56px; } }
+  .objection__imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .objection__imgs img { border-radius: var(--radius-sm); aspect-ratio: 1 / 1; object-fit: cover; }
+  .objection__imgs img:first-child { grid-column: span 2; aspect-ratio: 4 / 5; }
+  .spec { font-family: var(--font-accent); font-size: 13px; background: #080d0c; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px; margin-top: 20px; line-height: 1.8; overflow-x: auto; }
+  .spec .k { color: var(--code); }
+  .spec .s { color: var(--code-2); }
+  .spec .c { color: #6b817b; }
+
+  .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-accent); font-weight: 700; font-size: 14px; background: rgba(95, 211, 197, .14); color: var(--code); flex: none; }
+  .review__role { font-family: var(--font-accent); font-size: 11px; color: var(--code); }
+  .version__row img { background: #fff; }
+  .ba-legend h4 { color: var(--text); }
+  .final .h2 .mono { font-size: .6em; display: block; color: var(--code); margin-bottom: 10px; font-weight: 500; }
+  .final .btn { color: #0d1412; }
+</style>
+</head>
+<body>
+
+<div class="topbar">🎁 Testez-le 3 jours · Satisfait ou 100 % remboursé</div>
+
+<header class="header">
+  <div class="container">
+    <a class="header__logo" href="#top" aria-label="HomeDesk"><img src="assets/img/logo.webp" alt="HomeDesk" width="160" height="22"></a>
+    <a class="header__cta" href="#commander">Commander · 199 DT</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 2. HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">pour les développeurs</span>
+        <h1>Code debout.<span class="hl">Sans changer de bureau.</span></h1>
+        <p class="hero__sub">HomeDesk se pose sur ton bureau actuel et transforme ton setup en poste <strong>assis-debout</strong>. Tu alternes en 5 secondes, entre deux commits.</p>
+        <ul class="hero__bullets">
+          <li>Laptop à hauteur des yeux : fini la nuque penchée sur l'IDE</li>
+          <li>Switch assis ↔ debout en 5 sec, sans moteur ni câble</li>
+          <li>Démontable, avec sac de transport offert (valeur 85 DT)</li>
+        </ul>
+        <div class="rating"><span class="rating__stars">★★★★★</span><span><strong>4,9/5</strong> · +200 professionnels équipés</span></div>
+        <div class="cta-wrap">
+          <a class="btn" href="#commander">Je passe en mode debout →</a>
+          <p class="cta-note">À partir de <strong>169 DT</strong> · Paiement à la livraison · Livraison gratuite</p>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="assets/img/hero-homme-pc.webp" alt="Développeur travaillant debout sur son laptop posé sur un HomeDesk blanc" width="1100" height="1100" fetchpriority="high">
+        <div class="term" aria-hidden="true">
+          <div class="term__bar"><i></i><i></i><i></i></div>
+<pre><span class="p">~/setup $</span> homedesk --mode=standing
+<span class="ok">✓</span> écran à hauteur des yeux
+<span class="ok">✓</span> switch assis ↔ debout : 5s
+<span class="ok">✓</span> outils requis : 0
+<span class="p">~/setup $</span> <span class="caret"></span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. RÉASSURANCE -->
+  <div class="trust">
+    <ul class="container trust__list">
+      <li><span>🚚</span>Livraison gratuite partout en Tunisie (72h)</li>
+      <li><span>💳</span>Paiement à la livraison</li>
+      <li><span>↩️</span>3 jours pour essayer, satisfait ou remboursé</li>
+      <li><span>📍</span>Fabriqué en Tunisie</li>
+    </ul>
+  </div>
+
+  <!-- 4. PROBLÈME -->
+  <section class="section">
+    <div class="container problem">
+      <div class="reveal">
+        <span class="eyebrow">while (true) { assis(); }</span>
+        <h2 class="h2">8h de code. <span class="hl">0 minute debout.</span></h2>
+        <p class="lead">Tu connais la boucle : stand-up assis, sprint assis, debug assis, review assise. Le laptop à plat sur le bureau, la tête qui descend vers l'écran au fil des heures.</p>
+        <div class="log" role="img" aria-label="Journée type d'un développeur">
+          <div><time>[09:00]</time>stand-up… depuis ta chaise</div>
+          <div><time>[11:30]</time><span class="w">WARN</span> nuque penchée vers l'écran du laptop</div>
+          <div><time>[15:00]</time><span class="w">WARN</span> énergie en baisse, 3ᵉ café</div>
+          <div><time>[19:00]</time><span class="e">ERROR</span> git push… et le dos qui tire</div>
+        </div>
+        <p class="pivot">Ce n'est pas un bug de motivation. C'est ton setup qui est figé.</p>
+      </div>
+      <img class="reveal" src="assets/img/post-code-mal-dos.webp" alt="Développeur qui se tient le bas du dos après 4 heures de code" width="800" height="993" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 5. SOLUTION + DÉMO -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">npm install posture</span>
+        <h2 class="h2">Refactore ton setup en 3 étapes</h2>
+        <p class="lead">HomeDesk n'est pas un nouveau bureau. C'est une mise à jour de celui que tu as déjà.</p>
+      </div>
+      <ol class="steps reveal">
+        <li><code>install</code><strong>Pose-le sur ton bureau</strong><span>Il s'assemble sans outil, en quelques minutes.</span></li>
+        <li><code>config</code><strong>Place laptop, clavier, souris</strong><span>Écran en haut, clavier en dessous, chacun à sa hauteur.</span></li>
+        <li><code>run</code><strong>Alterne assis ↔ debout</strong><span>5 secondes pour changer de position, autant de fois que tu veux.</span></li>
+      </ol>
+      <div class="reveal" style="margin-top:32px">
+        <div class="video">
+          <video src="assets/video/homedesk-demo.mp4" poster="assets/img/video-poster.webp" muted loop playsinline controls preload="none" aria-label="Démonstration HomeDesk : passage de la position assise à debout"></video>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>5 sec</b><small>pour switcher</small></div>
+          <div class="stat"><b>0</b><small>outil requis</small></div>
+          <div class="stat"><b>17"</b><small>PC max</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BÉNÉFICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">CHANGELOG v2.0</span>
+        <h2 class="h2">Ce qui change dans ta journée</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card reveal"><span class="tag tag--feat">feat</span><h3>Écran à hauteur des yeux</h3><p>Ton regard tombe droit sur le code, assis comme debout. La nuque arrête de plonger vers le laptop.</p><span class="card__spec">Plusieurs niveaux de hauteur</span></article>
+        <article class="card reveal"><span class="tag tag--feat">feat</span><h3>Mode debout pour le debug</h3><p>Une session de debug qui coince ? Lève-toi et continue, sans rien débrancher.</p><span class="card__spec">Assis ↔ debout en 5 sec</span></article>
+        <article class="card reveal"><span class="tag tag--fix">fix</span><h3>Ton bureau reste ton bureau</h3><p>Pas besoin de tout racheter : tu ajoutes la position debout au bureau que tu as déjà.</p><span class="card__spec">Se pose sur un bureau existant</span></article>
+        <article class="card reveal"><span class="tag tag--perf">perf</span><h3>Zéro moteur, zéro panne</h3><p>Rien à brancher, rien à mettre à jour, aucune pièce électronique à remplacer un jour.</p><span class="card__spec">100 % mécanique</span></article>
+        <article class="card reveal"><span class="tag tag--feat">feat</span><h3>Setup portable</h3><p>Maison, open space, coworking : il se démonte et voyage dans son sac de transport.</p><span class="card__spec">Sac offert · valeur 85 DT</span></article>
+        <article class="card reveal"><span class="tag tag--perf">perf</span><h3>Un setup clean</h3><p>Lignes minimalistes, blanc mat : ton bureau gagne en clarté, sans câbles en plus.</p><span class="card__spec">MDF stratifié blanc · découpe CNC</span></article>
+      </div>
+      <div class="cta-wrap center">
+        <a class="btn" href="#commander">Je mets à jour mon setup →</a>
+        <p class="cta-note">💳 Tu ne paies qu'à la réception</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. AVANT / APRÈS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">git diff setup</span>
+        <h2 class="h2">Avant / après HomeDesk</h2>
+        <p class="lead">Glisse pour comparer.</p>
+      </div>
+      <div class="ba reveal">
+        <img src="assets/img/avant-mobile.webp" alt="Avant : travail assis, posture courbée devant le laptop" width="800" height="800" loading="lazy">
+        <img class="ba__after" src="assets/img/apres-mobile.webp" alt="Après : travail debout avec HomeDesk, écran à hauteur des yeux" width="800" height="800" loading="lazy">
+        <span class="ba__tag ba__tag--before">AVANT</span><span class="ba__tag ba__tag--after">APRÈS</span>
+        <div class="ba__line"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+      </div>
+      <div class="ba-legend">
+        <div class="is-before"><h4>− Avant</h4><ul><li>Assis toute la journée</li><li>Tête penchée vers le laptop</li><li>Setup figé</li></ul></div>
+        <div class="is-after"><h4>+ Après</h4><ul><li>Tu alternes quand tu veux</li><li>Écran à hauteur des yeux</li><li>Setup flexible</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PREUVES SOCIALES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">code review</span>
+        <h2 class="h2">Ils codent déjà debout</h2>
+        <p class="lead"><span class="rating__stars">★★★★★</span> 4,9/5 · +200 professionnels équipés en Tunisie</p>
+      </div>
+      <!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
+      <div class="reviews">
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Je l'ai posé sur mon bureau d'open space. Je passe debout pour les longues sessions de debug, et le laptop est enfin à hauteur des yeux. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">YB</span><div><b>Yassine B.</b><span class="review__role">Full-stack · Tunis</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« J'avais peur que ça bouge quand je tape. Le clavier est sur sa propre étagère, en dessous de l'écran, et ça reste stable. Monté en quelques minutes. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">MK</span><div><b>Mariem K.</b><span class="review__role">Data engineer · Sfax</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Je bosse en remote et parfois au coworking. Je le démonte, je le mets dans le sac et je retrouve mon setup partout. Payé à la livraison, aucun stress. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">AT</span><div><b>Ahmed T.</b><span class="review__role">Dev mobile · Sousse</span></div></figcaption>
+        </figure>
+      </div>
+      <div class="ugc" aria-label="Photos de clients HomeDesk">
+        <img src="assets/img/client-1.webp" alt="Client HomeDesk travaillant debout" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-3.webp" alt="Cliente HomeDesk à son bureau" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-9.webp" alt="Client HomeDesk debout devant son laptop" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-10.webp" alt="Laptop posé sur HomeDesk" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-5.webp" alt="Cliente HomeDesk au travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-7.webp" alt="Détail d'un laptop sur HomeDesk" width="480" height="853" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. OBJECTION PRINCIPALE : stabilité -->
+  <section class="section section--alt">
+    <div class="container objection">
+      <div class="objection__imgs reveal">
+        <img src="assets/img/post-stable.webp" alt="HomeDesk : structure stable en MDF" width="800" height="1006" loading="lazy">
+        <img src="assets/img/detail-clavier.webp" alt="Mains sur un clavier posé sur l'étagère inférieure de HomeDesk" width="500" height="500" loading="lazy">
+        <img src="assets/img/setup-ecran-laptop.webp" alt="Laptop sur HomeDesk à côté d'un écran externe" width="1100" height="1100" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">issue #1</span>
+        <h2 class="h2">« Ça tient quand je tape ? »</h2>
+        <p class="lead">C'est la première question des devs, et c'est normal. HomeDesk est découpé à la CNC dans du MDF stratifié de 18 mm d'épaisseur. Le clavier a sa propre étagère, sous celle de l'écran : tu tapes sans faire bouger ton laptop.</p>
+<pre class="spec"><span class="c">// homedesk.config.json — version Medium</span>
+{
+  <span class="k">"materiau"</span>:  <span class="s">"MDF stratifié blanc, 18 mm"</span>,
+  <span class="k">"etagere_ecran"</span>: <span class="s">"40 × 27 cm"</span>,
+  <span class="k">"etagere_clavier"</span>: <span class="s">"54 × 22 cm"</span>,
+  <span class="k">"pc_max"</span>:    <span class="s">"17 pouces"</span>,
+  <span class="k">"hauteur"</span>:   <span class="s">"55 cm"</span>,
+  <span class="k">"moteur"</span>:    null
+}</pre>
+        <div class="cta-wrap">
+          <a class="btn" href="#commander">Je teste 3 jours chez moi →</a>
+          <p class="cta-note">Pas convaincu ? <strong>Satisfait ou remboursé.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CHOISIR SA VERSION -->
+  <section class="section" id="versions">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">choose your build</span>
+        <h2 class="h2">Choisis ta version</h2>
+        <p class="lead">Moins de 1,87 m → <strong>Medium</strong>. Plus de 1,87 m → <strong>Large</strong>. Tu ne le déplaceras jamais ? Prends l'<strong>Essentiel</strong> sans sac.</p>
+      </div>
+      <div class="versions">
+        <div class="version is-selected reveal" data-pick-taille="medium" data-pick-sac="oui">
+          <span class="version__badge">Recommandé</span>
+          <div class="version__row">
+            <img src="assets/img/taille-medium.webp" alt="HomeDesk version Medium" width="700" height="700" loading="lazy">
+            <div><h3>Medium + sac offert</h3><p>Jusqu'à 1,87 m · sac de transport + porte-clés</p><div class="version__price">199 DT<s>219 DT</s></div></div>
+          </div>
+        </div>
+        <div class="version reveal" data-pick-taille="large" data-pick-sac="oui">
+          <div class="version__row">
+            <img src="assets/img/taille-large.webp" alt="HomeDesk version Large" width="700" height="700" loading="lazy">
+            <div><h3>Large + sac offert</h3><p>Plus de 1,87 m · étagère tél/tablette en plus</p><div class="version__price">209 DT<s>229 DT</s></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="center cta-note" style="margin-top:18px">Pas besoin du sac ? <a href="#commander" data-pick-taille="medium" data-pick-sac="non"><strong>HomeDesk Essentiel dès 169 DT</strong></a> (−30 DT).</p>
+    </div>
+  </section>
+
+  <!-- 11. OFFRE + FORMULAIRE COD -->
+  <section class="section section--alt" id="commander">
+    <div class="container order">
+      <div class="order__media">
+        <span class="eyebrow">git checkout -b debout</span>
+        <h2 class="h2">Commande maintenant, paie à la réception</h2>
+        <img src="assets/img/setup-ecran-laptop.webp" alt="Setup développeur avec HomeDesk" width="1100" height="1100" loading="lazy">
+        <ul class="order__includes">
+          <li>Support HomeDesk en MDF stratifié blanc</li>
+          <li>Sac de transport offert (valeur 85 DT)</li>
+          <li>Porte-clés HomeDesk</li>
+          <li>Livraison gratuite partout en Tunisie</li>
+        </ul>
+      </div>
+
+      <form class="form" id="commander-form" novalidate>
+        <div class="form__fields">
+          <h3>Ta commande</h3>
+          <p class="form__help">📏 Tu mesures plus de 1,87 m ? Choisis <strong>Large</strong>.</p>
+
+          <span class="form__label">Taille <em>*</em></span>
+          <div class="seg">
+            <label><input type="radio" name="taille" value="medium" checked><span>Medium<small>jusqu'à 1,87 m</small></span></label>
+            <label><input type="radio" name="taille" value="large"><span>Large<small>plus de 1,87 m</small></span></label>
+          </div>
+
+          <span class="form__label">Sac de transport</span>
+          <div class="seg">
+            <label><input type="radio" name="sac" value="oui" checked><span>Avec sac<small>offert · valeur 85 DT</small></span></label>
+            <label><input type="radio" name="sac" value="non"><span>Essentiel<small>sans sac · −30 DT</small></span></label>
+          </div>
+
+          <span class="form__label">Quantité</span>
+          <div class="qty"><button type="button" data-qty="-1" aria-label="Diminuer">−</button><output data-qty-out>1</output><button type="button" data-qty="1" aria-label="Augmenter">+</button></div>
+
+          <div class="total"><span data-version-label>HomeDesk Medium + sac offert</span><div><s data-total-old>219 DT</s><b data-total>199 DT</b></div></div>
+
+          <label class="form__label" for="f-nom">Nom complet <em>*</em></label>
+          <input class="input" id="f-nom" name="nom" autocomplete="name" placeholder="Prénom et nom" required>
+          <span class="field-error">Indique ton nom complet.</span>
+
+          <label class="form__label" for="f-tel">Téléphone <em>*</em></label>
+          <input class="input" id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 11 22 33" required>
+          <span class="field-error">Numéro tunisien à 8 chiffres.</span>
+
+          <label class="form__label" for="f-adr">Adresse et ville <em>*</em></label>
+          <input class="input" id="f-adr" name="adresse" autocomplete="street-address" placeholder="Rue, numéro, ville" required>
+          <span class="field-error">Indique ton adresse de livraison.</span>
+
+          <label class="form__label" for="f-mail">Email <small>(optionnel)</small></label>
+          <input class="input" id="f-mail" name="email" type="email" autocomplete="email" placeholder="email@exemple.com">
+
+          <label class="form__label" for="f-profil">Profil</label>
+          <select class="input" id="f-profil" name="profil">
+            <option selected>Développeur IT</option><option>Freelance</option><option>Télétravailleur salarié</option><option>Chef d'entreprise</option><option>Designer</option><option>Étudiant</option><option>Autre</option>
+          </select>
+
+          <button class="btn btn--block" type="submit" style="margin-top:24px"><span>Confirmer ma commande · <span data-total>199 DT</span></span></button>
+          <ul class="form__reassure">
+            <li>💳 Tu ne paies rien maintenant, seulement à la réception</li>
+            <li>🚚 Livraison gratuite sous 72h · ↩️ 3 jours pour essayer</li>
+          </ul>
+        </div>
+        <div class="form__success" role="status">
+          <b>✓ Commande enregistrée !</b>
+          <p>Notre équipe t'appelle très vite pour confirmer la livraison.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 12. GARANTIE -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="guarantee reveal">
+        <div class="guarantee__badge"><div><b>3</b><small>jours<br>d'essai</small></div></div>
+        <div>
+          <h3>Zéro risque : tu testes avant de valider</h3>
+          <p>Tu paies seulement quand tu reçois ton HomeDesk. Ensuite, tu as 3 jours pour l'essayer sur ton vrai setup. Pas convaincu ? Tu es remboursé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">FAQ.md</span>
+        <h2 class="h2">Les questions qu'on nous pose</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Quelle taille choisir ?</summary><p>Medium si tu mesures jusqu'à 1,87 m (hauteur 55 cm). Large au-delà de 1,87 m (hauteur 68 cm, avec une étagère pour téléphone ou tablette en plus).</p></details>
+        <details><summary>Ça marche avec mon écran externe ?</summary><p>L'étagère haute (40 × 27 cm) est pensée pour un PC portable jusqu'à 17 pouces. Avec un double écran, beaucoup gardent l'écran externe sur le bureau et le laptop sur HomeDesk.</p></details>
+        <details><summary>Mon clavier et ma souris tiennent dessus ?</summary><p>Oui : l'étagère inférieure fait 54 × 22 cm sur la Medium et 54 × 27 cm sur la Large. Clavier et souris y tiennent côte à côte.</p></details>
+        <details><summary>C'est compliqué à monter ?</summary><p>Non. Les pièces s'assemblent sans outil, en quelques minutes. Ensuite, passer d'assis à debout prend 5 secondes.</p></details>
+        <details><summary>Pourquoi pas un vrai bureau assis-debout électrique ?</summary><p>HomeDesk garde ton bureau actuel et y ajoute la position debout. C'est portable, sans moteur, et bien moins cher qu'un changement complet de bureau.</p></details>
+        <details><summary>Comment je paie ?</summary><p>À la livraison, en espèces. Aucun paiement en ligne, aucun acompte. La livraison est gratuite partout en Tunisie.</p></details>
+        <details><summary>Et si ça ne me convient pas ?</summary><p>Tu as 3 jours pour l'essayer chez toi. Pas convaincu ? Tu es remboursé.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. CTA FINAL -->
+  <section class="section final">
+    <div class="container">
+      <h2 class="h2"><span class="mono">$ git commit -m "passer debout"</span>Ton prochain sprint, tu le fais debout ?</h2>
+      <p>Garde ton bureau. Ajoute la position debout. Paie seulement quand tu le reçois.</p>
+      <div class="cta-wrap">
+        <a class="btn" href="#commander">Je commande mon HomeDesk →</a>
+        <p class="cta-note">Dès 169 DT · Livraison gratuite · 3 jours pour essayer</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <a href="https://www.homedesk.tn/mentions-legales/">Mentions légales</a> ·
+    <a href="#commander">Commander</a> ·
+    <a href="https://www.homedesk.tn/contactez-nous/">Offre entreprise : demandez un devis</a>
+    <p>Copyright © 2026 · HomeDesk · Fabriqué en Tunisie</p>
+  </div>
+</footer>
+
+<!-- CTA collant mobile -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta__price">Dès<b>169 DT</b></div>
+  <a class="btn" href="#commander">Je commande</a>
+</div>
+
+<!-- WhatsApp : remplacer 216XXXXXXXX par le numéro HomeDesk [À COMPLÉTER] -->
+<a class="wa" href="https://wa.me/216XXXXXXXX?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20HomeDesk" target="_blank" rel="noopener" aria-label="Poser une question sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script src="assets/js/lp-base.js" defer></script>
+</body>
+</html>

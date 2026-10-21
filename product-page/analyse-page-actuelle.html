@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit page produit HomeDesk</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #318b82; --teal-dark: #22766c; --sand: #b09b70;
+    --bg: #f4f4f0; --surface: #ffffff; --text: #1d2b29; --muted: #5d6f6c; --line: #e2e2da;
+    --high: #c0392b; --high-bg: #fdecea; --mid: #b7791f; --mid-bg: #fdf3e1; --low: #2f7d5b; --low-bg: #e6f4ec;
+    --bar-track: #e9e9e2;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 24px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121816; --surface: #1a2220; --text: #e6ece9; --muted: #9aaba7; --line: #2a3532;
+      --high: #ff8a7a; --high-bg: #3a1f1c; --mid: #f0b85a; --mid-bg: #3a2e18; --low: #7fd3a8; --low-bg: #19342a;
+      --bar-track: #26302d; --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 Poppins, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: Montserrat, Poppins, sans-serif; line-height: 1.2; margin: 0; }
+  a { color: var(--teal); }
+  code { font-size: .88em; background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; }
+  strong { font-weight: 600; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  /* En-tête */
+  .cover { background: #10201d; color: #fff; padding: 48px 0 56px; }
+  .cover .brand { display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #9fd1ca; }
+  .cover .brand img { height: 28px; width: auto; filter: brightness(0) invert(1); }
+  .cover h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 900; margin: 18px 0 10px; max-width: 18ch; }
+  .cover p { color: #c6d6d3; margin: 0; max-width: 62ch; }
+  .cover .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; font-size: 14px; color: #9fb4b0; }
+  .cover .meta a { color: #9fd1ca; }
+
+  .kpis { display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); margin-top: -32px; }
+  @media (min-width: 820px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
+  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; box-shadow: var(--shadow); }
+  .kpi b { display: block; font: 900 30px/1.1 Montserrat, sans-serif; color: var(--teal); }
+  .kpi b small { font-size: 16px; color: var(--muted); font-weight: 700; }
+  .kpi span { font-size: 13px; color: var(--muted); }
+
+  /* Mise en page */
+  .layout { display: grid; gap: 32px; padding: 40px 0 72px; }
+  @media (min-width: 1000px) { .layout { grid-template-columns: 220px minmax(0, 1fr); } }
+  .toc { display: none; }
+  @media (min-width: 1000px) {
+    .toc { display: block; position: sticky; top: 24px; align-self: start; font-size: 14px; }
+    .toc p { margin: 0 0 8px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .toc a { display: block; padding: 6px 10px; border-left: 2px solid var(--line); color: var(--muted); text-decoration: none; }
+    .toc a:hover { color: var(--teal); border-color: var(--teal); }
+  }
+  main > section { margin-bottom: 56px; scroll-margin-top: 20px; }
+  .eyebrow { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); font-weight: 600; }
+  main h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; margin: 4px 0 18px; }
+  .lead { color: var(--muted); margin: -8px 0 22px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+
+  /* Notes */
+  .scores { padding: 6px 0; }
+  .score { display: grid; gap: 6px 16px; grid-template-columns: minmax(0, 1fr) auto; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  .score:last-child { border-bottom: 0; }
+  .score h3 { font: 600 15px/1.4 Poppins, sans-serif; }
+  .score .val { font: 800 15px Montserrat, sans-serif; white-space: nowrap; }
+  .score .bar { grid-column: 1 / -1; height: 8px; border-radius: 99px; background: var(--bar-track); overflow: hidden; }
+  .score .bar i { display: block; height: 100%; border-radius: 99px; background: var(--teal); }
+  .score[data-n="1"] .bar i, .score[data-n="2"] .bar i { background: var(--high); }
+  .score[data-n="3"] .bar i { background: var(--mid); }
+  .score p { grid-column: 1 / -1; margin: 0; font-size: 14px; color: var(--muted); }
+  .verdict { margin-top: 16px; padding: 18px 20px; border-left: 4px solid var(--teal); }
+  .verdict p { margin: 0; }
+
+  /* Points forts */
+  .strengths { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  @media (min-width: 720px) { .strengths { grid-template-columns: 1fr 1fr; } }
+  .strengths li { display: flex; gap: 12px; padding: 16px 18px; font-size: 15px; }
+  .strengths li::before { content: "✓"; flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--low-bg); color: var(--low); font-weight: 700; display: grid; place-items: center; font-size: 13px; margin-top: 1px; }
+
+  /* Problèmes */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .filters button { font: 500 14px Poppins, sans-serif; border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 99px; padding: 6px 14px; cursor: pointer; }
+  .filters button[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .issues { display: grid; gap: 14px; }
+  .issue { padding: 0; overflow: hidden; }
+  .issue summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 16px 20px; }
+  .issue summary::-webkit-details-marker { display: none; }
+  .issue summary .num { flex: none; font: 800 13px Montserrat, sans-serif; color: var(--muted); width: 34px; }
+  .issue summary h3 { flex: 1; font-size: 16px; font-weight: 700; }
+  .issue summary::after { content: "+"; flex: none; font: 600 20px/1 Poppins, sans-serif; color: var(--muted); transition: transform .2s; }
+  .issue[open] summary::after { transform: rotate(45deg); }
+  .issue .body { padding: 0 20px 20px 66px; font-size: 15px; }
+  @media (max-width: 600px) { .issue .body { padding-left: 20px; } }
+  .issue .body > div { margin-top: 12px; }
+  .issue .body > div:first-child { margin-top: 0; }
+  .issue .lbl { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--muted); margin-bottom: 2px; }
+  .issue .reco { background: var(--bg); border-radius: 10px; padding: 12px 14px; }
+  .issue .reco .lbl { color: var(--teal); }
+  .issue ul, .issue ol { margin: 4px 0 0; padding-left: 20px; }
+  .issue p { margin: 0; }
+  .tag { flex: none; font: 600 11px/1 Poppins, sans-serif; letter-spacing: .05em; text-transform: uppercase; border-radius: 99px; padding: 5px 9px; }
+  .tag--high { background: var(--high-bg); color: var(--high); }
+  .tag--mid { background: var(--mid-bg); color: var(--mid); }
+  .tag--low { background: var(--low-bg); color: var(--low); }
+  .issue.is-hidden { display: none; }
+
+  /* Tableaux */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  tbody tr:last-child td { border-bottom: 0; }
+
+  /* Parcours */
+  .flow { display: grid; gap: 14px; }
+  @media (min-width: 760px) { .flow { grid-template-columns: 1fr 1fr; } }
+  .flow .card { padding: 18px 20px; }
+  .flow h3 { font-size: 15px; margin-bottom: 12px; }
+  .flow ol { margin: 0; padding: 0; list-style: none; counter-reset: s; display: flex; flex-wrap: wrap; gap: 6px; }
+  .flow li { counter-increment: s; font-size: 13px; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; }
+  .flow li::before { content: counter(s) " · "; color: var(--muted); }
+  .flow li.hl { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .flow li.hl::before { color: #d4ece9; }
+  .flow li.warn { background: var(--high-bg); border-color: transparent; color: var(--high); font-weight: 600; }
+
+  /* Plan d'action */
+  .plan td:first-child { font: 800 15px Montserrat, sans-serif; color: var(--teal); width: 40px; }
+  .plan td:nth-child(3), .plan td:nth-child(4), .plan th:nth-child(3), .plan th:nth-child(4) { text-align: center; white-space: nowrap; }
+  .plan .card { padding: 6px 8px; }
+
+  footer { border-top: 1px solid var(--line); padding: 24px 0 40px; font-size: 13px; color: var(--muted); }
+
+  @media print {
+    .toc, .filters { display: none !important; }
+    .layout { display: block; }
+    .issue .body { display: block !important; }
+    .card { box-shadow: none; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="brand"><img src="assets/img/logo.webp" alt="HomeDesk" height="28"> Audit de conversion</div>
+    <h1>Analyse de la page produit actuelle</h1>
+    <p>Audit de <a href="https://www.homedesk.tn/produit/bureau-ergonomique/" style="color:#9fd1ca">homedesk.tn/produit/bureau-ergonomique</a>, version en ligne testée sur mobile (390 px) et desktop, croisée avec <code style="background:#1d302c;border-color:#2c4540;color:#c6d6d3">context.md</code>. Chaque point suit la logique problème → impact sur les ventes → recommandation → mesure.</p>
+    <div class="meta"><span>18 octobre 2026</span><span>13 points faibles</span><span>Plan d'action en 10 étapes</span><a href="index.html">← Retour aux landing pages</a></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="kpis">
+    <div class="kpi"><b>23<small>/45</small></b><span>Score global estimé</span></div>
+    <div class="kpi"><b>4</b><span>Priorités hautes</span></div>
+    <div class="kpi"><b>5</b><span>Incohérences entre sections</span></div>
+    <div class="kpi"><b>0</b><span>Question de FAQ sur la page</span></div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Sommaire">
+      <p>Sommaire</p>
+      <a href="#note">1. Note globale</a>
+      <a href="#forts">2. Points forts</a>
+      <a href="#faibles">3. Points faibles</a>
+      <a href="#plan">4. Plan d'action</a>
+    </nav>
+
+    <main>
+      <section id="note">
+        <span class="eyebrow">1 · Diagnostic</span>
+        <h2>Note globale par critère</h2>
+        <div class="card scores">
+          <div class="score" data-n="3"><h3>Clarté de l'offre au-dessus de la ligne de flottaison</h3><span class="val">3/5</span><div class="bar"><i style="width:60%"></i></div><p>Le bénéfice est compris, mais <strong>le prix n'est visible qu'au milieu du formulaire</strong>.</p></div>
+          <div class="score" data-n="2"><h3>Message-match avec les pubs Meta</h3><span class="val">2/5</span><div class="bar"><i style="width:40%"></i></div><p>Une seule page générique « mal de dos » pour toutes les audiences.</p></div>
+          <div class="score" data-n="3"><h3>Démonstration produit</h3><span class="val">3/5</span><div class="bar"><i style="width:60%"></i></div><p>Les vidéos sont là, mais ce sont des iframes YouTube : écran noir avant chargement, logo YouTube, sorties possibles.</p></div>
+          <div class="score" data-n="2"><h3>Preuves sociales</h3><span class="val">2/5</span><div class="bar"><i style="width:40%"></i></div><p>« +200 professionnels / 4,9 » sans aucun avis lisible. Avatars à initiales génériques. Le carrousel de photos clients est tout en bas, <strong>après</strong> le formulaire.</p></div>
+          <div class="score" data-n="1"><h3>Traitement des objections</h3><span class="val">1/5</span><div class="bar"><i style="width:20%"></i></div><p><strong>Aucune FAQ.</strong> Solidité, installation, taille, place occupée : rien n'est traité directement.</p></div>
+          <div class="score" data-n="4"><h3>Réassurance (COD, garantie, livraison)</h3><span class="val">4/5</span><div class="bar"><i style="width:80%"></i></div><p>Points forts : paiement à la livraison, 3 jours d'essai, livraison gratuite.</p></div>
+          <div class="score" data-n="3"><h3>Formulaire de commande</h3><span class="val">3/5</span><div class="bar"><i style="width:60%"></i></div><p>Bon formulaire en une page, mais email obligatoire et bloc B2B qui distrait.</p></div>
+          <div class="score" data-n="2"><h3>Crédibilité et conformité</h3><span class="val">2/5</span><div class="bar"><i style="width:40%"></i></div><p>Allégations santé et chiffres non sourcés, incohérences entre les sections.</p></div>
+          <div class="score" data-n="3"><h3>Performance et technique mobile</h3><span class="val">3/5</span><div class="bar"><i style="width:60%"></i></div><p>Un bloc invisible tant que le JS ne s'est pas déclenché, YouTube lourd, pas de CTA collant.</p></div>
+        </div>
+        <div class="card verdict"><p><strong>Score estimé : 23/45.</strong> La base est solide : COD, garantie, vraies photos, tableau comparatif, choix de taille. La page perd surtout des ventes sur <strong>l'ordre des sections, les preuves, les objections et la cohérence des infos</strong>.</p></div>
+      </section>
+
+      <section id="forts">
+        <span class="eyebrow">2 · À garder</span>
+        <h2>Points forts à conserver</h2>
+        <ul class="strengths">
+          <li class="card"><span><strong>Paiement à la livraison et 3 jours d'essai</strong> annoncés dès la barre du haut : le levier n°1 pour un acheteur COD tunisien.</span></li>
+          <li class="card"><span><strong>Formulaire sur la page</strong>, sans passer par le panier. Le parcours est court.</span></li>
+          <li class="card"><span><strong>Aide au choix de taille</strong> (« Vous mesurez plus de 1,87 m ? → Large ») claire et rassurante.</span></li>
+          <li class="card"><span><strong>Sac offert avec valeur barrée</strong> (85 DT → gratuit) : ancre bien la valeur.</span></li>
+          <li class="card"><span><strong>Option « Retirer le sac et économiser 30 DT »</strong> : deuxième porte d'entrée prix sans casser l'offre principale.</span></li>
+          <li class="card"><span><strong>Champ « Profil »</strong> : permet de segmenter les ventes par audience, précieux pour les 5 landing pages.</span></li>
+          <li class="card"><span><strong>Tableau comparatif Medium / Large</strong> lisible et complet.</span></li>
+          <li class="card"><span><strong>Photos réelles et variées</strong>, avec un slider avant/après interactif.</span></li>
+        </ul>
+      </section>
+
+      <section id="faibles">
+        <span class="eyebrow">3 · À corriger</span>
+        <h2>Points faibles et recommandations</h2>
+        <p class="lead">Cliquez sur un point pour voir le constat, l'impact et la recommandation.</p>
+        <div class="filters" role="group" aria-label="Filtrer par priorité">
+          <button type="button" data-filter="all" aria-pressed="true">Tous (13)</button>
+          <button type="button" data-filter="high" aria-pressed="false">Priorité haute</button>
+          <button type="button" data-filter="mid" aria-pressed="false">Priorité moyenne</button>
+          <button type="button" data-filter="low" aria-pressed="false">Priorité basse</button>
+        </div>
+
+        <div class="issues">
+          <details class="card issue" data-prio="high" open>
+            <summary><span class="num">3.1</span><h3>Le H1 et les allégations santé</h3><span class="tag tag--high">Haute</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Le H1 dit « Dites adieu au mal de dos ». On trouve aussi « Posture parfaite », « Votre dos vous remercie dès le Jour 1 » et « Chaque heure passée assis… détériore silencieusement vos disques vertébraux ».</p></div>
+              <div><span class="lbl">Pourquoi c'est un problème</span><ol type="a">
+                <li>Ces formulations promettent un résultat médical, ce que <code>context.md</code> demande d'éviter.</li>
+                <li>Meta restreint les pubs et landing pages santé, avec un risque de rejet ou de compte limité.</li>
+                <li>Un visiteur sceptique décroche face à une promesse trop forte.</li>
+                <li>Le seul angle « dos » exclut les visiteurs venus pour la mobilité, la productivité ou le design.</li>
+              </ol></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Construire le H1 sur la transformation (« Votre bureau devient assis-debout, sans changer de bureau ») et garder le dos comme bénéfice secondaire, avec des mots prudents (« aide à réduire l'inconfort lié à la position assise prolongée »).</p></div>
+              <div><span class="lbl">Mesure</span><p>Taux de rejet des pubs, CTR pub → LP, taux de clic sur le CTA du hero.</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="mid">
+            <summary><span class="num">3.2</span><h3>Chiffres non sourcés</h3><span class="tag tag--mid">Moyenne</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>« +40 % productivité », « Confort immédiat », « Posture parfaite ».</p></div>
+              <div><span class="lbl">Pourquoi</span><p>Sans source, un chiffre précis passe pour du marketing et fait perdre en crédibilité.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Supprimer « +40 % ». Le remplacer par un bénéfice concret et vérifiable : « passez d'une position à l'autre en 5 secondes », « montage sans outil ».</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="high">
+            <summary><span class="num">3.3</span><h3>Incohérences entre les sections</h3><span class="tag tag--high">Haute</span></summary>
+            <div class="body">
+              <div class="table-wrap"><table>
+                <thead><tr><th>Élément</th><th>Version A</th><th>Version B</th></tr></thead>
+                <tbody>
+                  <tr><td>Délai de livraison</td><td>« sous 72h » (barre de réassurance)</td><td>« sous 48h » (bloc final)</td></tr>
+                  <tr><td>Poids</td><td>« Poids max supporté : 5 kg » (formulaire)</td><td>« Poids du support : 5 kg / 7 kg » (tableau) et « Poids supporté : 10 kg » (visuels techniques)</td></tr>
+                  <tr><td>Montage</td><td>« 5 sec — montage sans outil »</td><td>« assemblées en quelques minutes sans outil » (description)</td></tr>
+                  <tr><td>Offre sans sac</td><td>« Basic HomeDesk (Sans sac) »</td><td>« Essentiel » (stratégie)</td></tr>
+                  <tr><td>Sac</td><td>« Sac offert : inclus » dans le tableau</td><td>Alors qu'une version sans sac existe</td></tr>
+                </tbody>
+              </table></div>
+              <div><span class="lbl">Pourquoi</span><p>Un acheteur COD hésitant compare les infos. Une contradiction le fait douter de tout le reste et augmente les refus à la livraison.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Une seule source de vérité. Les landing pages utilisent <strong>72h</strong> (la valeur la plus prudente) et parlent du <strong>poids du support</strong> (5 kg / 7 kg) plutôt que d'une charge max. <strong>À trancher : le délai réel et la charge maximale réelle.</strong> Renommer « Basic » en <strong>« Essentiel »</strong> partout.</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="high">
+            <summary><span class="num">3.4</span><h3>Le prix arrive trop tard</h3><span class="tag tag--high">Haute</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Le prix (199 DT) n'apparaît qu'au milieu du formulaire, après environ 60 % de la page.</p></div>
+              <div><span class="lbl">Pourquoi</span><p>En COD, le visiteur veut savoir vite si c'est dans son budget. Sans prix, il scrolle pour le chercher ou quitte la page.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Afficher « À partir de 169 DT · Paiement à la livraison » dans le hero, sous le CTA.</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="high">
+            <summary><span class="num">3.5</span><h3>Pas de FAQ ni de traitement des objections</h3><span class="tag tag--high">Haute</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Aucune réponse visible à « C'est solide ? », « Ça prend de la place ? », « Quelle taille ? », « Pourquoi pas un vrai bureau assis-debout ? », « Comment se passe le retour ? ».</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Une FAQ de 5 à 7 questions (accordéon) juste après le formulaire, plus un bloc « objection principale » spécifique à chaque audience.</p></div>
+              <div><span class="lbl">Mesure</span><p>Messages WhatsApp « pré-achat » qui reposent la même question, taux de confirmation COD.</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="mid">
+            <summary><span class="num">3.6</span><h3>Ordre des sections sous-optimal</h3><span class="tag tag--mid">Moyenne</span></summary>
+            <div class="body">
+              <div class="flow">
+                <div class="card"><h3>Ordre actuel</h3><ol>
+                  <li>Hero</li><li>4 transformations</li><li>Sac</li><li>Vidéos</li><li>Galerie</li><li class="warn">Formulaire</li><li>Avant/après</li><li>Paragraphe émotionnel</li><li>Description</li><li class="warn">Avis clients</li><li>Tableau</li>
+                </ol></div>
+                <div class="card"><h3>Ordre recommandé</h3><ol>
+                  <li>Problème</li><li>Solution / démo</li><li>Bénéfices</li><li>Avant/après</li><li class="hl">Avis</li><li>Choix de version</li><li class="hl">Formulaire</li><li>Garantie</li><li>FAQ</li><li>CTA final</li>
+                </ol></div>
+              </div>
+              <div><span class="lbl">Pourquoi</span><p>Le formulaire arrive avant les preuves (avis, avant/après). Le visiteur à qui il manque un argument ne le trouve qu'en scrollant <em>au-delà</em> du formulaire, puis il doit remonter.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Suivre l'ordre de droite, détaillé dans <code>regles-product-page.md</code>.</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="mid">
+            <summary><span class="num">3.7</span><h3>Preuves sociales faibles</h3><span class="tag tag--mid">Moyenne</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Les avatars à initiales colorées (MM, NH, OT, MH) font génériques. Les photos clients n'ont ni prénom, ni métier, ni citation.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><ul>
+                <li>De vrais avis : prénom, ville, métier, citation courte et photo du setup.</li>
+                <li>Des captures WhatsApp.</li>
+                <li>Le carrousel UGC remonté <strong>avant</strong> le formulaire.</li>
+              </ul></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="low">
+            <summary><span class="num">3.8</span><h3>Un bloc invisible sans JavaScript</h3><span class="tag tag--low">Basse</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Le bloc « Sac offert » (<code>.pgb-hero</code>) est à <code>opacity: 0</code> tant que l'IntersectionObserver ne l'a pas révélé. Sur capture pleine page, il laisse un trou blanc d'environ 1 500 px sur mobile.</p></div>
+              <div><span class="lbl">Pourquoi</span><p>Si le JS est différé, bloqué ou lent (cache LiteSpeed, <code>defer</code> sur <code>oceanwp-custom</code>), le visiteur voit un vide en plein milieu de la page.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Contenu visible par défaut, animation seulement en amélioration (<code>.js .pgb { opacity: 0 }</code>).</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="low">
+            <summary><span class="num">3.9</span><h3>Vidéos YouTube</h3><span class="tag tag--low">Basse</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Deux iframes YouTube : rectangles noirs avant le chargement, JS YouTube lourd, logo et vidéos suggérées qui peuvent faire sortir le visiteur.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Vidéo MP4 hébergée sur le site (<code>muted autoplay loop playsinline</code>) avec une image d'aperçu, comme <code>home-desk-.mp4</code>, déjà présente dans <code>uploads</code>.</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="mid">
+            <summary><span class="num">3.10</span><h3>Frictions du formulaire</h3><span class="tag tag--mid">Moyenne</span></summary>
+            <div class="body">
+              <div class="reco"><span class="lbl">Trois corrections</span><ul>
+                <li><strong>Email obligatoire :</strong> en Tunisie COD, beaucoup de clients n'en ont pas sous la main. Le rendre optionnel, le téléphone suffit pour confirmer.</li>
+                <li><strong>Bloc « Vos équipes souffrent-elles de maux de dos ? » :</strong> placé dans le formulaire, juste sous le bouton, il distrait au moment critique. Le déplacer dans le footer.</li>
+                <li><strong>Pas de rappel garantie / COD au bouton :</strong> ajouter « Vous payez à la réception · 3 jours pour essayer » juste sous le CTA.</li>
+              </ul></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="mid">
+            <summary><span class="num">3.11</span><h3>Pas de CTA collant sur mobile, pas de WhatsApp visible</h3><span class="tag tag--mid">Moyenne</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Aucun bouton « Commander » ne reste visible sur mobile pendant le scroll. Le widget WhatsApp n'est pas détecté sur la page produit, alors que le plugin est actif.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Une barre collante en bas sur mobile (prix + bouton qui descend au formulaire) et un bouton WhatsApp flottant pour les questions pré-achat.</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="low">
+            <summary><span class="num">3.12</span><h3>Navigation qui fait sortir</h3><span class="tag tag--low">Basse</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Le menu (Accueil, Notre solution, Contact…) et le panier sont visibles. Sur une landing page de pub, chaque lien est une fuite.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Sur les LP Meta, un header réduit au logo (non cliquable ou vers l'ancre du formulaire) et, éventuellement, WhatsApp.</p></div>
+            </div>
+          </details>
+
+          <details class="card issue" data-prio="mid">
+            <summary><span class="num">3.13</span><h3>Une seule page pour toutes les audiences</h3><span class="tag tag--mid">Moyenne</span></summary>
+            <div class="body">
+              <div><span class="lbl">Constat</span><p>Le développeur, l'étudiant et la personne qui a mal au dos atterrissent sur le même message.</p></div>
+              <div class="reco"><span class="lbl">Recommandation</span><p>Une landing page par audience (<a href="index.html">les 5 pages de ce dossier</a>) : même offre et même formulaire, mais un H1, un problème, des visuels, des témoignages, une objection principale et une version mise en avant différents. Le champ « Profil » est pré-rempli selon la page.</p></div>
+              <div><span class="lbl">Mesure</span><p>Taux de conversion LP par audience (UTM + champ Profil), CAC par audience.</p></div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="plan" class="plan">
+        <span class="eyebrow">4 · Feuille de route</span>
+        <h2>Plan d'action priorisé</h2>
+        <p class="lead">Sur le site actuel, du plus rentable au plus lourd.</p>
+        <div class="card table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Action</th><th>Effort</th><th>Impact</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Corriger les incohérences (72h/48h, poids, Basic/Essentiel, montage)</td><td><span class="tag tag--low">Faible</span></td><td><span class="tag tag--high">Élevé</span></td></tr>
+              <tr><td>2</td><td>Retirer « +40 % », « disques vertébraux », « posture parfaite » ; reformuler le H1</td><td><span class="tag tag--low">Faible</span></td><td><span class="tag tag--high">Élevé</span></td></tr>
+              <tr><td>3</td><td>Prix « à partir de » dans le hero + rappel COD/garantie sous chaque CTA</td><td><span class="tag tag--low">Faible</span></td><td><span class="tag tag--high">Élevé</span></td></tr>
+              <tr><td>4</td><td>FAQ de 5 à 7 questions</td><td><span class="tag tag--low">Faible</span></td><td><span class="tag tag--high">Élevé</span></td></tr>
+              <tr><td>5</td><td>Email optionnel, bloc B2B sorti du formulaire</td><td><span class="tag tag--low">Faible</span></td><td><span class="tag tag--mid">Moyen</span></td></tr>
+              <tr><td>6</td><td>Remonter avis et avant/après <strong>avant</strong> le formulaire</td><td><span class="tag tag--mid">Moyen</span></td><td><span class="tag tag--high">Élevé</span></td></tr>
+              <tr><td>7</td><td>CTA collant mobile + WhatsApp</td><td><span class="tag tag--mid">Moyen</span></td><td><span class="tag tag--mid">Moyen</span></td></tr>
+              <tr><td>8</td><td>Bloc sac visible sans JS</td><td><span class="tag tag--low">Faible</span></td><td><span class="tag tag--mid">Moyen</span></td></tr>
+              <tr><td>9</td><td>MP4 local à la place de YouTube</td><td><span class="tag tag--mid">Moyen</span></td><td><span class="tag tag--mid">Moyen</span></td></tr>
+              <tr><td>10</td><td>Landing pages par audience (<a href="index.html">ce dossier</a>)</td><td><span class="tag tag--high">Élevé</span></td><td><span class="tag tag--high">Élevé</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">HomeDesk · Audit de conversion interne · Source : <code>analyse-page-actuelle.md</code> · Règles de construction : <code>regles-product-page.md</code></div>
+</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.filters button');
+    var issues = document.querySelectorAll('.issue');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = btn.getAttribute('data-filter');
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        issues.forEach(function (el) { el.classList.toggle('is-hidden', f !== 'all' && el.getAttribute('data-prio') !== f); });
+      });
+    });
+    // Impression : tout déplier
+    window.addEventListener('beforeprint', function () { issues.forEach(function (el) { el.open = true; }); });
+  })();
+</script>
+</body>
+</html>

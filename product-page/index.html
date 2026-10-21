@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeDesk Landing Pages</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/lp-base.css">
+<style>
+  .lp-list { display: grid; gap: 16px; }
+  @media (min-width: 760px) { .lp-list { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .lp-list { grid-template-columns: repeat(3, 1fr); } }
+  .lp { display: block; text-decoration: none; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform .2s; }
+  .lp:hover { transform: translateY(-3px); }
+  .lp img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .lp div { padding: 18px 20px 22px; }
+  .lp b { display: block; font-family: var(--font-display); font-size: 18px; margin-bottom: 4px; }
+  .lp span { font-size: 14px; color: var(--muted); }
+  .docs { margin-top: 28px; font-size: 14px; color: var(--muted); }
+  .docs code { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+</style>
+</head>
+<body>
+<div class="topbar">Maquettes de landing pages Meta Ads · usage interne</div>
+<main class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">HomeDesk · 5 audiences</span>
+      <h1 class="h2">Landing pages par cible</h1>
+      <p class="lead">Même offre, même formulaire COD, avec un message, des visuels et une objection principale adaptés à chaque audience.</p>
+      <p style="margin:18px 0 0"><a class="btn" href="product-page.html">Voir la page produit générale →</a></p>
+    </div>
+    <div class="lp-list">
+      <a class="lp" href="lp-developpeurs.html"><img src="assets/img/hero-homme-pc.webp" alt="" width="1100" height="1100" loading="lazy"><div><b>1 · Développeurs</b><span>Thème IDE sombre · « Code debout. Sans changer de bureau. »</span></div></a>
+      <a class="lp" href="lp-designers.html"><img src="assets/img/setup-moodboard.webp" alt="" width="1100" height="1100" loading="lazy"><div><b>2 · Designers</b><span>Éditorial crème et sable · esthétique et intégration au setup</span></div></a>
+      <a class="lp" href="lp-dos-cou.html"><img src="assets/img/femme-assise.webp" alt="" width="900" height="900" loading="lazy"><div><b>3 · Dos et cou</b><span>Doux et rassurant · inconfort, alternance, sans promesse médicale</span></div></a>
+      <a class="lp" href="lp-freelances.html"><img src="assets/img/piscine-nomade.webp" alt="" width="900" height="900" loading="lazy"><div><b>4 · Freelances</b><span>Mobilité · le sac de transport en vedette</span></div></a>
+      <a class="lp" href="lp-etudiants.html"><img src="assets/img/post-canape.webp" alt="" width="800" height="993" loading="lazy"><div><b>5 · Étudiants</b><span>Fun et budget · Essentiel 169 DT mis en avant</span></div></a>
+    </div>
+    <p class="docs">Documents : <a href="analyse-page-actuelle.html">Rapport d'audit de la page en ligne</a> · <code>regles-product-page.md</code> (gabarit à respecter).</p>
+  </div>
+</main>
+</body>
+</html>

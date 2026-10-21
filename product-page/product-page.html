@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeDesk Assis-Debout</title>
+<meta name="description" content="HomeDesk transforme votre bureau actuel en poste assis-debout : écran à hauteur des yeux, changement de position en 5 secondes, montage sans outil. Paiement à la livraison, 3 jours pour essayer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-homme-pc.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/lp-base.css">
+<style>
+  /* ---- Page produit générale : gabarit du site (teal / crème, Montserrat + Poppins) ---- */
+  :root { --text: #1a1a1a; --muted: #55625f; }
+  .hl { color: var(--teal); }
+
+  /* Hero : galerie produit (remplace le carrousel pgf du site, sans auto-rotation) */
+  .hero { background: linear-gradient(180deg, #fff 0%, var(--cream) 100%); }
+  .hero h1 { font-size: clamp(32px, 7.6vw, 50px); }
+  .hero h1 .hl { display: block; }
+  @media (min-width: 900px) { .hero { padding: 48px 0 64px; } }
+  .gallery__main { position: relative; }
+  .gallery__main img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+  .gallery__badge { position: absolute; top: 14px; left: 14px; background: #fff; color: var(--teal-hover); border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+  .gallery__thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 10px; padding: 0; list-style: none; }
+  .gallery__thumbs button { display: block; width: 100%; padding: 0; border: 2px solid transparent; border-radius: 10px; overflow: hidden; background: none; cursor: pointer; opacity: .75; transition: opacity .2s, border-color .2s; }
+  .gallery__thumbs button[aria-current="true"] { border-color: var(--teal); opacity: 1; }
+  .gallery__thumbs img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+  .hero__price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .hero__price b { font-family: var(--font-display); font-weight: 900; font-size: 30px; color: var(--teal); }
+  .hero__price s { color: var(--muted); font-weight: 600; }
+  .hero__price span { font-size: 13px; background: var(--teal-soft); color: var(--teal-hover); border-radius: 999px; padding: 4px 10px; font-weight: 600; }
+
+  /* Problème */
+  .pains { display: grid; gap: 16px; margin-top: 8px; }
+  @media (min-width: 800px) { .pains { grid-template-columns: repeat(3, 1fr); } }
+  .pain { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .pain b { display: block; font-family: var(--font-display); font-size: 17px; margin-bottom: 6px; }
+  .pain p { margin: 0; color: var(--muted); font-size: 15px; }
+  .pain i { font-style: normal; font-size: 26px; display: block; margin-bottom: 10px; }
+  .pivot { margin: 32px auto 0; max-width: 760px; text-align: center; font-family: var(--font-display); font-weight: 800; font-size: clamp(20px, 3.6vw, 28px); line-height: 1.3; }
+  .who { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+  .who li { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; }
+
+  /* Bénéfices avec visuel */
+  .benefits { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 960px) { .benefits { grid-template-columns: .85fr 1.15fr; gap: 48px; } }
+  .benefits > img { border-radius: var(--radius); box-shadow: var(--shadow); }
+  .benefits .grid { gap: 14px; }
+  .benefits .card { padding: 20px; box-shadow: none; }
+  .benefits .card__icon { width: 44px; height: 44px; font-size: 20px; margin-bottom: 12px; }
+  .benefits .card h3 { font-size: 16px; }
+  /* Photos du sac dans la carte « Il vous suit partout » */
+  .sac-pics { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .sac-pics img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; background: var(--cream); border-radius: 10px; padding: 6px; transition: transform .2s; }
+  .sac-pics img:hover { transform: scale(1.06); }
+
+  /* Avis réel mis en avant */
+  .featured { display: grid; gap: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin: 0 0 22px; } /* margin : annule la marge par défaut de <figure> (40 px sur les côtés) */
+  @media (min-width: 760px) { .featured { grid-template-columns: 320px 1fr; } }
+  .featured > img { width: 100%; height: 100%; max-height: 460px; object-fit: cover; }
+  .featured__body { padding: 26px 24px; display: flex; flex-direction: column; justify-content: center; }
+  @media (min-width: 760px) { .featured__body { padding: 36px 40px; } }
+  .featured blockquote { margin: 10px 0 18px; font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 4vw, 34px); line-height: 1.2; }
+  .featured__src { display: flex; align-items: center; gap: 12px; }
+  .featured__src img { width: 48px; height: 48px; border-radius: 50%; }
+  .featured__src b { display: block; }
+  .featured__src span { font-size: 13px; color: var(--muted); }
+  .verified { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--teal-hover); background: var(--teal-soft); border-radius: 999px; padding: 4px 10px; margin-bottom: 4px; align-self: flex-start; }
+  .featured__note { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 14px; background: var(--teal-soft); color: var(--teal-hover); flex: none; }
+
+  /* Objection : solidité + fiche technique */
+  .solid { display: grid; gap: 28px; align-items: start; }
+  @media (min-width: 960px) { .solid { grid-template-columns: 1fr 1fr; gap: 48px; } }
+  .solid__pics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .solid__pics img { border-radius: var(--radius-sm); aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+  .solid__pics img:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; object-position: 50% 20%; }
+  /* Schéma des dimensions : mobile seulement, juste avant la fiche technique */
+  .solid__plan { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); margin: 22px 0 0; }
+  @media (min-width: 960px) { .solid__plan { display: none; } }
+  .facts { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+  .facts li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; font-size: 15px; }
+  .facts li::before { content: "✓"; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--teal-soft); color: var(--teal); font-weight: 800; font-size: 13px; }
+  .specs { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 14px; background: #fff; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); }
+  .specs th, .specs td { padding: 11px 12px; text-align: left; border-bottom: 1px solid var(--line); }
+  .specs thead th { background: var(--teal); color: #fff; font-family: var(--font-display); font-size: 13px; letter-spacing: .04em; }
+  .specs tbody th { font-weight: 600; color: var(--muted); width: 38%; }
+  .specs tr:last-child th, .specs tr:last-child td { border-bottom: 0; }
+
+  /* Choix de version : question de taille */
+  .size-q { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: -12px 0 28px; }
+  .size-q span { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 14px; }
+  .version__list { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+  .version__list li::before { content: "✓ "; color: var(--teal); font-weight: 800; }
+  .essentiel { max-width: 640px; margin: 22px auto 0; display: flex; gap: 14px; align-items: center; background: #fff; border: 1px dashed var(--sand); border-radius: var(--radius); padding: 16px 18px; font-size: 14px; }
+  .essentiel b { font-family: var(--font-display); color: var(--text); }
+  .essentiel a { color: var(--teal-hover); font-weight: 700; white-space: nowrap; }
+  .essentiel p { margin: 0; flex: 1; }
+  /* Garantie mise en avant : sceau animé (SVG + CSS, pas de GIF), étapes, lien vers les conditions */
+  .guarantee--pro { position: relative; overflow: hidden; border: 2px solid var(--teal); background: linear-gradient(135deg, #fff 0%, #eef6f4 100%); box-shadow: var(--shadow); }
+  .guarantee--pro .eyebrow { margin-bottom: 6px; }
+  .seal { position: relative; width: 168px; height: 168px; margin: 0 auto; }
+  .seal__ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: seal-spin 18s linear infinite; }
+  .seal__ring text { font: 800 13px var(--font-display); letter-spacing: .12em; fill: var(--teal); }
+  .seal__core { position: absolute; inset: 26px; border-radius: 50%; background: var(--teal); color: #fff; display: grid; place-content: center; justify-items: center; text-align: center; line-height: 1; font-family: var(--font-display); box-shadow: 0 0 0 6px rgba(49,139,130,.15); animation: seal-pulse 2.4s ease-in-out infinite; }
+  .seal__core b { font-size: 24px; font-weight: 900; }
+  .seal__core small { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 3px; }
+  .seal__check { width: 30px; height: 30px; margin-bottom: 6px; }
+  .seal__check path:first-child { fill: rgba(255,255,255,.18); stroke: #fff; stroke-width: 1.6; stroke-linejoin: round; }
+  .seal__tick { fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 12; }
+  .js .seal__tick { stroke-dashoffset: 12; }
+  .js .guarantee.is-in .seal__tick { animation: seal-tick .6s .3s ease-out forwards; }
+  @keyframes seal-spin { to { transform: rotate(360deg); } }
+  @keyframes seal-pulse { 0%, 100% { box-shadow: 0 0 0 6px rgba(49,139,130,.15); } 50% { box-shadow: 0 0 0 14px rgba(49,139,130,.05); } }
+  @keyframes seal-tick { to { stroke-dashoffset: 0; } }
+  .g-steps { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+  @media (min-width: 760px) { .g-steps { grid-template-columns: repeat(3, 1fr); } }
+  .g-steps li { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font-size: 13.5px; line-height: 1.35; }
+  .g-steps span { font-size: 20px; flex: none; }
+  .g-steps b { display: block; color: var(--text); }
+  .g-link { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--teal-hover); }
+  @media (prefers-reduced-motion: reduce) {
+    .seal__ring, .seal__core { animation: none; }
+    .js .seal__tick { stroke-dashoffset: 0; }
+  }
+  /* Infobulle conditions de remboursement (survol, focus clavier, tap mobile) */
+  .tip { position: relative; display: inline-block; vertical-align: middle; margin-left: 4px; }
+  .tip__btn { width: 18px; height: 18px; padding: 0; border: 0; border-radius: 50%; background: var(--teal); color: #fff; font: 700 11px/18px var(--font-display); cursor: help; }
+  .tip__box { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translate(-50%, 4px); width: min(280px, 80vw); padding: 12px 14px; background: var(--text); color: #fff; border-radius: 10px; font-size: 12.5px; font-weight: 400; line-height: 1.5; text-align: left; box-shadow: var(--shadow); opacity: 0; visibility: hidden; transition: opacity .15s, transform .15s, visibility .15s; z-index: 20; }
+  .tip__box::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -6px; border: 6px solid transparent; border-top-color: var(--text); }
+  .tip__box b { display: block; margin-bottom: 4px; font-size: 13px; }
+  .tip:hover .tip__box, .tip:focus-within .tip__box { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  @media (max-width: 599px) {
+    /* L'icône est en fin de ligne : la bulle s'ouvre vers la gauche pour ne pas sortir de l'écran */
+    .tip__box { left: auto; right: -10px; transform: translateY(4px); }
+    .tip__box::after { left: auto; right: 13px; margin-left: 0; }
+    .tip:hover .tip__box, .tip:focus-within .tip__box { transform: translateY(0); }
+  }
+  .essentiel__sac { position: relative; flex: none; width: 64px; height: 64px; }
+  .essentiel__sac img { width: 100%; height: 100%; object-fit: contain; background: var(--cream); border-radius: 10px; padding: 4px; opacity: .55; }
+  .essentiel__sac i { position: absolute; top: -6px; right: -6px; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: #e74c3c; color: #fff; font-style: normal; font-size: 12px; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="topbar">🎁 Sac de transport offert · Testez-le 3 jours, satisfait ou remboursé </div>
+
+<!-- Header minimal : pas de menu ni de panier (audit 3.12) -->
+<header class="header">
+  <div class="container">
+    <a class="header__logo" href="#top" aria-label="HomeDesk"><img src="assets/img/logo.webp" alt="HomeDesk" width="160" height="22"></a>
+    <a class="header__cta" href="#commander">Commander · À partir de 169 DT</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 2. HERO : promesse de transformation, prix + COD visibles (audit 3.1, 3.4) -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Support assis-debout · Fabriqué en Tunisie</span>
+        <h1>Arrêtez de rester assis toute la journée.<span class="hl">Changez de position quand vous voulez.</span></h1>
+        <p class="hero__sub">HomeDesk se pose sur votre bureau actuel, sans rien changer chez vous. Vous passez <strong>d'assis à debout en 5 secondes</strong>, l'écran à hauteur des yeux, à la maison comme au bureau.</p>
+        <ul class="hero__bullets">
+          <li>Rien à brancher, aucun réglage compliqué</li>
+          <li>Montage sans outil, prêt en quelques minutes</li>
+          <li>Démontable, avec son sac de transport offert</li>
+        </ul>
+        <div class="hero__price"><b>199 DT</b><s>219 DT</s><span>Sac offert · valeur 85 DT</span></div>
+        <div class="rating" style="margin-top:12px"><span class="rating__stars">★★★★★</span><span><strong>4,9/5</strong> · +200 professionnels équipés</span></div>
+        <div class="cta-wrap" style="margin-top:22px">
+          <a class="btn" href="#commander">Je commande mon HomeDesk →</a>
+          <p class="cta-note">À partir de <strong>169 DT</strong> · Paiement à la livraison · Livraison gratuite</p>
+        </div>
+      </div>
+      <div class="gallery" data-gallery>
+        <div class="gallery__main">
+          <img src="assets/img/hero-homme-pc.webp" alt="Homme souriant travaillant debout, son ordinateur posé sur un HomeDesk" width="1100" height="1100" fetchpriority="high" data-gallery-main>
+          <span class="gallery__badge">Assis ↔ debout en 5 sec</span>
+        </div>
+        <ul class="gallery__thumbs">
+          <li><button type="button" aria-current="true" aria-label="Photo 1 : en usage debout" data-src="assets/img/hero-homme-pc.webp" data-alt="Homme souriant travaillant debout, son ordinateur posé sur un HomeDesk"><img src="assets/img/hero-homme-pc.webp" alt="" width="1100" height="1100" loading="lazy"></button></li>
+          <li><button type="button" aria-label="Photo 2 : au bureau" data-src="assets/img/femme-sourire.webp" data-alt="Femme travaillant debout dans un bureau avec HomeDesk"><img src="assets/img/femme-sourire.webp" alt="" width="900" height="900" loading="lazy"></button></li>
+          <li><button type="button" aria-label="Photo 3 : étagère clavier" data-src="assets/img/detail-clavier.webp" data-alt="Gros plan sur l'étagère clavier du HomeDesk"><img src="assets/img/detail-clavier.webp" alt="" width="500" height="500" loading="lazy"></button></li>
+          <li><button type="button" aria-label="Photo 4 : étagère ordinateur" data-src="assets/img/detail-laptop.webp" data-alt="Ordinateur portable posé sur l'étagère haute du HomeDesk"><img src="assets/img/detail-laptop.webp" alt="" width="500" height="500" loading="lazy"></button></li>
+          <li><button type="button" aria-label="Photo 5 : sac de transport" data-src="assets/img/sac-4.webp" data-alt="Sac de transport noir HomeDesk"><img src="assets/img/sac-4.webp" alt="" width="600" height="600" loading="lazy"></button></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. RÉASSURANCE : une seule valeur de délai (72h) partout (audit 3.3) -->
+  <div class="trust">
+    <ul class="container trust__list">
+      <li><span>🚚</span>Livraison gratuite partout en Tunisie (72h)</li>
+      <li><span>💳</span>Paiement à la livraison</li>
+      <li><span>↩️</span>3 jours pour essayer</li>
+      <li><span>📍</span>Fabriqué en Tunisie</li>
+    </ul>
+  </div>
+
+  <!-- 4. PROBLÈME -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Vous vous reconnaissez ?</span>
+        <h2 class="h2">Assis du matin au soir, sans jamais changer de position</h2>
+        <p class="lead">Télétravail, bureau, révisions : on passe des heures devant un écran, dans la même posture. Et on le sent en fin de journée.</p>
+      </div>
+      <div class="pains">
+        <div class="pain reveal"><i>💻</i><b>L'écran trop bas</b><p>Le laptop posé à plat vous oblige à baisser la tête pendant des heures.</p></div>
+        <div class="pain reveal"><i>🪑</i><b>Une seule position possible</b><p>Votre bureau ne vous laisse qu'un choix : rester assis, même quand l'énergie baisse.</p></div>
+        <div class="pain reveal"><i>😮‍💨</i><b>La fatigue de fin de journée</b><p>Nuque raide, épaules tendues, envie de s'étirer : rester assis sans bouger fatigue le corps.</p></div>
+      </div>
+      <p class="pivot reveal">Ce n'est pas un manque de volonté.<br>C'est votre installation qui <span class="hl">ne vous laisse pas bouger</span>.</p>
+      <ul class="who reveal" aria-label="Pour qui ?">
+        <li>👨‍💻 Développeurs</li><li>🎨 Designers</li><li>🏠 Télétravailleurs</li><li>🧳 Freelances</li><li>📚 Étudiants</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. SOLUTION + DÉMO : MP4 local au lieu des iframes YouTube (audit 3.9) -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Comment ça marche</span>
+        <h2 class="h2">Ajoutez la position debout à votre bureau actuel</h2>
+        <p class="lead">Pas de nouveau meuble, pas de moteur, rien à brancher. Trois étapes, et votre poste change.</p>
+      </div>
+      <ol class="steps reveal">
+        <li><strong>Posez-le sur votre bureau</strong><span>Les pièces s'assemblent sans outil, en quelques minutes.</span></li>
+        <li><strong>Mettre en place le PC</strong><span>L'ordinateur en haut, le clavier et la souris sur l'étagère du dessous.</span></li>
+        <li><strong>Alternez quand vous voulez</strong><span>1 heure Assis, 15 min debout : 5 secondes pour changer.</span></li>
+      </ol>
+      <div class="reveal" style="margin-top:32px">
+        <div class="video">
+          <video src="assets/video/homedesk-demo.mp4" poster="assets/img/video-poster.webp" muted loop playsinline controls preload="none" aria-label="Démonstration HomeDesk : passage de la position assise à debout"></video>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>5 sec</b><small>assis ↔ debout </small></div>
+          <div class="stat"><b>0</b><small>outil requis</small></div>
+          <div class="stat"><b>3 j</b><small>pour essayer</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BÉNÉFICES : caractéristique → avantage, sans chiffre non sourcé (audit 3.2) -->
+  <section class="section">
+    <div class="container benefits">
+      <img class="reveal" src="assets/img/post-toute-table.webp" alt="Homme travaillant debout avec son ordinateur sur un HomeDesk posé sur une table" width="800" height="1006" loading="lazy">
+      <div>
+        <div class="section-head reveal" style="margin-bottom:24px">
+          <span class="eyebrow">Ce que ça change</span>
+          <h2 class="h2">Un poste de travail qui s'adapte à vous</h2>
+        </div>
+        <div class="grid grid--2">
+          <article class="card reveal"><div class="card__icon">👀</div><h3>L'écran à hauteur des yeux</h3><p>Assis comme debout, vous regardez droit devant au lieu de baisser la tête.</p><span class="card__spec">Plusieurs niveaux de hauteur</span></article>
+          <article class="card reveal"><div class="card__icon">🔄</div><h3>Vous bougez plus souvent</h3><p>Changez de position quand l'énergie baisse, sans interrompre votre travail.</p><span class="card__spec">Assis ↔ debout en 5 secondes</span></article>
+          <article class="card reveal"><div class="card__icon">🏠</div><h3>Gardez votre bureau</h3><p>Il se pose sur n'importe quelle table : rien à racheter, rien à réaménager.</p><span class="card__spec">Compact · se pose sur votre bureau</span></article>
+          <article class="card reveal"><div class="card__icon">🧳</div><h3>Il vous suit partout</h3><p>Il se démonte et se range dans son sac : maison, bureau, coworking.</p>
+            <ul class="sac-pics" aria-label="Photos du sac de transport HomeDesk">
+              <li><img src="assets/img/sac-1.webp" alt="Sac de transport HomeDesk vu de face, poignées et logo" width="600" height="600" loading="lazy"></li>
+              <li><img src="assets/img/sac-2.webp" alt="Sac de transport HomeDesk vu de profil, fin, avec sa bandoulière" width="600" height="600" loading="lazy"></li>
+              <li><img src="assets/img/sac-4.webp" alt="Sac de transport HomeDesk avec bandoulière" width="600" height="600" loading="lazy"></li>
+            </ul>
+            <span class="card__spec">Sac de transport offert · valeur 85 DT</span></article>
+          <article class="card reveal"><div class="card__icon">🔧</div><h3>Prêt en quelques minutes</h3><p>Aucun outil, aucun bricolage : les pièces s'emboîtent.</p><span class="card__spec">Montage sans outil</span></article>
+          <article class="card reveal"><div class="card__icon">⚡</div><h3>Rien qui tombe en panne</h3><p>Pas de moteur ni de prise : il fonctionne toujours, partout.</p><span class="card__spec">100 % mécanique</span></article>
+        </div>
+        <div class="cta-wrap" style="text-align: center;">
+          <a class="btn" href="#commander">Je passe debout →</a>
+          <p class="cta-note">↩️ 3 jours pour essayer sinon vous êtes remboursé <span class="tip">
+                <button class="tip__btn" type="button" aria-label="Conditions de remboursement" aria-describedby="tip-remb">i</button>
+                <span class="tip__box" role="tooltip" id="tip-remb">
+                  <b>Conditions de remboursement</b>
+                  Retournez le produit complet, dans son état d'origine : sans casse, détérioration ni salissure. Après vérification, vous êtes remboursé intégralement sous 7 jours ouvrables.
+                </span>
+              </span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. AVANT / APRÈS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">La différence</span>
+        <h2 class="h2">Avant / après HomeDesk</h2>
+        <p class="lead">Faites glisser pour comparer.</p>
+      </div>
+      <div class="ba reveal">
+        <img src="assets/img/avant-mobile.webp" alt="Avant : travail assis, tête penchée vers l'écran" width="800" height="800" loading="lazy">
+        <img class="ba__after" src="assets/img/apres-mobile.webp" alt="Après : travail debout avec HomeDesk, écran à hauteur des yeux" width="800" height="800" loading="lazy">
+        <span class="ba__tag ba__tag--before">AVANT</span><span class="ba__tag ba__tag--after">APRÈS</span>
+        <div class="ba__line"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+      </div>
+      <div class="ba-legend">
+        <div class="is-before"><h4>Avant</h4><ul><li>Assis toute la journée</li><li>Tête penchée vers l'écran</li><li>Dos courbé</li></ul></div>
+        <div class="is-after"><h4>Après</h4><ul><li>Vous alternez assis et debout</li><li>Écran à hauteur des yeux</li><li>Support transportable</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PREUVES SOCIALES : AVANT le formulaire (audit 3.6, 3.7) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Avis clients</span>
+        <h2 class="h2">Ils travaillent déjà avec HomeDesk</h2>
+        <p class="lead"><span class="rating__stars">★★★★★</span> 4,9/5 · +200 professionnels équipés en Tunisie</p>
+      </div>
+
+      <!-- AVIS RÉEL : commentaire public de Soulayma Ben Hamida (TikTok HomeDesk, 10/02) — source : temoignages/ -->
+      <figure class="featured reveal" data-temoignage="reel" style="margin-top:0">
+        <img src="assets/img/avis-soulayma.webp" alt="Photo envoyée par Soulayma : son HomeDesk installé chez elle, ordinateur portable sur l'étagère haute" width="571" height="826" loading="lazy">
+        <div class="featured__body">
+          <span class="verified">✓ Avis client vérifié</span>
+          <div class="review__stars" style="margin:8px 0 0">★★★★★</div>
+          <blockquote>«&nbsp;Très satisfaite.&nbsp;»</blockquote>
+          <div class="featured__src">
+            <img src="assets/img/avis-soulayma-avatar.webp" alt="" width="88" height="88" loading="lazy">
+            <div><b>Soulayma B.</b><span>Cliente HomeDesk · commentaire TikTok avec photo de son installation</span></div>
+          </div>
+          <p class="featured__note">Photo réelle, prise par la cliente chez elle, sans retouche.</p>
+        </div>
+      </figure>
+
+      <!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
+      <div class="reviews">
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Je l'ai posé sur mon bureau habituel, monté en quelques secondes. Maintenant je peux basculer d'une position à une autre. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">YK</span><div><b>Yassine K.</b><span>Développeur · Tunis</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« J'avais peur que ça bouge quand je tape. Au final c'est stable, et l'écran est enfin à la bonne hauteur. Je l'emporte même au coworking dans son sac. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">MS</span><div><b>Mariem S.</b><span>Freelance · Sousse</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Au début, j'ai voulu le testé pendant 3 jours. J'ai fini maintenant par le garder : alterner assis et debout est devenu un réflexe pour moi. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">AB</span><div><b>Amine B.</b><span>Télétravailleur · Sfax</span></div></figcaption>
+        </figure>
+      </div>
+
+      <div class="ugc" aria-label="Photos de clients HomeDesk">
+        <img src="assets/img/client-1.webp" alt="Cliente HomeDesk avec un café, en position debout" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-2.webp" alt="Cliente HomeDesk travaillant debout" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-3.webp" alt="Client HomeDesk installé à son bureau" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-4.webp" alt="Client HomeDesk à son poste de travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-5.webp" alt="Client HomeDesk au travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-6.webp" alt="Cliente HomeDesk au travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-7.webp" alt="Client HomeDesk debout devant son ordinateur" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-8.webp" alt="Client HomeDesk en position debout" width="480" height="853" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. OBJECTION PRINCIPALE : solidité + fiche technique cohérente (audit 3.3, 3.5) -->
+  <section class="section section--alt">
+    <div class="container solid">
+      <div class="solid__pics reveal">
+        <img src="assets/img/gal-2.webp" alt="Femme qui tape au clavier debout devant son HomeDesk, PC portable posé sur l'étagère haute" width="500" height="500" loading="lazy">
+        <img src="assets/img/detail-angle.webp" alt="Détail des encoches de réglage du HomeDesk" width="500" height="500" loading="lazy">
+        <img src="assets/img/detail-clavier.webp" alt="Clavier posé sur l'étagère du HomeDesk" width="500" height="500" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">La question qu'on nous pose le plus</span>
+        <h2 class="h2">«&nbsp;Ça reste stable quand je tape&nbsp;?&nbsp;»</h2>
+        <p class="lead">Non. Votre écran reste en place pendant que vous tapez, assis comme debout. HomeDesk n'a rien d'un support pliant qui tangue : c'est une structure en bois qui pose bien à plat sur votre bureau.</p>
+        <ul class="facts">
+          <li><span><strong>Une étagère séparée pour le clavier</strong> et la souris : vous tapez en bas, l'écran reste immobile en haut.</span></li>
+          <li><span><strong>Des pièces de 18 mm qui s'emboîtent au millimètre</strong>, découpées à la CNC pour un assemblage bien ajusté.</span></li>
+          <li><span><strong>Une base large et un vrai poids</strong> : 36 × 22 cm et 5 kg (Medium), 45 × 34 cm et 7 kg (Large).</span></li>
+        </ul>
+        <img class="solid__plan" src="assets/img/hero-6.webp" alt="Dimensions des HomeDesk Large et Medium : base 45 et 36 cm, étagère clavier 54 cm, étagère haute 40 × 27 cm" width="1024" height="1024" loading="lazy">
+        <table class="specs">
+          <thead><tr><th scope="col">Fiche technique</th><th scope="col">Medium</th><th scope="col">Large</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Pour une taille</th><td>jusqu'à 1,87 m</td><td>plus de 1,87 m</td></tr>
+            <tr><th scope="row">Hauteur</th><td>55 cm</td><td>68 cm</td></tr>
+            <tr><th scope="row">Base (L × P)</th><td>36 × 22 cm</td><td>45 × 34 cm</td></tr>
+            <tr><th scope="row">Étagère haute</th><td>40 × 27 cm</td><td>40 × 27 cm</td></tr>
+            <tr><th scope="row">Étagère clavier</th><td>54 × 22 cm</td><td>54 × 27 cm</td></tr>
+            <tr><th scope="row">PC portable</th><td>jusqu'à 17"</td><td>jusqu'à 17"</td></tr>
+            <tr><th scope="row">Étagère tél/tablette</th><td>—</td><td>✓</td></tr>
+            <tr><th scope="row">Poids du support</th><td>5 kg</td><td>7 kg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CHOISIR SA VERSION : « Essentiel » partout (fin de « Basic ») (audit 3.3) -->
+  <section class="section" id="versions">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Votre version</span>
+        <h2 class="h2">Choisissez selon votre taille</h2>
+        <p class="lead">La bonne taille garde l'écran à hauteur des yeux quand vous êtes debout.</p>
+      </div>
+      <div class="size-q reveal"><span>📏 Moins de 1,87 m → <strong>Medium</strong></span><span>📏 Plus de 1,87 m → <strong>Large</strong></span></div>
+      <div class="versions">
+        <div class="version is-selected reveal" data-pick-taille="medium" data-pick-sac="oui">
+          <span class="version__badge">Le plus choisi</span>
+          <div class="version__row">
+            <img src="assets/img/taille-medium.webp" alt="HomeDesk version Medium avec ses dimensions" width="700" height="700" loading="lazy">
+            <div><h3>Medium + sac offert</h3><p>Jusqu'à 1,87 m · hauteur 55 cm</p><div class="version__price">199 DT<s>219 DT</s></div></div>
+          </div>
+          <ul class="version__list"><li>Support HomeDesk Medium</li><li>Sac de transport (valeur 85 DT)</li><li>Porte-clés HomeDesk</li></ul>
+        </div>
+        <div class="version reveal" data-pick-taille="large" data-pick-sac="oui">
+          <div class="version__row">
+            <img src="assets/img/taille-large.webp" alt="HomeDesk version Large avec ses dimensions" width="700" height="700" loading="lazy">
+            <div><h3>Large + sac offert</h3><p>Plus de 1,87 m · hauteur 68 cm</p><div class="version__price">209 DT<s>229 DT</s></div></div>
+          </div>
+          <ul class="version__list"><li>Support HomeDesk Large + étagère tél/tablette</li><li>Sac de transport (valeur 85 DT)</li><li>Porte-clés HomeDesk</li></ul>
+        </div>
+      </div>
+      <div class="essentiel reveal">
+        <span class="essentiel__sac"><img src="assets/img/sac-1.webp" alt="Sac de transport HomeDesk, non inclus dans la version Solo" width="600" height="600" loading="lazy"><i aria-hidden="true">✕</i></span>
+        <p>
+          <b>HomeDesk Solo</b><br>
+          Prenez-le <strong>sans sac</strong> et économisez 30 DT : <strong>169 DT</strong> (Medium) ou <strong>179 DT</strong> (Large).<br>
+          <a href="#commander" data-pick-sac="non" data-pick-taille="medium">Commander sans sac →</a>
+        </p>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. OFFRE + FORMULAIRE COD : email optionnel, pas de bloc B2B, réassurance sous le bouton (audit 3.10) -->
+  <section class="section section--alt" id="commander">
+    <div class="container order">
+      <div class="order__media">
+        <span class="eyebrow">Sans aucun risque</span>
+        <h2 class="h2">Commandez maintenant, payez à la réception</h2>
+        <img src="assets/img/femme-assise.webp" alt="Femme travaillant assise, son ordinateur posé sur un HomeDesk" width="900" height="900" loading="lazy">
+        <ul class="order__includes">
+          <li>Support HomeDesk en MDF stratifié 18 mm</li>
+          <li>Sac de transport offert (valeur 85 DT)</li>
+          <li>Porte-clés HomeDesk</li>
+          <li>Livraison gratuite partout en Tunisie, sous 72h</li>
+        </ul>
+      </div>
+
+      <form class="form" id="commander-form" novalidate>
+        <div class="form__fields">
+          <h3>Votre commande</h3>
+          <p class="form__help">📏 Vous mesurez plus de 1,87 m ? Choisissez <strong>Large</strong>.</p>
+
+          <span class="form__label">Taille <em>*</em></span>
+          <div class="seg">
+            <label><input type="radio" name="taille" value="medium" checked><span>Medium<small>jusqu'à 1,87 m</small></span></label>
+            <label><input type="radio" name="taille" value="large"><span>Large<small>plus de 1,87 m</small></span></label>
+          </div>
+
+          <span class="form__label">Version</span>
+          <div class="seg">
+            <label><input type="radio" name="sac" value="oui" checked><span>Avec sac<small>offert · valeur 85 DT</small></span></label>
+            <label><input type="radio" name="sac" value="non"><span>Essentiel<small>sans sac · −30 DT</small></span></label>
+          </div>
+
+          <span class="form__label">Quantité</span>
+          <div class="qty"><button type="button" data-qty="-1" aria-label="Diminuer">−</button><output data-qty-out>1</output><button type="button" data-qty="1" aria-label="Augmenter">+</button></div>
+
+          <div class="total"><span data-version-label>HomeDesk Medium + sac offert</span><div><s data-total-old>219 DT</s><b data-total>199 DT</b></div></div>
+
+          <label class="form__label" for="f-nom">Nom complet <em>*</em></label>
+          <input class="input" id="f-nom" name="nom" autocomplete="name" placeholder="Prénom et nom" required>
+          <span class="field-error">Indiquez votre nom complet.</span>
+
+          <label class="form__label" for="f-tel">Téléphone <em>*</em></label>
+          <input class="input" id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 11 22 33" required>
+          <span class="field-error">Numéro tunisien à 8 chiffres.</span>
+
+          <label class="form__label" for="f-adr">Adresse et ville <em>*</em></label>
+          <input class="input" id="f-adr" name="adresse" autocomplete="street-address" placeholder="Rue, numéro, ville" required>
+          <span class="field-error">Indiquez votre adresse de livraison.</span>
+
+          <label class="form__label" for="f-mail">Email <small>(optionnel)</small></label>
+          <input class="input" id="f-mail" name="email" type="email" autocomplete="email" placeholder="email@exemple.com">
+
+          <label class="form__label" for="f-profil">Profil <small>(optionnel)</small></label>
+          <select class="input" id="f-profil" name="profil">
+            <option value="" selected>Vous êtes…</option>
+            <option>Développeur IT</option><option>Freelance</option><option>Télétravailleur salarié</option><option>Chef d'entreprise</option><option>Designer</option><option>Étudiant</option><option>Autre</option>
+          </select>
+
+          <button class="btn btn--block" type="submit" style="margin-top:24px"><span>Confirmer ma commande · <span data-total>199 DT</span></span></button>
+          <ul class="form__reassure">
+            <li>💳 Paiement à la livraison  🚚 Livraison gratuite sous 72h</li>
+            <li>↩️ 3 jours pour l'essayer, sinon vous êtes remboursé
+              <span class="tip">
+                <button class="tip__btn" type="button" aria-label="Conditions de remboursement" aria-describedby="tip-remb">i</button>
+                <span class="tip__box" role="tooltip" id="tip-remb">
+                  <b>Conditions de remboursement</b>
+                  Retournez le produit complet, dans son état d'origine : sans casse, détérioration ni salissure. Après vérification, vous êtes remboursé intégralement sous 7 jours ouvrables.
+                </span>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="form__success" role="status">
+          <b>✓ Commande enregistrée !</b>
+          <p>Notre équipe vous appelle très vite pour confirmer la livraison.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 12. GARANTIE -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="guarantee guarantee--pro reveal">
+        <div class="seal" aria-hidden="true">
+          <svg class="seal__ring" viewBox="0 0 200 200">
+            <defs><path id="seal-path" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+            <text><textPath href="#seal-path" textLength="488">SATISFAIT OU REMBOURSÉ · SATISFAIT OU REMBOURSÉ ·</textPath></text>
+          </svg>
+          <div class="seal__core">
+            <svg class="seal__check" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3Z"/><path class="seal__tick" d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+            <b>3 jours</b><small>d'essai</small>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow">Garantie satisfait ou remboursé</span>
+          <h3>Essayez-le chez vous, sans engagement</h3>
+          <p>Vous ne payez qu'à la réception, après avoir vu le produit. Ensuite, vous avez 3 jours pour l'essayer dans vos vraies journées de travail. Pas convaincu ? Vous êtes remboursé.</p>
+          <ol class="g-steps">
+            <li><span>📦</span><div><b>Vous recevez</b> et payez à la livraison</div></li>
+            <li><span>🧑‍💻</span><div><b>Vous l'essayez</b> 3 jours chez vous</div></li>
+            <li><span>↩️</span><div><b>Pas convaincu ?</b> Vous êtes remboursé</div></li>
+          </ol>
+          <a class="g-link" href="#faq-remboursement" data-open-faq>Voir les conditions de remboursement →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FAQ (audit 3.5) -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Vos questions</span>
+        <h2 class="h2">Les réponses avant de commander</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Quelle taille choisir ?</summary><p>Medium si vous mesurez jusqu'à 1,87 m (hauteur 55 cm). Large au-delà de 1,87 m (hauteur 68 cm, avec une étagère pour téléphone ou tablette en plus).</p></details>
+        <details><summary>Est-ce solide et stable ?</summary><p>HomeDesk est découpé à la CNC dans du MDF stratifié de 18 mm d'épaisseur. Il accueille un PC portable jusqu'à 17 pouces, avec une étagère séparée pour le clavier et la souris.</p></details>
+        <details><summary>Est-ce que ça aide contre le mal de dos ?</summary><p>HomeDesk vous permet d'alterner facilement entre assis et debout et de placer l'écran à hauteur des yeux, ce qui aide à réduire l'inconfort lié à la position assise prolongée. Ce n'est pas un dispositif médical : en cas de douleur persistante, consultez un professionnel de santé.</p></details>
+        <details id="faq-remboursement"><summary>Et si ça ne me convient pas ?</summary><p>Vous avez 3 jours pour l'essayer chez vous. Si vous n'êtes pas satisfait, vous êtes remboursé.</p><p>Pour être remboursé, retournez le produit complet, avec tous ses accessoires, dans son état d'origine : sans casse, détérioration ni salissure. Après vérification à réception, vous êtes remboursé intégralement sous 7 jours ouvrables.</p></details>
+        <details><summary>C'est compliqué à monter ?</summary><p>Non. Les pièces s'assemblent sans outil, en quelques minutes. Ensuite, passer d'assis à debout prend 5 secondes.</p></details>
+        <details><summary>Ça prend de la place sur mon bureau ?</summary><p>Peu : la base de la version Medium mesure 36 × 22 cm. Et comme il se démonte, vous pouvez le ranger dans son sac quand vous n'en avez pas besoin.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. CTA FINAL -->
+  <section class="section final">
+    <div class="container">
+      <h2 class="h2">Demain, travaillez debout quand vous le voulez.</h2>
+      <p>Gardez votre bureau, ajoutez la position debout, et changez de posture en 5 secondes. Vous ne payez qu'à la réception.</p>
+      <div class="cta-wrap">
+        <a class="btn" href="#commander">Je commande mon HomeDesk →</a>
+        <p class="cta-note">À partir de 169 DT · Livraison gratuite · 3 jours pour essayer</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 15. FOOTER : le B2B est ici, plus dans le formulaire (audit 3.10) -->
+<footer class="footer">
+  <div class="container">
+    <a href="https://www.homedesk.tn/mentions-legales/">Mentions légales</a> ·
+    <a href="#commander">Commander</a> ·
+    <a href="https://www.homedesk.tn/contactez-nous/">Offre entreprise : demandez un devis</a>
+    <p>Copyright © 2026 · HomeDesk · Fabriqué en Tunisie</p>
+  </div>
+</footer>
+
+<!-- CTA collant mobile (audit 3.11) -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta__price">À partir de <b>169 DT</b></div>
+  <a class="btn" href="#commander">Je commande</a>
+</div>
+
+<!-- WhatsApp : remplacer 216XXXXXXXX par le numéro HomeDesk [À COMPLÉTER] -->
+<a class="wa" href="https://wa.me/216XXXXXXXX?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20HomeDesk" target="_blank" rel="noopener" aria-label="Poser une question sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script src="assets/js/lp-base.js" defer></script>
+<script>
+  // Galerie du hero : vignettes cliquables (pas d'auto-rotation, contenu visible sans JS)
+  document.querySelectorAll('[data-gallery]').forEach(function (g) {
+    var main = g.querySelector('[data-gallery-main]');
+    var btns = g.querySelectorAll('[data-src]');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        main.src = b.getAttribute('data-src');
+        main.alt = b.getAttribute('data-alt');
+        btns.forEach(function (x) { x.setAttribute('aria-current', x === b ? 'true' : 'false'); });
+      });
+    });
+  });
+  // Lien « conditions de remboursement » : ouvre la question de la FAQ
+  document.querySelectorAll('[data-open-faq]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var d = document.querySelector(a.getAttribute('href'));
+      if (d) d.open = true;
+    });
+  });
+</script>
+</body>
+</html>

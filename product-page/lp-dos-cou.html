@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeDesk Confort Dos</title>
+<meta name="description" content="Assis toute la journée ? HomeDesk vous permet d'alterner assis et debout sur votre bureau actuel, écran à hauteur des yeux. Paiement à la livraison, 3 jours pour essayer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/femme-sourire.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/lp-base.css">
+<style>
+  /* ---- Thème « apaisant » pour les personnes qui souffrent du dos et du cou ---- */
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f4f9f8;
+    --mint: #e3f1ef;
+    --mint-2: #cfe7e3;
+    --surface: #ffffff;
+    --text: #22312f;
+    --muted: #566663;
+    --line: #e1ecea;
+    --radius: 28px;
+    --radius-sm: 18px;
+    --shadow: 0 14px 40px rgba(49, 139, 130, .10);
+    --final-bg: linear-gradient(160deg, #318b82, #22766c);
+  }
+  body { font-size: 17.5px; line-height: 1.7; }
+  @media (min-width: 900px) { body { font-size: 18px; } }
+  .h2 { font-weight: 800; letter-spacing: -.015em; }
+  .eyebrow { letter-spacing: .14em; }
+  .lead { color: var(--muted); }
+  .soft { color: var(--teal); }
+
+  /* Hero : carte douce, image arrondie en « galet » */
+  .hero { background: radial-gradient(120% 80% at 100% 0%, var(--mint) 0%, #fff 60%); }
+  .hero h1 { font-weight: 800; font-size: clamp(32px, 7.6vw, 58px); }
+  .hero h1 .soft { display: block; }
+  .hero__media img { border-radius: 42% 58% 46% 54% / 52% 44% 56% 48%; aspect-ratio: 1 / 1; box-shadow: 0 30px 60px rgba(49, 139, 130, .18); }
+  .hero__chip {
+    position: absolute; background: #fff; border-radius: 999px; padding: 10px 16px; font-size: 14px; font-weight: 600;
+    box-shadow: 0 10px 26px rgba(34, 49, 47, .12); display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+  .hero__chip--a { top: 8%; left: -6px; }
+  .hero__chip--b { bottom: 10%; right: -6px; }
+  .hero__chip i { font-style: normal; width: 28px; height: 28px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; font-size: 15px; }
+  @media (min-width: 900px) { .hero__chip--a { left: -28px; } .hero__chip--b { right: -20px; } }
+
+  .trust { background: var(--mint); color: var(--text); }
+  .trust__list li { font-weight: 600; }
+
+  /* Empathie : citation intérieure */
+  .empathy { max-width: 760px; margin: 0 auto; text-align: center; }
+  .empathy__quote { font-family: var(--font-display); font-weight: 800; font-size: clamp(22px, 4.6vw, 34px); line-height: 1.25; color: var(--text); margin: 0 0 18px; }
+  .empathy__quote span { color: var(--teal); }
+
+  /* Timeline de la journée */
+  .day { list-style: none; padding: 0; margin: 36px auto 0; max-width: 760px; position: relative; display: grid; gap: 18px; }
+  .day::before { content: ""; position: absolute; left: 31px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(var(--mint-2), #f0c9c4); }
+  .day li { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: start; }
+  .day time {
+    width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; position: relative; z-index: 1;
+    font-family: var(--font-display); font-weight: 800; font-size: 17px; background: #fff; border: 2px solid var(--mint-2); color: var(--teal);
+  }
+  .day li:nth-child(2) time { border-color: #f2d9b8; color: #a7792f; }
+  .day li:nth-child(3) time { border-color: #f0c9c4; color: #c0544a; }
+  .day div { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; }
+  .day b { display: block; font-family: var(--font-display); font-size: 17px; margin-bottom: 2px; }
+  .day p { margin: 0; color: var(--muted); font-size: 16px; }
+  .pivot-soft { max-width: 760px; margin: 28px auto 0; text-align: center; background: var(--mint); border-radius: var(--radius); padding: 22px 24px; font-weight: 600; font-size: 18px; }
+
+  /* Carte du corps */
+  .body-map { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 900px) { .body-map { grid-template-columns: .8fr 1.2fr; gap: 56px; } }
+  .body-map__fig { background: var(--bg-alt); border-radius: var(--radius); padding: 24px; max-width: 360px; margin: 0 auto; width: 100%; }
+  .body-map__fig svg { width: 100%; height: auto; display: block; }
+  .zones { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  @media (min-width: 700px) { .zones { grid-template-columns: 1fr 1fr; } }
+  .zone { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px; box-shadow: var(--shadow); }
+  .zone h3 { display: flex; align-items: center; gap: 10px; font-size: 17px; margin-bottom: 10px; }
+  .zone h3 i { font-style: normal; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #fbe3df; color: #c0544a; font-size: 13px; font-weight: 800; }
+  .zone p { margin: 0 0 6px; font-size: 15px; color: var(--muted); }
+  .zone p.after { color: var(--teal-hover); font-weight: 600; margin: 0; }
+  .zone p.after::before { content: "→ "; }
+
+  /* Bouger plus souvent */
+  .habit { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 900px) { .habit { grid-template-columns: 1fr 1fr; gap: 56px; } }
+  .habit img { border-radius: var(--radius); box-shadow: var(--shadow); }
+  .rhythm { display: flex; gap: 8px; margin: 22px 0 8px; }
+  .rhythm span { flex: 1; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .rhythm .s { background: var(--mint); color: var(--teal-hover); }
+  .rhythm .d { background: var(--teal); color: #fff; }
+  .rhythm-caption { font-size: 14px; color: var(--muted); margin: 0; }
+
+  .steps li { border-radius: var(--radius); }
+  .card { border-radius: var(--radius); box-shadow: none; }
+  .card__icon { border-radius: 50%; }
+
+  /* Objection honnête */
+  .honest { background: #fff; border-radius: var(--radius); padding: 28px 22px; box-shadow: var(--shadow); display: grid; gap: 24px; align-items: center; }
+  @media (min-width: 900px) { .honest { grid-template-columns: 1.1fr .9fr; padding: 48px; gap: 48px; } }
+  .honest img { border-radius: var(--radius-sm); }
+  .honest__list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+  .honest__list li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; font-size: 16px; }
+  .honest__list b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; }
+  .honest__list .yes b { background: var(--mint); color: var(--teal); }
+  .honest__list .no b { background: #f3f3f1; color: #8a8f8d; }
+
+  .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 14px; background: var(--mint); color: var(--teal-hover); flex: none; }
+  .review__role { font-size: 12px; }
+  .review { box-shadow: none; }
+  .version { border-radius: var(--radius); }
+  .form { border-radius: var(--radius); }
+  .guarantee { border-style: solid; border-color: var(--mint-2); background: var(--bg-alt); }
+  .faq details { border-radius: var(--radius-sm); }
+  .faq summary { font-size: 17px; }
+  .disclaimer { max-width: 780px; margin: 22px auto 0; font-size: 14px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="topbar">🎁 Testez-le 3 jours chez vous · Satisfait ou 100 % remboursé</div>
+
+<header class="header">
+  <div class="container">
+    <a class="header__logo" href="#top" aria-label="HomeDesk"><img src="assets/img/logo.webp" alt="HomeDesk" width="160" height="22"></a>
+    <a class="header__cta" href="#commander">Commander · 199 DT</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 2. HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">— Pour celles et ceux qui ont mal en fin de journée —</span>
+        <h1>Assis toute la journée ?<span class="soft">Donnez enfin une pause à votre dos.</span></h1>
+        <p class="hero__sub">HomeDesk se pose sur votre bureau actuel et vous permet de <strong>passer d'assis à debout en 5 secondes</strong>, aussi souvent que vous en ressentez le besoin.</p>
+        <ul class="hero__bullets">
+          <li>Changez de position facilement, au lieu de rester figé des heures</li>
+          <li>Écran à hauteur des yeux : la nuque n'a plus à se pencher</li>
+          <li>Rien à changer chez vous : il se pose sur votre bureau</li>
+        </ul>
+        <div class="rating"><span class="rating__stars">★★★★★</span><span><strong>4,9/5</strong> · +200 professionnels équipés</span></div>
+        <div class="cta-wrap">
+          <a class="btn" href="#commander">Je change de position →</a>
+          <p class="cta-note">À partir de <strong>169 DT</strong> · Paiement à la livraison · 3 jours pour essayer</p>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="assets/img/femme-sourire.webp" alt="Femme souriante travaillant debout sur son ordinateur posé sur un HomeDesk" width="900" height="900" fetchpriority="high">
+        <span class="hero__chip hero__chip--a"><i>🧘</i>Assis ↔ debout en 5 sec</span>
+        <span class="hero__chip hero__chip--b"><i>👀</i>Écran à hauteur des yeux</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. RÉASSURANCE -->
+  <div class="trust">
+    <ul class="container trust__list">
+      <li><span>🚚</span>Livraison gratuite partout en Tunisie (72h)</li>
+      <li><span>💳</span>Paiement à la livraison</li>
+      <li><span>↩️</span>3 jours pour essayer, satisfait ou remboursé</li>
+      <li><span>📍</span>Fabriqué en Tunisie</li>
+    </ul>
+  </div>
+
+  <!-- 4. PROBLÈME -->
+  <section class="section">
+    <div class="container">
+      <div class="empathy reveal">
+        <span class="eyebrow">Vous vous reconnaissez ?</span>
+        <p class="empathy__quote">« Le matin ça va. <span>Le soir, j'ai la nuque raide et le dos qui tire.</span> »</p>
+        <p class="lead" style="margin:0 auto">Vous n'êtes pas seul. Quand on travaille des heures devant un écran, le corps reste dans la même position du matin au soir. Et c'est souvent là que l'inconfort s'installe.</p>
+      </div>
+      <ol class="day">
+        <li class="reveal"><time>9h</time><div><b>Vous démarrez bien installé</b><p>Le dos est droit, l'énergie est là. Tout va bien… pour l'instant.</p></div></li>
+        <li class="reveal"><time>13h</time><div><b>Les épaules montent, la tête avance</b><p>Sans vous en rendre compte, vous vous penchez vers l'écran. Les premières tensions apparaissent.</p></div></li>
+        <li class="reveal"><time>18h</time><div><b>Raideur, fatigue, envie de s'étirer</b><p>La nuque est raide, le bas du dos tire. Et demain, la même journée recommence.</p></div></li>
+      </ol>
+      <p class="pivot-soft reveal">Ce n'est pas votre faute. Ce n'est pas un manque de volonté.<br>C'est la <span class="soft">position figée</span> qui fatigue votre corps.</p>
+    </div>
+  </section>
+
+  <!-- 4 bis. CARTE DU CORPS -->
+  <section class="section section--alt">
+    <div class="container body-map">
+      <div class="body-map__fig reveal">
+        <svg viewBox="0 0 200 320" role="img" aria-label="Silhouette indiquant la nuque, les épaules, le haut du dos et le bas du dos">
+          <g fill="#cfe7e3">
+            <circle cx="100" cy="42" r="26"/>
+            <rect x="88" y="66" width="24" height="18" rx="8"/>
+            <path d="M52 92c0-8 8-12 20-12h56c12 0 20 4 20 12l-6 98c0 8-6 12-14 12H72c-8 0-14-4-14-12z"/>
+            <rect x="30" y="96" width="18" height="96" rx="9"/>
+            <rect x="152" y="96" width="18" height="96" rx="9"/>
+            <rect x="70" y="200" width="24" height="108" rx="12"/>
+            <rect x="106" y="200" width="24" height="108" rx="12"/>
+          </g>
+          <g fill="#e8857a" fill-opacity=".9" font-family="Montserrat, sans-serif" font-weight="800" font-size="11" text-anchor="middle">
+            <circle cx="100" cy="76" r="11"/><text x="100" y="80" fill="#fff">1</text>
+            <circle cx="62" cy="96" r="11"/><text x="62" y="100" fill="#fff">2</text>
+            <circle cx="138" cy="96" r="11"/><text x="138" y="100" fill="#fff">2</text>
+            <circle cx="100" cy="122" r="11"/><text x="100" y="126" fill="#fff">3</text>
+            <circle cx="100" cy="180" r="11"/><text x="100" y="184" fill="#fff">4</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div class="reveal">
+          <span class="eyebrow">Là où ça se ressent</span>
+          <h2 class="h2">Quatre zones qui subissent la position assise prolongée</h2>
+          <p class="lead">Changer de position ne fait pas de miracle. Mais ça évite de rester des heures dans la même posture.</p>
+        </div>
+        <ul class="zones">
+          <li class="zone reveal"><h3><i>1</i>Nuque</h3><p>Écran trop bas, tête penchée en avant pendant des heures.</p><p class="after">Écran à hauteur des yeux, assis comme debout</p></li>
+          <li class="zone reveal"><h3><i>2</i>Épaules</h3><p>Elles remontent et se crispent au fil de la journée.</p><p class="after">Clavier sur sa propre étagère, bras plus détendus</p></li>
+          <li class="zone reveal"><h3><i>3</i>Haut du dos</h3><p>Le dos s'arrondit quand on se rapproche de l'écran.</p><p class="after">Debout, on se tient plus droit naturellement</p></li>
+          <li class="zone reveal"><h3><i>4</i>Bas du dos</h3><p>Assis sans bouger, la raideur s'installe.</p><p class="after">Alterner assis et debout pour bouger plus souvent</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SOLUTION + DÉMO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">La solution simple</span>
+        <h2 class="h2">Votre bureau, avec la position debout en plus</h2>
+        <p class="lead">Pas besoin d'acheter un nouveau bureau ni de tout réaménager. HomeDesk s'ajoute à ce que vous avez déjà.</p>
+      </div>
+      <ol class="steps reveal">
+        <li><strong>Posez-le sur votre bureau</strong><span>Il s'assemble sans outil, en quelques minutes.</span></li>
+        <li><strong>Installez écran et clavier</strong><span>L'ordinateur en haut, le clavier et la souris en dessous.</span></li>
+        <li><strong>Alternez quand vous voulez</strong><span>Assis le matin, debout après le déjeuner : 5 secondes pour changer.</span></li>
+      </ol>
+      <div class="reveal" style="margin-top:32px">
+        <div class="video">
+          <video src="assets/video/homedesk-demo.mp4" poster="assets/img/video-poster.webp" muted loop playsinline controls preload="none" aria-label="Démonstration HomeDesk : passage de la position assise à debout"></video>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>5 sec</b><small>pour changer</small></div>
+          <div class="stat"><b>0</b><small>outil requis</small></div>
+          <div class="stat"><b>2</b><small>tailles</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BÉNÉFICES : bouger plus souvent -->
+  <section class="section section--alt">
+    <div class="container habit">
+      <img class="reveal" src="assets/img/post-varier.webp" alt="Homme travaillant assis à son bureau, invitation à varier les postures" width="800" height="993" loading="lazy">
+      <div class="reveal">
+        <span class="eyebrow">Bouger plus souvent</span>
+        <h2 class="h2">L'alternance devient une habitude, pas un effort</h2>
+        <p class="lead">Le plus difficile, ce n'est pas de se lever. C'est d'y penser quand tout est installé pour rester assis. Avec HomeDesk, changer de position ne demande ni réglage compliqué ni déménagement de votre poste.</p>
+        <div class="rhythm" aria-hidden="true"><span class="s">Assis</span><span class="d">Debout</span><span class="s">Assis</span><span class="d">Debout</span></div>
+        <p class="rhythm-caption">Exemple de journée : vous alternez selon votre énergie et vos besoins.</p>
+      </div>
+    </div>
+    <div class="container" style="margin-top:48px">
+      <div class="grid grid--3">
+        <article class="card reveal"><div class="card__icon">👀</div><h3>Le regard droit devant</h3><p>L'écran monte à hauteur des yeux : vous ne passez plus la journée tête baissée.</p><span class="card__spec">Plusieurs niveaux de hauteur</span></article>
+        <article class="card reveal"><div class="card__icon">🔄</div><h3>Une pause sans quitter le travail</h3><p>Vous sentez la raideur arriver ? Levez-vous et continuez, sans rien débrancher.</p><span class="card__spec">Assis ↔ debout en 5 secondes</span></article>
+        <article class="card reveal"><div class="card__icon">🏠</div><h3>Chez vous, comme au bureau</h3><p>Il se démonte et se transporte dans son sac, pour garder vos habitudes partout.</p><span class="card__spec">Sac de transport offert · valeur 85 DT</span></article>
+      </div>
+      <div class="cta-wrap center">
+        <a class="btn" href="#commander">Je donne une pause à mon dos →</a>
+        <p class="cta-note">💳 Vous ne payez qu'à la réception</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. AVANT / APRÈS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">La différence</span>
+        <h2 class="h2">Avant / après HomeDesk</h2>
+        <p class="lead">Faites glisser pour comparer les deux postures.</p>
+      </div>
+      <div class="ba reveal">
+        <img src="assets/img/avant-mobile.webp" alt="Avant : travail assis, dos arrondi et tête penchée vers l'écran" width="800" height="800" loading="lazy">
+        <img class="ba__after" src="assets/img/apres-mobile.webp" alt="Après : travail debout avec HomeDesk, écran à hauteur des yeux" width="800" height="800" loading="lazy">
+        <span class="ba__tag ba__tag--before">AVANT</span><span class="ba__tag ba__tag--after">APRÈS</span>
+        <div class="ba__line"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+      </div>
+      <div class="ba-legend">
+        <div class="is-before"><h4>Avant</h4><ul><li>Même position toute la journée</li><li>Tête penchée vers l'écran</li><li>Tensions en fin de journée</li></ul></div>
+        <div class="is-after"><h4>Après</h4><ul><li>Vous alternez assis et debout</li><li>Écran à hauteur des yeux</li><li>Vous bougez plus souvent</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PREUVES SOCIALES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Ils ont changé leurs habitudes</span>
+        <h2 class="h2">Ce qu'ils ressentent au quotidien</h2>
+        <p class="lead"><span class="rating__stars">★★★★★</span> 4,9/5 · +200 professionnels équipés en Tunisie</p>
+      </div>
+      <!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion en pub -->
+      <div class="reviews">
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Je finissais mes journées avec la nuque raide. Maintenant je passe debout l'après-midi, et je me sens nettement moins tendue le soir. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">SH</span><div><b>Salma H.</b><span class="review__role">Comptable en télétravail · Tunis</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Ce qui m'a convaincu, c'est la simplicité : je change de position en quelques secondes, sans y réfléchir. Mon écran est enfin à la bonne hauteur. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">KM</span><div><b>Karim M.</b><span class="review__role">Chargé de clientèle · Ariana</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« J'hésitais, alors j'ai profité des 3 jours d'essai. Je l'ai gardé : alterner assis et debout est devenu un réflexe, et mes fins de journée sont plus confortables. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">NB</span><div><b>Nour B.</b><span class="review__role">Assistante de direction · Nabeul</span></div></figcaption>
+        </figure>
+      </div>
+      <div class="ugc" aria-label="Photos de clients HomeDesk">
+        <img src="assets/img/client-2.webp" alt="Cliente HomeDesk travaillant debout" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-4.webp" alt="Client HomeDesk à son poste de travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-6.webp" alt="Cliente HomeDesk au travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-8.webp" alt="Client HomeDesk debout devant son ordinateur" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-1.webp" alt="Cliente HomeDesk avec un café, en position debout" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-3.webp" alt="Client HomeDesk installé à son bureau" width="480" height="853" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. OBJECTION PRINCIPALE : est-ce que ça va vraiment m'aider ? -->
+  <section class="section">
+    <div class="container">
+      <div class="honest reveal">
+        <div>
+          <span class="eyebrow">En toute honnêteté</span>
+          <h2 class="h2">« Est-ce que ça va vraiment m'aider ? »</h2>
+          <p class="lead">On préfère être clair avec vous : HomeDesk n'est pas un traitement et ne remplace pas l'avis d'un professionnel de santé. Ce qu'il fait, il le fait bien :</p>
+          <ul class="honest__list">
+            <li class="yes"><b>✓</b><span>Il vous permet de <strong>changer de position facilement et souvent</strong>, au lieu de rester assis des heures.</span></li>
+            <li class="yes"><b>✓</b><span>Il place votre <strong>écran à hauteur des yeux</strong>, pour éviter la tête penchée.</span></li>
+            <li class="yes"><b>✓</b><span>Il aide à réduire l'inconfort lié à la position assise prolongée, en rendant l'alternance simple.</span></li>
+            <li class="no"><b>✗</b><span>Il ne soigne pas une pathologie. En cas de douleur persistante, consultez un professionnel.</span></li>
+          </ul>
+          <p style="margin-top:18px">Le mieux reste encore de juger par vous-même : <strong>vous avez 3 jours pour l'essayer chez vous</strong>, et vous ne payez qu'à la réception.</p>
+          <div class="cta-wrap">
+            <a class="btn" href="#commander">J'essaie 3 jours chez moi →</a>
+            <p class="cta-note">Pas convaincu ? <strong>Satisfait ou remboursé.</strong></p>
+          </div>
+        </div>
+        <img src="assets/img/post-alignement.webp" alt="Comparaison de posture : assis le dos courbé, puis debout et aligné avec HomeDesk" width="800" height="800" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CHOISIR SA VERSION -->
+  <section class="section section--alt" id="versions">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Votre taille</span>
+        <h2 class="h2">Choisissez la version adaptée à votre taille</h2>
+        <p class="lead">Moins de 1,87 m → <strong>Medium</strong>. Plus de 1,87 m → <strong>Large</strong>, plus haute pour que l'écran reste à hauteur des yeux.</p>
+      </div>
+      <div class="versions">
+        <div class="version is-selected reveal" data-pick-taille="medium" data-pick-sac="oui">
+          <span class="version__badge">Recommandé</span>
+          <div class="version__row">
+            <img src="assets/img/taille-medium.webp" alt="HomeDesk version Medium" width="700" height="700" loading="lazy">
+            <div><h3>Medium + sac offert</h3><p>Jusqu'à 1,87 m · hauteur 55 cm · sac de transport + porte-clés</p><div class="version__price">199 DT<s>219 DT</s></div></div>
+          </div>
+        </div>
+        <div class="version reveal" data-pick-taille="large" data-pick-sac="oui">
+          <div class="version__row">
+            <img src="assets/img/taille-large.webp" alt="HomeDesk version Large" width="700" height="700" loading="lazy">
+            <div><h3>Large + sac offert</h3><p>Plus de 1,87 m · hauteur 68 cm · étagère tél/tablette en plus</p><div class="version__price">209 DT<s>229 DT</s></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="center cta-note" style="margin-top:18px">Il restera toujours au même endroit ? <a href="#commander" data-pick-taille="medium" data-pick-sac="non"><strong>HomeDesk Essentiel dès 169 DT</strong></a> (sans sac, −30 DT).</p>
+    </div>
+  </section>
+
+  <!-- 11. OFFRE + FORMULAIRE COD -->
+  <section class="section" id="commander">
+    <div class="container order">
+      <div class="order__media">
+        <span class="eyebrow">Sans aucun risque</span>
+        <h2 class="h2">Commandez maintenant, payez à la réception</h2>
+        <img src="assets/img/femme-assise.webp" alt="Femme travaillant assise avec son ordinateur sur HomeDesk" width="900" height="900" loading="lazy">
+        <ul class="order__includes">
+          <li>Support HomeDesk en MDF stratifié blanc</li>
+          <li>Sac de transport offert (valeur 85 DT)</li>
+          <li>Porte-clés HomeDesk</li>
+          <li>Livraison gratuite partout en Tunisie</li>
+        </ul>
+      </div>
+
+      <form class="form" id="commander-form" novalidate>
+        <div class="form__fields">
+          <h3>Votre commande</h3>
+          <p class="form__help">📏 Vous mesurez plus de 1,87 m ? Choisissez <strong>Large</strong>.</p>
+
+          <span class="form__label">Taille <em>*</em></span>
+          <div class="seg">
+            <label><input type="radio" name="taille" value="medium" checked><span>Medium<small>jusqu'à 1,87 m</small></span></label>
+            <label><input type="radio" name="taille" value="large"><span>Large<small>plus de 1,87 m</small></span></label>
+          </div>
+
+          <span class="form__label">Sac de transport</span>
+          <div class="seg">
+            <label><input type="radio" name="sac" value="oui" checked><span>Avec sac<small>offert · valeur 85 DT</small></span></label>
+            <label><input type="radio" name="sac" value="non"><span>Essentiel<small>sans sac · −30 DT</small></span></label>
+          </div>
+
+          <span class="form__label">Quantité</span>
+          <div class="qty"><button type="button" data-qty="-1" aria-label="Diminuer">−</button><output data-qty-out>1</output><button type="button" data-qty="1" aria-label="Augmenter">+</button></div>
+
+          <div class="total"><span data-version-label>HomeDesk Medium + sac offert</span><div><s data-total-old>219 DT</s><b data-total>199 DT</b></div></div>
+
+          <label class="form__label" for="f-nom">Nom complet <em>*</em></label>
+          <input class="input" id="f-nom" name="nom" autocomplete="name" placeholder="Prénom et nom" required>
+          <span class="field-error">Indiquez votre nom complet.</span>
+
+          <label class="form__label" for="f-tel">Téléphone <em>*</em></label>
+          <input class="input" id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 11 22 33" required>
+          <span class="field-error">Numéro tunisien à 8 chiffres.</span>
+
+          <label class="form__label" for="f-adr">Adresse et ville <em>*</em></label>
+          <input class="input" id="f-adr" name="adresse" autocomplete="street-address" placeholder="Rue, numéro, ville" required>
+          <span class="field-error">Indiquez votre adresse de livraison.</span>
+
+          <label class="form__label" for="f-mail">Email <small>(optionnel)</small></label>
+          <input class="input" id="f-mail" name="email" type="email" autocomplete="email" placeholder="email@exemple.com">
+
+          <label class="form__label" for="f-profil">Profil</label>
+          <select class="input" id="f-profil" name="profil">
+            <option>Développeur IT</option><option>Freelance</option><option selected>Télétravailleur salarié</option><option>Chef d'entreprise</option><option>Designer</option><option>Étudiant</option><option>Autre</option>
+          </select>
+
+          <button class="btn btn--block" type="submit" style="margin-top:24px"><span>Confirmer ma commande · <span data-total>199 DT</span></span></button>
+          <ul class="form__reassure">
+            <li>💳 Vous ne payez rien maintenant, seulement à la réception</li>
+            <li>🚚 Livraison gratuite sous 72h · ↩️ 3 jours pour essayer</li>
+          </ul>
+        </div>
+        <div class="form__success" role="status">
+          <b>✓ Commande enregistrée !</b>
+          <p>Notre équipe vous appelle très vite pour confirmer la livraison.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 12. GARANTIE -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="guarantee reveal">
+        <div class="guarantee__badge"><div><b>3</b><small>jours<br>d'essai</small></div></div>
+        <div>
+          <h3>Essayez-le chez vous, sans engagement</h3>
+          <p>Vous payez seulement à la réception. Ensuite, vous avez 3 jours pour l'essayer dans vos vraies journées de travail. Si vous ne ressentez pas la différence, vous êtes remboursé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Vos questions</span>
+        <h2 class="h2">Nous répondons à vos doutes</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Est-ce un produit médical ?</summary><p>Non. HomeDesk n'est pas un dispositif médical et ne soigne aucune pathologie. Il permet d'alterner facilement entre position assise et debout et de placer l'écran à hauteur des yeux. En cas de douleur persistante, consultez un professionnel de santé.</p></details>
+        <details><summary>Combien de temps faut-il rester debout ?</summary><p>Il n'y a pas de règle unique : l'idée est d'alterner selon vos sensations et votre énergie. HomeDesk rend ce changement simple, en 5 secondes, pour que vous bougiez plus souvent.</p></details>
+        <details><summary>Quelle taille choisir ?</summary><p>Medium si vous mesurez jusqu'à 1,87 m (hauteur 55 cm). Large au-delà de 1,87 m (hauteur 68 cm, avec une étagère pour téléphone ou tablette en plus).</p></details>
+        <details><summary>Est-ce solide et stable ?</summary><p>HomeDesk est découpé à la CNC dans du MDF stratifié blanc de 18 mm d'épaisseur. Il accueille un PC portable jusqu'à 17 pouces, avec une étagère séparée pour le clavier et la souris.</p></details>
+        <details><summary>C'est compliqué à installer ?</summary><p>Non. Les pièces s'assemblent sans outil, en quelques minutes, et il se pose directement sur votre bureau ou votre table actuelle.</p></details>
+        <details><summary>Pourquoi pas un bureau assis-debout complet ?</summary><p>HomeDesk garde votre bureau actuel et y ajoute la position debout. Il est compact, portable, sans moteur, et bien moins cher qu'un changement complet de bureau.</p></details>
+        <details><summary>Comment se passe le paiement ?</summary><p>À la livraison, en espèces. Aucun paiement en ligne, aucun acompte. La livraison est gratuite partout en Tunisie.</p></details>
+        <details><summary>Et si ça ne me convient pas ?</summary><p>Vous avez 3 jours pour l'essayer chez vous. Si vous n'êtes pas satisfait, vous êtes remboursé.</p></details>
+      </div>
+      <p class="disclaimer">HomeDesk n'est pas un dispositif médical. En cas de douleur persistante, consultez un professionnel de santé.</p>
+    </div>
+  </section>
+
+  <!-- 14. CTA FINAL -->
+  <section class="section final">
+    <div class="container">
+      <h2 class="h2">Demain, ne restez pas figé toute la journée.</h2>
+      <p>Gardez votre bureau, ajoutez la position debout, et alternez dès que votre corps vous le demande. Vous ne payez qu'à la réception.</p>
+      <div class="cta-wrap">
+        <a class="btn" href="#commander">Je commande mon HomeDesk →</a>
+        <p class="cta-note">Dès 169 DT · Livraison gratuite · 3 jours pour essayer</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <a href="https://www.homedesk.tn/mentions-legales/">Mentions légales</a> ·
+    <a href="#commander">Commander</a> ·
+    <a href="https://www.homedesk.tn/contactez-nous/">Offre entreprise : demandez un devis</a>
+    <p>Copyright © 2026 · HomeDesk · Fabriqué en Tunisie</p>
+  </div>
+</footer>
+
+<!-- CTA collant mobile -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta__price">Dès<b>169 DT</b></div>
+  <a class="btn" href="#commander">Je commande</a>
+</div>
+
+<!-- WhatsApp : remplacer 216XXXXXXXX par le numéro HomeDesk [À COMPLÉTER] -->
+<a class="wa" href="https://wa.me/216XXXXXXXX?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20HomeDesk" target="_blank" rel="noopener" aria-label="Poser une question sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script src="assets/js/lp-base.js" defer></script>
+</body>
+</html>

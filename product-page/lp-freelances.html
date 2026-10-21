@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeDesk Freelances</title>
+<meta name="description" content="HomeDesk, le poste assis-debout qui te suit partout : maison, coworking, café, chez le client. Sac de transport offert, paiement à la livraison partout en Tunisie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/piscine-nomade.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/lp-base.css">
+<style>
+  /* ---- Thème « nomade » : clair + blocs noirs, accents sable ---- */
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f6f3ec;
+    --text: #141414;
+    --muted: #5b5f5d;
+    --line: #e6e1d6;
+    --accent: #318b82;
+    --accent-hover: #22766c;
+    --accent-2: #b09b70;
+    --black: #121212;
+    --font-accent: "Space Grotesk", system-ui, sans-serif;
+    --final-bg: #121212;
+    --footer-bg: #121212;
+  }
+  .eyebrow { font-family: var(--font-accent); color: var(--accent-2); letter-spacing: .14em; }
+  .sand { color: var(--accent-2); }
+  .tealtxt { color: var(--accent); }
+  .accent-font { font-family: var(--font-accent); }
+  .section--dark { background: var(--black); color: #f2efe8; }
+  .section--dark .lead, .section--dark p { color: #b9b4a8; }
+  .section--dark .h2 { color: #fff; }
+
+  /* Hero : photo pleine avec étiquette « sac offert » */
+  .hero { background: linear-gradient(180deg, #f6f3ec 0%, #fff 100%); }
+  .hero h1 { font-size: clamp(36px, 9vw, 68px); }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero__media img { aspect-ratio: 4 / 5; }
+  .bag-tag {
+    position: absolute; right: -6px; bottom: 22px; display: flex; align-items: center; gap: 12px;
+    background: var(--black); color: #fff; padding: 10px 16px 10px 10px; border-radius: 16px;
+    box-shadow: 0 16px 34px rgba(0,0,0,.28); max-width: 250px;
+  }
+  .bag-tag img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; background: #fff; }
+  .bag-tag b { display: block; font-family: var(--font-accent); font-size: 15px; }
+  .bag-tag s { color: #9d978a; font-size: 13px; margin-right: 6px; }
+  .bag-tag span { color: var(--accent-2); font-weight: 700; font-size: 13px; }
+  .places-pill { display: inline-flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .places-pill span { font-family: var(--font-accent); font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; background: #fff; border: 1px solid var(--line); }
+
+  /* Problème : 3 « mauvais postes » */
+  .bad-spots { display: grid; gap: 14px; margin-top: 8px; }
+  @media (min-width: 800px) { .bad-spots { grid-template-columns: repeat(3, 1fr); } }
+  .bad-spot { background: #1d1d1d; border: 1px solid #2c2c2c; border-radius: var(--radius); padding: 22px; }
+  .bad-spot b { display: block; font-family: var(--font-accent); font-size: 19px; color: #fff; margin-bottom: 6px; }
+  .bad-spot b::before { content: "✗ "; color: #e74c3c; }
+  .bad-spot p { margin: 0; font-size: 15px; }
+  .problem-split { display: grid; gap: 28px; align-items: center; margin-top: 36px; }
+  @media (min-width: 900px) { .problem-split { grid-template-columns: 1fr 1fr; gap: 56px; } }
+  .problem-split img { border-radius: var(--radius); }
+  .pivot { font-family: var(--font-accent); font-size: clamp(20px, 3.4vw, 26px); font-weight: 700; color: #fff; border-left: 4px solid var(--accent-2); padding-left: 16px; }
+
+  /* Itinéraire Maison → Coworking → Café → Client */
+  .route { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 2px 20px; position: relative; }
+  .stop { flex: none; width: 76%; max-width: 300px; scroll-snap-align: start; position: relative; }
+  @media (min-width: 1000px) { .route { overflow: visible; } .stop { flex: 1; width: auto; } }
+  .stop img { border-radius: var(--radius); aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+  .stop__n {
+    position: absolute; top: 12px; left: 12px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+    background: var(--black); color: #fff; font-family: var(--font-accent); font-weight: 700;
+  }
+  .stop h3 { font-family: var(--font-accent); font-size: 20px; margin: 14px 0 4px; }
+  .stop p { color: var(--muted); font-size: 14px; margin: 0; }
+  .stop:not(:last-child) h3::after { content: " →"; color: var(--accent-2); }
+  .route-line { height: 0; border-top: 3px dashed var(--accent-2); margin: 0 0 22px; opacity: .6; }
+
+  /* Démontage / transport */
+  .pack { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 900px) { .pack { grid-template-columns: 1fr 1fr; gap: 56px; } }
+  .pack-steps { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 14px; }
+  .pack-steps li { display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: center; }
+  .pack-steps i {
+    font-style: normal; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px;
+    background: var(--bg-alt); border: 1px solid var(--line); font-size: 24px;
+  }
+  .pack-steps b { display: block; font-family: var(--font-accent); font-size: 17px; }
+  .pack-steps span { color: var(--muted); font-size: 14px; }
+
+  /* Bénéfices : liste en 2 colonnes, numérotée */
+  .benefits { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  @media (min-width: 800px) { .benefits { grid-template-columns: 1fr 1fr; column-gap: 48px; } }
+  .benefit { display: grid; grid-template-columns: 48px 1fr; gap: 14px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .benefit__n { font-family: var(--font-accent); font-weight: 700; font-size: 26px; color: var(--accent-2); line-height: 1; }
+  .benefit h3 { font-size: 18px; margin-bottom: 4px; }
+  .benefit p { margin: 0; color: var(--muted); font-size: 15px; }
+  .benefit small { display: block; margin-top: 6px; font-size: 12px; color: var(--accent); font-weight: 600; }
+
+  /* Sac en vedette */
+  .bag { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 900px) { .bag { grid-template-columns: 1.1fr .9fr; gap: 56px; } }
+  .bag-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bag-gallery img { border-radius: var(--radius-sm); aspect-ratio: 1 / 1; object-fit: cover; background: #fff; }
+  .bag-math { margin-top: 22px; background: #1d1d1d; border: 1px solid #2c2c2c; border-radius: var(--radius); padding: 20px 22px; font-family: var(--font-accent); }
+  .bag-math div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; color: #d8d3c7; font-size: 15px; }
+  .bag-math div + div { border-top: 1px dashed #3a3a3a; }
+  .bag-math .total-line { color: #fff; font-weight: 700; font-size: 17px; }
+  .bag-math .total-line b { color: var(--accent-2); }
+  .section--dark .btn--ghost { color: #fff; box-shadow: inset 0 0 0 2px #fff; }
+  .section--dark .cta-note { color: #b9b4a8; }
+  .section--dark .cta-note strong { color: #fff; }
+
+  /* Objection transport : fiche de voyage */
+  .ticket { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .ticket__head { background: var(--accent); color: #fff; padding: 16px 22px; font-family: var(--font-accent); font-weight: 700; letter-spacing: .06em; display: flex; justify-content: space-between; gap: 10px; }
+  .ticket table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .ticket th, .ticket td { padding: 12px 16px; text-align: left; border-bottom: 1px dashed var(--line); }
+  .ticket th { font-weight: 600; color: var(--muted); width: 38%; }
+  .ticket td { font-weight: 600; }
+  .ticket tr:last-child th, .ticket tr:last-child td { border-bottom: 0; }
+  .objection { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 900px) { .objection { grid-template-columns: 1fr 1fr; gap: 56px; } }
+
+  .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-accent); font-weight: 700; font-size: 14px; background: #efe8d9; color: #7d6a42; flex: none; }
+  .review__place { display: inline-block; font-family: var(--font-accent); font-size: 11px; font-weight: 700; color: var(--accent); background: var(--teal-soft); padding: 3px 9px; border-radius: 999px; margin-bottom: 10px; align-self: flex-start; }
+  .version__badge { background: var(--black); }
+  .final { background: var(--black); }
+  .final .h2 em { font-style: normal; color: var(--accent-2); }
+</style>
+</head>
+<body>
+
+<div class="topbar">🎒 Sac de transport offert (valeur 85 DT) · Testez-le 3 jours</div>
+
+<header class="header">
+  <div class="container">
+    <a class="header__logo" href="#top" aria-label="HomeDesk"><img src="assets/img/logo.webp" alt="HomeDesk" width="160" height="22"></a>
+    <a class="header__cta" href="#commander">Commander · 199 DT</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 2. HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Pour les freelances & nomades</span>
+        <div class="places-pill" aria-label="Lieux de travail"><span>🏠 Maison</span><span>💼 Coworking</span><span>☕ Café</span><span>🤝 Client</span></div>
+        <h1>Ton poste pro <em>te suit partout.</em></h1>
+        <p class="hero__sub">HomeDesk transforme n'importe quelle table en poste <strong>assis-debout</strong>. Tu le démontes, tu le glisses dans son sac, et tu retrouves ton setup chez chaque client.</p>
+        <ul class="hero__bullets">
+          <li>Sac de transport offert avec la version principale (valeur 85 DT)</li>
+          <li>Démontable sans outil, prêt en quelques minutes</li>
+          <li>Laptop à hauteur des yeux, assis ou debout en 5 sec</li>
+        </ul>
+        <div class="rating"><span class="rating__stars">★★★★★</span><span><strong>4,9/5</strong> · +200 professionnels équipés</span></div>
+        <div class="cta-wrap">
+          <a class="btn" href="#commander" data-pick-taille="medium" data-pick-sac="oui">Je prends mon poste nomade →</a>
+          <p class="cta-note">À partir de <strong>169 DT</strong> · Paiement à la livraison · Livraison gratuite</p>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="assets/img/piscine-nomade.webp" alt="Freelance qui travaille sur son laptop au bord d'une piscine avec HomeDesk" width="900" height="900" fetchpriority="high">
+        <div class="bag-tag">
+          <img src="assets/img/sac-1.webp" alt="" width="600" height="600">
+          <div><b>Sac de transport</b><s>85 DT</s><span>OFFERT</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. RÉASSURANCE -->
+  <div class="trust">
+    <ul class="container trust__list">
+      <li><span>🚚</span>Livraison gratuite partout en Tunisie (72h)</li>
+      <li><span>💳</span>Paiement à la livraison</li>
+      <li><span>↩️</span>3 jours pour essayer, satisfait ou remboursé</li>
+      <li><span>📍</span>Fabriqué en Tunisie</li>
+    </ul>
+  </div>
+
+  <!-- 4. PROBLÈME -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Le vrai coût de la liberté</span>
+        <h2 class="h2">Tu peux bosser de partout.<br><span class="sand">Mais jamais dans une bonne position.</span></h2>
+        <p class="lead">Ta liberté, c'est de choisir où tu travailles. Le revers : un setup différent chaque jour, et presque jamais adapté.</p>
+      </div>
+      <div class="bad-spots">
+        <div class="bad-spot reveal"><b>La table du café</b><p>Trop basse, laptop à plat, la tête qui plonge vers l'écran pendant toute la session.</p></div>
+        <div class="bad-spot reveal"><b>Le canapé</b><p>« Juste 10 minutes »… qui deviennent 3 heures avant la deadline.</p></div>
+        <div class="bad-spot reveal"><b>Le bureau du client</b><p>Un coin de table prêté, aucun réglage, et toi qui t'adaptes à tout.</p></div>
+      </div>
+      <div class="problem-split">
+        <p class="pivot reveal">Tu as choisi la liberté pour bien travailler. Pas pour finir chaque journée courbé sur ton laptop.</p>
+        <img class="reveal" src="assets/img/post-toute-table.webp" alt="Freelance debout devant son laptop posé sur HomeDesk, sur une simple table" width="800" height="1006" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SOLUTION : itinéraire + démo -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Une journée avec HomeDesk</span>
+        <h2 class="h2">Un seul setup. <span class="tealtxt">Tous tes lieux de travail.</span></h2>
+        <p class="lead">HomeDesk se pose sur n'importe quelle table. Partout où tu ouvres ton laptop, tu retrouves un poste assis-debout.</p>
+      </div>
+      <div class="route-line" aria-hidden="true"></div>
+      <div class="route" aria-label="Itinéraire d'une journée de freelance">
+        <article class="stop reveal"><span class="stop__n">1</span><img src="assets/img/femme-cuisine.webp" alt="Freelance qui travaille debout chez elle avec HomeDesk" width="900" height="900" loading="lazy"><h3>Maison</h3><p>Session focus du matin, debout près de la fenêtre.</p></article>
+        <article class="stop reveal"><span class="stop__n">2</span><img src="assets/img/post-suit-partout.webp" alt="Freelance qui transporte HomeDesk dans son sac en ville" width="800" height="800" loading="lazy"><h3>Coworking</h3><p>Démonté, dans le sac, sur l'épaule.</p></article>
+        <article class="stop reveal"><span class="stop__n">3</span><img src="assets/img/post-cafe.webp" alt="Freelance qui travaille debout en terrasse de café avec HomeDesk" width="800" height="800" loading="lazy"><h3>Café</h3><p>Même une table de terrasse devient un poste debout.</p></article>
+        <article class="stop reveal"><span class="stop__n">4</span><img src="assets/img/homme-debout.webp" alt="Professionnel debout devant son laptop sur HomeDesk au bureau" width="900" height="900" loading="lazy"><h3>Chez le client</h3><p>Ton propre setup, sur la table qu'on te prête.</p></article>
+      </div>
+
+      <ol class="steps reveal" style="margin-top:36px">
+        <li><strong>Sors-le du sac</strong><span>Les pièces s'assemblent sans outil, en quelques minutes.</span></li>
+        <li><strong>Pose-le sur la table</strong><span>Laptop en haut, clavier et souris en dessous.</span></li>
+        <li><strong>Alterne assis ↔ debout</strong><span>5 secondes pour changer de position.</span></li>
+      </ol>
+      <div class="reveal" style="margin-top:32px">
+        <div class="video">
+          <video src="assets/video/homedesk-demo.mp4" poster="assets/img/video-poster.webp" muted loop playsinline controls preload="none" aria-label="Démonstration HomeDesk : passage de la position assise à debout"></video>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>5 sec</b><small>assis ↔ debout</small></div>
+          <div class="stat"><b>0</b><small>outil requis</small></div>
+          <div class="stat"><b>5 kg</b><small>poids (Medium)</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BÉNÉFICES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Ce que tu y gagnes</span>
+        <h2 class="h2">Pensé pour ceux qui bougent</h2>
+      </div>
+      <div class="benefits">
+        <div class="benefit reveal"><span class="benefit__n">01</span><div><h3>Un vrai poste, partout</h3><p>Plus besoin de t'adapter à chaque table : c'est la table qui s'adapte à toi.</p><small>Se pose sur une surface existante</small></div></div>
+        <div class="benefit reveal"><span class="benefit__n">02</span><div><h3>Il voyage avec toi</h3><p>Démonté et rangé dans son sac, il part avec ton laptop.</p><small>Sac de transport offert · valeur 85 DT</small></div></div>
+        <div class="benefit reveal"><span class="benefit__n">03</span><div><h3>Écran à hauteur des yeux</h3><p>Tu travailles la tête droite, au café comme chez le client.</p><small>Plusieurs niveaux de hauteur</small></div></div>
+        <div class="benefit reveal"><span class="benefit__n">04</span><div><h3>Debout quand l'énergie baisse</h3><p>Coup de mou avant la deadline ? Lève-toi et continue, en 5 secondes.</p><small>Assis ↔ debout en 5 sec</small></div></div>
+        <div class="benefit reveal"><span class="benefit__n">05</span><div><h3>Rien à brancher</h3><p>Pas de moteur, pas de prise : il marche partout, même sans électricité.</p><small>100 % mécanique</small></div></div>
+        <div class="benefit reveal"><span class="benefit__n">06</span><div><h3>Une image pro</h3><p>Design blanc minimaliste : ton setup fait sérieux devant les clients.</p><small>MDF stratifié blanc · découpe CNC</small></div></div>
+      </div>
+      <div class="cta-wrap center">
+        <a class="btn" href="#commander" data-pick-taille="medium" data-pick-sac="oui">Je veux mon setup mobile →</a>
+        <p class="cta-note">💳 Tu ne paies qu'à la réception</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. AVANT / APRÈS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">La différence</span>
+        <h2 class="h2">Avant / après HomeDesk</h2>
+        <p class="lead">Glisse pour comparer.</p>
+      </div>
+      <div class="ba reveal">
+        <img src="assets/img/avant-mobile.webp" alt="Avant : travail assis, posture courbée devant le laptop" width="800" height="800" loading="lazy">
+        <img class="ba__after" src="assets/img/apres-mobile.webp" alt="Après : travail debout avec HomeDesk, écran à hauteur des yeux" width="800" height="800" loading="lazy">
+        <span class="ba__tag ba__tag--before">AVANT</span><span class="ba__tag ba__tag--after">APRÈS</span>
+        <div class="ba__line"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+      </div>
+      <div class="ba-legend">
+        <div class="is-before"><h4>Avant</h4><ul><li>Laptop à plat sur la table</li><li>Tête penchée toute la journée</li><li>Un poste différent, jamais adapté</li></ul></div>
+        <div class="is-after"><h4>Après</h4><ul><li>Écran à hauteur des yeux</li><li>Tu alternes assis et debout</li><li>Le même setup, partout</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PREUVES SOCIALES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Ils l'emportent partout</span>
+        <h2 class="h2">Des freelances déjà équipés</h2>
+        <p class="lead"><span class="rating__stars">★★★★★</span> 4,9/5 · +200 professionnels équipés en Tunisie</p>
+      </div>
+      <!-- TÉMOIGNAGES FICTIFS (maquette) — à remplacer par de vrais avis clients avant diffusion -->
+      <div class="reviews">
+        <figure class="review reveal" data-temoignage="fictif">
+          <span class="review__place">☕ Café · Coworking</span>
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Je change de lieu presque tous les jours. Le sac a tout changé : je le démonte en deux minutes et je retrouve mon poste debout au coworking comme au café. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">SH</span><div><b>Sarra H.</b><span>Rédactrice web freelance · La Marsa</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <span class="review__place">🤝 Chez le client</span>
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Je passe des journées entières chez mes clients. Avant, je bossais sur un coin de table. Maintenant, j'arrive avec mon setup et je travaille debout quand je veux. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">KM</span><div><b>Karim M.</b><span>Consultant IT · Tunis</span></div></figcaption>
+        </figure>
+        <figure class="review reveal" data-temoignage="fictif">
+          <span class="review__place">🏠 Maison</span>
+          <div class="review__stars">★★★★★</div>
+          <blockquote>« Je l'ai pris pour la maison et je l'emmène finalement partout. Payé à la livraison, aucune mauvaise surprise. La version avec sac vaut vraiment le coup. »</blockquote>
+          <figcaption class="review__who"><span class="avatar">IB</span><div><b>Ines B.</b><span>Community manager · Sousse</span></div></figcaption>
+        </figure>
+      </div>
+      <div class="ugc" aria-label="Photos de clients HomeDesk">
+        <img src="assets/img/client-1.webp" alt="Cliente HomeDesk travaillant debout" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-4.webp" alt="Client HomeDesk à son poste" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-2.webp" alt="Cliente HomeDesk au travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-6.webp" alt="HomeDesk en situation de travail" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-8.webp" alt="Client HomeDesk debout devant son laptop" width="480" height="853" loading="lazy">
+        <img src="assets/img/client-10.webp" alt="Laptop posé sur HomeDesk" width="480" height="853" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. OBJECTION PRINCIPALE : transport (sac en vedette + démontage) -->
+  <section class="section section--dark">
+    <div class="container bag">
+      <div class="reveal">
+        <span class="eyebrow">Le sac, ton meilleur allié</span>
+        <h2 class="h2">« Ça se transporte vraiment ? »<br><span class="sand">Oui, dans son propre sac.</span></h2>
+        <p class="lead">La version principale est livrée avec un sac de transport sur mesure. HomeDesk se démonte sans outil, se range à plat, et part avec toi.</p>
+        <div class="bag-math" aria-label="Calcul de l'offre">
+          <div><span>Sac de transport (valeur)</span><span>85 DT</span></div>
+          <div><span>Porte-clés HomeDesk</span><span>inclus</span></div>
+          <div><span>Avec HomeDesk Medium</span><span>offerts</span></div>
+          <div class="total-line"><span>Tu paies</span><b>199 DT</b></div>
+        </div>
+        <div class="cta-wrap">
+          <a class="btn" href="#commander" data-pick-taille="medium" data-pick-sac="oui">Je prends la version avec sac →</a>
+          <p class="cta-note">Tu ne le déplaceras jamais ? <strong>Essentiel sans sac : 169 DT.</strong></p>
+        </div>
+      </div>
+      <div class="bag-gallery reveal">
+        <img src="assets/img/sac-1.webp" alt="Sac de transport HomeDesk, vue de face" width="600" height="600" loading="lazy">
+        <img src="assets/img/sac-2.webp" alt="Sac de transport HomeDesk, vue de côté avec bandoulière" width="600" height="600" loading="lazy">
+        <img src="assets/img/sac-3.webp" alt="Sac de transport HomeDesk à plat" width="600" height="600" loading="lazy">
+        <img src="assets/img/sac-4.webp" alt="Détail du sac de transport HomeDesk" width="600" height="600" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container objection">
+      <div class="reveal">
+        <span class="eyebrow">Démontage & transport</span>
+        <h2 class="h2">Du bureau au sac en quelques minutes</h2>
+        <ul class="pack-steps">
+          <li><i>🧩</i><div><b>Démonte</b><span>Les pièces se séparent à la main, sans outil.</span></div></li>
+          <li><i>🎒</i><div><b>Range</b><span>Tout tient dans le sac de transport, avec bandoulière.</span></div></li>
+          <li><i>📍</i><div><b>Remonte ailleurs</b><span>Sur n'importe quelle table : maison, coworking, café, client.</span></div></li>
+        </ul>
+      </div>
+      <div class="ticket reveal">
+        <div class="ticket__head"><span>FICHE VOYAGE</span><span>HOMEDESK</span></div>
+        <table>
+          <tr><th scope="row">Poids</th><td>Medium : 5 kg · Large : 7 kg</td></tr>
+          <tr><th scope="row">Encombrement</th><td>Medium : 36 × 22 cm · Large : 45 × 34 cm</td></tr>
+          <tr><th scope="row">Hauteur</th><td>Medium : 55 cm · Large : 68 cm</td></tr>
+          <tr><th scope="row">PC compatible</th><td>Jusqu'à 17 pouces</td></tr>
+          <tr><th scope="row">Montage</th><td>Sans outil, en quelques minutes</td></tr>
+          <tr><th scope="row">Électricité</th><td>Aucune, 100 % mécanique</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CHOISIR SA VERSION -->
+  <section class="section section--alt" id="versions">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Ta version</span>
+        <h2 class="h2">Choisis ta taille</h2>
+        <p class="lead">Moins de 1,87 m → <strong>Medium</strong>. Plus de 1,87 m → <strong>Large</strong>. Pour bouger, prends la version <strong>avec sac</strong>.</p>
+      </div>
+      <div class="versions">
+        <div class="version is-selected reveal" data-pick-taille="medium" data-pick-sac="oui">
+          <span class="version__badge">Idéal nomade</span>
+          <div class="version__row">
+            <img src="assets/img/taille-medium.webp" alt="HomeDesk version Medium" width="700" height="700" loading="lazy">
+            <div><h3>Medium + sac offert</h3><p>Jusqu'à 1,87 m · sac de transport + porte-clés</p><div class="version__price">199 DT<s>219 DT</s></div></div>
+          </div>
+        </div>
+        <div class="version reveal" data-pick-taille="large" data-pick-sac="oui">
+          <div class="version__row">
+            <img src="assets/img/taille-large.webp" alt="HomeDesk version Large" width="700" height="700" loading="lazy">
+            <div><h3>Large + sac offert</h3><p>Plus de 1,87 m · étagère tél/tablette en plus</p><div class="version__price">209 DT<s>229 DT</s></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="center cta-note" style="margin-top:18px">Il restera toujours au même endroit ? <a href="#commander" data-pick-taille="medium" data-pick-sac="non"><strong>HomeDesk Essentiel sans sac dès 169 DT</strong></a> (−30 DT).</p>
+    </div>
+  </section>
+
+  <!-- 11. OFFRE + FORMULAIRE COD -->
+  <section class="section" id="commander">
+    <div class="container order">
+      <div class="order__media">
+        <span class="eyebrow">Commande en 1 minute</span>
+        <h2 class="h2">Commande maintenant, paie à la réception</h2>
+        <img src="assets/img/post-merci-sac.webp" alt="HomeDesk avec son sac de transport, prêt à partir" width="800" height="1000" loading="lazy">
+        <ul class="order__includes">
+          <li>Support HomeDesk en MDF stratifié blanc</li>
+          <li>Sac de transport offert (valeur 85 DT)</li>
+          <li>Porte-clés HomeDesk</li>
+          <li>Livraison gratuite partout en Tunisie</li>
+        </ul>
+      </div>
+
+      <form class="form" id="commander-form" novalidate>
+        <div class="form__fields">
+          <h3>Ta commande</h3>
+          <p class="form__help">📏 Tu mesures plus de 1,87 m ? Choisis <strong>Large</strong>.</p>
+
+          <span class="form__label">Taille <em>*</em></span>
+          <div class="seg">
+            <label><input type="radio" name="taille" value="medium" checked><span>Medium<small>jusqu'à 1,87 m</small></span></label>
+            <label><input type="radio" name="taille" value="large"><span>Large<small>plus de 1,87 m</small></span></label>
+          </div>
+
+          <span class="form__label">Sac de transport</span>
+          <div class="seg">
+            <label><input type="radio" name="sac" value="oui" checked><span>Avec sac<small>offert · valeur 85 DT</small></span></label>
+            <label><input type="radio" name="sac" value="non"><span>Essentiel<small>sans sac · −30 DT</small></span></label>
+          </div>
+
+          <span class="form__label">Quantité</span>
+          <div class="qty"><button type="button" data-qty="-1" aria-label="Diminuer">−</button><output data-qty-out>1</output><button type="button" data-qty="1" aria-label="Augmenter">+</button></div>
+
+          <div class="total"><span data-version-label>HomeDesk Medium + sac offert</span><div><s data-total-old>219 DT</s><b data-total>199 DT</b></div></div>
+
+          <label class="form__label" for="f-nom">Nom complet <em>*</em></label>
+          <input class="input" id="f-nom" name="nom" autocomplete="name" placeholder="Prénom et nom" required>
+          <span class="field-error">Indique ton nom complet.</span>
+
+          <label class="form__label" for="f-tel">Téléphone <em>*</em></label>
+          <input class="input" id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 11 22 33" required>
+          <span class="field-error">Numéro tunisien à 8 chiffres.</span>
+
+          <label class="form__label" for="f-adr">Adresse et ville <em>*</em></label>
+          <input class="input" id="f-adr" name="adresse" autocomplete="street-address" placeholder="Rue, numéro, ville" required>
+          <span class="field-error">Indique ton adresse de livraison.</span>
+
+          <label class="form__label" for="f-mail">Email <small>(optionnel)</small></label>
+          <input class="input" id="f-mail" name="email" type="email" autocomplete="email" placeholder="email@exemple.com">
+
+          <label class="form__label" for="f-profil">Profil</label>
+          <select class="input" id="f-profil" name="profil">
+            <option>Développeur IT</option><option selected>Freelance</option><option>Télétravailleur salarié</option><option>Chef d'entreprise</option><option>Designer</option><option>Étudiant</option><option>Autre</option>
+          </select>
+
+          <button class="btn btn--block" type="submit" style="margin-top:24px"><span>Confirmer ma commande · <span data-total>199 DT</span></span></button>
+          <ul class="form__reassure">
+            <li>💳 Tu ne paies rien maintenant, seulement à la réception</li>
+            <li>🚚 Livraison gratuite sous 72h · ↩️ 3 jours pour essayer</li>
+          </ul>
+        </div>
+        <div class="form__success" role="status">
+          <b>✓ Commande enregistrée !</b>
+          <p>Notre équipe t'appelle très vite pour confirmer la livraison.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 12. GARANTIE -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="guarantee reveal">
+        <div class="guarantee__badge"><div><b>3</b><small>jours<br>d'essai</small></div></div>
+        <div>
+          <h3>Teste-le sur tes vrais lieux de travail</h3>
+          <p>Tu paies seulement quand tu reçois ton HomeDesk. Ensuite, tu as 3 jours pour l'emmener au café, au coworking ou chez un client. Pas convaincu ? Tu es remboursé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="h2">Tes questions avant de partir</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Ça se transporte vraiment facilement ?</summary><p>Oui. HomeDesk se démonte sans outil et se range dans son sac de transport, livré avec la version principale. Le support pèse 5 kg en Medium et 7 kg en Large.</p></details>
+        <details><summary>Il tient sur n'importe quelle table ?</summary><p>Il se pose sur une surface existante : bureau, table de café, table de coworking. Il faut une surface d'environ 36 × 22 cm pour la Medium et 45 × 34 cm pour la Large.</p></details>
+        <details><summary>Quelle taille choisir ?</summary><p>Medium si tu mesures jusqu'à 1,87 m (hauteur 55 cm). Large au-delà de 1,87 m (hauteur 68 cm, avec une étagère pour téléphone ou tablette en plus).</p></details>
+        <details><summary>Avec ou sans sac, je prends quoi ?</summary><p>Si tu le déplaces, même de temps en temps, prends la version avec sac : il est offert (valeur 85 DT). S'il reste toujours au même endroit, la version Essentiel sans sac te fait économiser 30 DT.</p></details>
+        <details><summary>C'est compliqué à monter ?</summary><p>Non. Les pièces s'assemblent sans outil, en quelques minutes. Ensuite, passer d'assis à debout prend 5 secondes.</p></details>
+        <details><summary>Comment je paie ?</summary><p>À la livraison, en espèces. Aucun paiement en ligne, aucun acompte. La livraison est gratuite partout en Tunisie.</p></details>
+        <details><summary>Et si ça ne me convient pas ?</summary><p>Tu as 3 jours pour l'essayer. Pas convaincu ? Tu es remboursé.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. CTA FINAL -->
+  <section class="section final">
+    <div class="container">
+      <span class="eyebrow">Prochain lieu de travail ?</span>
+      <h2 class="h2">Ta liberté mérite <em>un vrai poste.</em></h2>
+      <p>Emporte ton setup assis-debout partout, avec son sac offert. Tu paies seulement quand tu le reçois.</p>
+      <div class="cta-wrap">
+        <a class="btn" href="#commander" data-pick-taille="medium" data-pick-sac="oui">Je commande mon HomeDesk →</a>
+        <p class="cta-note">199 DT avec sac offert · Livraison gratuite · 3 jours pour essayer</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <a href="https://www.homedesk.tn/mentions-legales/">Mentions légales</a> ·
+    <a href="#commander">Commander</a> ·
+    <a href="https://www.homedesk.tn/contactez-nous/">Offre entreprise : demandez un devis</a>
+    <p>Copyright © 2026 · HomeDesk · Fabriqué en Tunisie</p>
+  </div>
+</footer>
+
+<!-- CTA collant mobile -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta__price">Sac offert<b>199 DT</b></div>
+  <a class="btn" href="#commander">Je commande</a>
+</div>
+
+<!-- WhatsApp : remplacer 216XXXXXXXX par le numéro HomeDesk [À COMPLÉTER] -->
+<a class="wa" href="https://wa.me/216XXXXXXXX?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20HomeDesk" target="_blank" rel="noopener" aria-label="Poser une question sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script src="assets/js/lp-base.js" defer></script>
+</body>
+</html>
