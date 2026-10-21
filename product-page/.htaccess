@@ -1,0 +1,9 @@
+# Maquettes internes (faux avis, audit) : aucun accès web, ni en local ni en prod.
+# Ouvrir les fichiers directement depuis le disque.
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order allow,deny
+	Deny from all
+</IfModule>
