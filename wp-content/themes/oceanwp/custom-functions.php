@@ -130,13 +130,13 @@ function homedesk_get_product_pixel_data( $product ) {
 	);
 }
 
-// META PIXEL — ViewContent sur les fiches produit
+// META PIXEL — ViewContent sur les pages de commande (fiches produit + landings)
 add_action( 'wp_head', function () {
-	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+	if ( ! homedesk_is_order_page() ) {
 		return;
 	}
 
-	$product = wc_get_product( get_queried_object_id() );
+	$product = wc_get_product( homedesk_order_product_id() );
 	$data    = homedesk_get_product_pixel_data( $product );
 
 	if ( empty( $data ) ) {
@@ -152,9 +152,9 @@ hdTrack('ViewContent', window.HD_PIXEL);
 	<?php
 }, 5 );
 
-// META PIXEL — Charger le JS des events formulaire (InitiateCheckout, Lead, Purchase) sur les fiches produit
+// META PIXEL — Charger le JS des events formulaire (InitiateCheckout, Lead, Purchase) sur les pages de commande
 add_action( 'wp_enqueue_scripts', function () {
-	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+	if ( ! homedesk_is_order_page() ) {
 		return;
 	}
 	wp_enqueue_script(
@@ -539,7 +539,7 @@ add_filter( 'render_block', function ( $content, $block ) {
 }, 10, 2 );
 
 add_action( 'wp_head', function () {
-	if ( ! is_front_page() ) return;
+	if ( ! is_front_page() || homedesk_is_landing() ) return; // la landing précharge sa propre image hero
 	$lcp_url = get_transient( 'homedesk_lcp_url_v2' );
 	if ( $lcp_url ) {
 		echo '<link rel="preload" as="image" fetchpriority="high" href="' . esc_url( $lcp_url ) . '">' . "\n";
@@ -923,4 +923,499 @@ add_filter( 'theme_mod_ocean_center_header_transparent', function ( $value ) {
         return false;
     }
     return $value;
+} );
+// =============================================================================
+// LANDING PRODUIT — accueil + landings Meta Ads (/lp/{audience}/)
+// =============================================================================
+// Une page WordPress devient une landing en choisissant le modèle
+// « Landing produit HomeDesk » (templates/landing-produit.php), puis l'audience,
+// le produit et le profil dans la boîte « Landing HomeDesk ».
+
+define( 'HOMEDESK_LANDING_TEMPLATE', 'templates/landing-produit.php' );
+
+/** Audiences disponibles : slug => libellé (un fichier templates/landing/{slug}.php par audience). */
+function homedesk_landing_audiences() {
+	return array(
+		'generale'     => 'Générale (accueil)',
+		'developpeurs' => 'Développeurs',
+		'designers'    => 'Designers',
+		'dos-cou'      => 'Dos et cou',
+		'freelances'   => 'Freelances',
+		'etudiants'    => 'Étudiants',
+	);
+}
+
+/** La page courante utilise-t-elle le modèle landing ? */
+function homedesk_is_landing() {
+	return is_page_template( HOMEDESK_LANDING_TEMPLATE );
+}
+
+/** Page avec formulaire de commande : fiche produit ou landing (tracking Pixel + abandons). */
+function homedesk_is_order_page() {
+	return ( function_exists( 'is_product' ) && is_product() ) || homedesk_is_landing();
+}
+
+/**
+ * ID du produit vendu sur la page courante :
+ * fiche produit → son ID ; landing → meta _lp_product_id ; sinon le produit principal.
+ */
+function homedesk_order_product_id() {
+	if ( function_exists( 'is_product' ) && is_product() ) {
+		return (int) get_queried_object_id();
+	}
+	if ( is_page() ) {
+		$id = (int) get_post_meta( get_queried_object_id(), '_lp_product_id', true );
+		if ( $id && 'product' === get_post_type( $id ) ) {
+			return $id;
+		}
+	}
+	return homedesk_default_product_id();
+}
+
+/** Produit principal : le premier produit publié qui utilise le modèle « stacked ». */
+function homedesk_default_product_id() {
+	static $id = null;
+	if ( null === $id ) {
+		$ids = get_posts( array(
+			'post_type'      => 'product',
+			'post_status'    => 'publish',
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+			'meta_key'       => '_product_template',
+			'meta_value'     => 'stacked',
+			'orderby'        => 'date',
+			'order'          => 'ASC',
+		) );
+		$id = $ids ? (int) $ids[0] : 0;
+	}
+	return $id;
+}
+
+/** Réglages de la landing courante (audience, produit, profil présélectionné). */
+function homedesk_landing_settings( $post_id = 0 ) {
+	$post_id  = $post_id ? $post_id : get_queried_object_id();
+	$audience = get_post_meta( $post_id, '_lp_audience', true );
+	if ( ! array_key_exists( $audience, homedesk_landing_audiences() ) ) {
+		$audience = 'generale';
+	}
+	return array(
+		'audience'   => $audience,
+		'product_id' => homedesk_order_product_id(),
+		'profil'     => (string) get_post_meta( $post_id, '_lp_profil', true ),
+		'slug'       => (string) get_post_field( 'post_name', $post_id ),
+	);
+}
+
+// Boîte « Landing HomeDesk » dans l'éditeur de page (même pattern que _product_template)
+add_action( 'init', function () {
+	foreach ( array( '_lp_audience', '_lp_profil' ) as $key ) {
+		register_post_meta( 'page', $key, array(
+			'type'              => 'string',
+			'single'            => true,
+			'show_in_rest'      => true,
+			'sanitize_callback' => 'sanitize_text_field',
+			'auth_callback'     => function () { return current_user_can( 'edit_pages' ); },
+		) );
+	}
+	register_post_meta( 'page', '_lp_product_id', array(
+		'type'              => 'integer',
+		'single'            => true,
+		'show_in_rest'      => true,
+		'sanitize_callback' => 'absint',
+		'auth_callback'     => function () { return current_user_can( 'edit_pages' ); },
+	) );
+} );
+
+add_action( 'add_meta_boxes_page', function () {
+	add_meta_box( 'homedesk_landing', 'Landing HomeDesk', 'homedesk_landing_meta_box', 'page', 'side', 'high' );
+} );
+
+function homedesk_landing_meta_box( $post ) {
+	wp_nonce_field( 'homedesk_landing_save', 'homedesk_landing_nonce' );
+	$audience   = get_post_meta( $post->ID, '_lp_audience', true );
+	$product_id = (int) get_post_meta( $post->ID, '_lp_product_id', true );
+	$profil     = get_post_meta( $post->ID, '_lp_profil', true );
+	$products   = get_posts( array( 'post_type' => 'product', 'post_status' => 'publish', 'posts_per_page' => 50, 'orderby' => 'title', 'order' => 'ASC' ) );
+	$profils    = function_exists( 'opc_get_profil_options' ) ? opc_get_profil_options() : array();
+	?>
+	<p style="margin-top:0">Utilisé uniquement avec le modèle <strong>Landing produit HomeDesk</strong>.</p>
+	<p><label for="hd_lp_audience"><strong>Audience</strong></label><br>
+		<select id="hd_lp_audience" name="hd_lp_audience" style="width:100%">
+			<?php foreach ( homedesk_landing_audiences() as $slug => $label ) : ?>
+				<option value="<?php echo esc_attr( $slug ); ?>" <?php selected( $audience ? $audience : 'generale', $slug ); ?>><?php echo esc_html( $label ); ?></option>
+			<?php endforeach; ?>
+		</select></p>
+	<p><label for="hd_lp_product"><strong>Produit</strong></label><br>
+		<select id="hd_lp_product" name="hd_lp_product" style="width:100%">
+			<option value="0">Produit principal (par défaut)</option>
+			<?php foreach ( $products as $p ) : ?>
+				<option value="<?php echo esc_attr( $p->ID ); ?>" <?php selected( $product_id, $p->ID ); ?>><?php echo esc_html( $p->post_title . ' (#' . $p->ID . ')' ); ?></option>
+			<?php endforeach; ?>
+		</select></p>
+	<p><label for="hd_lp_profil"><strong>Profil présélectionné</strong></label><br>
+		<select id="hd_lp_profil" name="hd_lp_profil" style="width:100%">
+			<option value="">Aucun</option>
+			<?php foreach ( $profils as $opt ) : ?>
+				<option value="<?php echo esc_attr( $opt ); ?>" <?php selected( $profil, $opt ); ?>><?php echo esc_html( $opt ); ?></option>
+			<?php endforeach; ?>
+		</select></p>
+	<?php
+}
+
+add_action( 'save_post_page', function ( $post_id ) {
+	if ( ! isset( $_POST['homedesk_landing_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['homedesk_landing_nonce'] ) ), 'homedesk_landing_save' ) ) {
+		return;
+	}
+	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ! current_user_can( 'edit_page', $post_id ) ) {
+		return;
+	}
+	$audience = isset( $_POST['hd_lp_audience'] ) ? sanitize_key( wp_unslash( $_POST['hd_lp_audience'] ) ) : 'generale';
+	if ( ! array_key_exists( $audience, homedesk_landing_audiences() ) ) {
+		$audience = 'generale';
+	}
+	update_post_meta( $post_id, '_lp_audience', $audience );
+	update_post_meta( $post_id, '_lp_product_id', isset( $_POST['hd_lp_product'] ) ? absint( $_POST['hd_lp_product'] ) : 0 );
+	$profil = isset( $_POST['hd_lp_profil'] ) ? sanitize_text_field( wp_unslash( $_POST['hd_lp_profil'] ) ) : '';
+	if ( $profil && function_exists( 'opc_get_profil_options' ) && ! in_array( $profil, opc_get_profil_options(), true ) ) {
+		$profil = '';
+	}
+	update_post_meta( $post_id, '_lp_profil', $profil );
+} );
+
+// Assets : la landing a son propre design → on retire les styles du thème et des extensions
+add_action( 'wp_enqueue_scripts', function () {
+	if ( ! homedesk_is_landing() ) {
+		return;
+	}
+	$dir  = get_template_directory_uri() . '/assets/landing/';
+	$path = get_template_directory() . '/assets/landing/';
+	// Polices : <link> écrit dans le template (WordPress fusionne les deux paramètres family=)
+	wp_enqueue_style( 'homedesk-landing', $dir . 'landing.css', array( 'opc-styles' ), filemtime( $path . 'landing.css' ) );
+	wp_enqueue_script( 'homedesk-landing', $dir . 'landing.js', array(), filemtime( $path . 'landing.js' ), true );
+}, 100 );
+
+/**
+ * Retire de la file les styles et scripts du thème / des extensions : ils attendent le DOM d'OceanWP
+ * (header, panier, panneau latéral…) et plantent ou s'affichent sans lui sur la landing.
+ * On garde la landing, le formulaire COD + abandons, le Pixel, l'attribution WooCommerce,
+ * le lazy-load d'images, l'admin bar et WhatsApp (qlwapp-*). Les dépendances restent chargées par WordPress.
+ */
+function homedesk_landing_dequeue_styles() {
+	if ( ! homedesk_is_landing() ) {
+		return;
+	}
+	global $wp_styles, $wp_scripts;
+	$keep_styles = array( 'homedesk-landing', 'opc-styles', 'admin-bar', 'dashicons' );
+	foreach ( (array) $wp_styles->queue as $handle ) {
+		if ( ! in_array( $handle, $keep_styles, true ) && 0 !== strpos( $handle, 'qlwapp' ) ) {
+			wp_dequeue_style( $handle );
+		}
+	}
+	$keep_scripts = array( 'homedesk-landing', 'opc-scripts', 'opc-leads', 'hd-pixel-events', 'wc-order-attribution', 'eio-lazy-load', 'admin-bar' );
+	foreach ( (array) $wp_scripts->queue as $handle ) {
+		if ( ! in_array( $handle, $keep_scripts, true ) && 0 !== strpos( $handle, 'qlwapp' ) ) {
+			wp_dequeue_script( $handle );
+		}
+	}
+}
+// CSS inline du thème (Customizer OceanWP + CSS additionnel) : inutile et en conflit sur la landing
+add_action( 'wp', function () {
+	if ( ! homedesk_is_landing() ) {
+		return;
+	}
+	remove_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'custom_css' ), 999 );
+	remove_action( 'wp_head', 'wp_custom_css_cb', 101 );
+	// Emojis natifs (sinon WordPress les remplace par des <img> dont le style est retiré)
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
+} );
+// Blocs du thème injectés en bas de page (aperçu rapide, mini-panier, panneau latéral) : inutiles sur la landing
+add_action( 'wp_footer', function () {
+	if ( ! homedesk_is_landing() ) {
+		return;
+	}
+	global $wp_filter;
+	$unwanted = array( 'quick_view_template', 'get_mini_cart_sidebar', 'get_off_canvas_sidebar', 'side_panel', 'side_panel_overlay' );
+	if ( empty( $wp_filter['wp_footer'] ) ) {
+		return;
+	}
+	foreach ( $wp_filter['wp_footer']->callbacks as $priority => $callbacks ) {
+		foreach ( $callbacks as $cb ) {
+			$fn = $cb['function'];
+			if ( is_array( $fn ) && isset( $fn[1] ) && in_array( $fn[1], $unwanted, true ) ) {
+				remove_action( 'wp_footer', $fn, $priority );
+			}
+		}
+	}
+}, 0 );
+add_action( 'wp_print_scripts', 'homedesk_landing_dequeue_styles', 1 );         // scripts du <head>
+add_action( 'wp_print_styles', 'homedesk_landing_dequeue_styles', 100 );        // styles du <head>
+add_action( 'wp_print_footer_scripts', 'homedesk_landing_dequeue_styles', 1 );  // styles ajoutés en cours de page
+
+// Abandons du formulaire (plugin one-page-cod) : aussi sur les landings
+add_filter( 'opc_is_order_page', function ( $is ) {
+	return $is || homedesk_is_landing();
+} );
+
+// La version sans sac s'appelle « HomeDesk Solo » (libellé affiché sur la commande)
+add_filter( 'opc_nobag_label', function () {
+	return 'HomeDesk Solo (sans sac)';
+} );
+
+// Formulaire COD : libellés des choix Taille / Version (même texte que la maquette product-page.html)
+add_filter( 'opc_variation_label', function ( $label, $attribute ) {
+	return 'pa_version' === $attribute ? 'Taille' : $label;
+}, 10, 2 );
+add_filter( 'opc_variation_option_hint', function ( $hint, $option ) {
+	$hints = array(
+		'medium' => "jusqu'à 1,87 m",
+		'large'  => 'plus de 1,87 m',
+	);
+	return isset( $hints[ $option ] ) ? $hints[ $option ] : $hint;
+}, 10, 2 );
+add_filter( 'opc_bag_option_hint', function () {
+	return 'offert · valeur 85 DT';
+} );
+add_filter( 'opc_nobag_short_label', function () {
+	return 'Solo';
+} );
+
+/** Landing Ads = landing qui n'est pas la page d'accueil → noindex + hors sitemap. */
+function homedesk_is_ads_landing( $post_id = 0 ) {
+	$post_id = $post_id ? $post_id : get_queried_object_id();
+	return $post_id
+		&& HOMEDESK_LANDING_TEMPLATE === get_page_template_slug( $post_id )
+		&& (int) get_option( 'page_on_front' ) !== (int) $post_id;
+}
+
+add_filter( 'wpseo_robots', function ( $robots ) {
+	return ( is_page() && homedesk_is_ads_landing() ) ? 'noindex, follow' : $robots;
+} );
+add_filter( 'wp_robots', function ( $robots ) {
+	if ( is_page() && homedesk_is_ads_landing() ) {
+		$robots['noindex'] = true;
+		$robots['follow']  = true;
+	}
+	return $robots;
+} );
+add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', function ( $ids ) {
+	$landing_ids = get_posts( array(
+		'post_type'      => 'page',
+		'posts_per_page' => -1,
+		'fields'         => 'ids',
+		'meta_key'       => '_wp_page_template',
+		'meta_value'     => HOMEDESK_LANDING_TEMPLATE,
+	) );
+	$front = (int) get_option( 'page_on_front' );
+	foreach ( $landing_ids as $id ) {
+		if ( (int) $id !== $front ) {
+			$ids[] = (int) $id;
+		}
+	}
+	return $ids;
+} );
+
+// =============================================================================
+// HEADER + FOOTER LÉGERS — pages internes (contact, histoire, fiche produit, retours…)
+// =============================================================================
+// Remplace le header / footer OceanWP par une version au style de la landing :
+// logo, 3 liens, bouton « Commander ». La landing (modèle landing-produit) a son propre header.
+
+/** Liens du pied de page, partagés par la landing et les pages internes. */
+function homedesk_footer_links() {
+	$links = array();
+	$product_id = function_exists( 'homedesk_default_product_id' ) ? homedesk_default_product_id() : 0;
+	if ( $product_id ) {
+		$links[] = array( get_permalink( $product_id ), 'Fiche produit' );
+	}
+	$links[] = array( home_url( '/notre-histoire/' ), 'Notre histoire' );
+	$links[] = array( home_url( '/contactez-nous/' ), 'Contact et offre entreprise' );
+	$links[] = array( home_url( '/' . HOMEDESK_RETOURS_SLUG . '/' ), 'Retours et remboursement' );
+	$privacy = get_privacy_policy_url();
+	$links[] = array( $privacy ? $privacy : home_url( '/politique-de-confidentialite/' ), 'Confidentialité' );
+	return $links;
+}
+
+/** Les pages internes utilisent le header / footer léger (tout le front sauf la landing). */
+function homedesk_use_light_chrome() {
+	return ! is_admin() && ! homedesk_is_landing();
+}
+
+add_action( 'wp', function () {
+	if ( ! homedesk_use_light_chrome() ) {
+		return;
+	}
+	add_filter( 'ocean_display_top_bar', '__return_false' );
+	add_filter( 'ocean_display_header', '__return_false' );
+	add_filter( 'ocean_display_footer_widgets', '__return_false' );
+	add_filter( 'ocean_display_footer_bottom', '__return_false' );
+	add_action( 'ocean_header', 'homedesk_light_header', 5 );
+	add_action( 'ocean_footer', 'homedesk_light_footer', 5 );
+} );
+
+add_action( 'wp_enqueue_scripts', function () {
+	if ( ! homedesk_use_light_chrome() ) {
+		return;
+	}
+	$path = get_template_directory() . '/assets/css/site-chrome.css';
+	wp_enqueue_style( 'homedesk-site-chrome', get_template_directory_uri() . '/assets/css/site-chrome.css', array(), filemtime( $path ) );
+	// Polices de la charte (les deux family= dans une seule URL : enqueue impossible, WordPress les fusionne)
+	add_action( 'wp_head', function () {
+		echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap">' . "
+";
+	}, 6 );
+
+	$dir = get_template_directory();
+	$uri = get_template_directory_uri();
+	if ( homedesk_is_info_page() ) {
+		wp_enqueue_style( 'homedesk-page-info', $uri . '/assets/css/page-info.css', array(), filemtime( $dir . '/assets/css/page-info.css' ) );
+	}
+	if ( is_page_template( 'templates/page-histoire.php' ) ) {
+		wp_enqueue_style( 'homedesk-histoire-fonts', 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&display=swap', array(), null );
+		wp_enqueue_style( 'homedesk-page-histoire', $uri . '/assets/css/page-histoire.css', array(), filemtime( $dir . '/assets/css/page-histoire.css' ) );
+		wp_enqueue_script( 'homedesk-histoire', $uri . '/assets/js/histoire.js', array(), filemtime( $dir . '/assets/js/histoire.js' ), true );
+	}
+}, 100 );
+
+// Sticky header OceanWP : il cherche le header du thème (#site-header, absent avec le header léger)
+// et plante à chaque défilement. L'extension le charge à la priorité 999 → on le retire après.
+add_action( 'wp_enqueue_scripts', function () {
+	if ( homedesk_use_light_chrome() ) {
+		wp_dequeue_script( 'osh-js-scripts' );
+		wp_dequeue_style( 'osh-styles' );
+	}
+}, 1000 );
+
+/** Pages d'information (retours, contact, pages légales) : style commun page-info.css. */
+function homedesk_is_info_page() {
+	return is_page_template( 'templates/page-retours.php' ) || is_page_template( 'templates/page-legal.php' )
+		|| is_page_template( 'templates/page-contact.php' ) || homedesk_is_privacy_page() || homedesk_is_contact_page();
+}
+
+/** Page contact (/contactez-nous/). */
+function homedesk_is_contact_page() {
+	return is_page( 'contactez-nous' );
+}
+
+/** Politique de confidentialité (réglage WordPress > Confidentialité). */
+function homedesk_is_privacy_page() {
+	$privacy_id = (int) get_option( 'wp_page_for_privacy_policy' );
+	return $privacy_id && is_page( $privacy_id );
+}
+
+// La politique de confidentialité prend le modèle « Page d'information » sans réglage en base,
+// (son texte reste modifiable dans l'éditeur WordPress)
+// Idem pour la page contact avec le modèle « Contact HomeDesk »
+add_filter( 'template_include', function ( $template ) {
+	if ( 'default' !== ( get_page_template_slug() ?: 'default' ) ) {
+		return $template; // un modèle choisi dans l'admin reste prioritaire
+	}
+	$file = '';
+	if ( homedesk_is_privacy_page() ) {
+		$file = 'templates/page-legal.php';
+	} elseif ( homedesk_is_contact_page() ) {
+		$file = 'templates/page-contact.php';
+	}
+	$found = $file ? locate_template( $file ) : '';
+	return $found ? $found : $template;
+} );
+
+// Pages avec leur propre en-tête (retours, légales, histoire) : pas de bandeau titre OceanWP
+add_filter( 'ocean_display_page_header', function ( $display ) {
+	return ( homedesk_is_info_page() || is_page_template( 'templates/page-histoire.php' ) ) ? false : $display;
+} );
+
+function homedesk_light_header() {
+	$current = untrailingslashit( strtok( home_url( add_query_arg( array() ) ), '?' ) );
+	$nav = array(
+		array( home_url( '/' ), 'Le produit' ),
+		array( home_url( '/notre-histoire/' ), 'Notre histoire' ),
+		array( home_url( '/contactez-nous/' ), 'Contact' ),
+	);
+	?>
+	<div class="hd-chrome-topbar">🎁 Sac de transport offert · Testez-le 3 jours, satisfait ou remboursé</div>
+	<header class="hd-chrome-header">
+		<div class="hd-chrome-header__inner">
+			<a class="hd-chrome-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="HomeDesk, accueil">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/landing/img/logo.webp' ); ?>" alt="HomeDesk" width="160" height="22">
+			</a>
+			<nav class="hd-chrome-nav" aria-label="Menu principal">
+				<?php foreach ( $nav as $item ) : ?>
+					<a href="<?php echo esc_url( $item[0] ); ?>"<?php echo untrailingslashit( $item[0] ) === $current ? ' aria-current="page"' : ''; ?>><?php echo esc_html( $item[1] ); ?></a>
+				<?php endforeach; ?>
+			</nav>
+			<a class="hd-chrome-header__cta" href="<?php echo esc_url( home_url( '/#commander' ) ); ?>">Commander</a>
+		</div>
+	</header>
+	<?php
+}
+
+function homedesk_light_footer() {
+	?>
+	<footer class="hd-chrome-footer">
+		<ul class="hd-chrome-footer__links">
+			<?php foreach ( homedesk_footer_links() as $link ) : ?>
+				<li><a href="<?php echo esc_url( $link[0] ); ?>"><?php echo esc_html( $link[1] ); ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+		<p>Copyright © <?php echo esc_html( gmdate( 'Y' ) ); ?> · HomeDesk · Fabriqué en Tunisie</p>
+	</footer>
+	<?php
+}
+
+// =============================================================================
+// PAGE « RETOURS ET REMBOURSEMENT » — contenu versionné dans templates/page-retours.php
+// =============================================================================
+// La page est créée automatiquement (une seule fois) à la première visite de l'admin,
+// en local comme en prod : rien à copier-coller, le contenu arrive avec le déploiement git.
+
+define( 'HOMEDESK_RETOURS_SLUG', 'retours-et-remboursement' );
+
+add_action( 'admin_init', function () {
+	if ( get_option( 'homedesk_retours_page_id' ) || ! current_user_can( 'publish_pages' ) ) {
+		return;
+	}
+	$page = get_page_by_path( HOMEDESK_RETOURS_SLUG );
+	$id   = $page ? $page->ID : wp_insert_post( array(
+		'post_type'    => 'page',
+		'post_status'  => 'publish',
+		'post_title'   => 'Retours et remboursement',
+		'post_name'    => HOMEDESK_RETOURS_SLUG,
+		'post_content' => '',
+	) );
+	if ( $id && ! is_wp_error( $id ) ) {
+		update_post_meta( $id, '_wp_page_template', 'templates/page-retours.php' );
+		update_post_meta( $id, '_yoast_wpseo_title', 'Retours et remboursement · Essai 3 jours · HomeDesk' );
+		update_post_meta( $id, '_yoast_wpseo_metadesc', 'Essayez HomeDesk 3 jours chez vous : s\'il ne vous convient pas, vous êtes remboursé intégralement. Conditions de retour et étapes du remboursement.' );
+		update_option( 'homedesk_retours_page_id', (int) $id );
+	}
+} );
+
+// =============================================================================
+// PAGE « NOTRE HISTOIRE » — contenu versionné dans templates/page-histoire.php
+// =============================================================================
+// À la première visite de l'admin (local et prod) : la page /notre-histoire/ existante
+// (ou créée si absente) reçoit le modèle, un titre / une description SEO, et redevient indexable.
+
+add_action( 'admin_init', function () {
+	if ( get_option( 'homedesk_histoire_page_id' ) || ! current_user_can( 'publish_pages' ) ) {
+		return;
+	}
+	$page = get_page_by_path( 'notre-histoire' );
+	$id   = $page ? $page->ID : wp_insert_post( array(
+		'post_type'    => 'page',
+		'post_status'  => 'publish',
+		'post_title'   => 'Notre histoire',
+		'post_name'    => 'notre-histoire',
+		'post_content' => '',
+	) );
+	if ( $id && ! is_wp_error( $id ) ) {
+		update_post_meta( $id, '_wp_page_template', 'templates/page-histoire.php' );
+		update_post_meta( $id, '_yoast_wpseo_title', 'Notre histoire · Comment est né HomeDesk' );
+		update_post_meta( $id, '_yoast_wpseo_metadesc', "Développeur web, il a créé HomeDesk après des années de mal de dos devant l'écran : l'histoire du support assis-debout fabriqué en Tunisie." );
+		delete_post_meta( $id, '_yoast_wpseo_meta-robots-noindex' );
+		delete_post_meta( $id, '_yoast_wpseo_meta-robots-nofollow' );
+		update_option( 'homedesk_histoire_page_id', (int) $id );
+	}
 } );

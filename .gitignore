@@ -72,3 +72,6 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+
+# Sources de la page Notre histoire (photos d'origine, IRM non recadrée) : ne pas versionner
+/histoire/

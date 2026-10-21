@@ -1,0 +1,83 @@
+/* ==========================================================================
+   HomeDesk — Header + footer légers des pages internes (contact, histoire,
+   fiche produit, retours…). Même style que la landing (templates/landing-produit.php).
+   Classes préfixées hd-chrome pour ne pas entrer en conflit avec OceanWP.
+   ========================================================================== */
+
+.hd-chrome-topbar {
+	background: #22766c;
+	color: #fff;
+	text-align: center;
+	font: 600 13px/1.4 "Poppins", system-ui, sans-serif;
+	padding: 8px 16px;
+}
+
+.hd-chrome-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: rgba(255, 255, 255, .96);
+	backdrop-filter: blur(8px);
+	border-bottom: 1px solid #e4e6e3;
+	font-family: "Poppins", system-ui, sans-serif;
+}
+.admin-bar .hd-chrome-header { top: 32px; }
+@media (max-width: 782px) { .admin-bar .hd-chrome-header { top: 0; } }
+
+.hd-chrome-header__inner {
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 12px 20px;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+.hd-chrome-header__logo { display: block; line-height: 0; flex: none; }
+.hd-chrome-header__logo img { width: 140px; height: auto; }
+
+.hd-chrome-nav { display: flex; gap: 22px; margin-left: auto; }
+.hd-chrome-nav a {
+	color: #1a1a1a;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	padding: 4px 0;
+	border-bottom: 2px solid transparent;
+}
+.hd-chrome-nav a:hover,
+.hd-chrome-nav a[aria-current="page"] { color: #22766c; border-bottom-color: #318b82; }
+
+.hd-chrome-header__cta {
+	flex: none;
+	background: #318b82;
+	color: #fff !important;
+	border-radius: 999px;
+	padding: 9px 18px;
+	font: 800 13px/1 "Montserrat", system-ui, sans-serif;
+	letter-spacing: .03em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: background .2s;
+}
+.hd-chrome-header__cta:hover { background: #22766c; }
+
+/* Mobile : logo + bouton sur la 1re ligne, liens sur une 2e ligne défilable */
+@media (max-width: 760px) {
+	.hd-chrome-header__inner { flex-wrap: wrap; gap: 10px 12px; padding: 10px 16px; }
+	.hd-chrome-header__logo img { width: 120px; }
+	.hd-chrome-header__cta { margin-left: auto; padding: 8px 14px; font-size: 12px; }
+	.hd-chrome-nav { order: 3; width: 100%; margin: 0; gap: 18px; overflow-x: auto; }
+	.hd-chrome-nav a { white-space: nowrap; font-size: 13px; }
+}
+
+.hd-chrome-footer {
+	background: #318b82;
+	color: rgba(255, 255, 255, .85);
+	text-align: center;
+	padding: 36px 20px;
+	font: 400 13px/1.6 "Poppins", system-ui, sans-serif;
+}
+.hd-chrome-footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 0 0 10px; padding: 0; list-style: none; }
+.hd-chrome-footer a { color: #fff; text-decoration: none; font-weight: 500; }
+.hd-chrome-footer a:hover { text-decoration: underline; }
+.hd-chrome-footer p { margin: 0; }

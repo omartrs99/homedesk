@@ -1,0 +1,124 @@
+/* ==========================================================================
+   HomeDesk — page « Notre histoire » (templates/page-histoire.php)
+   Récit long format : le fond passe de la nuit (la douleur) à la lumière (la solution).
+   Sans JS : chaque chapitre a son propre fond. Avec JS (.hd-js) : c'est le conteneur
+   qui change de couleur en douceur selon le chapitre à l'écran (histoire.js).
+   ========================================================================== */
+
+.hd-story {
+	--teal: #318b82; --teal-hover: #22766c; --cream: #f4f4f0; --ink: #1a1a1a;
+	--serif: "Fraunces", Georgia, serif;
+	--sans: "Poppins", system-ui, sans-serif;
+	font-family: var(--sans);
+	font-size: 18px;
+	line-height: 1.8;
+	overflow: hidden;
+	transition: background-color .9s ease, color .9s ease;
+}
+.hd-story *, .hd-story *::before, .hd-story *::after { box-sizing: border-box; }
+.hd-story img { display: block; max-width: 100%; height: auto; }
+.hd-story h1, .hd-story h2 { font-family: var(--serif); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; color: inherit; margin: 0 0 22px; }
+.hd-story h2 { font-size: clamp(32px, 5vw, 52px); }
+.hd-story p { margin: 0 0 1.1em; }
+.hd-story strong { font-weight: 600; }
+
+/* --- Tons (fond + texte) ------------------------------------------------- */
+.hd-story [data-tone], .hd-story[data-tone] { transition: background-color .9s ease, color .9s ease; }
+[data-tone="night"] { background-color: #0f1817; color: #e9eeec; }
+[data-tone="dusk"]  { background-color: #1c2826; color: #e9eeec; }
+[data-tone="dawn"]  { background-color: #f6eee1; color: #2a2723; }
+[data-tone="cream"] { background-color: var(--cream); color: var(--ink); }
+[data-tone="light"] { background-color: #ffffff; color: var(--ink); }
+[data-tone="teal"]  { background-color: var(--teal); color: #fff; }
+/* Avec JS, les chapitres sont transparents : seul le conteneur change de couleur */
+.hd-js .hd-story__chapter[data-tone] { background-color: transparent; color: inherit; }
+
+/* --- Barre de lecture --------------------------------------------------- */
+.hd-story__progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 200; pointer-events: none; }
+.hd-story__progress span { display: block; height: 100%; width: 100%; background: var(--teal); transform-origin: 0 50%; transform: scaleX(var(--read, 0)); }
+
+/* --- Ouverture ---------------------------------------------------------- */
+.hd-story__hero { position: relative; min-height: min(92vh, 860px); display: flex; align-items: flex-end; overflow: hidden; }
+.hd-story__hero-img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; object-position: 60% 35%; transform: scale(var(--zoom, 1.08)); will-change: transform; }
+.hd-story__hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 24, 23, .15) 0%, rgba(15, 24, 23, .55) 45%, #0f1817 100%); }
+.hd-story__hero-text { position: relative; z-index: 1; max-width: 1120px; width: 100%; margin: 0 auto; padding: 0 24px 72px; color: #fff; }
+.hd-story__hero h1 { font-size: clamp(42px, 8vw, 88px); max-width: 11em; }
+.hd-story__hero h1 em { font-style: italic; color: #8fd3c9; }
+.hd-story__hero p { font-size: clamp(18px, 2.2vw, 22px); max-width: 30em; color: rgba(255, 255, 255, .85); }
+.hd-story__eyebrow { display: inline-block; font: 800 12px/1 "Montserrat", var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #8fd3c9; margin-bottom: 18px; }
+.hd-story__scroll { display: inline-flex; align-items: center; gap: 10px; margin-top: 10px; color: #fff !important; text-decoration: none; font-weight: 600; font-size: 15px; border-bottom: 1px solid rgba(255, 255, 255, .4); padding-bottom: 4px; }
+.hd-story__scroll span { display: inline-block; animation: hd-bounce 1.8s ease-in-out infinite; }
+.hd-story__scroll small { font-weight: 400; opacity: .65; }
+@keyframes hd-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+/* --- Chapitres ---------------------------------------------------------- */
+.hd-story__chapter { padding: clamp(72px, 11vw, 140px) 24px; }
+.hd-story__grid { max-width: 1120px; margin: 0 auto; display: grid; gap: 48px; align-items: center; }
+@media (min-width: 900px) {
+	.hd-story__grid { grid-template-columns: 1.05fr .95fr; gap: 80px; }
+	.hd-story__grid--reverse > :first-child { order: 2; }
+}
+.hd-story__text { max-width: 34em; }
+.hd-story__text--center { margin: 0 auto; text-align: center; }
+.hd-story__num { display: block; font: 700 clamp(64px, 9vw, 110px)/1 var(--serif); color: transparent; -webkit-text-stroke: 1.5px currentColor; opacity: .35; margin-bottom: 10px; }
+
+.hd-story__figure { margin: 0; }
+.hd-story__figure img { width: 100%; border-radius: 18px; box-shadow: 0 24px 60px rgba(0, 0, 0, .25); }
+.hd-story__figure figcaption { margin-top: 12px; font: italic 400 15px/1.5 var(--serif); opacity: .7; }
+
+/* IRM : comme un tirage posé de travers sur la table */
+.hd-story__figure--irm { transform: rotate(-2.5deg); background: #fff; padding: 14px 14px 18px; border-radius: 6px; box-shadow: 0 30px 70px rgba(0, 0, 0, .5); color: #2a2723; max-width: 460px; justify-self: center; }
+.hd-story__figure--irm img { border-radius: 2px; box-shadow: none; }
+
+/* Deux images décalées */
+.hd-story__duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.hd-story__duo .hd-story__figure:nth-child(2) { margin-top: 56px; }
+.hd-story__duo img { aspect-ratio: 4 / 5; object-fit: cover; }
+.hd-story__duo-caption { grid-column: 1 / -1; margin: 4px 0 0; font: italic 400 15px/1.5 var(--serif); opacity: .7; }
+
+/* Citations */
+.hd-story__quote { border: 0; padding: 0; background: none; max-width: 22em; margin: clamp(56px, 8vw, 96px) auto 0; text-align: center; font: italic 500 clamp(26px, 3.6vw, 40px)/1.3 var(--serif); }
+.hd-story__quote--big { margin: 0 auto clamp(56px, 8vw, 96px); font-size: clamp(32px, 5.4vw, 60px); max-width: 16em; }
+.hd-story__quote em { color: var(--teal); }
+
+/* Chiffres */
+.hd-story__facts { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 28px; }
+.hd-story__facts b { display: block; font: 700 34px/1 var(--serif); color: var(--teal); }
+.hd-story__facts span { font-size: 14px; opacity: .75; }
+
+/* Naissance : grande image */
+.hd-story__chapter--wide { padding-top: 0; }
+.hd-story__wide { max-width: 1240px; margin: 0 auto 64px; }
+.hd-story__wide img { width: 100%; aspect-ratio: 16 / 8; object-fit: cover; object-position: 50% 45%; border-radius: 0 0 28px 28px; }
+.hd-story__mission { font: italic 400 clamp(22px, 2.8vw, 30px)/1.45 var(--serif); }
+
+/* Fin */
+.hd-story__end { padding: clamp(72px, 10vw, 120px) 24px; }
+.hd-story__end .hd-story__figure img { aspect-ratio: 4 / 5; object-fit: cover; }
+.hd-story__sign { font: italic 500 20px/1.4 var(--serif); opacity: .9; }
+.hd-story__btns { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 24px; }
+.hd-story .hd-story__btn { display: inline-block; background: #fff; color: var(--teal-hover); border-radius: 999px; padding: 15px 26px; font: 800 14px/1 "Montserrat", var(--sans); letter-spacing: .03em; text-transform: uppercase; text-decoration: none; transition: transform .2s; }
+.hd-story .hd-story__btn:hover { transform: translateY(-2px); }
+.hd-story .hd-story__btn--ghost { background: transparent; color: #fff; border: 2px solid rgba(255, 255, 255, .7); }
+.hd-story__note { font-size: 13px; line-height: 1.6; opacity: .75; margin: 0; }
+
+/* --- Apparition au défilement (uniquement avec JS) --------------------- */
+.hd-js .hd-story .reveal { opacity: 0; transform: translateY(32px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
+.hd-js .hd-story .reveal.is-in { opacity: 1; transform: none; }
+.hd-js .hd-story .hd-story__figure--irm.reveal { transform: translateY(32px) rotate(-6deg); }
+.hd-js .hd-story .hd-story__figure--irm.reveal.is-in { transform: rotate(-2.5deg); }
+
+@media (max-width: 899px) {
+	.hd-story { font-size: 17px; }
+	.hd-story__hero { min-height: min(88vh, 760px); }
+	.hd-story__hero-text { padding-bottom: 48px; }
+	.hd-story__duo .hd-story__figure:nth-child(2) { margin-top: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hd-story, .hd-story [data-tone] { transition: none; }
+	.hd-story__hero-img { transform: none; }
+	.hd-story__scroll span { animation: none; }
+	.hd-js .hd-story .reveal { opacity: 1; transform: none; transition: none; }
+	.hd-js .hd-story .hd-story__figure--irm.reveal { transform: rotate(-2.5deg); }
+}
