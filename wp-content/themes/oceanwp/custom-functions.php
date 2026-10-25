@@ -505,8 +505,13 @@ add_filter( 'woocommerce_get_price_html', function( $price_html, $product ) {
 // Supprimer la version WordPress du <head>, des flux RSS et des URLs de scripts/styles
 remove_action( 'wp_head', 'wp_generator' );
 add_filter( 'the_generator', '__return_empty_string' );
+// Seulement quand ?ver= est la version de WordPress : les versions des fichiers du thème
+// (filemtime) restent, sinon les navigateurs gardent un ancien CSS en cache après une modification.
 add_filter( 'style_loader_src', function ( $src ) {
-	return $src ? remove_query_arg( 'ver', $src ) : $src;
+	if ( $src && false !== strpos( $src, 'ver=' . get_bloginfo( 'version' ) ) ) {
+		$src = remove_query_arg( 'ver', $src );
+	}
+	return $src;
 } );
 
 // Bloquer l'énumération des utilisateurs via /?author=1
@@ -1349,7 +1354,7 @@ function homedesk_light_header() {
 		array( home_url( '/contactez-nous/' ), 'Contact' ),
 	);
 	?>
-	<div class="hd-chrome-topbar">🎁 Sac de transport offert · Testez-le 3 jours, satisfait ou remboursé</div>
+	<div class="hd-chrome-topbar"><?php echo homedesk_topbar_content(); // phpcs:ignore -- HTML statique ?></div>
 	<header class="hd-chrome-header">
 		<div class="hd-chrome-header__inner">
 			<a class="hd-chrome-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="HomeDesk, accueil">
@@ -1364,6 +1369,12 @@ function homedesk_light_header() {
 		</div>
 	</header>
 	<?php
+}
+
+/** Contenu de la barre d'annonce en haut des pages (landings et pages internes) : icône garantie + texte. */
+function homedesk_topbar_content() {
+	return '<svg class="topbar-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+		. 'Testez-le 3 jours, satisfait ou remboursé';
 }
 
 /** Coordonnées HomeDesk (pages Contact, Retours, footers). */

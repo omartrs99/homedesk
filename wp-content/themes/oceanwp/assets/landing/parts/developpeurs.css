@@ -62,7 +62,6 @@
 .hd-landing--developpeurs .spec .k { color: var(--code); }
 .hd-landing--developpeurs .spec .s { color: var(--code-2); }
 .hd-landing--developpeurs .spec .c { color: #6b817b; }
-.hd-landing--developpeurs .spec-link a { color: var(--code); }
 
 .hd-landing--developpeurs .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-accent); font-weight: 700; font-size: 14px; background: rgba(95, 211, 197, .14); color: var(--code); flex: none; }
 .hd-landing--developpeurs .review__role { font-family: var(--font-accent); font-size: 11px; color: var(--code); }

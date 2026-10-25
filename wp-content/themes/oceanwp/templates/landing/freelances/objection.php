@@ -45,9 +45,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				<li><i>🎒</i><div><b>Range</b><span>Tout tient dans le sac de transport, avec bandoulière.</span></div></li>
 				<li><i>📍</i><div><b>Remonte ailleurs</b><span>Sur n'importe quelle table : maison, coworking, café, client.</span></div></li>
 			</ul>
-			<?php if ( $hd_product ) : ?>
-				<p class="spec-link"><a href="<?php echo esc_url( get_permalink( $hd_product->get_id() ) ); ?>">Voir la fiche produit complète →</a></p>
-			<?php endif; ?>
 		</div>
 		<div class="ticket reveal">
 			<div class="ticket__head"><span>FICHE VOYAGE</span><span>HOMEDESK</span></div>

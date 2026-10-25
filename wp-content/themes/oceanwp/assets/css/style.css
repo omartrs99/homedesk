@@ -9404,3 +9404,7 @@ body.default-breakpoint .after-header-content {
     display: none !important;
   }
 }
+.qlwapp__container.qlwapp__container--bottom-left{
+      bottom: 50px;
+}
+

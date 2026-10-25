@@ -55,8 +55,8 @@ foreach ( (array) $hd_content['cta_pick'] as $hd_k => $hd_v ) {
 // Formulaire COD : titre adapté à la landing
 add_filter( 'opc_form_title', function () { return 'Votre commande'; } );
 
-$hd_tip = '<span class="tip"><button class="tip__btn" type="button" aria-label="Conditions de remboursement">i</button>'
-	. '<span class="tip__box" role="tooltip"><b>Conditions de remboursement</b>'
+$hd_tip = '<span class="tip"><button class="tip__btn" type="button" aria-label="Conditions de remboursement" aria-expanded="false">i</button>'
+	. '<span class="tip__box" role="tooltip"><button class="tip__close" type="button" aria-label="Fermer">×</button><b>Conditions de remboursement</b>'
 	. 'Retournez le produit complet, dans son état d\'origine : sans casse, détérioration ni salissure. Après vérification, vous êtes remboursé intégralement sous 7 jours ouvrables.'
 	. '</span></span>';
 ?>
@@ -77,7 +77,7 @@ $hd_tip = '<span class="tip"><button class="tip__btn" type="button" aria-label="
 <body <?php body_class( 'hd-landing hd-landing--' . $hd_lp['audience'] ); ?>>
 <?php wp_body_open(); ?>
 
-<div class="topbar">🎁 Sac de transport offert · Testez-le 3 jours, satisfait ou remboursé</div>
+<div class="topbar"><?php echo homedesk_topbar_content(); // phpcs:ignore -- HTML statique ?></div>
 
 <header class="header">
 	<div class="container">

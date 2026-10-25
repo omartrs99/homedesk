@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	<div class="container order">
 		<div class="order__media">
 			<span class="eyebrow">Sans aucun risque</span>
-			<h2 class="h2">Commandez maintenant, payez à la réception</h2>
+			<h2 class="h2">Commandez maintenant et vous avez 3 jours pour l'essayer.</h2>
 			<img src="<?php echo esc_url( $hd_img . 'femme-assise.webp' ); ?>" alt="Femme travaillant assise, son ordinateur posé sur un HomeDesk" width="900" height="900" loading="lazy">
 			<ul class="order__includes">
 				<li>Support HomeDesk en MDF stratifié 18 mm</li>

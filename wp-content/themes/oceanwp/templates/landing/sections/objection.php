@@ -36,9 +36,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					<tr><th scope="row">Poids du support</th><td>5 kg</td><td>7 kg</td></tr>
 				</tbody>
 			</table>
-			<?php if ( $hd_product ) : ?>
-				<p class="spec-link"><a href="<?php echo esc_url( get_permalink( $hd_product->get_id() ) ); ?>">Voir la fiche produit complète →</a></p>
-			<?php endif; ?>
 		</div>
 	</div>
 </section>

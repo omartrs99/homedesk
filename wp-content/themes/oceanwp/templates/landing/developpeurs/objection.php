@@ -26,9 +26,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   <span class="k">"hauteur"</span>:   <span class="s">"55 cm"</span>,
   <span class="k">"moteur"</span>:    null
 }</pre>
-			<?php if ( $hd_product ) : ?>
-				<p class="spec-link"><a href="<?php echo esc_url( get_permalink( $hd_product->get_id() ) ); ?>">Voir la fiche produit complète →</a></p>
-			<?php endif; ?>
 			<div class="cta-wrap">
 				<a class="btn" href="#commander">Je teste 3 jours chez moi →</a>
 				<p class="cta-note">Pas convaincu ? <strong>Satisfait ou remboursé.</strong></p>

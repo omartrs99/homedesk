@@ -88,3 +88,6 @@
 .hd-chrome-footer__social a { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, .14); transition: background .2s; }
 .hd-chrome-footer__social a:hover { background: rgba(255, 255, 255, .28); text-decoration: none; }
 .hd-chrome-footer__social svg { width: 18px; height: 18px; fill: #fff; }
+
+/* Icône garantie de la barre d'annonce (homedesk_topbar_content) */
+.hd-chrome-topbar .topbar-icon { display: inline-block; vertical-align: -3px; margin-right: 6px; }

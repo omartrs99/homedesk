@@ -131,6 +131,40 @@
     });
   });
 
+  // Infobulle remboursement : clic sur « i » pour ouvrir / fermer, croix, clic ailleurs ou Échap pour fermer.
+  // .is-closed empêche le survol de la rouvrir tant que la souris n'a pas quitté l'icône.
+  var tips = document.querySelectorAll('.tip');
+  function closeTip(tip, blockHover) {
+    tip.classList.remove('is-open');
+    if (blockHover) tip.classList.add('is-closed');
+    tip.querySelector('.tip__btn').setAttribute('aria-expanded', 'false');
+  }
+  tips.forEach(function (tip) {
+    var btn = tip.querySelector('.tip__btn');
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var open = !tip.classList.contains('is-open');
+      tips.forEach(function (t) { closeTip(t, t === tip); });
+      if (open) {
+        tip.classList.remove('is-closed');
+        tip.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+    tip.querySelector('.tip__close').addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeTip(tip, true);
+    });
+    tip.addEventListener('mouseleave', function () { tip.classList.remove('is-closed'); });
+  });
+  document.addEventListener('click', function (e) {
+    tips.forEach(function (tip) { if (!tip.contains(e.target) && tip.classList.contains('is-open')) closeTip(tip); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') tips.forEach(function (tip) { if (tip.classList.contains('is-open')) closeTip(tip); });
+  });
+
   // Slider avant / après
   document.querySelectorAll('.ba').forEach(function (ba) {
     var range = ba.querySelector('input[type=range]');
@@ -146,7 +180,12 @@
   var order = document.getElementById('commander');
   if (sticky && hero && 'IntersectionObserver' in window) {
     var heroOut = false, orderIn = false;
-    var refresh = function () { sticky.classList.toggle('is-visible', heroOut && !orderIn); };
+    // body.has-sticky-cta : le bouton WhatsApp remonte au-dessus de la barre (landing.css)
+    var refresh = function () {
+      var on = heroOut && !orderIn;
+      sticky.classList.toggle('is-visible', on);
+      document.body.classList.toggle('has-sticky-cta', on);
+    };
     new IntersectionObserver(function (en) { heroOut = !en[0].isIntersecting; refresh(); }).observe(hero);
     if (order) new IntersectionObserver(function (en) { orderIn = en[0].isIntersecting; refresh(); }, { threshold: 0.15 }).observe(order);
   }
