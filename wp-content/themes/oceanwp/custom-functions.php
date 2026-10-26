@@ -1246,9 +1246,9 @@ add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', function ( $ids ) {
 function homedesk_footer_links() {
 	$links = array();
 	$product_id = function_exists( 'homedesk_default_product_id' ) ? homedesk_default_product_id() : 0;
-	if ( $product_id ) {
+	/*if ( $product_id ) {
 		$links[] = array( get_permalink( $product_id ), 'Fiche produit' );
-	}
+	}*/
 	$links[] = array( home_url( '/notre-histoire/' ), 'Notre histoire' );
 	$links[] = array( home_url( '/contactez-nous/' ), 'Contact et offre entreprise' );
 	$links[] = array( home_url( '/' . HOMEDESK_RETOURS_SLUG . '/' ), 'Retours et remboursement' );
