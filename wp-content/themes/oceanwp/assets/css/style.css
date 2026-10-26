@@ -9408,3 +9408,7 @@ body.default-breakpoint .after-header-content {
       bottom: 50px;
 }
 
+.hd-chrome-footer__links li:after {
+    content: ".";
+    margin-left: 10px;
+}
