@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			<li class="reveal"><time>13h</time><div><b>Les épaules montent, la tête avance</b><p>Sans vous en rendre compte, vous vous penchez vers l'écran. Les premières tensions apparaissent.</p></div></li>
 			<li class="reveal"><time>18h</time><div><b>Raideur, fatigue, envie de s'étirer</b><p>La nuque est raide, le bas du dos tire. Et demain, la même journée recommence.</p></div></li>
 		</ol>
-		<p class="pivot-soft reveal">Ce n'est pas votre faute. Ce n'est pas un manque de volonté.<br>C'est la <span class="soft">position figée</span> qui fatigue votre corps.</p>
+		<p class="pivot-soft reveal">Ce n'est pas votre faute. <br>C'est la <span class="soft">position figée</span> qui fatigue votre corps.</p>
 	</div>
 </section>
 
