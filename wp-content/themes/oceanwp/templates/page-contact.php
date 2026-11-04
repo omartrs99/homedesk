@@ -80,7 +80,7 @@ get_header();
 	<section class="hd-retours__cta">
 		<div class="hd-retours__wrap">
 			<h2>Essayez-le sans risque</h2>
-			<p>Gardez votre bureau, ajoutez la position debout, et changez de posture en 5 secondes. Vous ne payez qu'à la réception.</p>
+			<p>Ajoute la position debout à ton bureau et soulage ton dos au quotidien.</p>
 			<div class="hd-retours__btns">
 				<a class="hd-retours__btn" href="<?php echo esc_url( home_url( '/#commander' ) ); ?>">Je commande mon HomeDesk →</a>
 				<a class="hd-retours__btn hd-retours__btn--ghost" href="<?php echo esc_url( $hd_product_url ); ?>">Voir la fiche produit</a>

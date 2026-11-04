@@ -10,8 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	<div class="container">
 		<div class="section-head center reveal">
 			<span class="eyebrow">code review</span>
-			<h2 class="h2">Ils codent déjà debout</h2>
-			<p class="lead"><span class="rating__stars">★★★★★</span> 4,9/5 · +200 professionnels équipés en Tunisie</p>
+			<h2 class="h2">Des devs tunisiens l'ont déjà testé</h2>
+			<p class="lead">💻 Conçu pour les devs, testé sur de vraies journées de code</p>
 		</div>
 
 		<!-- Avis réel : commentaire public de Soulayma Ben Hamida (TikTok HomeDesk) -->
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					<img src="<?php echo esc_url( $hd_img . 'avis-soulayma-avatar.webp' ); ?>" alt="" width="88" height="88" loading="lazy">
 					<div><b>Soulayma B.</b><span>Cliente HomeDesk · commentaire TikTok avec photo de son installation</span></div>
 				</div>
-				<p class="featured__note">Photo réelle, prise par la cliente chez elle, sans retouche.</p>
+				<p class="featured__note">Photo réelle, prise par la cliente chez elle.</p>
 			</div>
 		</figure>
 

@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				</div>
 			</div>
 			<div>
-				<span class="eyebrow">Garantie satisfait ou remboursé</span>
+				<span class="eyebrow">Tu as 3 jours pour décider</span>
 				<h3>Teste-le sur tes vrais lieux de travail</h3>
 				<p>Tu paies seulement quand tu reçois ton HomeDesk. Ensuite, tu as 3 jours pour l'emmener au café, au coworking ou chez un client. Pas convaincu ? Tu es remboursé.</p>
 				<ol class="g-steps">

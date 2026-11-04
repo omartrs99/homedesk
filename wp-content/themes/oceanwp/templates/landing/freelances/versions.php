@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		<div class="section-head center reveal">
 			<span class="eyebrow">Ta version</span>
 			<h2 class="h2">Choisis ta taille</h2>
-			<p class="lead">Moins de 1,87 m → <strong>Medium</strong>. Plus de 1,87 m → <strong>Large</strong>. Pour bouger, prends la version <strong>avec sac</strong>.</p>
+			<p class="lead"><b>Reco :</b> Moins de 1,87 m → <strong>Medium</strong> | Plus de 1,87 m → <strong>Large</strong>. Pour bouger, prends la version <strong>avec sac</strong>.</p>
 		</div>
 		<div class="versions">
 			<div class="version is-selected reveal" data-pick-taille="medium" data-pick-sac="oui">

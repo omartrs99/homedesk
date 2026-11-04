@@ -5,8 +5,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 return array(
-	'eyebrow' => 'Pour les développeurs',
-	'h1'      => 'Code debout.<span class="hl">Sans changer de bureau.</span>',
+	'eyebrow' => 'Pour ceux qui vivent entre VS Code et leur chaise',
+	'h1'      => 'Codez debout.<span class="hl">Sans changer de bureau.</span>',
 	'sub'     => 'HomeDesk se pose sur ton bureau actuel et transforme ton setup en poste <strong>assis-debout</strong>. Tu alternes en 5 secondes, entre deux commits.',
 	'bullets' => array(
 		'Laptop à hauteur des yeux : fini la nuque penchée sur l\'IDE',

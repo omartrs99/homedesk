@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				<?php endforeach; ?>
 			</ul>
 			<div class="hero__price"><b><?php echo $hd_dt( $hd_prices['medium']['price'] ); ?></b><s><?php echo $hd_dt( $hd_prices['medium']['regular'] ); ?></s><span>Sac offert · valeur 85 DT</span></div>
-			<div class="rating" style="margin-top:12px"><span class="rating__stars">★★★★★</span><span><strong>4,9/5</strong> · +200 professionnels équipés</span></div>
+			<div class="rating" style="margin-top:12px">💻 Conçu pour les développeurs, assis comme debout</div>
 			<div class="cta-wrap" style="margin-top:22px">
 				<a class="btn" href="#commander"<?php echo $hd_pick; ?>><?php echo esc_html( $hd_content['cta'] ); ?></a>
 				<p class="cta-note">À partir de <strong><?php echo $hd_dt( $hd_from ); ?></strong> · Paiement à la livraison · Livraison gratuite</p>

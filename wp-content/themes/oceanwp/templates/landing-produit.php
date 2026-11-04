@@ -57,7 +57,7 @@ add_filter( 'opc_form_title', function () { return 'Votre commande'; } );
 
 $hd_tip = '<span class="tip"><button class="tip__btn" type="button" aria-label="Conditions de remboursement" aria-expanded="false">i</button>'
 	. '<span class="tip__box" role="tooltip"><button class="tip__close" type="button" aria-label="Fermer">×</button><b>Conditions de remboursement</b>'
-	. 'Retournez le produit complet, dans son état d\'origine : sans casse, détérioration ni salissure. Après vérification, vous êtes remboursé intégralement sous 7 jours ouvrables.'
+	. 'Retournez le produit complet, dans son état d\'origine : sans cassure, non sale. Après vérification, vous êtes remboursé intégralement sous 7 jours ouvrables.'
 	. '</span></span>';
 ?>
 <!DOCTYPE html>
@@ -104,7 +104,7 @@ $hd_tip = '<span class="tip"><button class="tip__btn" type="button" aria-label="
 		echo implode( ' · ', $hd_links ); // phpcs:ignore -- échappé ci-dessus
 		homedesk_footer_contact( 'footer' );
 		?>
-		<p>Copyright © <?php echo esc_html( gmdate( 'Y' ) ); ?> · HomeDesk · Fabriqué en Tunisie</p>
+		<p>Copyright © <?php echo esc_html( gmdate( 'Y' ) ); ?> · HomeDesk</p>
 	</div>
 </footer>
 

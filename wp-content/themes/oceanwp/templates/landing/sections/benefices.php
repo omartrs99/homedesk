@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					</ul>
 					<span class="card__spec">Sac de transport offert · valeur 85 DT</span></article>
 				<article class="card reveal"><div class="card__icon">🔧</div><h3>Prêt en quelques minutes</h3><p>Aucun outil, aucun bricolage : les pièces s'emboîtent.</p><span class="card__spec">Montage sans outil</span></article>
-				<article class="card reveal"><div class="card__icon">⚡</div><h3>Rien qui tombe en panne</h3><p>Pas de moteur ni de prise : il fonctionne toujours, partout.</p><span class="card__spec">100 % mécanique</span></article>
+				<article class="card reveal"><div class="card__icon">⚡</div><h3>Rien qui tombe en panne</h3><p>Pas de moteur ni de prise : il fonctionne toujours, partout.</p><span class="card__spec">100 % manuel</span></article>
 			</div>
 			<div class="cta-wrap" style="text-align:center">
 				<a class="btn" href="#commander">Je passe debout →</a>

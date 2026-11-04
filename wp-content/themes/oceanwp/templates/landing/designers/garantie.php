@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				</div>
 			</div>
 			<div>
-				<span class="eyebrow">Garantie satisfait ou remboursé</span>
+				<span class="eyebrow">Tu as 3 jours pour décider</span>
 				<h3>Jugez-le dans votre propre espace</h3>
 				<p>Vous payez seulement à la réception. Ensuite, vous avez 3 jours pour le voir sur votre bureau, dans votre lumière, avec votre setup. Pas convaincu ? Vous êtes remboursé.</p>
 				<ol class="g-steps">

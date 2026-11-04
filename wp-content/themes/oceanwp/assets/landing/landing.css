@@ -235,7 +235,17 @@ p { margin: 0 0 1em; }
 .review__who span { color: var(--muted); }
 .review__verified { margin-left: auto; font-size: 11px; color: var(--teal); font-weight: 700; }
 
-.ugc { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 2px 14px; margin-top: 28px; scrollbar-width: thin; }
+.ugc { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 2px 14px; margin-top: 28px; }
+/* Barre de défilement aux couleurs de la charte : pilule teal sur rail teal translucide (lisible sur fond clair et sombre).
+   Chrome/Safari passent par ::-webkit-scrollbar ; scrollbar-* (Firefox) est isolé dans @supports,
+   sinon Chrome 121+ l'appliquerait et ignorerait les styles webkit. */
+.ugc::-webkit-scrollbar { height: 6px; }
+.ugc::-webkit-scrollbar-track { background: rgba(49, 139, 130, .18); border-radius: 999px; margin: 0 2px; }
+.ugc::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 999px; }
+.ugc::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
+@supports not selector(::-webkit-scrollbar) {
+  .ugc { scrollbar-width: thin; scrollbar-color: var(--accent) rgba(49, 139, 130, .18); }
+}
 .ugc img { flex: none; width: 150px; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 14px; scroll-snap-align: start; }
 @media (min-width: 900px) { .ugc img { width: 180px; } }
 

@@ -62,7 +62,7 @@ Variantes autorisées : on peut fusionner 6 et 7, ou déplacer 9 juste après 5 
 Éléments, dans cet ordre :
 1. **Sur-titre (eyebrow)** qui nomme l'audience : « — POUR LES DÉVELOPPEURS — ».
 2. **H1 axé bénéfice client**, 4 à 9 mots, une seule idée. Formule : *[Résultat désiré] + [sans l'effort / l'objection]*.
-   ✅ « Code debout. Sans changer de bureau. » ❌ « Bureau ergonomique en MDF ».
+   ✅ « Codez debout. Sans changer de bureau. » ❌ « Bureau ergonomique en MDF ».
 3. **Sous-titre** de 1 à 2 lignes : ce que c'est + pour qui + comment.
 4. **3 puces « pourquoi maintenant »**, des bénéfices courts avec ✓.
 5. **Preuve sociale compacte** : « ★★★★★ 4,9/5 · +200 professionnels équipés » (chiffres du site uniquement).

@@ -9,9 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <section class="section section--alt">
 	<div class="container">
 		<div class="section-head center reveal">
-			<span class="eyebrow">npm install posture</span>
-			<h2 class="h2">Refactore ton setup en 3 étapes</h2>
-			<p class="lead">HomeDesk n'est pas un nouveau bureau. C'est une mise à jour de celui que tu as déjà.</p>
+			<span class="eyebrow">npm install stand-up-position</span>
+			<h2 class="h2">Switch ton setup en 3 étapes</h2>
+			<p class="lead">HomeDesk n'est pas un nouveau bureau. C'est un upgrade de ton setup actuel.</p>
 		</div>
 		<!-- Vidéo verticale : à gauche des étapes sur ordinateur, entre les étapes et les chiffres sur mobile -->
 		<div class="demo">
@@ -23,14 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				</div>
 			</div>
 			<ol class="steps reveal">
-				<li><code>install</code><strong>Pose-le sur ton bureau</strong><span>Il s'assemble sans outil, en quelques minutes.</span></li>
+				<li><code>install</code><strong>Pose-le sur ton bureau</strong><span>Il s'assemble sans outil, en quelques secondes.</span></li>
 				<li><code>config</code><strong>Place laptop, clavier, souris</strong><span>Écran en haut, clavier en dessous, chacun à sa hauteur.</span></li>
-				<li><code>run</code><strong>Alterne assis ↔ debout</strong><span>5 secondes pour changer de position, autant de fois que tu veux.</span></li>
+				<li><code>run</code><strong>Alterne assis ↔ debout</strong><span>5 secondes pour changer de position.</span></li>
 			</ol>
 			<div class="stats reveal">
 				<div class="stat"><b>5 sec</b><small>pour switcher</small></div>
-				<div class="stat"><b>0</b><small>outil requis</small></div>
-				<div class="stat"><b>17"</b><small>PC max</small></div>
+				<div class="stat"><b>0</b><small>vis à percer</small></div>
+				<div class="stat"><b>17"</b><small>PC supporté</small></div>
 			</div>
 		</div>
 	</div>

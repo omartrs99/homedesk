@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	<div class="container">
 		<div class="section-head center reveal">
 			<span class="eyebrow">Votre version</span>
-			<h2 class="h2">Choisissez selon votre taille</h2>
+			<h2 class="h2">Laquelle est faite pour vous ?</h2>
 			<p class="lead">La bonne taille garde l'écran à hauteur des yeux quand vous êtes debout.</p>
 		</div>
 		<div class="size-q reveal"><span>📏 Moins de 1,87 m → <strong>Medium</strong></span><span>📏 Plus de 1,87 m → <strong>Large</strong></span></div>

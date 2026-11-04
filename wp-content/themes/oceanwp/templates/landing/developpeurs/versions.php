@@ -11,7 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		<div class="section-head center reveal">
 			<span class="eyebrow">choose your build</span>
 			<h2 class="h2">Choisis ta version</h2>
-			<p class="lead">Moins de 1,87 m → <strong>Medium</strong>. Plus de 1,87 m → <strong>Large</strong>. Tu ne le déplaceras jamais ? Prends le <strong>Solo</strong> sans sac.</p>
+			<p class="lead"><b>Reco :</b> Moins de 1,87 m → <strong>Medium</strong> | Plus de 1,87 m → <strong>Large</strong>.<br> 
+			<span style="color: #cfcfcf">Tu ne le déplaceras jamais ? Prends le <strong>Solo</strong> sans sac.</span></p>
 		</div>
 		<div class="size-q reveal"><span>📏 Moins de 1,87 m → <strong>Medium</strong></span><span>📏 Plus de 1,87 m → <strong>Large</strong></span></div>
 		<div class="versions">

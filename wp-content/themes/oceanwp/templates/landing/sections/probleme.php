@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			<div class="pain reveal"><i>🪑</i><b>Une seule position possible</b><p>Votre bureau ne vous laisse qu'un choix : rester assis, même quand l'énergie baisse.</p></div>
 			<div class="pain reveal"><i>😮‍💨</i><b>La fatigue de fin de journée</b><p>Nuque raide, épaules tendues, envie de s'étirer : rester assis sans bouger fatigue le corps.</p></div>
 		</div>
-		<p class="pivot reveal">Ce n'est pas un manque de volonté.<br>C'est votre installation qui <span class="hl">ne vous laisse pas bouger</span>.</p>
+		<p class="pivot reveal">C'est votre bureau qui <span class="hl">ne vous laisse pas bouger</span>.</p>
 		<ul class="who reveal" aria-label="Pour qui ?">
 			<li>👨‍💻 Développeurs</li><li>🎨 Designers</li><li>🏠 Télétravailleurs</li><li>🧳 Freelances</li><li>📚 Étudiants</li>
 		</ul>

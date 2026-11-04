@@ -20,12 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				</div>
 			</div>
 			<div>
-				<span class="eyebrow">Garantie satisfait ou remboursé</span>
-				<h3>Zéro risque : tu testes avant de valider</h3>
+				<span class="eyebrow">Tu as 3 jours pour décider</span>
+				<h3>Zéro risque : si tu n'es pas convaincu, on te rembourse</h3>
 				<p>Tu paies seulement quand tu reçois ton HomeDesk. Ensuite, tu as 3 jours pour l'essayer sur ton vrai setup. Pas convaincu ? Tu es remboursé.</p>
 				<ol class="g-steps">
 					<li><span>📦</span><div><b>Tu reçois</b> et tu paies à la livraison</div></li>
-					<li><span>🧑‍💻</span><div><b>Tu l'essaies</b> 3 jours sur ton setup</div></li>
+					<li><span>🧑‍💻</span><div><b>Tu l'essaies</b> 3 jours sur ton bureau</div></li>
 					<li><span>↩️</span><div><b>Pas convaincu ?</b> Tu es remboursé</div></li>
 				</ol>
 				<a class="g-link" href="#faq-remboursement" data-open-faq>Voir les conditions de remboursement →</a>

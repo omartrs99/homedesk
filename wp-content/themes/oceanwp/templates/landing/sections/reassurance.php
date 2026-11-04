@@ -11,6 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		<li><span>🚚</span>Livraison gratuite (72h)</li>
 		<li><span>💳</span>Paiement à la livraison</li>
 		<li><span>↩️</span>3 jours pour essayer</li>
-		<li><span>📍</span>Fabriqué en Tunisie</li>
+		<li><span>💰</span>100% Remboursé</li>
 	</ul>
 </div>

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		<div class="num reveal"><b>07</b>Votre édition</div>
 		<div class="section-head reveal">
 			<h2 class="h2">Choisissez <em>votre version</em></h2>
-			<p class="lead">Moins de 1,87 m : <strong>Medium</strong>. Plus de 1,87 m : <strong>Large</strong>, avec une étagère pour tablette ou téléphone.</p>
+			<p class="lead"><b>Reco :</b> Moins de 1,87 m : <strong>Medium</strong> | Plus de 1,87 m : <strong>Large</strong>, avec une étagère pour tablette ou téléphone.</p>
 		</div>
 		<div class="versions">
 			<div class="version is-selected reveal" data-pick-taille="medium" data-pick-sac="oui">

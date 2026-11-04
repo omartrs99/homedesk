@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			<div class="benefit reveal"><span class="benefit__n">02</span><div><h3>Il voyage avec toi</h3><p>Démonté et rangé dans son sac, il part avec ton laptop.</p><small>Sac de transport offert · valeur 85 DT</small></div></div>
 			<div class="benefit reveal"><span class="benefit__n">03</span><div><h3>Écran à hauteur des yeux</h3><p>Tu travailles la tête droite, au café comme chez le client.</p><small>Plusieurs niveaux de hauteur</small></div></div>
 			<div class="benefit reveal"><span class="benefit__n">04</span><div><h3>Debout quand l'énergie baisse</h3><p>Coup de mou avant la deadline ? Lève-toi et continue, en 5 secondes.</p><small>Assis ↔ debout en 5 sec</small></div></div>
-			<div class="benefit reveal"><span class="benefit__n">05</span><div><h3>Rien à brancher</h3><p>Pas de moteur, pas de prise : il marche partout, même sans électricité.</p><small>100 % mécanique</small></div></div>
+			<div class="benefit reveal"><span class="benefit__n">05</span><div><h3>Rien à brancher</h3><p>Pas de moteur, pas de prise : il marche partout, même sans électricité.</p><small>100 % manuel</small></div></div>
 			<div class="benefit reveal"><span class="benefit__n">06</span><div><h3>Une image pro</h3><p>Design blanc minimaliste : ton setup fait sérieux devant les clients.</p><small>MDF stratifié blanc · découpe CNC</small></div></div>
 		</div>
 		<div class="cta-wrap center">

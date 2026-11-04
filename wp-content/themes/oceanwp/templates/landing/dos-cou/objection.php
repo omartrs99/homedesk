@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				<p style="margin-top:18px">Le mieux reste encore de juger par vous-même : <strong>vous avez 3 jours pour l'essayer chez vous</strong>, et vous ne payez qu'à la réception.</p>
 				<div class="cta-wrap">
 					<a class="btn" href="#commander">J'essaie 3 jours chez moi →</a>
-					<p class="cta-note">Pas convaincu ? <strong>Satisfait ou remboursé.</strong> <?php echo $hd_tip; // phpcs:ignore -- HTML statique ?></p>
+					<p class="cta-note">Pas convaincu ? <strong>Vous êtes remboursé.</strong> <?php echo $hd_tip; // phpcs:ignore -- HTML statique ?></p>
 				</div>
 			</div>
 			<img src="<?php echo esc_url( $hd_img . 'post-alignement.webp' ); ?>" alt="Comparaison de posture : assis le dos courbé, puis debout et aligné avec HomeDesk" width="800" height="800" loading="lazy">

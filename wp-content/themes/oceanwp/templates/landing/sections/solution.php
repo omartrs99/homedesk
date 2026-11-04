@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			</ol>
 			<div class="stats reveal">
 				<div class="stat"><b>5 sec</b><small>assis ↔ debout</small></div>
-				<div class="stat"><b>0</b><small>outil requis</small></div>
+				<div class="stat"><b>0</b><small>vis à percer</small></div>
 				<div class="stat"><b>3 j</b><small>pour essayer</small></div>
 			</div>
 		</div>

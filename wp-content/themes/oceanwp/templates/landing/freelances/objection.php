@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				<tr><th scope="row">Hauteur</th><td>Medium : 55 cm · Large : 68 cm</td></tr>
 				<tr><th scope="row">PC compatible</th><td>Jusqu'à 17 pouces</td></tr>
 				<tr><th scope="row">Montage</th><td>Sans outil, en quelques minutes</td></tr>
-				<tr><th scope="row">Électricité</th><td>Aucune, 100 % mécanique</td></tr>
+				<tr><th scope="row">Électricité</th><td>Aucune, 100 % manuel</td></tr>
 			</table>
 		</div>
 	</div>

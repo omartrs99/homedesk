@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	<div class="container order">
 		<div class="order__media">
 			<span class="eyebrow">Commande en 1 minute</span>
-			<h2 class="h2">Commande maintenant, paie à la réception</h2>
+			<h2 class="h2">commande maintenant, teste-le 3 jours chez toi</h2>
 			<img src="<?php echo esc_url( $hd_img . 'post-merci-sac.webp' ); ?>" alt="HomeDesk avec son sac de transport, prêt à partir" width="800" height="1000" loading="lazy">
 			<ul class="order__includes">
 				<li>Support HomeDesk en MDF stratifié blanc</li>
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			}
 			?>
 			<ul class="form__reassure">
-				<li>💳 Tu ne paies rien maintenant, seulement à la réception</li>
+				<li>💳 Paiement à la livraison</li>
 				<li>🚚 Livraison gratuite sous 72h · ↩️ 3 jours pour essayer <?php echo $hd_tip; // phpcs:ignore -- HTML statique ?></li>
 			</ul>
 		</div>
