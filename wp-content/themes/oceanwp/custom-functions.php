@@ -1201,41 +1201,6 @@ add_filter( 'opc_nobag_short_label', function () {
 	return 'Solo';
 } );
 
-/** Landing Ads = landing qui n'est pas la page d'accueil → noindex + hors sitemap. */
-function homedesk_is_ads_landing( $post_id = 0 ) {
-	$post_id = $post_id ? $post_id : get_queried_object_id();
-	return $post_id
-		&& HOMEDESK_LANDING_TEMPLATE === get_page_template_slug( $post_id )
-		&& (int) get_option( 'page_on_front' ) !== (int) $post_id;
-}
-
-add_filter( 'wpseo_robots', function ( $robots ) {
-	return ( is_page() && homedesk_is_ads_landing() ) ? 'noindex, follow' : $robots;
-} );
-add_filter( 'wp_robots', function ( $robots ) {
-	if ( is_page() && homedesk_is_ads_landing() ) {
-		$robots['noindex'] = true;
-		$robots['follow']  = true;
-	}
-	return $robots;
-} );
-add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', function ( $ids ) {
-	$landing_ids = get_posts( array(
-		'post_type'      => 'page',
-		'posts_per_page' => -1,
-		'fields'         => 'ids',
-		'meta_key'       => '_wp_page_template',
-		'meta_value'     => HOMEDESK_LANDING_TEMPLATE,
-	) );
-	$front = (int) get_option( 'page_on_front' );
-	foreach ( $landing_ids as $id ) {
-		if ( (int) $id !== $front ) {
-			$ids[] = (int) $id;
-		}
-	}
-	return $ids;
-} );
-
 // =============================================================================
 // HEADER + FOOTER LÉGERS — pages internes (contact, histoire, fiche produit, retours…)
 // =============================================================================
