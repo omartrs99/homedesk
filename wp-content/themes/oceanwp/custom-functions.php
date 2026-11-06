@@ -1445,3 +1445,16 @@ add_action( 'admin_init', function () {
 		update_option( 'homedesk_histoire_page_id', (int) $id );
 	}
 } );
+
+// =============================================================================
+// ADMIN COMMANDES — case à cocher cliquable (compat WordPress 7.x / WooCommerce 9.7)
+// =============================================================================
+// WP 7.x rend la case à cocher de la liste dans un <td> (au lieu d'un <th>) et WooCommerce
+// ouvre la commande au clic sur n'importe quel <td> de la ligne → impossible de cocher.
+// La classe .no-link est l'exception prévue par WooCommerce (wc-orders.js, onRowClick).
+add_action( 'admin_enqueue_scripts', function () {
+	wp_add_inline_script(
+		'wc-orders',
+		"jQuery( function ( $ ) { $( '.wp-list-table tbody td.check-column' ).addClass( 'no-link' ); } );"
+	);
+}, 20 );
