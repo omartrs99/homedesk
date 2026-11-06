@@ -58,7 +58,7 @@ function opc_woocommerce_missing_notice() {
 }
 
 // Constantes du plugin
-define('OPC_VERSION', '1.0.7');
+define('OPC_VERSION', '1.0.8');
 define('OPC_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('OPC_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('OPC_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -139,6 +139,7 @@ class One_Page_COD {
                 'required'       => __('Ce champ est requis.', 'one-page-cod'),
                 'invalid_email'  => __('Adresse email invalide.', 'one-page-cod'),
                 'invalid_phone'  => __('Numéro de téléphone invalide.', 'one-page-cod'),
+                'promo_empty'    => __('Veuillez saisir un code promo.', 'one-page-cod'),
             )
         ));
     }

@@ -9,10 +9,14 @@
     const OPC = {
         variationsCache: [],
         noBag: false,
+        promo: { code: '', discount: 0 }, // code promo validé par le serveur
+        promoTimer: null,
+        promoRequest: 0,
 
         init: function() {
             this.bindEvents();
             this.initVariations();
+            this.initPromoFromUrl();
         },
 
         bindEvents: function() {
@@ -55,6 +59,151 @@
                 }
                 $(this).closest('.opc-qty-wrap').find('.opc-qty-minus').prop('disabled', false);
             });
+
+            // Code promo : lien « Vous avez un code promo ? », bouton « Appliquer », Entrée
+            $(document).on('click', '.opc-promo-toggle', this.togglePromo.bind(this));
+            $(document).on('click', '.opc-promo-apply', function() {
+                OPC.applyPromo($('#opc_coupon').val(), 'field');
+            });
+            $(document).on('keydown', '#opc_coupon', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    OPC.applyPromo($(this).val(), 'field');
+                }
+            });
+            // Code modifié après validation → la remise affichée n'est plus valable
+            $(document).on('input', '#opc_coupon', function() {
+                if (OPC.promo.code && $(this).val().trim().toLowerCase() !== OPC.promo.code) {
+                    OPC.clearPromo();
+                }
+            });
+            // Quantité / taille / version changées → remise recalculée par le serveur
+            $(document).on('change', '#opc_quantity, .opc-variation-radio, .opc-bag-radio', this.schedulePromoRefresh.bind(this));
+        },
+
+        // ── Code promo ───────────────────────────────────────────────
+        togglePromo: function() {
+            var $box = $('#opc-promo-box');
+            var open = $box.prop('hidden');
+            $box.prop('hidden', !open);
+            $('.opc-promo-toggle').attr('aria-expanded', open ? 'true' : 'false');
+            if (open) {
+                $('#opc_coupon').trigger('focus');
+            }
+        },
+
+        // ?promo=CODE dans l'URL : pré-remplit et applique le code (gardé pour la session,
+        // ex. landing → fiche produit). Fonctionne aussi quand le lien est masqué dans les réglages.
+        initPromoFromUrl: function() {
+            if (!$('#opc_coupon').length) {
+                return;
+            }
+            var code = '';
+            try {
+                code = new URLSearchParams(window.location.search).get('promo') || '';
+            } catch (e) {}
+            try {
+                if (code) {
+                    sessionStorage.setItem('opc_promo', code);
+                } else {
+                    code = sessionStorage.getItem('opc_promo') || '';
+                }
+            } catch (e) {}
+            code = code.trim();
+            if (!code) {
+                return;
+            }
+            $('#opc_coupon').val(code);
+            if ($('.opc-promo').data('promo-field') == 1) {
+                $('#opc-promo-box').prop('hidden', false);
+                $('.opc-promo-toggle').attr('aria-expanded', 'true');
+            }
+            this.applyPromo(code, 'url');
+        },
+
+        // source : 'field' (bouton), 'url' (?promo=), 'refresh' (quantité / version changée)
+        applyPromo: function(code, source) {
+            var $form = $('#opc-order-form');
+            code = (code || '').trim();
+            if (!code) {
+                this.clearPromo();
+                this.showPromoStatus('error', opcData.messages.promo_empty);
+                return;
+            }
+
+            var requestId = ++this.promoRequest;
+            var $btn = $('.opc-promo-apply');
+            if (source !== 'refresh') {
+                $btn.prop('disabled', true).addClass('loading');
+            }
+
+            $.ajax({
+                url: opcData.ajax_url,
+                type: 'POST',
+                data: {
+                    action: 'opc_apply_coupon',
+                    nonce: opcData.nonce,
+                    coupon_code: code,
+                    product_id: $form.find('input[name="product_id"]').val(),
+                    variation_id: $('#opc_variation_id').val() || 0,
+                    quantity: $('#opc_quantity').val() || 1,
+                    no_bag: $('#opc_no_bag').val() || '0',
+                    email: $('#opc_email').val() || ''
+                },
+                success: function(response) {
+                    if (requestId !== OPC.promoRequest) {
+                        return; // réponse dépassée par une requête plus récente
+                    }
+                    if (response.success) {
+                        OPC.promo = { code: response.data.code, discount: parseFloat(response.data.discount) || 0 };
+                        OPC.showPromoStatus('success', response.data.message);
+                        OPC.updateTotalPrice();
+                        return;
+                    }
+                    var message = (response.data && response.data.message) || opcData.messages.error;
+                    OPC.clearPromo();
+                    if (source === 'url') {
+                        // Code du lien refusé : on le retire pour ne pas bloquer la commande
+                        $('#opc_coupon').val('');
+                        try { sessionStorage.removeItem('opc_promo'); } catch (e) {}
+                        if ($('.opc-promo').data('promo-field') != 1) {
+                            return;
+                        }
+                    }
+                    OPC.showPromoStatus('error', message);
+                },
+                error: function() {
+                    if (requestId === OPC.promoRequest) {
+                        OPC.showPromoStatus('error', opcData.messages.error);
+                    }
+                },
+                complete: function() {
+                    $btn.prop('disabled', false).removeClass('loading');
+                }
+            });
+        },
+
+        schedulePromoRefresh: function() {
+            if (!this.promo.code) {
+                return;
+            }
+            clearTimeout(this.promoTimer);
+            this.promoTimer = setTimeout(function() {
+                OPC.applyPromo(OPC.promo.code, 'refresh');
+            }, 300);
+        },
+
+        clearPromo: function() {
+            this.promoRequest++;
+            this.promo = { code: '', discount: 0 };
+            $('.opc-promo-status').empty();
+            this.updateTotalPrice();
+        },
+
+        showPromoStatus: function(type, message) {
+            $('.opc-promo-status').html(
+                $('<p class="opc-promo-msg opc-promo-msg--' + type + '"></p>').text(message)
+            );
         },
 
         initVariations: function() {
@@ -278,6 +427,10 @@
                 OPC.noBag = false;
                 $('#opc_no_bag').val('0');
 
+                // Réinitialiser le code promo (utilisé par cette commande)
+                OPC.clearPromo();
+                try { sessionStorage.removeItem('opc_promo'); } catch (e) {}
+
                 // Rétablir l'état visuel des radios et recharger la variation par défaut
                 var $resetForm = $('#opc-order-form');
                 $resetForm.find('.opc-variation-radios, .opc-bag-radios').each(function() {
@@ -301,7 +454,14 @@
                     }, 2000);
                 }
             } else {
-                this.showMessage('error', response.data.message || opcData.messages.error);
+                if (response.data && response.data.coupon_error) {
+                    // Code refusé : le retirer du total affiché et signaler sous le champ
+                    this.clearPromo();
+                    $('#opc-promo-box').prop('hidden', false);
+                    $('.opc-promo-toggle').attr('aria-expanded', 'true');
+                    this.showPromoStatus('error', $('<textarea>').html(response.data.message).text()); // message échappé côté serveur
+                }
+                this.showMessage('error', (response.data && response.data.message) || opcData.messages.error);
                 this.scrollToMessages();
             }
         },
@@ -447,12 +607,15 @@
                 $bdi.append($symbol);
             };
 
+            // Remise du code promo (montant total calculé par le serveur)
+            var total = Math.max(0, effUnit * qty - (this.promo.discount || 0));
+
             // Prix soldé (ins) ou prix simple
             var $ins = $priceBox.find('ins .woocommerce-Price-amount bdi');
             if ($ins.length) {
-                updateBdi($ins, effUnit * qty);
+                updateBdi($ins, total);
             } else {
-                updateBdi($priceBox.find('.woocommerce-Price-amount bdi').first(), effUnit * qty);
+                updateBdi($priceBox.find('.woocommerce-Price-amount bdi').first(), total);
             }
 
             // Prix barré (del)

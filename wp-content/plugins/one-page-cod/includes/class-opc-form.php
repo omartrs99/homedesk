@@ -33,6 +33,10 @@ class OPC_Form {
         // AJAX pour obtenir les variations
         add_action('wp_ajax_opc_get_variation_data', array($this, 'get_variation_data'));
         add_action('wp_ajax_nopriv_opc_get_variation_data', array($this, 'get_variation_data'));
+
+        // AJAX pour vérifier un code promo (bouton « Appliquer »)
+        add_action('wp_ajax_opc_apply_coupon', array($this, 'handle_apply_coupon'));
+        add_action('wp_ajax_nopriv_opc_apply_coupon', array($this, 'handle_apply_coupon'));
     }
     
     public function display_form() {
@@ -234,7 +238,8 @@ class OPC_Form {
                     </div>
 
                 </div>
-                
+
+                <?php $this->render_promo_field(); ?>
 
                 <div class="opc-form-row opc-submit-row">
                     <button type="submit" class="opc-submit-btn">
@@ -334,6 +339,88 @@ class OPC_Form {
             </div>
         </div>
         <?php
+    }
+
+    /**
+     * Code promo : lien « Vous avez un code promo ? » + champ et bouton « Appliquer ».
+     * Lien masqué dans les réglages → le bloc reste présent (caché) pour qu'un code
+     * passé dans l'URL (?promo=CODE) soit appliqué ; seul le statut s'affiche alors.
+     */
+    public function render_promo_field() {
+        $show_field = opc_is_promo_field_enabled();
+        ?>
+        <div class="opc-promo" data-promo-field="<?php echo $show_field ? '1' : '0'; ?>">
+            <?php if ($show_field) : ?>
+                <button type="button" class="opc-promo-toggle" aria-expanded="false" aria-controls="opc-promo-box">
+                    <?php esc_html_e('Vous avez un code promo ?', 'one-page-cod'); ?>
+                </button>
+            <?php endif; ?>
+            <div class="opc-promo-box" id="opc-promo-box" hidden>
+                <input type="text"
+                       id="opc_coupon"
+                       aria-label="<?php esc_attr_e('Code promo', 'one-page-cod'); ?>"
+                       name="coupon_code"
+                       class="opc-input opc-promo-input"
+                       maxlength="64"
+                       autocomplete="off"
+                       autocapitalize="characters"
+                       spellcheck="false"
+                       placeholder="<?php esc_attr_e('Code promo', 'one-page-cod'); ?>">
+                <button type="button" class="opc-promo-apply"><?php esc_html_e('Appliquer', 'one-page-cod'); ?></button>
+            </div>
+            <div class="opc-promo-status" aria-live="polite"></div>
+        </div>
+        <?php
+    }
+
+    /**
+     * AJAX « Appliquer » : vérifie le code pour le produit / la quantité / la version
+     * choisis et renvoie la remise. N'enregistre rien.
+     */
+    public function handle_apply_coupon() {
+        check_ajax_referer('opc_nonce', 'nonce');
+
+        // Rate limiting par IP : 20 vérifications max par minute (anti force brute des codes)
+        $ip_key   = 'opc_coupon_rate_' . md5($_SERVER['REMOTE_ADDR'] ?? '');
+        $attempts = (int) get_transient($ip_key);
+        if ($attempts >= 20) {
+            wp_send_json_error(array('message' => __('Trop de tentatives. Veuillez patienter quelques instants.', 'one-page-cod')));
+        }
+        set_transient($ip_key, $attempts + 1, 60);
+
+        $product_id   = isset($_POST['product_id']) ? absint($_POST['product_id']) : 0;
+        $variation_id = isset($_POST['variation_id']) ? absint($_POST['variation_id']) : 0;
+        $quantity     = isset($_POST['quantity']) ? intval($_POST['quantity']) : 1;
+        $quantity     = max(1, min($quantity, apply_filters('opc_max_quantity', 20)));
+        $no_bag       = (isset($_POST['no_bag']) && $_POST['no_bag'] === '1');
+        $email        = isset($_POST['email']) ? sanitize_email(wp_unslash($_POST['email'])) : '';
+        $code         = isset($_POST['coupon_code']) ? sanitize_text_field(wp_unslash($_POST['coupon_code'])) : '';
+
+        $product = wc_get_product($variation_id ? $variation_id : $product_id);
+        if (!$product) {
+            wp_send_json_error(array('message' => __('Produit invalide.', 'one-page-cod')));
+        }
+
+        $result = OPC_Order::get_instance()->preview_coupon($code, $product, $quantity, $no_bag, $email);
+        if (is_wp_error($result)) {
+            wp_send_json_error(array('message' => $this->plain_text($result->get_error_message())));
+        }
+
+        $discount_text = $this->plain_text(wc_price($result['discount']));
+        wp_send_json_success(array(
+            'code'     => $result['code'],
+            'discount' => $result['discount'],
+            'total'    => $result['total'],
+            /* translators: 1: code promo, 2: montant de la remise */
+            'message'  => sprintf(__('Code « %1$s » appliqué : −%2$s', 'one-page-cod'), wc_strtoupper($result['code']), $discount_text),
+        ));
+    }
+
+    /**
+     * Message WooCommerce (HTML, entités : &nbsp;, symbole de devise…) → texte brut.
+     */
+    private function plain_text($html) {
+        return trim(html_entity_decode(wp_strip_all_tags($html), ENT_QUOTES, 'UTF-8'));
     }
 
     public function get_variation_data() {
@@ -442,10 +529,31 @@ class OPC_Form {
                 'message' => implode('<br>', $errors)
             ));
         }
-        
-        // Créer la commande
+
         $order_handler = OPC_Order::get_instance();
-        $order_id = $order_handler->create_order($product_id, $quantity, $customer_data, $variation_id, $variation_data, $no_bag);
+
+        // Code promo : vérifié avant de créer la commande — code refusé = commande bloquée
+        $coupon_code = isset($_POST['coupon_code']) ? trim(sanitize_text_field(wp_unslash($_POST['coupon_code']))) : '';
+        if ($coupon_code !== '') {
+            $check = $order_handler->preview_coupon(
+                $coupon_code,
+                wc_get_product($variation_id ? $variation_id : $product_id),
+                $quantity,
+                $no_bag,
+                $customer_data['email']
+            );
+            if (is_wp_error($check)) {
+                wp_send_json_error(array(
+                    // Échappé : le message contient la saisie du client et showMessage() l'insère en HTML
+                    'message' => esc_html($this->plain_text($check->get_error_message())),
+                    'coupon_error' => true,
+                ));
+            }
+        }
+        $customer_data['coupon'] = $coupon_code;
+
+        // Créer la commande
+        $order_id = $order_handler->create_order($product_id, $quantity, $customer_data, $variation_id, $variation_data, $no_bag, $coupon_code);
         
         if (is_wp_error($order_id)) {
             wp_send_json_error(array(

@@ -176,6 +176,19 @@ class OPC_Settings {
         );
         
         add_settings_field(
+            'enable_promo_field',
+            __('Code promo', 'one-page-cod'),
+            array($this, 'checkbox_field_callback'),
+            'one-page-cod-settings',
+            'opc_form_section',
+            array(
+                'id' => 'enable_promo_field',
+                'label' => __('Afficher le lien « Vous avez un code promo ? » dans le formulaire', 'one-page-cod'),
+                'description' => __('Les codes se gèrent dans Marketing → Codes promo (WooCommerce). Même masqué, un lien avec ?promo=CODE applique le code.', 'one-page-cod')
+            )
+        );
+
+        add_settings_field(
             'success_message',
             __('Message de succès', 'one-page-cod'),
             array($this, 'textarea_field_callback'),
@@ -269,6 +282,9 @@ class OPC_Settings {
             <?php echo esc_html($args['label']); ?>
         </label>
         <?php
+        if (isset($args['description'])) {
+            echo '<p class="description">' . esc_html($args['description']) . '</p>';
+        }
     }
     
     public function text_field_callback($args) {
@@ -377,6 +393,7 @@ class OPC_Settings {
         $sanitized['enable_auto_detection'] = isset($input['enable_auto_detection']) ? 'yes' : 'no';
         $sanitized['enable_variations'] = isset($input['enable_variations']) ? 'yes' : 'no';
         $sanitized['enable_email'] = isset($input['enable_email']) ? 'yes' : 'no';
+        $sanitized['enable_promo_field'] = isset($input['enable_promo_field']) ? 'yes' : 'no';
         
         // Text fields
         if (isset($input['button_text'])) {

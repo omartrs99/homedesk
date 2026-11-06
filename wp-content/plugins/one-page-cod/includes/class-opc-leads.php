@@ -19,7 +19,7 @@ class OPC_Leads {
 
     private static $instance = null;
 
-    const DB_VERSION = '1.2.0';
+    const DB_VERSION = '1.3.0';
 
     public static function get_instance() {
         if (null === self::$instance) {
@@ -77,6 +77,7 @@ class OPC_Leads {
             email VARCHAR(191) NOT NULL DEFAULT '',
             address VARCHAR(255) NOT NULL DEFAULT '',
             profil VARCHAR(191) NOT NULL DEFAULT '',
+            coupon VARCHAR(64) NOT NULL DEFAULT '',
             product_id BIGINT UNSIGNED NOT NULL DEFAULT 0,
             product_name VARCHAR(191) NOT NULL DEFAULT '',
             variation VARCHAR(191) NOT NULL DEFAULT '',
@@ -157,6 +158,8 @@ class OPC_Leads {
             $profil = '';
         }
 
+        $coupon     = isset($_POST['coupon']) ? substr(sanitize_text_field(wp_unslash($_POST['coupon'])), 0, 64) : '';
+
         $product_id = isset($_POST['product_id']) ? absint($_POST['product_id']) : 0;
         $variation  = isset($_POST['variation']) ? sanitize_text_field(wp_unslash($_POST['variation'])) : '';
         $quantity   = isset($_POST['quantity']) ? max(1, absint($_POST['quantity'])) : 1;
@@ -183,6 +186,7 @@ class OPC_Leads {
             'email'        => $email,
             'address'      => $address,
             'profil'       => $profil,
+            'coupon'       => $coupon,
             'product_id'   => $product_id,
             'product_name' => $product_name,
             'variation'    => $variation,
@@ -533,6 +537,7 @@ class OPC_Leads {
                             <?php echo esc_html($r->product_name ?: ('#' . $r->product_id)); ?>
                             <?php if ($r->variation) : ?><br><small><?php echo esc_html($r->variation); ?></small><?php endif; ?>
                             <?php if ((int) $r->quantity > 1) : ?><br><small>× <?php echo (int) $r->quantity; ?></small><?php endif; ?>
+                            <?php if ($r->coupon) : ?><br><small><?php esc_html_e('Code promo :', 'one-page-cod'); ?> <strong><?php echo esc_html($r->coupon); ?></strong></small><?php endif; ?>
                         </td>
                         <td>
                             <?php if ($r->status === 'ordered') : ?>
@@ -774,7 +779,7 @@ class OPC_Leads {
 
         fputcsv($out, array(
             'Date', 'Nom', 'Téléphone', 'Email', 'Adresse', 'Profil',
-            'Produit', 'Variation', 'Quantité', 'Statut', 'Commande', 'Traité',
+            'Produit', 'Variation', 'Quantité', 'Code promo', 'Statut', 'Commande', 'Traité',
         ));
 
         foreach ($rows as $r) {
@@ -788,6 +793,7 @@ class OPC_Leads {
                 $r->product_name ?: ('#' . $r->product_id),
                 $r->variation,
                 $r->quantity,
+                $r->coupon,
                 $r->status === 'ordered' ? 'Commandé' : 'Abandonné',
                 $r->order_id ? ('#' . $r->order_id) : '',
                 $r->treated ? 'Oui' : 'Non',

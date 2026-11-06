@@ -478,6 +478,64 @@ select.opc-input {
     }
 }
 
+/* ── Code promo ──────────────────────────────────────────────── */
+.opc-promo { margin-top: 18px; }
+
+.opc-order-form .opc-promo-toggle {
+    padding: 0;
+    background: none;
+    border: none;
+    color: #318b82;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+.opc-order-form .opc-promo-toggle:hover,
+.opc-order-form .opc-promo-toggle:focus { background: none; color: #22766c; }
+
+.opc-promo-box {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+.opc-promo-box[hidden] { display: none; }
+.opc-promo-box .opc-promo-input {
+    flex: 1;
+    min-width: 0;
+    text-transform: uppercase;
+}
+.opc-promo-box .opc-promo-input::placeholder { text-transform: none; }
+
+.opc-order-form .opc-promo-apply {
+    flex: none;
+    padding: 0 18px;
+    background: #fff;
+    color: #318b82;
+    border: 1.5px solid #318b82;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.opc-order-form .opc-promo-apply:hover,
+.opc-order-form .opc-promo-apply:focus { background: #318b82; color: #fff; border-color: #318b82; }
+.opc-order-form .opc-promo-apply:disabled { opacity: 0.6; cursor: wait; }
+
+.opc-promo-msg {
+    margin: 8px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+.opc-promo-msg--success { color: #1a6b63; }
+.opc-promo-msg--error { color: #b52b2b; }
+
 /* ── Bouton submit ───────────────────────────────────────────── */
 .opc-submit-row { margin-top: 24px; }
 

@@ -61,6 +61,7 @@
             email:      val('#opc_email'),
             address:    val('#opc_address'),
             profil:     val('#opc_profil'),
+            coupon:     val('#opc_coupon').trim(),
             product_id: (form.querySelector('input[name="product_id"]') || {}).value || '',
             variation:  variation.join(', '),
             quantity:   val('#opc_quantity') || '1'
@@ -102,7 +103,7 @@
         timer = setTimeout(save, 1200);
     }
 
-    ['#opc_name', '#opc_phone', '#opc_email', '#opc_address', '#opc_quantity'].forEach(function (sel) {
+    ['#opc_name', '#opc_phone', '#opc_email', '#opc_address', '#opc_quantity', '#opc_coupon'].forEach(function (sel) {
         var el = form.querySelector(sel);
         if (!el) { return; }
         el.addEventListener('input', schedule);

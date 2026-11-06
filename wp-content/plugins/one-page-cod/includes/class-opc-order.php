@@ -26,7 +26,87 @@ class OPC_Order {
     /**
      * Créer une commande WooCommerce
      */
-    public function create_order($product_id, $quantity, $customer_data, $variation_id = 0, $variation_data = array(), $no_bag = false) {
+    /**
+     * Prix de la ligne (HT, quantité incluse) après l'éventuelle remise "sans sac".
+     *
+     * @return array { subtotal: float, nobag_discount: float } — nobag_discount = 0 si non appliquée
+     */
+    public function get_line_price($product, $quantity, $no_bag) {
+        $nobag_discount = function_exists('opc_get_nobag_discount') ? opc_get_nobag_discount() : 0;
+        $total_discount = ($no_bag && $nobag_discount > 0) ? ($nobag_discount * $quantity) : 0;
+        $base_price     = (float) wc_get_price_excluding_tax($product, array('qty' => $quantity));
+
+        return array(
+            'subtotal'       => max(0, $base_price - $total_discount),
+            'nobag_discount' => $total_discount,
+        );
+    }
+
+    /**
+     * Code promo WooCommerce à partir de la saisie client.
+     *
+     * @return WC_Coupon|WP_Error
+     */
+    public function get_coupon($raw_code) {
+        $code = wc_strtolower(wc_format_coupon_code($raw_code));
+        if ($code === '') {
+            return new WP_Error('empty_coupon', __('Veuillez saisir un code promo.', 'one-page-cod'));
+        }
+
+        $coupon = new WC_Coupon($code);
+        if (!$coupon->get_id()) {
+            /* translators: %s: code promo saisi */
+            return new WP_Error('invalid_coupon', sprintf(__('Le code promo « %s » n\'existe pas.', 'one-page-cod'), $code));
+        }
+
+        return $coupon;
+    }
+
+    /**
+     * Vérifie un code promo et calcule la remise, sans rien enregistrer
+     * (commande en mémoire uniquement). Utilisé par le bouton « Appliquer ».
+     *
+     * @return array|WP_Error { code, discount, subtotal, total }
+     */
+    public function preview_coupon($raw_code, $product, $quantity, $no_bag, $email = '') {
+        if (!$product) {
+            return new WP_Error('invalid_product', __('Produit introuvable.', 'one-page-cod'));
+        }
+
+        $coupon = $this->get_coupon($raw_code);
+        if (is_wp_error($coupon)) {
+            return $coupon;
+        }
+
+        $line = $this->get_line_price($product, $quantity, $no_bag);
+
+        $order = new WC_Order();
+        $order->set_billing_email($email);
+
+        $item = new WC_Order_Item_Product();
+        $item->set_product($product);
+        $item->set_quantity($quantity);
+        $item->set_subtotal($line['subtotal']);
+        $item->set_total($line['subtotal']);
+        $order->add_item($item);
+
+        $discounts = new WC_Discounts($order);
+        $applied   = $discounts->apply_coupon($coupon);
+        if (is_wp_error($applied)) {
+            return $applied;
+        }
+
+        $discount = min($line['subtotal'], (float) array_sum($discounts->get_discounts_by_coupon()));
+
+        return array(
+            'code'     => $coupon->get_code(),
+            'discount' => $discount,
+            'subtotal' => $line['subtotal'],
+            'total'    => $line['subtotal'] - $discount,
+        );
+    }
+
+    public function create_order($product_id, $quantity, $customer_data, $variation_id = 0, $variation_data = array(), $no_bag = false, $coupon_code = '') {
         try {
             // Récupérer le produit
             if ($variation_id) {
@@ -59,16 +139,14 @@ class OPC_Order {
             // On applique la réduction directement sur le prix de la ligne via les
             // arguments de add_product() : l'objet en mémoire porte alors le bon prix
             // et calculate_totals() calcule un total de commande correct.
-            $nobag_discount = function_exists('opc_get_nobag_discount') ? opc_get_nobag_discount() : 0;
-            $apply_nobag    = ($no_bag && $nobag_discount > 0);
-            $total_discount = $apply_nobag ? ($nobag_discount * $quantity) : 0;
+            $line           = $this->get_line_price($product, $quantity, $no_bag);
+            $total_discount = $line['nobag_discount'];
+            $apply_nobag    = $total_discount > 0;
 
             $add_args = array();
             if ($apply_nobag) {
-                $base_price = (float) wc_get_price_excluding_tax($product, array('qty' => $quantity));
-                $discounted = max(0, $base_price - $total_discount);
-                $add_args['subtotal'] = $discounted;
-                $add_args['total']    = $discounted;
+                $add_args['subtotal'] = $line['subtotal'];
+                $add_args['total']    = $line['subtotal'];
             }
 
             // Ajouter le produit à la commande
@@ -136,7 +214,19 @@ class OPC_Order {
             if ($payment_method === 'cod') {
                 $order->set_payment_method_title(__('Paiement à la livraison', 'one-page-cod'));
             }
-            
+
+            // Code promo WooCommerce (après l'adresse : les restrictions par email lisent
+            // l'email de facturation). Remise calculée sur le prix de ligne, "sans sac" inclus.
+            // Code refusé → la commande n'est pas créée.
+            if ($coupon_code !== '') {
+                $coupon  = $this->get_coupon($coupon_code);
+                $applied = is_wp_error($coupon) ? $coupon : $order->apply_coupon($coupon);
+                if (is_wp_error($applied)) {
+                    $order->delete(true);
+                    return $applied;
+                }
+            }
+
             // Calculer les totaux
             $order->calculate_totals();
             

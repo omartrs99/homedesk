@@ -87,6 +87,14 @@ function opc_is_email_enabled() {
 }
 
 /**
+ * Afficher le lien « Vous avez un code promo ? » dans le formulaire.
+ * Masqué, un code passé dans l'URL (?promo=CODE) reste appliqué.
+ */
+function opc_is_promo_field_enabled() {
+    return opc_get_option('enable_promo_field', 'yes') === 'yes';
+}
+
+/**
  * Formater un numéro de téléphone
  */
 function opc_format_phone($phone) {
